@@ -10,31 +10,31 @@
  * governing permissions and limitations under the License.
  */
 
-import { Direction } from "@react-types/shared";
-import { LayoutInfo } from "@react-stately/virtualizer";
-import React, { CSSProperties, ReactNode, useRef } from "react";
-import { useLocale } from "@react-aria-nutrient/i18n";
+import {Direction} from '@react-types/shared';
+import {LayoutInfo} from '@react-stately/virtualizer';
+import React, {CSSProperties, ReactNode, useRef} from 'react';
+import {useLocale} from '@react-aria-nutrient/i18n';
 import {
   useVirtualizerItem,
-  VirtualizerItemOptions,
-} from "./useVirtualizerItem";
+  VirtualizerItemOptions
+} from './useVirtualizerItem';
 
-interface VirtualizerItemProps extends Omit<VirtualizerItemOptions, "ref"> {
-  layoutInfo: LayoutInfo;
-  parent?: LayoutInfo | null;
-  style?: CSSProperties;
-  className?: string;
-  children: ReactNode;
+interface VirtualizerItemProps extends Omit<VirtualizerItemOptions, 'ref'> {
+  layoutInfo: LayoutInfo,
+  parent?: LayoutInfo | null,
+  style?: CSSProperties,
+  className?: string,
+  children: ReactNode
 }
 
 export function VirtualizerItem(props: VirtualizerItemProps): ReactNode {
-  let { style, className, layoutInfo, virtualizer, parent, children } = props;
-  let { direction } = useLocale();
+  let {style, className, layoutInfo, virtualizer, parent, children} = props;
+  let {direction} = useLocale();
   let ref = useRef<HTMLDivElement | null>(null);
   useVirtualizerItem({
     layoutInfo,
     virtualizer,
-    ref,
+    ref
   });
 
   return (
@@ -42,8 +42,7 @@ export function VirtualizerItem(props: VirtualizerItemProps): ReactNode {
       role="presentation"
       ref={ref}
       className={className}
-      style={{ ...layoutInfoToStyle(layoutInfo, direction, parent), ...style }}
-    >
+      style={{...layoutInfoToStyle(layoutInfo, direction, parent), ...style}}>
       {children}
     </div>
   );
@@ -55,7 +54,7 @@ export function layoutInfoToStyle(
   dir: Direction,
   parent?: LayoutInfo | null
 ): CSSProperties {
-  let xProperty = dir === "rtl" ? "right" : "left";
+  let xProperty = dir === 'rtl' ? 'right' : 'left';
   let cached = cache.get(layoutInfo);
   if (cached && cached[xProperty] != null) {
     if (!parent) {
@@ -86,7 +85,7 @@ export function layoutInfoToStyle(
         ? parent.rect.x
         : 0),
     width: layoutInfo.rect.width,
-    height: layoutInfo.rect.height,
+    height: layoutInfo.rect.height
   };
 
   // Get rid of any non finite values since they aren't valid css values
@@ -97,15 +96,15 @@ export function layoutInfoToStyle(
   });
 
   let style: CSSProperties = {
-    position: layoutInfo.isSticky ? "sticky" : "absolute",
+    position: layoutInfo.isSticky ? 'sticky' : 'absolute',
     // Sticky elements are positioned in normal document flow. Display inline-block so that they don't push other sticky columns onto the following rows.
-    display: layoutInfo.isSticky ? "inline-block" : undefined,
-    overflow: layoutInfo.allowOverflow ? "visible" : "hidden",
+    display: layoutInfo.isSticky ? 'inline-block' : undefined,
+    overflow: layoutInfo.allowOverflow ? 'visible' : 'hidden',
     opacity: layoutInfo.opacity,
     zIndex: layoutInfo.zIndex,
     transform: layoutInfo.transform ?? undefined,
-    contain: "size layout style",
-    ...rectStyles,
+    contain: 'size layout style',
+    ...rectStyles
   };
 
   cache.set(layoutInfo, style);

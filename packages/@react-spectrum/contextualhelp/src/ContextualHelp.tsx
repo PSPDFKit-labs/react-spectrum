@@ -10,19 +10,19 @@
  * governing permissions and limitations under the License.
  */
 
-import { ActionButton } from "@react-spectrum/button";
-import { classNames, ClearSlots, SlotProvider } from "@react-spectrum/utils";
-import { Dialog, DialogTrigger } from "@react-spectrum/dialog";
-import { FocusableRef } from "@react-types/shared";
-import HelpOutline from "@spectrum-icons/workflow/HelpOutline";
-import helpStyles from "@adobe/spectrum-css-temp/components/contextualhelp/vars.css";
-import InfoOutline from "@spectrum-icons/workflow/InfoOutline";
+import {ActionButton} from '@react-spectrum/button';
+import {classNames, ClearSlots, SlotProvider} from '@react-spectrum/utils';
+import {Dialog, DialogTrigger} from '@react-spectrum/dialog';
+import {FocusableRef} from '@react-types/shared';
+import HelpOutline from '@spectrum-icons/workflow/HelpOutline';
+import helpStyles from '@adobe/spectrum-css-temp/components/contextualhelp/vars.css';
+import InfoOutline from '@spectrum-icons/workflow/InfoOutline';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { mergeProps, useLabels } from "@react-aria-nutrient/utils";
-import React from "react";
-import { SpectrumContextualHelpProps } from "@react-types/contextualhelp";
-import { useLocalizedStringFormatter } from "@react-aria-nutrient/i18n";
+import intlMessages from '../intl/*.json';
+import {mergeProps, useLabels} from '@react-aria-nutrient/utils';
+import React from 'react';
+import {SpectrumContextualHelpProps} from '@react-types/contextualhelp';
+import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 
 /**
  * Contextual help shows a user extra information about the state of an adjacent component, or a total view.
@@ -32,26 +32,26 @@ export const ContextualHelp = React.forwardRef(function ContextualHelp(
   ref: FocusableRef<HTMLButtonElement>
 ) {
   let {
-    variant = "help",
-    placement = "bottom start",
+    variant = 'help',
+    placement = 'bottom start',
     children,
     ...otherProps
   } = props;
 
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/contextualhelp"
+    '@react-spectrum/contextualhelp'
   );
 
-  let icon = variant === "info" ? <InfoOutline /> : <HelpOutline />;
+  let icon = variant === 'info' ? <InfoOutline /> : <HelpOutline />;
 
   let slots = {
     content: {
-      UNSAFE_className: helpStyles["react-spectrum-ContextualHelp-content"],
+      UNSAFE_className: helpStyles['react-spectrum-ContextualHelp-content']
     },
     footer: {
-      UNSAFE_className: helpStyles["react-spectrum-ContextualHelp-footer"],
-    },
+      UNSAFE_className: helpStyles['react-spectrum-ContextualHelp-footer']
+    }
   };
 
   let labelProps = useLabels(otherProps, stringFormatter.format(variant));
@@ -61,18 +61,16 @@ export const ContextualHelp = React.forwardRef(function ContextualHelp(
       {...otherProps}
       type="popover"
       placement={placement}
-      hideArrow
-    >
+      hideArrow>
       <ActionButton
-        {...mergeProps(otherProps, labelProps, { isDisabled: false })}
+        {...mergeProps(otherProps, labelProps, {isDisabled: false})}
         ref={ref}
         UNSAFE_className={classNames(
           helpStyles,
-          "react-spectrum-ContextualHelp-button",
+          'react-spectrum-ContextualHelp-button',
           otherProps.UNSAFE_className
         )}
-        isQuiet
-      >
+        isQuiet>
         {icon}
       </ActionButton>
       <ClearSlots>
@@ -80,9 +78,8 @@ export const ContextualHelp = React.forwardRef(function ContextualHelp(
           <Dialog
             UNSAFE_className={classNames(
               helpStyles,
-              "react-spectrum-ContextualHelp-dialog"
-            )}
-          >
+              'react-spectrum-ContextualHelp-dialog'
+            )}>
             {children}
           </Dialog>
         </SlotProvider>

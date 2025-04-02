@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { AriaTextFieldProps, useTextField } from "react-aria";
+import {AriaTextFieldProps, useTextField} from 'react-aria';
 import {
   ContextValue,
   DOMProps,
@@ -22,63 +22,63 @@ import {
   useContextProps,
   useRenderProps,
   useSlot,
-  useSlottedContext,
-} from "./utils";
-import { createHideableComponent } from "@react-aria-nutrient/collections";
-import { FieldErrorContext } from "./FieldError";
-import { filterDOMProps, mergeProps } from "@react-aria-nutrient/utils";
-import { FormContext } from "./Form";
-import { InputContext } from "./Input";
-import { LabelContext } from "./Label";
+  useSlottedContext
+} from './utils';
+import {createHideableComponent} from '@react-aria-nutrient/collections';
+import {FieldErrorContext} from './FieldError';
+import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
+import {FormContext} from './Form';
+import {InputContext} from './Input';
+import {LabelContext} from './Label';
 import React, {
   createContext,
   ForwardedRef,
   useCallback,
   useRef,
-  useState,
-} from "react";
-import { TextAreaContext } from "./TextArea";
-import { TextContext } from "./Text";
+  useState
+} from 'react';
+import {TextAreaContext} from './TextArea';
+import {TextContext} from './Text';
 
 export interface TextFieldRenderProps {
   /**
    * Whether the text field is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean,
   /**
    * Whether the value is invalid.
    * @selector [data-invalid]
    */
-  isInvalid: boolean;
+  isInvalid: boolean,
   /**
    * Whether the text field is read only.
    * @selector [data-readonly]
    */
-  isReadOnly: boolean;
+  isReadOnly: boolean,
   /**
    * Whether the text field is required.
    * @selector [data-required]
    */
-  isRequired: boolean;
+  isRequired: boolean
 }
 
 export interface TextFieldProps
   extends Omit<
       AriaTextFieldProps,
-      | "label"
-      | "placeholder"
-      | "description"
-      | "errorMessage"
-      | "validationState"
-      | "validationBehavior"
+      | 'label'
+      | 'placeholder'
+      | 'description'
+      | 'errorMessage'
+      | 'validationState'
+      | 'validationBehavior'
     >,
     RACValidation,
-    Omit<DOMProps, "style" | "className" | "children">,
+    Omit<DOMProps, 'style' | 'className' | 'children'>,
     SlotProps,
     RenderProps<TextFieldRenderProps> {
   /** Whether the value is invalid. */
-  isInvalid?: boolean;
+  isInvalid?: boolean
 }
 
 export const TextFieldContext =
@@ -90,10 +90,10 @@ export const TextFieldContext =
 export const TextField = /*#__PURE__*/ createHideableComponent(
   function TextField(props: TextFieldProps, ref: ForwardedRef<HTMLDivElement>) {
     [props, ref] = useContextProps(props, ref, TextFieldContext);
-    let { validationBehavior: formValidationBehavior } =
+    let {validationBehavior: formValidationBehavior} =
       useSlottedContext(FormContext) || {};
     let validationBehavior =
-      props.validationBehavior ?? formValidationBehavior ?? "native";
+      props.validationBehavior ?? formValidationBehavior ?? 'native';
     let inputRef = useRef(null);
     let [inputContextProps, mergedInputRef] = useContextProps(
       {},
@@ -101,9 +101,9 @@ export const TextField = /*#__PURE__*/ createHideableComponent(
       InputContext
     );
     let [labelRef, label] = useSlot(
-      !props["aria-label"] && !props["aria-labelledby"]
+      !props['aria-label'] && !props['aria-labelledby']
     );
-    let [inputElementType, setInputElementType] = useState("input");
+    let [inputElementType, setInputElementType] = useState('input');
     let {
       labelProps,
       inputProps,
@@ -115,7 +115,7 @@ export const TextField = /*#__PURE__*/ createHideableComponent(
         ...removeDataAttributes(props),
         inputElementType,
         label,
-        validationBehavior,
+        validationBehavior
       },
       mergedInputRef
     );
@@ -127,7 +127,7 @@ export const TextField = /*#__PURE__*/ createHideableComponent(
         mergedInputRef.current = el;
         if (el) {
           setInputElementType(
-            el instanceof HTMLTextAreaElement ? "textarea" : "input"
+            el instanceof HTMLTextAreaElement ? 'textarea' : 'input'
           );
         }
       },
@@ -140,9 +140,9 @@ export const TextField = /*#__PURE__*/ createHideableComponent(
         isDisabled: props.isDisabled || false,
         isInvalid: validation.isInvalid,
         isReadOnly: props.isReadOnly || false,
-        isRequired: props.isRequired || false,
+        isRequired: props.isRequired || false
       },
-      defaultClassName: "react-aria-TextField",
+      defaultClassName: 'react-aria-TextField'
     });
 
     let DOMProps = filterDOMProps(props);
@@ -157,31 +157,29 @@ export const TextField = /*#__PURE__*/ createHideableComponent(
         data-disabled={props.isDisabled || undefined}
         data-invalid={validation.isInvalid || undefined}
         data-readonly={props.isReadOnly || undefined}
-        data-required={props.isRequired || undefined}
-      >
+        data-required={props.isRequired || undefined}>
         <Provider
           values={[
-            [LabelContext, { ...labelProps, ref: labelRef }],
+            [LabelContext, {...labelProps, ref: labelRef}],
             [
               InputContext,
               {
                 ...mergeProps(inputProps, inputContextProps),
-                ref: inputOrTextAreaRef,
-              },
+                ref: inputOrTextAreaRef
+              }
             ],
-            [TextAreaContext, { ...inputProps, ref: inputOrTextAreaRef }],
+            [TextAreaContext, {...inputProps, ref: inputOrTextAreaRef}],
             [
               TextContext,
               {
                 slots: {
                   description: descriptionProps,
-                  errorMessage: errorMessageProps,
-                },
-              },
+                  errorMessage: errorMessageProps
+                }
+              }
             ],
-            [FieldErrorContext, validation],
-          ]}
-        >
+            [FieldErrorContext, validation]
+          ]}>
           {renderProps.children}
         </Provider>
       </div>

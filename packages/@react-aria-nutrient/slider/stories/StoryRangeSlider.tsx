@@ -1,15 +1,15 @@
-import { AriaSliderProps } from "@react-types/slider";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import React from "react";
-import styles from "./story-slider.css";
-import { useNumberFormatter } from "@react-aria-nutrient/i18n";
-import { useSlider, useSliderThumb } from "@react-aria-nutrient/slider";
-import { useSliderState } from "@react-stately/slider";
-import { VisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+import {AriaSliderProps} from '@react-types/slider';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import React from 'react';
+import styles from './story-slider.css';
+import {useNumberFormatter} from '@react-aria-nutrient/i18n';
+import {useSlider, useSliderThumb} from '@react-aria-nutrient/slider';
+import {useSliderState} from '@react-stately/slider';
+import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 interface StoryRangeSliderProps extends AriaSliderProps {
-  showTip?: boolean;
-  formatOptions?: Intl.NumberFormatOptions;
+  showTip?: boolean,
+  formatOptions?: Intl.NumberFormatOptions
 }
 
 export function StoryRangeSlider(props: StoryRangeSliderProps) {
@@ -17,38 +17,38 @@ export function StoryRangeSlider(props: StoryRangeSliderProps) {
   const minInputRef = React.useRef<HTMLInputElement>(null);
   const maxInputRef = React.useRef<HTMLInputElement>(null);
   const formatter = useNumberFormatter(props.formatOptions);
-  const state = useSliderState({ ...props, numberFormatter: formatter });
+  const state = useSliderState({...props, numberFormatter: formatter});
 
   if (state.values.length !== 2) {
-    throw new Error("Must specify an array of two numbers");
+    throw new Error('Must specify an array of two numbers');
   }
 
-  const { trackProps, labelProps, groupProps, outputProps } = useSlider(
+  const {trackProps, labelProps, groupProps, outputProps} = useSlider(
     props,
     state,
     trackRef
   );
 
-  const { thumbProps: minThumbProps, inputProps: minInputProps } =
+  const {thumbProps: minThumbProps, inputProps: minInputProps} =
     useSliderThumb(
       {
         index: 0,
-        "aria-label": "Minimum",
+        'aria-label': 'Minimum',
         isDisabled: props.isDisabled,
         trackRef,
-        inputRef: minInputRef,
+        inputRef: minInputRef
       },
       state
     );
 
-  const { thumbProps: maxThumbProps, inputProps: maxInputProps } =
+  const {thumbProps: maxThumbProps, inputProps: maxInputProps} =
     useSliderThumb(
       {
         index: 1,
-        "aria-label": "Maximum",
+        'aria-label': 'Maximum',
         isDisabled: props.isDisabled,
         trackRef,
-        inputRef: maxInputRef,
+        inputRef: maxInputRef
       },
       state
     );
@@ -63,7 +63,7 @@ export function StoryRangeSlider(props: StoryRangeSliderProps) {
         )}
         <output {...outputProps} className={styles.value}>
           {state.getThumbValueLabel(0)}
-          {" to "}
+          {' to '}
           {state.getThumbValueLabel(1)}
         </output>
       </div>
@@ -80,21 +80,18 @@ export function StoryRangeSlider(props: StoryRangeSliderProps) {
               left: `${state.getThumbPercent(0) * 100}%`,
               width: `${
                 (state.getThumbPercent(1) - state.getThumbPercent(0)) * 100
-              }%`,
-            }}
-          />
+              }%`
+            }} />
         </div>
         <FocusRing
           within
           focusRingClass={styles.thumbFocusVisible}
-          focusClass={styles.thumbFocused}
-        >
+          focusClass={styles.thumbFocused}>
           <div
             className={styles.thumb}
             style={{
-              left: `${state.getThumbPercent(0) * 100}%`,
-            }}
-          >
+              left: `${state.getThumbPercent(0) * 100}%`
+            }}>
             {
               // We put thumbProps on thumbHandle, so that you cannot drag by the tip
             }
@@ -103,8 +100,7 @@ export function StoryRangeSlider(props: StoryRangeSliderProps) {
                 <input
                   className={styles.input}
                   ref={minInputRef}
-                  {...minInputProps}
-                />
+                  {...minInputProps} />
               </VisuallyHidden>
             </div>
             {props.showTip && (
@@ -115,15 +111,13 @@ export function StoryRangeSlider(props: StoryRangeSliderProps) {
         <FocusRing
           within
           focusRingClass={styles.thumbFocusVisible}
-          focusClass={styles.thumbFocused}
-        >
+          focusClass={styles.thumbFocused}>
           <div
             className={styles.thumb}
             {...maxThumbProps}
             style={{
-              left: `${state.getThumbPercent(1) * 100}%`,
-            }}
-          >
+              left: `${state.getThumbPercent(1) * 100}%`
+            }}>
             {
               // For fun, we put the thumbProps on the thumb container instead of just the handle.
               // This means you can drag the max thumb by the tip.
@@ -133,8 +127,7 @@ export function StoryRangeSlider(props: StoryRangeSliderProps) {
                 <input
                   className={styles.input}
                   ref={maxInputRef}
-                  {...maxInputProps}
-                />
+                  {...maxInputProps} />
               </VisuallyHidden>
             </div>
             {props.showTip && (

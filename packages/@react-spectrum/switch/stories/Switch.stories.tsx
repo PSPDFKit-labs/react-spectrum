@@ -10,71 +10,71 @@
  * governing permissions and limitations under the License.
  */
 
-import { chain } from "@react-aria-nutrient/utils";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Flex } from "@react-spectrum/layout";
-import React, { useState } from "react";
-import { Switch } from "../";
+import {chain} from '@react-aria-nutrient/utils';
+import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
+import {Flex} from '@react-spectrum/layout';
+import React, {useState} from 'react';
+import {Switch} from '../';
 
 type SwitchStory = ComponentStoryObj<typeof Switch>;
 
 export default {
-  title: "Switch",
+  title: 'Switch',
   component: Switch,
   args: {
-    isEmphasized: false,
+    isEmphasized: false
   },
   argTypes: {
     onChange: {
-      action: "change",
+      action: 'change'
     },
     onFocus: {
-      action: "focus",
+      action: 'focus'
     },
     onBlur: {
-      action: "blur",
-    },
-  },
+      action: 'blur'
+    }
+  }
 } as ComponentMeta<typeof Switch>;
 
 export const Default: SwitchStory = {
-  args: { children: <>Switch Label</> },
+  args: {children: <>Switch Label</>}
 };
 
 export const DefaultSelectedTrue: SwitchStory = {
   ...Default,
-  args: { ...Default.args, defaultSelected: true },
-  name: "defaultSelected: true",
+  args: {...Default.args, defaultSelected: true},
+  name: 'defaultSelected: true'
 };
 
 export const IsSelectedTrue: SwitchStory = {
   ...Default,
-  args: { ...Default.args, isSelected: true },
-  name: "isSelected: true",
+  args: {...Default.args, isSelected: true},
+  name: 'isSelected: true'
 };
 
 export const IsSelectedFalse: SwitchStory = {
   ...Default,
-  args: { ...Default.args, isSelected: false },
-  name: "isSelected: false",
+  args: {...Default.args, isSelected: false},
+  name: 'isSelected: false'
 };
 
 export const IsDisabledTrue: SwitchStory = {
   ...Default,
-  args: { ...Default.args, isDisabled: true },
-  name: "isDisabled: true",
+  args: {...Default.args, isDisabled: true},
+  name: 'isDisabled: true'
 };
 
 export const IsReadOnlyTrueIsSelectedTrue: SwitchStory = {
   ...Default,
-  args: { ...Default.args, isReadOnly: true, isSelected: true },
-  name: "isReadOnly: true, isSelected: true",
+  args: {...Default.args, isReadOnly: true, isSelected: true},
+  name: 'isReadOnly: true, isSelected: true'
 };
 
 export const AutoFocus: SwitchStory = {
   ...Default,
-  args: { ...Default.args, autoFocus: true },
-  name: "autoFocus",
+  args: {...Default.args, autoFocus: true},
+  name: 'autoFocus'
 };
 
 export const CustomLabel: SwitchStory = {
@@ -84,9 +84,9 @@ export const CustomLabel: SwitchStory = {
       <span>
         <i>Italicized</i> Switch Label
       </span>
-    ),
+    )
   },
-  name: "custom label",
+  name: 'custom label'
 };
 
 export const LongLabel: SwitchStory = {
@@ -97,21 +97,21 @@ export const LongLabel: SwitchStory = {
         Super long checkbox label. Sample text. Arma virumque cano, Troiae qui
         primus ab oris. Italiam, fato profugus, Laviniaque venit.
       </>
-    ),
+    )
   },
-  name: "long label",
+  name: 'long label'
 };
 
 export const NoLabel: SwitchStory = {
   ...Default,
-  args: { "aria-label": "This switch has no visible label" },
-  name: "no label",
-  parameters: { description: { data: "Try me with a screen reader." } },
+  args: {'aria-label': 'This switch has no visible label'},
+  name: 'no label',
+  parameters: {description: {data: 'Try me with a screen reader.'}}
 };
 
 export const ControlledImplementation: SwitchStory = {
   ...Default,
-  render: (args) => <ControlledSwitch {...args} />,
+  render: (args) => <ControlledSwitch {...args} />
 };
 
 function ControlledSwitch(props) {
@@ -120,8 +120,7 @@ function ControlledSwitch(props) {
     <Switch
       {...props}
       onChange={chain(setChecked, props.onChange)}
-      isSelected={checked}
-    />
+      isSelected={checked} />
   );
 }
 
@@ -148,5 +147,5 @@ export const WHCMTest: SwitchStory = {
       </Flex>
     </Flex>
   ),
-  name: "WHCM test",
+  name: 'WHCM test'
 };

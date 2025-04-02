@@ -10,20 +10,20 @@
  * governing permissions and limitations under the License.
  */
 
-import { classNames } from "@react-spectrum/utils";
-import { DatePickerSegment } from "./DatePickerSegment";
-import datepickerStyles from "./styles.css";
-import { Field } from "@react-spectrum/label";
-import { FocusableRef } from "@react-types/shared";
-import { Input } from "./Input";
-import React, { ReactElement, useRef } from "react";
-import { SpectrumTimeFieldProps, TimeValue } from "@react-types/datepicker";
-import { useFocusManagerRef, useFormattedDateWidth } from "./utils";
-import { useFormProps } from "@react-spectrum/form";
-import { useLocale } from "@react-aria-nutrient/i18n";
-import { useProviderProps } from "@react-spectrum/provider";
-import { useTimeField } from "@react-aria-nutrient/datepicker";
-import { useTimeFieldState } from "@react-stately/datepicker";
+import {classNames} from '@react-spectrum/utils';
+import {DatePickerSegment} from './DatePickerSegment';
+import datepickerStyles from './styles.css';
+import {Field} from '@react-spectrum/label';
+import {FocusableRef} from '@react-types/shared';
+import {Input} from './Input';
+import React, {ReactElement, useRef} from 'react';
+import {SpectrumTimeFieldProps, TimeValue} from '@react-types/datepicker';
+import {useFocusManagerRef, useFormattedDateWidth} from './utils';
+import {useFormProps} from '@react-spectrum/form';
+import {useLocale} from '@react-aria-nutrient/i18n';
+import {useProviderProps} from '@react-spectrum/provider';
+import {useTimeField} from '@react-aria-nutrient/datepicker';
+import {useTimeFieldState} from '@react-stately/datepicker';
 
 /**
  * TimeFields allow users to enter and edit time values using a keyboard.
@@ -34,13 +34,13 @@ export const TimeField = React.forwardRef(function TimeField<
 >(props: SpectrumTimeFieldProps<T>, ref: FocusableRef<HTMLElement>) {
   props = useProviderProps(props);
   props = useFormProps(props);
-  let { autoFocus, isDisabled, isReadOnly, isRequired, isQuiet } = props;
+  let {autoFocus, isDisabled, isReadOnly, isRequired, isQuiet} = props;
 
   let domRef = useFocusManagerRef(ref);
-  let { locale } = useLocale();
+  let {locale} = useLocale();
   let state = useTimeFieldState({
     ...props,
-    locale,
+    locale
   });
 
   let fieldRef = useRef<HTMLDivElement | null>(null);
@@ -53,19 +53,19 @@ export const TimeField = React.forwardRef(function TimeField<
     errorMessageProps,
     isInvalid,
     validationErrors,
-    validationDetails,
+    validationDetails
   } = useTimeField(
     {
       ...props,
-      inputRef,
+      inputRef
     },
     state,
     fieldRef
   );
 
-  let validationState = state.validationState || (isInvalid ? "invalid" : null);
+  let validationState = state.validationState || (isInvalid ? 'invalid' : null);
 
-  let approximateWidth = useFormattedDateWidth(state) + "ch";
+  let approximateWidth = useFormattedDateWidth(state) + 'ch';
 
   return (
     <Field
@@ -81,9 +81,8 @@ export const TimeField = React.forwardRef(function TimeField<
       validationDetails={validationDetails}
       wrapperClassName={classNames(
         datepickerStyles,
-        "react-spectrum-TimeField-fieldWrapper"
-      )}
-    >
+        'react-spectrum-TimeField-fieldWrapper'
+      )}>
       <Input
         ref={fieldRef}
         fieldProps={fieldProps}
@@ -92,8 +91,7 @@ export const TimeField = React.forwardRef(function TimeField<
         autoFocus={autoFocus}
         validationState={validationState}
         minWidth={approximateWidth}
-        className={classNames(datepickerStyles, "react-spectrum-TimeField")}
-      >
+        className={classNames(datepickerStyles, 'react-spectrum-TimeField')}>
         {state.segments.map((segment, i) => (
           <DatePickerSegment
             key={i}
@@ -101,8 +99,7 @@ export const TimeField = React.forwardRef(function TimeField<
             state={state}
             isDisabled={isDisabled}
             isReadOnly={isReadOnly}
-            isRequired={isRequired}
-          />
+            isRequired={isRequired} />
         ))}
         <input {...inputProps} ref={inputRef} />
       </Input>

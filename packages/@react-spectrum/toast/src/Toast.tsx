@@ -10,42 +10,42 @@
  * governing permissions and limitations under the License.
  */
 
-import AlertMedium from "@spectrum-icons/ui/AlertMedium";
-import { Button, ClearButton } from "@react-spectrum/button";
-import { classNames, useDOMRef, useStyleProps } from "@react-spectrum/utils";
-import CrossMedium from "@spectrum-icons/ui/CrossMedium";
-import { DOMProps, DOMRef } from "@react-types/shared";
-import { filterDOMProps, mergeProps } from "@react-aria-nutrient/utils";
-import InfoMedium from "@spectrum-icons/ui/InfoMedium";
+import AlertMedium from '@spectrum-icons/ui/AlertMedium';
+import {Button, ClearButton} from '@react-spectrum/button';
+import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
+import CrossMedium from '@spectrum-icons/ui/CrossMedium';
+import {DOMProps, DOMRef} from '@react-types/shared';
+import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
+import InfoMedium from '@spectrum-icons/ui/InfoMedium';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { QueuedToast, ToastState } from "@react-stately/toast";
-import React from "react";
-import styles from "@adobe/spectrum-css-temp/components/toast/vars.css";
-import SuccessMedium from "@spectrum-icons/ui/SuccessMedium";
-import toastContainerStyles from "./toastContainer.css";
-import { useFocusRing } from "@react-aria-nutrient/focus";
-import { useLocalizedStringFormatter } from "@react-aria-nutrient/i18n";
-import { useToast } from "@react-aria-nutrient/toast";
+import intlMessages from '../intl/*.json';
+import {QueuedToast, ToastState} from '@react-stately/toast';
+import React from 'react';
+import styles from '@adobe/spectrum-css-temp/components/toast/vars.css';
+import SuccessMedium from '@spectrum-icons/ui/SuccessMedium';
+import toastContainerStyles from './toastContainer.css';
+import {useFocusRing} from '@react-aria-nutrient/focus';
+import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
+import {useToast} from '@react-aria-nutrient/toast';
 
 export interface SpectrumToastValue extends DOMProps {
-  children: string;
-  variant: "positive" | "negative" | "info" | "neutral";
-  actionLabel?: string;
-  onAction?: () => void;
-  shouldCloseOnAction?: boolean;
+  children: string,
+  variant: 'positive' | 'negative' | 'info' | 'neutral',
+  actionLabel?: string,
+  onAction?: () => void,
+  shouldCloseOnAction?: boolean
 }
 
 export interface SpectrumToastProps {
-  toast: QueuedToast<SpectrumToastValue>;
-  state: ToastState<SpectrumToastValue>;
+  toast: QueuedToast<SpectrumToastValue>,
+  state: ToastState<SpectrumToastValue>
 }
 
 // TODO: express should use filled icons...
 export const ICONS = {
   info: InfoMedium,
   negative: AlertMedium,
-  positive: SuccessMedium,
+  positive: SuccessMedium
 };
 
 export const Toast = React.forwardRef(function Toast(
@@ -60,28 +60,28 @@ export const Toast = React.forwardRef(function Toast(
         variant,
         actionLabel,
         onAction,
-        shouldCloseOnAction,
-      },
+        shouldCloseOnAction
+      }
     },
     state,
     ...otherProps
   } = props;
   let domRef = useDOMRef(ref);
-  let { closeButtonProps, titleProps, toastProps, contentProps } = useToast(
+  let {closeButtonProps, titleProps, toastProps, contentProps} = useToast(
     props,
     state,
     domRef
   );
-  let { styleProps } = useStyleProps(otherProps);
+  let {styleProps} = useStyleProps(otherProps);
 
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/toast"
+    '@react-spectrum/toast'
   );
   let iconLabel =
-    variant && variant !== "neutral" ? stringFormatter.format(variant) : null;
+    variant && variant !== 'neutral' ? stringFormatter.format(variant) : null;
   let Icon = ICONS[variant];
-  let { isFocusVisible, focusProps } = useFocusRing();
+  let {isFocusVisible, focusProps} = useFocusRing();
 
   const handleAction = () => {
     if (onAction) {
@@ -101,51 +101,45 @@ export const Toast = React.forwardRef(function Toast(
       ref={domRef}
       className={classNames(
         styles,
-        "spectrum-Toast",
-        { ["spectrum-Toast--" + variant]: variant },
+        'spectrum-Toast',
+        {['spectrum-Toast--' + variant]: variant},
         styleProps.className,
-        classNames(toastContainerStyles, "spectrum-Toast", {
-          "focus-ring": isFocusVisible,
+        classNames(toastContainerStyles, 'spectrum-Toast', {
+          'focus-ring': isFocusVisible
         })
-      )}
-    >
+      )}>
       <div
         {...contentProps}
         className={classNames(
           toastContainerStyles,
-          "spectrum-Toast-contentWrapper"
-        )}
-      >
+          'spectrum-Toast-contentWrapper'
+        )}>
         {Icon && (
           <Icon
             aria-label={iconLabel}
-            UNSAFE_className={classNames(styles, "spectrum-Toast-typeIcon")}
-          />
+            UNSAFE_className={classNames(styles, 'spectrum-Toast-typeIcon')} />
         )}
         <div
-          className={classNames(styles, "spectrum-Toast-body")}
-          role="presentation"
-        >
+          className={classNames(styles, 'spectrum-Toast-body')}
+          role="presentation">
           <div
-            className={classNames(styles, "spectrum-Toast-content")}
+            className={classNames(styles, 'spectrum-Toast-content')}
             role="presentation"
-            {...titleProps}
-          >
+            {...titleProps}>
             {children}
           </div>
           {actionLabel && (
             <Button
               onPress={handleAction}
-              UNSAFE_className={classNames(styles, "spectrum-Button")}
+              UNSAFE_className={classNames(styles, 'spectrum-Button')}
               variant="secondary"
-              staticColor="white"
-            >
+              staticColor="white">
               {actionLabel}
             </Button>
           )}
         </div>
       </div>
-      <div className={classNames(styles, "spectrum-Toast-buttons")}>
+      <div className={classNames(styles, 'spectrum-Toast-buttons')}>
         <ClearButton {...closeButtonProps} variant="overBackground">
           <CrossMedium />
         </ClearButton>

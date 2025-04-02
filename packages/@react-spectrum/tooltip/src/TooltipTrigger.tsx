@@ -10,15 +10,15 @@
  * governing permissions and limitations under the License.
  */
 
-import { FocusableProvider } from "@react-aria-nutrient/focus";
-import { Overlay } from "@react-spectrum/overlays";
-import React, { JSX, ReactElement, useRef, useState } from "react";
-import { SpectrumTooltipTriggerProps } from "@react-types/tooltip";
-import { TooltipContext } from "./context";
-import { useLayoutEffect } from "@react-aria-nutrient/utils";
-import { useOverlayPosition } from "@react-aria-nutrient/overlays";
-import { useTooltipTrigger } from "@react-aria-nutrient/tooltip";
-import { useTooltipTriggerState } from "@react-stately/tooltip";
+import {FocusableProvider} from '@react-aria-nutrient/focus';
+import {Overlay} from '@react-spectrum/overlays';
+import React, {JSX, ReactElement, useRef, useState} from 'react';
+import {SpectrumTooltipTriggerProps} from '@react-types/tooltip';
+import {TooltipContext} from './context';
+import {useLayoutEffect} from '@react-aria-nutrient/utils';
+import {useOverlayPosition} from '@react-aria-nutrient/overlays';
+import {useTooltipTrigger} from '@react-aria-nutrient/tooltip';
+import {useTooltipTriggerState} from '@react-stately/tooltip';
 
 const DEFAULT_OFFSET = -1; // Offset needed to reach 4px/5px (med/large) distance between tooltip and trigger button
 const DEFAULT_CROSS_OFFSET = 0;
@@ -29,7 +29,7 @@ function TooltipTrigger(props: SpectrumTooltipTriggerProps) {
     crossOffset = DEFAULT_CROSS_OFFSET,
     isDisabled,
     offset = DEFAULT_OFFSET,
-    trigger: triggerAction,
+    trigger: triggerAction
   } = props;
 
   let [trigger, tooltip] = React.Children.toArray(children) as [
@@ -41,10 +41,10 @@ function TooltipTrigger(props: SpectrumTooltipTriggerProps) {
   let tooltipTriggerRef = useRef<HTMLElement>(null);
   let overlayRef = useRef<HTMLDivElement>(null);
 
-  let { triggerProps, tooltipProps } = useTooltipTrigger(
+  let {triggerProps, tooltipProps} = useTooltipTrigger(
     {
       isDisabled,
-      trigger: triggerAction,
+      trigger: triggerAction
     },
     state,
     tooltipTriggerRef
@@ -56,7 +56,7 @@ function TooltipTrigger(props: SpectrumTooltipTriggerProps) {
       let spectrumBorderRadius = window.getComputedStyle(
         overlayRef.current
       ).borderRadius;
-      if (spectrumBorderRadius !== "") {
+      if (spectrumBorderRadius !== '') {
         setBorderRadius(parseInt(spectrumBorderRadius, 10));
       }
     }
@@ -69,8 +69,8 @@ function TooltipTrigger(props: SpectrumTooltipTriggerProps) {
     }
   }, [state.isOpen, arrowRef]);
 
-  let { overlayProps, arrowProps, placement } = useOverlayPosition({
-    placement: props.placement || "top",
+  let {overlayProps, arrowProps, placement} = useOverlayPosition({
+    placement: props.placement || 'top',
     targetRef: tooltipTriggerRef,
     overlayRef,
     offset,
@@ -80,7 +80,7 @@ function TooltipTrigger(props: SpectrumTooltipTriggerProps) {
     containerPadding: props.containerPadding,
     arrowSize: arrowWidth,
     arrowBoundaryOffset: borderRadius,
-    onClose: () => state.close(true),
+    onClose: () => state.close(true)
   });
 
   return (
@@ -94,9 +94,8 @@ function TooltipTrigger(props: SpectrumTooltipTriggerProps) {
           UNSAFE_style: overlayProps.style,
           arrowProps,
           arrowRef: arrowRef,
-          ...tooltipProps,
-        }}
-      >
+          ...tooltipProps
+        }}>
         <Overlay isOpen={state.isOpen} nodeRef={overlayRef}>
           {tooltip}
         </Overlay>
@@ -124,7 +123,7 @@ TooltipTrigger.getCollectionNode = function* (
         {element}
         {tooltip}
       </TooltipTrigger>
-    ),
+    )
   };
 };
 
@@ -137,4 +136,4 @@ TooltipTrigger.getCollectionNode = function* (
 let _TooltipTrigger = TooltipTrigger as (
   props: SpectrumTooltipTriggerProps
 ) => JSX.Element;
-export { _TooltipTrigger as TooltipTrigger };
+export {_TooltipTrigger as TooltipTrigger};

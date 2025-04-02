@@ -11,161 +11,161 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
-import { ActionButton } from "@react-spectrum/button";
-import { Card, CardView, GridLayout } from "../";
-import { ComponentStoryObj } from "@storybook/react";
-import { Content, View } from "@react-spectrum/view";
-import { Flex } from "@react-spectrum/layout";
-import { getImageFullData } from "./utils";
-import { GridLayoutOptions } from "../src/GridLayout";
-import { Heading, Text } from "@react-spectrum/text";
-import { IllustratedMessage } from "@react-spectrum/illustratedmessage";
-import { Image } from "@react-spectrum/image";
-import { Key } from "@react-types/shared";
-import { Link } from "@react-spectrum/link";
-import React, { useMemo, useState } from "react";
-import { Size } from "@react-stately/virtualizer";
-import { SpectrumCardViewProps } from "@react-types/card";
-import { TextField } from "@react-spectrum/textfield";
-import { useAsyncList } from "@react-stately/data";
-import { useCollator } from "@react-aria-nutrient/i18n";
-import { useProvider } from "@react-spectrum/provider";
+import {action} from '@storybook/addon-actions';
+import {ActionButton} from '@react-spectrum/button';
+import {Card, CardView, GridLayout} from '../';
+import {ComponentStoryObj} from '@storybook/react';
+import {Content, View} from '@react-spectrum/view';
+import {Flex} from '@react-spectrum/layout';
+import {getImageFullData} from './utils';
+import {GridLayoutOptions} from '../src/GridLayout';
+import {Heading, Text} from '@react-spectrum/text';
+import {IllustratedMessage} from '@react-spectrum/illustratedmessage';
+import {Image} from '@react-spectrum/image';
+import {Key} from '@react-types/shared';
+import {Link} from '@react-spectrum/link';
+import React, {useMemo, useState} from 'react';
+import {Size} from '@react-stately/virtualizer';
+import {SpectrumCardViewProps} from '@react-types/card';
+import {TextField} from '@react-spectrum/textfield';
+import {useAsyncList} from '@react-stately/data';
+import {useCollator} from '@react-aria-nutrient/i18n';
+import {useProvider} from '@react-spectrum/provider';
 
 let items = [
   {
     width: 1001,
     height: 381,
-    src: "https://i.imgur.com/Z7AzH2c.jpg",
-    title: "Bob 1",
+    src: 'https://i.imgur.com/Z7AzH2c.jpg',
+    title: 'Bob 1'
   },
   {
     width: 640,
     height: 640,
-    src: "https://i.imgur.com/DhygPot.jpg",
+    src: 'https://i.imgur.com/DhygPot.jpg',
     title:
-      "Joe 1 really really really really really really really really really really really really long",
+      'Joe 1 really really really really really really really really really really really really long'
   },
   {
     width: 182,
     height: 1009,
-    src: "https://i.imgur.com/L7RTlvI.png",
-    title: "Jane 1",
+    src: 'https://i.imgur.com/L7RTlvI.png',
+    title: 'Jane 1'
   },
   {
     width: 1516,
     height: 1009,
-    src: "https://i.imgur.com/1nScMIH.jpg",
-    title: "Bob 2",
+    src: 'https://i.imgur.com/1nScMIH.jpg',
+    title: 'Bob 2'
   },
   {
     width: 640,
     height: 640,
-    src: "https://i.imgur.com/DhygPot.jpg",
-    title: "Joe 2",
+    src: 'https://i.imgur.com/DhygPot.jpg',
+    title: 'Joe 2'
   },
   {
     width: 1516,
     height: 1009,
-    src: "https://i.imgur.com/1nScMIH.jpg",
-    title: "Jane 2",
+    src: 'https://i.imgur.com/1nScMIH.jpg',
+    title: 'Jane 2'
   },
   {
     width: 1001,
     height: 381,
-    src: "https://i.imgur.com/Z7AzH2c.jpg",
-    title: "Bob 3",
+    src: 'https://i.imgur.com/Z7AzH2c.jpg',
+    title: 'Bob 3'
   },
   {
     width: 182,
     height: 1009,
-    src: "https://i.imgur.com/L7RTlvI.png",
-    title: "Joe 3",
+    src: 'https://i.imgur.com/L7RTlvI.png',
+    title: 'Joe 3'
   },
   {
     width: 1215,
     height: 121,
-    src: "https://i.imgur.com/zzwWogn.jpg",
-    title: "Jane 3",
+    src: 'https://i.imgur.com/zzwWogn.jpg',
+    title: 'Jane 3'
   },
   {
     width: 1516,
     height: 1009,
-    src: "https://i.imgur.com/1nScMIH.jpg",
-    title: "Bob 4",
+    src: 'https://i.imgur.com/1nScMIH.jpg',
+    title: 'Bob 4'
   },
   {
     width: 182,
     height: 1009,
-    src: "https://i.imgur.com/L7RTlvI.png",
-    title: "Joe 4",
+    src: 'https://i.imgur.com/L7RTlvI.png',
+    title: 'Joe 4'
   },
   {
     width: 1001,
     height: 381,
-    src: "https://i.imgur.com/Z7AzH2c.jpg",
-    title: "Jane 4",
+    src: 'https://i.imgur.com/Z7AzH2c.jpg',
+    title: 'Jane 4'
   },
   {
     width: 182,
     height: 1009,
-    src: "https://i.imgur.com/L7RTlvI.png",
-    title: "Bob 5",
+    src: 'https://i.imgur.com/L7RTlvI.png',
+    title: 'Bob 5'
   },
   {
     width: 1516,
     height: 1009,
-    src: "https://i.imgur.com/1nScMIH.jpg",
-    title: "Joe 5",
+    src: 'https://i.imgur.com/1nScMIH.jpg',
+    title: 'Joe 5'
   },
   {
     width: 182,
     height: 1009,
-    src: "https://i.imgur.com/L7RTlvI.png",
-    title: "Jane 5",
+    src: 'https://i.imgur.com/L7RTlvI.png',
+    title: 'Jane 5'
   },
   {
     width: 1516,
     height: 1009,
-    src: "https://i.imgur.com/1nScMIH.jpg",
-    title: "Bob 6",
+    src: 'https://i.imgur.com/1nScMIH.jpg',
+    title: 'Bob 6'
   },
   {
     width: 1215,
     height: 121,
-    src: "https://i.imgur.com/zzwWogn.jpg",
-    title: "Joe 6",
+    src: 'https://i.imgur.com/zzwWogn.jpg',
+    title: 'Joe 6'
   },
   {
     width: 640,
     height: 640,
-    src: "https://i.imgur.com/DhygPot.jpg",
-    title: "Jane 6",
+    src: 'https://i.imgur.com/DhygPot.jpg',
+    title: 'Jane 6'
   },
   {
     width: 182,
     height: 1009,
-    src: "https://i.imgur.com/L7RTlvI.png",
-    title: "Bob 7",
+    src: 'https://i.imgur.com/L7RTlvI.png',
+    title: 'Bob 7'
   },
   {
     width: 1001,
     height: 381,
-    src: "https://i.imgur.com/Z7AzH2c.jpg",
-    title: "Joe 7",
+    src: 'https://i.imgur.com/Z7AzH2c.jpg',
+    title: 'Joe 7'
   },
   {
     width: 1516,
     height: 1009,
-    src: "https://i.imgur.com/1nScMIH.jpg",
-    title: "Jane 7",
+    src: 'https://i.imgur.com/1nScMIH.jpg',
+    title: 'Jane 7'
   },
   {
     width: 1215,
     height: 121,
-    src: "https://i.imgur.com/zzwWogn.jpg",
-    title: "Bob 8",
-  },
+    src: 'https://i.imgur.com/zzwWogn.jpg',
+    title: 'Bob 8'
+  }
 ];
 
 export let falsyItems = [
@@ -173,24 +173,24 @@ export let falsyItems = [
     id: 0,
     width: 1001,
     height: 381,
-    src: "https://i.imgur.com/Z7AzH2c.jpg",
-    title: "Bob 1",
+    src: 'https://i.imgur.com/Z7AzH2c.jpg',
+    title: 'Bob 1'
   },
   {
     id: 1,
     width: 640,
     height: 640,
-    src: "https://i.imgur.com/DhygPot.jpg",
+    src: 'https://i.imgur.com/DhygPot.jpg',
     title:
-      "Joe 1 really really really really really really really really really really really really long",
+      'Joe 1 really really really really really really really really really really really really long'
   },
   {
     id: 2,
     width: 182,
     height: 1009,
-    src: "https://i.imgur.com/L7RTlvI.png",
-    title: "Jane 1",
-  },
+    src: 'https://i.imgur.com/L7RTlvI.png',
+    title: 'Jane 1'
+  }
 ];
 
 function renderEmptyState() {
@@ -201,7 +201,7 @@ function renderEmptyState() {
       </svg>
       <Heading>No results</Heading>
       <Content>
-        No results found, press <Link onPress={action("linkPress")}>here</Link>{" "}
+        No results found, press <Link onPress={action('linkPress')}>here</Link>{' '}
         for more info.
       </Content>
     </IllustratedMessage>
@@ -210,128 +210,128 @@ function renderEmptyState() {
 
 // TODO: accessibility failures regarding article element with role="gridcell", will need to double check when we pick CardView back up
 export default {
-  title: "CardView/Grid layout",
+  title: 'CardView/Grid layout',
   component: CardView,
-  excludeStories: ["NoCards", "CustomLayout", "falsyItems"],
+  excludeStories: ['NoCards', 'CustomLayout', 'falsyItems'],
   args: {
-    "aria-label": "Test CardView",
+    'aria-label': 'Test CardView'
   },
   argTypes: {
     layout: {
       table: {
-        disable: true,
-      },
+        disable: true
+      }
     },
     selectionMode: {
-      control: "radio",
-      defaultValue: "multiple",
-      options: ["none", "single", "multiple"],
-    },
-  },
+      control: 'radio',
+      defaultValue: 'multiple',
+      options: ['none', 'single', 'multiple']
+    }
+  }
 } as ComponentStoryObj<typeof CardView>;
 
-let onSelectionChange = action("onSelectionChange");
+let onSelectionChange = action('onSelectionChange');
 let actions = {
-  onSelectionChange: (s) => onSelectionChange([...s]),
+  onSelectionChange: (s) => onSelectionChange([...s])
 };
 
 // TODO add stories for Layouts with non-default options passed in
 export const DynamicCards: DynamicCardViewStory = {
   render: (args) => <DynamicCardView {...args} />,
   args: {
-    items: items,
+    items: items
   },
-  name: "default Grid layout with initialized layout",
+  name: 'default Grid layout with initialized layout'
 };
 
 export const StaticCards: StaticCardViewStory = {
   render: (args) => <StaticCardView {...args} />,
-  name: "static card",
+  name: 'static card'
 };
 
 export const DefaultGridConstructor: DynamicCardViewStory = {
   ...DynamicCards,
-  args: { ...DynamicCards.args, layout: GridLayout },
-  name: "default Grid layout w/ layout constructor",
+  args: {...DynamicCards.args, layout: GridLayout},
+  name: 'default Grid layout w/ layout constructor'
 };
 
 export const HorizontalGrid: DynamicCardViewStory = {
   ...DynamicCards,
-  args: { ...DynamicCards.args, cardOrientation: "horizontal" },
-  name: "Grid layout with horizontal cards, initialized layout",
+  args: {...DynamicCards.args, cardOrientation: 'horizontal'},
+  name: 'Grid layout with horizontal cards, initialized layout'
 };
 
 export const HorizontalGridConstructor: DynamicCardViewStory = {
   ...DynamicCards,
   args: {
     ...DynamicCards.args,
-    cardOrientation: "horizontal",
-    layout: GridLayout,
+    cardOrientation: 'horizontal',
+    layout: GridLayout
   },
-  name: "Grid layout with horizontal cards, layout constructor",
+  name: 'Grid layout with horizontal cards, layout constructor'
 };
 
 export const FalsyIds: CardViewIdKeysStory = {
   render: (args) => <CardViewIdKeys {...args} />,
   args: {
-    items: falsyItems,
+    items: falsyItems
   },
-  name: "falsy ids",
+  name: 'falsy ids'
 };
 
 export const DisabledKeys: DynamicCardViewStory = {
   ...DynamicCards,
-  args: { ...DynamicCards.args, disabledKeys: ["Joe 2", "Bob 4"] },
-  name: "disabled keys, Joe2, Bob 4",
+  args: {...DynamicCards.args, disabledKeys: ['Joe 2', 'Bob 4']},
+  name: 'disabled keys, Joe2, Bob 4'
 };
 
 export const ControlledCards: ControlledCardViewStory = {
   render: (args) => <ControlledCardView {...args} />,
   args: {
-    items: items,
+    items: items
   },
-  name: "selected keys, controlled",
+  name: 'selected keys, controlled'
 };
 
 export const NoCards: NoItemCardViewStory = {
-  render: (args) => <NoItemCardView {...args} />,
+  render: (args) => <NoItemCardView {...args} />
 };
 
 export const IsLoadingHeightGrid: DynamicCardViewStory = {
   ...NoCards,
   args: {
     ...NoCards.args,
-    width: "800px",
-    height: "800px",
-    loadingState: "loading",
+    width: '800px',
+    height: '800px',
+    loadingState: 'loading'
   },
-  name: "loadingState = loading, set height",
+  name: 'loadingState = loading, set height'
 };
 
 export const LoadingMoreGrid: DynamicCardViewStory = {
   ...DynamicCards,
-  args: { ...DynamicCards.args, loadingState: "loadingMore" },
-  name: "loadingState = loadingMore",
+  args: {...DynamicCards.args, loadingState: 'loadingMore'},
+  name: 'loadingState = loadingMore'
 };
 
 export const FilteringGrid: DynamicCardViewStory = {
   ...DynamicCards,
-  args: { ...DynamicCards.args, loadingState: "filtering" },
-  name: "loadingState = filtering",
+  args: {...DynamicCards.args, loadingState: 'filtering'},
+  name: 'loadingState = filtering'
 };
 
 export const EmptyWithHeightGrid: DynamicCardViewStory = {
   ...NoCards,
-  args: { ...NoCards.args, width: "800px", height: "800px", renderEmptyState },
-  name: "empty, set height",
+  args: {...NoCards.args, width: '800px', height: '800px', renderEmptyState},
+  name: 'empty, set height'
 };
 
 export const AsyncLoading: AsyncLoadingCardViewStory = {
   render: (args) => <AsyncLoadingCardView {...args} />,
   args: {
-    items: items,
+    items: items
   },
-  name: "Async loading",
+  name: 'Async loading'
 };
 
 export const CustomLayoutOptions: CustomLayoutStory = {
@@ -342,45 +342,43 @@ export const CustomLayoutOptions: CustomLayoutStory = {
       maxColumns: 2,
       margin: 150,
       minSpace: new Size(10, 10),
-      itemPadding: 400,
-    },
+      itemPadding: 400
+    }
   },
-  name: "Custom layout options",
+  name: 'Custom layout options'
 };
 
 export type CardViewIdKeysStory = ComponentStoryObj<typeof CardViewIdKeys>;
 function CardViewIdKeys(props: SpectrumCardViewProps<object>) {
-  let { scale } = useProvider();
-  let collator = useCollator({ usage: "search", sensitivity: "base" });
-  let cardOrientation = props.cardOrientation || "vertical";
+  let {scale} = useProvider();
+  let collator = useCollator({usage: 'search', sensitivity: 'base'});
+  let cardOrientation = props.cardOrientation || 'vertical';
   let gridLayout = useMemo(
     () =>
       new GridLayout({
         scale,
         collator,
-        cardOrientation,
+        cardOrientation
       }),
     [collator, scale, cardOrientation]
   );
-  let { layout = gridLayout, items, ...otherProps } = props;
+  let {layout = gridLayout, items, ...otherProps} = props;
 
   return (
     <div
       style={{
-        width: "800px",
-        resize: "both",
-        height: "90vh",
-        overflow: "auto",
-      }}
-    >
+        width: '800px',
+        resize: 'both',
+        height: '90vh',
+        overflow: 'auto'
+      }}>
       <CardView
         {...actions}
         {...otherProps}
         items={items}
         layout={layout}
         width="100%"
-        height="100%"
-      >
+        height="100%">
         {(item: any) => (
           <Card textValue={item.title} width={item.width} height={item.height}>
             <Image src={item.src} />
@@ -399,21 +397,21 @@ function CardViewIdKeys(props: SpectrumCardViewProps<object>) {
 
 export type DynamicCardViewStory = ComponentStoryObj<typeof DynamicCardView>;
 function DynamicCardView(props: SpectrumCardViewProps<object>) {
-  let { scale } = useProvider();
-  let collator = useCollator({ usage: "search", sensitivity: "base" });
-  let cardOrientation = props.cardOrientation || "vertical";
+  let {scale} = useProvider();
+  let collator = useCollator({usage: 'search', sensitivity: 'base'});
+  let cardOrientation = props.cardOrientation || 'vertical';
   let gridLayout = useMemo(
     () =>
       new GridLayout({
         scale,
         collator,
-        cardOrientation,
+        cardOrientation
       }),
     [collator, scale, cardOrientation]
   );
-  let { layout = gridLayout, ...otherProps } = props;
+  let {layout = gridLayout, ...otherProps} = props;
 
-  let [value, setValue] = useState("");
+  let [value, setValue] = useState('');
   let [items, setItems] = useState(props.items as Array<object>);
   let removeItem = () => {
     let val = parseInt(value, 10);
@@ -426,19 +424,17 @@ function DynamicCardView(props: SpectrumCardViewProps<object>) {
   return (
     <div
       style={{
-        width: "800px",
-        resize: "both",
-        height: "90vh",
-        overflow: "auto",
-      }}
-    >
+        width: '800px',
+        resize: 'both',
+        height: '90vh',
+        overflow: 'auto'
+      }}>
       <Flex direction="column" height="100%" width="100%">
         <Flex direction="row" maxWidth="500px" alignItems="end">
           <TextField
             value={value}
             onChange={setValue}
-            label="Nth item to remove"
-          />
+            label="Nth item to remove" />
           <ActionButton onPress={removeItem}>Remove</ActionButton>
         </Flex>
         <CardView
@@ -447,15 +443,13 @@ function DynamicCardView(props: SpectrumCardViewProps<object>) {
           items={items}
           layout={layout}
           width="100%"
-          height="100%"
-        >
+          height="100%">
           {(item: any) => (
             <Card
               key={item.title}
               textValue={item.title}
               width={item.width}
-              height={item.height}
-            >
+              height={item.height}>
               <Image src={item.src} />
               <Heading>{item.title}</Heading>
               <Text slot="detail">PNG</Text>
@@ -475,24 +469,24 @@ export type ControlledCardViewStory = ComponentStoryObj<
   typeof ControlledCardView
 >;
 function ControlledCardView(props: SpectrumCardViewProps<object>) {
-  let { scale } = useProvider();
-  let collator = useCollator({ usage: "search", sensitivity: "base" });
-  let cardOrientation = props.cardOrientation || "vertical";
+  let {scale} = useProvider();
+  let collator = useCollator({usage: 'search', sensitivity: 'base'});
+  let cardOrientation = props.cardOrientation || 'vertical';
   let gridLayout = useMemo(
     () =>
       new GridLayout({
         scale,
         collator,
-        cardOrientation,
+        cardOrientation
       }),
     [collator, scale, cardOrientation]
   );
-  let { layout = gridLayout, ...otherProps } = props;
+  let {layout = gridLayout, ...otherProps} = props;
 
-  let [value, setValue] = useState("");
+  let [value, setValue] = useState('');
   let [items, setItems] = useState(props.items as Array<object>);
   let [selectedKeys, setSelectedKeys] = useState(
-    "all" as "all" | Iterable<Key>
+    'all' as 'all' | Iterable<Key>
   );
 
   let removeItem = () => {
@@ -506,19 +500,17 @@ function ControlledCardView(props: SpectrumCardViewProps<object>) {
   return (
     <div
       style={{
-        width: "800px",
-        resize: "both",
-        height: "90vh",
-        overflow: "auto",
-      }}
-    >
+        width: '800px',
+        resize: 'both',
+        height: '90vh',
+        overflow: 'auto'
+      }}>
       <Flex direction="column" width="100%" height="100%">
         <Flex direction="row" maxWidth="500px" alignItems="end">
           <TextField
             value={value}
             onChange={setValue}
-            label="Nth item to remove"
-          />
+            label="Nth item to remove" />
           <ActionButton onPress={removeItem}>Remove</ActionButton>
         </Flex>
         <CardView
@@ -529,15 +521,13 @@ function ControlledCardView(props: SpectrumCardViewProps<object>) {
           items={items}
           layout={layout}
           width="100%"
-          height="100%"
-        >
+          height="100%">
           {(item: any) => (
             <Card
               key={item.title}
               textValue={item.title}
               width={item.width}
-              height={item.height}
-            >
+              height={item.height}>
               <Image src={item.src} />
               <Heading>{item.title}</Heading>
               <Text slot="detail">PNG</Text>
@@ -555,19 +545,19 @@ function ControlledCardView(props: SpectrumCardViewProps<object>) {
 
 export type NoItemCardViewStory = ComponentStoryObj<typeof NoItemCardView>;
 function NoItemCardView(props: SpectrumCardViewProps<object>) {
-  let { scale } = useProvider();
-  let collator = useCollator({ usage: "search", sensitivity: "base" });
-  let cardOrientation = props.cardOrientation || "vertical";
+  let {scale} = useProvider();
+  let collator = useCollator({usage: 'search', sensitivity: 'base'});
+  let cardOrientation = props.cardOrientation || 'vertical';
   let gridLayout = useMemo(
     () =>
       new GridLayout({
         scale,
         collator,
-        cardOrientation,
+        cardOrientation
       }),
     [collator, scale, cardOrientation]
   );
-  let { layout = gridLayout } = props;
+  let {layout = gridLayout} = props;
   let [show, setShow] = useState(false);
 
   return (
@@ -579,15 +569,13 @@ function NoItemCardView(props: SpectrumCardViewProps<object>) {
         {...props}
         items={show ? items : []}
         layout={layout}
-        UNSAFE_style={{ background: "var(--spectrum-global-color-gray-300)" }}
-      >
+        UNSAFE_style={{background: 'var(--spectrum-global-color-gray-300)'}}>
         {(item: any) => (
           <Card
             key={item.title}
             textValue={item.title}
             width={item.width}
-            height={item.height}
-          >
+            height={item.height}>
             <Image src={item.src} />
             <Heading>{item.title}</Heading>
             <Text slot="detail">PNG</Text>
@@ -604,29 +592,28 @@ function NoItemCardView(props: SpectrumCardViewProps<object>) {
 
 export type StaticCardViewStory = ComponentStoryObj<typeof StaticCardView>;
 function StaticCardView(props: SpectrumCardViewProps<object>) {
-  let { scale } = useProvider();
-  let collator = useCollator({ usage: "search", sensitivity: "base" });
-  let cardOrientation = props.cardOrientation || "vertical";
+  let {scale} = useProvider();
+  let collator = useCollator({usage: 'search', sensitivity: 'base'});
+  let cardOrientation = props.cardOrientation || 'vertical';
   let gridLayout = useMemo(
     () =>
       new GridLayout({
         scale,
         collator,
-        cardOrientation,
+        cardOrientation
       }),
     [collator, scale, cardOrientation]
   );
-  let { layout = gridLayout } = props;
+  let {layout = gridLayout} = props;
 
   return (
     <div
       style={{
-        width: "800px",
-        resize: "both",
-        height: "90vh",
-        overflow: "auto",
-      }}
-    >
+        width: '800px',
+        resize: 'both',
+        height: '90vh',
+        overflow: 'auto'
+      }}>
       {/* TODO fix typescript. it breaks if I remove the items here */}
       <CardView
         {...actions}
@@ -634,8 +621,7 @@ function StaticCardView(props: SpectrumCardViewProps<object>) {
         height="100%"
         width="100%"
         items={[{}]}
-        layout={layout}
-      >
+        layout={layout}>
         <Card key="Bob 1" width={1001} height={381} textValue="Bob 1">
           <Image src="https://i.imgur.com/Z7AzH2c.jpg" />
           <Heading>Bob 1</Heading>
@@ -681,57 +667,56 @@ export type AsyncLoadingCardViewStory = ComponentStoryObj<
 >;
 function AsyncLoadingCardView(props: SpectrumCardViewProps<object>) {
   interface StarWarsChar {
-    name: string;
-    url: string;
+    name: string,
+    url: string
   }
 
-  let { scale } = useProvider();
-  let collator = useCollator({ usage: "search", sensitivity: "base" });
-  let cardOrientation = props.cardOrientation || "vertical";
+  let {scale} = useProvider();
+  let collator = useCollator({usage: 'search', sensitivity: 'base'});
+  let cardOrientation = props.cardOrientation || 'vertical';
   let gridLayout = useMemo(
     () =>
       new GridLayout({
         scale,
         collator,
-        cardOrientation,
+        cardOrientation
       }),
     [collator, scale, cardOrientation]
   );
-  let { layout = gridLayout } = props;
+  let {layout = gridLayout} = props;
 
   let list = useAsyncList<StarWarsChar>({
-    async load({ signal, cursor }) {
+    async load({signal, cursor}) {
       if (cursor) {
-        cursor = cursor.replace(/^http:\/\//i, "https://");
+        cursor = cursor.replace(/^http:\/\//i, 'https://');
       }
       let items = [];
       await new Promise((resolve) => setTimeout(resolve, 1500));
       let res = await fetch(
-        cursor || "https://swapi.py4e.com/api/people/?search",
-        { signal }
+        cursor || 'https://swapi.py4e.com/api/people/?search',
+        {signal}
       );
       let json = await res.json();
       items = json.results.map((element, index) => ({
         ...getImageFullData(index),
-        title: element.name,
+        title: element.name
       }));
 
       return {
         items: items,
-        cursor: json.next,
+        cursor: json.next
       };
-    },
+    }
   });
 
   return (
     <div
       style={{
-        width: "800px",
-        resize: "both",
-        height: "90vh",
-        overflow: "auto",
-      }}
-    >
+        width: '800px',
+        resize: 'both',
+        height: '90vh',
+        overflow: 'auto'
+      }}>
       <CardView
         {...actions}
         {...props}
@@ -740,15 +725,13 @@ function AsyncLoadingCardView(props: SpectrumCardViewProps<object>) {
         items={list.items}
         onLoadMore={list.loadMore}
         loadingState={list.loadingState}
-        layout={layout}
-      >
+        layout={layout}>
         {(item: any) => (
           <Card
             key={item.title}
             textValue={item.title}
             width={item.width}
-            height={item.height}
-          >
+            height={item.height}>
             <Image src={item.src} />
             <Heading>{item.title}</Heading>
             <Text slot="detail">PNG</Text>
@@ -764,29 +747,29 @@ function AsyncLoadingCardView(props: SpectrumCardViewProps<object>) {
 }
 
 interface LayoutOptions {
-  layoutOptions?: GridLayoutOptions;
+  layoutOptions?: GridLayoutOptions
 }
 export type CustomLayoutStory = ComponentStoryObj<typeof CustomLayout>;
 export function CustomLayout(
   props: SpectrumCardViewProps<object> & LayoutOptions
 ) {
-  let { scale } = useProvider();
-  let collator = useCollator({ usage: "search", sensitivity: "base" });
+  let {scale} = useProvider();
+  let collator = useCollator({usage: 'search', sensitivity: 'base'});
   let layoutOptions = props.layoutOptions;
-  let cardOrientation = props.cardOrientation || "vertical";
+  let cardOrientation = props.cardOrientation || 'vertical';
   let gridLayout = useMemo(
     () =>
       new GridLayout({
         scale,
         collator,
         cardOrientation,
-        ...layoutOptions,
+        ...layoutOptions
       }),
     [collator, scale, layoutOptions, cardOrientation]
   );
-  let { layout = gridLayout, ...otherProps } = props;
+  let {layout = gridLayout, ...otherProps} = props;
 
-  let [value, setValue] = useState("");
+  let [value, setValue] = useState('');
   let [items, setItems] = useState(props.items as Array<object>);
   let removeItem = () => {
     let val = parseInt(value, 10);
@@ -799,19 +782,17 @@ export function CustomLayout(
   return (
     <div
       style={{
-        width: "800px",
-        resize: "both",
-        height: "90vh",
-        overflow: "auto",
-      }}
-    >
+        width: '800px',
+        resize: 'both',
+        height: '90vh',
+        overflow: 'auto'
+      }}>
       <Flex direction="column" width="100%" height="100%">
         <Flex direction="row" maxWidth="500px" alignItems="end">
           <TextField
             value={value}
             onChange={setValue}
-            label="Nth item to remove"
-          />
+            label="Nth item to remove" />
           <ActionButton onPress={removeItem}>Remove</ActionButton>
         </Flex>
         <CardView
@@ -820,15 +801,13 @@ export function CustomLayout(
           items={items}
           layout={layout}
           width="100%"
-          height="100%"
-        >
+          height="100%">
           {(item: any) => (
             <Card
               key={item.title}
               textValue={item.title}
               width={item.width}
-              height={item.height}
-            >
+              height={item.height}>
               <Image src={item.src} />
               <Heading>{item.title}</Heading>
               <Text slot="detail">PNG</Text>
@@ -846,30 +825,29 @@ export function CustomLayout(
 
 export function ResizeObserverCrash() {
   const shots = [
-    { id: 1, src: "https://i.imgur.com/Z7AzH2c.jpg", alt: "foo", label: "foo" },
-    { id: 2, src: "https://i.imgur.com/Z7AzH2c.jpg", alt: "bar", label: "bar" },
-    { id: 3, src: "https://i.imgur.com/Z7AzH2c.jpg", alt: "baz", label: "baz" },
-    { id: 4, src: "https://i.imgur.com/Z7AzH2c.jpg", alt: "qux", label: "qux" },
+    {id: 1, src: 'https://i.imgur.com/Z7AzH2c.jpg', alt: 'foo', label: 'foo'},
+    {id: 2, src: 'https://i.imgur.com/Z7AzH2c.jpg', alt: 'bar', label: 'bar'},
+    {id: 3, src: 'https://i.imgur.com/Z7AzH2c.jpg', alt: 'baz', label: 'baz'},
+    {id: 4, src: 'https://i.imgur.com/Z7AzH2c.jpg', alt: 'qux', label: 'qux'},
     {
       id: 5,
-      src: "https://i.imgur.com/Z7AzH2c.jpg",
-      alt: "foobar",
-      label: "foobar",
+      src: 'https://i.imgur.com/Z7AzH2c.jpg',
+      alt: 'foobar',
+      label: 'foobar'
     },
     {
       id: 6,
-      src: "https://i.imgur.com/Z7AzH2c.jpg",
-      alt: "foobaz",
-      label: "foobaz",
-    },
+      src: 'https://i.imgur.com/Z7AzH2c.jpg',
+      alt: 'foobaz',
+      label: 'foobaz'
+    }
   ];
 
   return (
     <View backgroundColor="gray-75" width="100vw" height="100vh">
-      <div style={{ position: "relative", height: "100%", width: "100%" }}>
+      <div style={{position: 'relative', height: '100%', width: '100%'}}>
         <div
-          style={{ display: "flex", flexDirection: "column", height: "100%" }}
-        >
+          style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
           <React.Fragment key="foo">
             <Flex alignItems="center" gap="size-200" margin="size-350">
               <Heading level={3} margin="size-0">
@@ -882,40 +860,35 @@ export function ResizeObserverCrash() {
               flex
               position="relative"
               layout={GridLayout}
-              selectionMode="none"
-            >
+              selectionMode="none">
               {(shot: any) => (
                 <Card key={shot.id}>
                   <Flex
                     UNSAFE_style={{
-                      position: "absolute",
+                      position: 'absolute'
                     }}
                     direction="column"
                     alignItems="center"
                     justifyContent="center"
                     gap="size-150"
                     width="100%"
-                    height="calc(100% - 78px)"
-                  >
+                    height="calc(100% - 78px)">
                     <Image
                       src={shot.src}
                       alt={shot.alt}
                       width="200px"
-                      height="200px"
-                    />
+                      height="200px" />
                   </Flex>
                   <Flex
                     direction="column"
                     alignItems="start"
-                    marginTop="size-100"
-                  >
+                    marginTop="size-100">
                     <Heading
                       level={4}
                       alignSelf="auto"
                       UNSAFE_style={{
-                        fontWeight: 500,
-                      }}
-                    >
+                        fontWeight: 500
+                      }}>
                       {shot.label}
                     </Heading>
                   </Flex>

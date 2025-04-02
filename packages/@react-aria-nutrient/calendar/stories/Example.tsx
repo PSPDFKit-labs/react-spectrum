@@ -9,32 +9,32 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-import { Button } from "@react-spectrum/button";
+import {Button} from '@react-spectrum/button';
 import {
   CalendarState,
   RangeCalendarState,
-  useCalendarState,
-} from "@react-stately/calendar";
+  useCalendarState
+} from '@react-stately/calendar';
 import {
   createCalendar,
   DateDuration,
-  startOfWeek,
-} from "@internationalized/date";
-import React, { ReactElement, useMemo, useRef } from "react";
-import { useCalendar, useCalendarCell, useCalendarGrid } from "../src";
-import { useDateFormatter, useLocale } from "@react-aria-nutrient/i18n";
+  startOfWeek
+} from '@internationalized/date';
+import React, {ReactElement, useMemo, useRef} from 'react';
+import {useCalendar, useCalendarCell, useCalendarGrid} from '../src';
+import {useDateFormatter, useLocale} from '@react-aria-nutrient/i18n';
 
 export function Example(props) {
-  let { locale } = useLocale();
-  const { visibleDuration } = props;
+  let {locale} = useLocale();
+  const {visibleDuration} = props;
 
   let state = useCalendarState({
     createCalendar,
     ...props,
-    locale,
+    locale
   });
 
-  let { calendarProps, prevButtonProps, nextButtonProps } = useCalendar(
+  let {calendarProps, prevButtonProps, nextButtonProps} = useCalendar(
     props,
     state
   );
@@ -52,8 +52,7 @@ export function Example(props) {
           key={i}
           state={state}
           visibleDuration={visibleDuration}
-          offset={{ months: i }}
-        />
+          offset={{months: i}} />
       );
     }
 
@@ -62,23 +61,22 @@ export function Example(props) {
 
   return (
     <div {...calendarProps}>
-      <div style={{ textAlign: "center" }} data-testid={"range"}>
-        {calendarProps["aria-label"]}
+      <div style={{textAlign: 'center'}} data-testid={'range'}>
+        {calendarProps['aria-label']}
       </div>
       <div
         style={{
-          display: "grid",
+          display: 'grid',
           gridTemplateColumns: `repeat(${grids.length}, 1fr)`,
-          gap: "1em",
-        }}
-      >
+          gap: '1em'
+        }}>
         {grids}
       </div>
       <div>
-        <Button variant={"secondary"} {...prevButtonProps}>
+        <Button variant={'secondary'} {...prevButtonProps}>
           prev
         </Button>
-        <Button variant={"secondary"} {...nextButtonProps}>
+        <Button variant={'secondary'} {...nextButtonProps}>
           next
         </Button>
       </div>
@@ -89,14 +87,14 @@ export function Example(props) {
 function CalendarGrid({
   state,
   visibleDuration,
-  offset = {},
+  offset = {}
 }: {
-  state: CalendarState | RangeCalendarState;
-  visibleDuration: DateDuration;
-  offset?: DateDuration;
+  state: CalendarState | RangeCalendarState,
+  visibleDuration: DateDuration,
+  offset?: DateDuration
 }) {
-  let { locale } = useLocale();
-  let { gridProps, weeksInMonth } = useCalendarGrid({}, state);
+  let {locale} = useLocale();
+  let {gridProps, weeksInMonth} = useCalendarGrid({}, state);
 
   let weeks = visibleDuration.weeks ?? 1;
   let startDate = state.visibleRange.start.add(offset);
@@ -112,8 +110,7 @@ function CalendarGrid({
             <Cell
               key={dayIndex}
               state={state}
-              date={startDate.add({ weeks: weekIndex, days: dayIndex })}
-            />
+              date={startDate.add({weeks: weekIndex, days: dayIndex})} />
           ))}
         </div>
       ))}
@@ -123,26 +120,25 @@ function CalendarGrid({
 
 function Cell(props) {
   let ref = useRef<HTMLSpanElement | null>(null);
-  let { cellProps, buttonProps } = useCalendarCell(props, props.state, ref);
+  let {cellProps, buttonProps} = useCalendarCell(props, props.state, ref);
 
   let dateFormatter = useDateFormatter({
-    day: "numeric",
+    day: 'numeric',
     timeZone: props.state.timeZone,
-    calendar: props.date.calendar.identifier,
+    calendar: props.date.calendar.identifier
   });
 
   return (
-    <div {...cellProps} style={{ display: "inline-block" }}>
+    <div {...cellProps} style={{display: 'inline-block'}}>
       <span
         ref={ref}
         {...buttonProps}
         style={{
-          display: "block",
+          display: 'block',
           width: 42,
           height: 42,
-          background: props.state.isSelected(props.date) ? "blue" : "",
-        }}
-      >
+          background: props.state.isSelected(props.date) ? 'blue' : ''
+        }}>
         {dateFormatter.format(props.date.toDate(props.state.timeZone))}
       </span>
     </div>
@@ -150,42 +146,40 @@ function Cell(props) {
 }
 
 export function ExampleCustomFirstDay(props) {
-  let { locale } = useLocale();
-  const { firstDayOfWeek } = props;
+  let {locale} = useLocale();
+  const {firstDayOfWeek} = props;
 
   let state = useCalendarState({
     createCalendar,
     ...props,
-    locale,
+    locale
   });
 
-  let { calendarProps, prevButtonProps, nextButtonProps } = useCalendar(
+  let {calendarProps, prevButtonProps, nextButtonProps} = useCalendar(
     props,
     state
   );
 
   return (
     <div {...calendarProps}>
-      <div style={{ textAlign: "center" }} data-testid={"range"}>
-        {calendarProps["aria-label"]}
+      <div style={{textAlign: 'center'}} data-testid={'range'}>
+        {calendarProps['aria-label']}
       </div>
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(1, 1fr)",
-          gap: "1em",
-        }}
-      >
+          display: 'grid',
+          gridTemplateColumns: 'repeat(1, 1fr)',
+          gap: '1em'
+        }}>
         <ExampleFirstDayCalendarGrid
           state={state}
-          firstDayOfWeek={firstDayOfWeek}
-        />
+          firstDayOfWeek={firstDayOfWeek} />
       </div>
       <div>
-        <Button variant={"secondary"} {...prevButtonProps}>
+        <Button variant={'secondary'} {...prevButtonProps}>
           prev
         </Button>
-        <Button variant={"secondary"} {...nextButtonProps}>
+        <Button variant={'secondary'} {...nextButtonProps}>
           next
         </Button>
       </div>
@@ -195,12 +189,12 @@ export function ExampleCustomFirstDay(props) {
 
 function ExampleFirstDayCalendarGrid({
   state,
-  firstDayOfWeek,
+  firstDayOfWeek
 }: {
-  state: CalendarState | RangeCalendarState;
-  firstDayOfWeek?: "sun" | "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
+  state: CalendarState | RangeCalendarState,
+  firstDayOfWeek?: 'sun' | 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat'
 }) {
-  let { gridProps, weeksInMonth } = useCalendarGrid({ firstDayOfWeek }, state);
+  let {gridProps, weeksInMonth} = useCalendarGrid({firstDayOfWeek}, state);
   let startDate = state.visibleRange.start;
   return (
     <div {...gridProps}>

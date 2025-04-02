@@ -15,11 +15,11 @@ import {
   HiddenSelect,
   useFocusRing,
   useLocalizedStringFormatter,
-  useSelect,
-} from "react-aria";
-import { ButtonContext } from "./Button";
-import { Collection, Node, SelectState, useSelectState } from "react-stately";
-import { CollectionBuilder } from "@react-aria-nutrient/collections";
+  useSelect
+} from 'react-aria';
+import {ButtonContext} from './Button';
+import {Collection, Node, SelectState, useSelectState} from 'react-stately';
+import {CollectionBuilder} from '@react-aria-nutrient/collections';
 import {
   ContextValue,
   Provider,
@@ -30,19 +30,19 @@ import {
   useContextProps,
   useRenderProps,
   useSlot,
-  useSlottedContext,
-} from "./utils";
-import { FieldErrorContext } from "./FieldError";
-import { filterDOMProps, useResizeObserver } from "@react-aria-nutrient/utils";
-import { FormContext } from "./Form";
-import { forwardRefType } from "@react-types/shared";
+  useSlottedContext
+} from './utils';
+import {FieldErrorContext} from './FieldError';
+import {filterDOMProps, useResizeObserver} from '@react-aria-nutrient/utils';
+import {FormContext} from './Form';
+import {forwardRefType} from '@react-types/shared';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { ItemRenderProps } from "./Collection";
-import { LabelContext } from "./Label";
-import { ListBoxContext, ListStateContext } from "./ListBox";
-import { OverlayTriggerStateContext } from "./Dialog";
-import { PopoverContext } from "./Popover";
+import intlMessages from '../intl/*.json';
+import {ItemRenderProps} from './Collection';
+import {LabelContext} from './Label';
+import {ListBoxContext, ListStateContext} from './ListBox';
+import {OverlayTriggerStateContext} from './Dialog';
+import {PopoverContext} from './Popover';
 import React, {
   createContext,
   ForwardedRef,
@@ -53,53 +53,53 @@ import React, {
   useContext,
   useMemo,
   useRef,
-  useState,
-} from "react";
-import { TextContext } from "./Text";
+  useState
+} from 'react';
+import {TextContext} from './Text';
 
 export interface SelectRenderProps {
   /**
    * Whether the select is focused, either via a mouse or keyboard.
    * @selector [data-focused]
    */
-  isFocused: boolean;
+  isFocused: boolean,
   /**
    * Whether the select is keyboard focused.
    * @selector [data-focus-visible]
    */
-  isFocusVisible: boolean;
+  isFocusVisible: boolean,
   /**
    * Whether the select is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean,
   /**
    * Whether the select is currently open.
    * @selector [data-open]
    */
-  isOpen: boolean;
+  isOpen: boolean,
   /**
    * Whether the select is invalid.
    * @selector [data-invalid]
    */
-  isInvalid: boolean;
+  isInvalid: boolean,
   /**
    * Whether the select is required.
    * @selector [data-required]
    */
-  isRequired: boolean;
+  isRequired: boolean
 }
 
 export interface SelectProps<T extends object = {}>
   extends Omit<
       AriaSelectProps<T>,
-      | "children"
-      | "label"
-      | "description"
-      | "errorMessage"
-      | "validationState"
-      | "validationBehavior"
-      | "items"
+      | 'children'
+      | 'label'
+      | 'description'
+      | 'errorMessage'
+      | 'validationState'
+      | 'validationBehavior'
+      | 'items'
     >,
     RACValidation,
     RenderProps<SelectRenderProps>,
@@ -124,20 +124,20 @@ export const Select = /*#__PURE__*/ (forwardRef as forwardRefType)(
       children,
       isDisabled = false,
       isInvalid = false,
-      isRequired = false,
+      isRequired = false
     } = props;
     let content = useMemo(
       () =>
-        typeof children === "function"
+        typeof children === 'function'
           ? children({
-              isOpen: false,
-              isDisabled,
-              isInvalid,
-              isRequired,
-              isFocused: false,
-              isFocusVisible: false,
-              defaultChildren: null,
-            })
+            isOpen: false,
+            isDisabled,
+            isInvalid,
+            isRequired,
+            isFocused: false,
+            isFocusVisible: false,
+            defaultChildren: null
+          })
           : children,
       [children, isDisabled, isInvalid, isRequired]
     );
@@ -153,33 +153,33 @@ export const Select = /*#__PURE__*/ (forwardRef as forwardRefType)(
 );
 
 interface SelectInnerProps<T extends object> {
-  props: SelectProps<T>;
-  selectRef: ForwardedRef<HTMLDivElement>;
-  collection: Collection<Node<T>>;
+  props: SelectProps<T>,
+  selectRef: ForwardedRef<HTMLDivElement>,
+  collection: Collection<Node<T>>
 }
 
 function SelectInner<T extends object>({
   props,
   selectRef: ref,
-  collection,
+  collection
 }: SelectInnerProps<T>) {
-  let { validationBehavior: formValidationBehavior } =
+  let {validationBehavior: formValidationBehavior} =
     useSlottedContext(FormContext) || {};
   let validationBehavior =
-    props.validationBehavior ?? formValidationBehavior ?? "native";
+    props.validationBehavior ?? formValidationBehavior ?? 'native';
   let state = useSelectState({
     ...props,
     collection,
     children: undefined,
-    validationBehavior,
+    validationBehavior
   });
 
-  let { isFocusVisible, focusProps } = useFocusRing({ within: true });
+  let {isFocusVisible, focusProps} = useFocusRing({within: true});
 
   // Get props for child elements from useSelect
   let buttonRef = useRef<HTMLButtonElement>(null);
   let [labelRef, label] = useSlot(
-    !props["aria-label"] && !props["aria-labelledby"]
+    !props['aria-label'] && !props['aria-labelledby']
   );
   let {
     labelProps,
@@ -193,7 +193,7 @@ function SelectInner<T extends object>({
     {
       ...removeDataAttributes(props),
       label,
-      validationBehavior,
+      validationBehavior
     },
     state,
     buttonRef
@@ -203,13 +203,13 @@ function SelectInner<T extends object>({
   let [buttonWidth, setButtonWidth] = useState<string | null>(null);
   let onResize = useCallback(() => {
     if (buttonRef.current) {
-      setButtonWidth(buttonRef.current.offsetWidth + "px");
+      setButtonWidth(buttonRef.current.offsetWidth + 'px');
     }
   }, [buttonRef]);
 
   useResizeObserver({
     ref: buttonRef,
-    onResize: onResize,
+    onResize: onResize
   });
 
   // Only expose a subset of state to renderProps function to avoid infinite render loop
@@ -220,7 +220,7 @@ function SelectInner<T extends object>({
       isFocusVisible,
       isDisabled: props.isDisabled || false,
       isInvalid: validation.isInvalid || false,
-      isRequired: props.isRequired || false,
+      isRequired: props.isRequired || false
     }),
     [
       state.isOpen,
@@ -228,14 +228,14 @@ function SelectInner<T extends object>({
       isFocusVisible,
       props.isDisabled,
       validation.isInvalid,
-      props.isRequired,
+      props.isRequired
     ]
   );
 
   let renderProps = useRenderProps({
     ...props,
     values: renderPropsState,
-    defaultClassName: "react-aria-Select",
+    defaultClassName: 'react-aria-Select'
   });
 
   let DOMProps = filterDOMProps(props);
@@ -249,37 +249,36 @@ function SelectInner<T extends object>({
         [SelectContext, props],
         [SelectStateContext, state],
         [SelectValueContext, valueProps],
-        [LabelContext, { ...labelProps, ref: labelRef, elementType: "span" }],
+        [LabelContext, {...labelProps, ref: labelRef, elementType: 'span'}],
         [
           ButtonContext,
-          { ...triggerProps, ref: buttonRef, isPressed: state.isOpen },
+          {...triggerProps, ref: buttonRef, isPressed: state.isOpen}
         ],
         [OverlayTriggerStateContext, state],
         [
           PopoverContext,
           {
-            trigger: "Select",
+            trigger: 'Select',
             triggerRef: buttonRef,
             scrollRef,
-            placement: "bottom start",
-            style: { "--trigger-width": buttonWidth } as React.CSSProperties,
-            "aria-labelledby": menuProps["aria-labelledby"],
-          },
+            placement: 'bottom start',
+            style: {'--trigger-width': buttonWidth} as React.CSSProperties,
+            'aria-labelledby': menuProps['aria-labelledby']
+          }
         ],
-        [ListBoxContext, { ...menuProps, ref: scrollRef }],
+        [ListBoxContext, {...menuProps, ref: scrollRef}],
         [ListStateContext, state],
         [
           TextContext,
           {
             slots: {
               description: descriptionProps,
-              errorMessage: errorMessageProps,
-            },
-          },
+              errorMessage: errorMessageProps
+            }
+          }
         ],
-        [FieldErrorContext, validation],
-      ]}
-    >
+        [FieldErrorContext, validation]
+      ]}>
       <div
         {...DOMProps}
         {...renderProps}
@@ -291,16 +290,14 @@ function SelectInner<T extends object>({
         data-open={state.isOpen || undefined}
         data-disabled={props.isDisabled || undefined}
         data-invalid={validation.isInvalid || undefined}
-        data-required={props.isRequired || undefined}
-      />
+        data-required={props.isRequired || undefined} />
       <HiddenSelect
         autoComplete={props.autoComplete}
         state={state}
         triggerRef={buttonRef}
         label={label}
         name={props.name}
-        isDisabled={props.isDisabled}
-      />
+        isDisabled={props.isDisabled} />
     </Provider>
   );
 }
@@ -310,11 +307,11 @@ export interface SelectValueRenderProps<T> {
    * Whether the value is a placeholder.
    * @selector [data-placeholder]
    */
-  isPlaceholder: boolean;
+  isPlaceholder: boolean,
   /** The object value of the currently selected item. */
-  selectedItem: T | null;
+  selectedItem: T | null,
   /** The textValue of the currently selected item. */
-  selectedText: string | null;
+  selectedText: string | null
 }
 
 export interface SelectValueProps<T extends object>
@@ -335,13 +332,13 @@ export const SelectValue = /*#__PURE__*/ (forwardRef as forwardRefType)(
   ) {
     [props, ref] = useContextProps(props, ref, SelectValueContext);
     let state = useContext(SelectStateContext)!;
-    let { placeholder } = useSlottedContext(SelectContext)!;
+    let {placeholder} = useSlottedContext(SelectContext)!;
     let selectedItem =
       state.selectedKey != null
         ? state.collection.getItem(state.selectedKey)
         : null;
     let rendered = selectedItem?.props.children;
-    if (typeof rendered === "function") {
+    if (typeof rendered === 'function') {
       // If the selected item has a function as a child, we need to call it to render to React.JSX.
       let fn = rendered as (s: ItemRenderProps) => ReactNode;
       rendered = fn({
@@ -351,26 +348,26 @@ export const SelectValue = /*#__PURE__*/ (forwardRef as forwardRefType)(
         isFocused: false,
         isFocusVisible: false,
         isDisabled: false,
-        selectionMode: "single",
-        selectionBehavior: "toggle",
+        selectionMode: 'single',
+        selectionBehavior: 'toggle'
       });
     }
 
     let stringFormatter = useLocalizedStringFormatter(
       intlMessages,
-      "react-aria-components"
+      'react-aria-components'
     );
 
     let renderProps = useRenderProps({
       ...props,
       defaultChildren:
-        rendered ?? placeholder ?? stringFormatter.format("selectPlaceholder"),
-      defaultClassName: "react-aria-SelectValue",
+        rendered ?? placeholder ?? stringFormatter.format('selectPlaceholder'),
+      defaultClassName: 'react-aria-SelectValue',
       values: {
         selectedItem: (state.selectedItem?.value as T) ?? null,
         selectedText: state.selectedItem?.textValue ?? null,
-        isPlaceholder: !selectedItem,
-      },
+        isPlaceholder: !selectedItem
+      }
     });
 
     let DOMProps = filterDOMProps(props);
@@ -380,8 +377,7 @@ export const SelectValue = /*#__PURE__*/ (forwardRef as forwardRefType)(
         ref={ref}
         {...DOMProps}
         {...renderProps}
-        data-placeholder={!selectedItem || undefined}
-      >
+        data-placeholder={!selectedItem || undefined}>
         {/* clear description and error message slots */}
         <TextContext.Provider value={undefined}>
           {renderProps.children}

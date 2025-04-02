@@ -10,12 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
-import React, { forwardRef, Ref, useRef } from "react";
-import { SpectrumTextFieldProps, TextFieldRef } from "@react-types/textfield";
-import { TextFieldBase } from "./TextFieldBase";
-import { useFormProps } from "@react-spectrum/form";
-import { useProviderProps } from "@react-spectrum/provider";
-import { useTextField } from "@react-aria-nutrient/textfield";
+import React, {forwardRef, Ref, useRef} from 'react';
+import {SpectrumTextFieldProps, TextFieldRef} from '@react-types/textfield';
+import {TextFieldBase} from './TextFieldBase';
+import {useFormProps} from '@react-spectrum/form';
+import {useProviderProps} from '@react-spectrum/provider';
+import {useTextField} from '@react-aria-nutrient/textfield';
 
 /**
  * TextFields are text inputs that allow users to input custom text entries
@@ -32,9 +32,9 @@ export const TextField = forwardRef(function TextField(
   let inputRef = useRef<HTMLInputElement>(null);
   let result = useTextField(props, inputRef);
 
-  if (props.placeholder && process.env.NODE_ENV !== "production") {
+  if (props.placeholder && process.env.NODE_ENV !== 'production') {
     console.warn(
-      "Placeholders are deprecated due to accessibility issues. Please use help text instead. See the docs for details: https://react-spectrum.adobe.com/react-spectrum/TextField.html#help-text"
+      'Placeholders are deprecated due to accessibility issues. Please use help text instead. See the docs for details: https://react-spectrum.adobe.com/react-spectrum/TextField.html#help-text'
     );
   }
 

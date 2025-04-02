@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { AriaGridListProps, useGridList } from "@react-aria-nutrient/gridlist";
+import {AriaGridListProps, useGridList} from '@react-aria-nutrient/gridlist';
 import {
   AsyncLoadable,
   DOMRef,
@@ -18,30 +18,30 @@ import {
   LoadingState,
   Node,
   SpectrumSelectionProps,
-  StyleProps,
-} from "@react-types/shared";
-import { classNames, useDOMRef, useStyleProps } from "@react-spectrum/utils";
-import type { DragAndDropHooks } from "@react-spectrum/dnd";
+  StyleProps
+} from '@react-types/shared';
+import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
+import type {DragAndDropHooks} from '@react-spectrum/dnd';
 import type {
   DraggableCollectionState,
-  DroppableCollectionState,
-} from "@react-stately/dnd";
-import type { DroppableCollectionResult } from "@react-aria-nutrient/dnd";
+  DroppableCollectionState
+} from '@react-stately/dnd';
+import type {DroppableCollectionResult} from '@react-aria-nutrient/dnd';
 import {
   filterDOMProps,
   mergeProps,
-  useLayoutEffect,
-} from "@react-aria-nutrient/utils";
-import { FocusRing, FocusScope } from "@react-aria-nutrient/focus";
-import InsertionIndicator from "./InsertionIndicator";
+  useLayoutEffect
+} from '@react-aria-nutrient/utils';
+import {FocusRing, FocusScope} from '@react-aria-nutrient/focus';
+import InsertionIndicator from './InsertionIndicator';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { ListKeyboardDelegate } from "@react-aria-nutrient/selection";
-import { ListState, useListState } from "@react-stately/list";
-import listStyles from "./styles.css";
-import { ListViewItem } from "./ListViewItem";
-import { ListViewLayout } from "./ListViewLayout";
-import { ProgressCircle } from "@react-spectrum/progress";
+import intlMessages from '../intl/*.json';
+import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
+import {ListState, useListState} from '@react-stately/list';
+import listStyles from './styles.css';
+import {ListViewItem} from './ListViewItem';
+import {ListViewLayout} from './ListViewLayout';
+import {ProgressCircle} from '@react-spectrum/progress';
 import React, {
   JSX,
   ReactElement,
@@ -50,57 +50,57 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState,
-} from "react";
-import RootDropIndicator from "./RootDropIndicator";
-import { DragPreview as SpectrumDragPreview } from "./DragPreview";
-import { useLocalizedStringFormatter } from "@react-aria-nutrient/i18n";
-import { useProvider } from "@react-spectrum/provider";
-import { Virtualizer } from "@react-aria-nutrient/virtualizer";
+  useState
+} from 'react';
+import RootDropIndicator from './RootDropIndicator';
+import {DragPreview as SpectrumDragPreview} from './DragPreview';
+import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
+import {useProvider} from '@react-spectrum/provider';
+import {Virtualizer} from '@react-aria-nutrient/virtualizer';
 
 export interface SpectrumListViewProps<T>
-  extends Omit<AriaGridListProps<T>, "keyboardNavigationBehavior">,
+  extends Omit<AriaGridListProps<T>, 'keyboardNavigationBehavior'>,
     StyleProps,
     SpectrumSelectionProps,
-    Omit<AsyncLoadable, "isLoading"> {
+    Omit<AsyncLoadable, 'isLoading'> {
   /**
    * Sets the amount of vertical padding within each cell.
    * @default 'regular'
    */
-  density?: "compact" | "regular" | "spacious";
+  density?: 'compact' | 'regular' | 'spacious',
   /** Whether the ListView should be displayed with a quiet style. */
-  isQuiet?: boolean;
+  isQuiet?: boolean,
   /** The current loading state of the ListView. Determines whether or not the progress circle should be shown. */
-  loadingState?: LoadingState;
+  loadingState?: LoadingState,
   /**
    * Sets the text behavior for the row contents.
    * @default 'truncate'
    */
-  overflowMode?: "truncate" | "wrap";
+  overflowMode?: 'truncate' | 'wrap',
   /** Sets what the ListView should render when there is no content to display. */
-  renderEmptyState?: () => JSX.Element;
+  renderEmptyState?: () => JSX.Element,
   /**
    * Handler that is called when a user performs an action on an item. The exact user event depends on
    * the collection's `selectionStyle` prop and the interaction modality.
    */
-  onAction?: (key: Key) => void;
+  onAction?: (key: Key) => void,
   /**
    * The drag and drop hooks returned by `useDragAndDrop` used to enable drag and drop behavior for the ListView.
    */
-  dragAndDropHooks?: DragAndDropHooks["dragAndDropHooks"];
+  dragAndDropHooks?: DragAndDropHooks['dragAndDropHooks']
 }
 
 interface ListViewContextValue<T> {
-  state: ListState<T>;
-  dragState: DraggableCollectionState | null;
-  dropState: DroppableCollectionState | null;
-  dragAndDropHooks?: DragAndDropHooks["dragAndDropHooks"];
-  onAction?: (key: Key) => void;
-  isListDraggable: boolean;
-  isListDroppable: boolean;
-  layout: ListViewLayout<T>;
-  loadingState?: LoadingState;
-  renderEmptyState?: () => JSX.Element;
+  state: ListState<T>,
+  dragState: DraggableCollectionState | null,
+  dropState: DroppableCollectionState | null,
+  dragAndDropHooks?: DragAndDropHooks['dragAndDropHooks'],
+  onAction?: (key: Key) => void,
+  isListDraggable: boolean,
+  isListDroppable: boolean,
+  layout: ListViewLayout<T>,
+  loadingState?: LoadingState,
+  renderEmptyState?: () => JSX.Element
 }
 
 export const ListViewContext =
@@ -109,28 +109,28 @@ export const ListViewContext =
 const ROW_HEIGHTS = {
   compact: {
     medium: 32,
-    large: 40,
+    large: 40
   },
   regular: {
     medium: 40,
-    large: 50,
+    large: 50
   },
   spacious: {
     medium: 48,
-    large: 60,
-  },
+    large: 60
+  }
 };
 
 function useListLayout<T>(
   state: ListState<T>,
-  density: SpectrumListViewProps<T>["density"],
-  overflowMode: SpectrumListViewProps<T>["overflowMode"]
+  density: SpectrumListViewProps<T>['density'],
+  overflowMode: SpectrumListViewProps<T>['overflowMode']
 ) {
-  let { scale } = useProvider();
+  let {scale} = useProvider();
   let layout = useMemo(
     () =>
       new ListViewLayout<T>({
-        estimatedRowHeight: ROW_HEIGHTS[density || "regular"][scale],
+        estimatedRowHeight: ROW_HEIGHTS[density || 'regular'][scale]
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [scale, density, overflowMode]
@@ -147,11 +147,11 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
   ref: DOMRef<HTMLDivElement>
 ) {
   let {
-    density = "regular",
+    density = 'regular',
     loadingState,
     onLoadMore,
     isQuiet,
-    overflowMode = "truncate",
+    overflowMode = 'truncate',
     onAction,
     dragAndDropHooks,
     renderEmptyState,
@@ -164,18 +164,18 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
   useEffect(() => {
     if (
       dragHooksProvided.current !== isListDraggable &&
-      process.env.NODE_ENV !== "production"
+      process.env.NODE_ENV !== 'production'
     ) {
       console.warn(
-        "Drag hooks were provided during one render, but not another. This should be avoided as it may produce unexpected behavior."
+        'Drag hooks were provided during one render, but not another. This should be avoided as it may produce unexpected behavior.'
       );
     }
     if (
       dropHooksProvided.current !== isListDroppable &&
-      process.env.NODE_ENV !== "production"
+      process.env.NODE_ENV !== 'production'
     ) {
       console.warn(
-        "Drop hooks were provided during one render, but not another. This should be avoided as it may produce unexpected behavior."
+        'Drop hooks were provided during one render, but not another. This should be avoided as it may produce unexpected behavior.'
       );
     }
   }, [isListDraggable, isListDroppable]);
@@ -184,23 +184,23 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
   let state = useListState({
     ...props,
     selectionBehavior:
-      props.selectionStyle === "highlight" ? "replace" : "toggle",
+      props.selectionStyle === 'highlight' ? 'replace' : 'toggle'
   });
-  let { collection, selectionManager } = state;
-  let isLoading = loadingState === "loading" || loadingState === "loadingMore";
+  let {collection, selectionManager} = state;
+  let isLoading = loadingState === 'loading' || loadingState === 'loadingMore';
 
-  let { styleProps } = useStyleProps(props);
+  let {styleProps} = useStyleProps(props);
   let dragState: DraggableCollectionState | null = null;
   let preview = useRef(null);
   if (isListDraggable && dragAndDropHooks) {
     dragState = dragAndDropHooks.useDraggableCollectionState!({
       collection,
       selectionManager,
-      preview,
+      preview
     });
     dragAndDropHooks.useDraggableCollection!({}, dragState, domRef);
   }
-  let layout = useListLayout(state, props.density || "regular", overflowMode);
+  let layout = useListLayout(state, props.density || 'regular', overflowMode);
 
   let DragPreview = dragAndDropHooks?.DragPreview;
   let dropState: DroppableCollectionState | null = null;
@@ -209,7 +209,7 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
   if (isListDroppable && dragAndDropHooks) {
     dropState = dragAndDropHooks.useDroppableCollectionState!({
       collection,
-      selectionManager,
+      selectionManager
     });
     droppableCollection = dragAndDropHooks.useDroppableCollection!(
       {
@@ -219,23 +219,23 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
             ? undefined
             : selectionManager.disabledKeys,
           ref: domRef,
-          layoutDelegate: layout,
+          layoutDelegate: layout
         }),
-        dropTargetDelegate: layout,
+        dropTargetDelegate: layout
       },
       dropState,
       domRef
     );
 
-    isRootDropTarget = dropState.isDropTarget({ type: "root" });
+    isRootDropTarget = dropState.isDropTarget({type: 'root'});
   }
 
-  let { gridProps } = useGridList(
+  let {gridProps} = useGridList(
     {
       ...props,
       isVirtualized: true,
       layoutDelegate: layout,
-      onAction,
+      onAction
     },
     state,
     domRef
@@ -243,9 +243,9 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
 
   let focusedKey = selectionManager.focusedKey;
   let dropTargetKey: Key | null = null;
-  if (dropState?.target?.type === "item") {
+  if (dropState?.target?.type === 'item') {
     dropTargetKey = dropState.target.key;
-    if (dropState.target.dropPosition === "after") {
+    if (dropState.target.dropPosition === 'after') {
       // Normalize to the "before" drop position since we only render those in the DOM.
       dropTargetKey =
         state.collection.getKeyAfter(dropTargetKey) ?? dropTargetKey;
@@ -291,11 +291,10 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
         isListDroppable,
         layout,
         loadingState,
-        renderEmptyState,
-      }}
-    >
+        renderEmptyState
+      }}>
       <FocusScope>
-        <FocusRing focusRingClass={classNames(listStyles, "focus-ring")}>
+        <FocusRing focusRingClass={classNames(listStyles, 'focus-ring')}>
           <Virtualizer
             {...mergeProps(
               isListDroppable ? droppableCollection?.collectionProps : null,
@@ -311,34 +310,33 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
             scrollDirection="vertical"
             className={classNames(
               listStyles,
-              "react-spectrum-ListView",
+              'react-spectrum-ListView',
               `react-spectrum-ListView--${density}`,
-              "react-spectrum-ListView--emphasized",
+              'react-spectrum-ListView--emphasized',
               {
-                "react-spectrum-ListView--quiet": isQuiet,
-                "react-spectrum-ListView--loadingMore":
-                  loadingState === "loadingMore",
-                "react-spectrum-ListView--draggable": !!isListDraggable,
-                "react-spectrum-ListView--dropTarget": !!isRootDropTarget,
-                "react-spectrum-ListView--isVerticalScrollbarVisible":
+                'react-spectrum-ListView--quiet': isQuiet,
+                'react-spectrum-ListView--loadingMore':
+                  loadingState === 'loadingMore',
+                'react-spectrum-ListView--draggable': !!isListDraggable,
+                'react-spectrum-ListView--dropTarget': !!isRootDropTarget,
+                'react-spectrum-ListView--isVerticalScrollbarVisible':
                   isVerticalScrollbarVisible,
-                "react-spectrum-ListView--isHorizontalScrollbarVisible":
+                'react-spectrum-ListView--isHorizontalScrollbarVisible':
                   isHorizontalScrollbarVisible,
-                "react-spectrum-ListView--hasAnyChildren": hasAnyChildren,
-                "react-spectrum-ListView--wrap": overflowMode === "wrap",
+                'react-spectrum-ListView--hasAnyChildren': hasAnyChildren,
+                'react-spectrum-ListView--wrap': overflowMode === 'wrap'
               },
               styleProps.className
             )}
             layout={layout}
-            layoutOptions={useMemo(() => ({ isLoading }), [isLoading])}
-            collection={collection}
-          >
+            layoutOptions={useMemo(() => ({isLoading}), [isLoading])}
+            collection={collection}>
             {useCallback((type, item: Node<T>) => {
-              if (type === "item") {
+              if (type === 'item') {
                 return <Item item={item} />;
-              } else if (type === "loader") {
+              } else if (type === 'loader') {
                 return <LoadingView />;
-              } else if (type === "placeholder") {
+              } else if (type === 'placeholder') {
                 return <EmptyState />;
               }
             }, [])}
@@ -369,8 +367,7 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
                 item={item}
                 itemCount={itemCount}
                 itemHeight={itemHeight}
-                density={density}
-              />
+                density={density} />
             );
           }}
         </DragPreview>
@@ -381,8 +378,8 @@ export const ListView = React.forwardRef(function ListView<T extends object>(
   props: SpectrumListViewProps<T> & { ref?: DOMRef<HTMLDivElement> }
 ) => ReactElement;
 
-function Item({ item }: { item: Node<unknown> }) {
-  let { isListDroppable, state, onAction } = useContext(ListViewContext)!;
+function Item({item}: { item: Node<unknown> }) {
+  let {isListDroppable, state, onAction} = useContext(ListViewContext)!;
   return (
     <>
       {isListDroppable && state.collection.getKeyBefore(item.key) == null && (
@@ -391,26 +388,24 @@ function Item({ item }: { item: Node<unknown> }) {
       {isListDroppable && (
         <InsertionIndicator
           key={`${item.key}-before`}
-          target={{ key: item.key, type: "item", dropPosition: "before" }}
-        />
+          target={{key: item.key, type: 'item', dropPosition: 'before'}} />
       )}
       <ListViewItem item={item} isEmphasized hasActions={!!onAction} />
       {isListDroppable && (
         <InsertionIndicator
           key={`${item.key}-after`}
-          target={{ key: item.key, type: "item", dropPosition: "after" }}
-          isPresentationOnly={state.collection.getKeyAfter(item.key) != null}
-        />
+          target={{key: item.key, type: 'item', dropPosition: 'after'}}
+          isPresentationOnly={state.collection.getKeyAfter(item.key) != null} />
       )}
     </>
   );
 }
 
 function LoadingView() {
-  let { state } = useContext(ListViewContext)!;
+  let {state} = useContext(ListViewContext)!;
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/list"
+    '@react-spectrum/list'
   );
   return (
     <CenteredWrapper>
@@ -418,16 +413,15 @@ function LoadingView() {
         isIndeterminate
         aria-label={
           state.collection.size > 0
-            ? stringFormatter.format("loadingMore")
-            : stringFormatter.format("loading")
-        }
-      />
+            ? stringFormatter.format('loadingMore')
+            : stringFormatter.format('loading')
+        } />
     </CenteredWrapper>
   );
 }
 
 function EmptyState() {
-  let { renderEmptyState } = useContext(ListViewContext)!;
+  let {renderEmptyState} = useContext(ListViewContext)!;
   let emptyState = renderEmptyState ? renderEmptyState() : null;
   if (emptyState == null) {
     return null;
@@ -436,21 +430,20 @@ function EmptyState() {
   return <CenteredWrapper>{emptyState}</CenteredWrapper>;
 }
 
-function CenteredWrapper({ children }) {
-  let { state } = useContext(ListViewContext)!;
+function CenteredWrapper({children}) {
+  let {state} = useContext(ListViewContext)!;
   return (
     <div
       role="row"
       aria-rowindex={state.collection.size + 1}
       className={classNames(
         listStyles,
-        "react-spectrum-ListView-centeredWrapper",
+        'react-spectrum-ListView-centeredWrapper',
         {
-          "react-spectrum-ListView-centeredWrapper--loadingMore":
-            state.collection.size > 0,
+          'react-spectrum-ListView-centeredWrapper--loadingMore':
+            state.collection.size > 0
         }
-      )}
-    >
+      )}>
       <div role="gridcell">{children}</div>
     </div>
   );

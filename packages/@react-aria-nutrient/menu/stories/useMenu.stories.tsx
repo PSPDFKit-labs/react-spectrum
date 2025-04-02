@@ -10,27 +10,27 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
-import { DismissButton, useOverlay } from "@react-aria-nutrient/overlays";
-import { FocusScope } from "@react-aria-nutrient/focus";
-import { Item } from "@react-stately/collections";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React from "react";
-import { useButton } from "@react-aria-nutrient/button";
+import {action} from '@storybook/addon-actions';
+import {DismissButton, useOverlay} from '@react-aria-nutrient/overlays';
+import {FocusScope} from '@react-aria-nutrient/focus';
+import {Item} from '@react-stately/collections';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React from 'react';
+import {useButton} from '@react-aria-nutrient/button';
 import {
   useFocus,
-  useInteractOutside,
-} from "@react-aria-nutrient/interactions";
+  useInteractOutside
+} from '@react-aria-nutrient/interactions';
 import {
   useMenu,
   useMenuItem,
-  useMenuTrigger,
-} from "@react-aria-nutrient/menu";
-import { useMenuTriggerState } from "@react-stately/menu";
-import { useTreeState } from "@react-stately/tree";
+  useMenuTrigger
+} from '@react-aria-nutrient/menu';
+import {useMenuTriggerState} from '@react-stately/menu';
+import {useTreeState} from '@react-stately/tree';
 
 export default {
-  title: "useMenu",
+  title: 'useMenu'
 };
 
 export const DoubleMenuFiresOnInteractOutside = {
@@ -53,7 +53,7 @@ export const DoubleMenuFiresOnInteractOutside = {
       <input aria-label="input after" />
     </div>
   ),
-  name: "double menu fires onInteractOutside",
+  name: 'double menu fires onInteractOutside'
 };
 
 function MenuButton(props) {
@@ -62,16 +62,16 @@ function MenuButton(props) {
 
   // Get props for the menu trigger and menu elements
   let ref = React.useRef(null);
-  let { menuTriggerProps, menuProps } = useMenuTrigger({}, state, ref);
+  let {menuTriggerProps, menuProps} = useMenuTrigger({}, state, ref);
 
   // Get props for the button based on the trigger props from useMenuTrigger
-  let { buttonProps } = useButton(menuTriggerProps, ref);
+  let {buttonProps} = useButton(menuTriggerProps, ref);
 
   return (
-    <div style={{ position: "relative", display: "inline-block" }}>
-      <button {...buttonProps} ref={ref} style={{ height: 30, fontSize: 14 }}>
+    <div style={{position: 'relative', display: 'inline-block'}}>
+      <button {...buttonProps} ref={ref} style={{height: 30, fontSize: 14}}>
         {props.label}
-        <span aria-hidden="true" style={{ paddingLeft: 5 }}>
+        <span aria-hidden="true" style={{paddingLeft: 5}}>
           ▼
         </span>
       </button>
@@ -80,8 +80,7 @@ function MenuButton(props) {
           {...props}
           domProps={menuProps}
           autoFocus={state.focusStrategy}
-          onClose={() => state.close()}
-        />
+          onClose={() => state.close()} />
       )}
     </div>
   );
@@ -89,11 +88,11 @@ function MenuButton(props) {
 
 function MenuPopup(props) {
   // Create menu state based on the incoming props
-  let state = useTreeState({ ...props, selectionMode: "none" });
+  let state = useTreeState({...props, selectionMode: 'none'});
 
   // Get props for the menu element
   let ref = React.useRef(null);
-  let { menuProps } = useMenu(props, state, ref);
+  let {menuProps} = useMenu(props, state, ref);
 
   // Handle events that should cause the menu to close,
   // e.g. blur, clicking outside, or pressing the escape key.
@@ -101,14 +100,14 @@ function MenuPopup(props) {
   // before useOverlay so this action will get called
   useInteractOutside({
     ref: overlayRef,
-    onInteractOutside: action("onInteractOutside"),
+    onInteractOutside: action('onInteractOutside')
   });
-  let { overlayProps } = useOverlay(
+  let {overlayProps} = useOverlay(
     {
       onClose: props.onClose,
       shouldCloseOnBlur: true,
       isOpen: true,
-      isDismissable: true,
+      isDismissable: true
     },
     overlayRef
   );
@@ -125,23 +124,21 @@ function MenuPopup(props) {
           {...mergeProps(menuProps, props.domProps)}
           ref={ref}
           style={{
-            position: "absolute",
-            width: "100%",
-            margin: "4px 0 0 0",
+            position: 'absolute',
+            width: '100%',
+            margin: '4px 0 0 0',
             padding: 0,
-            listStyle: "none",
-            border: "1px solid gray",
-            background: "lightgray",
-          }}
-        >
+            listStyle: 'none',
+            border: '1px solid gray',
+            background: 'lightgray'
+          }}>
           {[...state.collection].map((item) => (
             <MenuItem
               key={item.key}
               item={item}
               state={state}
               onClose={props.onClose}
-              onAction={props.onAction}
-            />
+              onAction={props.onAction} />
           ))}
         </ul>
         <DismissButton onDismiss={props.onClose} />
@@ -150,15 +147,15 @@ function MenuPopup(props) {
   );
 }
 
-function MenuItem({ item, state, onAction, onClose }) {
+function MenuItem({item, state, onAction, onClose}) {
   // Get props for the menu item element
   let ref = React.useRef(null);
-  let { menuItemProps } = useMenuItem(
+  let {menuItemProps} = useMenuItem(
     {
       key: item.key,
       isDisabled: item.isDisabled,
       onAction,
-      onClose,
+      onClose
     },
     state,
     ref
@@ -167,20 +164,19 @@ function MenuItem({ item, state, onAction, onClose }) {
   // Handle focus events so we can apply highlighted
   // style to the focused menu item
   let [isFocused, setFocused] = React.useState(false);
-  let { focusProps } = useFocus({ onFocusChange: setFocused });
+  let {focusProps} = useFocus({onFocusChange: setFocused});
 
   return (
     <li
       {...mergeProps(menuItemProps, focusProps)}
       ref={ref}
       style={{
-        background: isFocused ? "gray" : "transparent",
-        color: isFocused ? "white" : "black",
-        padding: "2px 5px",
-        outline: "none",
-        cursor: "pointer",
-      }}
-    >
+        background: isFocused ? 'gray' : 'transparent',
+        color: isFocused ? 'white' : 'black',
+        padding: '2px 5px',
+        outline: 'none',
+        cursor: 'pointer'
+      }}>
       {item.rendered}
     </li>
   );

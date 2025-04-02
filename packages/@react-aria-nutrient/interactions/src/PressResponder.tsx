@@ -10,30 +10,30 @@
  * governing permissions and limitations under the License.
  */
 
-import { FocusableElement } from "@react-types/shared";
+import {FocusableElement} from '@react-types/shared';
 import {
   mergeProps,
   useObjectRef,
-  useSyncRef,
-} from "@react-aria-nutrient/utils";
-import { PressProps } from "./usePress";
-import { PressResponderContext } from "./context";
+  useSyncRef
+} from '@react-aria-nutrient/utils';
+import {PressProps} from './usePress';
+import {PressResponderContext} from './context';
 import React, {
   ForwardedRef,
   ReactNode,
   useContext,
   useEffect,
   useMemo,
-  useRef,
-} from "react";
+  useRef
+} from 'react';
 
 interface PressResponderProps extends PressProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const PressResponder = React.forwardRef(
   (
-    { children, ...props }: PressResponderProps,
+    {children, ...props}: PressResponderProps,
     ref: ForwardedRef<FocusableElement>
   ) => {
     let isRegistered = useRef(false);
@@ -47,17 +47,17 @@ export const PressResponder = React.forwardRef(
         if (prevContext) {
           prevContext.register();
         }
-      },
+      }
     });
 
     useSyncRef(prevContext, ref);
 
     useEffect(() => {
       if (!isRegistered.current) {
-        if (process.env.NODE_ENV !== "production") {
+        if (process.env.NODE_ENV !== 'production') {
           console.warn(
-            "A PressResponder was rendered without a pressable child. " +
-              "Either call the usePress hook, or wrap your DOM node with <Pressable> component."
+            'A PressResponder was rendered without a pressable child. ' +
+              'Either call the usePress hook, or wrap your DOM node with <Pressable> component.'
           );
         }
         isRegistered.current = true; // only warn once in strict mode.
@@ -73,11 +73,11 @@ export const PressResponder = React.forwardRef(
 );
 
 export function ClearPressResponder({
-  children,
+  children
 }: {
-  children: ReactNode;
+  children: ReactNode
 }): ReactNode {
-  let context = useMemo(() => ({ register: () => {} }), []);
+  let context = useMemo(() => ({register: () => {}}), []);
   return (
     <PressResponderContext.Provider value={context}>
       {children}

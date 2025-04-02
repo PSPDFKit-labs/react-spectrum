@@ -13,31 +13,31 @@
 import {
   AriaAutocompleteProps,
   CollectionOptions,
-  useAutocomplete,
-} from "@react-aria-nutrient/autocomplete";
+  useAutocomplete
+} from '@react-aria-nutrient/autocomplete';
 import {
   AutocompleteState,
-  useAutocompleteState,
-} from "@react-stately/autocomplete";
-import { InputContext } from "./Input";
-import { mergeProps } from "@react-aria-nutrient/utils";
+  useAutocompleteState
+} from '@react-stately/autocomplete';
+import {InputContext} from './Input';
+import {mergeProps} from '@react-aria-nutrient/utils';
 import {
   Provider,
   removeDataAttributes,
   SlotProps,
   SlottedContextValue,
-  useSlottedContext,
-} from "./utils";
-import React, { createContext, ReactNode, RefObject, useRef } from "react";
-import { SearchFieldContext } from "./SearchField";
-import { TextFieldContext } from "./TextField";
+  useSlottedContext
+} from './utils';
+import React, {createContext, ReactNode, RefObject, useRef} from 'react';
+import {SearchFieldContext} from './SearchField';
+import {TextFieldContext} from './TextField';
 
 export interface AutocompleteProps extends AriaAutocompleteProps, SlotProps {}
 
 interface InternalAutocompleteContextValue {
-  filter?: (nodeTextValue: string) => boolean;
-  collectionProps: CollectionOptions;
-  collectionRef: RefObject<HTMLElement | null>;
+  filter?: (nodeTextValue: string) => boolean,
+  collectionProps: CollectionOptions,
+  collectionRef: RefObject<HTMLElement | null>
 }
 
 export const AutocompleteContext =
@@ -56,7 +56,7 @@ export const UNSTABLE_InternalAutocompleteContext =
 export function Autocomplete(props: AutocompleteProps): ReactNode {
   let ctx = useSlottedContext(AutocompleteContext, props.slot);
   props = mergeProps(ctx, props);
-  let { filter, disableAutoFocusFirst } = props;
+  let {filter, disableAutoFocusFirst} = props;
   let state = useAutocompleteState(props);
   let inputRef = useRef<HTMLInputElement | null>(null);
   let collectionRef = useRef<HTMLElement>(null);
@@ -64,14 +64,14 @@ export function Autocomplete(props: AutocompleteProps): ReactNode {
     textFieldProps,
     collectionProps,
     collectionRef: mergedCollectionRef,
-    filter: filterFn,
+    filter: filterFn
   } = useAutocomplete(
     {
       ...removeDataAttributes(props),
       filter,
       disableAutoFocusFirst,
       inputRef,
-      collectionRef,
+      collectionRef
     },
     state
   );
@@ -82,17 +82,16 @@ export function Autocomplete(props: AutocompleteProps): ReactNode {
         [AutocompleteStateContext, state],
         [SearchFieldContext, textFieldProps],
         [TextFieldContext, textFieldProps],
-        [InputContext, { ref: inputRef }],
+        [InputContext, {ref: inputRef}],
         [
           UNSTABLE_InternalAutocompleteContext,
           {
             filter: filterFn,
             collectionProps,
-            collectionRef: mergedCollectionRef,
-          },
-        ],
-      ]}
-    >
+            collectionRef: mergedCollectionRef
+          }
+        ]
+      ]}>
       {props.children}
     </Provider>
   );

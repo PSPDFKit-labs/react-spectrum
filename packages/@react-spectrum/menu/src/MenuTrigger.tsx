@@ -15,21 +15,21 @@ import {
   SlotProvider,
   unwrapDOMRef,
   useDOMRef,
-  useIsMobileDevice,
-} from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { MenuContext } from "./context";
-import { Placement } from "@react-types/overlays";
-import { Popover, Tray } from "@react-spectrum/overlays";
+  useIsMobileDevice
+} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {MenuContext} from './context';
+import {Placement} from '@react-types/overlays';
+import {Popover, Tray} from '@react-spectrum/overlays';
 import {
   PressResponder,
-  useInteractOutside,
-} from "@react-aria-nutrient/interactions";
-import React, { forwardRef, Fragment, useRef } from "react";
-import { SpectrumMenuTriggerProps } from "@react-types/menu";
-import styles from "@adobe/spectrum-css-temp/components/menu/vars.css";
-import { useMenuTrigger } from "@react-aria-nutrient/menu";
-import { useMenuTriggerState } from "@react-stately/menu";
+  useInteractOutside
+} from '@react-aria-nutrient/interactions';
+import React, {forwardRef, Fragment, useRef} from 'react';
+import {SpectrumMenuTriggerProps} from '@react-types/menu';
+import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
+import {useMenuTrigger} from '@react-aria-nutrient/menu';
+import {useMenuTriggerState} from '@react-stately/menu';
 
 /**
  * The MenuTrigger serves as a wrapper around a Menu and its associated trigger,
@@ -45,34 +45,34 @@ export const MenuTrigger = forwardRef(function MenuTrigger(
   let menuRef = useRef<HTMLDivElement>(null);
   let {
     children,
-    align = "start",
+    align = 'start',
     shouldFlip = true,
-    direction = "bottom",
+    direction = 'bottom',
     closeOnSelect,
-    trigger = "press",
+    trigger = 'press'
   } = props;
 
   let [menuTrigger, menu] = React.Children.toArray(children);
   let state = useMenuTriggerState(props);
 
-  let { menuTriggerProps, menuProps } = useMenuTrigger(
-    { trigger },
+  let {menuTriggerProps, menuProps} = useMenuTrigger(
+    {trigger},
     state,
     menuTriggerRef
   );
 
   let initialPlacement: Placement;
   switch (direction) {
-    case "left":
-    case "right":
-    case "start":
-    case "end":
+    case 'left':
+    case 'right':
+    case 'start':
+    case 'end':
       initialPlacement = `${direction} ${
-        align === "end" ? "bottom" : "top"
+        align === 'end' ? 'bottom' : 'top'
       }` as Placement;
       break;
-    case "bottom":
-    case "top":
+    case 'bottom':
+    case 'top':
     default:
       initialPlacement = `${direction} ${align}` as Placement;
   }
@@ -86,14 +86,14 @@ export const MenuTrigger = forwardRef(function MenuTrigger(
     autoFocus: state.focusStrategy || true,
     UNSAFE_style: isMobile
       ? {
-          width: "100%",
-          maxHeight: "inherit",
-        }
+        width: '100%',
+        maxHeight: 'inherit'
+      }
       : undefined,
     UNSAFE_className: classNames(styles, {
-      "spectrum-Menu-popover": !isMobile,
+      'spectrum-Menu-popover': !isMobile
     }),
-    state,
+    state
   };
 
   // Close when clicking outside the root menu when a submenu is open.
@@ -104,7 +104,7 @@ export const MenuTrigger = forwardRef(function MenuTrigger(
     onInteractOutside: () => {
       state?.close();
     },
-    isDisabled: !state.isOpen || state.expandedKeysStack.length === 0,
+    isDisabled: !state.isOpen || state.expandedKeysStack.length === 0
   });
 
   // On small screen devices, the menu is rendered in a tray, otherwise a popover.
@@ -120,18 +120,17 @@ export const MenuTrigger = forwardRef(function MenuTrigger(
       <Popover
         ref={rootOverlayRef}
         UNSAFE_style={{
-          clipPath: "unset",
-          overflow: "visible",
-          filter: "unset",
-          borderWidth: "0px",
+          clipPath: 'unset',
+          overflow: 'visible',
+          filter: 'unset',
+          borderWidth: '0px'
         }}
         state={state}
         triggerRef={menuTriggerRef}
         scrollRef={menuRef}
         placement={initialPlacement}
         hideArrow
-        shouldFlip={shouldFlip}
-      >
+        shouldFlip={shouldFlip}>
         {menu}
       </Popover>
     );
@@ -140,13 +139,11 @@ export const MenuTrigger = forwardRef(function MenuTrigger(
   return (
     <Fragment>
       <SlotProvider
-        slots={{ actionButton: { holdAffordance: trigger === "longPress" } }}
-      >
+        slots={{actionButton: {holdAffordance: trigger === 'longPress'}}}>
         <PressResponder
           {...menuTriggerProps}
           ref={menuTriggerRef}
-          isPressed={state.isOpen}
-        >
+          isPressed={state.isOpen}>
           {menuTrigger}
         </PressResponder>
       </SlotProvider>

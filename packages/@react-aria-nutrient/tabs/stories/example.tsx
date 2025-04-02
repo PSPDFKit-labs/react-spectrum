@@ -14,40 +14,38 @@ import {
   AriaTabListProps,
   useTab,
   useTabList,
-  useTabPanel,
-} from "@react-aria-nutrient/tabs";
-import React from "react";
-import { useTabListState } from "@react-stately/tabs";
+  useTabPanel
+} from '@react-aria-nutrient/tabs';
+import React from 'react';
+import {useTabListState} from '@react-stately/tabs';
 
 interface TabProps extends AriaTabListProps<any> {
-  shouldSelectOnPressUp?: boolean;
+  shouldSelectOnPressUp?: boolean
 }
 
-export function Tabs({ shouldSelectOnPressUp, ...props }: TabProps) {
+export function Tabs({shouldSelectOnPressUp, ...props}: TabProps) {
   let state = useTabListState(props);
   let ref = React.useRef(null);
-  let { tabListProps } = useTabList(props, state, ref);
+  let {tabListProps} = useTabList(props, state, ref);
   return (
-    <div style={{ height: "150px" }}>
+    <div style={{height: '150px'}}>
       <div
         {...tabListProps}
         ref={ref}
         style={{
-          display: "flex",
-          borderBottom: "1px solid grey",
-          borderLeft: "10px solid grey",
-          borderRight: "20px solid grey",
-          maxWidth: "400px",
-          overflow: "auto",
-        }}
-      >
+          display: 'flex',
+          borderBottom: '1px solid grey',
+          borderLeft: '10px solid grey',
+          borderRight: '20px solid grey',
+          maxWidth: '400px',
+          overflow: 'auto'
+        }}>
         {[...state.collection].map((item) => (
           <Tab
             key={item.key}
             item={item}
             state={state}
-            shouldSelectOnPressUp={shouldSelectOnPressUp}
-          />
+            shouldSelectOnPressUp={shouldSelectOnPressUp} />
         ))}
       </div>
       <TabPanel key={state.selectedItem?.key} state={state} />
@@ -55,10 +53,10 @@ export function Tabs({ shouldSelectOnPressUp, ...props }: TabProps) {
   );
 }
 
-function Tab({ shouldSelectOnPressUp, item, state }) {
-  let { key, rendered } = item;
+function Tab({shouldSelectOnPressUp, item, state}) {
+  let {key, rendered} = item;
   let ref = React.useRef(null);
-  let { tabProps } = useTab({ key, shouldSelectOnPressUp }, state, ref);
+  let {tabProps} = useTab({key, shouldSelectOnPressUp}, state, ref);
   let isSelected = state.selectedKey === key;
   let isDisabled = state.disabledKeys.has(key);
   return (
@@ -66,21 +64,20 @@ function Tab({ shouldSelectOnPressUp, item, state }) {
       {...tabProps}
       ref={ref}
       style={{
-        padding: "10px",
-        borderBottom: isSelected ? "3px solid blue" : undefined,
-        opacity: isDisabled ? "0.5" : undefined,
-      }}
-    >
+        padding: '10px',
+        borderBottom: isSelected ? '3px solid blue' : undefined,
+        opacity: isDisabled ? '0.5' : undefined
+      }}>
       {rendered}
     </div>
   );
 }
 
-function TabPanel({ state, ...props }) {
+function TabPanel({state, ...props}) {
   let ref = React.useRef(null);
-  let { tabPanelProps } = useTabPanel(props, state, ref);
+  let {tabPanelProps} = useTabPanel(props, state, ref);
   return (
-    <div {...tabPanelProps} ref={ref} style={{ padding: "10px" }}>
+    <div {...tabPanelProps} ref={ref} style={{padding: '10px'}}>
       {state.selectedItem?.props.children}
     </div>
   );

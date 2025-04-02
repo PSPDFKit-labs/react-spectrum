@@ -10,27 +10,27 @@
  * governing permissions and limitations under the License.
  */
 
-import { classNames } from "@react-spectrum/utils";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import React from "react";
-import { SliderProps, SliderThumbProps } from "@react-types/slider";
-import { SliderState, useSliderState } from "@react-stately/slider";
-import styles from "./story-slider.css";
-import { useNumberFormatter } from "@react-aria-nutrient/i18n";
-import { useSlider, useSliderThumb } from "@react-aria-nutrient/slider";
-import { VisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+import {classNames} from '@react-spectrum/utils';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import React from 'react';
+import {SliderProps, SliderThumbProps} from '@react-types/slider';
+import {SliderState, useSliderState} from '@react-stately/slider';
+import styles from './story-slider.css';
+import {useNumberFormatter} from '@react-aria-nutrient/i18n';
+import {useSlider, useSliderThumb} from '@react-aria-nutrient/slider';
+import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 interface StoryMultiSliderProps extends SliderProps {
-  children: React.ReactNode;
-  formatOptions?: Intl.NumberFormatOptions;
+  children: React.ReactNode,
+  formatOptions?: Intl.NumberFormatOptions
 }
 
 export function StoryMultiSlider(props: StoryMultiSliderProps) {
-  const { children } = props;
+  const {children} = props;
   const trackRef = React.useRef<HTMLDivElement>(null);
   const formatter = useNumberFormatter(props.formatOptions);
-  const state = useSliderState({ ...props, numberFormatter: formatter });
-  const { trackProps, labelProps, groupProps, outputProps } = useSlider(
+  const state = useSliderState({...props, numberFormatter: formatter});
+  const {trackProps, labelProps, groupProps, outputProps} = useSlider(
     props,
     state,
     trackRef
@@ -39,7 +39,7 @@ export function StoryMultiSlider(props: StoryMultiSliderProps) {
   const numThumbs = React.Children.count(children);
   if (numThumbs !== state.values.length) {
     throw new Error(
-      "You must have the same number of StoryThumb as the number of values in `defaultValue` or `value`."
+      'You must have the same number of StoryThumb as the number of values in `defaultValue` or `value`.'
     );
   }
 
@@ -70,8 +70,8 @@ export function StoryMultiSlider(props: StoryMultiSliderProps) {
                 sliderProps: props,
                 state,
                 trackRef,
-                index,
-              },
+                index
+              }
             } as any
           )
         )}
@@ -80,31 +80,31 @@ export function StoryMultiSlider(props: StoryMultiSliderProps) {
   );
 }
 
-interface StoryThumbProps extends Omit<SliderThumbProps, "index"> {}
+interface StoryThumbProps extends Omit<SliderThumbProps, 'index'> {}
 
 interface SliderStateContext {
-  sliderProps: StoryMultiSliderProps;
-  state: SliderState;
-  trackRef: React.RefObject<Element | null>;
-  index: number;
+  sliderProps: StoryMultiSliderProps,
+  state: SliderState,
+  trackRef: React.RefObject<Element | null>,
+  index: number
 }
 
 export function StoryThumb(props: StoryThumbProps) {
   if (!(props as any).__context) {
-    throw new Error("Cannot use StoryThumb outside of a StoryMultiSlider!");
+    throw new Error('Cannot use StoryThumb outside of a StoryMultiSlider!');
   }
 
-  const { label, isDisabled } = props;
+  const {label, isDisabled} = props;
   const context = (props as any).__context as SliderStateContext;
-  const { index, state, sliderProps } = context;
+  const {index, state, sliderProps} = context;
   const inputRef = React.useRef<HTMLInputElement>(null);
-  const { inputProps, thumbProps, labelProps } = useSliderThumb(
+  const {inputProps, thumbProps, labelProps} = useSliderThumb(
     {
       index,
       ...props,
       isDisabled: sliderProps.isDisabled || props.isDisabled,
       trackRef: context.trackRef,
-      inputRef,
+      inputRef
     },
     state
   );
@@ -113,17 +113,15 @@ export function StoryThumb(props: StoryThumbProps) {
     <FocusRing
       within
       focusRingClass={styles.thumbFocusVisible}
-      focusClass={styles.thumbFocused}
-    >
+      focusClass={styles.thumbFocused}>
       <div
         {...thumbProps}
-        className={classNames(styles, "thumb", "thumbHandle", {
-          thumbDisabled: isDisabled,
+        className={classNames(styles, 'thumb', 'thumbHandle', {
+          thumbDisabled: isDisabled
         })}
         style={{
-          left: `${state.getThumbPercent(index) * 100}%`,
-        }}
-      >
+          left: `${state.getThumbPercent(index) * 100}%`
+        }}>
         <VisuallyHidden isFocusable>
           <input className={styles.input} ref={inputRef} {...inputProps} />
         </VisuallyHidden>

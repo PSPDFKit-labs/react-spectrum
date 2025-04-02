@@ -16,28 +16,28 @@ import {
   passthroughStyle,
   StyleHandlers,
   useDOMRef,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { DimensionValue, DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { GridProps } from "@react-types/layout";
-import React, { forwardRef } from "react";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {DimensionValue, DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {GridProps} from '@react-types/layout';
+import React, {forwardRef} from 'react';
 
 const gridStyleProps: StyleHandlers = {
   ...baseStyleProps,
-  autoFlow: ["gridAutoFlow", passthroughStyle],
-  autoColumns: ["gridAutoColumns", gridDimensionValue],
-  autoRows: ["gridAutoRows", gridDimensionValue],
-  areas: ["gridTemplateAreas", gridTemplateAreasValue],
-  columns: ["gridTemplateColumns", gridTemplateValue],
-  rows: ["gridTemplateRows", gridTemplateValue],
-  gap: ["gap", dimensionValue],
-  rowGap: ["rowGap", dimensionValue],
-  columnGap: ["columnGap", dimensionValue],
-  justifyItems: ["justifyItems", passthroughStyle],
-  justifyContent: ["justifyContent", passthroughStyle],
-  alignItems: ["alignItems", passthroughStyle],
-  alignContent: ["alignContent", passthroughStyle],
+  autoFlow: ['gridAutoFlow', passthroughStyle],
+  autoColumns: ['gridAutoColumns', gridDimensionValue],
+  autoRows: ['gridAutoRows', gridDimensionValue],
+  areas: ['gridTemplateAreas', gridTemplateAreasValue],
+  columns: ['gridTemplateColumns', gridTemplateValue],
+  rows: ['gridTemplateRows', gridTemplateValue],
+  gap: ['gap', dimensionValue],
+  rowGap: ['rowGap', dimensionValue],
+  columnGap: ['columnGap', dimensionValue],
+  justifyItems: ['justifyItems', passthroughStyle],
+  justifyContent: ['justifyContent', passthroughStyle],
+  alignItems: ['alignItems', passthroughStyle],
+  alignContent: ['alignContent', passthroughStyle]
 };
 
 /**
@@ -48,10 +48,10 @@ export const Grid = forwardRef(function Grid(
   props: GridProps,
   ref: DOMRef<HTMLDivElement>
 ) {
-  let { children, ...otherProps } = props;
-  let { styleProps } = useStyleProps(otherProps, gridStyleProps);
+  let {children, ...otherProps} = props;
+  let {styleProps} = useStyleProps(otherProps, gridStyleProps);
   if (styleProps.style) {
-    styleProps.style.display = "grid"; // inline-grid?
+    styleProps.style.display = 'grid'; // inline-grid?
   }
   let domRef = useDOMRef(ref);
 
@@ -69,7 +69,7 @@ export const Grid = forwardRef(function Grid(
  * @param repeat - The fragment to repeat.
  */
 export function repeat(
-  count: number | "auto-fill" | "auto-fit",
+  count: number | 'auto-fill' | 'auto-fit',
   repeat: DimensionValue | DimensionValue[]
 ): string {
   return `repeat(${count}, ${gridTemplateValue(repeat)})`;
@@ -95,7 +95,7 @@ export function fitContent(dimension: DimensionValue): string {
 }
 
 function gridTemplateAreasValue(value) {
-  return value.map((v) => `"${v}"`).join("\n");
+  return value.map((v) => `"${v}"`).join('\n');
 }
 
 function gridDimensionValue(value) {
@@ -112,7 +112,7 @@ function gridDimensionValue(value) {
 
 function gridTemplateValue(value) {
   if (Array.isArray(value)) {
-    return value.map(gridDimensionValue).join(" ");
+    return value.map(gridDimensionValue).join(' ');
   }
 
   return gridDimensionValue(value);

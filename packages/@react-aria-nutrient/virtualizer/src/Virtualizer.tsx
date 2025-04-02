@@ -10,27 +10,27 @@
  * governing permissions and limitations under the License.
  */
 
-import { Collection, Key, RefObject } from "@react-types/shared";
+import {Collection, Key, RefObject} from '@react-types/shared';
 import {
   Layout,
   Rect,
   ReusableView,
-  useVirtualizerState,
-} from "@react-stately/virtualizer";
+  useVirtualizerState
+} from '@react-stately/virtualizer';
 import {
   mergeProps,
   useLoadMore,
-  useObjectRef,
-} from "@react-aria-nutrient/utils";
+  useObjectRef
+} from '@react-aria-nutrient/utils';
 import React, {
   ForwardedRef,
   HTMLAttributes,
   ReactElement,
   ReactNode,
-  useCallback,
-} from "react";
-import { ScrollView } from "./ScrollView";
-import { VirtualizerItem } from "./VirtualizerItem";
+  useCallback
+} from 'react';
+import {ScrollView} from './ScrollView';
+import {VirtualizerItem} from './VirtualizerItem';
 
 type RenderWrapper<T extends object, V> = (
   parent: ReusableView<T, V> | null,
@@ -40,16 +40,16 @@ type RenderWrapper<T extends object, V> = (
 ) => ReactElement | null;
 
 interface VirtualizerProps<T extends object, V, O>
-  extends Omit<HTMLAttributes<HTMLElement>, "children"> {
-  children: (type: string, content: T) => V;
-  renderWrapper?: RenderWrapper<T, V>;
-  layout: Layout<T, O>;
-  collection: Collection<T>;
-  persistedKeys?: Set<Key> | null;
-  scrollDirection?: "horizontal" | "vertical" | "both";
-  isLoading?: boolean;
-  onLoadMore?: () => void;
-  layoutOptions?: O;
+  extends Omit<HTMLAttributes<HTMLElement>, 'children'> {
+  children: (type: string, content: T) => V,
+  renderWrapper?: RenderWrapper<T, V>,
+  layout: Layout<T, O>,
+  collection: Collection<T>,
+  persistedKeys?: Set<Key> | null,
+  scrollDirection?: 'horizontal' | 'vertical' | 'both',
+  isLoading?: boolean,
+  onLoadMore?: () => void,
+  layoutOptions?: O
 }
 
 // forwardRef doesn't support generic parameters, so cast the result to the correct type
@@ -88,10 +88,10 @@ export const Virtualizer = React.forwardRef(function Virtualizer<
       }
     },
     persistedKeys,
-    layoutOptions,
+    layoutOptions
   });
 
-  useLoadMore({ isLoading, onLoadMore, scrollOffset: 1 }, ref);
+  useLoadMore({isLoading, onLoadMore, scrollOffset: 1}, ref);
   let onVisibleRectChange = useCallback(
     (rect: Rect) => {
       state.setVisibleRect(rect);
@@ -101,13 +101,12 @@ export const Virtualizer = React.forwardRef(function Virtualizer<
 
   return (
     <ScrollView
-      {...mergeProps(otherProps, { onVisibleRectChange })}
+      {...mergeProps(otherProps, {onVisibleRectChange})}
       ref={ref}
       contentSize={state.contentSize}
       onScrollStart={state.startScrolling}
       onScrollEnd={state.endScrolling}
-      scrollDirection={scrollDirection}
-    >
+      scrollDirection={scrollDirection}>
       {renderChildren(
         null,
         state.visibleViews,
@@ -143,8 +142,7 @@ function defaultRenderWrapper<T extends object, V extends ReactNode>(
       key={reusableView.key}
       layoutInfo={reusableView.layoutInfo!}
       virtualizer={reusableView.virtualizer}
-      parent={parent?.layoutInfo}
-    >
+      parent={parent?.layoutInfo}>
       {reusableView.rendered}
     </VirtualizerItem>
   );

@@ -10,36 +10,36 @@
  * governing permissions and limitations under the License.
  */
 
-import { classNames, useIsMobileDevice } from "@react-spectrum/utils";
-import { Key } from "@react-types/shared";
+import {classNames, useIsMobileDevice} from '@react-spectrum/utils';
+import {Key} from '@react-types/shared';
 import {
   MenuContext,
   SubmenuTriggerContext,
-  useMenuStateContext,
-} from "./context";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import { Popover } from "@react-spectrum/overlays";
-import React, { type JSX, ReactElement, useRef } from "react";
-import ReactDOM from "react-dom";
-import styles from "@adobe/spectrum-css-temp/components/menu/vars.css";
-import { useLocale } from "@react-aria-nutrient/i18n";
-import { useSubmenuTrigger } from "@react-aria-nutrient/menu";
-import { useSubmenuTriggerState } from "@react-stately/menu";
+  useMenuStateContext
+} from './context';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import {Popover} from '@react-spectrum/overlays';
+import React, {type JSX, ReactElement, useRef} from 'react';
+import ReactDOM from 'react-dom';
+import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
+import {useLocale} from '@react-aria-nutrient/i18n';
+import {useSubmenuTrigger} from '@react-aria-nutrient/menu';
+import {useSubmenuTriggerState} from '@react-stately/menu';
 
 interface SubmenuTriggerProps {
   /**
    * The contents of the SubmenuTrigger - an Item and a Menu.
    */
-  children: ReactElement<any>[];
-  targetKey: Key;
+  children: ReactElement<any>[],
+  targetKey: Key
 }
 
 export interface SpectrumSubmenuTriggerProps
-  extends Omit<SubmenuTriggerProps, "targetKey"> {}
+  extends Omit<SubmenuTriggerProps, 'targetKey'> {}
 
 function SubmenuTrigger(props: SubmenuTriggerProps) {
   let triggerRef = useRef<HTMLDivElement>(null);
-  let { children, targetKey } = props;
+  let {children, targetKey} = props;
 
   let [menuTrigger, menu] = React.Children.toArray(children);
   let {
@@ -47,16 +47,16 @@ function SubmenuTrigger(props: SubmenuTriggerProps) {
     trayContainerRef,
     menu: parentMenuRef,
     submenu: menuRef,
-    rootMenuTriggerState,
+    rootMenuTriggerState
   } = useMenuStateContext()!;
   let submenuTriggerState = useSubmenuTriggerState(
-    { triggerKey: targetKey },
+    {triggerKey: targetKey},
     rootMenuTriggerState!
   );
-  let { submenuTriggerProps, submenuProps, popoverProps } = useSubmenuTrigger(
+  let {submenuTriggerProps, submenuProps, popoverProps} = useSubmenuTrigger(
     {
       parentMenuRef,
-      submenuRef: menuRef,
+      submenuRef: menuRef
     },
     submenuTriggerState,
     triggerRef
@@ -72,16 +72,16 @@ function SubmenuTrigger(props: SubmenuTriggerProps) {
     }
   };
 
-  let { direction } = useLocale();
+  let {direction} = useLocale();
   let mobileSubmenuKeyDown = (e: KeyboardEvent) => {
     switch (e.key) {
-      case "ArrowLeft":
-        if (direction === "ltr") {
+      case 'ArrowLeft':
+        if (direction === 'ltr') {
           triggerRef.current?.focus();
         }
         break;
-      case "ArrowRight":
-        if (direction === "rtl") {
+      case 'ArrowRight':
+        if (direction === 'rtl') {
           triggerRef.current?.focus();
         }
         break;
@@ -107,21 +107,20 @@ function SubmenuTrigger(props: SubmenuTriggerProps) {
       <Popover
         {...popoverProps}
         onDismissButtonPress={onDismissButtonPress}
-        UNSAFE_className={classNames(styles, "spectrum-Submenu-popover")}
+        UNSAFE_className={classNames(styles, 'spectrum-Submenu-popover')}
         container={popoverContainer!}
         containerPadding={0}
         enableBothDismissButtons
         UNSAFE_style={{
-          clipPath: "unset",
-          overflow: "visible",
-          borderWidth: "0px",
+          clipPath: 'unset',
+          overflow: 'visible',
+          borderWidth: '0px'
         }}
         state={submenuTriggerState}
         triggerRef={triggerRef}
         scrollRef={menuRef}
         placement="end top"
-        hideArrow
-      >
+        hideArrow>
         {menu}
       </Popover>
     );
@@ -132,25 +131,24 @@ function SubmenuTrigger(props: SubmenuTriggerProps) {
       ref: menuRef,
       UNSAFE_style: isMobile
         ? {
-            width: "100%",
-            maxHeight: "inherit",
-          }
+          width: '100%',
+          maxHeight: 'inherit'
+        }
         : undefined,
       UNSAFE_className: classNames(styles, {
-        "spectrum-Menu-popover": !isMobile,
+        'spectrum-Menu-popover': !isMobile
       }),
       ...(isMobile && {
         onBackButtonPress,
-        onKeyDown: mobileSubmenuKeyDown,
-      }),
-    }),
+        onKeyDown: mobileSubmenuKeyDown
+      })
+    })
   };
 
   return (
     <>
       <SubmenuTriggerContext.Provider
-        value={{ triggerRef, ...submenuTriggerProps }}
-      >
+        value={{triggerRef, ...submenuTriggerProps}}>
         {menuTrigger}
       </SubmenuTriggerContext.Provider>
       <MenuContext.Provider value={menuContext}>{overlay}</MenuContext.Provider>
@@ -174,18 +172,18 @@ SubmenuTrigger.getCollectionNode = function* (
     element: React.cloneElement(trigger, {
       ...(trigger.props as any),
       hasChildItems: true,
-      isTrigger: true,
+      isTrigger: true
     }),
     wrapper: (element) => (
       <SubmenuTrigger key={element.key} targetKey={element.key} {...props}>
         {element}
         {content}
       </SubmenuTrigger>
-    ),
+    )
   };
 };
 
 let _SubmenuTrigger = SubmenuTrigger as unknown as (
   props: SpectrumSubmenuTriggerProps
 ) => JSX.Element;
-export { _SubmenuTrigger as SubmenuTrigger };
+export {_SubmenuTrigger as SubmenuTrigger};

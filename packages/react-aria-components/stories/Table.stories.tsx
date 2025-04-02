@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
+import {action} from '@storybook/addon-actions';
 import {
   Button,
   Cell,
@@ -36,45 +36,45 @@ import {
   TableHeader,
   TableLayout,
   useDragAndDrop,
-  Virtualizer,
-} from "react-aria-components";
-import { isTextDropItem } from "react-aria";
-import { MyMenuItem } from "./utils";
-import React, { Suspense, useMemo, useRef, useState } from "react";
-import styles from "../example/index.css";
-import { UNSTABLE_TableLoadingIndicator } from "../src/Table";
-import { useAsyncList, useListData } from "react-stately";
-import { useLoadMore } from "@react-aria-nutrient/utils";
+  Virtualizer
+} from 'react-aria-components';
+import {isTextDropItem} from 'react-aria';
+import {MyMenuItem} from './utils';
+import React, {Suspense, useMemo, useRef, useState} from 'react';
+import styles from '../example/index.css';
+import {UNSTABLE_TableLoadingIndicator} from '../src/Table';
+import {useAsyncList, useListData} from 'react-stately';
+import {useLoadMore} from '@react-aria-nutrient/utils';
 
 export default {
-  title: "React Aria Components",
-  excludeStories: ["DndTable"],
+  title: 'React Aria Components',
+  excludeStories: ['DndTable']
 };
 
 const ReorderableTable = ({
-  initialItems,
+  initialItems
 }: {
-  initialItems: { id: string; name: string }[];
+  initialItems: { id: string, name: string }[]
 }) => {
-  let list = useListData({ initialItems });
+  let list = useListData({initialItems});
 
-  const { dragAndDropHooks } = useDragAndDrop({
+  const {dragAndDropHooks} = useDragAndDrop({
     getItems: (keys) => {
       return [...keys]
         .filter((k) => !!list.getItem(k))
         .map((k) => {
           const item = list.getItem(k);
           return {
-            "text/plain": item!.id,
-            item: JSON.stringify(item),
+            'text/plain': item!.id,
+            item: JSON.stringify(item)
           };
         });
     },
-    getDropOperation: () => "move",
+    getDropOperation: () => 'move',
     onReorder: (e) => {
-      if (e.target.dropPosition === "before") {
+      if (e.target.dropPosition === 'before') {
         list.moveBefore(e.target.key, e.keys);
-      } else if (e.target.dropPosition === "after") {
+      } else if (e.target.dropPosition === 'after') {
         list.moveAfter(e.target.key, e.keys);
       }
     },
@@ -82,17 +82,17 @@ const ReorderableTable = ({
       const processedItems = await Promise.all(
         e.items
           .filter(isTextDropItem)
-          .map(async (item) => JSON.parse(await item.getText("item")))
+          .map(async (item) => JSON.parse(await item.getText('item')))
       );
-      if (e.target.dropPosition === "before") {
+      if (e.target.dropPosition === 'before') {
         list.insertBefore(e.target.key, ...processedItems);
-      } else if (e.target.dropPosition === "after") {
+      } else if (e.target.dropPosition === 'after') {
         list.insertAfter(e.target.key, ...processedItems);
       }
     },
 
     onDragEnd: (e) => {
-      if (e.dropOperation === "move" && !e.isInternal) {
+      if (e.dropOperation === 'move' && !e.isInternal) {
         list.remove(...e.keys);
       }
     },
@@ -101,11 +101,11 @@ const ReorderableTable = ({
       const processedItems = await Promise.all(
         e.items
           .filter(isTextDropItem)
-          .map(async (item) => JSON.parse(await item.getText("item")))
+          .map(async (item) => JSON.parse(await item.getText('item')))
       );
 
       list.append(...processedItems);
-    },
+    }
   });
 
   return (
@@ -118,12 +118,11 @@ const ReorderableTable = ({
       </TableHeader>
       <TableBody
         items={list.items}
-        renderEmptyState={({ isDropTarget }) => (
-          <span style={{ color: isDropTarget ? "red" : "black" }}>
+        renderEmptyState={({isDropTarget}) => (
+          <span style={{color: isDropTarget ? 'red' : 'black'}}>
             Drop items here
           </span>
-        )}
-      >
+        )}>
         {(item) => (
           <Row>
             <Cell>{item.id}</Cell>
@@ -137,11 +136,11 @@ const ReorderableTable = ({
 
 export const ReorderableTableExample = () => (
   <>
-    <ResizableTableContainer style={{ width: 300, overflow: "auto" }}>
-      <ReorderableTable initialItems={[{ id: "1", name: "Bob" }]} />
+    <ResizableTableContainer style={{width: 300, overflow: 'auto'}}>
+      <ReorderableTable initialItems={[{id: '1', name: 'Bob'}]} />
     </ResizableTableContainer>
-    <ResizableTableContainer style={{ width: 300, overflow: "auto" }}>
-      <ReorderableTable initialItems={[{ id: "2", name: "Alex" }]} />
+    <ResizableTableContainer style={{width: 300, overflow: 'auto'}}>
+      <ReorderableTable initialItems={[{id: '2', name: 'Alex'}]} />
     </ResizableTableContainer>
   </>
 );
@@ -149,15 +148,15 @@ export const ReorderableTableExample = () => (
 export const TableExample = () => {
   let list = useListData({
     initialItems: [
-      { id: 1, name: "Games", date: "6/7/2020", type: "File folder" },
-      { id: 2, name: "Program Files", date: "4/7/2021", type: "File folder" },
-      { id: 3, name: "bootmgr", date: "11/20/2010", type: "System file" },
-      { id: 4, name: "log.txt", date: "1/18/2016", type: "Text Document" },
-    ],
+      {id: 1, name: 'Games', date: '6/7/2020', type: 'File folder'},
+      {id: 2, name: 'Program Files', date: '4/7/2021', type: 'File folder'},
+      {id: 3, name: 'bootmgr', date: '11/20/2010', type: 'System file'},
+      {id: 4, name: 'log.txt', date: '1/18/2016', type: 'Text Document'}
+    ]
   });
 
   return (
-    <ResizableTableContainer style={{ width: 300, overflow: "auto" }}>
+    <ResizableTableContainer style={{width: 300, overflow: 'auto'}}>
       <Table aria-label="Example table">
         <TableHeader>
           <MyColumn isRowHeader defaultWidth="50%">
@@ -178,28 +177,26 @@ export const TableExample = () => {
                   <Button>Delete</Button>
                   <ModalOverlay
                     style={{
-                      position: "fixed",
+                      position: 'fixed',
                       zIndex: 100,
                       top: 0,
                       left: 0,
                       bottom: 0,
                       right: 0,
-                      background: "rgba(0, 0, 0, 0.5)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+                      background: 'rgba(0, 0, 0, 0.5)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
                     <Modal
                       style={{
-                        background: "Canvas",
-                        color: "CanvasText",
-                        border: "1px solid gray",
-                        padding: 30,
-                      }}
-                    >
+                        background: 'Canvas',
+                        color: 'CanvasText',
+                        border: '1px solid gray',
+                        padding: 30
+                      }}>
                       <Dialog>
-                        {({ close }) => (
+                        {({close}) => (
                           <>
                             <Heading slot="title">Delete item</Heading>
                             <p>Are you sure?</p>
@@ -208,8 +205,7 @@ export const TableExample = () => {
                               onPress={() => {
                                 close();
                                 list.remove(item.id);
-                              }}
-                            >
+                              }}>
                               Delete
                             </Button>
                           </>
@@ -228,16 +224,16 @@ export const TableExample = () => {
 };
 
 let columns = [
-  { name: "Name", id: "name", isRowHeader: true },
-  { name: "Type", id: "type" },
-  { name: "Date Modified", id: "date" },
+  {name: 'Name', id: 'name', isRowHeader: true},
+  {name: 'Type', id: 'type'},
+  {name: 'Date Modified', id: 'date'}
 ];
 
 let rows = [
-  { id: 1, name: "Games", date: "6/7/2020", type: "File folder" },
-  { id: 2, name: "Program Files", date: "4/7/2021", type: "File folder" },
-  { id: 3, name: "bootmgr", date: "11/20/2010", type: "System file" },
-  { id: 4, name: "log.txt", date: "1/18/20167", type: "Text Document" },
+  {id: 1, name: 'Games', date: '6/7/2020', type: 'File folder'},
+  {id: 2, name: 'Program Files', date: '4/7/2021', type: 'File folder'},
+  {id: 3, name: 'bootmgr', date: '11/20/2010', type: 'System file'},
+  {id: 4, name: 'log.txt', date: '1/18/20167', type: 'Text Document'}
 ];
 
 export const TableDynamicExample = () => {
@@ -262,53 +258,53 @@ export const TableDynamicExample = () => {
 };
 
 let timeTableColumns = [
-  { name: "Time", id: "time", isRowHeader: true },
-  { name: "Monday", id: "monday" },
-  { name: "Tuesday", id: "tuesday" },
-  { name: "Wednesday", id: "wednesday" },
-  { name: "Thursday", id: "thursday" },
-  { name: "Friday", id: "friday" },
+  {name: 'Time', id: 'time', isRowHeader: true},
+  {name: 'Monday', id: 'monday'},
+  {name: 'Tuesday', id: 'tuesday'},
+  {name: 'Wednesday', id: 'wednesday'},
+  {name: 'Thursday', id: 'thursday'},
+  {name: 'Friday', id: 'friday'}
 ];
 
 let timeTableRows = [
   {
     id: 1,
-    time: "08:00 - 09:00",
-    monday: "Math",
-    tuesday: "History",
-    wednesday: "Science",
-    thursday: "English",
-    friday: "Art",
+    time: '08:00 - 09:00',
+    monday: 'Math',
+    tuesday: 'History',
+    wednesday: 'Science',
+    thursday: 'English',
+    friday: 'Art'
   },
-  { id: 2, time: "09:00 - 10:00", name: "Break", type: "break" },
+  {id: 2, time: '09:00 - 10:00', name: 'Break', type: 'break'},
   {
     id: 3,
-    time: "10:00 - 11:00",
-    monday: "Math",
-    tuesday: "History",
-    wednesday: "Science",
-    thursday: "English",
-    friday: "Art",
+    time: '10:00 - 11:00',
+    monday: 'Math',
+    tuesday: 'History',
+    wednesday: 'Science',
+    thursday: 'English',
+    friday: 'Art'
   },
   {
     id: 4,
-    time: "11:00 - 12:00",
-    monday: "Math",
-    tuesday: "History",
-    wednesday: "Science",
-    thursday: "English",
-    friday: "Art",
+    time: '11:00 - 12:00',
+    monday: 'Math',
+    tuesday: 'History',
+    wednesday: 'Science',
+    thursday: 'English',
+    friday: 'Art'
   },
-  { id: 5, time: "12:00 - 13:00", name: "Break", type: "break" },
+  {id: 5, time: '12:00 - 13:00', name: 'Break', type: 'break'},
   {
     id: 6,
-    time: "13:00 - 14:00",
-    monday: "History",
-    tuesday: "Math",
-    wednesday: "English",
-    thursday: "Science",
-    friday: "Art",
-  },
+    time: '13:00 - 14:00',
+    monday: 'History',
+    tuesday: 'Math',
+    wednesday: 'English',
+    thursday: 'Science',
+    friday: 'Art'
+  }
 ];
 
 export const TableCellColSpanExample = () => {
@@ -322,7 +318,7 @@ export const TableCellColSpanExample = () => {
       <TableBody items={timeTableRows}>
         {(item) => (
           <Row columns={columns}>
-            {item.type === "break" ? (
+            {item.type === 'break' ? (
               <>
                 <Cell>{item.time}</Cell>
                 <Cell colSpan={5}>{item.name}</Cell>
@@ -396,10 +392,10 @@ export const TableCellColSpanWithVariousSpansExample = () => {
 const MyColumn = (props: ColumnProps) => {
   return (
     <Column {...props}>
-      {({ startResize }) => (
-        <div style={{ display: "flex" }}>
+      {({startResize}) => (
+        <div style={{display: 'flex'}}>
           <MenuTrigger>
-            <Button style={{ flex: 1, textAlign: "left" }}>
+            <Button style={{flex: 1, textAlign: 'left'}}>
               {props.children as React.ReactNode}
             </Button>
             <Popover>
@@ -409,10 +405,9 @@ const MyColumn = (props: ColumnProps) => {
             </Popover>
           </MenuTrigger>
           <ColumnResizer
-            onHoverStart={action("onHoverStart")}
-            onHoverChange={action("onHoverChange")}
-            onHoverEnd={action("onHoverEnd")}
-          >
+            onHoverStart={action('onHoverStart')}
+            onHoverChange={action('onHoverChange')}
+            onHoverEnd={action('onHoverEnd')}>
             ↔
           </ColumnResizer>
         </div>
@@ -422,25 +417,25 @@ const MyColumn = (props: ColumnProps) => {
 };
 
 interface FileItem {
-  id: string;
-  name: string;
-  type: string;
+  id: string,
+  name: string,
+  type: string
 }
 
 interface DndTableProps {
-  initialItems: FileItem[];
-  "aria-label": string;
-  isDisabled?: boolean;
-  isLoading?: boolean;
-  onSelectionChange?: (keys) => void;
+  initialItems: FileItem[],
+  'aria-label': string,
+  isDisabled?: boolean,
+  isLoading?: boolean,
+  onSelectionChange?: (keys) => void
 }
 
 export const DndTable = (props: DndTableProps) => {
   let list = useListData({
-    initialItems: props.initialItems,
+    initialItems: props.initialItems
   });
 
-  let { dragAndDropHooks } = useDragAndDrop({
+  let {dragAndDropHooks} = useDragAndDrop({
     isDisabled: props.isDisabled,
     // Provide drag data in a custom format as well as plain text.
     getItems(keys) {
@@ -449,17 +444,17 @@ export const DndTable = (props: DndTableProps) => {
         .map((key) => {
           let item = list.getItem(key);
           return {
-            "custom-app-type": JSON.stringify(item),
-            "text/plain": item!.name,
+            'custom-app-type': JSON.stringify(item),
+            'text/plain': item!.name
           };
         });
     },
 
     // Accept drops with the custom format.
-    acceptedDragTypes: ["custom-app-type"],
+    acceptedDragTypes: ['custom-app-type'],
 
     // Ensure items are always moved rather than copied.
-    getDropOperation: () => "move",
+    getDropOperation: () => 'move',
 
     // Handle drops between items from other lists.
     async onInsert(e) {
@@ -467,12 +462,12 @@ export const DndTable = (props: DndTableProps) => {
         e.items
           .filter(isTextDropItem)
           .map(async (item) =>
-            JSON.parse(await item.getText("custom-app-type"))
+            JSON.parse(await item.getText('custom-app-type'))
           )
       );
-      if (e.target.dropPosition === "before") {
+      if (e.target.dropPosition === 'before') {
         list.insertBefore(e.target.key, ...processedItems);
-      } else if (e.target.dropPosition === "after") {
+      } else if (e.target.dropPosition === 'after') {
         list.insertAfter(e.target.key, ...processedItems);
       }
     },
@@ -483,7 +478,7 @@ export const DndTable = (props: DndTableProps) => {
         e.items
           .filter(isTextDropItem)
           .map(async (item) =>
-            JSON.parse(await item.getText("custom-app-type"))
+            JSON.parse(await item.getText('custom-app-type'))
           )
       );
       list.append(...processedItems);
@@ -491,9 +486,9 @@ export const DndTable = (props: DndTableProps) => {
 
     // Handle reordering items within the same list.
     onReorder(e) {
-      if (e.target.dropPosition === "before") {
+      if (e.target.dropPosition === 'before') {
         list.moveBefore(e.target.key, e.keys);
-      } else if (e.target.dropPosition === "after") {
+      } else if (e.target.dropPosition === 'after') {
         list.moveAfter(e.target.key, e.keys);
       }
     },
@@ -501,23 +496,22 @@ export const DndTable = (props: DndTableProps) => {
     // Remove the items from the source list on drop
     // if they were moved to a different list.
     onDragEnd(e) {
-      if (e.dropOperation === "move" && !e.isInternal) {
+      if (e.dropOperation === 'move' && !e.isInternal) {
         list.remove(...e.keys);
       }
-    },
+    }
   });
 
   return (
     <Table
-      aria-label={props["aria-label"]}
+      aria-label={props['aria-label']}
       selectionMode="multiple"
       selectedKeys={list.selectedKeys}
       onSelectionChange={(keys) => {
         props.onSelectionChange?.(keys);
         list.setSelectedKeys(keys);
       }}
-      dragAndDropHooks={dragAndDropHooks}
-    >
+      dragAndDropHooks={dragAndDropHooks}>
       <TableHeader>
         <Column />
         <Column>
@@ -530,9 +524,8 @@ export const DndTable = (props: DndTableProps) => {
       <TableBody
         items={list.items}
         renderEmptyState={() =>
-          renderEmptyLoader({ isLoading: props.isLoading, tableWidth: 200 })
-        }
-      >
+          renderEmptyLoader({isLoading: props.isLoading, tableWidth: 200})
+        }>
         <Collection items={list.items}>
           {(item) => (
             <Row>
@@ -557,40 +550,38 @@ export const DndTable = (props: DndTableProps) => {
 };
 
 type DndTableExampleProps = {
-  isDisabledFirstTable?: boolean;
-  isDisabledSecondTable?: boolean;
-  isLoading?: boolean;
+  isDisabledFirstTable?: boolean,
+  isDisabledSecondTable?: boolean,
+  isLoading?: boolean
 };
 
 export const DndTableExample = (props: DndTableExampleProps) => {
   return (
-    <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+    <div style={{display: 'flex', gap: 12, flexWrap: 'wrap'}}>
       <DndTable
         isLoading={props.isLoading}
         initialItems={[
-          { id: "1", type: "file", name: "Adobe Photoshop" },
-          { id: "2", type: "file", name: "Adobe XD" },
-          { id: "3", type: "folder", name: "Documents" },
-          { id: "4", type: "file", name: "Adobe InDesign" },
-          { id: "5", type: "folder", name: "Utilities" },
-          { id: "6", type: "file", name: "Adobe AfterEffects" },
+          {id: '1', type: 'file', name: 'Adobe Photoshop'},
+          {id: '2', type: 'file', name: 'Adobe XD'},
+          {id: '3', type: 'folder', name: 'Documents'},
+          {id: '4', type: 'file', name: 'Adobe InDesign'},
+          {id: '5', type: 'folder', name: 'Utilities'},
+          {id: '6', type: 'file', name: 'Adobe AfterEffects'}
         ]}
         aria-label="First Table"
-        isDisabled={props.isDisabledFirstTable}
-      />
+        isDisabled={props.isDisabledFirstTable} />
       <DndTable
         isLoading={props.isLoading}
         initialItems={[
-          { id: "7", type: "folder", name: "Pictures" },
-          { id: "8", type: "file", name: "Adobe Fresco" },
-          { id: "9", type: "folder", name: "Apps" },
-          { id: "10", type: "file", name: "Adobe Illustrator" },
-          { id: "11", type: "file", name: "Adobe Lightroom" },
-          { id: "12", type: "file", name: "Adobe Dreamweaver" },
+          {id: '7', type: 'folder', name: 'Pictures'},
+          {id: '8', type: 'file', name: 'Adobe Fresco'},
+          {id: '9', type: 'folder', name: 'Apps'},
+          {id: '10', type: 'file', name: 'Adobe Illustrator'},
+          {id: '11', type: 'file', name: 'Adobe Lightroom'},
+          {id: '12', type: 'file', name: 'Adobe Dreamweaver'}
         ]}
         aria-label="Second Table"
-        isDisabled={props.isDisabledSecondTable}
-      />
+        isDisabled={props.isDisabledSecondTable} />
     </div>
   );
 };
@@ -598,13 +589,13 @@ export const DndTableExample = (props: DndTableExampleProps) => {
 DndTableExample.args = {
   isDisabledFirstTable: false,
   isDisabledSecondTable: false,
-  isLoading: false,
+  isLoading: false
 };
 
-const MyCheckbox = ({ children, ...props }: CheckboxProps) => {
+const MyCheckbox = ({children, ...props}: CheckboxProps) => {
   return (
     <Checkbox {...props}>
-      {({ isIndeterminate }) => (
+      {({isIndeterminate}) => (
         <>
           <div className="checkbox">
             <svg viewBox="0 0 18 18" aria-hidden="true">
@@ -622,27 +613,26 @@ const MyCheckbox = ({ children, ...props }: CheckboxProps) => {
   );
 };
 
-const MyTableLoadingIndicator = ({ tableWidth = 400 }) => {
+const MyTableLoadingIndicator = ({tableWidth = 400}) => {
   return (
     // These styles will make the load more spinner sticky. A user would know if their table is virtualized and thus could control this styling if they wanted to
     // TODO: this doesn't work because the virtualizer wrapper around the table body has overflow: hidden. Perhaps could change this by extending the table layout and
     // making the layoutInfo for the table body have allowOverflow
     <UNSTABLE_TableLoadingIndicator
       style={{
-        height: "inherit",
-        position: "sticky",
+        height: 'inherit',
+        position: 'sticky',
         top: 0,
         left: 0,
-        width: tableWidth,
-      }}
-    >
+        width: tableWidth
+      }}>
       <span>Load more spinner</span>
     </UNSTABLE_TableLoadingIndicator>
   );
 };
 
 function MyTableBody(props) {
-  let { rows, children, isLoadingMore, tableWidth, ...otherProps } = props;
+  let {rows, children, isLoadingMore, tableWidth, ...otherProps} = props;
   return (
     <TableBody {...otherProps}>
       <Collection items={rows}>{children}</Collection>
@@ -675,9 +665,9 @@ const TableLoadingBodyWrapper = (args: { isLoadingMore: boolean }) => {
 export const TableLoadingBodyWrapperStory = {
   render: TableLoadingBodyWrapper,
   args: {
-    isLoadingMore: false,
+    isLoadingMore: false
   },
-  name: "Table loading, table body wrapper with collection",
+  name: 'Table loading, table body wrapper with collection'
 };
 
 function MyRow(props) {
@@ -702,8 +692,7 @@ const TableLoadingRowRenderWrapper = (args: { isLoadingMore: boolean }) => {
         {(item) => (
           <MyRow
             columns={columns}
-            isLoadingMore={item.id === 4 && args.isLoadingMore}
-          >
+            isLoadingMore={item.id === 4 && args.isLoadingMore}>
             {(column) => {
               return <Cell>{item[column.id]}</Cell>;
             }}
@@ -717,30 +706,29 @@ const TableLoadingRowRenderWrapper = (args: { isLoadingMore: boolean }) => {
 export const TableLoadingRowRenderWrapperStory = {
   render: TableLoadingRowRenderWrapper,
   args: {
-    isLoadingMore: false,
+    isLoadingMore: false
   },
-  name: "Table loading, row renderer wrapper and dep array",
+  name: 'Table loading, row renderer wrapper and dep array'
 };
 
-function renderEmptyLoader({ isLoading, tableWidth = 400 }) {
-  let contents = isLoading ? "Loading spinner" : "No results found";
+function renderEmptyLoader({isLoading, tableWidth = 400}) {
+  let contents = isLoading ? 'Loading spinner' : 'No results found';
   return (
     <div
       style={{
-        height: "inherit",
-        position: "sticky",
+        height: 'inherit',
+        position: 'sticky',
         top: 0,
         left: 0,
-        width: tableWidth,
-      }}
-    >
+        width: tableWidth
+      }}>
       {contents}
     </div>
   );
 }
 
 const RenderEmptyState = (args: { isLoading: boolean }) => {
-  let { isLoading } = args;
+  let {isLoading} = args;
   return (
     <Table aria-label="Files" selectionMode="multiple">
       <TableHeader columns={columns}>
@@ -753,7 +741,7 @@ const RenderEmptyState = (args: { isLoading: boolean }) => {
           )}
         </Collection>
       </TableHeader>
-      <TableBody renderEmptyState={() => renderEmptyLoader({ isLoading })}>
+      <TableBody renderEmptyState={() => renderEmptyLoader({isLoading})}>
         <Collection items={[]}>
           {(item) => (
             <Row columns={columns}>
@@ -771,47 +759,47 @@ const RenderEmptyState = (args: { isLoading: boolean }) => {
 export const RenderEmptyStateStory = {
   render: RenderEmptyState,
   args: {
-    isLoading: false,
+    isLoading: false
   },
-  name: "Empty/Loading Table rendered with TableLoadingIndicator collection element",
+  name: 'Empty/Loading Table rendered with TableLoadingIndicator collection element'
 };
 
 interface Character {
-  name: string;
-  height: number;
-  mass: number;
-  birth_year: number;
+  name: string,
+  height: number,
+  mass: number,
+  birth_year: number
 }
 
 const OnLoadMoreTable = () => {
   let list = useAsyncList<Character>({
-    async load({ signal, cursor }) {
+    async load({signal, cursor}) {
       if (cursor) {
-        cursor = cursor.replace(/^http:\/\//i, "https://");
+        cursor = cursor.replace(/^http:\/\//i, 'https://');
       }
 
       // Slow down load so progress circle can appear
       await new Promise((resolve) => setTimeout(resolve, 4000));
       let res = await fetch(
-        cursor || "https://swapi.py4e.com/api/people/?search=",
-        { signal }
+        cursor || 'https://swapi.py4e.com/api/people/?search=',
+        {signal}
       );
       let json = await res.json();
       return {
         items: json.results,
-        cursor: json.next,
+        cursor: json.next
       };
-    },
+    }
   });
 
   let isLoading =
-    list.loadingState === "loading" || list.loadingState === "loadingMore";
+    list.loadingState === 'loading' || list.loadingState === 'loadingMore';
   let scrollRef = useRef<HTMLDivElement>(null);
   let memoedLoadMoreProps = useMemo(
     () => ({
       isLoading: isLoading,
       onLoadMore: list.loadMore,
-      items: list.items,
+      items: list.items
     }),
     [isLoading, list.loadMore, list.items]
   );
@@ -820,33 +808,28 @@ const OnLoadMoreTable = () => {
   return (
     <ResizableTableContainer
       ref={scrollRef}
-      style={{ height: 150, width: 400, overflow: "auto" }}
-    >
+      style={{height: 150, width: 400, overflow: 'auto'}}>
       <Table aria-label="Load more table">
         <TableHeader>
           <Column
             id="name"
             isRowHeader
-            style={{ position: "sticky", top: 0, backgroundColor: "lightgray" }}
-          >
+            style={{position: 'sticky', top: 0, backgroundColor: 'lightgray'}}>
             Name
           </Column>
           <Column
             id="height"
-            style={{ position: "sticky", top: 0, backgroundColor: "lightgray" }}
-          >
+            style={{position: 'sticky', top: 0, backgroundColor: 'lightgray'}}>
             Height
           </Column>
           <Column
             id="mass"
-            style={{ position: "sticky", top: 0, backgroundColor: "lightgray" }}
-          >
+            style={{position: 'sticky', top: 0, backgroundColor: 'lightgray'}}>
             Mass
           </Column>
           <Column
             id="birth_year"
-            style={{ position: "sticky", top: 0, backgroundColor: "lightgray" }}
-          >
+            style={{position: 'sticky', top: 0, backgroundColor: 'lightgray'}}>
             Birth Year
           </Column>
         </TableHeader>
@@ -854,15 +837,14 @@ const OnLoadMoreTable = () => {
           tableWidth={400}
           renderEmptyState={() =>
             renderEmptyLoader({
-              isLoading: list.loadingState === "loading",
-              tableWidth: 400,
+              isLoading: list.loadingState === 'loading',
+              tableWidth: 400
             })
           }
-          isLoadingMore={list.loadingState === "loadingMore"}
-          rows={list.items}
-        >
+          isLoadingMore={list.loadingState === 'loadingMore'}
+          rows={list.items}>
           {(item) => (
-            <Row id={item.name} style={{ width: "inherit", height: "inherit" }}>
+            <Row id={item.name} style={{width: 'inherit', height: 'inherit'}}>
               <Cell>{item.name}</Cell>
               <Cell>{item.height}</Cell>
               <Cell>{item.mass}</Cell>
@@ -877,29 +859,29 @@ const OnLoadMoreTable = () => {
 
 export const OnLoadMoreTableStory = {
   render: OnLoadMoreTable,
-  name: "onLoadMore table",
+  name: 'onLoadMore table'
 };
 
 export function VirtualizedTable() {
-  let items: { id: number; foo: string; bar: string; baz: string }[] = [];
+  let items: { id: number, foo: string, bar: string, baz: string }[] = [];
   for (let i = 0; i < 1000; i++) {
-    items.push({ id: i, foo: `Foo ${i}`, bar: `Bar ${i}`, baz: `Baz ${i}` });
+    items.push({id: i, foo: `Foo ${i}`, bar: `Bar ${i}`, baz: `Baz ${i}`});
   }
 
   let list = useListData({
-    initialItems: items,
+    initialItems: items
   });
 
-  let { dragAndDropHooks } = useDragAndDrop({
+  let {dragAndDropHooks} = useDragAndDrop({
     getItems: (keys) => {
       return [...keys]
         .filter((k) => !!list.getItem(k))
-        .map((key) => ({ "text/plain": list.getItem(key)!.foo }));
+        .map((key) => ({'text/plain': list.getItem(key)!.foo}));
     },
     onReorder(e) {
-      if (e.target.dropPosition === "before") {
+      if (e.target.dropPosition === 'before') {
         list.moveBefore(e.target.key, e.keys);
-      } else if (e.target.dropPosition === "after") {
+      } else if (e.target.dropPosition === 'after') {
         list.moveAfter(e.target.key, e.keys);
       }
     },
@@ -907,14 +889,13 @@ export function VirtualizedTable() {
       return (
         <DropIndicator
           target={target}
-          style={({ isDropTarget }) => ({
-            width: "100%",
-            height: "100%",
-            background: isDropTarget ? "blue" : "transparent",
-          })}
-        />
+          style={({isDropTarget}) => ({
+            width: '100%',
+            height: '100%',
+            background: isDropTarget ? 'blue' : 'transparent'
+          })} />
       );
-    },
+    }
   });
 
   return (
@@ -922,9 +903,8 @@ export function VirtualizedTable() {
       layout={TableLayout}
       layoutOptions={{
         rowHeight: 25,
-        headingHeight: 25,
-      }}
-    >
+        headingHeight: 25
+      }}>
       <Table
         aria-label="virtualized table"
         selectionMode="multiple"
@@ -932,17 +912,15 @@ export function VirtualizedTable() {
         style={{
           height: 400,
           width: 400,
-          overflow: "auto",
-          scrollPaddingTop: 25,
-        }}
-      >
+          overflow: 'auto',
+          scrollPaddingTop: 25
+        }}>
         <TableHeader
           style={{
-            background: "var(--spectrum-gray-100)",
-            width: "100%",
-            height: "100%",
-          }}
-        >
+            background: 'var(--spectrum-gray-100)',
+            width: '100%',
+            height: '100%'
+          }}>
           <Column width={30} minWidth={0} />
           <Column width={30} minWidth={0}>
             <MyCheckbox slot="selection" />
@@ -959,7 +937,7 @@ export function VirtualizedTable() {
         </TableHeader>
         <TableBody items={list.items}>
           {(item) => (
-            <Row style={{ width: "inherit", height: "inherit" }}>
+            <Row style={{width: 'inherit', height: 'inherit'}}>
               <Cell>
                 <Button slot="drag">≡</Button>
               </Cell>
@@ -978,9 +956,9 @@ export function VirtualizedTable() {
 }
 
 export function VirtualizedTableWithResizing() {
-  let items: { id: number; foo: string; bar: string; baz: string }[] = [];
+  let items: { id: number, foo: string, bar: string, baz: string }[] = [];
   for (let i = 0; i < 1000; i++) {
-    items.push({ id: i, foo: `Foo ${i}`, bar: `Bar ${i}`, baz: `Baz ${i}` });
+    items.push({id: i, foo: `Foo ${i}`, bar: `Bar ${i}`, baz: `Baz ${i}`});
   }
 
   return (
@@ -988,32 +966,29 @@ export function VirtualizedTableWithResizing() {
       style={{
         height: 400,
         width: 400,
-        overflow: "auto",
-        scrollPaddingTop: 25,
-      }}
-    >
+        overflow: 'auto',
+        scrollPaddingTop: 25
+      }}>
       <Virtualizer
         layout={TableLayout}
         layoutOptions={{
           rowHeight: 25,
-          headingHeight: 25,
-        }}
-      >
+          headingHeight: 25
+        }}>
         <Table aria-label="virtualized table">
           <TableHeader
             style={{
-              background: "var(--spectrum-gray-100)",
-              width: "100%",
-              height: "100%",
-            }}
-          >
+              background: 'var(--spectrum-gray-100)',
+              width: '100%',
+              height: '100%'
+            }}>
             <MyColumn isRowHeader>Foo</MyColumn>
             <MyColumn>Bar</MyColumn>
             <MyColumn>Baz</MyColumn>
           </TableHeader>
           <TableBody items={items}>
             {(item) => (
-              <Row style={{ width: "inherit", height: "inherit" }}>
+              <Row style={{width: 'inherit', height: 'inherit'}}>
                 <Cell>{item.foo}</Cell>
                 <Cell>{item.bar}</Cell>
                 <Cell>{item.baz}</Cell>
@@ -1028,10 +1003,10 @@ export function VirtualizedTableWithResizing() {
 
 function VirtualizedTableWithEmptyState(args) {
   let rows = [
-    { foo: "Foo 1", bar: "Bar 1", baz: "Baz 1" },
-    { foo: "Foo 2", bar: "Bar 2", baz: "Baz 2" },
-    { foo: "Foo 3", bar: "Bar 3", baz: "Baz 3" },
-    { foo: "Foo 4", bar: "Bar 4", baz: "Baz 4" },
+    {foo: 'Foo 1', bar: 'Bar 1', baz: 'Baz 1'},
+    {foo: 'Foo 2', bar: 'Bar 2', baz: 'Baz 2'},
+    {foo: 'Foo 3', bar: 'Bar 3', baz: 'Baz 3'},
+    {foo: 'Foo 4', bar: 'Bar 4', baz: 'Baz 4'}
   ];
 
   return (
@@ -1039,25 +1014,22 @@ function VirtualizedTableWithEmptyState(args) {
       style={{
         height: 400,
         width: 400,
-        overflow: "auto",
-        scrollPaddingTop: 25,
-      }}
-    >
+        overflow: 'auto',
+        scrollPaddingTop: 25
+      }}>
       <Virtualizer
         layout={TableLayout}
         layoutOptions={{
           rowHeight: 25,
-          headingHeight: 25,
-        }}
-      >
+          headingHeight: 25
+        }}>
         <Table aria-label="virtualized table">
           <TableHeader
             style={{
-              background: "var(--spectrum-gray-100)",
-              width: "100%",
-              height: "100%",
-            }}
-          >
+              background: 'var(--spectrum-gray-100)',
+              width: '100%',
+              height: '100%'
+            }}>
             <MyColumn isRowHeader>Foo</MyColumn>
             <MyColumn>Bar</MyColumn>
             <MyColumn>Baz</MyColumn>
@@ -1065,15 +1037,13 @@ function VirtualizedTableWithEmptyState(args) {
           <MyTableBody
             isLoadingMore={args.showRows && args.isLoading}
             renderEmptyState={() =>
-              renderEmptyLoader({ isLoading: !args.showRows && args.isLoading })
+              renderEmptyLoader({isLoading: !args.showRows && args.isLoading})
             }
-            rows={!args.showRows ? [] : rows}
-          >
+            rows={!args.showRows ? [] : rows}>
             {(item) => (
               <Row
                 id={item.foo}
-                style={{ width: "inherit", height: "inherit" }}
-              >
+                style={{width: 'inherit', height: 'inherit'}}>
                 <Cell>{item.foo}</Cell>
                 <Cell>{item.bar}</Cell>
                 <Cell>{item.baz}</Cell>
@@ -1090,40 +1060,40 @@ export const VirtualizedTableWithEmptyStateStory = {
   render: VirtualizedTableWithEmptyState,
   args: {
     isLoading: false,
-    showRows: false,
+    showRows: false
   },
-  name: "Virtualized Table With Empty State",
+  name: 'Virtualized Table With Empty State'
 };
 
 const OnLoadMoreTableVirtualized = () => {
   let list = useAsyncList<Character>({
-    async load({ signal, cursor }) {
+    async load({signal, cursor}) {
       if (cursor) {
-        cursor = cursor.replace(/^http:\/\//i, "https://");
+        cursor = cursor.replace(/^http:\/\//i, 'https://');
       }
 
       // Slow down load so progress circle can appear
       await new Promise((resolve) => setTimeout(resolve, 4000));
       let res = await fetch(
-        cursor || "https://swapi.py4e.com/api/people/?search=",
-        { signal }
+        cursor || 'https://swapi.py4e.com/api/people/?search=',
+        {signal}
       );
       let json = await res.json();
       return {
         items: json.results,
-        cursor: json.next,
+        cursor: json.next
       };
-    },
+    }
   });
 
   let isLoading =
-    list.loadingState === "loading" || list.loadingState === "loadingMore";
+    list.loadingState === 'loading' || list.loadingState === 'loadingMore';
   let scrollRef = useRef<HTMLTableElement>(null);
   let memoedLoadMoreProps = useMemo(
     () => ({
       isLoading: isLoading,
       onLoadMore: list.loadMore,
-      items: list.items,
+      items: list.items
     }),
     [isLoading, list.loadMore, list.items]
   );
@@ -1134,21 +1104,18 @@ const OnLoadMoreTableVirtualized = () => {
       layout={TableLayout}
       layoutOptions={{
         rowHeight: 25,
-        headingHeight: 25,
-      }}
-    >
+        headingHeight: 25
+      }}>
       <Table
         aria-label="Load more table virtualized"
         ref={scrollRef}
-        style={{ height: 150, width: 400, overflow: "auto" }}
-      >
+        style={{height: 150, width: 400, overflow: 'auto'}}>
         <TableHeader
           style={{
-            background: "var(--spectrum-gray-100)",
-            width: "100%",
-            height: "100%",
-          }}
-        >
+            background: 'var(--spectrum-gray-100)',
+            width: '100%',
+            height: '100%'
+          }}>
           <Column id="name" isRowHeader>
             Name
           </Column>
@@ -1158,13 +1125,12 @@ const OnLoadMoreTableVirtualized = () => {
         </TableHeader>
         <MyTableBody
           renderEmptyState={() =>
-            renderEmptyLoader({ isLoading: list.loadingState === "loading" })
+            renderEmptyLoader({isLoading: list.loadingState === 'loading'})
           }
-          isLoadingMore={list.loadingState === "loadingMore"}
-          rows={list.items}
-        >
+          isLoadingMore={list.loadingState === 'loadingMore'}
+          rows={list.items}>
           {(item) => (
-            <Row id={item.name} style={{ width: "inherit", height: "inherit" }}>
+            <Row id={item.name} style={{width: 'inherit', height: 'inherit'}}>
               <Cell>{item.name}</Cell>
               <Cell>{item.height}</Cell>
               <Cell>{item.mass}</Cell>
@@ -1179,38 +1145,38 @@ const OnLoadMoreTableVirtualized = () => {
 
 export const OnLoadMoreTableStoryVirtualized = {
   render: OnLoadMoreTableVirtualized,
-  name: "Virtualized Table with async loading",
+  name: 'Virtualized Table with async loading'
 };
 
 const OnLoadMoreTableVirtualizedResizeWrapper = () => {
   let list = useAsyncList<Character>({
-    async load({ signal, cursor }) {
+    async load({signal, cursor}) {
       if (cursor) {
-        cursor = cursor.replace(/^http:\/\//i, "https://");
+        cursor = cursor.replace(/^http:\/\//i, 'https://');
       }
 
       // Slow down load so progress circle can appear
       await new Promise((resolve) => setTimeout(resolve, 4000));
       let res = await fetch(
-        cursor || "https://swapi.py4e.com/api/people/?search=",
-        { signal }
+        cursor || 'https://swapi.py4e.com/api/people/?search=',
+        {signal}
       );
       let json = await res.json();
       return {
         items: json.results,
-        cursor: json.next,
+        cursor: json.next
       };
-    },
+    }
   });
 
   let isLoading =
-    list.loadingState === "loading" || list.loadingState === "loadingMore";
+    list.loadingState === 'loading' || list.loadingState === 'loadingMore';
   let scrollRef = useRef<HTMLDivElement>(null);
   let memoedLoadMoreProps = useMemo(
     () => ({
       isLoading: isLoading,
       onLoadMore: list.loadMore,
-      items: list.items,
+      items: list.items
     }),
     [isLoading, list.loadMore, list.items]
   );
@@ -1219,23 +1185,20 @@ const OnLoadMoreTableVirtualizedResizeWrapper = () => {
   return (
     <ResizableTableContainer
       ref={scrollRef}
-      style={{ height: 150, width: 400, overflow: "auto" }}
-    >
+      style={{height: 150, width: 400, overflow: 'auto'}}>
       <Virtualizer
         layout={TableLayout}
         layoutOptions={{
           rowHeight: 25,
-          headingHeight: 25,
-        }}
-      >
+          headingHeight: 25
+        }}>
         <Table aria-label="Load more table virtualized">
           <TableHeader
             style={{
-              background: "var(--spectrum-gray-100)",
-              width: "100%",
-              height: "100%",
-            }}
-          >
+              background: 'var(--spectrum-gray-100)',
+              width: '100%',
+              height: '100%'
+            }}>
             <Column id="name" isRowHeader>
               Name
             </Column>
@@ -1245,16 +1208,14 @@ const OnLoadMoreTableVirtualizedResizeWrapper = () => {
           </TableHeader>
           <MyTableBody
             renderEmptyState={() =>
-              renderEmptyLoader({ isLoading: list.loadingState === "loading" })
+              renderEmptyLoader({isLoading: list.loadingState === 'loading'})
             }
-            isLoadingMore={list.loadingState === "loadingMore"}
-            rows={list.items}
-          >
+            isLoadingMore={list.loadingState === 'loadingMore'}
+            rows={list.items}>
             {(item) => (
               <Row
                 id={item.name}
-                style={{ width: "inherit", height: "inherit" }}
-              >
+                style={{width: 'inherit', height: 'inherit'}}>
                 <Cell>{item.name}</Cell>
                 <Cell>{item.height}</Cell>
                 <Cell>{item.mass}</Cell>
@@ -1270,27 +1231,27 @@ const OnLoadMoreTableVirtualizedResizeWrapper = () => {
 
 export const OnLoadMoreTableVirtualizedResizeWrapperStory = {
   render: OnLoadMoreTableVirtualizedResizeWrapper,
-  name: "Virtualized Table with async loading, resizable table container wrapper",
+  name: 'Virtualized Table with async loading, resizable table container wrapper'
 };
 
 interface Launch {
-  id: number;
-  mission_name: string;
-  launch_year: number;
+  id: number,
+  mission_name: string,
+  launch_year: number
 }
 
 const items: Launch[] = [
-  { id: 0, mission_name: "FalconSat", launch_year: 2006 },
-  { id: 1, mission_name: "DemoSat", launch_year: 2007 },
-  { id: 2, mission_name: "Trailblazer", launch_year: 2008 },
-  { id: 3, mission_name: "RatSat", launch_year: 2009 },
+  {id: 0, mission_name: 'FalconSat', launch_year: 2006},
+  {id: 1, mission_name: 'DemoSat', launch_year: 2007},
+  {id: 2, mission_name: 'Trailblazer', launch_year: 2008},
+  {id: 3, mission_name: 'RatSat', launch_year: 2009}
 ];
 
 function makePromise(items: Launch[]) {
   return new Promise((resolve) => setTimeout(() => resolve(items), 1000));
 }
 
-function TableSuspense({ reactTransition = false }) {
+function TableSuspense({reactTransition = false}) {
   let [promise, setPromise] = useState(() => makePromise(items.slice(0, 2)));
   let [isPending, startTransition] = React.useTransition();
   return (
@@ -1306,8 +1267,7 @@ function TableSuspense({ reactTransition = false }) {
               <Row>
                 <Cell colSpan={2}>Loading...</Cell>
               </Row>
-            }
-          >
+            }>
             <LocationsTableBody promise={promise} />
           </Suspense>
         </TableBody>
@@ -1323,15 +1283,14 @@ function TableSuspense({ reactTransition = false }) {
           } else {
             update();
           }
-        }}
-      >
-        {isPending ? "Loading" : "Load more"}
+        }}>
+        {isPending ? 'Loading' : 'Load more'}
       </button>
     </div>
   );
 }
 
-function LocationsTableBody({ promise }) {
+function LocationsTableBody({promise}) {
   let items = React.use<Launch[]>(promise);
 
   return items.map((item) => (
@@ -1344,13 +1303,13 @@ function LocationsTableBody({ promise }) {
 
 export const TableWithSuspense = {
   render:
-    React.use != null ? TableSuspense : () => "This story requires React 19.",
+    React.use != null ? TableSuspense : () => 'This story requires React 19.',
   args: {
-    reactTransition: false,
+    reactTransition: false
   },
   parameters: {
     description: {
-      data: "Expected behavior: With reactTransition=false, rows should be replaced by loading indicator when pressing button. With reactTransition=true, existing rows should remain and loading should appear inside the button.",
-    },
-  },
+      data: 'Expected behavior: With reactTransition=false, rows should be replaced by loading indicator when pressing button. With reactTransition=true, existing rows should remain and loading should appear inside the button.'
+    }
+  }
 };

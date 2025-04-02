@@ -16,9 +16,9 @@ import {
   mergeProps,
   useFocusRing,
   useToast,
-  useToastRegion,
-} from "react-aria";
-import { ButtonContext } from "./Button";
+  useToastRegion
+} from 'react-aria';
+import {ButtonContext} from './Button';
 import {
   ContextValue,
   DEFAULT_SLOT,
@@ -26,16 +26,16 @@ import {
   RenderProps,
   StyleRenderProps,
   useContextProps,
-  useRenderProps,
-} from "./utils";
-import { createPortal } from "react-dom";
-import { forwardRefType } from "@react-types/shared";
+  useRenderProps
+} from './utils';
+import {createPortal} from 'react-dom';
+import {forwardRefType} from '@react-types/shared';
 import {
   QueuedToast,
   ToastQueue,
   ToastState,
-  useToastQueue,
-} from "react-stately";
+  useToastQueue
+} from 'react-stately';
 import React, {
   createContext,
   ForwardedRef,
@@ -43,41 +43,41 @@ import React, {
   HTMLAttributes,
   JSX,
   ReactElement,
-  useContext,
-} from "react";
-import { TextContext } from "./Text";
-import { useIsSSR } from "@react-aria-nutrient/ssr";
-import { useObjectRef } from "@react-aria-nutrient/utils";
+  useContext
+} from 'react';
+import {TextContext} from './Text';
+import {useIsSSR} from '@react-aria-nutrient/ssr';
+import {useObjectRef} from '@react-aria-nutrient/utils';
 
 const ToastStateContext = createContext<ToastState<any> | null>(null);
 
 export interface ToastRegionRenderProps<T> {
   /** A list of all currently visible toasts. */
-  visibleToasts: QueuedToast<T>[];
+  visibleToasts: QueuedToast<T>[],
   /**
    * Whether the toast region is currently focused.
    * @selector [data-focused]
    */
-  isFocused: boolean;
+  isFocused: boolean,
   /**
    * Whether the toast region is keyboard focused.
    * @selector [data-focus-visible]
    */
-  isFocusVisible: boolean;
+  isFocusVisible: boolean
 }
 
 export interface ToastRegionProps<T>
   extends AriaToastRegionProps,
     StyleRenderProps<ToastRegionRenderProps<T>> {
   /** The queue of toasts to display. */
-  queue: ToastQueue<T>;
+  queue: ToastQueue<T>,
   /** A function to render each toast. */
-  children: (renderProps: { toast: QueuedToast<T> }) => ReactElement;
+  children: (renderProps: { toast: QueuedToast<T> }) => ReactElement,
   /**
    * The container element in which the toast region portal will be placed.
    * @default document.body
    */
-  portalContainer?: Element;
+  portalContainer?: Element
 }
 
 /**
@@ -91,21 +91,21 @@ export const ToastRegion = /*#__PURE__*/ (forwardRef as forwardRefType)(
     let isSSR = useIsSSR();
     let state = useToastQueue(props.queue);
     let objectRef = useObjectRef(ref);
-    let { regionProps } = useToastRegion(props, state, objectRef);
+    let {regionProps} = useToastRegion(props, state, objectRef);
 
-    let { focusProps, isFocused, isFocusVisible } = useFocusRing();
+    let {focusProps, isFocused, isFocusVisible} = useFocusRing();
     let renderProps = useRenderProps({
       ...props,
       children: undefined,
-      defaultClassName: "react-aria-ToastRegion",
+      defaultClassName: 'react-aria-ToastRegion',
       values: {
         visibleToasts: state.visibleToasts,
         isFocused,
-        isFocusVisible,
-      },
+        isFocusVisible
+      }
     });
 
-    let { portalContainer = isSSR ? null : document.body } = props;
+    let {portalContainer = isSSR ? null : document.body} = props;
 
     let region = (
       <ToastStateContext.Provider value={state}>
@@ -114,10 +114,9 @@ export const ToastRegion = /*#__PURE__*/ (forwardRef as forwardRefType)(
           {...mergeProps(regionProps, focusProps)}
           ref={objectRef}
           data-focused={isFocused || undefined}
-          data-focus-visible={isFocusVisible || undefined}
-        >
-          {typeof props.children === "function" ? (
-            <ToastList {...props} style={{ display: "contents" }} />
+          data-focus-visible={isFocusVisible || undefined}>
+          {typeof props.children === 'function' ? (
+            <ToastList {...props} style={{display: 'contents'}} />
           ) : (
             props.children
           )}
@@ -142,8 +141,8 @@ const ToastList = /*#__PURE__*/ (forwardRef as forwardRefType)(
       // @ts-ignore
       <ol ref={ref} style={props.style} className={props.className}>
         {state.visibleToasts.map((toast) => (
-          <li key={toast.key} style={{ display: "contents" }}>
-            {props.children({ toast })}
+          <li key={toast.key} style={{display: 'contents'}}>
+            {props.children({toast})}
           </li>
         ))}
       </ol>
@@ -155,17 +154,17 @@ export interface ToastRenderProps<T> {
   /**
    * The toast object to display.
    */
-  toast: QueuedToast<T>;
+  toast: QueuedToast<T>,
   /**
    * Whether the toast is currently focused.
    * @selector [data-focused]
    */
-  isFocused: boolean;
+  isFocused: boolean,
   /**
    * Whether the toast is keyboard focused.
    * @selector [data-focus-visible]
    */
-  isFocusVisible: boolean;
+  isFocusVisible: boolean
 }
 
 export interface ToastProps<T>
@@ -184,18 +183,18 @@ export const Toast = /*#__PURE__*/ (forwardRef as forwardRefType)(
       contentProps,
       titleProps,
       descriptionProps,
-      closeButtonProps,
+      closeButtonProps
     } = useToast(props, state, objectRef);
 
-    let { focusProps, isFocused, isFocusVisible } = useFocusRing();
+    let {focusProps, isFocused, isFocusVisible} = useFocusRing();
     let renderProps = useRenderProps({
       ...props,
-      defaultClassName: "react-aria-Toast",
+      defaultClassName: 'react-aria-Toast',
       values: {
         toast: props.toast,
         isFocused,
-        isFocusVisible,
-      },
+        isFocusVisible
+      }
     });
 
     return (
@@ -204,8 +203,7 @@ export const Toast = /*#__PURE__*/ (forwardRef as forwardRefType)(
         {...mergeProps(toastProps, focusProps)}
         ref={objectRef}
         data-focused={isFocused || undefined}
-        data-focus-visible={isFocusVisible || undefined}
-      >
+        data-focus-visible={isFocusVisible || undefined}>
         <Provider
           values={[
             [ToastContentContext, contentProps],
@@ -215,21 +213,20 @@ export const Toast = /*#__PURE__*/ (forwardRef as forwardRefType)(
                 slots: {
                   [DEFAULT_SLOT]: {},
                   title: titleProps,
-                  description: descriptionProps,
-                },
-              },
+                  description: descriptionProps
+                }
+              }
             ],
             [
               ButtonContext,
               {
                 slots: {
                   [DEFAULT_SLOT]: {},
-                  close: closeButtonProps,
-                },
-              },
-            ],
-          ]}
-        >
+                  close: closeButtonProps
+                }
+              }
+            ]
+          ]}>
           {renderProps.children}
         </Provider>
       </div>

@@ -10,20 +10,20 @@
  * governing permissions and limitations under the License.
  */
 
-import Alert from "@spectrum-icons/ui/AlertMedium";
-import Checkmark from "@spectrum-icons/ui/CheckmarkMedium";
-import { classNames, useValueEffect } from "@react-spectrum/utils";
-import datepickerStyles from "./styles.css";
+import Alert from '@spectrum-icons/ui/AlertMedium';
+import Checkmark from '@spectrum-icons/ui/CheckmarkMedium';
+import {classNames, useValueEffect} from '@react-spectrum/utils';
+import datepickerStyles from './styles.css';
 import {
   mergeProps,
   mergeRefs,
   useEvent,
   useLayoutEffect,
-  useResizeObserver,
-} from "@react-aria-nutrient/utils";
-import React, { ReactElement, useCallback, useRef } from "react";
-import textfieldStyles from "@adobe/spectrum-css-temp/components/textfield/vars.css";
-import { useFocusRing } from "@react-aria-nutrient/focus";
+  useResizeObserver
+} from '@react-aria-nutrient/utils';
+import React, {ReactElement, useCallback, useRef} from 'react';
+import textfieldStyles from '@adobe/spectrum-css-temp/components/textfield/vars.css';
+import {useFocusRing} from '@react-aria-nutrient/focus';
 
 export const Input = React.forwardRef(function Input(props: any, ref: any) {
   let inputRef = useRef<HTMLInputElement | null>(null);
@@ -36,7 +36,7 @@ export const Input = React.forwardRef(function Input(props: any, ref: any) {
     fieldProps,
     className,
     style,
-    disableFocusRing,
+    disableFocusRing
   } = props;
 
   // Reserve padding for the error icon when the width of the input is unconstrained.
@@ -78,7 +78,7 @@ export const Input = React.forwardRef(function Input(props: any, ref: any) {
   useLayoutEffect(onResize, [onResize]);
   useResizeObserver({
     ref: inputRef,
-    onResize,
+    onResize
   });
 
   // We also need to listen for resize events of the window so we can detect
@@ -86,54 +86,54 @@ export const Input = React.forwardRef(function Input(props: any, ref: any) {
   // use a resize observer on a parent element, but it's hard to know _what_
   // parent element.
   useEvent(
-    useRef(typeof window !== "undefined" ? window : null),
-    "resize",
+    useRef(typeof window !== 'undefined' ? window : null),
+    'resize',
     onResize
   );
 
-  let { focusProps, isFocusVisible, isFocused } = useFocusRing({
+  let {focusProps, isFocusVisible, isFocused} = useFocusRing({
     isTextInput: true,
-    within: true,
+    within: true
   });
 
-  let isInvalid = validationState === "invalid" && !isDisabled;
+  let isInvalid = validationState === 'invalid' && !isDisabled;
   let textfieldClass = classNames(
     textfieldStyles,
-    "spectrum-Textfield",
+    'spectrum-Textfield',
     {
-      "spectrum-Textfield--invalid": isInvalid,
-      "spectrum-Textfield--valid": validationState === "valid" && !isDisabled,
-      "spectrum-Textfield--quiet": isQuiet,
-      "focus-ring": isFocusVisible && !disableFocusRing,
+      'spectrum-Textfield--invalid': isInvalid,
+      'spectrum-Textfield--valid': validationState === 'valid' && !isDisabled,
+      'spectrum-Textfield--quiet': isQuiet,
+      'focus-ring': isFocusVisible && !disableFocusRing
     },
-    classNames(datepickerStyles, "react-spectrum-Datepicker-field"),
+    classNames(datepickerStyles, 'react-spectrum-Datepicker-field'),
     className
   );
 
   let inputClass = classNames(
     textfieldStyles,
-    "spectrum-Textfield-input",
+    'spectrum-Textfield-input',
     {
-      "is-disabled": isDisabled,
-      "is-focused": isFocused,
+      'is-disabled': isDisabled,
+      'is-focused': isFocused
     },
-    classNames(datepickerStyles, "react-spectrum-DateField-Input"),
+    classNames(datepickerStyles, 'react-spectrum-DateField-Input'),
     reservePadding &&
-      classNames(datepickerStyles, "react-spectrum-Datepicker-input"),
+      classNames(datepickerStyles, 'react-spectrum-Datepicker-input'),
     inputClassName
   );
 
   let iconClass = classNames(
     textfieldStyles,
-    "spectrum-Textfield-validationIcon"
+    'spectrum-Textfield-validationIcon'
   );
 
   let validationIcon: ReactElement | null = null;
-  if (validationState === "invalid" && !isDisabled) {
+  if (validationState === 'invalid' && !isDisabled) {
     validationIcon = (
       <Alert data-testid="invalid-icon" UNSAFE_className={iconClass} />
     );
-  } else if (validationState === "valid" && !isDisabled) {
+  } else if (validationState === 'valid' && !isDisabled) {
     validationIcon = (
       <Checkmark data-testid="valid-icon" UNSAFE_className={iconClass} />
     );
@@ -144,25 +144,22 @@ export const Input = React.forwardRef(function Input(props: any, ref: any) {
       role="presentation"
       {...mergeProps(fieldProps, focusProps)}
       className={textfieldClass}
-      style={style}
-    >
+      style={style}>
       <div role="presentation" className={inputClass}>
         <div
           role="presentation"
           className={classNames(
             datepickerStyles,
-            "react-spectrum-Datepicker-inputContents"
+            'react-spectrum-Datepicker-inputContents'
           )}
-          ref={mergeRefs(ref, inputRef)}
-        >
+          ref={mergeRefs(ref, inputRef)}>
           <div
             role="presentation"
             className={classNames(
               datepickerStyles,
-              "react-spectrum-Datepicker-inputSized"
+              'react-spectrum-Datepicker-inputSized'
             )}
-            style={{ minWidth: props.minWidth }}
-          >
+            style={{minWidth: props.minWidth}}>
             {children}
           </div>
         </div>

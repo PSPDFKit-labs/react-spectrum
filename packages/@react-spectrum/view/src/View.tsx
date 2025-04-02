@@ -15,12 +15,12 @@ import {
   useDOMRef,
   useSlotProps,
   useStyleProps,
-  viewStyleProps,
-} from "@react-spectrum/utils";
-import { ColorVersion, DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import React, { forwardRef, ReactElement } from "react";
-import { ViewProps } from "@react-types/view";
+  viewStyleProps
+} from '@react-spectrum/utils';
+import {ColorVersion, DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import React, {forwardRef, ReactElement} from 'react';
+import {ViewProps} from '@react-types/view';
 
 /**
  * View is a general purpose container with no specific semantics that can be used for custom styling purposes.
@@ -31,8 +31,8 @@ export const View = forwardRef(function View<C extends ColorVersion>(
   ref: DOMRef
 ) {
   props = useSlotProps(props);
-  let { elementType: ElementType = "div", children, ...otherProps } = props;
-  let { styleProps } = useStyleProps(props, viewStyleProps);
+  let {elementType: ElementType = 'div', children, ...otherProps} = props;
+  let {styleProps} = useStyleProps(props, viewStyleProps);
   let domRef = useDOMRef(ref);
 
   return (

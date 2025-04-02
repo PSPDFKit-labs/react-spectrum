@@ -13,38 +13,38 @@
 import {
   AriaModalOverlayProps,
   DismissButton,
-  useModalOverlay,
-} from "@react-aria-nutrient/overlays";
-import { classNames, useDOMRef, useStyleProps } from "@react-spectrum/utils";
-import { DOMRef, RefObject, StyleProps } from "@react-types/shared";
-import { Overlay } from "./Overlay";
-import { OverlayProps } from "@react-types/overlays";
-import { OverlayTriggerState } from "@react-stately/overlays";
-import overrideStyles from "./overlays.css";
-import React, { ForwardedRef, forwardRef, ReactNode, useRef } from "react";
-import trayStyles from "@adobe/spectrum-css-temp/components/tray/vars.css";
-import { Underlay } from "./Underlay";
-import { useObjectRef, useViewportSize } from "@react-aria-nutrient/utils";
+  useModalOverlay
+} from '@react-aria-nutrient/overlays';
+import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
+import {DOMRef, RefObject, StyleProps} from '@react-types/shared';
+import {Overlay} from './Overlay';
+import {OverlayProps} from '@react-types/overlays';
+import {OverlayTriggerState} from '@react-stately/overlays';
+import overrideStyles from './overlays.css';
+import React, {ForwardedRef, forwardRef, ReactNode, useRef} from 'react';
+import trayStyles from '@adobe/spectrum-css-temp/components/tray/vars.css';
+import {Underlay} from './Underlay';
+import {useObjectRef, useViewportSize} from '@react-aria-nutrient/utils';
 
 interface TrayProps
   extends AriaModalOverlayProps,
     StyleProps,
-    Omit<OverlayProps, "nodeRef" | "shouldContainFocus"> {
-  children: ReactNode;
-  state: OverlayTriggerState;
-  isFixedHeight?: boolean;
+    Omit<OverlayProps, 'nodeRef' | 'shouldContainFocus'> {
+  children: ReactNode,
+  state: OverlayTriggerState,
+  isFixedHeight?: boolean
 }
 
 interface TrayWrapperProps extends TrayProps {
-  isOpen?: boolean;
-  wrapperRef: RefObject<HTMLDivElement | null>;
+  isOpen?: boolean,
+  wrapperRef: RefObject<HTMLDivElement | null>
 }
 
 export const Tray = forwardRef(function Tray(
   props: TrayProps,
   ref: DOMRef<HTMLDivElement>
 ) {
-  let { children, state, ...otherProps } = props;
+  let {children, state, ...otherProps} = props;
   let domRef = useDOMRef(ref);
   let wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -61,14 +61,14 @@ let TrayWrapper = forwardRef(function (
   props: TrayWrapperProps,
   ref: ForwardedRef<HTMLDivElement | null>
 ) {
-  let { children, isOpen, isFixedHeight, state, wrapperRef } = props;
-  let { styleProps } = useStyleProps(props);
+  let {children, isOpen, isFixedHeight, state, wrapperRef} = props;
+  let {styleProps} = useStyleProps(props);
   let objRef = useObjectRef(ref);
 
-  let { modalProps, underlayProps } = useModalOverlay(
+  let {modalProps, underlayProps} = useModalOverlay(
     {
       ...props,
-      isDismissable: true,
+      isDismissable: true
     },
     state,
     objRef
@@ -83,19 +83,19 @@ let TrayWrapper = forwardRef(function (
   // is up, so use the VisualViewport API to ensure the tray is displayed above the keyboard.
   let viewport = useViewportSize();
   let wrapperStyle: any = {
-    "--spectrum-visual-viewport-height": viewport.height + "px",
+    '--spectrum-visual-viewport-height': viewport.height + 'px'
   };
 
-  let wrapperClassName = classNames(trayStyles, "spectrum-Tray-wrapper");
+  let wrapperClassName = classNames(trayStyles, 'spectrum-Tray-wrapper');
 
   let className = classNames(
     trayStyles,
-    "spectrum-Tray",
+    'spectrum-Tray',
     {
-      "is-open": isOpen,
-      "spectrum-Tray--fixedHeight": isFixedHeight,
+      'is-open': isOpen,
+      'spectrum-Tray--fixedHeight': isFixedHeight
     },
-    classNames(overrideStyles, "spectrum-Tray", "react-spectrum-Tray"),
+    classNames(overrideStyles, 'spectrum-Tray', 'react-spectrum-Tray'),
     styleProps.className
   );
 
@@ -109,8 +109,7 @@ let TrayWrapper = forwardRef(function (
           {...modalProps}
           className={className}
           ref={objRef}
-          data-testid="tray"
-        >
+          data-testid="tray">
           <DismissButton onDismiss={state.close} />
           {children}
           <DismissButton onDismiss={state.close} />

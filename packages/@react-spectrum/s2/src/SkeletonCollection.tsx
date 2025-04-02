@@ -10,12 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
-import { createLeafComponent } from "@react-aria-nutrient/collections";
-import { ReactNode } from "react";
-import { Skeleton } from "./Skeleton";
+import {createLeafComponent} from '@react-aria-nutrient/collections';
+import {ReactNode} from 'react';
+import {Skeleton} from './Skeleton';
 
 export interface SkeletonCollectionProps {
-  children: () => ReactNode;
+  children: () => ReactNode
 }
 
 let cache = new WeakMap();
@@ -24,7 +24,7 @@ let cache = new WeakMap();
  * A SkeletonCollection generates placeholder content within a collection component such as CardView.
  */
 export const SkeletonCollection = createLeafComponent(
-  "skeleton",
+  'skeleton',
   (props: SkeletonCollectionProps, ref, node) => {
     // Cache rendering based on node object identity. This allows the children function to randomize
     // its content (e.g. heights) and preserve on re-renders.

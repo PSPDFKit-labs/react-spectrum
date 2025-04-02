@@ -13,14 +13,14 @@
 import {
   AriaLabelingProps,
   RefObject,
-  DOMProps as SharedDOMProps,
-} from "@react-types/shared";
+  DOMProps as SharedDOMProps
+} from '@react-types/shared';
 import {
   mergeProps,
   mergeRefs,
   useLayoutEffect,
-  useObjectRef,
-} from "@react-aria-nutrient/utils";
+  useObjectRef
+} from '@react-aria-nutrient/utils';
 import React, {
   Context,
   CSSProperties,
@@ -33,13 +33,13 @@ import React, {
   useContext,
   useMemo,
   useRef,
-  useState,
-} from "react";
+  useState
+} from 'react';
 
-export const DEFAULT_SLOT = Symbol("default");
+export const DEFAULT_SLOT = Symbol('default');
 
 interface SlottedValue<T> {
-  slots?: Record<string | symbol, T>;
+  slots?: Record<string | symbol, T>
 }
 
 export type SlottedContextValue<T> = SlottedValue<T> | T | null | undefined;
@@ -123,13 +123,13 @@ type ProviderValues<A, B, C, D, E, F, G, H, I, J, K> =
     ];
 
 interface ProviderProps<A, B, C, D, E, F, G, H, I, J, K> {
-  values: ProviderValues<A, B, C, D, E, F, G, H, I, J, K>;
-  children: ReactNode;
+  values: ProviderValues<A, B, C, D, E, F, G, H, I, J, K>,
+  children: ReactNode
 }
 
 export function Provider<A, B, C, D, E, F, G, H, I, J, K>({
   values,
-  children,
+  children
 }: ProviderProps<A, B, C, D, E, F, G, H, I, J, K>): JSX.Element {
   for (let [Context, value] of values) {
     // @ts-ignore
@@ -141,56 +141,56 @@ export function Provider<A, B, C, D, E, F, G, H, I, J, K>({
 
 export interface StyleProps {
   /** The CSS [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) for the element. */
-  className?: string;
+  className?: string,
   /** The inline [style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style) for the element. */
-  style?: CSSProperties;
+  style?: CSSProperties
 }
 
 export interface DOMProps extends StyleProps, SharedDOMProps {
   /** The children of the component. */
-  children?: ReactNode;
+  children?: ReactNode
 }
 
 export interface ScrollableProps<T extends Element> {
   /** Handler that is called when a user scrolls. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event). */
-  onScroll?: (e: UIEvent<T>) => void;
+  onScroll?: (e: UIEvent<T>) => void
 }
 
 export interface StyleRenderProps<T> {
   /** The CSS [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) for the element. A function may be provided to compute the class based on component state. */
   className?:
     | string
-    | ((values: T & { defaultClassName: string | undefined }) => string);
+    | ((values: T & { defaultClassName: string | undefined }) => string),
   /** The inline [style](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style) for the element. A function may be provided to compute the style based on component state. */
   style?:
     | CSSProperties
     | ((
         values: T & { defaultStyle: CSSProperties }
-      ) => CSSProperties | undefined);
+      ) => CSSProperties | undefined)
 }
 
 export interface RenderProps<T> extends StyleRenderProps<T> {
   /** The children of the component. A function may be provided to alter the children based on component state. */
   children?:
     | ReactNode
-    | ((values: T & { defaultChildren: ReactNode | undefined }) => ReactNode);
+    | ((values: T & { defaultChildren: ReactNode | undefined }) => ReactNode)
 }
 
 interface RenderPropsHookOptions<T>
   extends RenderProps<T>,
     SharedDOMProps,
     AriaLabelingProps {
-  values: T;
-  defaultChildren?: ReactNode;
-  defaultClassName?: string;
-  defaultStyle?: CSSProperties;
+  values: T,
+  defaultChildren?: ReactNode,
+  defaultClassName?: string,
+  defaultStyle?: CSSProperties
 }
 
 interface RenderPropsHookRetVal {
-  className?: string;
-  style?: CSSProperties;
-  children?: ReactNode;
-  "data-rac": string;
+  className?: string,
+  style?: CSSProperties,
+  children?: ReactNode,
+  'data-rac': string
 }
 
 export function useRenderProps<T>(
@@ -203,7 +203,7 @@ export function useRenderProps<T>(
     defaultClassName = undefined,
     defaultChildren = undefined,
     defaultStyle,
-    values,
+    values
   } = props;
 
   return useMemo(() => {
@@ -211,20 +211,20 @@ export function useRenderProps<T>(
     let computedStyle: React.CSSProperties | undefined;
     let computedChildren: React.ReactNode | undefined;
 
-    if (typeof className === "function") {
-      computedClassName = className({ ...values, defaultClassName });
+    if (typeof className === 'function') {
+      computedClassName = className({...values, defaultClassName});
     } else {
       computedClassName = className;
     }
 
-    if (typeof style === "function") {
-      computedStyle = style({ ...values, defaultStyle: defaultStyle || {} });
+    if (typeof style === 'function') {
+      computedStyle = style({...values, defaultStyle: defaultStyle || {}});
     } else {
       computedStyle = style;
     }
 
-    if (typeof children === "function") {
-      computedChildren = children({ ...values, defaultChildren });
+    if (typeof children === 'function') {
+      computedChildren = children({...values, defaultChildren});
     } else if (children == null) {
       computedChildren = defaultChildren;
     } else {
@@ -235,10 +235,10 @@ export function useRenderProps<T>(
       className: computedClassName ?? defaultClassName,
       style:
         computedStyle || defaultStyle
-          ? { ...defaultStyle, ...computedStyle }
+          ? {...defaultStyle, ...computedStyle}
           : undefined,
       children: computedChildren ?? defaultChildren,
-      "data-rac": "",
+      'data-rac': ''
     };
   }, [
     className,
@@ -247,7 +247,7 @@ export function useRenderProps<T>(
     defaultClassName,
     defaultChildren,
     defaultStyle,
-    values,
+    values
   ]);
 }
 
@@ -261,7 +261,7 @@ export function composeRenderProps<T, U, V extends T>(
   wrap: (prevValue: T, renderProps: U) => V
 ): (renderProps: U) => V {
   return (renderProps) =>
-    wrap(typeof value === "function" ? value(renderProps) : value, renderProps);
+    wrap(typeof value === 'function' ? value(renderProps) : value, renderProps);
 }
 
 export type WithRef<T, E> = T & { ref?: ForwardedRef<E> };
@@ -270,7 +270,7 @@ export interface SlotProps {
    * A slot name for the component. Slots allow the component to receive props from a parent component.
    * An explicit `null` value indicates that the local props completely override all props received from a parent.
    */
-  slot?: string | null;
+  slot?: string | null
 }
 
 export function useSlottedContext<T>(
@@ -282,7 +282,7 @@ export function useSlottedContext<T>(
     // An explicit `null` slot means don't use context.
     return null;
   }
-  if (ctx && typeof ctx === "object" && "slots" in ctx && ctx.slots) {
+  if (ctx && typeof ctx === 'object' && 'slots' in ctx && ctx.slots) {
     let slotKey = slot || DEFAULT_SLOT;
     if (!ctx.slots[slotKey]) {
       let availableSlots = new Intl.ListFormat().format(
@@ -290,7 +290,7 @@ export function useSlottedContext<T>(
       );
       let errorMessage = slot
         ? `Invalid slot "${slot}".`
-        : "A slot prop is required.";
+        : 'A slot prop is required.';
 
       throw new Error(
         `${errorMessage} Valid slot names are ${availableSlots}.`
@@ -309,7 +309,7 @@ export function useContextProps<T, U extends SlotProps, E extends Element>(
 ): [T, RefObject<E | null>] {
   let ctx = useSlottedContext(context, props.slot) || {};
   // @ts-ignore - TS says "Type 'unique symbol' cannot be used as an index type." but not sure why.
-  let { ref: contextRef, ...contextProps } = ctx as any;
+  let {ref: contextRef, ...contextProps} = ctx as any;
   let mergedRef = useObjectRef(
     useMemo(() => mergeRefs(ref, contextRef), [ref, contextRef])
   );
@@ -317,31 +317,31 @@ export function useContextProps<T, U extends SlotProps, E extends Element>(
 
   // mergeProps does not merge `style`. Adding this there might be a breaking change.
   if (
-    "style" in contextProps &&
+    'style' in contextProps &&
     contextProps.style &&
-    "style" in props &&
+    'style' in props &&
     props.style
   ) {
     if (
-      typeof contextProps.style === "function" ||
-      typeof props.style === "function"
+      typeof contextProps.style === 'function' ||
+      typeof props.style === 'function'
     ) {
       // @ts-ignore
       mergedProps.style = (renderProps) => {
         let contextStyle =
-          typeof contextProps.style === "function"
+          typeof contextProps.style === 'function'
             ? contextProps.style(renderProps)
             : contextProps.style;
-        let defaultStyle = { ...renderProps.defaultStyle, ...contextStyle };
+        let defaultStyle = {...renderProps.defaultStyle, ...contextStyle};
         let style =
-          typeof props.style === "function"
-            ? props.style({ ...renderProps, defaultStyle })
+          typeof props.style === 'function'
+            ? props.style({...renderProps, defaultStyle})
             : props.style;
-        return { ...defaultStyle, ...style };
+        return {...defaultStyle, ...style};
       };
     } else {
       // @ts-ignore
-      mergedProps.style = { ...contextProps.style, ...props.style };
+      mergedProps.style = {...contextProps.style, ...props.style};
     }
   }
 
@@ -398,5 +398,5 @@ export interface RACValidation {
    * or invalid via ARIA.
    * @default 'native'
    */
-  validationBehavior?: "native" | "aria";
+  validationBehavior?: 'native' | 'aria'
 }

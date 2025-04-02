@@ -10,21 +10,21 @@
  * governing permissions and limitations under the License.
  */
 
-import { CalendarBase } from "./CalendarBase";
-import { createCalendar } from "@internationalized/date";
-import { createDOMRef } from "@react-spectrum/utils";
-import { DateValue, SpectrumCalendarProps } from "@react-types/calendar";
-import { FocusableRef } from "@react-types/shared";
+import {CalendarBase} from './CalendarBase';
+import {createCalendar} from '@internationalized/date';
+import {createDOMRef} from '@react-spectrum/utils';
+import {DateValue, SpectrumCalendarProps} from '@react-types/calendar';
+import {FocusableRef} from '@react-types/shared';
 import React, {
   ReactElement,
   useImperativeHandle,
   useMemo,
-  useRef,
-} from "react";
-import { useCalendar } from "@react-aria-nutrient/calendar";
-import { useCalendarState } from "@react-stately/calendar";
-import { useLocale } from "@react-aria-nutrient/i18n";
-import { useProviderProps } from "@react-spectrum/provider";
+  useRef
+} from 'react';
+import {useCalendar} from '@react-aria-nutrient/calendar';
+import {useCalendarState} from '@react-stately/calendar';
+import {useLocale} from '@react-aria-nutrient/i18n';
+import {useProviderProps} from '@react-spectrum/provider';
 
 /**
  * Calendars display a grid of days in one or more months and allow users to select a single date.
@@ -34,18 +34,18 @@ export const Calendar = React.forwardRef(function Calendar<T extends DateValue>(
   ref: FocusableRef<HTMLElement>
 ) {
   props = useProviderProps(props);
-  let { visibleMonths = 1 } = props;
+  let {visibleMonths = 1} = props;
   visibleMonths = Math.max(visibleMonths, 1);
   let visibleDuration = useMemo(
-    () => ({ months: visibleMonths }),
+    () => ({months: visibleMonths}),
     [visibleMonths]
   );
-  let { locale } = useLocale();
+  let {locale} = useLocale();
   let state = useCalendarState({
     ...props,
     locale,
     visibleDuration,
-    createCalendar: props.createCalendar || createCalendar,
+    createCalendar: props.createCalendar || createCalendar
   });
 
   let domRef = useRef(null);
@@ -53,10 +53,10 @@ export const Calendar = React.forwardRef(function Calendar<T extends DateValue>(
     ...createDOMRef(domRef),
     focus() {
       state.setFocused(true);
-    },
+    }
   }));
 
-  let { calendarProps, prevButtonProps, nextButtonProps, errorMessageProps } =
+  let {calendarProps, prevButtonProps, nextButtonProps, errorMessageProps} =
     useCalendar(props, state);
 
   return (
@@ -68,8 +68,7 @@ export const Calendar = React.forwardRef(function Calendar<T extends DateValue>(
       calendarProps={calendarProps}
       prevButtonProps={prevButtonProps}
       nextButtonProps={nextButtonProps}
-      errorMessageProps={errorMessageProps}
-    />
+      errorMessageProps={errorMessageProps} />
   );
 }) as <T extends DateValue>(
   props: SpectrumCalendarProps<T> & { ref?: FocusableRef<HTMLElement> }

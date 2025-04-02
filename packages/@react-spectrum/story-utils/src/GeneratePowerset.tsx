@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { mergeProps } from "@react-aria-nutrient/utils";
+import {mergeProps} from '@react-aria-nutrient/utils';
 
 // Generate a powerset from a given array of states/options,
 export function generatePowerset(
@@ -26,7 +26,7 @@ export function generatePowerset(
       // If one of the states/options has multiple values, create a combination for each
       if (Array.isArray(value)) {
         value.forEach((state) => {
-          let merged = mergeProps(combinations[j], { [key]: state });
+          let merged = mergeProps(combinations[j], {[key]: state});
           if (!(exclude && exclude(merged))) {
             combinations.push(merged);
           }

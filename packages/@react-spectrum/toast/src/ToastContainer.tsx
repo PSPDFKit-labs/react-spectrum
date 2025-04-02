@@ -10,37 +10,37 @@
  * governing permissions and limitations under the License.
  */
 
-import { AriaToastRegionProps } from "@react-aria-nutrient/toast";
-import { classNames } from "@react-spectrum/utils";
-import { DOMProps } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { flushSync } from "react-dom";
-import React, { ReactElement, useEffect, useMemo, useRef } from "react";
-import { SpectrumToastValue, Toast } from "./Toast";
-import toastContainerStyles from "./toastContainer.css";
-import { Toaster } from "./Toaster";
-import { ToastOptions, ToastQueue, useToastQueue } from "@react-stately/toast";
-import { useSyncExternalStore } from "use-sync-external-store/shim/index.js";
+import {AriaToastRegionProps} from '@react-aria-nutrient/toast';
+import {classNames} from '@react-spectrum/utils';
+import {DOMProps} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {flushSync} from 'react-dom';
+import React, {ReactElement, useEffect, useMemo, useRef} from 'react';
+import {SpectrumToastValue, Toast} from './Toast';
+import toastContainerStyles from './toastContainer.css';
+import {Toaster} from './Toaster';
+import {ToastOptions, ToastQueue, useToastQueue} from '@react-stately/toast';
+import {useSyncExternalStore} from 'use-sync-external-store/shim/index.js';
 
-export type ToastPlacement = "top" | "top end" | "bottom" | "bottom end";
+export type ToastPlacement = 'top' | 'top end' | 'bottom' | 'bottom end';
 
 export interface SpectrumToastContainerProps extends AriaToastRegionProps {
-  placement?: ToastPlacement;
+  placement?: ToastPlacement
 }
 
 export interface SpectrumToastOptions extends ToastOptions, DOMProps {
   /** A label for the action button within the toast. */
-  actionLabel?: string;
+  actionLabel?: string,
   /** Handler that is called when the action button is pressed. */
-  onAction?: () => void;
+  onAction?: () => void,
   /** Whether the toast should automatically close when an action is performed. */
-  shouldCloseOnAction?: boolean;
+  shouldCloseOnAction?: boolean
 }
 
 type CloseFunction = () => void;
 
 function wrapInViewTransition(fn: () => void): void {
-  if ("startViewTransition" in document) {
+  if ('startViewTransition' in document) {
     document
       .startViewTransition(() => {
         flushSync(fn);
@@ -57,7 +57,7 @@ function getGlobalToastQueue() {
   if (!globalToastQueue) {
     globalToastQueue = new ToastQueue({
       maxVisibleToasts: Infinity,
-      wrapUpdate: wrapInViewTransition,
+      wrapUpdate: wrapInViewTransition
     });
   }
 
@@ -124,11 +124,11 @@ export function ToastContainer(
   let activeToastContainer = useActiveToastContainer();
   let state = useToastQueue(getGlobalToastQueue());
 
-  let { placement, isCentered } = useMemo(() => {
-    let placements = (props.placement ?? "bottom").split(" ");
+  let {placement, isCentered} = useMemo(() => {
+    let placements = (props.placement ?? 'bottom').split(' ');
     let placement = placements[placements.length - 1];
     let isCentered = placements.length === 1;
-    return { placement, isCentered };
+    return {placement, isCentered};
   }, [props.placement]);
 
   if (ref === activeToastContainer && state.visibleToasts.length > 0) {
@@ -137,9 +137,8 @@ export function ToastContainer(
         <ol
           className={classNames(
             toastContainerStyles,
-            "spectrum-ToastContainer-list"
-          )}
-        >
+            'spectrum-ToastContainer-list'
+          )}>
           {state.visibleToasts.map((toast, index) => {
             let shouldFade = isCentered && index !== 0;
             return (
@@ -147,18 +146,17 @@ export function ToastContainer(
                 key={toast.key}
                 className={classNames(
                   toastContainerStyles,
-                  "spectrum-ToastContainer-listitem"
+                  'spectrum-ToastContainer-listitem'
                 )}
                 style={{
                   viewTransitionName: toast.key,
                   viewTransitionClass: classNames(
                     toastContainerStyles,
-                    "toast",
+                    'toast',
                     placement,
-                    { fadeOnly: shouldFade }
-                  ),
-                }}
-              >
+                    {fadeOnly: shouldFade}
+                  )
+                }}>
                 <Toast toast={toast} state={state} />
               </li>
             );
@@ -173,19 +171,19 @@ export function ToastContainer(
 
 function addToast(
   children: string,
-  variant: SpectrumToastValue["variant"],
+  variant: SpectrumToastValue['variant'],
   options: SpectrumToastOptions = {}
 ) {
   // Dispatch a custom event so that toasts can be intercepted and re-targeted, e.g. when inside an iframe.
-  if (typeof CustomEvent !== "undefined" && typeof window !== "undefined") {
-    let event = new CustomEvent("react-spectrum-toast", {
+  if (typeof CustomEvent !== 'undefined' && typeof window !== 'undefined') {
+    let event = new CustomEvent('react-spectrum-toast', {
       cancelable: true,
       bubbles: true,
       detail: {
         children,
         variant,
-        options,
-      },
+        options
+      }
     });
 
     let shouldContinue = window.dispatchEvent(event);
@@ -200,7 +198,7 @@ function addToast(
     actionLabel: options.actionLabel,
     onAction: options.onAction,
     shouldCloseOnAction: options.shouldCloseOnAction,
-    ...filterDOMProps(options),
+    ...filterDOMProps(options)
   };
 
   // Minimum time of 5s from https://spectrum.adobe.com/page/toast/#Auto-dismissible
@@ -211,33 +209,33 @@ function addToast(
       ? Math.max(options.timeout, 5000)
       : undefined;
   let queue = getGlobalToastQueue();
-  let key = queue.add(value, { timeout, onClose: options.onClose });
+  let key = queue.add(value, {timeout, onClose: options.onClose});
   return () => queue.close(key);
 }
 
 const SpectrumToastQueue = {
   /** Queues a neutral toast. */
   neutral(children: string, options: SpectrumToastOptions = {}): CloseFunction {
-    return addToast(children, "neutral", options);
+    return addToast(children, 'neutral', options);
   },
   /** Queues a positive toast. */
   positive(
     children: string,
     options: SpectrumToastOptions = {}
   ): CloseFunction {
-    return addToast(children, "positive", options);
+    return addToast(children, 'positive', options);
   },
   /** Queues a negative toast. */
   negative(
     children: string,
     options: SpectrumToastOptions = {}
   ): CloseFunction {
-    return addToast(children, "negative", options);
+    return addToast(children, 'negative', options);
   },
   /** Queues an informational toast. */
   info(children: string, options: SpectrumToastOptions = {}): CloseFunction {
-    return addToast(children, "info", options);
-  },
+    return addToast(children, 'info', options);
+  }
 };
 
-export { SpectrumToastQueue as ToastQueue };
+export {SpectrumToastQueue as ToastQueue};

@@ -15,8 +15,8 @@ import {
   DOMProps,
   DOMRef,
   forwardRefType,
-  StyleProps,
-} from "@react-types/shared";
+  StyleProps
+} from '@react-types/shared';
 import {
   Button,
   DisclosureGroup,
@@ -25,24 +25,24 @@ import {
   DisclosureProps,
   Heading,
   Disclosure as RACDisclosure,
-  DisclosurePanel as RACDisclosurePanel,
-} from "react-aria-components";
-import ChevronLeftMedium from "@spectrum-icons/ui/ChevronLeftMedium";
-import ChevronRightMedium from "@spectrum-icons/ui/ChevronRightMedium";
-import { classNames, useDOMRef, useStyleProps } from "@react-spectrum/utils";
-import React, { createContext, forwardRef } from "react";
-import styles from "@adobe/spectrum-css-temp/components/accordion/vars.css";
-import { useLocale } from "@react-aria-nutrient/i18n";
-import { useProviderProps } from "@react-spectrum/provider";
+  DisclosurePanel as RACDisclosurePanel
+} from 'react-aria-components';
+import ChevronLeftMedium from '@spectrum-icons/ui/ChevronLeftMedium';
+import ChevronRightMedium from '@spectrum-icons/ui/ChevronRightMedium';
+import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
+import React, {createContext, forwardRef} from 'react';
+import styles from '@adobe/spectrum-css-temp/components/accordion/vars.css';
+import {useLocale} from '@react-aria-nutrient/i18n';
+import {useProviderProps} from '@react-spectrum/provider';
 
 export interface SpectrumAccordionProps
-  extends Omit<DisclosureGroupProps, "className" | "style" | "children">,
+  extends Omit<DisclosureGroupProps, 'className' | 'style' | 'children'>,
     StyleProps,
     DOMProps {
   /** Whether the Accordion should be displayed with a quiet style. */
-  isQuiet?: boolean;
+  isQuiet?: boolean,
   /** The disclosures within the accordion group. */
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const InternalAccordionContext = createContext<{ isQuiet: boolean } | null>(
@@ -56,22 +56,20 @@ export const Accordion = /*#__PURE__*/ (forwardRef as forwardRefType)(
     ref: DOMRef<HTMLDivElement>
   ) {
     props = useProviderProps(props);
-    let { styleProps } = useStyleProps(props);
+    let {styleProps} = useStyleProps(props);
     let domRef = useDOMRef(ref);
     return (
       <InternalAccordionContext.Provider
-        value={{ isQuiet: props.isQuiet || false }}
-      >
+        value={{isQuiet: props.isQuiet || false}}>
         <DisclosureGroup
           {...props}
           {...styleProps}
           ref={domRef}
           className={classNames(
             styles,
-            "spectrum-Accordion",
+            'spectrum-Accordion',
             styleProps.className
-          )}
-        >
+          )}>
           {props.children}
         </DisclosureGroup>
       </InternalAccordionContext.Provider>
@@ -80,13 +78,13 @@ export const Accordion = /*#__PURE__*/ (forwardRef as forwardRefType)(
 );
 
 export interface SpectrumDisclosureProps
-  extends Omit<DisclosureProps, "className" | "style" | "children">,
+  extends Omit<DisclosureProps, 'className' | 'style' | 'children'>,
     AriaLabelingProps,
     StyleProps {
   /** Whether the Disclosure should be displayed with a quiet style. */
-  isQuiet?: boolean;
+  isQuiet?: boolean,
   /** The contents of the disclosure. The first child should be the header, and the second child should be the panel. */
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 /** A collapsible section of content composed of a heading that expands and collapses a panel. */
@@ -96,7 +94,7 @@ export const Disclosure = /*#__PURE__*/ (forwardRef as forwardRefType)(
     ref: DOMRef<HTMLDivElement>
   ) {
     props = useProviderProps(props);
-    let { styleProps } = useStyleProps(props);
+    let {styleProps} = useStyleProps(props);
     let domRef = useDOMRef(ref);
     let accordionContext = React.useContext(InternalAccordionContext)!;
     return (
@@ -104,21 +102,20 @@ export const Disclosure = /*#__PURE__*/ (forwardRef as forwardRefType)(
         {...props}
         {...styleProps}
         ref={domRef}
-        className={({ isExpanded, isDisabled }) =>
+        className={({isExpanded, isDisabled}) =>
           classNames(
             styles,
-            "spectrum-Accordion-item",
+            'spectrum-Accordion-item',
             {
-              "spectrum-Accordion-item--quiet":
+              'spectrum-Accordion-item--quiet':
                 accordionContext?.isQuiet ?? props.isQuiet,
-              "is-expanded": isExpanded,
-              "is-disabled": isDisabled,
-              "in-accordion": accordionContext != null,
+              'is-expanded': isExpanded,
+              'is-disabled': isDisabled,
+              'in-accordion': accordionContext != null
             },
             styleProps.className
           )
-        }
-      >
+        }>
         {props.children}
       </RACDisclosure>
     );
@@ -126,12 +123,12 @@ export const Disclosure = /*#__PURE__*/ (forwardRef as forwardRefType)(
 );
 
 export interface SpectrumDisclosurePanelProps
-  extends Omit<DisclosurePanelProps, "className" | "style" | "children">,
+  extends Omit<DisclosurePanelProps, 'className' | 'style' | 'children'>,
     DOMProps,
     AriaLabelingProps,
     StyleProps {
   /** The contents of the accordion panel. */
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 /** The panel that contains the content of the disclosure. */
@@ -140,19 +137,18 @@ export const DisclosurePanel = /*#__PURE__*/ (forwardRef as forwardRefType)(
     props: SpectrumDisclosurePanelProps,
     ref: DOMRef<HTMLDivElement>
   ) {
-    let { styleProps } = useStyleProps(props);
+    let {styleProps} = useStyleProps(props);
     let domRef = useDOMRef(ref);
     return (
       <RACDisclosurePanel
         ref={domRef}
-        {...(styleProps as Omit<React.HTMLAttributes<HTMLElement>, "role">)}
+        {...(styleProps as Omit<React.HTMLAttributes<HTMLElement>, 'role'>)}
         className={classNames(
           styles,
-          "spectrum-Accordion-itemContent",
+          'spectrum-Accordion-itemContent',
           styleProps.className
         )}
-        {...props}
-      >
+        {...props}>
         {props.children}
       </RACDisclosurePanel>
     );
@@ -167,9 +163,9 @@ export interface SpectrumDisclosureTitleProps
    * The heading level of the disclosure header.
    * @default 3
    */
-  level?: number;
+  level?: number,
   /** The contents of the disclosure header. */
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 /** The heading of the disclosure. */
@@ -178,9 +174,9 @@ export const DisclosureTitle = /*#__PURE__*/ (forwardRef as forwardRefType)(
     props: SpectrumDisclosureTitleProps,
     ref: DOMRef<HTMLHeadingElement>
   ) {
-    let { styleProps } = useStyleProps(props);
-    let { level = 3 } = props;
-    let { direction } = useLocale();
+    let {styleProps} = useStyleProps(props);
+    let {level = 3} = props;
+    let {direction} = useLocale();
     let domRef = useDOMRef(ref);
     return (
       <Heading
@@ -189,36 +185,32 @@ export const DisclosureTitle = /*#__PURE__*/ (forwardRef as forwardRefType)(
         {...styleProps}
         className={classNames(
           styles,
-          "spectrum-Accordion-itemHeading",
+          'spectrum-Accordion-itemHeading',
           styleProps.className
-        )}
-      >
+        )}>
         <Button
           slot="trigger"
-          className={({ isHovered, isFocusVisible, isPressed }) =>
-            classNames(styles, "spectrum-Accordion-itemHeader", {
-              "is-hovered": isHovered,
-              "is-pressed": isPressed,
-              "focus-ring": isFocusVisible,
+          className={({isHovered, isFocusVisible, isPressed}) =>
+            classNames(styles, 'spectrum-Accordion-itemHeader', {
+              'is-hovered': isHovered,
+              'is-pressed': isPressed,
+              'focus-ring': isFocusVisible
             })
-          }
-        >
-          {direction === "ltr" ? (
+          }>
+          {direction === 'ltr' ? (
             <ChevronRightMedium
               aria-hidden="true"
               UNSAFE_className={classNames(
                 styles,
-                "spectrum-Accordion-itemIndicator"
-              )}
-            />
+                'spectrum-Accordion-itemIndicator'
+              )} />
           ) : (
             <ChevronLeftMedium
               aria-hidden="true"
               UNSAFE_className={classNames(
                 styles,
-                "spectrum-Accordion-itemIndicator"
-              )}
-            />
+                'spectrum-Accordion-itemIndicator'
+              )} />
           )}
           {props.children}
         </Button>

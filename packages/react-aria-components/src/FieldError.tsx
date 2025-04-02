@@ -10,16 +10,16 @@
  * governing permissions and limitations under the License.
  */
 
-import { DOMProps, ValidationResult } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
+import {DOMProps, ValidationResult} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
 import React, {
   createContext,
   ForwardedRef,
   forwardRef,
-  useContext,
-} from "react";
-import { RenderProps, useRenderProps } from "./utils";
-import { Text } from "./Text";
+  useContext
+} from 'react';
+import {RenderProps, useRenderProps} from './utils';
+import {Text} from './Text';
 
 export const FieldErrorContext = createContext<ValidationResult | null>(null);
 
@@ -49,12 +49,12 @@ const FieldErrorInner = forwardRef(
     let domProps = filterDOMProps(props)!;
     let renderProps = useRenderProps({
       ...props,
-      defaultClassName: "react-aria-FieldError",
+      defaultClassName: 'react-aria-FieldError',
       defaultChildren:
         validation.validationErrors.length === 0
           ? undefined
-          : validation.validationErrors.join(" "),
-      values: validation,
+          : validation.validationErrors.join(' '),
+      values: validation
     });
 
     if (renderProps.children == null) {

@@ -20,8 +20,8 @@ import React, {
   useLayoutEffect,
   useMemo,
   useRef,
-  useState,
-} from "react";
+  useState
+} from 'react';
 
 // To support SSR, the auto incrementing id counter is stored in a context. This allows
 // it to be reset on every request to ensure the client and server are consistent.
@@ -30,8 +30,8 @@ import React, {
 // and resets the current id counter. This ensures that async loaded components have
 // consistent ids regardless of the loading order.
 interface SSRContextValue {
-  prefix: string;
-  current: number;
+  prefix: string,
+  current: number
 }
 
 // Default context value to use in case there is no SSRProvider. This is fine for
@@ -41,7 +41,7 @@ interface SSRContextValue {
 // SSR case multiple copies of React Aria is not supported.
 const defaultContext: SSRContextValue = {
   prefix: String(Math.round(Math.random() * 10000000000)),
-  current: 0,
+  current: 0
 };
 
 const SSRContext = React.createContext<SSRContextValue>(defaultContext);
@@ -49,7 +49,7 @@ const IsSSRContext = React.createContext(false);
 
 export interface SSRProviderProps {
   /** Your application here. */
-  children: ReactNode;
+  children: ReactNode
 }
 
 // This is only used in React < 18.
@@ -61,15 +61,15 @@ function LegacySSRProvider(props: SSRProviderProps): JSX.Element {
     () => ({
       // If this is the first SSRProvider, start with an empty string prefix, otherwise
       // append and increment the counter.
-      prefix: cur === defaultContext ? "" : `${cur.prefix}-${counter}`,
-      current: 0,
+      prefix: cur === defaultContext ? '' : `${cur.prefix}-${counter}`,
+      current: 0
     }),
     [cur, counter]
   );
 
   // If on the client, and the component was initially server rendered,
   // then schedule a layout effect to update the component after hydration.
-  if (typeof document !== "undefined") {
+  if (typeof document !== 'undefined') {
     // This if statement technically breaks the rules of hooks, but is safe
     // because the condition never changes after mounting.
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -94,14 +94,14 @@ let warnedAboutSSRProvider = false;
  * This ensures that auto generated ids are consistent between the client and server.
  */
 export function SSRProvider(props: SSRProviderProps): JSX.Element {
-  if (typeof React["useId"] === "function") {
+  if (typeof React['useId'] === 'function') {
     if (
-      process.env.NODE_ENV !== "test" &&
-      process.env.NODE_ENV !== "production" &&
+      process.env.NODE_ENV !== 'test' &&
+      process.env.NODE_ENV !== 'production' &&
       !warnedAboutSSRProvider
     ) {
       console.warn(
-        "In React 18, SSRProvider is not necessary and is a noop. You can remove it from your app."
+        'In React 18, SSRProvider is not necessary and is a noop. You can remove it from your app.'
       );
       warnedAboutSSRProvider = true;
     }
@@ -111,7 +111,7 @@ export function SSRProvider(props: SSRProviderProps): JSX.Element {
 }
 
 let canUseDOM = Boolean(
-  typeof window !== "undefined" &&
+  typeof window !== 'undefined' &&
   window.document &&
   window.document.createElement
 );
@@ -141,7 +141,7 @@ function useCounter(isDisabled = false) {
         // On the first render, and first call to useId, store the id and state in our weak map.
         componentIds.set(currentOwner, {
           id: ctx.current,
-          state: currentOwner.memoizedState,
+          state: currentOwner.memoizedState
         });
       } else if (currentOwner.memoizedState !== prevComponentValue.state) {
         // On the second render, the memoizedState gets reset by React.
@@ -168,17 +168,17 @@ function useLegacySSRSafeId(defaultId?: string): string {
   if (
     ctx === defaultContext &&
     !canUseDOM &&
-    process.env.NODE_ENV !== "production"
+    process.env.NODE_ENV !== 'production'
   ) {
     console.warn(
-      "When server rendering, you must wrap your application in an <SSRProvider> to ensure consistent ids are generated between the client and server."
+      'When server rendering, you must wrap your application in an <SSRProvider> to ensure consistent ids are generated between the client and server.'
     );
   }
 
   let counter = useCounter(!!defaultId);
   let prefix =
-    ctx === defaultContext && process.env.NODE_ENV === "test"
-      ? "react-aria"
+    ctx === defaultContext && process.env.NODE_ENV === 'test'
+      ? 'react-aria'
       : `react-aria${ctx.prefix}`;
   return defaultId || `${prefix}-${counter}`;
 }
@@ -187,8 +187,8 @@ function useModernSSRSafeId(defaultId?: string): string {
   let id = React.useId();
   let [didSSR] = useState(useIsSSR());
   let prefix =
-    didSSR || process.env.NODE_ENV === "test"
-      ? "react-aria"
+    didSSR || process.env.NODE_ENV === 'test'
+      ? 'react-aria'
       : `react-aria${defaultContext.prefix}`;
   return defaultId || `${prefix}-${id}`;
 }
@@ -196,7 +196,7 @@ function useModernSSRSafeId(defaultId?: string): string {
 // Use React.useId in React 18 if available, otherwise fall back to our old implementation.
 /** @private */
 export const useSSRSafeId =
-  typeof React["useId"] === "function"
+  typeof React['useId'] === 'function'
     ? useModernSSRSafeId
     : useLegacySSRSafeId;
 
@@ -221,8 +221,8 @@ function subscribe(onStoreChange: () => void): () => void {
  */
 export function useIsSSR(): boolean {
   // In React 18, we can use useSyncExternalStore to detect if we're server rendering or hydrating.
-  if (typeof React["useSyncExternalStore"] === "function") {
-    return React["useSyncExternalStore"](
+  if (typeof React['useSyncExternalStore'] === 'function') {
+    return React['useSyncExternalStore'](
       subscribe,
       getSnapshot,
       getServerSnapshot

@@ -15,16 +15,16 @@ import {
   dimensionValue,
   useDOMRef,
   useSlotProps,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import React, { forwardRef } from "react";
-import { SpectrumAvatarProps } from "@react-types/avatar";
-import styles from "@adobe/spectrum-css-temp/components/avatar/vars.css";
-import { useProviderProps } from "@react-spectrum/provider";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import React, {forwardRef} from 'react';
+import {SpectrumAvatarProps} from '@react-types/avatar';
+import styles from '@adobe/spectrum-css-temp/components/avatar/vars.css';
+import {useProviderProps} from '@react-spectrum/provider';
 
-const DEFAULT_SIZE = "avatar-size-100";
+const DEFAULT_SIZE = 'avatar-size-100';
 const SIZE_RE = /^size-\d+/;
 
 /**
@@ -34,16 +34,16 @@ export const Avatar = forwardRef(function Avatar(
   props: SpectrumAvatarProps,
   ref: DOMRef<HTMLImageElement>
 ) {
-  props = useSlotProps(props, "avatar");
+  props = useSlotProps(props, 'avatar');
   const {
-    alt = "",
+    alt = '',
     isDisabled,
     size = DEFAULT_SIZE,
     src,
     ...otherProps
   } = useProviderProps(props);
 
-  const { styleProps } = useStyleProps(otherProps);
+  const {styleProps} = useStyleProps(otherProps);
   const domRef = useDOMRef(ref);
 
   const domProps = filterDOMProps(otherProps);
@@ -51,7 +51,7 @@ export const Avatar = forwardRef(function Avatar(
   // Casting `size` as `any` since `isNaN` expects a `number`, but we want it
   // to handle `string` numbers; e.g. '300' as opposed to 300
   const sizeValue =
-    typeof size !== "number" && (SIZE_RE.test(size) || !isNaN(size as any))
+    typeof size !== 'number' && (SIZE_RE.test(size) || !isNaN(size as any))
       ? dimensionValue(DEFAULT_SIZE) // override disallowed size values
       : dimensionValue(size || DEFAULT_SIZE);
 
@@ -62,9 +62,9 @@ export const Avatar = forwardRef(function Avatar(
       alt={alt}
       className={classNames(
         styles,
-        "spectrum-Avatar",
+        'spectrum-Avatar',
         {
-          "is-disabled": isDisabled,
+          'is-disabled': isDisabled
         },
         styleProps.className
       )}
@@ -72,8 +72,7 @@ export const Avatar = forwardRef(function Avatar(
       src={src}
       style={{
         ...styleProps.style,
-        ...(sizeValue && { height: sizeValue, width: sizeValue }),
-      }}
-    />
+        ...(sizeValue && {height: sizeValue, width: sizeValue})
+      }} />
   );
 });

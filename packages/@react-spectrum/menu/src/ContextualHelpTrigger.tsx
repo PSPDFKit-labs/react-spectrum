@@ -14,37 +14,37 @@ import {
   classNames,
   SlotProvider,
   unwrapDOMRef,
-  useIsMobileDevice,
-} from "@react-spectrum/utils";
-import { DOMRefValue, ItemProps, Key } from "@react-types/shared";
-import { FocusScope } from "@react-aria-nutrient/focus";
-import { getInteractionModality } from "@react-aria-nutrient/interactions";
-import helpStyles from "@adobe/spectrum-css-temp/components/contextualhelp/vars.css";
-import { Popover } from "@react-spectrum/overlays";
+  useIsMobileDevice
+} from '@react-spectrum/utils';
+import {DOMRefValue, ItemProps, Key} from '@react-types/shared';
+import {FocusScope} from '@react-aria-nutrient/focus';
+import {getInteractionModality} from '@react-aria-nutrient/interactions';
+import helpStyles from '@adobe/spectrum-css-temp/components/contextualhelp/vars.css';
+import {Popover} from '@react-spectrum/overlays';
 import React, {
   JSX,
   KeyboardEventHandler,
   ReactElement,
   useEffect,
   useRef,
-  useState,
-} from "react";
-import ReactDOM from "react-dom";
-import styles from "@adobe/spectrum-css-temp/components/menu/vars.css";
-import { SubmenuTriggerContext, useMenuStateContext } from "./context";
-import { TrayHeaderWrapper } from "./Menu";
-import { useSubmenuTrigger } from "@react-aria-nutrient/menu";
-import { useSubmenuTriggerState } from "@react-stately/menu";
+  useState
+} from 'react';
+import ReactDOM from 'react-dom';
+import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
+import {SubmenuTriggerContext, useMenuStateContext} from './context';
+import {TrayHeaderWrapper} from './Menu';
+import {useSubmenuTrigger} from '@react-aria-nutrient/menu';
+import {useSubmenuTriggerState} from '@react-stately/menu';
 
 interface MenuDialogTriggerProps {
   /** Whether the menu item is currently unavailable. */
-  isUnavailable?: boolean;
+  isUnavailable?: boolean,
   /** The triggering Item and the Dialog, respectively. */
-  children: [ReactElement, ReactElement];
+  children: [ReactElement, ReactElement]
 }
 
 interface InternalMenuDialogTriggerProps extends MenuDialogTriggerProps {
-  targetKey: Key;
+  targetKey: Key
 }
 
 export interface SpectrumMenuDialogTriggerProps
@@ -53,7 +53,7 @@ export interface SpectrumMenuDialogTriggerProps
 function ContextualHelpTrigger(
   props: InternalMenuDialogTriggerProps
 ): ReactElement {
-  let { isUnavailable = false, targetKey } = props;
+  let {isUnavailable = false, targetKey} = props;
 
   let triggerRef = useRef<HTMLLIElement>(null);
   let popoverRef = useRef<DOMRefValue<HTMLDivElement> | null>(null);
@@ -62,28 +62,28 @@ function ContextualHelpTrigger(
     trayContainerRef,
     rootMenuTriggerState,
     menu: parentMenuRef,
-    state,
+    state
   } = useMenuStateContext()!;
   let submenuTriggerState = useSubmenuTriggerState(
-    { triggerKey: targetKey },
-    { ...rootMenuTriggerState!, ...state }
+    {triggerKey: targetKey},
+    {...rootMenuTriggerState!, ...state}
   );
   let submenuRef = unwrapDOMRef(popoverRef);
-  let { submenuTriggerProps, popoverProps } = useSubmenuTrigger(
+  let {submenuTriggerProps, popoverProps} = useSubmenuTrigger(
     {
       parentMenuRef,
       submenuRef,
-      type: "dialog",
-      isDisabled: !isUnavailable,
+      type: 'dialog',
+      isDisabled: !isUnavailable
     },
     submenuTriggerState,
     triggerRef
   );
   let isMobile = useIsMobileDevice();
-  let [traySubmenuAnimation, setTraySubmenuAnimation] = useState("");
+  let [traySubmenuAnimation, setTraySubmenuAnimation] = useState('');
   useEffect(() => {
     if (submenuTriggerState.isOpen) {
-      setTraySubmenuAnimation("spectrum-TraySubmenu-enter");
+      setTraySubmenuAnimation('spectrum-TraySubmenu-enter');
     }
   }, [submenuTriggerState.isOpen]);
   let slots = {};
@@ -92,22 +92,22 @@ function ContextualHelpTrigger(
       dialog: {
         UNSAFE_className: classNames(
           helpStyles,
-          "react-spectrum-ContextualHelp-dialog",
+          'react-spectrum-ContextualHelp-dialog',
           {
-            "react-spectrum-ContextualHelp-dialog--isMobile": isMobile,
+            'react-spectrum-ContextualHelp-dialog--isMobile': isMobile
           },
           classNames(styles, {
-            "spectrum-Menu-subdialog": !isMobile,
-            [traySubmenuAnimation]: isMobile,
+            'spectrum-Menu-subdialog': !isMobile,
+            [traySubmenuAnimation]: isMobile
           })
-        ),
+        )
       },
       content: {
-        UNSAFE_className: helpStyles["react-spectrum-ContextualHelp-content"],
+        UNSAFE_className: helpStyles['react-spectrum-ContextualHelp-content']
       },
       footer: {
-        UNSAFE_className: helpStyles["react-spectrum-ContextualHelp-footer"],
-      },
+        UNSAFE_className: helpStyles['react-spectrum-ContextualHelp-footer']
+      }
     };
   }
   let [trigger] = React.Children.toArray(props.children);
@@ -120,7 +120,7 @@ function ContextualHelpTrigger(
       !popoverRef.current.UNSAFE_getDOMNode()?.contains(e.relatedTarget) &&
       !(
         e.relatedTarget === triggerRef.current &&
-        getInteractionModality() === "pointer"
+        getInteractionModality() === 'pointer'
       )
     ) {
       if (submenuTriggerState.isOpen) {
@@ -132,7 +132,7 @@ function ContextualHelpTrigger(
   let overlay;
   let tray;
   let onBackButtonPress = () => {
-    setTraySubmenuAnimation("spectrum-TraySubmenu-exit");
+    setTraySubmenuAnimation('spectrum-TraySubmenu-exit');
     setTimeout(() => {
       submenuTriggerState.close();
       if (
@@ -150,7 +150,7 @@ function ContextualHelpTrigger(
     if (trayContainerRef.current && submenuTriggerState.isOpen) {
       let subDialogKeyDown: KeyboardEventHandler = (e) => {
         switch (e.key) {
-          case "Escape":
+          case 'Escape':
             e.stopPropagation();
             onBackButtonPress();
             break;
@@ -163,8 +163,7 @@ function ContextualHelpTrigger(
           parentMenuTreeState={state}
           rootMenuTriggerState={rootMenuTriggerState}
           wrapperKeyDown={subDialogKeyDown}
-          onBackButtonPress={onBackButtonPress}
-        >
+          onBackButtonPress={onBackButtonPress}>
           {content}
         </TrayHeaderWrapper>
       );
@@ -181,12 +180,12 @@ function ContextualHelpTrigger(
       <Popover
         {...popoverProps}
         UNSAFE_style={{
-          clipPath: "unset",
-          overflow: "visible",
-          filter: "unset",
-          borderWidth: "0px",
+          clipPath: 'unset',
+          overflow: 'visible',
+          filter: 'unset',
+          borderWidth: '0px'
         }}
-        UNSAFE_className={classNames(styles, "spectrum-Submenu-popover")}
+        UNSAFE_className={classNames(styles, 'spectrum-Submenu-popover')}
         onDismissButtonPress={onDismissButtonPress}
         onBlurWithin={onBlurWithin}
         container={popoverContainer!}
@@ -196,8 +195,7 @@ function ContextualHelpTrigger(
         placement="end top"
         containerPadding={0}
         hideArrow
-        enableBothDismissButtons
-      >
+        enableBothDismissButtons>
         <FocusScope restoreFocus contain>
           {content}
         </FocusScope>
@@ -208,8 +206,7 @@ function ContextualHelpTrigger(
   return (
     <>
       <SubmenuTriggerContext.Provider
-        value={{ isUnavailable, triggerRef, ...submenuTriggerProps }}
-      >
+        value={{isUnavailable, triggerRef, ...submenuTriggerProps}}>
         {trigger}
       </SubmenuTriggerContext.Provider>
       <SlotProvider slots={slots}>
@@ -235,22 +232,21 @@ ContextualHelpTrigger.getCollectionNode = function* getCollectionNode<T>(
     element: React.cloneElement(trigger, {
       ...(trigger.props as any),
       hasChildItems: true,
-      isTrigger: true,
+      isTrigger: true
     }),
     wrapper: (element) => (
       <ContextualHelpTrigger
         key={element.key}
         targetKey={element.key}
-        {...props}
-      >
+        {...props}>
         {element}
         {content}
       </ContextualHelpTrigger>
-    ),
+    )
   };
 };
 
 let _Item = ContextualHelpTrigger as unknown as (
   props: SpectrumMenuDialogTriggerProps
 ) => JSX.Element;
-export { _Item as ContextualHelpTrigger };
+export {_Item as ContextualHelpTrigger};

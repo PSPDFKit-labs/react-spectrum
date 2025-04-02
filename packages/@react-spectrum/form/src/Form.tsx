@@ -14,39 +14,39 @@ import {
   Alignment,
   DOMRef,
   LabelPosition,
-  SpectrumLabelableProps,
-} from "@react-types/shared";
-import { classNames, useDOMRef, useStyleProps } from "@react-spectrum/utils";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { FormValidationContext } from "@react-stately/form";
-import { Provider, useProviderProps } from "@react-spectrum/provider";
-import React, { useContext } from "react";
-import { SpectrumFormProps } from "@react-types/form";
-import styles from "@adobe/spectrum-css-temp/components/fieldlabel/vars.css";
+  SpectrumLabelableProps
+} from '@react-types/shared';
+import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {FormValidationContext} from '@react-stately/form';
+import {Provider, useProviderProps} from '@react-spectrum/provider';
+import React, {useContext} from 'react';
+import {SpectrumFormProps} from '@react-types/form';
+import styles from '@adobe/spectrum-css-temp/components/fieldlabel/vars.css';
 
 interface FormContextValue extends SpectrumLabelableProps {
-  validationBehavior?: "aria" | "native";
+  validationBehavior?: 'aria' | 'native'
 }
 
 let FormContext = React.createContext<FormContextValue | null>(null);
 export function useFormProps<T extends SpectrumLabelableProps>(props: T): T {
   let ctx = useContext(FormContext);
   if (ctx) {
-    return { ...ctx, ...props };
+    return {...ctx, ...props};
   }
 
   return props;
 }
 
 const formPropNames = new Set([
-  "action",
-  "autoComplete",
-  "encType",
-  "method",
-  "target",
-  "onSubmit",
-  "onReset",
-  "onInvalid",
+  'action',
+  'autoComplete',
+  'encType',
+  'method',
+  'target',
+  'onSubmit',
+  'onReset',
+  'onInvalid'
 ]);
 
 /**
@@ -59,8 +59,8 @@ export const Form = React.forwardRef(function Form(
   props = useProviderProps(props);
   let {
     children,
-    labelPosition = "top" as LabelPosition,
-    labelAlign = "start" as Alignment,
+    labelPosition = 'top' as LabelPosition,
+    labelAlign = 'start' as Alignment,
     isRequired,
     necessityIndicator,
     isQuiet,
@@ -73,35 +73,34 @@ export const Form = React.forwardRef(function Form(
     ...otherProps
   } = props;
 
-  let { styleProps } = useStyleProps(otherProps);
+  let {styleProps} = useStyleProps(otherProps);
   let domRef = useDOMRef(ref);
 
   let ctx = {
     labelPosition,
     labelAlign,
     necessityIndicator,
-    validationBehavior,
+    validationBehavior
   };
 
   return (
     <form
       {...filterDOMProps(otherProps, {
         labelable: true,
-        propNames: formPropNames,
+        propNames: formPropNames
       })}
       {...styleProps}
-      noValidate={validationBehavior !== "native"}
+      noValidate={validationBehavior !== 'native'}
       ref={domRef}
       className={classNames(
         styles,
-        "spectrum-Form",
+        'spectrum-Form',
         {
-          "spectrum-Form--positionSide": labelPosition === "side",
-          "spectrum-Form--positionTop": labelPosition === "top",
+          'spectrum-Form--positionSide': labelPosition === 'side',
+          'spectrum-Form--positionTop': labelPosition === 'top'
         },
         styleProps.className
-      )}
-    >
+      )}>
       <FormContext.Provider value={ctx}>
         <Provider
           isQuiet={isQuiet}
@@ -109,8 +108,7 @@ export const Form = React.forwardRef(function Form(
           isDisabled={isDisabled}
           isReadOnly={isReadOnly}
           isRequired={isRequired}
-          validationState={validationState}
-        >
+          validationState={validationState}>
           <FormValidationContext.Provider value={validationErrors || {}}>
             {children}
           </FormValidationContext.Provider>

@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React, { ReactNode, useRef, useState } from "react";
-import { useCheckbox } from "@react-aria-nutrient/checkbox";
-import { useFocusRing } from "@react-aria-nutrient/focus";
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React, {ReactNode, useRef, useState} from 'react';
+import {useCheckbox} from '@react-aria-nutrient/checkbox';
+import {useFocusRing} from '@react-aria-nutrient/focus';
 import {
   useTable,
   useTableCell,
@@ -22,40 +22,39 @@ import {
   useTableRow,
   useTableRowGroup,
   useTableSelectAllCheckbox,
-  useTableSelectionCheckbox,
-} from "../src";
-import { useTableState } from "@react-stately/table";
-import { useToggleState } from "@react-stately/toggle";
-import { VisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+  useTableSelectionCheckbox
+} from '../src';
+import {useTableState} from '@react-stately/table';
+import {useToggleState} from '@react-stately/toggle';
+import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 export function Table(props) {
-  let { onAction } = props;
+  let {onAction} = props;
   let [showSelectionCheckboxes, setShowSelectionCheckboxes] = useState(
-    props.selectionStyle !== "highlight"
+    props.selectionStyle !== 'highlight'
   );
   let state = useTableState({
     ...props,
     showSelectionCheckboxes,
     selectionBehavior:
-      props.selectionStyle === "highlight" ? "replace" : "toggle",
+      props.selectionStyle === 'highlight' ? 'replace' : 'toggle'
   });
   // If the selection behavior changes in state, we need to update showSelectionCheckboxes here due to the circular dependency...
   let shouldShowCheckboxes =
-    state.selectionManager.selectionBehavior !== "replace";
+    state.selectionManager.selectionBehavior !== 'replace';
   if (shouldShowCheckboxes !== showSelectionCheckboxes) {
     setShowSelectionCheckboxes(shouldShowCheckboxes);
   }
   let ref = useRef<HTMLTableElement | null>(null);
   let bodyRef = useRef(undefined);
-  let { collection } = state;
-  let { gridProps } = useTable({ ...props, scrollRef: bodyRef }, state, ref);
+  let {collection} = state;
+  let {gridProps} = useTable({...props, scrollRef: bodyRef}, state, ref);
 
   return (
-    <table {...gridProps} ref={ref} style={{ borderCollapse: "collapse" }}>
+    <table {...gridProps} ref={ref} style={{borderCollapse: 'collapse'}}>
       <TableRowGroup
         type="thead"
-        style={{ borderBottom: "2px solid gray", display: "block" }}
-      >
+        style={{borderBottom: '2px solid gray', display: 'block'}}>
         {collection.headerRows.map((headerRow) => (
           <TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
             {[...state.collection.getChildren!(headerRow.key)].map((column) =>
@@ -63,14 +62,12 @@ export function Table(props) {
                 <TableSelectAllCell
                   key={column.key}
                   column={column}
-                  state={state}
-                />
+                  state={state} />
               ) : (
                 <TableColumnHeader
                   key={column.key}
                   column={column}
-                  state={state}
-                />
+                  state={state} />
               )
             )}
           </TableHeaderRow>
@@ -79,8 +76,7 @@ export function Table(props) {
       <TableRowGroup
         ref={bodyRef}
         type="tbody"
-        style={{ display: "block", overflow: "auto", maxHeight: "200px" }}
-      >
+        style={{display: 'block', overflow: 'auto', maxHeight: '200px'}}>
         {[...collection].map((row) => (
           <TableRow key={row.key} item={row} state={state} onAction={onAction}>
             {[...state.collection.getChildren!(row.key)].map((cell) =>
@@ -98,8 +94,8 @@ export function Table(props) {
 }
 
 export const TableRowGroup = React.forwardRef((props: any, ref) => {
-  let { type: Element, style, children } = props;
-  let { rowGroupProps } = useTableRowGroup();
+  let {type: Element, style, children} = props;
+  let {rowGroupProps} = useTableRowGroup();
   return (
     <Element ref={ref} {...rowGroupProps} style={style}>
       {children}
@@ -107,9 +103,9 @@ export const TableRowGroup = React.forwardRef((props: any, ref) => {
   );
 });
 
-export function TableHeaderRow({ item, state, children }) {
+export function TableHeaderRow({item, state, children}) {
   let ref = useRef<HTMLTableRowElement | null>(null);
-  let { rowProps } = useTableHeaderRow({ node: item }, state, ref);
+  let {rowProps} = useTableHeaderRow({node: item}, state, ref);
 
   return (
     <tr {...rowProps} ref={ref}>
@@ -118,39 +114,37 @@ export function TableHeaderRow({ item, state, children }) {
   );
 }
 
-export function TableColumnHeader({ column, state }) {
+export function TableColumnHeader({column, state}) {
   let ref = useRef<HTMLTableHeaderCellElement | null>(null);
-  let { columnHeaderProps } = useTableColumnHeader(
-    { node: column },
+  let {columnHeaderProps} = useTableColumnHeader(
+    {node: column},
     state,
     ref
   );
-  let { isFocusVisible, focusProps } = useFocusRing();
-  let arrowIcon = state.sortDescriptor?.direction === "ascending" ? "▲" : "▼";
+  let {isFocusVisible, focusProps} = useFocusRing();
+  let arrowIcon = state.sortDescriptor?.direction === 'ascending' ? '▲' : '▼';
 
   return (
     <th
       {...mergeProps(columnHeaderProps, focusProps)}
       style={{
-        textAlign: column.colSpan > 1 ? "center" : "left",
-        padding: "5px 10px",
-        outline: isFocusVisible ? "2px solid orange" : "none",
-        cursor: "default",
+        textAlign: column.colSpan > 1 ? 'center' : 'left',
+        padding: '5px 10px',
+        outline: isFocusVisible ? '2px solid orange' : 'none',
+        cursor: 'default'
       }}
-      ref={ref}
-    >
+      ref={ref}>
       {column.rendered}
       {column.props.allowsSorting && (
         <span
           aria-hidden="true"
           style={{
-            padding: "0 2px",
+            padding: '0 2px',
             visibility:
               state.sortDescriptor?.column === column.key
-                ? "visible"
-                : "hidden",
-          }}
-        >
+                ? 'visible'
+                : 'hidden'
+          }}>
           {arrowIcon}
         </span>
       )}
@@ -162,72 +156,70 @@ export function TableRow({
   item,
   children,
   state,
-  onAction,
+  onAction
 }: {
-  item: any;
-  children: ReactNode;
-  state: any;
-  onAction?: (key: string) => void;
+  item: any,
+  children: ReactNode,
+  state: any,
+  onAction?: (key: string) => void
 }) {
   let ref = useRef<HTMLTableRowElement | null>(null);
   let isSelected = state.selectionManager.isSelected(item.key);
-  let { rowProps } = useTableRow(
-    { node: item, onAction: onAction ? () => onAction(item.key) : undefined },
+  let {rowProps} = useTableRow(
+    {node: item, onAction: onAction ? () => onAction(item.key) : undefined},
     state,
     ref
   );
-  let { isFocusVisible, focusProps } = useFocusRing();
+  let {isFocusVisible, focusProps} = useFocusRing();
 
   return (
     <tr
       style={{
         // eslint-disable-next-line no-nested-ternary
         background: isSelected
-          ? "blueviolet"
+          ? 'blueviolet'
           : item.index % 2
-          ? "lightgray"
-          : "none",
-        color: isSelected ? "white" : undefined,
-        outline: isFocusVisible ? "2px solid orange" : "none",
+          ? 'lightgray'
+          : 'none',
+        color: isSelected ? 'white' : undefined,
+        outline: isFocusVisible ? '2px solid orange' : 'none'
       }}
       {...mergeProps(rowProps, focusProps)}
-      ref={ref}
-    >
+      ref={ref}>
       {children}
     </tr>
   );
 }
 
-export function TableCell({ cell, state }) {
+export function TableCell({cell, state}) {
   let ref = useRef<HTMLTableCellElement | null>(null);
-  let { gridCellProps } = useTableCell({ node: cell }, state, ref);
-  let { isFocusVisible, focusProps } = useFocusRing();
+  let {gridCellProps} = useTableCell({node: cell}, state, ref);
+  let {isFocusVisible, focusProps} = useFocusRing();
 
   return (
     <td
       {...mergeProps(gridCellProps, focusProps)}
       style={{
-        padding: "5px 10px",
-        outline: isFocusVisible ? "2px solid orange" : "none",
-        cursor: "default",
+        padding: '5px 10px',
+        outline: isFocusVisible ? '2px solid orange' : 'none',
+        cursor: 'default'
       }}
-      ref={ref}
-    >
+      ref={ref}>
       {cell.rendered}
     </td>
   );
 }
 
-export function TableCheckboxCell({ cell, state }) {
+export function TableCheckboxCell({cell, state}) {
   let ref = useRef<HTMLTableCellElement | null>(null);
-  let { gridCellProps } = useTableCell({ node: cell }, state, ref);
-  let { checkboxProps } = useTableSelectionCheckbox(
-    { key: cell.parentKey },
+  let {gridCellProps} = useTableCell({node: cell}, state, ref);
+  let {checkboxProps} = useTableSelectionCheckbox(
+    {key: cell.parentKey},
     state
   );
 
   let inputRef = useRef(null);
-  let { inputProps } = useCheckbox(
+  let {inputProps} = useCheckbox(
     checkboxProps,
     useToggleState(checkboxProps),
     inputRef
@@ -240,18 +232,18 @@ export function TableCheckboxCell({ cell, state }) {
   );
 }
 
-export function TableSelectAllCell({ column, state }) {
+export function TableSelectAllCell({column, state}) {
   let ref = useRef<HTMLTableCellElement | null>(null);
-  let isSingleSelectionMode = state.selectionManager.selectionMode === "single";
-  let { columnHeaderProps } = useTableColumnHeader(
-    { node: column },
+  let isSingleSelectionMode = state.selectionManager.selectionMode === 'single';
+  let {columnHeaderProps} = useTableColumnHeader(
+    {node: column},
     state,
     ref
   );
 
-  let { checkboxProps } = useTableSelectAllCheckbox(state);
+  let {checkboxProps} = useTableSelectAllCheckbox(state);
   let inputRef = useRef(null);
-  let { inputProps } = useCheckbox(
+  let {inputProps} = useCheckbox(
     checkboxProps,
     useToggleState(checkboxProps),
     inputRef
@@ -267,14 +259,13 @@ export function TableSelectAllCell({ column, state }) {
           which for single selection will be "Select."
         */
         isSingleSelectionMode && (
-          <VisuallyHidden>{inputProps["aria-label"]}</VisuallyHidden>
+          <VisuallyHidden>{inputProps['aria-label']}</VisuallyHidden>
         )
       }
       <input
         {...inputProps}
         ref={inputRef}
-        style={isSingleSelectionMode ? { visibility: "hidden" } : undefined}
-      />
+        style={isSingleSelectionMode ? {visibility: 'hidden'} : undefined} />
     </th>
   );
 }

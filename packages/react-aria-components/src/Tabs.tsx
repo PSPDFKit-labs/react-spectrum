@@ -16,8 +16,8 @@ import {
   HoverEvents,
   Key,
   LinkDOMProps,
-  RefObject,
-} from "@react-types/shared";
+  RefObject
+} from '@react-types/shared';
 import {
   AriaTabListProps,
   AriaTabPanelProps,
@@ -27,20 +27,20 @@ import {
   useHover,
   useTab,
   useTabList,
-  useTabPanel,
-} from "react-aria";
+  useTabPanel
+} from 'react-aria';
 import {
   Collection,
   CollectionBuilder,
   createHideableComponent,
-  createLeafComponent,
-} from "@react-aria-nutrient/collections";
+  createLeafComponent
+} from '@react-aria-nutrient/collections';
 import {
   CollectionProps,
   CollectionRendererContext,
   DefaultCollectionRenderer,
-  usePersistedKeys,
-} from "./Collection";
+  usePersistedKeys
+} from './Collection';
 import {
   ContextValue,
   Provider,
@@ -49,30 +49,30 @@ import {
   StyleRenderProps,
   useContextProps,
   useRenderProps,
-  useSlottedContext,
-} from "./utils";
+  useSlottedContext
+} from './utils';
 import {
   filterDOMProps,
   inertValue,
-  useObjectRef,
-} from "@react-aria-nutrient/utils";
+  useObjectRef
+} from '@react-aria-nutrient/utils';
 import {
   Collection as ICollection,
   Node,
   TabListState,
-  useTabListState,
-} from "react-stately";
+  useTabListState
+} from 'react-stately';
 import React, {
   createContext,
   ForwardedRef,
   forwardRef,
   JSX,
   useContext,
-  useMemo,
-} from "react";
+  useMemo
+} from 'react';
 
 export interface TabsProps
-  extends Omit<AriaTabListProps<any>, "items" | "children">,
+  extends Omit<AriaTabListProps<any>, 'items' | 'children'>,
     RenderProps<TabsRenderProps>,
     SlotProps {}
 
@@ -81,24 +81,24 @@ export interface TabsRenderProps {
    * The orientation of the tabs.
    * @selector [data-orientation="horizontal | vertical"]
    */
-  orientation: Orientation;
+  orientation: Orientation
 }
 
 export interface TabListProps<T>
   extends StyleRenderProps<TabListRenderProps>,
     AriaLabelingProps,
-    Omit<CollectionProps<T>, "disabledKeys"> {}
+    Omit<CollectionProps<T>, 'disabledKeys'> {}
 
 export interface TabListRenderProps {
   /**
    * The orientation of the tab list.
    * @selector [data-orientation="horizontal | vertical"]
    */
-  orientation: Orientation;
+  orientation: Orientation,
   /**
    * State of the tab list.
    */
-  state: TabListState<unknown>;
+  state: TabListState<unknown>
 }
 
 export interface TabProps
@@ -107,9 +107,9 @@ export interface TabProps
     LinkDOMProps,
     HoverEvents {
   /** The unique id of the tab. */
-  id?: Key;
+  id?: Key,
   /** Whether the tab is disabled. */
-  isDisabled?: boolean;
+  isDisabled?: boolean
 }
 
 export interface TabRenderProps {
@@ -117,32 +117,32 @@ export interface TabRenderProps {
    * Whether the tab is currently hovered with a mouse.
    * @selector [data-hovered]
    */
-  isHovered: boolean;
+  isHovered: boolean,
   /**
    * Whether the tab is currently in a pressed state.
    * @selector [data-pressed]
    */
-  isPressed: boolean;
+  isPressed: boolean,
   /**
    * Whether the tab is currently selected.
    * @selector [data-selected]
    */
-  isSelected: boolean;
+  isSelected: boolean,
   /**
    * Whether the tab is currently focused.
    * @selector [data-focused]
    */
-  isFocused: boolean;
+  isFocused: boolean,
   /**
    * Whether the tab is currently keyboard focused.
    * @selector [data-focus-visible]
    */
-  isFocusVisible: boolean;
+  isFocusVisible: boolean,
   /**
    * Whether the tab is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean
 }
 
 export interface TabPanelProps
@@ -153,7 +153,7 @@ export interface TabPanelProps
    * Inactive tab panels are inert and cannot be interacted with. They must be styled appropriately so this is clear to the user visually.
    * @default false
    */
-  shouldForceMount?: boolean;
+  shouldForceMount?: boolean
 }
 
 export interface TabPanelRenderProps {
@@ -161,22 +161,22 @@ export interface TabPanelRenderProps {
    * Whether the tab panel is currently focused.
    * @selector [data-focused]
    */
-  isFocused: boolean;
+  isFocused: boolean,
   /**
    * Whether the tab panel is currently keyboard focused.
    * @selector [data-focus-visible]
    */
-  isFocusVisible: boolean;
+  isFocusVisible: boolean,
   /**
    * Whether the tab panel is currently non-interactive. This occurs when the
    * `shouldForceMount` prop is true, and the corresponding tab is not selected.
    * @selector [data-inert]
    */
-  isInert: boolean;
+  isInert: boolean,
   /**
    * State of the tab list.
    */
-  state: TabListState<unknown>;
+  state: TabListState<unknown>
 }
 
 export const TabsContext =
@@ -193,11 +193,11 @@ export const Tabs = /*#__PURE__*/ (forwardRef as forwardRefType)(function Tabs(
   ref: ForwardedRef<HTMLDivElement>
 ) {
   [props, ref] = useContextProps(props, ref, TabsContext);
-  let { children, orientation = "horizontal" } = props;
+  let {children, orientation = 'horizontal'} = props;
   children = useMemo(
     () =>
-      typeof children === "function"
-        ? children({ orientation, defaultChildren: null })
+      typeof children === 'function'
+        ? children({orientation, defaultChildren: null})
         : children,
     [children, orientation]
   );
@@ -212,33 +212,33 @@ export const Tabs = /*#__PURE__*/ (forwardRef as forwardRefType)(function Tabs(
 });
 
 interface TabsInnerProps {
-  props: TabsProps;
-  collection: ICollection<Node<any>>;
-  tabsRef: RefObject<HTMLDivElement | null>;
+  props: TabsProps,
+  collection: ICollection<Node<any>>,
+  tabsRef: RefObject<HTMLDivElement | null>
 }
 
-function TabsInner({ props, tabsRef: ref, collection }: TabsInnerProps) {
-  let { orientation = "horizontal" } = props;
+function TabsInner({props, tabsRef: ref, collection}: TabsInnerProps) {
+  let {orientation = 'horizontal'} = props;
   let state = useTabListState({
     ...props,
     collection,
-    children: undefined,
+    children: undefined
   });
-  let { focusProps, isFocused, isFocusVisible } = useFocusRing({
-    within: true,
+  let {focusProps, isFocused, isFocusVisible} = useFocusRing({
+    within: true
   });
   let values = useMemo(
     () => ({
       orientation,
       isFocusWithin: isFocused,
-      isFocusVisible,
+      isFocusVisible
     }),
     [orientation, isFocused, isFocusVisible]
   );
   let renderProps = useRenderProps({
     ...props,
-    defaultClassName: "react-aria-Tabs",
-    values,
+    defaultClassName: 'react-aria-Tabs',
+    values
   });
 
   return (
@@ -251,14 +251,12 @@ function TabsInner({ props, tabsRef: ref, collection }: TabsInnerProps) {
       data-focused={isFocused || undefined}
       data-orientation={orientation}
       data-focus-visible={isFocusVisible || undefined}
-      data-disabled={state.isDisabled || undefined}
-    >
+      data-disabled={state.isDisabled || undefined}>
       <Provider
         values={[
           [TabsContext, props],
-          [TabListStateContext, state],
-        ]}
-      >
+          [TabListStateContext, state]
+        ]}>
         {renderProps.children}
       </Provider>
     </div>
@@ -284,25 +282,25 @@ export const TabList = /*#__PURE__*/ (forwardRef as forwardRefType)(
 );
 
 interface TabListInnerProps<T> {
-  props: TabListProps<T>;
-  forwardedRef: ForwardedRef<HTMLDivElement>;
+  props: TabListProps<T>,
+  forwardedRef: ForwardedRef<HTMLDivElement>
 }
 
 function TabListInner<T extends object>({
   props,
-  forwardedRef: ref,
+  forwardedRef: ref
 }: TabListInnerProps<T>) {
   let state = useContext(TabListStateContext)!;
-  let { CollectionRoot } = useContext(CollectionRendererContext);
-  let { orientation = "horizontal", keyboardActivation = "automatic" } =
+  let {CollectionRoot} = useContext(CollectionRendererContext);
+  let {orientation = 'horizontal', keyboardActivation = 'automatic'} =
     useSlottedContext(TabsContext)!;
   let objectRef = useObjectRef(ref);
 
-  let { tabListProps } = useTabList(
+  let {tabListProps} = useTabList(
     {
       ...props,
       orientation,
-      keyboardActivation,
+      keyboardActivation
     },
     state,
     objectRef
@@ -311,11 +309,11 @@ function TabListInner<T extends object>({
   let renderProps = useRenderProps({
     ...props,
     children: null,
-    defaultClassName: "react-aria-TabList",
+    defaultClassName: 'react-aria-TabList',
     values: {
       orientation,
-      state,
-    },
+      state
+    }
   });
 
   let DOMProps = filterDOMProps(props);
@@ -327,12 +325,10 @@ function TabListInner<T extends object>({
       {...tabListProps}
       ref={objectRef}
       {...renderProps}
-      data-orientation={orientation || undefined}
-    >
+      data-orientation={orientation || undefined}>
       <CollectionRoot
         collection={state.collection}
-        persistedKeys={usePersistedKeys(state.selectionManager.focusedKey)}
-      />
+        persistedKeys={usePersistedKeys(state.selectionManager.focusedKey)} />
     </div>
   );
 }
@@ -341,7 +337,7 @@ function TabListInner<T extends object>({
  * A Tab provides a title for an individual item within a TabList.
  */
 export const Tab = /*#__PURE__*/ createLeafComponent(
-  "item",
+  'item',
   (
     props: TabProps,
     forwardedRef: ForwardedRef<HTMLDivElement>,
@@ -349,35 +345,35 @@ export const Tab = /*#__PURE__*/ createLeafComponent(
   ) => {
     let state = useContext(TabListStateContext)!;
     let ref = useObjectRef<any>(forwardedRef);
-    let { tabProps, isSelected, isDisabled, isPressed } = useTab(
-      { key: item.key, ...props },
+    let {tabProps, isSelected, isDisabled, isPressed} = useTab(
+      {key: item.key, ...props},
       state,
       ref
     );
-    let { focusProps, isFocused, isFocusVisible } = useFocusRing();
-    let { hoverProps, isHovered } = useHover({
+    let {focusProps, isFocused, isFocusVisible} = useFocusRing();
+    let {hoverProps, isHovered} = useHover({
       isDisabled,
       onHoverStart: props.onHoverStart,
       onHoverEnd: props.onHoverEnd,
-      onHoverChange: props.onHoverChange,
+      onHoverChange: props.onHoverChange
     });
 
     let renderProps = useRenderProps({
       ...props,
       id: undefined,
       children: item.rendered,
-      defaultClassName: "react-aria-Tab",
+      defaultClassName: 'react-aria-Tab',
       values: {
         isSelected,
         isDisabled,
         isFocused,
         isFocusVisible,
         isPressed,
-        isHovered,
-      },
+        isHovered
+      }
     });
 
-    let ElementType: React.ElementType = item.props.href ? "a" : "div";
+    let ElementType: React.ElementType = item.props.href ? 'a' : 'div';
 
     return (
       <ElementType
@@ -388,8 +384,7 @@ export const Tab = /*#__PURE__*/ createLeafComponent(
         data-focused={isFocused || undefined}
         data-focus-visible={isFocusVisible || undefined}
         data-pressed={isPressed || undefined}
-        data-hovered={isHovered || undefined}
-      >
+        data-hovered={isHovered || undefined}>
         {renderProps.children}
       </ElementType>
     );
@@ -405,19 +400,19 @@ export const TabPanel = /*#__PURE__*/ createHideableComponent(function TabPanel(
 ) {
   const state = useContext(TabListStateContext)!;
   let ref = useObjectRef<HTMLDivElement>(forwardedRef);
-  let { tabPanelProps } = useTabPanel(props, state, ref);
-  let { focusProps, isFocused, isFocusVisible } = useFocusRing();
+  let {tabPanelProps} = useTabPanel(props, state, ref);
+  let {focusProps, isFocused, isFocusVisible} = useFocusRing();
 
   let isSelected = state.selectedKey === props.id;
   let renderProps = useRenderProps({
     ...props,
-    defaultClassName: "react-aria-TabPanel",
+    defaultClassName: 'react-aria-TabPanel',
     values: {
       isFocused,
       isFocusVisible,
       isInert: !isSelected,
-      state,
-    },
+      state
+    }
   });
 
   if (!isSelected && !props.shouldForceMount) {
@@ -439,14 +434,12 @@ export const TabPanel = /*#__PURE__*/ createHideableComponent(function TabPanel(
       data-focus-visible={isFocusVisible || undefined}
       // @ts-ignore
       inert={inertValue(!isSelected)}
-      data-inert={!isSelected ? "true" : undefined}
-    >
+      data-inert={!isSelected ? 'true' : undefined}>
       <Provider
         values={[
           [TabsContext, null],
-          [TabListStateContext, null],
-        ]}
-      >
+          [TabListStateContext, null]
+        ]}>
         <CollectionRendererContext.Provider value={DefaultCollectionRenderer}>
           {renderProps.children}
         </CollectionRendererContext.Provider>

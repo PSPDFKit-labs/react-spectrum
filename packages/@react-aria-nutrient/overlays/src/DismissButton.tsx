@@ -10,17 +10,17 @@
  * governing permissions and limitations under the License.
  */
 
-import { AriaLabelingProps, DOMProps } from "@react-types/shared";
+import {AriaLabelingProps, DOMProps} from '@react-types/shared';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import React, { ReactNode } from "react";
-import { useLabels } from "@react-aria-nutrient/utils";
-import { useLocalizedStringFormatter } from "@react-aria-nutrient/i18n";
-import { VisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+import intlMessages from '../intl/*.json';
+import React, {ReactNode} from 'react';
+import {useLabels} from '@react-aria-nutrient/utils';
+import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
+import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 export interface DismissButtonProps extends AriaLabelingProps, DOMProps {
   /** Called when the dismiss button is activated. */
-  onDismiss?: () => void;
+  onDismiss?: () => void
 }
 
 /**
@@ -29,13 +29,13 @@ export interface DismissButtonProps extends AriaLabelingProps, DOMProps {
  * affordance to do so.
  */
 export function DismissButton(props: DismissButtonProps): ReactNode {
-  let { onDismiss, ...otherProps } = props;
+  let {onDismiss, ...otherProps} = props;
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-aria-nutrient/overlays"
+    '@react-aria-nutrient/overlays'
   );
 
-  let labels = useLabels(otherProps, stringFormatter.format("dismiss"));
+  let labels = useLabels(otherProps, stringFormatter.format('dismiss'));
 
   let onClick = () => {
     if (onDismiss) {
@@ -49,8 +49,7 @@ export function DismissButton(props: DismissButtonProps): ReactNode {
         {...labels}
         tabIndex={-1}
         onClick={onClick}
-        style={{ width: 1, height: 1 }}
-      />
+        style={{width: 1, height: 1}} />
     </VisuallyHidden>
   );
 }

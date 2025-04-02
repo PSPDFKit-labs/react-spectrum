@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-import { classNames, useDOMRef, useStyleProps } from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import React from "react";
-import { SpectrumActionBarContainerProps } from "@react-types/actionbar";
-import styles from "./actionbar.css";
-import { useProviderProps } from "@react-spectrum/provider";
+import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import React from 'react';
+import {SpectrumActionBarContainerProps} from '@react-types/actionbar';
+import styles from './actionbar.css';
+import {useProviderProps} from '@react-spectrum/provider';
 
 /**
  * ActionBarContainer wraps around an ActionBar and a component that supports selection. It handles
@@ -29,8 +29,8 @@ export const ActionBarContainer = React.forwardRef(function ActionBarContainer(
   // Grabs specific props from the closest Provider (see https://react-spectrum.adobe.com/react-spectrum/Provider.html#property-groups). Remove if your component doesn't support any of the listed props.
   props = useProviderProps(props);
 
-  let { children } = props;
-  let { styleProps } = useStyleProps(props);
+  let {children} = props;
+  let {styleProps} = useStyleProps(props);
   let domRef = useDOMRef(ref);
 
   return (
@@ -38,8 +38,7 @@ export const ActionBarContainer = React.forwardRef(function ActionBarContainer(
       {...filterDOMProps(props)}
       {...styleProps}
       ref={domRef}
-      className={classNames(styles, "ActionBarContainer", styleProps.className)}
-    >
+      className={classNames(styles, 'ActionBarContainer', styleProps.className)}>
       {children}
     </div>
   );

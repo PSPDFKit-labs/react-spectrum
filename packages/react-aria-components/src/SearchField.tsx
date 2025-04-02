@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import { AriaSearchFieldProps, useSearchField } from "react-aria";
-import { ButtonContext } from "./Button";
+import {AriaSearchFieldProps, useSearchField} from 'react-aria';
+import {ButtonContext} from './Button';
 import {
   ContextValue,
   Provider,
@@ -22,50 +22,50 @@ import {
   useContextProps,
   useRenderProps,
   useSlot,
-  useSlottedContext,
-} from "./utils";
-import { createHideableComponent } from "@react-aria-nutrient/collections";
-import { FieldErrorContext } from "./FieldError";
-import { filterDOMProps, mergeProps } from "@react-aria-nutrient/utils";
-import { FormContext } from "./Form";
-import { GroupContext } from "./Group";
-import { InputContext } from "./Input";
-import { LabelContext } from "./Label";
-import React, { createContext, ForwardedRef, useRef } from "react";
-import { SearchFieldState, useSearchFieldState } from "react-stately";
-import { TextContext } from "./Text";
+  useSlottedContext
+} from './utils';
+import {createHideableComponent} from '@react-aria-nutrient/collections';
+import {FieldErrorContext} from './FieldError';
+import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
+import {FormContext} from './Form';
+import {GroupContext} from './Group';
+import {InputContext} from './Input';
+import {LabelContext} from './Label';
+import React, {createContext, ForwardedRef, useRef} from 'react';
+import {SearchFieldState, useSearchFieldState} from 'react-stately';
+import {TextContext} from './Text';
 
 export interface SearchFieldRenderProps {
   /**
    * Whether the search field is empty.
    * @selector [data-empty]
    */
-  isEmpty: boolean;
+  isEmpty: boolean,
   /**
    * Whether the search field is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean,
   /**
    * Whether the search field is invalid.
    * @selector [data-invalid]
    */
-  isInvalid: boolean;
+  isInvalid: boolean,
   /**
    * State of the search field.
    */
-  state: SearchFieldState;
+  state: SearchFieldState
 }
 
 export interface SearchFieldProps
   extends Omit<
       AriaSearchFieldProps,
-      | "label"
-      | "placeholder"
-      | "description"
-      | "errorMessage"
-      | "validationState"
-      | "validationBehavior"
+      | 'label'
+      | 'placeholder'
+      | 'description'
+      | 'errorMessage'
+      | 'validationState'
+      | 'validationBehavior'
     >,
     RACValidation,
     RenderProps<SearchFieldRenderProps>,
@@ -83,10 +83,10 @@ export const SearchField = /*#__PURE__*/ createHideableComponent(
     ref: ForwardedRef<HTMLDivElement>
   ) {
     [props, ref] = useContextProps(props, ref, SearchFieldContext);
-    let { validationBehavior: formValidationBehavior } =
+    let {validationBehavior: formValidationBehavior} =
       useSlottedContext(FormContext) || {};
     let validationBehavior =
-      props.validationBehavior ?? formValidationBehavior ?? "native";
+      props.validationBehavior ?? formValidationBehavior ?? 'native';
     let inputRef = useRef<HTMLInputElement>(null);
     let [inputContextProps, mergedInputRef] = useContextProps(
       {},
@@ -94,11 +94,11 @@ export const SearchField = /*#__PURE__*/ createHideableComponent(
       InputContext
     );
     let [labelRef, label] = useSlot(
-      !props["aria-label"] && !props["aria-labelledby"]
+      !props['aria-label'] && !props['aria-labelledby']
     );
     let state = useSearchFieldState({
       ...props,
-      validationBehavior,
+      validationBehavior
     });
 
     let {
@@ -112,7 +112,7 @@ export const SearchField = /*#__PURE__*/ createHideableComponent(
       {
         ...removeDataAttributes(props),
         label,
-        validationBehavior,
+        validationBehavior
       },
       state,
       mergedInputRef
@@ -121,12 +121,12 @@ export const SearchField = /*#__PURE__*/ createHideableComponent(
     let renderProps = useRenderProps({
       ...props,
       values: {
-        isEmpty: state.value === "",
+        isEmpty: state.value === '',
         isDisabled: props.isDisabled || false,
         isInvalid: validation.isInvalid || false,
-        state,
+        state
       },
-      defaultClassName: "react-aria-SearchField",
+      defaultClassName: 'react-aria-SearchField'
     });
 
     let DOMProps = filterDOMProps(props);
@@ -138,19 +138,18 @@ export const SearchField = /*#__PURE__*/ createHideableComponent(
         {...renderProps}
         ref={ref}
         slot={props.slot || undefined}
-        data-empty={state.value === "" || undefined}
+        data-empty={state.value === '' || undefined}
         data-disabled={props.isDisabled || undefined}
-        data-invalid={validation.isInvalid || undefined}
-      >
+        data-invalid={validation.isInvalid || undefined}>
         <Provider
           values={[
-            [LabelContext, { ...labelProps, ref: labelRef }],
+            [LabelContext, {...labelProps, ref: labelRef}],
             [
               InputContext,
               {
                 ...mergeProps(inputProps, inputContextProps),
-                ref: mergedInputRef,
-              },
+                ref: mergedInputRef
+              }
             ],
             [ButtonContext, clearButtonProps],
             [
@@ -158,20 +157,19 @@ export const SearchField = /*#__PURE__*/ createHideableComponent(
               {
                 slots: {
                   description: descriptionProps,
-                  errorMessage: errorMessageProps,
-                },
-              },
+                  errorMessage: errorMessageProps
+                }
+              }
             ],
             [
               GroupContext,
               {
                 isInvalid: validation.isInvalid,
-                isDisabled: props.isDisabled || false,
-              },
+                isDisabled: props.isDisabled || false
+              }
             ],
-            [FieldErrorContext, validation],
-          ]}
-        >
+            [FieldErrorContext, validation]
+          ]}>
           {renderProps.children}
         </Provider>
       </div>

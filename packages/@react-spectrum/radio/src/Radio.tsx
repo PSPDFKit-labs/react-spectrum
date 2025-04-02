@@ -13,16 +13,16 @@
 import {
   classNames,
   useFocusableRef,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { FocusableRef } from "@react-types/shared";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import React, { forwardRef, useRef } from "react";
-import { SpectrumRadioProps } from "@react-types/radio";
-import styles from "@adobe/spectrum-css-temp/components/radio/vars.css";
-import { useHover } from "@react-aria-nutrient/interactions";
-import { useRadio } from "@react-aria-nutrient/radio";
-import { useRadioProvider } from "./context";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {FocusableRef} from '@react-types/shared';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import React, {forwardRef, useRef} from 'react';
+import {SpectrumRadioProps} from '@react-types/radio';
+import styles from '@adobe/spectrum-css-temp/components/radio/vars.css';
+import {useHover} from '@react-aria-nutrient/interactions';
+import {useRadio} from '@react-aria-nutrient/radio';
+import {useRadioProvider} from './context';
 
 /**
  * Radio buttons allow users to select a single option from a list of mutually exclusive options.
@@ -32,21 +32,21 @@ export const Radio = forwardRef(function Radio(
   props: SpectrumRadioProps,
   ref: FocusableRef<HTMLLabelElement>
 ) {
-  let { isDisabled, children, autoFocus, ...otherProps } = props;
-  let { styleProps } = useStyleProps(otherProps);
-  let { hoverProps, isHovered } = useHover({ isDisabled });
+  let {isDisabled, children, autoFocus, ...otherProps} = props;
+  let {styleProps} = useStyleProps(otherProps);
+  let {hoverProps, isHovered} = useHover({isDisabled});
 
   let inputRef = useRef<HTMLInputElement>(null);
   let domRef = useFocusableRef(ref, inputRef);
 
   let radioGroupProps = useRadioProvider();
-  let { isEmphasized, state } = radioGroupProps;
+  let {isEmphasized, state} = radioGroupProps;
 
-  let { inputProps } = useRadio(
+  let {inputProps} = useRadio(
     {
       ...props,
       ...radioGroupProps,
-      isDisabled,
+      isDisabled
     },
     state,
     inputRef
@@ -59,31 +59,28 @@ export const Radio = forwardRef(function Radio(
       ref={domRef}
       className={classNames(
         styles,
-        "spectrum-Radio",
+        'spectrum-Radio',
         {
           // Removing. Pending design feedback.
           // 'spectrum-Radio--labelBelow': labelPosition === 'bottom',
-          "spectrum-Radio--quiet": !isEmphasized,
-          "is-disabled": isDisabled,
-          "is-invalid": state.isInvalid,
-          "is-hovered": isHovered,
+          'spectrum-Radio--quiet': !isEmphasized,
+          'is-disabled': isDisabled,
+          'is-invalid': state.isInvalid,
+          'is-hovered': isHovered
         },
         styleProps.className
-      )}
-    >
+      )}>
       <FocusRing
-        focusRingClass={classNames(styles, "focus-ring")}
-        autoFocus={autoFocus}
-      >
+        focusRingClass={classNames(styles, 'focus-ring')}
+        autoFocus={autoFocus}>
         <input
           {...inputProps}
           ref={inputRef}
-          className={classNames(styles, "spectrum-Radio-input")}
-        />
+          className={classNames(styles, 'spectrum-Radio-input')} />
       </FocusRing>
-      <span className={classNames(styles, "spectrum-Radio-button")} />
+      <span className={classNames(styles, 'spectrum-Radio-button')} />
       {children && (
-        <span className={classNames(styles, "spectrum-Radio-label")}>
+        <span className={classNames(styles, 'spectrum-Radio-label')}>
           {children}
         </span>
       )}

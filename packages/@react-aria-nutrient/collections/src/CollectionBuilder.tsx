@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-import { BaseCollection } from "./BaseCollection";
-import { BaseNode, Document, ElementNode } from "./Document";
-import { CachedChildrenOptions, useCachedChildren } from "./useCachedChildren";
-import { createPortal } from "react-dom";
-import { FocusableContext } from "@react-aria-nutrient/interactions";
-import { forwardRefType, Node } from "@react-types/shared";
-import { Hidden } from "./Hidden";
+import {BaseCollection} from './BaseCollection';
+import {BaseNode, Document, ElementNode} from './Document';
+import {CachedChildrenOptions, useCachedChildren} from './useCachedChildren';
+import {createPortal} from 'react-dom';
+import {FocusableContext} from '@react-aria-nutrient/interactions';
+import {forwardRefType, Node} from '@react-types/shared';
+import {Hidden} from './Hidden';
 import React, {
   createContext,
   ForwardedRef,
@@ -28,11 +28,11 @@ import React, {
   useContext,
   useMemo,
   useRef,
-  useState,
-} from "react";
-import { useIsSSR } from "@react-aria-nutrient/ssr";
-import { useLayoutEffect } from "@react-aria-nutrient/utils";
-import { useSyncExternalStore as useSyncExternalStoreShim } from "use-sync-external-store/shim/index.js";
+  useState
+} from 'react';
+import {useIsSSR} from '@react-aria-nutrient/ssr';
+import {useLayoutEffect} from '@react-aria-nutrient/utils';
+import {useSyncExternalStore as useSyncExternalStoreShim} from 'use-sync-external-store/shim/index.js';
 
 const ShallowRenderContext = createContext(false);
 const CollectionDocumentContext = createContext<Document<
@@ -41,9 +41,9 @@ const CollectionDocumentContext = createContext<Document<
 > | null>(null);
 
 export interface CollectionBuilderProps<C extends BaseCollection<object>> {
-  content: ReactNode;
-  children: (collection: C) => ReactNode;
-  createCollection?: () => C;
+  content: ReactNode,
+  children: (collection: C) => ReactNode,
+  createCollection?: () => C
 }
 
 /**
@@ -68,7 +68,7 @@ export function CollectionBuilder<C extends BaseCollection<object>>(
 
   // This is fine. CollectionDocumentContext never changes after mounting.
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  let { collection, document } = useCollectionDocument(props.createCollection);
+  let {collection, document} = useCollectionDocument(props.createCollection);
   return (
     <>
       <Hidden>
@@ -81,13 +81,13 @@ export function CollectionBuilder<C extends BaseCollection<object>>(
   );
 }
 
-function CollectionInner({ collection, render }) {
+function CollectionInner({collection, render}) {
   return render(collection);
 }
 
 interface CollectionDocumentResult<T, C extends BaseCollection<T>> {
-  collection: C;
-  document: Document<T, C>;
+  collection: C,
+  document: Document<T, C>
 }
 
 // React 16 and 17 don't support useSyncExternalStore natively, and the shim provided by React does not support getServerSnapshot.
@@ -112,8 +112,8 @@ function useSyncExternalStoreFallback<C>(
 }
 
 const useSyncExternalStore =
-  typeof React["useSyncExternalStore"] === "function"
-    ? React["useSyncExternalStore"]
+  typeof React['useSyncExternalStore'] === 'function'
+    ? React['useSyncExternalStore']
     : useSyncExternalStoreFallback;
 
 function useCollectionDocument<T extends object, C extends BaseCollection<T>>(
@@ -156,7 +156,7 @@ function useCollectionDocument<T extends object, C extends BaseCollection<T>>(
       document.isMounted = false;
     };
   }, [document]);
-  return { collection, document };
+  return {collection, document};
 }
 
 const SSRContext = createContext<BaseNode<any> | null>(null);
@@ -221,7 +221,7 @@ export function createLeafComponent<P extends object, E extends Element>(
   type: string,
   render: (props: P, ref: ForwardedRef<E>, node?: any) => ReactElement
 ): (props: P & React.RefAttributes<any>) => ReactNode {
-  let Component = ({ node }) => render(node.props, node.props.ref, node);
+  let Component = ({node}) => render(node.props, node.props.ref, node);
   let Result = (forwardRef as forwardRefType)(
     (props: P, ref: ForwardedRef<E>) => {
       let focusableProps = useContext(FocusableContext);
@@ -229,7 +229,7 @@ export function createLeafComponent<P extends object, E extends Element>(
       if (!isShallow) {
         if (render.length >= 3) {
           throw new Error(
-            render.name + " cannot be rendered outside a collection."
+            render.name + ' cannot be rendered outside a collection.'
           );
         }
         return render(props, ref);
@@ -239,7 +239,7 @@ export function createLeafComponent<P extends object, E extends Element>(
         type,
         props,
         ref,
-        "children" in props ? props.children : null,
+        'children' in props ? props.children : null,
         null,
         (node) => (
           // Forward FocusableContext to real DOM tree so tooltips work.
@@ -264,7 +264,7 @@ export function createBranchComponent<
   render: (props: P, ref: ForwardedRef<E>, node: Node<T>) => ReactElement,
   useChildren: (props: P) => ReactNode = useCollectionChildren
 ): (props: P & React.RefAttributes<E>) => ReactNode {
-  let Component = ({ node }) => render(node.props, node.props.ref, node);
+  let Component = ({node}) => render(node.props, node.props.ref, node);
   let Result = (forwardRef as forwardRefType)(
     (props: P, ref: ForwardedRef<E>) => {
       let children = useChildren(props);
@@ -283,7 +283,7 @@ export function createBranchComponent<
 function useCollectionChildren<T extends object>(
   options: CachedChildrenOptions<T>
 ) {
-  return useCachedChildren({ ...options, addIdAndValue: true });
+  return useCachedChildren({...options, addIdAndValue: true});
 }
 
 export interface CollectionProps<T> extends CachedChildrenOptions<T> {}
@@ -302,7 +302,7 @@ export function Collection<T extends object>(
   let children = useCollectionChildren({
     ...props,
     idScope,
-    dependencies,
+    dependencies
   });
 
   let doc = useContext(CollectionDocumentContext);
@@ -314,8 +314,8 @@ export function Collection<T extends object>(
   ctx = useMemo(
     () => ({
       dependencies,
-      idScope,
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      idScope
+       
     }),
     [idScope, ...dependencies]
   );
@@ -327,7 +327,7 @@ export function Collection<T extends object>(
   );
 }
 
-function CollectionRoot({ children }) {
+function CollectionRoot({children}) {
   let doc = useContext(CollectionDocumentContext);
   let wrappedChildren = useMemo(
     () => (

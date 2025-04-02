@@ -13,17 +13,17 @@
 import {
   classNames,
   useFocusableRef,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { FocusableRef } from "@react-types/shared";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React from "react";
-import { SpectrumLogicButtonProps } from "@react-types/button";
-import styles from "@adobe/spectrum-css-temp/components/button/vars.css";
-import { useButton } from "@react-aria-nutrient/button";
-import { useHover } from "@react-aria-nutrient/interactions";
-import { useProviderProps } from "@react-spectrum/provider";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {FocusableRef} from '@react-types/shared';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React from 'react';
+import {SpectrumLogicButtonProps} from '@react-types/button';
+import styles from '@adobe/spectrum-css-temp/components/button/vars.css';
+import {useButton} from '@react-aria-nutrient/button';
+import {useHover} from '@react-aria-nutrient/interactions';
+import {useProviderProps} from '@react-spectrum/provider';
 
 /**
  * A LogicButton displays an operator within a boolean logic sequence.
@@ -33,34 +33,32 @@ export const LogicButton = React.forwardRef(function LogicButton(
   ref: FocusableRef<HTMLButtonElement>
 ) {
   props = useProviderProps(props);
-  let { variant, children, isDisabled, autoFocus, ...otherProps } = props;
+  let {variant, children, isDisabled, autoFocus, ...otherProps} = props;
   let domRef = useFocusableRef(ref);
-  let { buttonProps, isPressed } = useButton(props, domRef);
-  let { hoverProps, isHovered } = useHover({ isDisabled });
-  let { styleProps } = useStyleProps(otherProps);
+  let {buttonProps, isPressed} = useButton(props, domRef);
+  let {hoverProps, isHovered} = useHover({isDisabled});
+  let {styleProps} = useStyleProps(otherProps);
 
   return (
     <FocusRing
-      focusRingClass={classNames(styles, "focus-ring")}
-      autoFocus={autoFocus}
-    >
+      focusRingClass={classNames(styles, 'focus-ring')}
+      autoFocus={autoFocus}>
       <button
         {...styleProps}
         {...mergeProps(buttonProps, hoverProps)}
         ref={domRef}
         className={classNames(
           styles,
-          "spectrum-LogicButton",
+          'spectrum-LogicButton',
           {
             [`spectrum-LogicButton--${variant}`]: variant,
-            "is-disabled": isDisabled,
-            "is-active": isPressed,
-            "is-hovered": isHovered,
+            'is-disabled': isDisabled,
+            'is-active': isPressed,
+            'is-hovered': isHovered
           },
           styleProps.className
-        )}
-      >
-        <span className={classNames(styles, "spectrum-Button-label")}>
+        )}>
+        <span className={classNames(styles, 'spectrum-Button-label')}>
           {children}
         </span>
       </button>

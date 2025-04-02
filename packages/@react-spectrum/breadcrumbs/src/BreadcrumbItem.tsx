@@ -10,35 +10,35 @@
  * governing permissions and limitations under the License.
  */
 
-import { BreadcrumbItemProps } from "@react-types/breadcrumbs";
-import ChevronRightSmall from "@spectrum-icons/ui/ChevronRightSmall";
-import { classNames } from "@react-spectrum/utils";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React, { Fragment, ReactNode, useRef } from "react";
-import styles from "@adobe/spectrum-css-temp/components/breadcrumb/vars.css";
-import { useBreadcrumbItem } from "@react-aria-nutrient/breadcrumbs";
-import { useHover } from "@react-aria-nutrient/interactions";
-import { useLocale } from "@react-aria-nutrient/i18n";
+import {BreadcrumbItemProps} from '@react-types/breadcrumbs';
+import ChevronRightSmall from '@spectrum-icons/ui/ChevronRightSmall';
+import {classNames} from '@react-spectrum/utils';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React, {Fragment, ReactNode, useRef} from 'react';
+import styles from '@adobe/spectrum-css-temp/components/breadcrumb/vars.css';
+import {useBreadcrumbItem} from '@react-aria-nutrient/breadcrumbs';
+import {useHover} from '@react-aria-nutrient/interactions';
+import {useLocale} from '@react-aria-nutrient/i18n';
 
 interface SpectrumBreadcrumbItemProps extends BreadcrumbItemProps {
-  isMenu?: boolean;
+  isMenu?: boolean
 }
 
 export function BreadcrumbItem(props: SpectrumBreadcrumbItemProps): ReactNode {
-  let { children, isCurrent, isDisabled, isMenu } = props;
+  let {children, isCurrent, isDisabled, isMenu} = props;
 
-  let { direction } = useLocale();
+  let {direction} = useLocale();
   let ref = useRef(null);
-  let ElementType: React.ElementType = props.href ? "a" : "span";
-  let { itemProps } = useBreadcrumbItem(
+  let ElementType: React.ElementType = props.href ? 'a' : 'span';
+  let {itemProps} = useBreadcrumbItem(
     {
       ...props,
-      elementType: ElementType,
+      elementType: ElementType
     },
     ref
   );
-  let { hoverProps, isHovered } = useHover(props);
+  let {hoverProps, isHovered} = useHover(props);
 
   // If this item contains a menu button, then it shouldn't be a link.
   if (isMenu) {
@@ -47,28 +47,26 @@ export function BreadcrumbItem(props: SpectrumBreadcrumbItemProps): ReactNode {
 
   return (
     <Fragment>
-      <FocusRing focusRingClass={classNames(styles, "focus-ring")}>
+      <FocusRing focusRingClass={classNames(styles, 'focus-ring')}>
         <ElementType
           {...mergeProps(itemProps, hoverProps)}
           ref={ref}
           className={classNames(styles, {
-            "spectrum-Breadcrumbs-itemLink": !isMenu,
-            "is-disabled": !isCurrent && isDisabled,
-            "is-hovered": isHovered,
-          })}
-        >
+            'spectrum-Breadcrumbs-itemLink': !isMenu,
+            'is-disabled': !isCurrent && isDisabled,
+            'is-hovered': isHovered
+          })}>
           {children}
         </ElementType>
       </FocusRing>
       <ChevronRightSmall
         UNSAFE_className={classNames(
           styles,
-          "spectrum-Breadcrumbs-itemSeparator",
+          'spectrum-Breadcrumbs-itemSeparator',
           {
-            "is-reversed": direction === "rtl",
+            'is-reversed': direction === 'rtl'
           }
-        )}
-      />
+        )} />
     </Fragment>
   );
 }

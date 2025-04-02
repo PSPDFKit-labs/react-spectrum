@@ -1,23 +1,23 @@
-import { classNames } from "@react-spectrum/utils";
-import dndStyles from "./dnd.css";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React from "react";
+import {classNames} from '@react-spectrum/utils';
+import dndStyles from './dnd.css';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React from 'react';
 import {
   useDraggableCollection,
-  useDraggableItem,
-} from "@react-aria-nutrient/dnd";
-import { useDraggableCollectionState } from "@react-stately/dnd";
-import { useFocusRing } from "@react-aria-nutrient/focus";
-import { useListBox, useOption } from "@react-aria-nutrient/listbox";
-import { useListState } from "@react-stately/list";
+  useDraggableItem
+} from '@react-aria-nutrient/dnd';
+import {useDraggableCollectionState} from '@react-stately/dnd';
+import {useFocusRing} from '@react-aria-nutrient/focus';
+import {useListBox, useOption} from '@react-aria-nutrient/listbox';
+import {useListState} from '@react-stately/list';
 
 export function DraggableListBox(props) {
   let state = useListState(props);
   let ref = React.useRef<HTMLUListElement | null>(null);
-  let { listBoxProps } = useListBox(
+  let {listBoxProps} = useListBox(
     {
       ...props,
-      shouldSelectOnPressUp: true,
+      shouldSelectOnPressUp: true
     },
     state,
     ref
@@ -37,9 +37,9 @@ export function DraggableListBox(props) {
           }
 
           return {
-            "text/plain": item.textValue,
+            'text/plain': item.textValue
           };
-        })),
+        }))
   });
   useDraggableCollection({}, dragState, ref);
 
@@ -47,34 +47,32 @@ export function DraggableListBox(props) {
     <ul
       {...listBoxProps}
       ref={ref}
-      className={dndStyles["draggable-listbox"]}
-      aria-label="example draggable listbox"
-    >
+      className={dndStyles['draggable-listbox']}
+      aria-label="example draggable listbox">
       {[...state.collection].map((item) => (
         <Option
           key={item.key}
           item={item}
           state={state}
-          dragState={dragState}
-        />
+          dragState={dragState} />
       ))}
     </ul>
   );
 }
 
-function Option({ item, state, dragState }) {
+function Option({item, state, dragState}) {
   let ref = React.useRef<HTMLLIElement | null>(null);
-  let { optionProps, isPressed, hasAction } = useOption(
-    { key: item.key },
+  let {optionProps, isPressed, hasAction} = useOption(
+    {key: item.key},
     state,
     ref
   );
-  let { isFocusVisible, focusProps } = useFocusRing();
+  let {isFocusVisible, focusProps} = useFocusRing();
 
-  let { dragProps } = useDraggableItem(
+  let {dragProps} = useDraggableItem(
     {
       key: item.key,
-      hasAction,
+      hasAction
     },
     dragState
   );
@@ -83,11 +81,10 @@ function Option({ item, state, dragState }) {
     <li
       {...mergeProps(dragProps, optionProps, focusProps)}
       ref={ref}
-      className={classNames(dndStyles, "option", {
-        "focus-visible": isFocusVisible,
-        pressed: isPressed,
-      })}
-    >
+      className={classNames(dndStyles, 'option', {
+        'focus-visible': isFocusVisible,
+        pressed: isPressed
+      })}>
       {item.rendered}
     </li>
   );

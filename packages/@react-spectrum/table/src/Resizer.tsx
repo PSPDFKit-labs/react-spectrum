@@ -1,32 +1,32 @@
-import { classNames } from "@react-spectrum/utils";
-import { ColumnSize } from "@react-types/table";
-import eCursor from "bundle-text:./cursors/Cur_MoveToRight_9_9.svg";
-import ewCursor from "bundle-text:./cursors/Cur_MoveHorizontal_9_9.svg";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import { GridNode } from "@react-types/grid";
+import {classNames} from '@react-spectrum/utils';
+import {ColumnSize} from '@react-types/table';
+import eCursor from 'bundle-text:./cursors/Cur_MoveToRight_9_9.svg';
+import ewCursor from 'bundle-text:./cursors/Cur_MoveHorizontal_9_9.svg';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import {GridNode} from '@react-types/grid';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { isWebKit, mergeProps, useObjectRef } from "@react-aria-nutrient/utils";
-import { Key, RefObject } from "@react-types/shared";
+import intlMessages from '../intl/*.json';
+import {isWebKit, mergeProps, useObjectRef} from '@react-aria-nutrient/utils';
+import {Key, RefObject} from '@react-types/shared';
 import React, {
   createContext,
   ForwardedRef,
   useContext,
   useEffect,
-  useState,
-} from "react";
-import ReactDOM from "react-dom";
-import styles from "@adobe/spectrum-css-temp/components/table/vars.css";
-import { TableColumnResizeState } from "@react-stately/table";
+  useState
+} from 'react';
+import ReactDOM from 'react-dom';
+import styles from '@adobe/spectrum-css-temp/components/table/vars.css';
+import {TableColumnResizeState} from '@react-stately/table';
 import {
   useLocale,
-  useLocalizedStringFormatter,
-} from "@react-aria-nutrient/i18n";
-import { useTableColumnResize } from "@react-aria-nutrient/table";
-import { useTableContext, useVirtualizerContext } from "./TableViewBase";
-import { useUNSTABLE_PortalContext } from "@react-aria-nutrient/overlays";
+  useLocalizedStringFormatter
+} from '@react-aria-nutrient/i18n';
+import {useTableColumnResize} from '@react-aria-nutrient/table';
+import {useTableContext, useVirtualizerContext} from './TableViewBase';
+import {useUNSTABLE_PortalContext} from '@react-aria-nutrient/overlays';
 // @ts-ignore
-import wCursor from "bundle-text:./cursors/Cur_MoveToLeft_9_9.svg";
+import wCursor from 'bundle-text:./cursors/Cur_MoveToLeft_9_9.svg';
 
 function getCursor(svg: string, fallback: string) {
   // WebKit renders SVG cursors blurry on 2x screens: https://bugs.webkit.org/show_bug.cgi?id=160657
@@ -46,18 +46,18 @@ function getCursor(svg: string, fallback: string) {
 }
 
 interface ResizerProps<T> {
-  column: GridNode<T>;
-  showResizer: boolean;
-  triggerRef: RefObject<HTMLDivElement | null>;
-  onResizeStart?: (widths: Map<Key, ColumnSize>) => void;
-  onResize?: (widths: Map<Key, ColumnSize>) => void;
-  onResizeEnd?: (widths: Map<Key, ColumnSize>) => void;
+  column: GridNode<T>,
+  showResizer: boolean,
+  triggerRef: RefObject<HTMLDivElement | null>,
+  onResizeStart?: (widths: Map<Key, ColumnSize>) => void,
+  onResize?: (widths: Map<Key, ColumnSize>) => void,
+  onResizeEnd?: (widths: Map<Key, ColumnSize>) => void
 }
 
 const CURSORS = {
-  ew: getCursor(ewCursor, "ew-resize"),
-  w: getCursor(wCursor, "w-resize"),
-  e: getCursor(eCursor, "e-resize"),
+  ew: getCursor(ewCursor, 'ew-resize'),
+  w: getCursor(wCursor, 'w-resize'),
+  e: getCursor(eCursor, 'e-resize')
 };
 
 export const ResizeStateContext =
@@ -67,9 +67,9 @@ export const Resizer = React.forwardRef(function Resizer<T>(
   props: ResizerProps<T>,
   ref: ForwardedRef<HTMLInputElement | null>
 ) {
-  let { column, showResizer } = props;
+  let {column, showResizer} = props;
   let objectRef = useObjectRef(ref);
-  let { isEmpty, onFocusedResizer } = useTableContext();
+  let {isEmpty, onFocusedResizer} = useTableContext();
   let layout = useContext(ResizeStateContext)!;
   // Virtualizer re-renders, but these components are all cached
   // in order to get around that and cause a rerender here, we use context
@@ -77,34 +77,34 @@ export const Resizer = React.forwardRef(function Resizer<T>(
   useVirtualizerContext();
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/table"
+    '@react-spectrum/table'
   );
-  let { direction } = useLocale();
+  let {direction} = useLocale();
 
   let [isPointerDown, setIsPointerDown] = useState(false);
   useEffect(() => {
     let setDown = (e) => {
-      if (e.pointerType === "mouse") {
+      if (e.pointerType === 'mouse') {
         setIsPointerDown(true);
       }
     };
     let setUp = (e) => {
-      if (e.pointerType === "mouse") {
+      if (e.pointerType === 'mouse') {
         setIsPointerDown(false);
       }
     };
-    document.addEventListener("pointerdown", setDown, { capture: true });
-    document.addEventListener("pointerup", setUp, { capture: true });
+    document.addEventListener('pointerdown', setDown, {capture: true});
+    document.addEventListener('pointerup', setUp, {capture: true});
     return () => {
-      document.removeEventListener("pointerdown", setDown, { capture: true });
-      document.removeEventListener("pointerup", setUp, { capture: true });
+      document.removeEventListener('pointerdown', setDown, {capture: true});
+      document.removeEventListener('pointerup', setUp, {capture: true});
     };
   }, []);
 
-  let { inputProps, resizerProps } = useTableColumnResize<unknown>(
+  let {inputProps, resizerProps} = useTableColumnResize<unknown>(
     mergeProps(props, {
-      "aria-label": stringFormatter.format("columnResizer"),
-      isDisabled: isEmpty,
+      'aria-label': stringFormatter.format('columnResizer'),
+      isDisabled: isEmpty
     }),
     layout,
     objectRef
@@ -115,35 +115,33 @@ export const Resizer = React.forwardRef(function Resizer<T>(
   let isWResizable =
     layout.getColumnMaxWidth(column.key) <= layout.getColumnWidth(column.key);
   let isResizing = layout.resizingColumn === column.key;
-  let cursor = "";
+  let cursor = '';
   if (isEResizable) {
-    cursor = direction === "rtl" ? CURSORS.w : CURSORS.e;
+    cursor = direction === 'rtl' ? CURSORS.w : CURSORS.e;
   } else if (isWResizable) {
-    cursor = direction === "rtl" ? CURSORS.e : CURSORS.w;
+    cursor = direction === 'rtl' ? CURSORS.e : CURSORS.w;
   } else {
     cursor = CURSORS.ew;
   }
 
   let style = {
     ...resizerProps.style,
-    height: "100%",
-    display: showResizer ? undefined : "none",
-    cursor,
+    height: '100%',
+    display: showResizer ? undefined : 'none',
+    cursor
   };
 
   return (
     <>
-      <FocusRing within focusRingClass={classNames(styles, "focus-ring")}>
+      <FocusRing within focusRingClass={classNames(styles, 'focus-ring')}>
         <div
           {...resizerProps}
           role="presentation"
           style={style}
-          className={classNames(styles, "spectrum-Table-columnResizer")}
-        >
+          className={classNames(styles, 'spectrum-Table-columnResizer')}>
           <input
             ref={objectRef}
-            {...mergeProps(inputProps, { onFocus: onFocusedResizer })}
-          />
+            {...mergeProps(inputProps, {onFocus: onFocusedResizer})} />
         </div>
       </FocusRing>
       {/* Placeholder so that the title doesn't intersect with space reserved by the resizer when it appears. */}
@@ -152,28 +150,26 @@ export const Resizer = React.forwardRef(function Resizer<T>(
         role="presentation"
         className={classNames(
           styles,
-          "spectrum-Table-columnResizerPlaceholder"
-        )}
-      />
+          'spectrum-Table-columnResizerPlaceholder'
+        )} />
       <CursorOverlay show={isResizing && isPointerDown}>
         <div
           style={{
-            position: "fixed",
+            position: 'fixed',
             top: 0,
             left: 0,
             bottom: 0,
             right: 0,
-            cursor,
-          }}
-        />
+            cursor
+          }} />
       </CursorOverlay>
     </>
   );
 });
 
 function CursorOverlay(props) {
-  let { show, children } = props;
-  let { getContainer } = useUNSTABLE_PortalContext();
+  let {show, children} = props;
+  let {getContainer} = useUNSTABLE_PortalContext();
   return show
     ? ReactDOM.createPortal(children, getContainer?.() ?? document.body)
     : null;

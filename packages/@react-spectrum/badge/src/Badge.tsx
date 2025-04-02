@@ -14,15 +14,15 @@ import {
   classNames,
   SlotProvider,
   useDOMRef,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import React, { forwardRef } from "react";
-import { SpectrumBadgeProps } from "@react-types/badge";
-import styles from "@adobe/spectrum-css-temp/components/badge/vars.css";
-import { Text } from "@react-spectrum/text";
-import { useProviderProps } from "@react-spectrum/provider";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import React, {forwardRef} from 'react';
+import {SpectrumBadgeProps} from '@react-types/badge';
+import styles from '@adobe/spectrum-css-temp/components/badge/vars.css';
+import {Text} from '@react-spectrum/text';
+import {useProviderProps} from '@react-spectrum/provider';
 
 /**
  * Badges are used for showing a small amount of color-categorized metadata, ideal for getting a user's attention.
@@ -31,9 +31,9 @@ export const Badge = forwardRef(function Badge(
   props: SpectrumBadgeProps,
   ref: DOMRef<HTMLDivElement>
 ) {
-  let { children, variant, ...otherProps } = useProviderProps(props);
+  let {children, variant, ...otherProps} = useProviderProps(props);
   let domRef = useDOMRef(ref);
-  let { styleProps } = useStyleProps(otherProps);
+  let {styleProps} = useStyleProps(otherProps);
   let isTextOnly = React.Children.toArray(props.children).every(
     (c) => !React.isValidElement(c)
   );
@@ -45,26 +45,24 @@ export const Badge = forwardRef(function Badge(
       role="presentation"
       className={classNames(
         styles,
-        "spectrum-Badge",
+        'spectrum-Badge',
         {
-          [`spectrum-Badge--${variant}`]: variant,
+          [`spectrum-Badge--${variant}`]: variant
         },
         styleProps.className
       )}
-      ref={domRef}
-    >
+      ref={domRef}>
       <SlotProvider
         slots={{
           icon: {
-            size: "S",
-            UNSAFE_className: classNames(styles, "spectrum-Badge-icon"),
+            size: 'S',
+            UNSAFE_className: classNames(styles, 'spectrum-Badge-icon')
           },
           text: {
-            UNSAFE_className: classNames(styles, "spectrum-Badge-label"),
-          },
-        }}
-      >
-        {typeof children === "string" || isTextOnly ? (
+            UNSAFE_className: classNames(styles, 'spectrum-Badge-label')
+          }
+        }}>
+        {typeof children === 'string' || isTextOnly ? (
           <Text>{children}</Text>
         ) : (
           children

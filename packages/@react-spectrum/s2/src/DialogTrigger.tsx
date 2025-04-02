@@ -12,10 +12,10 @@
 
 import {
   DialogTrigger as AriaDialogTrigger,
-  DialogTriggerProps as AriaDialogTriggerProps,
-} from "react-aria-components";
-import { PressResponder } from "@react-aria-nutrient/interactions";
-import { ReactNode } from "react";
+  DialogTriggerProps as AriaDialogTriggerProps
+} from 'react-aria-components';
+import {PressResponder} from '@react-aria-nutrient/interactions';
+import {ReactNode} from 'react';
 
 export interface DialogTriggerProps extends AriaDialogTriggerProps {}
 

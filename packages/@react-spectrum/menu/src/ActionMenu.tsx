@@ -10,18 +10,18 @@
  * governing permissions and limitations under the License.
  */
 
-import { ActionButton } from "@react-spectrum/button";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { FocusableRef } from "@react-types/shared";
+import {ActionButton} from '@react-spectrum/button';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {FocusableRef} from '@react-types/shared';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { Menu } from "./Menu";
-import { MenuTrigger } from "./MenuTrigger";
-import More from "@spectrum-icons/workflow/More";
-import React, { forwardRef, ReactElement } from "react";
-import { SpectrumActionMenuProps } from "@react-types/menu";
-import { useLocalizedStringFormatter } from "@react-aria-nutrient/i18n";
-import { useSlotProps } from "@react-spectrum/utils";
+import intlMessages from '../intl/*.json';
+import {Menu} from './Menu';
+import {MenuTrigger} from './MenuTrigger';
+import More from '@spectrum-icons/workflow/More';
+import React, {forwardRef, ReactElement} from 'react';
+import {SpectrumActionMenuProps} from '@react-types/menu';
+import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
+import {useSlotProps} from '@react-spectrum/utils';
 
 /**
  * ActionMenu combines an ActionButton with a Menu for simple "more actions" use cases.
@@ -30,14 +30,14 @@ export const ActionMenu = forwardRef(function ActionMenu<T extends object>(
   props: SpectrumActionMenuProps<T>,
   ref: FocusableRef<HTMLButtonElement>
 ) {
-  props = useSlotProps(props, "actionMenu");
+  props = useSlotProps(props, 'actionMenu');
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/menu"
+    '@react-spectrum/menu'
   );
-  let buttonProps = filterDOMProps(props, { labelable: true });
-  if (buttonProps["aria-label"] === undefined) {
-    buttonProps["aria-label"] = stringFormatter.format("moreActions");
+  let buttonProps = filterDOMProps(props, {labelable: true});
+  if (buttonProps['aria-label'] === undefined) {
+    buttonProps['aria-label'] = stringFormatter.format('moreActions');
   }
 
   return (
@@ -47,8 +47,7 @@ export const ActionMenu = forwardRef(function ActionMenu<T extends object>(
       onOpenChange={props.onOpenChange}
       align={props.align}
       direction={props.direction}
-      shouldFlip={props.shouldFlip}
-    >
+      shouldFlip={props.shouldFlip}>
       <ActionButton ref={ref} {...props} {...buttonProps}>
         <More />
       </ActionButton>
@@ -56,8 +55,7 @@ export const ActionMenu = forwardRef(function ActionMenu<T extends object>(
         children={props.children}
         items={props.items}
         disabledKeys={props.disabledKeys}
-        onAction={props.onAction}
-      />
+        onAction={props.onAction} />
     </MenuTrigger>
   );
 }) as <T>(

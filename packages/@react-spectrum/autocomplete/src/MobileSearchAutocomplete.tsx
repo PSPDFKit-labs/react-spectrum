@@ -10,30 +10,30 @@
  * governing permissions and limitations under the License.
  */
 
-import AlertMedium from "@spectrum-icons/ui/AlertMedium";
-import { AriaButtonProps } from "@react-types/button";
-import CheckmarkMedium from "@spectrum-icons/ui/CheckmarkMedium";
-import { classNames, useFocusableRef } from "@react-spectrum/utils";
-import { ClearButton } from "@react-spectrum/button";
-import { ComboBoxState, useComboBoxState } from "@react-stately/combobox";
+import AlertMedium from '@spectrum-icons/ui/AlertMedium';
+import {AriaButtonProps} from '@react-types/button';
+import CheckmarkMedium from '@spectrum-icons/ui/CheckmarkMedium';
+import {classNames, useFocusableRef} from '@react-spectrum/utils';
+import {ClearButton} from '@react-spectrum/button';
+import {ComboBoxState, useComboBoxState} from '@react-stately/combobox';
 import {
   DismissButton,
-  useOverlayTrigger,
-} from "@react-aria-nutrient/overlays";
-import { Field } from "@react-spectrum/label";
-import { FocusableRef, ValidationState } from "@react-types/shared";
+  useOverlayTrigger
+} from '@react-aria-nutrient/overlays';
+import {Field} from '@react-spectrum/label';
+import {FocusableRef, ValidationState} from '@react-types/shared';
 import {
   focusSafely,
   setInteractionModality,
-  useHover,
-} from "@react-aria-nutrient/interactions";
-import { FocusScope, useFocusRing } from "@react-aria-nutrient/focus";
+  useHover
+} from '@react-aria-nutrient/interactions';
+import {FocusScope, useFocusRing} from '@react-aria-nutrient/focus';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { ListBoxBase, useListBoxLayout } from "@react-spectrum/listbox";
-import Magnifier from "@spectrum-icons/ui/Magnifier";
-import { mergeProps, useFormReset, useId } from "@react-aria-nutrient/utils";
-import { ProgressCircle } from "@react-spectrum/progress";
+import intlMessages from '../intl/*.json';
+import {ListBoxBase, useListBoxLayout} from '@react-spectrum/listbox';
+import Magnifier from '@spectrum-icons/ui/Magnifier';
+import {mergeProps, useFormReset, useId} from '@react-aria-nutrient/utils';
+import {ProgressCircle} from '@react-spectrum/progress';
 import React, {
   HTMLAttributes,
   InputHTMLAttributes,
@@ -42,25 +42,25 @@ import React, {
   useCallback,
   useEffect,
   useRef,
-  useState,
-} from "react";
-import searchAutocompleteStyles from "./searchautocomplete.css";
-import searchStyles from "@adobe/spectrum-css-temp/components/search/vars.css";
-import { SpectrumSearchAutocompleteProps } from "@react-types/autocomplete";
-import styles from "@adobe/spectrum-css-temp/components/inputgroup/vars.css";
-import { TextFieldBase } from "@react-spectrum/textfield";
-import textfieldStyles from "@adobe/spectrum-css-temp/components/textfield/vars.css";
-import { Tray } from "@react-spectrum/overlays";
-import { useButton } from "@react-aria-nutrient/button";
-import { useDialog } from "@react-aria-nutrient/dialog";
-import { useField } from "@react-aria-nutrient/label";
+  useState
+} from 'react';
+import searchAutocompleteStyles from './searchautocomplete.css';
+import searchStyles from '@adobe/spectrum-css-temp/components/search/vars.css';
+import {SpectrumSearchAutocompleteProps} from '@react-types/autocomplete';
+import styles from '@adobe/spectrum-css-temp/components/inputgroup/vars.css';
+import {TextFieldBase} from '@react-spectrum/textfield';
+import textfieldStyles from '@adobe/spectrum-css-temp/components/textfield/vars.css';
+import {Tray} from '@react-spectrum/overlays';
+import {useButton} from '@react-aria-nutrient/button';
+import {useDialog} from '@react-aria-nutrient/dialog';
+import {useField} from '@react-aria-nutrient/label';
 import {
   useFilter,
-  useLocalizedStringFormatter,
-} from "@react-aria-nutrient/i18n";
-import { useFormValidation } from "@react-aria-nutrient/form";
-import { useProviderProps } from "@react-spectrum/provider";
-import { useSearchAutocomplete } from "@react-aria-nutrient/autocomplete";
+  useLocalizedStringFormatter
+} from '@react-aria-nutrient/i18n';
+import {useFormValidation} from '@react-aria-nutrient/form';
+import {useProviderProps} from '@react-spectrum/provider';
+import {useSearchAutocomplete} from '@react-aria-nutrient/autocomplete';
 
 function ForwardMobileSearchAutocomplete<T extends object>(
   props: SpectrumSearchAutocompleteProps<T>,
@@ -76,10 +76,10 @@ function ForwardMobileSearchAutocomplete<T extends object>(
     validate,
     name,
     isReadOnly,
-    onSubmit = () => {},
+    onSubmit = () => {}
   } = props;
 
-  let { contains } = useFilter({ sensitivity: "base" });
+  let {contains} = useFilter({sensitivity: 'base'});
   let state = useComboBoxState({
     ...props,
     defaultFilter: contains,
@@ -92,13 +92,13 @@ function ForwardMobileSearchAutocomplete<T extends object>(
     onSelectionChange: (key) => key !== null && onSubmit(null, key),
     selectedKey: undefined,
     defaultSelectedKey: undefined,
-    validate: useCallback((v) => validate?.(v.inputValue), [validate]),
+    validate: useCallback((v) => validate?.(v.inputValue), [validate])
   });
 
   let buttonRef = useRef<HTMLDivElement>(null);
   let domRef = useFocusableRef(ref, buttonRef);
-  let { triggerProps, overlayProps } = useOverlayTrigger(
-    { type: "listbox" },
+  let {triggerProps, overlayProps} = useOverlayTrigger(
+    {type: 'listbox'},
     state,
     buttonRef
   );
@@ -107,43 +107,43 @@ function ForwardMobileSearchAutocomplete<T extends object>(
   useFormValidation(
     {
       ...props,
-      focus: () => buttonRef.current?.focus(),
+      focus: () => buttonRef.current?.focus()
     },
     state,
     inputRef
   );
-  let { isInvalid, validationErrors, validationDetails } =
+  let {isInvalid, validationErrors, validationDetails} =
     state.displayValidation;
   let validationState =
-    props.validationState || (isInvalid ? "invalid" : undefined);
-  let errorMessage = props.errorMessage ?? validationErrors.join(" ");
+    props.validationState || (isInvalid ? 'invalid' : undefined);
+  let errorMessage = props.errorMessage ?? validationErrors.join(' ');
 
-  let { labelProps, fieldProps, descriptionProps, errorMessageProps } =
+  let {labelProps, fieldProps, descriptionProps, errorMessageProps} =
     useField({
       ...props,
-      labelElementType: "span",
+      labelElementType: 'span',
       isInvalid,
-      errorMessage,
+      errorMessage
     });
 
   // Focus the button and show focus ring when clicking on the label
   labelProps.onClick = () => {
     if (!props.isDisabled && buttonRef.current) {
       buttonRef.current.focus();
-      setInteractionModality("keyboard");
+      setInteractionModality('keyboard');
     }
   };
 
   let inputProps: InputHTMLAttributes<HTMLInputElement> = {
-    type: "hidden",
+    type: 'hidden',
     name,
-    value: state.inputValue,
+    value: state.inputValue
   };
 
-  if (validationBehavior === "native") {
+  if (validationBehavior === 'native') {
     // Use a hidden <input type="text"> rather than <input type="hidden">
     // so that an empty value blocks HTML form submission when the field is required.
-    inputProps.type = "text";
+    inputProps.type = 'text';
     inputProps.hidden = true;
     inputProps.required = isRequired;
     // Ignore react warning.
@@ -164,12 +164,11 @@ function ForwardMobileSearchAutocomplete<T extends object>(
         validationDetails={validationDetails}
         elementType="span"
         ref={domRef}
-        includeNecessityIndicatorInAccessibilityName
-      >
+        includeNecessityIndicatorInAccessibilityName>
         <SearchAutocompleteButton
           {...mergeProps(triggerProps, fieldProps, {
             autoFocus: props.autoFocus,
-            icon: props.icon,
+            icon: props.icon
           })}
           ref={buttonRef}
           isQuiet={isQuiet}
@@ -178,10 +177,9 @@ function ForwardMobileSearchAutocomplete<T extends object>(
           isPlaceholder={!state.inputValue}
           validationState={validationState}
           inputValue={state.inputValue}
-          clearInput={() => state.setInputValue("")}
-          onPress={() => !isReadOnly && state.open(null, "manual")}
-        >
-          {state.inputValue || props.placeholder || ""}
+          clearInput={() => state.setInputValue('')}
+          onPress={() => !isReadOnly && state.open(null, 'manual')}>
+          {state.inputValue || props.placeholder || ''}
         </SearchAutocompleteButton>
       </Field>
       <input {...inputProps} ref={inputRef} />
@@ -190,8 +188,7 @@ function ForwardMobileSearchAutocomplete<T extends object>(
           {...props}
           onClose={state.close}
           overlayProps={overlayProps}
-          state={state}
-        />
+          state={state} />
       </Tray>
     </>
   );
@@ -201,22 +198,22 @@ export let MobileSearchAutocomplete = React.forwardRef(
   ForwardMobileSearchAutocomplete
 ) as <T>(
   props: SpectrumSearchAutocompleteProps<T> & {
-    ref?: FocusableRef<HTMLElement>;
+    ref?: FocusableRef<HTMLElement>
   }
 ) => ReactElement;
 
 interface SearchAutocompleteButtonProps extends AriaButtonProps {
-  icon?: ReactElement | null;
-  isQuiet?: boolean;
-  isDisabled?: boolean;
-  isReadOnly?: boolean;
-  isPlaceholder?: boolean;
-  validationState?: ValidationState;
-  inputValue?: string;
-  clearInput?: () => void;
-  children?: ReactNode;
-  style?: React.CSSProperties;
-  className?: string;
+  icon?: ReactElement | null,
+  isQuiet?: boolean,
+  isDisabled?: boolean,
+  isReadOnly?: boolean,
+  isPlaceholder?: boolean,
+  validationState?: ValidationState,
+  inputValue?: string,
+  clearInput?: () => void,
+  children?: ReactNode,
+  style?: React.CSSProperties,
+  className?: string
 }
 
 // any type is because we don't want to call useObjectRef because this is an internal component and we know
@@ -239,20 +236,19 @@ const SearchAutocompleteButton = React.forwardRef(
       clearInput,
       children,
       style,
-      className,
+      className
     } = props;
     let stringFormatter = useLocalizedStringFormatter(
       intlMessages,
-      "@react-spectrum/autocomplete"
+      '@react-spectrum/autocomplete'
     );
     let valueId = useId();
     let invalidId = useId();
     let validationIcon =
-      validationState === "invalid" ? (
+      validationState === 'invalid' ? (
         <AlertMedium
           id={invalidId}
-          aria-label={stringFormatter.format("invalid")}
-        />
+          aria-label={stringFormatter.format('invalid')} />
       ) : (
         <CheckmarkMedium />
       );
@@ -261,9 +257,9 @@ const SearchAutocompleteButton = React.forwardRef(
       icon = React.cloneElement(icon, {
         UNSAFE_className: classNames(
           textfieldStyles,
-          "spectrum-Textfield-icon"
+          'spectrum-Textfield-icon'
         ),
-        size: "S",
+        size: 'S'
       });
     }
 
@@ -274,36 +270,35 @@ const SearchAutocompleteButton = React.forwardRef(
           props?.onPress?.(e);
         }}
         preventFocus
-        aria-label={stringFormatter.format("clear")}
+        aria-label={stringFormatter.format('clear')}
         excludeFromTabOrder
-        UNSAFE_className={classNames(searchStyles, "spectrum-ClearButton")}
-        isDisabled={isDisabled}
-      />
+        UNSAFE_className={classNames(searchStyles, 'spectrum-ClearButton')}
+        isDisabled={isDisabled} />
     );
 
     let validation = React.cloneElement(validationIcon, {
       UNSAFE_className: classNames(
         textfieldStyles,
-        "spectrum-Textfield-validationIcon",
-        classNames(styles, "spectrum-InputGroup-input-validationIcon"),
-        classNames(searchStyles, "spectrum-Search-validationIcon")
-      ),
+        'spectrum-Textfield-validationIcon',
+        classNames(styles, 'spectrum-InputGroup-input-validationIcon'),
+        classNames(searchStyles, 'spectrum-Search-validationIcon')
+      )
     });
 
-    let { hoverProps, isHovered } = useHover({});
-    let { isFocused, isFocusVisible, focusProps } = useFocusRing();
-    let { buttonProps } = useButton(
+    let {hoverProps, isHovered} = useHover({});
+    let {isFocused, isFocusVisible, focusProps} = useFocusRing();
+    let {buttonProps} = useButton(
       {
         ...props,
-        "aria-labelledby": [
-          props["aria-labelledby"],
-          props["aria-label"] && !props["aria-labelledby"] ? props.id : null,
+        'aria-labelledby': [
+          props['aria-labelledby'],
+          props['aria-label'] && !props['aria-labelledby'] ? props.id : null,
           valueId,
-          validationState === "invalid" ? invalidId : null,
+          validationState === 'invalid' ? invalidId : null
         ]
           .filter(Boolean)
-          .join(" "),
-        elementType: "div",
+          .join(' '),
+        elementType: 'div'
       },
       ref
     );
@@ -313,80 +308,76 @@ const SearchAutocompleteButton = React.forwardRef(
         {...mergeProps(hoverProps, focusProps, buttonProps)}
         aria-haspopup="dialog"
         ref={ref}
-        style={{ ...style, outline: "none" }}
+        style={{...style, outline: 'none'}}
         className={classNames(
           styles,
-          "spectrum-InputGroup",
+          'spectrum-InputGroup',
           {
-            "spectrum-InputGroup--quiet": isQuiet,
-            "is-disabled": isDisabled,
-            "spectrum-InputGroup--invalid":
-              validationState === "invalid" && !isDisabled,
-            "is-hovered": isHovered,
-            "is-focused": isFocused,
-            "focus-ring": isFocusVisible,
+            'spectrum-InputGroup--quiet': isQuiet,
+            'is-disabled': isDisabled,
+            'spectrum-InputGroup--invalid':
+              validationState === 'invalid' && !isDisabled,
+            'is-hovered': isHovered,
+            'is-focused': isFocused,
+            'focus-ring': isFocusVisible
           },
           classNames(
             searchAutocompleteStyles,
-            "searchautocomplete",
-            "mobile-searchautocomplete"
+            'searchautocomplete',
+            'mobile-searchautocomplete'
           ),
           className
-        )}
-      >
+        )}>
         <div
           className={classNames(
             textfieldStyles,
-            "spectrum-Textfield",
+            'spectrum-Textfield',
             {
-              "spectrum-Textfield--invalid":
-                validationState === "invalid" && !isDisabled,
-              "spectrum-Textfield--valid":
-                validationState === "valid" && !isDisabled,
-              "spectrum-Textfield--quiet": isQuiet,
+              'spectrum-Textfield--invalid':
+                validationState === 'invalid' && !isDisabled,
+              'spectrum-Textfield--valid':
+                validationState === 'valid' && !isDisabled,
+              'spectrum-Textfield--quiet': isQuiet
             },
             classNames(
               searchStyles,
-              "spectrum-Search",
-              "spectrum-Search--loadable",
+              'spectrum-Search',
+              'spectrum-Search--loadable',
               {
-                "is-disabled": isDisabled,
-                "is-quiet": isQuiet,
-                "spectrum-Search--invalid":
-                  validationState === "invalid" && !isDisabled,
-                "spectrum-Search--valid":
-                  validationState === "valid" && !isDisabled,
+                'is-disabled': isDisabled,
+                'is-quiet': isQuiet,
+                'spectrum-Search--invalid':
+                  validationState === 'invalid' && !isDisabled,
+                'spectrum-Search--valid':
+                  validationState === 'valid' && !isDisabled
               }
             ),
-            classNames(styles, "spectrum-InputGroup-field")
-          )}
-        >
+            classNames(styles, 'spectrum-InputGroup-field')
+          )}>
           <div
             className={classNames(
               textfieldStyles,
-              "spectrum-Textfield-input",
+              'spectrum-Textfield-input',
               {
-                "spectrum-Textfield-inputIcon": !!icon,
-                "is-hovered": isHovered,
-                "is-placeholder": isPlaceholder,
-                "is-disabled": isDisabled,
-                "is-quiet": isQuiet,
-                "is-focused": isFocused,
+                'spectrum-Textfield-inputIcon': !!icon,
+                'is-hovered': isHovered,
+                'is-placeholder': isPlaceholder,
+                'is-disabled': isDisabled,
+                'is-quiet': isQuiet,
+                'is-focused': isFocused
               },
-              classNames(searchStyles, "spectrum-Search-input"),
-              classNames(searchAutocompleteStyles, "mobile-input")
-            )}
-          >
+              classNames(searchStyles, 'spectrum-Search-input'),
+              classNames(searchAutocompleteStyles, 'mobile-input')
+            )}>
             {icon}
             <span
               id={valueId}
-              className={classNames(searchAutocompleteStyles, "mobile-value")}
-            >
+              className={classNames(searchAutocompleteStyles, 'mobile-value')}>
               {children}
             </span>
           </div>
           {validationState && !isDisabled ? validation : null}
-          {(inputValue !== "" || validationState != null) &&
+          {(inputValue !== '' || validationState != null) &&
             !isReadOnly &&
             clearButton}
         </div>
@@ -397,10 +388,10 @@ const SearchAutocompleteButton = React.forwardRef(
 
 interface SearchAutocompleteTrayProps<T>
   extends SpectrumSearchAutocompleteProps<T> {
-  state: ComboBoxState<T>;
-  overlayProps: HTMLAttributes<HTMLElement>;
-  loadingIndicator?: ReactElement;
-  onClose: () => void;
+  state: ComboBoxState<T>,
+  overlayProps: HTMLAttributes<HTMLElement>,
+  loadingIndicator?: ReactElement,
+  onClose: () => void
 }
 
 function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
@@ -417,7 +408,7 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
     loadingState,
     onLoadMore,
     onClose,
-    onSubmit,
+    onSubmit
   } = props;
 
   let timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -425,14 +416,14 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
   let inputRef = useRef<HTMLInputElement>(null);
   let popoverRef = useRef<HTMLDivElement>(null);
   let listBoxRef = useRef<HTMLDivElement>(null);
-  let isLoading = loadingState === "loading" || loadingState === "loadingMore";
+  let isLoading = loadingState === 'loading' || loadingState === 'loadingMore';
   let layout = useListBoxLayout();
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/autocomplete"
+    '@react-spectrum/autocomplete'
   );
 
-  let { inputProps, listBoxProps, labelProps, clearButtonProps } =
+  let {inputProps, listBoxProps, labelProps, clearButtonProps} =
     useSearchAutocomplete<T>(
       {
         ...props,
@@ -441,7 +432,7 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
         listBoxRef,
         inputRef,
         // Handled outside the tray.
-        name: undefined,
+        name: undefined
       },
       state
     );
@@ -462,9 +453,9 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
     }
   });
 
-  let { dialogProps } = useDialog(
+  let {dialogProps} = useDialog(
     {
-      "aria-labelledby": useId(labelProps.id),
+      'aria-labelledby': useId(labelProps.id)
     },
     popoverRef
   );
@@ -474,32 +465,30 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
   // VoiceOver on iOS reads "double tap to collapse" when focused on the input rather than
   // "double tap to edit text", as with a textbox or searchbox. We'd like double tapping to
   // open the virtual keyboard rather than closing the tray.
-  inputProps.role = "searchbox";
-  inputProps["aria-haspopup"] = "listbox";
+  inputProps.role = 'searchbox';
+  inputProps['aria-haspopup'] = 'listbox';
   delete inputProps.onTouchEnd;
 
   let clearButton = (
     <ClearButton
       {...clearButtonProps}
       preventFocus
-      aria-label={stringFormatter.format("clear")}
+      aria-label={stringFormatter.format('clear')}
       excludeFromTabOrder
-      UNSAFE_className={classNames(searchStyles, "spectrum-ClearButton")}
-      isDisabled={isDisabled}
-    />
+      UNSAFE_className={classNames(searchStyles, 'spectrum-ClearButton')}
+      isDisabled={isDisabled} />
   );
 
   let loadingCircle = (
     <ProgressCircle
-      aria-label={stringFormatter.format("loading")}
+      aria-label={stringFormatter.format('loading')}
       size="S"
       isIndeterminate
       UNSAFE_className={classNames(
         searchStyles,
-        "spectrum-Search-circleLoader",
-        classNames(textfieldStyles, "spectrum-Textfield-circleLoader")
-      )}
-    />
+        'spectrum-Search-circleLoader',
+        classNames(textfieldStyles, 'spectrum-Textfield-circleLoader')
+      )} />
   );
 
   // Close the software keyboard on scroll to give the user a bigger area to scroll.
@@ -531,7 +520,7 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
   let inputValue = inputProps.value;
   let lastInputValue = useRef(inputValue);
   useEffect(() => {
-    if (loadingState === "filtering" && !showLoading) {
+    if (loadingState === 'filtering' && !showLoading) {
       if (timeout.current === null) {
         timeout.current = setTimeout(() => {
           setShowLoading(true);
@@ -545,7 +534,7 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
           setShowLoading(true);
         }, 500);
       }
-    } else if (loadingState !== "filtering") {
+    } else if (loadingState !== 'filtering') {
       // If loading is no longer happening, clear any timers and hide the loading circle
       setShowLoading(false);
       if (timeout.current !== null) {
@@ -559,7 +548,7 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
 
   let onKeyDown = (e) => {
     // Close virtual keyboard, close tray, and fire onSubmit if user hits Enter w/o any focused options
-    if (e.key === "Enter" && state.selectionManager.focusedKey == null) {
+    if (e.key === 'Enter' && state.selectionManager.focusedKey == null) {
       popoverRef.current?.focus();
       if (onClose) {
         onClose();
@@ -576,8 +565,8 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
 
   if (icon) {
     icon = React.cloneElement(icon, {
-      UNSAFE_className: classNames(textfieldStyles, "spectrum-Textfield-icon"),
-      size: "S",
+      UNSAFE_className: classNames(textfieldStyles, 'spectrum-Textfield-icon'),
+      size: 'S'
     });
   }
 
@@ -586,21 +575,20 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
       <div
         {...mergeProps(overlayProps, dialogProps)}
         ref={popoverRef}
-        className={classNames(searchAutocompleteStyles, "tray-dialog")}
-      >
+        className={classNames(searchAutocompleteStyles, 'tray-dialog')}>
         <DismissButton onDismiss={onClose} />
         <TextFieldBase
           label={label}
           labelProps={labelProps}
-          inputProps={{ ...inputProps, onKeyDown }}
+          inputProps={{...inputProps, onKeyDown}}
           inputRef={inputRef}
           isDisabled={isDisabled}
-          isLoading={showLoading && loadingState === "filtering"}
+          isLoading={showLoading && loadingState === 'filtering'}
           loadingIndicator={loadingState != null ? loadingCircle : undefined}
           validationState={validationState}
           wrapperChildren={
-            (state.inputValue !== "" ||
-              loadingState === "filtering" ||
+            (state.inputValue !== '' ||
+              loadingState === 'filtering' ||
               validationState != null) &&
             !props.isReadOnly
               ? clearButton
@@ -609,28 +597,27 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
           icon={icon}
           UNSAFE_className={classNames(
             searchStyles,
-            "spectrum-Search",
-            "spectrum-Textfield",
-            "spectrum-Search--loadable",
+            'spectrum-Search',
+            'spectrum-Textfield',
+            'spectrum-Search--loadable',
             {
-              "spectrum-Search--invalid":
-                validationState === "invalid" && !isDisabled,
-              "spectrum-Search--valid":
-                validationState === "valid" && !isDisabled,
+              'spectrum-Search--invalid':
+                validationState === 'invalid' && !isDisabled,
+              'spectrum-Search--valid':
+                validationState === 'valid' && !isDisabled
             },
-            classNames(searchAutocompleteStyles, "tray-textfield", {
-              "has-label": !!props.label,
+            classNames(searchAutocompleteStyles, 'tray-textfield', {
+              'has-label': !!props.label
             })
           )}
-          inputClassName={classNames(searchStyles, "spectrum-Search-input")}
+          inputClassName={classNames(searchStyles, 'spectrum-Search-input')}
           validationIconClassName={classNames(
             searchStyles,
-            "spectrum-Search-validationIcon"
-          )}
-        />
+            'spectrum-Search-validationIcon'
+          )} />
         <ListBoxBase
           {...listBoxProps}
-          domProps={{ onTouchStart, onTouchEnd }}
+          domProps={{onTouchStart, onTouchEnd}}
           disallowEmptySelection
           shouldSelectOnPressUp
           focusOnPointerEnter
@@ -638,23 +625,21 @@ function SearchAutocompleteTray<T>(props: SearchAutocompleteTrayProps<T>) {
           state={state}
           shouldUseVirtualFocus
           renderEmptyState={() =>
-            loadingState !== "loading" && (
+            loadingState !== 'loading' && (
               <span
-                className={classNames(searchAutocompleteStyles, "no-results")}
-              >
-                {stringFormatter.format("noResults")}
+                className={classNames(searchAutocompleteStyles, 'no-results')}>
+                {stringFormatter.format('noResults')}
               </span>
             )
           }
           UNSAFE_className={classNames(
             searchAutocompleteStyles,
-            "tray-listbox"
+            'tray-listbox'
           )}
           ref={listBoxRef}
           onScroll={onScroll}
           onLoadMore={onLoadMore}
-          isLoading={isLoading}
-        />
+          isLoading={isLoading} />
         <DismissButton onDismiss={onClose} />
       </div>
     </FocusScope>

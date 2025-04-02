@@ -10,72 +10,72 @@
  * governing permissions and limitations under the License.
  */
 
-import { addWindowFocusTracking } from "../src";
+import {addWindowFocusTracking} from '../src';
 import {
   Cell,
   Column,
   Row,
   TableBody,
   TableHeader,
-  TableView,
-} from "@react-spectrum/table";
-import Frame from "react-frame-component";
-import { Key } from "@react-types/shared";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React, { useEffect, useRef, useState } from "react";
-import { SearchField } from "@react-spectrum/searchfield";
-import { useButton } from "@react-aria-nutrient/button";
-import { useFocusRing } from "@react-aria-nutrient/focus";
+  TableView
+} from '@react-spectrum/table';
+import Frame from 'react-frame-component';
+import {Key} from '@react-types/shared';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React, {useEffect, useRef, useState} from 'react';
+import {SearchField} from '@react-spectrum/searchfield';
+import {useButton} from '@react-aria-nutrient/button';
+import {useFocusRing} from '@react-aria-nutrient/focus';
 
 interface IColumn {
-  name: string;
-  key: string;
+  name: string,
+  key: string
 }
 interface RowValue {
-  key: string;
+  key: string
 }
 
 let manyColumns: IColumn[] = [];
 for (let i = 0; i < 100; i++) {
   manyColumns.push(
     i === 0
-      ? { name: "Column name", key: "C0" }
-      : { name: "Column " + i, key: "C" + i }
+      ? {name: 'Column name', key: 'C0'}
+      : {name: 'Column ' + i, key: 'C' + i}
   );
 }
 
 let manyRows: RowValue[] = [];
 for (let i = 0; i < 1000; i++) {
-  let row = { key: "R" + i };
+  let row = {key: 'R' + i};
   for (let j = 0; j < 100; j++) {
-    row["C" + j] = j === 0 ? `Row ${i}` : `${i}, ${j}`;
+    row['C' + j] = j === 0 ? `Row ${i}` : `${i}, ${j}`;
   }
 
   manyRows.push(row);
 }
 
 export default {
-  title: "useFocusRing",
+  title: 'useFocusRing'
 };
 
 export const SearchTableview = {
   render: () => <SearchExample />,
-  name: "search + tableview",
+  name: 'search + tableview',
   parameters: {
     a11y: {
       config: {
         // Fails due to TableView's known issue, ignoring here since it isn't pertinent to the story
         rules: [
-          { id: "aria-required-children", selector: '*:not([role="grid"])' },
-        ],
-      },
-    },
-  },
+          {id: 'aria-required-children', selector: '*:not([role="grid"])'}
+        ]
+      }
+    }
+  }
 };
 
 export const IFrame = {
   render: () => <IFrameExample />,
-  name: "focus state in dynamic iframe",
+  name: 'focus state in dynamic iframe'
 };
 
 function SearchExample() {
@@ -87,17 +87,15 @@ function SearchExample() {
         aria-label="table searchfield"
         onChange={(value) => {
           const newItems = manyRows.filter((item) =>
-            item["C0"].toLowerCase().includes(value.toLowerCase())
+            item['C0'].toLowerCase().includes(value.toLowerCase())
           );
           setItems(newItems);
-        }}
-      />
+        }} />
       <TableView
         aria-label="Searchable table with many columns and rows"
         selectionMode="multiple"
         width={700}
-        height={500}
-      >
+        height={500}>
         <TableHeader columns={manyColumns}>
           {(column) => <Column minWidth={100}>{column.name}</Column>}
         </TableHeader>
@@ -114,13 +112,13 @@ function SearchExample() {
 function MyButton(props) {
   const buttonRef = props.btnRef;
 
-  const { focusProps, isFocusVisible, isFocused } = useFocusRing();
-  let { buttonProps } = useButton(props, buttonRef);
+  const {focusProps, isFocusVisible, isFocused} = useFocusRing();
+  let {buttonProps} = useButton(props, buttonRef);
 
   return (
     <button ref={buttonRef} {...mergeProps(focusProps, buttonProps)}>
-      Focus Visible: {isFocusVisible ? "true" : "false"} <br />
-      Focused: {isFocused ? "true" : "false"}
+      Focus Visible: {isFocusVisible ? 'true' : 'false'} <br />
+      Focused: {isFocused ? 'true' : 'false'}
     </button>
   );
 }

@@ -14,20 +14,20 @@ import {
   classNames,
   SlotProvider,
   useFocusableRef,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { ColorSliderContext, useContextProps } from "react-aria-components";
-import { ColorThumb } from "./ColorThumb";
-import { FocusableRef } from "@react-types/shared";
-import { Label } from "@react-spectrum/label";
-import React, { useRef, useState } from "react";
-import { SpectrumColorSliderProps } from "@react-types/color";
-import styles from "@adobe/spectrum-css-temp/components/colorslider/vars.css";
-import { useColorSlider } from "@react-aria-nutrient/color";
-import { useColorSliderState } from "@react-stately/color";
-import { useFocus, useFocusVisible } from "@react-aria-nutrient/interactions";
-import { useLocale } from "@react-aria-nutrient/i18n";
-import { useProviderProps } from "@react-spectrum/provider";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {ColorSliderContext, useContextProps} from 'react-aria-components';
+import {ColorThumb} from './ColorThumb';
+import {FocusableRef} from '@react-types/shared';
+import {Label} from '@react-spectrum/label';
+import React, {useRef, useState} from 'react';
+import {SpectrumColorSliderProps} from '@react-types/color';
+import styles from '@adobe/spectrum-css-temp/components/colorslider/vars.css';
+import {useColorSlider} from '@react-aria-nutrient/color';
+import {useColorSliderState} from '@react-stately/color';
+import {useFocus, useFocusVisible} from '@react-aria-nutrient/interactions';
+import {useLocale} from '@react-aria-nutrient/i18n';
+import {useProviderProps} from '@react-spectrum/provider';
 
 /**
  * ColorSliders allow users to adjust an individual channel of a color value.
@@ -48,18 +48,18 @@ export const ColorSlider = React.forwardRef(function ColorSlider(
     orientation,
     label,
     showValueLabel,
-    "aria-label": ariaLabel,
+    'aria-label': ariaLabel
   } = props;
-  let vertical = orientation === "vertical";
+  let vertical = orientation === 'vertical';
 
-  let { styleProps } = useStyleProps(props);
-  let { locale } = useLocale();
+  let {styleProps} = useStyleProps(props);
+  let {locale} = useLocale();
 
-  let state = useColorSliderState({ ...props, locale });
+  let state = useColorSliderState({...props, locale});
 
   // If vertical and a label is provided, use it as an aria-label instead.
   if (vertical && label) {
-    ariaLabel = ariaLabel || (typeof label === "string" ? label : undefined);
+    ariaLabel = ariaLabel || (typeof label === 'string' ? label : undefined);
     label = null;
   }
 
@@ -70,7 +70,7 @@ export const ColorSlider = React.forwardRef(function ColorSlider(
   if (
     label === undefined &&
     !ariaLabel &&
-    !props["aria-labelledby"] &&
+    !props['aria-labelledby'] &&
     !vertical
   ) {
     label = state.value.getChannelName(channel, locale);
@@ -81,23 +81,23 @@ export const ColorSlider = React.forwardRef(function ColorSlider(
     showValueLabel = !!label;
   }
 
-  let { inputProps, thumbProps, trackProps, labelProps, outputProps } =
+  let {inputProps, thumbProps, trackProps, labelProps, outputProps} =
     useColorSlider(
       {
         ...props,
         label,
-        "aria-label": ariaLabel,
+        'aria-label': ariaLabel,
         trackRef,
-        inputRef,
+        inputRef
       },
       state
     );
 
-  let { isFocusVisible } = useFocusVisible();
+  let {isFocusVisible} = useFocusVisible();
   let [isFocused, setIsFocused] = useState(false);
-  let { focusProps } = useFocus({
+  let {focusProps} = useFocus({
     isDisabled,
-    onFocusChange: setIsFocused,
+    onFocusChange: setIsFocused
   });
 
   return (
@@ -105,14 +105,12 @@ export const ColorSlider = React.forwardRef(function ColorSlider(
       ref={domRef}
       {...styleProps}
       className={classNames(styles, {
-        "spectrum-ColorSlider-container--horizontal": !vertical,
-        "spectrum-ColorSlider-container--vertical": vertical,
-      })}
-    >
+        'spectrum-ColorSlider-container--horizontal': !vertical,
+        'spectrum-ColorSlider-container--vertical': vertical
+      })}>
       {label && (
         <div
-          className={classNames(styles, "spectrum-ColorSlider-labelContainer")}
-        >
+          className={classNames(styles, 'spectrum-ColorSlider-labelContainer')}>
           <Label {...labelProps}>{label}</Label>
           {props.contextualHelp && (
             <SlotProvider
@@ -120,11 +118,10 @@ export const ColorSlider = React.forwardRef(function ColorSlider(
                 actionButton: {
                   UNSAFE_className: classNames(
                     styles,
-                    "spectrum-ColorSlider-contextualHelp"
-                  ),
-                },
-              }}
-            >
+                    'spectrum-ColorSlider-contextualHelp'
+                  )
+                }
+              }}>
               {props.contextualHelp}
             </SlotProvider>
           )}
@@ -133,9 +130,8 @@ export const ColorSlider = React.forwardRef(function ColorSlider(
               elementType="span"
               UNSAFE_className={classNames(
                 styles,
-                "spectrum-ColorSlider-valueLabel"
-              )}
-            >
+                'spectrum-ColorSlider-valueLabel'
+              )}>
               <output {...outputProps}>
                 {state.value.formatChannelValue(channel, locale)}
               </output>
@@ -146,26 +142,23 @@ export const ColorSlider = React.forwardRef(function ColorSlider(
       <div
         {...trackProps}
         ref={trackRef}
-        className={classNames(styles, "spectrum-ColorSlider", {
-          "is-disabled": isDisabled,
-          "spectrum-ColorSlider--vertical": vertical,
-        })}
-      >
+        className={classNames(styles, 'spectrum-ColorSlider', {
+          'is-disabled': isDisabled,
+          'spectrum-ColorSlider--vertical': vertical
+        })}>
         <ColorThumb
           value={state.getDisplayColor()}
           isFocused={isFocused && isFocusVisible}
           isDisabled={isDisabled}
           isDragging={state.isThumbDragging(0)}
           containerRef={trackRef}
-          className={classNames(styles, "spectrum-ColorSlider-handle")}
-          {...thumbProps}
-        >
+          className={classNames(styles, 'spectrum-ColorSlider-handle')}
+          {...thumbProps}>
           <input
             {...inputProps}
             {...focusProps}
             ref={inputRef}
-            className={classNames(styles, "spectrum-ColorSlider-slider")}
-          />
+            className={classNames(styles, 'spectrum-ColorSlider-slider')} />
         </ColorThumb>
       </div>
     </div>

@@ -9,13 +9,13 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-import { AriaBreadcrumbsProps, useBreadcrumbs } from "react-aria";
+import {AriaBreadcrumbsProps, useBreadcrumbs} from 'react-aria';
 import {
   Collection,
   CollectionBuilder,
-  createLeafComponent,
-} from "@react-aria-nutrient/collections";
-import { CollectionProps, CollectionRendererContext } from "./Collection";
+  createLeafComponent
+} from '@react-aria-nutrient/collections';
+import {CollectionProps, CollectionRendererContext} from './Collection';
 import {
   ContextValue,
   RenderProps,
@@ -23,28 +23,28 @@ import {
   StyleProps,
   useContextProps,
   useRenderProps,
-  useSlottedContext,
-} from "./utils";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { forwardRefType, Key } from "@react-types/shared";
-import { LinkContext } from "./Link";
-import { Node } from "react-stately";
+  useSlottedContext
+} from './utils';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {forwardRefType, Key} from '@react-types/shared';
+import {LinkContext} from './Link';
+import {Node} from 'react-stately';
 import React, {
   createContext,
   ForwardedRef,
   forwardRef,
-  useContext,
-} from "react";
+  useContext
+} from 'react';
 
 export interface BreadcrumbsProps<T>
-  extends Omit<CollectionProps<T>, "disabledKeys">,
+  extends Omit<CollectionProps<T>, 'disabledKeys'>,
     AriaBreadcrumbsProps,
     StyleProps,
     SlotProps {
   /** Whether the breadcrumbs are disabled. */
-  isDisabled?: boolean;
+  isDisabled?: boolean,
   /** Handler that is called when a breadcrumb is clicked. */
-  onAction?: (key: Key) => void;
+  onAction?: (key: Key) => void
 }
 
 export const BreadcrumbsContext =
@@ -59,8 +59,8 @@ export const Breadcrumbs = /*#__PURE__*/ (forwardRef as forwardRefType)(
     ref: ForwardedRef<HTMLOListElement>
   ) {
     [props, ref] = useContextProps(props, ref, BreadcrumbsContext);
-    let { CollectionRoot } = useContext(CollectionRendererContext);
-    let { navProps } = useBreadcrumbs(props);
+    let {CollectionRoot} = useContext(CollectionRendererContext);
+    let {navProps} = useBreadcrumbs(props);
 
     return (
       <CollectionBuilder content={<Collection {...props} />}>
@@ -70,8 +70,7 @@ export const Breadcrumbs = /*#__PURE__*/ (forwardRef as forwardRefType)(
             {...navProps}
             slot={props.slot || undefined}
             style={props.style}
-            className={props.className ?? "react-aria-Breadcrumbs"}
-          >
+            className={props.className ?? 'react-aria-Breadcrumbs'}>
             <BreadcrumbsContext.Provider value={props}>
               <CollectionRoot collection={collection} />
             </BreadcrumbsContext.Provider>
@@ -87,24 +86,24 @@ export interface BreadcrumbRenderProps {
    * Whether the breadcrumb is for the current page.
    * @selector [data-current]
    */
-  isCurrent: boolean;
+  isCurrent: boolean,
   /**
    * Whether the breadcrumb is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean
 }
 
 export interface BreadcrumbProps extends RenderProps<BreadcrumbRenderProps> {
   /** A unique id for the breadcrumb, which will be passed to `onAction` when the breadcrumb is pressed. */
-  id?: Key;
+  id?: Key
 }
 
 /**
  * A Breadcrumb represents an individual item in a `<Breadcrumbs>` list.
  */
 export const Breadcrumb = /*#__PURE__*/ createLeafComponent(
-  "item",
+  'item',
   function Breadcrumb(
     props: BreadcrumbProps,
     ref: ForwardedRef<HTMLLIElement>,
@@ -112,18 +111,18 @@ export const Breadcrumb = /*#__PURE__*/ createLeafComponent(
   ) {
     // Recreating useBreadcrumbItem because we want to use composition instead of having the link builtin.
     let isCurrent = node.nextKey == null;
-    let { isDisabled, onAction } = useSlottedContext(BreadcrumbsContext)!;
+    let {isDisabled, onAction} = useSlottedContext(BreadcrumbsContext)!;
     let linkProps = {
-      "aria-current": isCurrent ? "page" : null,
+      'aria-current': isCurrent ? 'page' : null,
       isDisabled: isDisabled || isCurrent,
-      onPress: () => onAction?.(node.key),
+      onPress: () => onAction?.(node.key)
     };
 
     let renderProps = useRenderProps({
       ...node.props,
       children: node.rendered,
-      values: { isDisabled: isDisabled || isCurrent, isCurrent },
-      defaultClassName: "react-aria-Breadcrumb",
+      values: {isDisabled: isDisabled || isCurrent, isCurrent},
+      defaultClassName: 'react-aria-Breadcrumb'
     });
 
     return (
@@ -132,8 +131,7 @@ export const Breadcrumb = /*#__PURE__*/ createLeafComponent(
         {...renderProps}
         ref={ref}
         data-disabled={isDisabled || isCurrent || undefined}
-        data-current={isCurrent || undefined}
-      >
+        data-current={isCurrent || undefined}>
         <LinkContext.Provider value={linkProps}>
           {renderProps.children}
         </LinkContext.Provider>

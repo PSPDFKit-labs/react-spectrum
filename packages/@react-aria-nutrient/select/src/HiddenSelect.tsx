@@ -10,52 +10,52 @@
  * governing permissions and limitations under the License.
  */
 
-import { FocusableElement, RefObject } from "@react-types/shared";
-import React, { ReactNode, useRef } from "react";
-import { selectData } from "./useSelect";
-import { SelectState } from "@react-stately/select";
-import { useFormReset } from "@react-aria-nutrient/utils";
-import { useFormValidation } from "@react-aria-nutrient/form";
-import { useVisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+import {FocusableElement, RefObject} from '@react-types/shared';
+import React, {ReactNode, useRef} from 'react';
+import {selectData} from './useSelect';
+import {SelectState} from '@react-stately/select';
+import {useFormReset} from '@react-aria-nutrient/utils';
+import {useFormValidation} from '@react-aria-nutrient/form';
+import {useVisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 export interface AriaHiddenSelectProps {
   /**
    * Describes the type of autocomplete functionality the input should provide if any. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete).
    */
-  autoComplete?: string;
+  autoComplete?: string,
 
   /** The text label for the select. */
-  label?: ReactNode;
+  label?: ReactNode,
 
   /** HTML form input name. */
-  name?: string;
+  name?: string,
 
   /** Sets the disabled state of the select and input. */
-  isDisabled?: boolean;
+  isDisabled?: boolean
 }
 
 export interface HiddenSelectProps<T> extends AriaHiddenSelectProps {
   /** State for the select. */
-  state: SelectState<T>;
+  state: SelectState<T>,
 
   /** A ref to the trigger element. */
-  triggerRef: RefObject<FocusableElement | null>;
+  triggerRef: RefObject<FocusableElement | null>
 }
 
 export interface AriaHiddenSelectOptions extends AriaHiddenSelectProps {
   /** A ref to the hidden `<select>` element. */
-  selectRef?: RefObject<HTMLSelectElement | null>;
+  selectRef?: RefObject<HTMLSelectElement | null>
 }
 
 export interface HiddenSelectAria {
   /** Props for the container element. */
-  containerProps: React.HTMLAttributes<FocusableElement>;
+  containerProps: React.HTMLAttributes<FocusableElement>,
 
   /** Props for the hidden input element. */
-  inputProps: React.InputHTMLAttributes<HTMLInputElement>;
+  inputProps: React.InputHTMLAttributes<HTMLInputElement>,
 
   /** Props for the hidden select element. */
-  selectProps: React.SelectHTMLAttributes<HTMLSelectElement>;
+  selectProps: React.SelectHTMLAttributes<HTMLSelectElement>
 }
 
 /**
@@ -69,15 +69,15 @@ export function useHiddenSelect<T>(
   triggerRef: RefObject<FocusableElement | null>
 ): HiddenSelectAria {
   let data = selectData.get(state) || {};
-  let { autoComplete, name = data.name, isDisabled = data.isDisabled } = props;
-  let { validationBehavior, isRequired } = data;
-  let { visuallyHiddenProps } = useVisuallyHidden();
+  let {autoComplete, name = data.name, isDisabled = data.isDisabled} = props;
+  let {validationBehavior, isRequired} = data;
+  let {visuallyHiddenProps} = useVisuallyHidden();
 
   useFormReset(props.selectRef, state.selectedKey, state.setSelectedKey);
   useFormValidation(
     {
       validationBehavior,
-      focus: () => triggerRef.current?.focus(),
+      focus: () => triggerRef.current?.focus()
     },
     state,
     props.selectRef
@@ -92,25 +92,25 @@ export function useHiddenSelect<T>(
   return {
     containerProps: {
       ...visuallyHiddenProps,
-      "aria-hidden": true,
+      'aria-hidden': true,
       // @ts-ignore
-      ["data-react-aria-prevent-focus"]: true,
+      ['data-react-aria-prevent-focus']: true,
       // @ts-ignore
-      ["data-a11y-ignore"]: "aria-hidden-focus",
+      ['data-a11y-ignore']: 'aria-hidden-focus'
     },
     inputProps: {
-      style: { display: "none" },
+      style: {display: 'none'}
     },
     selectProps: {
       tabIndex: -1,
       autoComplete,
       disabled: isDisabled,
-      required: validationBehavior === "native" && isRequired,
+      required: validationBehavior === 'native' && isRequired,
       name,
       value: state.selectedKey ?? undefined,
       onChange: (e: React.ChangeEvent<HTMLSelectElement>) =>
-        state.setSelectedKey(e.target.value),
-    },
+        state.setSelectedKey(e.target.value)
+    }
   };
 }
 
@@ -119,10 +119,10 @@ export function useHiddenSelect<T>(
  * form autofill, mobile form navigation, and native form submission.
  */
 export function HiddenSelect<T>(props: HiddenSelectProps<T>): ReactNode | null {
-  let { state, triggerRef, label, name, isDisabled } = props;
+  let {state, triggerRef, label, name, isDisabled} = props;
   let selectRef = useRef(null);
-  let { containerProps, selectProps } = useHiddenSelect(
-    { ...props, selectRef },
+  let {containerProps, selectProps} = useHiddenSelect(
+    {...props, selectRef},
     state,
     triggerRef
   );
@@ -139,7 +139,7 @@ export function HiddenSelect<T>(props: HiddenSelectProps<T>): ReactNode | null {
             <option />
             {[...state.collection.getKeys()].map((key) => {
               let item = state.collection.getItem(key);
-              if (item && item.type === "item") {
+              if (item && item.type === 'item') {
                 return (
                   <option key={item.key} value={item.key}>
                     {item.textValue}
@@ -158,8 +158,7 @@ export function HiddenSelect<T>(props: HiddenSelectProps<T>): ReactNode | null {
         autoComplete={selectProps.autoComplete}
         name={name}
         disabled={isDisabled}
-        value={state.selectedKey ?? ""}
-      />
+        value={state.selectedKey ?? ''} />
     );
   }
 

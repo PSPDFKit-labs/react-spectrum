@@ -10,18 +10,18 @@
  * governing permissions and limitations under the License.
  */
 
-jest.mock("@react-aria-nutrient/live-announcer");
-import { announce } from "@react-aria-nutrient/live-announcer";
+jest.mock('@react-aria-nutrient/live-announcer');
+import {announce} from '@react-aria-nutrient/live-announcer';
 import {
   Cell,
   Column,
   Row,
   TableBody,
   TableHeader,
-  useTableState,
-} from "@react-stately/table";
-import { pointerMap, render } from "@react-spectrum/test-utils-internal";
-import React, { useRef } from "react";
+  useTableState
+} from '@react-stately/table';
+import {pointerMap, render} from '@react-spectrum/test-utils-internal';
+import React, {useRef} from 'react';
 import {
   TableCell,
   TableCheckboxCell,
@@ -29,48 +29,47 @@ import {
   TableHeaderRow,
   TableRow,
   TableRowGroup,
-  TableSelectAllCell,
-} from "../stories/example-backwards-compat";
-import userEvent from "@testing-library/user-event";
-import { useTable } from "../src";
+  TableSelectAllCell
+} from '../stories/example-backwards-compat';
+import userEvent from '@testing-library/user-event';
+import {useTable} from '../src';
 
 let mockAnnounce = announce as jest.MockedFunction<typeof announce>;
 
 let columns = [
-  { name: "Name", uid: "name" },
-  { name: "Type", uid: "type" },
-  { name: "Level", uid: "level" },
+  {name: 'Name', uid: 'name'},
+  {name: 'Type', uid: 'type'},
+  {name: 'Level', uid: 'level'}
 ];
 
 let rows = [
-  { id: 1, name: "Charizard", type: "Fire, Flying", level: "67" },
-  { id: 2, name: "Squirtle", type: "Water", level: "12" },
-  { id: 3, name: "Blastoise", type: "Water", level: "56" },
-  { id: 4, name: "Venusaur", type: "Grass, Poison", level: "83" },
-  { id: 5, name: "Pikachu", type: "Electric", level: "100" },
+  {id: 1, name: 'Charizard', type: 'Fire, Flying', level: '67'},
+  {id: 2, name: 'Squirtle', type: 'Water', level: '12'},
+  {id: 3, name: 'Blastoise', type: 'Water', level: '56'},
+  {id: 4, name: 'Venusaur', type: 'Grass, Poison', level: '83'},
+  {id: 5, name: 'Pikachu', type: 'Electric', level: '100'}
 ];
 // Differs from the main useTable in regards to onAction vs the newer onRowAction/onCellAction
 function Table(props) {
-  let { onAction, ...otherProps } = props;
+  let {onAction, ...otherProps} = props;
   let state = useTableState({
     ...otherProps,
-    showSelectionCheckboxes: otherProps.selectionMode === "multiple",
+    showSelectionCheckboxes: otherProps.selectionMode === 'multiple'
   });
   let ref = useRef(null);
   let bodyRef = useRef(null);
-  let { collection } = state;
-  let { gridProps } = useTable(
-    { ...otherProps, scrollRef: bodyRef },
+  let {collection} = state;
+  let {gridProps} = useTable(
+    {...otherProps, scrollRef: bodyRef},
     state,
     ref
   );
 
   return (
-    <table {...gridProps} ref={ref} style={{ borderCollapse: "collapse" }}>
+    <table {...gridProps} ref={ref} style={{borderCollapse: 'collapse'}}>
       <TableRowGroup
         type="thead"
-        style={{ borderBottom: "2px solid gray", display: "block" }}
-      >
+        style={{borderBottom: '2px solid gray', display: 'block'}}>
         {collection.headerRows.map((headerRow) => (
           <TableHeaderRow key={headerRow.key} item={headerRow} state={state}>
             {[...state.collection.getChildren!(headerRow.key)].map((column) =>
@@ -78,14 +77,12 @@ function Table(props) {
                 <TableSelectAllCell
                   key={column.key}
                   column={column}
-                  state={state}
-                />
+                  state={state} />
               ) : (
                 <TableColumnHeader
                   key={column.key}
                   column={column}
-                  state={state}
-                />
+                  state={state} />
               )
             )}
           </TableHeaderRow>
@@ -94,8 +91,7 @@ function Table(props) {
       <TableRowGroup
         ref={bodyRef}
         type="tbody"
-        style={{ display: "block", overflow: "auto", maxHeight: "200px" }}
-      >
+        style={{display: 'block', overflow: 'auto', maxHeight: '200px'}}>
         {[...collection].map((row) => (
           <TableRow key={row.key} item={row} state={state} onAction={onAction}>
             {[...state.collection.getChildren!(row.key)].map((cell) =>
@@ -117,7 +113,7 @@ let getCell = (tree, text) => {
   let el = tree.getByText(text);
   while (
     el &&
-    !/gridcell|rowheader|columnheader/.test(el.getAttribute("role"))
+    !/gridcell|rowheader|columnheader/.test(el.getAttribute('role'))
   ) {
     el = el.parentElement;
   }
@@ -125,22 +121,21 @@ let getCell = (tree, text) => {
   return el;
 };
 
-describe("useTable", () => {
+describe('useTable', () => {
   let user;
   beforeAll(() => {
-    user = userEvent.setup({ delay: null, pointerMap });
+    user = userEvent.setup({delay: null, pointerMap});
   });
 
-  describe("actions on rows", () => {
-    it("calls onAction", async () => {
+  describe('actions on rows', () => {
+    it('calls onAction', async () => {
       let onAction = jest.fn();
       let tree = render(
         <Table
           onAction={onAction}
           selectionBehavior="replace"
           aria-label="Table with selection"
-          selectionMode="multiple"
-        >
+          selectionMode="multiple">
           <TableHeader columns={columns}>
             {(column) => <Column key={column.uid}>{column.name}</Column>}
           </TableHeader>
@@ -152,13 +147,13 @@ describe("useTable", () => {
         </Table>
       );
 
-      await user.click(getCell(tree, "Squirtle"));
-      expect(mockAnnounce).toHaveBeenLastCalledWith("Squirtle selected.");
+      await user.click(getCell(tree, 'Squirtle'));
+      expect(mockAnnounce).toHaveBeenLastCalledWith('Squirtle selected.');
       expect(mockAnnounce).toHaveBeenCalledTimes(1);
       expect(onAction).not.toHaveBeenCalled();
 
       mockAnnounce.mockReset();
-      await user.dblClick(getCell(tree, "Squirtle"));
+      await user.dblClick(getCell(tree, 'Squirtle'));
       expect(mockAnnounce).not.toHaveBeenCalled();
       expect(onAction).toHaveBeenCalledTimes(1);
       expect(onAction).toHaveBeenCalledWith(2);

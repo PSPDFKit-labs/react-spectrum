@@ -2,47 +2,47 @@ import {
   AriaColorSliderProps,
   Orientation,
   useColorSlider,
-  useLocale,
-} from "react-aria";
-import { ColorSliderContext } from "./RSPContexts";
-import { ColorSliderState, useColorSliderState } from "react-stately";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { InternalColorThumbContext } from "./ColorThumb";
-import { LabelContext } from "./Label";
+  useLocale
+} from 'react-aria';
+import {ColorSliderContext} from './RSPContexts';
+import {ColorSliderState, useColorSliderState} from 'react-stately';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {InternalColorThumbContext} from './ColorThumb';
+import {LabelContext} from './Label';
 import {
   Provider,
   RenderProps,
   SlotProps,
   useContextProps,
   useRenderProps,
-  useSlot,
-} from "./utils";
-import React, { createContext, ForwardedRef, forwardRef } from "react";
+  useSlot
+} from './utils';
+import React, {createContext, ForwardedRef, forwardRef} from 'react';
 import {
   SliderOutputContext,
   SliderStateContext,
-  SliderTrackContext,
-} from "./Slider";
+  SliderTrackContext
+} from './Slider';
 
 export interface ColorSliderRenderProps {
   /**
    * The orientation of the color slider.
    * @selector [data-orientation="horizontal | vertical"]
    */
-  orientation: Orientation;
+  orientation: Orientation,
   /**
    * Whether the color slider is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean,
   /**
    * State of the color slider.
    */
-  state: ColorSliderState;
+  state: ColorSliderState
 }
 
 export interface ColorSliderProps
-  extends Omit<AriaColorSliderProps, "label">,
+  extends Omit<AriaColorSliderProps, 'label'>,
     RenderProps<ColorSliderRenderProps>,
     SlotProps {}
 
@@ -58,21 +58,21 @@ export const ColorSlider = forwardRef(function ColorSlider(
   ref: ForwardedRef<HTMLDivElement>
 ) {
   [props, ref] = useContextProps(props, ref, ColorSliderContext);
-  let { locale } = useLocale();
-  let state = useColorSliderState({ ...props, locale });
+  let {locale} = useLocale();
+  let state = useColorSliderState({...props, locale});
   let trackRef = React.useRef(null);
   let inputRef = React.useRef(null);
 
   let [labelRef, label] = useSlot(
-    !props["aria-label"] && !props["aria-labelledby"]
+    !props['aria-label'] && !props['aria-labelledby']
   );
-  let { trackProps, thumbProps, inputProps, labelProps, outputProps } =
+  let {trackProps, thumbProps, inputProps, labelProps, outputProps} =
     useColorSlider(
       {
         ...props,
         label,
         trackRef,
-        inputRef,
+        inputRef
       },
       state
     );
@@ -82,9 +82,9 @@ export const ColorSlider = forwardRef(function ColorSlider(
     values: {
       orientation: state.orientation,
       isDisabled: state.isDisabled,
-      state,
+      state
     },
-    defaultClassName: "react-aria-ColorSlider",
+    defaultClassName: 'react-aria-ColorSlider'
   });
 
   let DOMProps = filterDOMProps(props);
@@ -95,15 +95,15 @@ export const ColorSlider = forwardRef(function ColorSlider(
       values={[
         [ColorSliderStateContext, state],
         [SliderStateContext, state],
-        [SliderTrackContext, { ...trackProps, ref: trackRef }],
+        [SliderTrackContext, {...trackProps, ref: trackRef}],
         [SliderOutputContext, outputProps],
         [
           LabelContext,
           {
             ...labelProps,
             ref: labelRef,
-            children: state.value.getChannelName(props.channel, locale),
-          },
+            children: state.value.getChannelName(props.channel, locale)
+          }
         ],
         [
           InternalColorThumbContext,
@@ -112,19 +112,17 @@ export const ColorSlider = forwardRef(function ColorSlider(
             thumbProps,
             inputXRef: inputRef,
             xInputProps: inputProps,
-            isDisabled: props.isDisabled,
-          },
-        ],
-      ]}
-    >
+            isDisabled: props.isDisabled
+          }
+        ]
+      ]}>
       <div
         {...DOMProps}
         {...renderProps}
         ref={ref}
         slot={props.slot || undefined}
         data-orientation={state.orientation}
-        data-disabled={state.isDisabled || undefined}
-      />
+        data-disabled={state.isDisabled || undefined} />
     </Provider>
   );
 });

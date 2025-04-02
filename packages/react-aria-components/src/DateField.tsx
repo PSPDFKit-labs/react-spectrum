@@ -21,8 +21,8 @@ import {
   useFocusRing,
   useHover,
   useLocale,
-  useTimeField,
-} from "react-aria";
+  useTimeField
+} from 'react-aria';
 import {
   ContextValue,
   Provider,
@@ -34,24 +34,24 @@ import {
   useContextProps,
   useRenderProps,
   useSlot,
-  useSlottedContext,
-} from "./utils";
-import { createCalendar } from "@internationalized/date";
+  useSlottedContext
+} from './utils';
+import {createCalendar} from '@internationalized/date';
 import {
   DateFieldState,
   DateSegmentType,
   DateSegment as IDateSegment,
   TimeFieldState,
   useDateFieldState,
-  useTimeFieldState,
-} from "react-stately";
-import { FieldErrorContext } from "./FieldError";
-import { filterDOMProps, useObjectRef } from "@react-aria-nutrient/utils";
-import { FormContext } from "./Form";
-import { forwardRefType } from "@react-types/shared";
-import { Group, GroupContext } from "./Group";
-import { Input, InputContext } from "./Input";
-import { LabelContext } from "./Label";
+  useTimeFieldState
+} from 'react-stately';
+import {FieldErrorContext} from './FieldError';
+import {filterDOMProps, useObjectRef} from '@react-aria-nutrient/utils';
+import {FormContext} from './Form';
+import {forwardRefType} from '@react-types/shared';
+import {Group, GroupContext} from './Group';
+import {Input, InputContext} from './Input';
+import {LabelContext} from './Label';
 import React, {
   cloneElement,
   createContext,
@@ -60,34 +60,34 @@ import React, {
   JSX,
   ReactElement,
   useContext,
-  useRef,
-} from "react";
-import { TextContext } from "./Text";
+  useRef
+} from 'react';
+import {TextContext} from './Text';
 
 export interface DateFieldRenderProps {
   /**
    * State of the date field.
    */
-  state: DateFieldState;
+  state: DateFieldState,
   /**
    * Whether the date field is invalid.
    * @selector [data-invalid]
    */
-  isInvalid: boolean;
+  isInvalid: boolean,
   /**
    * Whether the date field is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean
 }
 export interface DateFieldProps<T extends DateValue>
   extends Omit<
       AriaDateFieldProps<T>,
-      | "label"
-      | "description"
-      | "errorMessage"
-      | "validationState"
-      | "validationBehavior"
+      | 'label'
+      | 'description'
+      | 'errorMessage'
+      | 'validationState'
+      | 'validationBehavior'
     >,
     RACValidation,
     RenderProps<DateFieldRenderProps>,
@@ -95,11 +95,11 @@ export interface DateFieldProps<T extends DateValue>
 export interface TimeFieldProps<T extends TimeValue>
   extends Omit<
       AriaTimeFieldProps<T>,
-      | "label"
-      | "description"
-      | "errorMessage"
-      | "validationState"
-      | "validationBehavior"
+      | 'label'
+      | 'description'
+      | 'errorMessage'
+      | 'validationState'
+      | 'validationBehavior'
     >,
     RACValidation,
     RenderProps<DateFieldRenderProps>,
@@ -122,21 +122,21 @@ export const DateField = /*#__PURE__*/ (forwardRef as forwardRefType)(
     ref: ForwardedRef<HTMLDivElement>
   ) {
     [props, ref] = useContextProps(props, ref, DateFieldContext);
-    let { validationBehavior: formValidationBehavior } =
+    let {validationBehavior: formValidationBehavior} =
       useSlottedContext(FormContext) || {};
     let validationBehavior =
-      props.validationBehavior ?? formValidationBehavior ?? "native";
-    let { locale } = useLocale();
+      props.validationBehavior ?? formValidationBehavior ?? 'native';
+    let {locale} = useLocale();
     let state = useDateFieldState({
       ...props,
       locale,
       createCalendar,
-      validationBehavior,
+      validationBehavior
     });
 
     let fieldRef = useRef<HTMLDivElement>(null);
     let [labelRef, label] = useSlot(
-      !props["aria-label"] && !props["aria-labelledby"]
+      !props['aria-label'] && !props['aria-labelledby']
     );
     let inputRef = useRef<HTMLInputElement>(null);
     let {
@@ -151,7 +151,7 @@ export const DateField = /*#__PURE__*/ (forwardRef as forwardRefType)(
         ...removeDataAttributes(props),
         label,
         inputRef,
-        validationBehavior,
+        validationBehavior
       },
       state,
       fieldRef
@@ -162,9 +162,9 @@ export const DateField = /*#__PURE__*/ (forwardRef as forwardRefType)(
       values: {
         state,
         isInvalid: state.isInvalid,
-        isDisabled: state.isDisabled,
+        isDisabled: state.isDisabled
       },
-      defaultClassName: "react-aria-DateField",
+      defaultClassName: 'react-aria-DateField'
     });
 
     let DOMProps = filterDOMProps(props);
@@ -180,31 +180,29 @@ export const DateField = /*#__PURE__*/ (forwardRef as forwardRefType)(
               ...fieldProps,
               ref: fieldRef,
               isInvalid: state.isInvalid,
-              isDisabled: state.isDisabled,
-            },
+              isDisabled: state.isDisabled
+            }
           ],
-          [InputContext, { ...inputProps, ref: inputRef }],
-          [LabelContext, { ...labelProps, ref: labelRef, elementType: "span" }],
+          [InputContext, {...inputProps, ref: inputRef}],
+          [LabelContext, {...labelProps, ref: labelRef, elementType: 'span'}],
           [
             TextContext,
             {
               slots: {
                 description: descriptionProps,
-                errorMessage: errorMessageProps,
-              },
-            },
+                errorMessage: errorMessageProps
+              }
+            }
           ],
-          [FieldErrorContext, validation],
-        ]}
-      >
+          [FieldErrorContext, validation]
+        ]}>
         <div
           {...DOMProps}
           {...renderProps}
           ref={ref}
           slot={props.slot || undefined}
           data-invalid={state.isInvalid || undefined}
-          data-disabled={state.isDisabled || undefined}
-        />
+          data-disabled={state.isDisabled || undefined} />
       </Provider>
     );
   }
@@ -220,20 +218,20 @@ export const TimeField = /*#__PURE__*/ (forwardRef as forwardRefType)(
     ref: ForwardedRef<HTMLDivElement>
   ) {
     [props, ref] = useContextProps(props, ref, TimeFieldContext);
-    let { validationBehavior: formValidationBehavior } =
+    let {validationBehavior: formValidationBehavior} =
       useSlottedContext(FormContext) || {};
     let validationBehavior =
-      props.validationBehavior ?? formValidationBehavior ?? "native";
-    let { locale } = useLocale();
+      props.validationBehavior ?? formValidationBehavior ?? 'native';
+    let {locale} = useLocale();
     let state = useTimeFieldState({
       ...props,
       locale,
-      validationBehavior,
+      validationBehavior
     });
 
     let fieldRef = useRef<HTMLDivElement>(null);
     let [labelRef, label] = useSlot(
-      !props["aria-label"] && !props["aria-labelledby"]
+      !props['aria-label'] && !props['aria-labelledby']
     );
     let inputRef = useRef<HTMLInputElement>(null);
     let {
@@ -248,7 +246,7 @@ export const TimeField = /*#__PURE__*/ (forwardRef as forwardRefType)(
         ...removeDataAttributes(props),
         label,
         inputRef,
-        validationBehavior,
+        validationBehavior
       },
       state,
       fieldRef
@@ -259,9 +257,9 @@ export const TimeField = /*#__PURE__*/ (forwardRef as forwardRefType)(
       values: {
         state,
         isInvalid: state.isInvalid,
-        isDisabled: state.isDisabled,
+        isDisabled: state.isDisabled
       },
-      defaultClassName: "react-aria-TimeField",
+      defaultClassName: 'react-aria-TimeField'
     });
 
     let DOMProps = filterDOMProps(props);
@@ -277,31 +275,29 @@ export const TimeField = /*#__PURE__*/ (forwardRef as forwardRefType)(
               ...fieldProps,
               ref: fieldRef,
               isInvalid: state.isInvalid,
-              isDisabled: state.isDisabled,
-            },
+              isDisabled: state.isDisabled
+            }
           ],
-          [InputContext, { ...inputProps, ref: inputRef }],
-          [LabelContext, { ...labelProps, ref: labelRef, elementType: "span" }],
+          [InputContext, {...inputProps, ref: inputRef}],
+          [LabelContext, {...labelProps, ref: labelRef, elementType: 'span'}],
           [
             TextContext,
             {
               slots: {
                 description: descriptionProps,
-                errorMessage: errorMessageProps,
-              },
-            },
+                errorMessage: errorMessageProps
+              }
+            }
           ],
-          [FieldErrorContext, validation],
-        ]}
-      >
+          [FieldErrorContext, validation]
+        ]}>
         <div
           {...DOMProps}
           {...renderProps}
           ref={ref}
           slot={props.slot || undefined}
           data-invalid={state.isInvalid || undefined}
-          data-disabled={state.isDisabled || undefined}
-        />
+          data-disabled={state.isDisabled || undefined} />
       </Provider>
     );
   }
@@ -312,34 +308,34 @@ export interface DateInputRenderProps {
    * Whether the date input is currently hovered with a mouse.
    * @selector [data-hovered]
    */
-  isHovered: boolean;
+  isHovered: boolean,
   /**
    * Whether an element within the date input is focused, either via a mouse or keyboard.
    * @selector [data-focus-within]
    */
-  isFocusWithin: boolean;
+  isFocusWithin: boolean,
   /**
    * Whether an element within the date input is keyboard focused.
    * @selector [data-focus-visible]
    */
-  isFocusVisible: boolean;
+  isFocusVisible: boolean,
   /**
    * Whether the date input is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean,
 
   /**
    * Whether the date input is invalid.
    * @selector [data-invalid]
    */
-  isInvalid: boolean;
+  isInvalid: boolean
 }
 
 export interface DateInputProps
   extends SlotProps,
     StyleRenderProps<DateInputRenderProps> {
-  children: (segment: IDateSegment) => ReactElement;
+  children: (segment: IDateSegment) => ReactElement
 }
 
 /**
@@ -365,20 +361,20 @@ export const DateInput = /*#__PURE__*/ (forwardRef as forwardRefType)(
 const DateInputStandalone = forwardRef(
   (props: DateInputProps, ref: ForwardedRef<HTMLDivElement>) => {
     let [dateFieldProps, fieldRef] = useContextProps(
-      { slot: props.slot } as DateFieldProps<any>,
+      {slot: props.slot} as DateFieldProps<any>,
       ref,
       DateFieldContext
     );
-    let { locale } = useLocale();
+    let {locale} = useLocale();
     let state = useDateFieldState({
       ...dateFieldProps,
       locale,
-      createCalendar,
+      createCalendar
     });
 
     let inputRef = useRef<HTMLInputElement>(null);
-    let { fieldProps, inputProps } = useDateField(
-      { ...dateFieldProps, inputRef },
+    let {fieldProps, inputProps} = useDateField(
+      {...dateFieldProps, inputRef},
       state,
       fieldRef
     );
@@ -387,18 +383,17 @@ const DateInputStandalone = forwardRef(
       <Provider
         values={[
           [DateFieldStateContext, state],
-          [InputContext, { ...inputProps, ref: inputRef }],
+          [InputContext, {...inputProps, ref: inputRef}],
           [
             GroupContext,
             {
               ...fieldProps,
               ref: fieldRef,
               isInvalid: state.isInvalid,
-              isDisabled: state.isDisabled,
-            },
-          ],
-        ]}
-      >
+              isDisabled: state.isDisabled
+            }
+          ]
+        ]}>
         <DateInputInner {...props} />
       </Provider>
     );
@@ -407,7 +402,7 @@ const DateInputStandalone = forwardRef(
 
 const DateInputInner = forwardRef(
   (props: DateInputProps, ref: ForwardedRef<HTMLDivElement>) => {
-    let { className, children } = props;
+    let {className, children} = props;
     let dateFieldState = useContext(DateFieldStateContext);
     let timeFieldState = useContext(TimeFieldStateContext);
     let state = dateFieldState ?? timeFieldState!;
@@ -418,12 +413,11 @@ const DateInputInner = forwardRef(
           {...props}
           ref={ref}
           slot={props.slot || undefined}
-          className={className ?? "react-aria-DateInput"}
+          className={className ?? 'react-aria-DateInput'}
           isInvalid={state.isInvalid}
-          isDisabled={state.isDisabled}
-        >
+          isDisabled={state.isDisabled}>
           {state.segments.map((segment, i) =>
-            cloneElement(children(segment), { key: i })
+            cloneElement(children(segment), {key: i})
           )}
         </Group>
         <Input />
@@ -433,53 +427,53 @@ const DateInputInner = forwardRef(
 );
 
 export interface DateSegmentRenderProps
-  extends Omit<IDateSegment, "isEditable"> {
+  extends Omit<IDateSegment, 'isEditable'> {
   /**
    * Whether the segment is currently hovered with a mouse.
    * @selector [data-hovered]
    */
-  isHovered: boolean;
+  isHovered: boolean,
   /**
    * Whether the segment is focused, either via a mouse or keyboard.
    * @selector [data-focused]
    */
-  isFocused: boolean;
+  isFocused: boolean,
   /**
    * Whether the segment is keyboard focused.
    * @selector [data-focus-visible]
    */
-  isFocusVisible: boolean;
+  isFocusVisible: boolean,
   /**
    * Whether the value is a placeholder.
    * @selector [data-placeholder]
    */
-  isPlaceholder: boolean;
+  isPlaceholder: boolean,
   /**
    * Whether the segment is read only.
    * @selector [data-readonly]
    */
-  isReadOnly: boolean;
+  isReadOnly: boolean,
   /**
    * Whether the date field is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean,
   /**
    * Whether the date field is in an invalid state.
    * @selector [data-invalid]
    */
-  isInvalid: boolean;
+  isInvalid: boolean,
   /**
    * The type of segment. Values include `literal`, `year`, `month`, `day`, etc.
    * @selector [data-type="..."]
    */
-  type: DateSegmentType;
+  type: DateSegmentType
 }
 
 export interface DateSegmentProps
   extends RenderProps<DateSegmentRenderProps>,
     HoverEvents {
-  segment: IDateSegment;
+  segment: IDateSegment
 }
 
 /**
@@ -488,20 +482,20 @@ export interface DateSegmentProps
  */
 export const DateSegment = /*#__PURE__*/ (forwardRef as forwardRefType)(
   function DateSegment(
-    { segment, ...otherProps }: DateSegmentProps,
+    {segment, ...otherProps}: DateSegmentProps,
     ref: ForwardedRef<HTMLDivElement>
   ) {
     let dateFieldState = useContext(DateFieldStateContext);
     let timeFieldState = useContext(TimeFieldStateContext);
     let state = dateFieldState ?? timeFieldState!;
     let domRef = useObjectRef(ref);
-    let { segmentProps } = useDateSegment(segment, state, domRef);
-    let { focusProps, isFocused, isFocusVisible } = useFocusRing();
-    let { hoverProps, isHovered } = useHover({
+    let {segmentProps} = useDateSegment(segment, state, domRef);
+    let {focusProps, isFocused, isFocusVisible} = useFocusRing();
+    let {hoverProps, isHovered} = useHover({
       ...otherProps,
-      isDisabled: state.isDisabled || segment.type === "literal",
+      isDisabled: state.isDisabled || segment.type === 'literal'
     });
-    let { isEditable, ...segmentRest } = segment;
+    let {isEditable, ...segmentRest} = segment;
     let renderProps = useRenderProps({
       ...otherProps,
       values: {
@@ -511,10 +505,10 @@ export const DateSegment = /*#__PURE__*/ (forwardRef as forwardRefType)(
         isDisabled: state.isDisabled,
         isHovered,
         isFocused,
-        isFocusVisible,
+        isFocusVisible
       },
       defaultChildren: segment.text,
-      defaultClassName: "react-aria-DateSegment",
+      defaultClassName: 'react-aria-DateSegment'
     });
 
     return (
@@ -535,8 +529,7 @@ export const DateSegment = /*#__PURE__*/ (forwardRef as forwardRefType)(
         data-type={segment.type}
         data-hovered={isHovered || undefined}
         data-focused={isFocused || undefined}
-        data-focus-visible={isFocusVisible || undefined}
-      />
+        data-focus-visible={isFocusVisible || undefined} />
     );
   }
 );

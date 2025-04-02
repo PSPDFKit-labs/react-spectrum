@@ -11,8 +11,8 @@
  */
 
 // @ts-ignore
-import { flushSync } from "react-dom";
-import { getScrollLeft } from "./utils";
+import {flushSync} from 'react-dom';
+import {getScrollLeft} from './utils';
 import React, {
   CSSProperties,
   ForwardedRef,
@@ -22,26 +22,26 @@ import React, {
   useCallback,
   useEffect,
   useRef,
-  useState,
-} from "react";
-import { Rect, Size } from "@react-stately/virtualizer";
+  useState
+} from 'react';
+import {Rect, Size} from '@react-stately/virtualizer';
 import {
   useEffectEvent,
   useEvent,
   useLayoutEffect,
   useObjectRef,
-  useResizeObserver,
-} from "@react-aria-nutrient/utils";
-import { useLocale } from "@react-aria-nutrient/i18n";
+  useResizeObserver
+} from '@react-aria-nutrient/utils';
+import {useLocale} from '@react-aria-nutrient/i18n';
 
 interface ScrollViewProps extends HTMLAttributes<HTMLElement> {
-  contentSize: Size;
-  onVisibleRectChange: (rect: Rect) => void;
-  children?: ReactNode;
-  innerStyle?: CSSProperties;
-  onScrollStart?: () => void;
-  onScrollEnd?: () => void;
-  scrollDirection?: "horizontal" | "vertical" | "both";
+  contentSize: Size,
+  onVisibleRectChange: (rect: Rect) => void,
+  children?: ReactNode,
+  innerStyle?: CSSProperties,
+  onScrollStart?: () => void,
+  onScrollEnd?: () => void,
+  scrollDirection?: 'horizontal' | 'vertical' | 'both'
 }
 
 function ScrollView(
@@ -49,7 +49,7 @@ function ScrollView(
   ref: ForwardedRef<HTMLDivElement | null>
 ) {
   ref = useObjectRef(ref);
-  let { scrollViewProps, contentProps } = useScrollView(props, ref);
+  let {scrollViewProps, contentProps} = useScrollView(props, ref);
 
   return (
     <div role="presentation" {...scrollViewProps} ref={ref}>
@@ -59,11 +59,11 @@ function ScrollView(
 }
 
 const ScrollViewForwardRef = React.forwardRef(ScrollView);
-export { ScrollViewForwardRef as ScrollView };
+export {ScrollViewForwardRef as ScrollView};
 
 interface ScrollViewAria {
-  scrollViewProps: HTMLAttributes<HTMLElement>;
-  contentProps: HTMLAttributes<HTMLElement>;
+  scrollViewProps: HTMLAttributes<HTMLElement>,
+  contentProps: HTMLAttributes<HTMLElement>
 }
 
 export function useScrollView(
@@ -76,7 +76,7 @@ export function useScrollView(
     innerStyle,
     onScrollStart,
     onScrollEnd,
-    scrollDirection = "both",
+    scrollDirection = 'both',
     ...otherProps
   } = props;
 
@@ -87,9 +87,9 @@ export function useScrollView(
     scrollTimeout: null as ReturnType<typeof setTimeout> | null,
     width: 0,
     height: 0,
-    isScrolling: false,
+    isScrolling: false
   }).current;
-  let { direction } = useLocale();
+  let {direction} = useLocale();
 
   let [isScrolling, setScrolling] = useState(false);
   let onScroll = useCallback(
@@ -125,7 +125,7 @@ export function useScrollView(
           setScrolling(true);
 
           // Pause typekit MutationObserver during scrolling.
-          window.dispatchEvent(new Event("tk.disconnect-observer"));
+          window.dispatchEvent(new Event('tk.disconnect-observer'));
           if (onScrollStart) {
             onScrollStart();
           }
@@ -147,7 +147,7 @@ export function useScrollView(
             setScrolling(false);
             state.scrollTimeout = null;
 
-            window.dispatchEvent(new Event("tk.connect-observer"));
+            window.dispatchEvent(new Event('tk.connect-observer'));
             if (onScrollEnd) {
               onScrollEnd();
             }
@@ -162,12 +162,12 @@ export function useScrollView(
       contentSize,
       onVisibleRectChange,
       onScrollStart,
-      onScrollEnd,
+      onScrollEnd
     ]
   );
 
   // Attach event directly to ref so RAC Virtualizer doesn't need to send props upward.
-  useEvent(ref, "scroll", onScroll);
+  useEvent(ref, 'scroll', onScroll);
 
   useEffect(() => {
     return () => {
@@ -176,7 +176,7 @@ export function useScrollView(
       }
 
       if (state.isScrolling) {
-        window.dispatchEvent(new Event("tk.connect-observer"));
+        window.dispatchEvent(new Event('tk.connect-observer'));
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -193,13 +193,13 @@ export function useScrollView(
     // content size update, causing below layout effect to fire. This avoids infinite loops.
     isUpdatingSize.current = true;
 
-    let isTestEnv = process.env.NODE_ENV === "test" && !process.env.VIRT_ON;
+    let isTestEnv = process.env.NODE_ENV === 'test' && !process.env.VIRT_ON;
     let isClientWidthMocked = Object.getOwnPropertyNames(
       window.HTMLElement.prototype
-    ).includes("clientWidth");
+    ).includes('clientWidth');
     let isClientHeightMocked = Object.getOwnPropertyNames(
       window.HTMLElement.prototype
-    ).includes("clientHeight");
+    ).includes('clientHeight');
     let clientWidth = dom.clientWidth;
     let clientHeight = dom.clientHeight;
     let w = isTestEnv && !isClientWidthMocked ? Infinity : clientWidth;
@@ -255,9 +255,9 @@ export function useScrollView(
       // https://github.com/reactwg/react-18/discussions/102
       // @ts-ignore
       if (
-        typeof IS_REACT_ACT_ENVIRONMENT === "boolean"
+        typeof IS_REACT_ACT_ENVIRONMENT === 'boolean'
           ? IS_REACT_ACT_ENVIRONMENT
-          : typeof jest !== "undefined"
+          : typeof jest !== 'undefined'
       ) {
         updateSize((fn) => fn());
       } else {
@@ -274,28 +274,28 @@ export function useScrollView(
 
   // Watch border-box instead of of content-box so that we don't go into
   // an infinite loop when scrollbars appear or disappear.
-  useResizeObserver({ ref, box: "border-box", onResize });
+  useResizeObserver({ref, box: 'border-box', onResize});
 
   let style: React.CSSProperties = {
     // Reset padding so that relative positioning works correctly. Padding will be done in JS layout.
     padding: 0,
-    ...otherProps.style,
+    ...otherProps.style
   };
 
-  if (scrollDirection === "horizontal") {
-    style.overflowX = "auto";
-    style.overflowY = "hidden";
+  if (scrollDirection === 'horizontal') {
+    style.overflowX = 'auto';
+    style.overflowY = 'hidden';
   } else if (
-    scrollDirection === "vertical" ||
+    scrollDirection === 'vertical' ||
     contentSize.width === state.width
   ) {
     // Set overflow-x: hidden if content size is equal to the width of the scroll view.
     // This prevents horizontal scrollbars from flickering during resizing due to resize observer
     // firing slower than the frame rate, which may cause an infinite re-render loop.
-    style.overflowY = "auto";
-    style.overflowX = "hidden";
+    style.overflowY = 'auto';
+    style.overflowX = 'hidden';
   } else {
-    style.overflow = "auto";
+    style.overflow = 'auto';
   }
 
   innerStyle = {
@@ -303,19 +303,19 @@ export function useScrollView(
     height: Number.isFinite(contentSize.height)
       ? contentSize.height
       : undefined,
-    pointerEvents: isScrolling ? "none" : "auto",
-    position: "relative",
-    ...innerStyle,
+    pointerEvents: isScrolling ? 'none' : 'auto',
+    position: 'relative',
+    ...innerStyle
   };
 
   return {
     scrollViewProps: {
       ...otherProps,
-      style,
+      style
     },
     contentProps: {
-      role: "presentation",
-      style: innerStyle,
-    },
+      role: 'presentation',
+      style: innerStyle
+    }
   };
 }

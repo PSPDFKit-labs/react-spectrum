@@ -10,45 +10,45 @@
  * governing permissions and limitations under the License.
  */
 
-import { classNames } from "@react-spectrum/utils";
-import { LayoutInfo } from "@react-stately/virtualizer";
+import {classNames} from '@react-spectrum/utils';
+import {LayoutInfo} from '@react-stately/virtualizer';
 import {
   layoutInfoToStyle,
   useVirtualizerItem,
-  VirtualizerItemOptions,
-} from "@react-aria-nutrient/virtualizer";
-import { ListBoxContext } from "./ListBoxContext";
-import { Node } from "@react-types/shared";
-import React, { Fragment, ReactNode, useContext, useRef } from "react";
-import styles from "@adobe/spectrum-css-temp/components/menu/vars.css";
-import { useListBoxSection } from "@react-aria-nutrient/listbox";
-import { useLocale } from "@react-aria-nutrient/i18n";
+  VirtualizerItemOptions
+} from '@react-aria-nutrient/virtualizer';
+import {ListBoxContext} from './ListBoxContext';
+import {Node} from '@react-types/shared';
+import React, {Fragment, ReactNode, useContext, useRef} from 'react';
+import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
+import {useListBoxSection} from '@react-aria-nutrient/listbox';
+import {useLocale} from '@react-aria-nutrient/i18n';
 
 interface ListBoxSectionProps<T>
-  extends Omit<VirtualizerItemOptions, "ref" | "layoutInfo"> {
-  layoutInfo: LayoutInfo;
-  headerLayoutInfo: LayoutInfo | null;
-  item: Node<T>;
-  children?: ReactNode;
+  extends Omit<VirtualizerItemOptions, 'ref' | 'layoutInfo'> {
+  layoutInfo: LayoutInfo,
+  headerLayoutInfo: LayoutInfo | null,
+  item: Node<T>,
+  children?: ReactNode
 }
 
 /** @private */
 export function ListBoxSection<T>(props: ListBoxSectionProps<T>): ReactNode {
-  let { children, layoutInfo, headerLayoutInfo, virtualizer, item } = props;
-  let { headingProps, groupProps } = useListBoxSection({
+  let {children, layoutInfo, headerLayoutInfo, virtualizer, item} = props;
+  let {headingProps, groupProps} = useListBoxSection({
     heading: item.rendered,
-    "aria-label": item["aria-label"],
+    'aria-label': item['aria-label']
   });
 
   let headerRef = useRef<HTMLDivElement | null>(null);
   useVirtualizerItem({
     layoutInfo: headerLayoutInfo,
     virtualizer,
-    ref: headerRef,
+    ref: headerRef
   });
 
-  let { direction } = useLocale();
-  let { state } = useContext(ListBoxContext)!;
+  let {direction} = useLocale();
+  let {state} = useContext(ListBoxContext)!;
 
   return (
     <Fragment>
@@ -56,19 +56,16 @@ export function ListBoxSection<T>(props: ListBoxSectionProps<T>): ReactNode {
         <div
           role="presentation"
           ref={headerRef}
-          style={layoutInfoToStyle(headerLayoutInfo, direction)}
-        >
+          style={layoutInfoToStyle(headerLayoutInfo, direction)}>
           {item.key !== state.collection.getFirstKey() && (
             <div
               role="presentation"
-              className={classNames(styles, "spectrum-Menu-divider")}
-            />
+              className={classNames(styles, 'spectrum-Menu-divider')} />
           )}
           {item.rendered && (
             <div
               {...headingProps}
-              className={classNames(styles, "spectrum-Menu-sectionHeading")}
-            >
+              className={classNames(styles, 'spectrum-Menu-sectionHeading')}>
               {item.rendered}
             </div>
           )}
@@ -77,8 +74,7 @@ export function ListBoxSection<T>(props: ListBoxSectionProps<T>): ReactNode {
       <div
         {...groupProps}
         style={layoutInfoToStyle(layoutInfo, direction)}
-        className={classNames(styles, "spectrum-Menu")}
-      >
+        className={classNames(styles, 'spectrum-Menu')}>
         {children}
       </div>
     </Fragment>

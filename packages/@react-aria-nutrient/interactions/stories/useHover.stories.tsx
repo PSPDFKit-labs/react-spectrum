@@ -9,42 +9,41 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-import { AriaButtonProps } from "@react-types/button";
-import { classNames } from "@react-spectrum/utils";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React, { useRef, useState } from "react";
-import { useButton } from "@react-aria-nutrient/button";
-import { useHover } from "../";
+import {AriaButtonProps} from '@react-types/button';
+import {classNames} from '@react-spectrum/utils';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React, {useRef, useState} from 'react';
+import {useButton} from '@react-aria-nutrient/button';
+import {useHover} from '../';
 
 export default {
-  title: "useHover",
+  title: 'useHover'
 };
 
 export const HoverDisabling = {
   render: () => <App />,
-  name: "hover disabling",
+  name: 'hover disabling'
 };
 
 function Button(props: AriaButtonProps) {
-  let { children, isDisabled } = props;
+  let {children, isDisabled} = props;
 
   let buttonRef = useRef(null);
 
-  let { buttonProps } = useButton(props, buttonRef);
-  let { hoverProps, isHovered } = useHover({ isDisabled });
+  let {buttonProps} = useButton(props, buttonRef);
+  let {hoverProps, isHovered} = useHover({isDisabled});
 
   return (
     <button
       className={classNames(
         {},
         {
-          isHovered,
+          isHovered
         }
       )}
       data-hover={isHovered || null}
       {...mergeProps(buttonProps, hoverProps)}
-      ref={buttonRef}
-    >
+      ref={buttonRef}>
       {children}
     </button>
   );
@@ -60,7 +59,7 @@ function App() {
         }
       `}</style>
       <Button isDisabled={isDisabled} onPress={() => setIsDisabled(true)}>
-        {"Hover & Press"}
+        {'Hover & Press'}
       </Button>
       <button onClick={() => setIsDisabled(false)}>Reset</button>
     </>

@@ -14,12 +14,12 @@ import {
   ClearSlots,
   useDOMRef,
   useSlotProps,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { FooterProps } from "@react-types/view";
-import React, { forwardRef } from "react";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {FooterProps} from '@react-types/view';
+import React, {forwardRef} from 'react';
 
 /**
  * Footer represents a footer within a Spectrum container.
@@ -28,9 +28,9 @@ export const Footer = forwardRef(function Footer(
   props: FooterProps,
   ref: DOMRef
 ) {
-  props = useSlotProps(props, "footer");
-  let { children, ...otherProps } = props;
-  let { styleProps } = useStyleProps(otherProps);
+  props = useSlotProps(props, 'footer');
+  let {children, ...otherProps} = props;
+  let {styleProps} = useStyleProps(otherProps);
   let domRef = useDOMRef(ref);
 
   return (

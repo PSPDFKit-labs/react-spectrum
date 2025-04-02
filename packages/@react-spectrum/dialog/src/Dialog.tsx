@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import { ActionButton } from "@react-spectrum/button";
+import {ActionButton} from '@react-spectrum/button';
 import {
   classNames,
   SlotProvider,
@@ -18,27 +18,27 @@ import {
   useDOMRef,
   useHasChild,
   useSlotProps,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import CrossLarge from "@spectrum-icons/ui/CrossLarge";
-import { DialogContext, DialogContextValue } from "./context";
-import { DOMRef } from "@react-types/shared";
-import { Grid } from "@react-spectrum/layout";
+  useStyleProps
+} from '@react-spectrum/utils';
+import CrossLarge from '@spectrum-icons/ui/CrossLarge';
+import {DialogContext, DialogContextValue} from './context';
+import {DOMRef} from '@react-types/shared';
+import {Grid} from '@react-spectrum/layout';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React, { useContext, useMemo, useRef } from "react";
-import { SpectrumDialogProps } from "@react-types/dialog";
-import styles from "@adobe/spectrum-css-temp/components/dialog/vars.css";
-import { useDialog } from "@react-aria-nutrient/dialog";
-import { useLocalizedStringFormatter } from "@react-aria-nutrient/i18n";
+import intlMessages from '../intl/*.json';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React, {useContext, useMemo, useRef} from 'react';
+import {SpectrumDialogProps} from '@react-types/dialog';
+import styles from '@adobe/spectrum-css-temp/components/dialog/vars.css';
+import {useDialog} from '@react-aria-nutrient/dialog';
+import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 
 let sizeMap = {
-  S: "small",
-  M: "medium",
-  L: "large",
-  fullscreen: "fullscreen",
-  fullscreenTakeover: "fullscreenTakeover",
+  S: 'small',
+  M: 'medium',
+  L: 'large',
+  fullscreen: 'fullscreen',
+  fullscreenTakeover: 'fullscreenTakeover'
 };
 
 /**
@@ -49,8 +49,8 @@ export const Dialog = React.forwardRef(function Dialog(
   props: SpectrumDialogProps,
   ref: DOMRef
 ) {
-  props = useSlotProps(props, "dialog");
-  let { type = "modal", ...contextProps } =
+  props = useSlotProps(props, 'dialog');
+  let {type = 'modal', ...contextProps} =
     useContext(DialogContext) || ({} as DialogContextValue);
   let {
     children,
@@ -61,68 +61,68 @@ export const Dialog = React.forwardRef(function Dialog(
   } = props;
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/dialog"
+    '@react-spectrum/dialog'
   );
-  let { styleProps } = useStyleProps(otherProps);
+  let {styleProps} = useStyleProps(otherProps);
 
-  size = type === "popover" ? size || "S" : size || "L";
+  size = type === 'popover' ? size || 'S' : size || 'L';
 
   let domRef = useDOMRef(ref);
   let gridRef = useRef(null);
   let sizeVariant = sizeMap[type] || sizeMap[size];
-  let { dialogProps, titleProps } = useDialog(
+  let {dialogProps, titleProps} = useDialog(
     mergeProps(contextProps, props),
     domRef
   );
 
   let hasHeader = useHasChild(
-    `.${styles["spectrum-Dialog-header"]}`,
+    `.${styles['spectrum-Dialog-header']}`,
     unwrapDOMRef(gridRef)
   );
   let hasHeading = useHasChild(
-    `.${styles["spectrum-Dialog-heading"]}`,
+    `.${styles['spectrum-Dialog-heading']}`,
     unwrapDOMRef(gridRef)
   );
   let hasFooter = useHasChild(
-    `.${styles["spectrum-Dialog-footer"]}`,
+    `.${styles['spectrum-Dialog-footer']}`,
     unwrapDOMRef(gridRef)
   );
   let hasTypeIcon = useHasChild(
-    `.${styles["spectrum-Dialog-typeIcon"]}`,
+    `.${styles['spectrum-Dialog-typeIcon']}`,
     unwrapDOMRef(gridRef)
   );
 
   let slots = useMemo(
     () => ({
-      hero: { UNSAFE_className: styles["spectrum-Dialog-hero"] },
+      hero: {UNSAFE_className: styles['spectrum-Dialog-hero']},
       heading: {
-        UNSAFE_className: classNames(styles, "spectrum-Dialog-heading", {
-          "spectrum-Dialog-heading--noHeader": !hasHeader,
-          "spectrum-Dialog-heading--noTypeIcon": !hasTypeIcon,
+        UNSAFE_className: classNames(styles, 'spectrum-Dialog-heading', {
+          'spectrum-Dialog-heading--noHeader': !hasHeader,
+          'spectrum-Dialog-heading--noTypeIcon': !hasTypeIcon
         }),
         level: 2,
-        ...titleProps,
+        ...titleProps
       },
       header: {
-        UNSAFE_className: classNames(styles, "spectrum-Dialog-header", {
-          "spectrum-Dialog-header--noHeading": !hasHeading,
-          "spectrum-Dialog-header--noTypeIcon": !hasTypeIcon,
-        }),
+        UNSAFE_className: classNames(styles, 'spectrum-Dialog-header', {
+          'spectrum-Dialog-header--noHeading': !hasHeading,
+          'spectrum-Dialog-header--noTypeIcon': !hasTypeIcon
+        })
       },
-      typeIcon: { UNSAFE_className: styles["spectrum-Dialog-typeIcon"] },
+      typeIcon: {UNSAFE_className: styles['spectrum-Dialog-typeIcon']},
       divider: {
-        UNSAFE_className: styles["spectrum-Dialog-divider"],
-        size: "M",
+        UNSAFE_className: styles['spectrum-Dialog-divider'],
+        size: 'M'
       },
-      content: { UNSAFE_className: styles["spectrum-Dialog-content"] },
-      footer: { UNSAFE_className: styles["spectrum-Dialog-footer"] },
+      content: {UNSAFE_className: styles['spectrum-Dialog-content']},
+      footer: {UNSAFE_className: styles['spectrum-Dialog-footer']},
       buttonGroup: {
-        UNSAFE_className: classNames(styles, "spectrum-Dialog-buttonGroup", {
-          "spectrum-Dialog-buttonGroup--noFooter": !hasFooter,
+        UNSAFE_className: classNames(styles, 'spectrum-Dialog-buttonGroup', {
+          'spectrum-Dialog-buttonGroup--noFooter': !hasFooter
         }),
-        align: "end",
-      },
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+        align: 'end'
+      }
+       
     }),
     [hasFooter, hasHeader, titleProps]
   );
@@ -133,24 +133,22 @@ export const Dialog = React.forwardRef(function Dialog(
       {...dialogProps}
       className={classNames(
         styles,
-        "spectrum-Dialog",
+        'spectrum-Dialog',
         {
           [`spectrum-Dialog--${sizeVariant}`]: sizeVariant,
-          "spectrum-Dialog--dismissable": isDismissable,
+          'spectrum-Dialog--dismissable': isDismissable
         },
         styleProps.className
       )}
-      ref={domRef}
-    >
-      <Grid ref={gridRef} UNSAFE_className={styles["spectrum-Dialog-grid"]}>
+      ref={domRef}>
+      <Grid ref={gridRef} UNSAFE_className={styles['spectrum-Dialog-grid']}>
         <SlotProvider slots={slots}>{children}</SlotProvider>
         {isDismissable && (
           <ActionButton
-            UNSAFE_className={styles["spectrum-Dialog-closeButton"]}
+            UNSAFE_className={styles['spectrum-Dialog-closeButton']}
             isQuiet
-            aria-label={stringFormatter.format("dismiss")}
-            onPress={onDismiss}
-          >
+            aria-label={stringFormatter.format('dismiss')}
+            onPress={onDismiss}>
             <CrossLarge />
           </ActionButton>
         )}

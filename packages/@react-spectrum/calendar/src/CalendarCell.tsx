@@ -12,28 +12,28 @@
 
 import {
   AriaCalendarCellProps,
-  useCalendarCell,
-} from "@react-aria-nutrient/calendar";
+  useCalendarCell
+} from '@react-aria-nutrient/calendar';
 import {
   CalendarDate,
   getDayOfWeek,
   isSameDay,
   isSameMonth,
-  isToday,
-} from "@internationalized/date";
-import { CalendarState, RangeCalendarState } from "@react-stately/calendar";
-import { classNames } from "@react-spectrum/utils";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React, { ReactNode, useRef } from "react";
-import styles from "@adobe/spectrum-css-temp/components/calendar/vars.css";
-import { useFocusRing } from "@react-aria-nutrient/focus";
-import { useHover } from "@react-aria-nutrient/interactions";
-import { useLocale } from "@react-aria-nutrient/i18n";
+  isToday
+} from '@internationalized/date';
+import {CalendarState, RangeCalendarState} from '@react-stately/calendar';
+import {classNames} from '@react-spectrum/utils';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React, {ReactNode, useRef} from 'react';
+import styles from '@adobe/spectrum-css-temp/components/calendar/vars.css';
+import {useFocusRing} from '@react-aria-nutrient/focus';
+import {useHover} from '@react-aria-nutrient/interactions';
+import {useLocale} from '@react-aria-nutrient/i18n';
 
 interface CalendarCellProps extends AriaCalendarCellProps {
-  state: CalendarState | RangeCalendarState;
-  currentMonth: CalendarDate;
-  firstDayOfWeek?: "sun" | "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
+  state: CalendarState | RangeCalendarState,
+  currentMonth: CalendarDate,
+  firstDayOfWeek?: 'sun' | 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat'
 }
 
 export function CalendarCell({
@@ -51,11 +51,11 @@ export function CalendarCell({
     isDisabled,
     isFocused,
     isInvalid,
-    formattedDate,
+    formattedDate
   } = useCalendarCell(
     {
       ...props,
-      isDisabled: !isSameMonth(props.date, currentMonth),
+      isDisabled: !isSameMonth(props.date, currentMonth)
     },
     state,
     ref
@@ -64,12 +64,12 @@ export function CalendarCell({
   let isLastSelectedBeforeDisabled =
     !isDisabled &&
     !isInvalid &&
-    state.isCellUnavailable(props.date.add({ days: 1 }));
+    state.isCellUnavailable(props.date.add({days: 1}));
   let isFirstSelectedAfterDisabled =
     !isDisabled &&
     !isInvalid &&
-    state.isCellUnavailable(props.date.subtract({ days: 1 }));
-  let highlightedRange = "highlightedRange" in state && state.highlightedRange;
+    state.isCellUnavailable(props.date.subtract({days: 1}));
+  let highlightedRange = 'highlightedRange' in state && state.highlightedRange;
   let isSelectionStart =
     isSelected &&
     highlightedRange &&
@@ -78,7 +78,7 @@ export function CalendarCell({
     isSelected &&
     highlightedRange &&
     isSameDay(props.date, highlightedRange.end);
-  let { locale } = useLocale();
+  let {locale} = useLocale();
   let dayOfWeek = getDayOfWeek(props.date, locale, firstDayOfWeek);
   let isRangeStart =
     isSelected &&
@@ -88,39 +88,37 @@ export function CalendarCell({
     (isLastSelectedBeforeDisabled ||
       dayOfWeek === 6 ||
       props.date.day === currentMonth.calendar.getDaysInMonth(currentMonth));
-  let { focusProps, isFocusVisible } = useFocusRing();
-  let { hoverProps, isHovered } = useHover({
-    isDisabled: isDisabled || isUnavailable || state.isReadOnly,
+  let {focusProps, isFocusVisible} = useFocusRing();
+  let {hoverProps, isHovered} = useHover({
+    isDisabled: isDisabled || isUnavailable || state.isReadOnly
   });
 
   return (
     <td
       {...cellProps}
-      className={classNames(styles, "spectrum-Calendar-tableCell")}
-    >
+      className={classNames(styles, 'spectrum-Calendar-tableCell')}>
       <span
         {...mergeProps(buttonProps, hoverProps, focusProps)}
         ref={ref}
-        className={classNames(styles, "spectrum-Calendar-date", {
-          "is-today": isToday(props.date, state.timeZone),
-          "is-selected": isSelected,
-          "is-focused": isFocused && isFocusVisible,
+        className={classNames(styles, 'spectrum-Calendar-date', {
+          'is-today': isToday(props.date, state.timeZone),
+          'is-selected': isSelected,
+          'is-focused': isFocused && isFocusVisible,
           // Style disabled (i.e. out of min/max range), but selected dates as unavailable
           // since it is more clear than trying to dim the selection.
-          "is-disabled": isDisabled && !isInvalid,
-          "is-unavailable": isUnavailable || (isInvalid && isDisabled),
-          "is-outsideMonth": !isSameMonth(props.date, currentMonth),
-          "is-range-start": isRangeStart,
-          "is-range-end": isRangeEnd,
-          "is-range-selection": isSelected && "highlightedRange" in state,
-          "is-selection-start": isSelectionStart,
-          "is-selection-end": isSelectionEnd,
-          "is-hovered": isHovered,
-          "is-pressed": isPressed && !state.isReadOnly,
-          "is-invalid": isInvalid,
-        })}
-      >
-        <span className={classNames(styles, "spectrum-Calendar-dateText")}>
+          'is-disabled': isDisabled && !isInvalid,
+          'is-unavailable': isUnavailable || (isInvalid && isDisabled),
+          'is-outsideMonth': !isSameMonth(props.date, currentMonth),
+          'is-range-start': isRangeStart,
+          'is-range-end': isRangeEnd,
+          'is-range-selection': isSelected && 'highlightedRange' in state,
+          'is-selection-start': isSelectionStart,
+          'is-selection-end': isSelectionEnd,
+          'is-hovered': isHovered,
+          'is-pressed': isPressed && !state.isReadOnly,
+          'is-invalid': isInvalid
+        })}>
+        <span className={classNames(styles, 'spectrum-Calendar-dateText')}>
           <span>{formattedDate}</span>
         </span>
       </span>

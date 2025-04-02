@@ -10,56 +10,56 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
-import { ActionButton, Button } from "@react-spectrum/button";
-import { ButtonGroup } from "@react-spectrum/buttongroup";
-import { Checkbox } from "@react-spectrum/checkbox";
-import { Content } from "@react-spectrum/view";
-import { Dialog, DialogTrigger } from "@react-spectrum/dialog";
-import { Flex } from "@react-spectrum/layout";
-import { Heading } from "@react-spectrum/text";
+import {action} from '@storybook/addon-actions';
+import {ActionButton, Button} from '@react-spectrum/button';
+import {ButtonGroup} from '@react-spectrum/buttongroup';
+import {Checkbox} from '@react-spectrum/checkbox';
+import {Content} from '@react-spectrum/view';
+import {Dialog, DialogTrigger} from '@react-spectrum/dialog';
+import {Flex} from '@react-spectrum/layout';
+import {Heading} from '@react-spectrum/text';
 import React, {
   SyntheticEvent,
   useEffect,
   useMemo,
   useRef,
-  useState,
-} from "react";
-import { SpectrumToastOptions, ToastPlacement } from "../src/ToastContainer";
-import { ToastContainer, ToastQueue } from "../";
+  useState
+} from 'react';
+import {SpectrumToastOptions, ToastPlacement} from '../src/ToastContainer';
+import {ToastContainer, ToastQueue} from '../';
 import {
   UNSTABLE_createLandmarkController,
-  useLandmark,
-} from "@react-aria-nutrient/landmark";
-import { UNSTABLE_PortalProvider } from "@react-aria-nutrient/overlays";
+  useLandmark
+} from '@react-aria-nutrient/landmark';
+import {UNSTABLE_PortalProvider} from '@react-aria-nutrient/overlays';
 
 export default {
-  title: "Toast",
+  title: 'Toast',
   decorators: [
-    (story, { parameters, args }) => (
+    (story, {parameters, args}) => (
       <>
         {!parameters.disableToastContainer && (
           <ToastContainer placement={args.placement} />
         )}
         <MainLandmark>{story()}</MainLandmark>
       </>
-    ),
+    )
   ],
   args: {
     shouldCloseOnAction: false,
     timeout: null,
-    placement: undefined,
+    placement: undefined
   },
   argTypes: {
     timeout: {
-      control: "radio",
-      options: [null, 5000],
+      control: 'radio',
+      options: [null, 5000]
     },
     placement: {
-      control: "select",
-      options: [undefined, "top", "top end", "bottom", "bottom end"],
-    },
-  },
+      control: 'select',
+      options: [undefined, 'top', 'top end', 'bottom', 'bottom end']
+    }
+  }
 };
 
 export const Default = (args) => <RenderProvider {...args} />;
@@ -70,60 +70,58 @@ Default.story = {
         rules: [
           // Ignore landmark accessibility failures since the extra main is just for testing purposes
           // and not a explicit part of the Toast component
-          { id: "landmark-main-is-top-level", enabled: false },
-          { id: "landmark-no-duplicate-main", enabled: false },
-          { id: "landmark-unique", enabled: false },
-        ],
-      },
-    },
-  },
+          {id: 'landmark-main-is-top-level', enabled: false},
+          {id: 'landmark-no-duplicate-main', enabled: false},
+          {id: 'landmark-unique', enabled: false}
+        ]
+      }
+    }
+  }
 };
 
 export const WithAction = (args) => (
   <RenderProvider
     {...args}
     actionLabel="Action"
-    onAction={action("onAction")}
-  />
+    onAction={action('onAction')} />
 );
 
 WithAction.story = {
-  name: "With action",
+  name: 'With action',
   parameters: {
     a11y: {
       config: {
         rules: [
-          { id: "landmark-main-is-top-level", enabled: false },
-          { id: "landmark-no-duplicate-main", enabled: false },
-          { id: "landmark-unique", enabled: false },
-        ],
-      },
-    },
-  },
+          {id: 'landmark-main-is-top-level', enabled: false},
+          {id: 'landmark-no-duplicate-main', enabled: false},
+          {id: 'landmark-unique', enabled: false}
+        ]
+      }
+    }
+  }
 };
 
 export const WithTestId = (args) => (
   <RenderProvider
     {...args}
     actionLabel="Action"
-    onAction={action("onAction")}
-    data-testid="hello i am a test id"
-  />
+    onAction={action('onAction')}
+    data-testid="hello i am a test id" />
 );
 
 WithTestId.story = {
-  name: "With test id",
+  name: 'With test id',
   parameters: {
     a11y: {
       config: {
         rules: [
-          { id: "landmark-main-is-top-level", enabled: false },
-          { id: "landmark-no-duplicate-main", enabled: false },
-          { id: "landmark-unique", enabled: false },
-        ],
-      },
-    },
-  },
+          {id: 'landmark-main-is-top-level', enabled: false},
+          {id: 'landmark-no-duplicate-main', enabled: false},
+          {id: 'landmark-unique', enabled: false}
+        ]
+      }
+    }
+  }
 };
 
 export const WithDialog = (args) => (
@@ -139,71 +137,71 @@ export const WithDialog = (args) => (
 );
 
 WithDialog.story = {
-  name: "With dialog",
+  name: 'With dialog',
   parameters: {
     a11y: {
       config: {
         rules: [
-          { id: "landmark-main-is-top-level", enabled: false },
-          { id: "landmark-no-duplicate-main", enabled: false },
-          { id: "landmark-unique", enabled: false },
-        ],
-      },
-    },
-  },
+          {id: 'landmark-main-is-top-level', enabled: false},
+          {id: 'landmark-no-duplicate-main', enabled: false},
+          {id: 'landmark-unique', enabled: false}
+        ]
+      }
+    }
+  }
 };
 
 export const MultipleToastContainers = (args) => <Multiple {...args} />;
 
 MultipleToastContainers.story = {
-  name: "multiple ToastContainers",
+  name: 'multiple ToastContainers',
   parameters: {
     disableToastContainer: true,
     a11y: {
       config: {
         rules: [
-          { id: "landmark-main-is-top-level", enabled: false },
-          { id: "landmark-no-duplicate-main", enabled: false },
-          { id: "landmark-unique", enabled: false },
-        ],
-      },
-    },
-  },
+          {id: 'landmark-main-is-top-level', enabled: false},
+          {id: 'landmark-no-duplicate-main', enabled: false},
+          {id: 'landmark-unique', enabled: false}
+        ]
+      }
+    }
+  }
 };
 
 export const ProgrammaticallyClosing = (args) => <ToastToggle {...args} />;
 
 ProgrammaticallyClosing.story = {
-  name: "programmatically closing",
+  name: 'programmatically closing',
   parameters: {
     a11y: {
       config: {
         rules: [
-          { id: "landmark-main-is-top-level", enabled: false },
-          { id: "landmark-no-duplicate-main", enabled: false },
-          { id: "landmark-unique", enabled: false },
-        ],
-      },
-    },
-  },
+          {id: 'landmark-main-is-top-level', enabled: false},
+          {id: 'landmark-no-duplicate-main', enabled: false},
+          {id: 'landmark-unique', enabled: false}
+        ]
+      }
+    }
+  }
 };
 
 export const WithIframe = () => <IframeExample />;
 
 WithIframe.story = {
-  name: "with iframe",
+  name: 'with iframe',
   parameters: {
     a11y: {
       config: {
         rules: [
-          { id: "aria-allowed-role", selector: '*:not(iframe[role="main"])' },
-          { id: "landmark-main-is-top-level", enabled: false },
-          { id: "landmark-no-duplicate-main", enabled: false },
-          { id: "landmark-unique", enabled: false },
-        ],
-      },
-    },
-  },
+          {id: 'aria-allowed-role', selector: '*:not(iframe[role="main"])'},
+          {id: 'landmark-main-is-top-level', enabled: false},
+          {id: 'landmark-no-duplicate-main', enabled: false},
+          {id: 'landmark-unique', enabled: false}
+        ]
+      }
+    }
+  }
 };
 
 function RenderProvider(options: SpectrumToastOptions) {
@@ -211,47 +209,43 @@ function RenderProvider(options: SpectrumToastOptions) {
     <ButtonGroup>
       <Button
         onPress={() =>
-          ToastQueue.neutral("Toast available", {
+          ToastQueue.neutral('Toast available', {
             ...options,
-            onClose: action("onClose"),
+            onClose: action('onClose')
           })
         }
-        variant="secondary"
-      >
+        variant="secondary">
         Show Neutral Toast
       </Button>
       <Button
         onPress={() =>
-          ToastQueue.positive("Toast is done!", {
+          ToastQueue.positive('Toast is done!', {
             ...options,
-            onClose: action("onClose"),
+            onClose: action('onClose')
           })
         }
-        variant="primary"
-      >
+        variant="primary">
         Show Positive Toast
       </Button>
       <Button
         onPress={() =>
-          ToastQueue.negative("Toast is burned!", {
+          ToastQueue.negative('Toast is burned!', {
             ...options,
-            onClose: action("onClose"),
+            onClose: action('onClose')
           })
         }
-        variant="negative"
-      >
+        variant="negative">
         Show Negative Toast
       </Button>
       <Button
         onPress={() =>
-          ToastQueue.info("Toasting…", {
+          ToastQueue.info('Toasting…', {
             ...options,
-            onClose: action("onClose"),
+            onClose: action('onClose')
           })
         }
         variant="accent"
-        style="outline"
-      >
+        style="outline">
         Show Info Toast
       </Button>
     </ButtonGroup>
@@ -265,18 +259,17 @@ function ToastToggle(options: SpectrumToastOptions) {
     <Button
       onPress={() => {
         if (!close) {
-          let close = ToastQueue.negative("Unable to save", {
+          let close = ToastQueue.negative('Unable to save', {
             ...options,
-            onClose: () => setClose(null),
+            onClose: () => setClose(null)
           });
           setClose(() => close);
         } else {
           close();
         }
       }}
-      variant="primary"
-    >
-      {close ? "Hide" : "Show"} Toast
+      variant="primary">
+      {close ? 'Hide' : 'Show'} Toast
     </Button>
   );
 }
@@ -320,14 +313,14 @@ function IframeExample() {
     let document = window.document;
 
     // Catch toasts inside the iframe and redirect them outside.
-    window.addEventListener("react-spectrum-toast", (e) => {
+    window.addEventListener('react-spectrum-toast', (e) => {
       let evt = e as CustomEvent;
       evt.preventDefault();
       ToastQueue[evt.detail.variant](evt.detail.children, evt.detail.options);
     });
 
     let prevFocusedElement: HTMLElement | null = null;
-    window.addEventListener("react-aria-landmark-navigation", (e) => {
+    window.addEventListener('react-aria-landmark-navigation', (e) => {
       let evt = e as CustomEvent;
       evt.preventDefault();
       let el = document.activeElement;
@@ -336,20 +329,20 @@ function IframeExample() {
       }
 
       // Prevent focus scope from stealing focus back when we move focus to the iframe.
-      document.body.setAttribute("data-react-aria-top-layer", "true");
+      document.body.setAttribute('data-react-aria-top-layer', 'true');
 
       window.parent.postMessage({
-        type: "landmark-navigation",
-        direction: evt.detail.direction,
+        type: 'landmark-navigation',
+        direction: evt.detail.direction
       });
 
       setTimeout(() => {
-        document.body.removeAttribute("data-react-aria-top-layer");
+        document.body.removeAttribute('data-react-aria-top-layer');
       }, 100);
     });
 
     // When the iframe is re-focused, restore focus back inside where it was before.
-    window.addEventListener("focus", () => {
+    window.addEventListener('focus', () => {
       if (prevFocusedElement) {
         prevFocusedElement.focus();
         prevFocusedElement = null;
@@ -357,14 +350,14 @@ function IframeExample() {
     });
 
     // Move focus to first or last landmark when we receive a message from the parent page.
-    window.addEventListener("message", (e) => {
-      if (e.data.type === "landmark-navigation") {
+    window.addEventListener('message', (e) => {
+      if (e.data.type === 'landmark-navigation') {
         // (Can't use LandmarkController in this example because we need the controller instance inside the iframe)
         document.body.dispatchEvent(
-          new KeyboardEvent("keydown", {
-            key: "F6",
-            shiftKey: e.data.direction === "backward",
-            bubbles: true,
+          new KeyboardEvent('keydown', {
+            key: 'F6',
+            shiftKey: e.data.direction === 'backward',
+            bubbles: true
           })
         );
       }
@@ -374,7 +367,7 @@ function IframeExample() {
   useEffect(() => {
     let onMessage = (e: MessageEvent) => {
       let iframe = ref.current!;
-      if (e.data.type === "landmark-navigation") {
+      if (e.data.type === 'landmark-navigation') {
         // Move focus to the iframe so that when focus is restored there, and we can redirect it back inside (below).
         iframe.focus();
 
@@ -383,21 +376,21 @@ function IframeExample() {
       }
     };
 
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
   }, [controller]);
 
   let ref = useRef<HTMLIFrameElement | null>(null);
-  let { landmarkProps } = useLandmark(
+  let {landmarkProps} = useLandmark(
     {
-      role: "main",
+      role: 'main',
       focus(direction) {
         // when iframe landmark receives focus via landmark navigation, go to first/last landmark inside iframe.
         ref.current!.contentWindow!.postMessage({
-          type: "landmark-navigation",
-          direction,
+          type: 'landmark-navigation',
+          direction
         });
-      },
+      }
     },
     ref
   );
@@ -411,22 +404,20 @@ function IframeExample() {
       height="500"
       src="iframe.html?providerSwitcher-express=false&providerSwitcher-toastPosition=bottom&viewMode=story&id=toast--with-dialog"
       onLoad={onLoad}
-      tabIndex={-1}
-    />
+      tabIndex={-1} />
   );
 }
 
 function MainLandmark(props) {
   let ref = useRef<HTMLElement | null>(null);
-  let { landmarkProps } = useLandmark({ ...props, role: "main" }, ref);
+  let {landmarkProps} = useLandmark({...props, role: 'main'}, ref);
   return (
     <main
       aria-label="Danni's unicorn corral"
       ref={ref}
       {...props}
       {...landmarkProps}
-      style={{ padding: 40, background: "white" }}
-    >
+      style={{padding: 40, background: 'white'}}>
       {props.children}
     </main>
   );
@@ -435,8 +426,8 @@ function MainLandmark(props) {
 export const withFullscreen = {
   render: (args) => <FullscreenApp {...args} />,
   parameters: {
-    disableToastContainer: true,
-  },
+    disableToastContainer: true
+  }
 };
 
 function FullscreenApp(props) {
@@ -451,22 +442,21 @@ function FullscreenApp(props) {
     let onFullscreenChange = () => {
       setFullscreen(!!document.fullscreenElement);
     };
-    document.addEventListener("fullscreenchange", onFullscreenChange);
+    document.addEventListener('fullscreenchange', onFullscreenChange);
     return () =>
-      document.removeEventListener("fullscreenchange", onFullscreenChange);
+      document.removeEventListener('fullscreenchange', onFullscreenChange);
   }, []);
   return (
     <div
       ref={ref}
       style={{
-        position: "fixed",
+        position: 'fixed',
         top: 0,
         left: 0,
-        width: "100vw",
-        height: "100vh",
-        backgroundColor: "white",
-      }}
-    >
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: 'white'
+      }}>
       <UNSTABLE_PortalProvider getContainer={() => ref.current}>
         <RenderProvider {...props} />
         <ActionButton onPress={fullscreenPress}>Enter fullscreen</ActionButton>

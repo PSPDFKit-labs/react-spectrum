@@ -13,9 +13,9 @@ import {
   AriaDialogProps,
   useDialog,
   useId,
-  useOverlayTrigger,
-} from "react-aria";
-import { ButtonContext } from "./Button";
+  useOverlayTrigger
+} from 'react-aria';
+import {ButtonContext} from './Button';
 import {
   ContextValue,
   DEFAULT_SLOT,
@@ -23,39 +23,39 @@ import {
   SlotProps,
   StyleProps,
   useContextProps,
-  useRenderProps,
-} from "./utils";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { forwardRefType } from "@react-types/shared";
-import { HeadingContext } from "./RSPContexts";
+  useRenderProps
+} from './utils';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {forwardRefType} from '@react-types/shared';
+import {HeadingContext} from './RSPContexts';
 import {
   OverlayTriggerProps,
   OverlayTriggerState,
-  useMenuTriggerState,
-} from "react-stately";
-import { PopoverContext } from "./Popover";
-import { PressResponder } from "@react-aria-nutrient/interactions";
+  useMenuTriggerState
+} from 'react-stately';
+import {PopoverContext} from './Popover';
+import {PressResponder} from '@react-aria-nutrient/interactions';
 import React, {
   createContext,
   ForwardedRef,
   forwardRef,
   ReactNode,
   useContext,
-  useRef,
-} from "react";
-import { RootMenuTriggerStateContext } from "./Menu";
+  useRef
+} from 'react';
+import {RootMenuTriggerStateContext} from './Menu';
 
 export interface DialogTriggerProps extends OverlayTriggerProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export interface DialogRenderProps {
-  close: () => void;
+  close: () => void
 }
 
 export interface DialogProps extends AriaDialogProps, StyleProps, SlotProps {
   /** Children of the dialog. A function may be provided to access a function to close the dialog. */
-  children?: ReactNode | ((opts: DialogRenderProps) => ReactNode);
+  children?: ReactNode | ((opts: DialogRenderProps) => ReactNode)
 }
 
 export const DialogContext =
@@ -72,8 +72,8 @@ export function DialogTrigger(props: DialogTriggerProps): ReactNode {
   let state = useMenuTriggerState(props);
 
   let buttonRef = useRef<HTMLButtonElement>(null);
-  let { triggerProps, overlayProps } = useOverlayTrigger(
-    { type: "dialog" },
+  let {triggerProps, overlayProps} = useOverlayTrigger(
+    {type: 'dialog'},
     state,
     buttonRef
   );
@@ -83,7 +83,7 @@ export function DialogTrigger(props: DialogTriggerProps): ReactNode {
   // between context and props. Normally aria-labelledby overrides the title
   // but when sent by context we want the title to win.
   triggerProps.id = useId();
-  overlayProps["aria-labelledby"] = triggerProps.id;
+  overlayProps['aria-labelledby'] = triggerProps.id;
 
   return (
     <Provider
@@ -94,18 +94,16 @@ export function DialogTrigger(props: DialogTriggerProps): ReactNode {
         [
           PopoverContext,
           {
-            trigger: "DialogTrigger",
+            trigger: 'DialogTrigger',
             triggerRef: buttonRef,
-            "aria-labelledby": overlayProps["aria-labelledby"],
-          },
-        ],
-      ]}
-    >
+            'aria-labelledby': overlayProps['aria-labelledby']
+          }
+        ]
+      ]}>
       <PressResponder
         {...triggerProps}
         ref={buttonRef}
-        isPressed={state.isOpen}
-      >
+        isPressed={state.isOpen}>
         {props.children}
       </PressResponder>
     </Provider>
@@ -117,25 +115,25 @@ export function DialogTrigger(props: DialogTriggerProps): ReactNode {
  */
 export const Dialog = /*#__PURE__*/ (forwardRef as forwardRefType)(
   function Dialog(props: DialogProps, ref: ForwardedRef<HTMLElement>) {
-    let originalAriaLabelledby = props["aria-labelledby"];
+    let originalAriaLabelledby = props['aria-labelledby'];
     [props, ref] = useContextProps(props, ref, DialogContext);
-    let { dialogProps, titleProps } = useDialog(
+    let {dialogProps, titleProps} = useDialog(
       {
         ...props,
         // Only pass aria-labelledby from props, not context.
         // Context is used as a fallback below.
-        "aria-labelledby": originalAriaLabelledby,
+        'aria-labelledby': originalAriaLabelledby
       },
       ref
     );
     let state = useContext(OverlayTriggerStateContext);
 
-    if (!dialogProps["aria-label"] && !dialogProps["aria-labelledby"]) {
+    if (!dialogProps['aria-label'] && !dialogProps['aria-labelledby']) {
       // If aria-labelledby exists on props, we know it came from context.
       // Use that as a fallback in case there is no title slot.
-      if (props["aria-labelledby"]) {
-        dialogProps["aria-labelledby"] = props["aria-labelledby"];
-      } else if (process.env.NODE_ENV !== "production") {
+      if (props['aria-labelledby']) {
+        dialogProps['aria-labelledby'] = props['aria-labelledby'];
+      } else if (process.env.NODE_ENV !== 'production') {
         console.warn(
           'If a Dialog does not contain a <Heading slot="title">, it must have an aria-label or aria-labelledby attribute for accessibility.'
         );
@@ -143,13 +141,13 @@ export const Dialog = /*#__PURE__*/ (forwardRef as forwardRefType)(
     }
 
     let renderProps = useRenderProps({
-      defaultClassName: "react-aria-Dialog",
+      defaultClassName: 'react-aria-Dialog',
       className: props.className,
       style: props.style,
       children: props.children,
       values: {
-        close: state?.close || (() => {}),
-      },
+        close: state?.close || (() => {})
+      }
     });
 
     return (
@@ -158,8 +156,7 @@ export const Dialog = /*#__PURE__*/ (forwardRef as forwardRefType)(
         {...dialogProps}
         {...renderProps}
         ref={ref}
-        slot={props.slot || undefined}
-      >
+        slot={props.slot || undefined}>
         <Provider
           values={[
             [
@@ -167,9 +164,9 @@ export const Dialog = /*#__PURE__*/ (forwardRef as forwardRefType)(
               {
                 slots: {
                   [DEFAULT_SLOT]: {},
-                  title: { ...titleProps, level: 2 },
-                },
-              },
+                  title: {...titleProps, level: 2}
+                }
+              }
             ],
             [
               ButtonContext,
@@ -177,13 +174,12 @@ export const Dialog = /*#__PURE__*/ (forwardRef as forwardRefType)(
                 slots: {
                   [DEFAULT_SLOT]: {},
                   close: {
-                    onPress: () => state?.close(),
-                  },
-                },
-              },
-            ],
-          ]}
-        >
+                    onPress: () => state?.close()
+                  }
+                }
+              }
+            ]
+          ]}>
           {renderProps.children}
         </Provider>
       </section>

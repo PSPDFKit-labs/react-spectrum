@@ -14,42 +14,42 @@ import {
   ContextValue,
   StyleRenderProps,
   useContextProps,
-  useRenderProps,
-} from "./utils";
-import { createHideableComponent } from "@react-aria-nutrient/collections";
-import { HoverEvents, mergeProps, useFocusRing, useHover } from "react-aria";
-import React, { createContext, ForwardedRef, InputHTMLAttributes } from "react";
+  useRenderProps
+} from './utils';
+import {createHideableComponent} from '@react-aria-nutrient/collections';
+import {HoverEvents, mergeProps, useFocusRing, useHover} from 'react-aria';
+import React, {createContext, ForwardedRef, InputHTMLAttributes} from 'react';
 
 export interface InputRenderProps {
   /**
    * Whether the input is currently hovered with a mouse.
    * @selector [data-hovered]
    */
-  isHovered: boolean;
+  isHovered: boolean,
   /**
    * Whether the input is focused, either via a mouse or keyboard.
    * @selector [data-focused]
    */
-  isFocused: boolean;
+  isFocused: boolean,
   /**
    * Whether the input is keyboard focused.
    * @selector [data-focus-visible]
    */
-  isFocusVisible: boolean;
+  isFocusVisible: boolean,
   /**
    * Whether the input is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean,
   /**
    * Whether the input is invalid.
    * @selector [data-invalid]
    */
-  isInvalid: boolean;
+  isInvalid: boolean
 }
 
 export interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "className" | "style">,
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'className' | 'style'>,
     HoverEvents,
     StyleRenderProps<InputRenderProps> {}
 
@@ -59,7 +59,7 @@ export const InputContext = createContext<
 
 let filterHoverProps = (props: InputProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  let { onHoverStart, onHoverChange, onHoverEnd, ...otherProps } = props;
+  let {onHoverStart, onHoverChange, onHoverEnd, ...otherProps} = props;
   return otherProps;
 };
 
@@ -72,13 +72,13 @@ export const Input = /*#__PURE__*/ createHideableComponent(function Input(
 ) {
   [props, ref] = useContextProps(props, ref, InputContext);
 
-  let { hoverProps, isHovered } = useHover(props);
-  let { isFocused, isFocusVisible, focusProps } = useFocusRing({
+  let {hoverProps, isHovered} = useHover(props);
+  let {isFocused, isFocusVisible, focusProps} = useFocusRing({
     isTextInput: true,
-    autoFocus: props.autoFocus,
+    autoFocus: props.autoFocus
   });
 
-  let isInvalid = !!props["aria-invalid"] && props["aria-invalid"] !== "false";
+  let isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
   let renderProps = useRenderProps({
     ...props,
     values: {
@@ -86,9 +86,9 @@ export const Input = /*#__PURE__*/ createHideableComponent(function Input(
       isFocused,
       isFocusVisible,
       isDisabled: props.disabled || false,
-      isInvalid,
+      isInvalid
     },
-    defaultClassName: "react-aria-Input",
+    defaultClassName: 'react-aria-Input'
   });
 
   return (
@@ -100,7 +100,6 @@ export const Input = /*#__PURE__*/ createHideableComponent(function Input(
       data-disabled={props.disabled || undefined}
       data-hovered={isHovered || undefined}
       data-focus-visible={isFocusVisible || undefined}
-      data-invalid={isInvalid || undefined}
-    />
+      data-invalid={isInvalid || undefined} />
   );
 });

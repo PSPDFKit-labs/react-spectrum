@@ -10,30 +10,30 @@
  * governing permissions and limitations under the License.
  */
 
-import CheckmarkMedium from "@spectrum-icons/ui/CheckmarkMedium";
-import { classNames, ClearSlots, SlotProvider } from "@react-spectrum/utils";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import { Grid } from "@react-spectrum/layout";
-import { isFocusVisible, useHover } from "@react-aria-nutrient/interactions";
-import { ListBoxContext } from "./ListBoxContext";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import { Node } from "@react-types/shared";
-import React, { ReactNode, useContext, useRef } from "react";
-import styles from "@adobe/spectrum-css-temp/components/menu/vars.css";
-import { Text } from "@react-spectrum/text";
-import { useOption } from "@react-aria-nutrient/listbox";
+import CheckmarkMedium from '@spectrum-icons/ui/CheckmarkMedium';
+import {classNames, ClearSlots, SlotProvider} from '@react-spectrum/utils';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import {Grid} from '@react-spectrum/layout';
+import {isFocusVisible, useHover} from '@react-aria-nutrient/interactions';
+import {ListBoxContext} from './ListBoxContext';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import {Node} from '@react-types/shared';
+import React, {ReactNode, useContext, useRef} from 'react';
+import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
+import {Text} from '@react-spectrum/text';
+import {useOption} from '@react-aria-nutrient/listbox';
 
 interface OptionProps<T> {
-  item: Node<T>;
+  item: Node<T>
 }
 
 /** @private */
 export function ListBoxOption<T>(props: OptionProps<T>): ReactNode {
-  let { item } = props;
+  let {item} = props;
 
-  let { rendered, key } = item;
-  let ElementType: React.ElementType = item.props.href ? "a" : "div";
-  let { state, shouldFocusOnHover, shouldUseVirtualFocus } =
+  let {rendered, key} = item;
+  let ElementType: React.ElementType = item.props.href ? 'a' : 'div';
+  let {state, shouldFocusOnHover, shouldUseVirtualFocus} =
     useContext(ListBoxContext)!;
 
   let ref = useRef<any>(undefined);
@@ -43,76 +43,73 @@ export function ListBoxOption<T>(props: OptionProps<T>): ReactNode {
     descriptionProps,
     isSelected,
     isDisabled,
-    isFocused,
+    isFocused
   } = useOption(
     {
-      "aria-label": item["aria-label"],
+      'aria-label': item['aria-label'],
       key,
-      isVirtualized: true,
+      isVirtualized: true
     },
     state,
     ref
   );
-  let { hoverProps, isHovered } = useHover({
+  let {hoverProps, isHovered} = useHover({
     ...props,
-    isDisabled,
+    isDisabled
   });
 
   let contents =
-    typeof rendered === "string" ? <Text>{rendered}</Text> : rendered;
+    typeof rendered === 'string' ? <Text>{rendered}</Text> : rendered;
 
   let isKeyboardModality = isFocusVisible();
 
   return (
-    <FocusRing focusRingClass={classNames(styles, "focus-ring")}>
+    <FocusRing focusRingClass={classNames(styles, 'focus-ring')}>
       <ElementType
         {...mergeProps(optionProps, shouldFocusOnHover ? {} : hoverProps)}
         ref={ref}
-        className={classNames(styles, "spectrum-Menu-item", {
+        className={classNames(styles, 'spectrum-Menu-item', {
           // If using virtual focus, apply focused styles to the item when the user is interacting with keyboard modality
-          "is-focused":
+          'is-focused':
             shouldUseVirtualFocus && isFocused && isKeyboardModality,
-          "is-disabled": isDisabled,
-          "is-selected": isSelected,
-          "is-selectable": state.selectionManager.selectionMode !== "none",
+          'is-disabled': isDisabled,
+          'is-selected': isSelected,
+          'is-selectable': state.selectionManager.selectionMode !== 'none',
           // When shouldFocusOnHover is false, apply hover styles both when hovered with the mouse.
           // Otherwise, apply hover styles when focused using non-keyboard modality.
-          "is-hovered":
+          'is-hovered':
             (isHovered && !shouldFocusOnHover) ||
-            (isFocused && !isKeyboardModality),
-        })}
-      >
-        <Grid UNSAFE_className={classNames(styles, "spectrum-Menu-itemGrid")}>
+            (isFocused && !isKeyboardModality)
+        })}>
+        <Grid UNSAFE_className={classNames(styles, 'spectrum-Menu-itemGrid')}>
           <ClearSlots>
             <SlotProvider
               slots={{
                 text: {
-                  UNSAFE_className: styles["spectrum-Menu-itemLabel"],
-                  ...labelProps,
+                  UNSAFE_className: styles['spectrum-Menu-itemLabel'],
+                  ...labelProps
                 },
                 icon: {
-                  size: "S",
-                  UNSAFE_className: styles["spectrum-Menu-icon"],
+                  size: 'S',
+                  UNSAFE_className: styles['spectrum-Menu-icon']
                 },
                 avatar: {
-                  size: "avatar-size-100",
-                  UNSAFE_className: styles["spectrum-Menu-avatar"],
+                  size: 'avatar-size-100',
+                  UNSAFE_className: styles['spectrum-Menu-avatar']
                 },
                 description: {
-                  UNSAFE_className: styles["spectrum-Menu-description"],
-                  ...descriptionProps,
-                },
-              }}
-            >
+                  UNSAFE_className: styles['spectrum-Menu-description'],
+                  ...descriptionProps
+                }
+              }}>
               {contents}
               {isSelected && (
                 <CheckmarkMedium
                   slot="checkmark"
                   UNSAFE_className={classNames(
                     styles,
-                    "spectrum-Menu-checkmark"
-                  )}
-                />
+                    'spectrum-Menu-checkmark'
+                  )} />
               )}
             </SlotProvider>
           </ClearSlots>

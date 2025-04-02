@@ -14,12 +14,12 @@ import {
   ClearSlots,
   useDOMRef,
   useSlotProps,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { HeaderProps } from "@react-types/view";
-import React, { forwardRef } from "react";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {HeaderProps} from '@react-types/view';
+import React, {forwardRef} from 'react';
 
 /**
  * Header represents a header within a Spectrum container.
@@ -28,9 +28,9 @@ export const Header = forwardRef(function Header(
   props: HeaderProps,
   ref: DOMRef
 ) {
-  props = useSlotProps(props, "header");
-  let { children, ...otherProps } = props;
-  let { styleProps } = useStyleProps(otherProps);
+  props = useSlotProps(props, 'header');
+  let {children, ...otherProps} = props;
+  let {styleProps} = useStyleProps(otherProps);
   let domRef = useDOMRef(ref);
 
   return (

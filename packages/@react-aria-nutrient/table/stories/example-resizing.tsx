@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import ariaStyles from "./resizing.css";
+import ariaStyles from './resizing.css';
 import {
   AriaTableColumnResizeProps,
   useTable,
@@ -21,31 +21,31 @@ import {
   useTableRow,
   useTableRowGroup,
   useTableSelectAllCheckbox,
-  useTableSelectionCheckbox,
-} from "@react-aria-nutrient/table";
-import { classNames } from "@react-spectrum/utils";
-import { FocusRing, useFocusRing } from "@react-aria-nutrient/focus";
+  useTableSelectionCheckbox
+} from '@react-aria-nutrient/table';
+import {classNames} from '@react-spectrum/utils';
+import {FocusRing, useFocusRing} from '@react-aria-nutrient/focus';
 import {
   mergeProps,
   useLayoutEffect,
-  useResizeObserver,
-} from "@react-aria-nutrient/utils";
-import React, { useCallback, useMemo, useRef, useState } from "react";
-import styles from "@adobe/spectrum-css-temp/components/table/vars.css";
-import { useCheckbox } from "@react-aria-nutrient/checkbox";
-import { useTableColumnResizeState, useTableState } from "@react-stately/table";
-import { useToggleState } from "@react-stately/toggle";
-import { VisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+  useResizeObserver
+} from '@react-aria-nutrient/utils';
+import React, {useCallback, useMemo, useRef, useState} from 'react';
+import styles from '@adobe/spectrum-css-temp/components/table/vars.css';
+import {useCheckbox} from '@react-aria-nutrient/checkbox';
+import {useTableColumnResizeState, useTableState} from '@react-stately/table';
+import {useToggleState} from '@react-stately/toggle';
+import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 export function Table(props) {
   let [showSelectionCheckboxes, setShowSelectionCheckboxes] = useState(
-    props.selectionStyle !== "highlight"
+    props.selectionStyle !== 'highlight'
   );
   let state = useTableState({
     ...props,
     showSelectionCheckboxes,
     selectionBehavior:
-      props.selectionStyle === "highlight" ? "replace" : "toggle",
+      props.selectionStyle === 'highlight' ? 'replace' : 'toggle'
   });
 
   let [tableWidth, setTableWidth] = useState(0);
@@ -55,32 +55,32 @@ export function Table(props) {
     {
       getDefaultWidth,
       getDefaultMinWidth,
-      tableWidth,
+      tableWidth
     },
     state
   );
 
   // If the selection behavior changes in state, we need to update showSelectionCheckboxes here due to the circular dependency...
   let shouldShowCheckboxes =
-    state.selectionManager.selectionBehavior !== "replace";
+    state.selectionManager.selectionBehavior !== 'replace';
   if (shouldShowCheckboxes !== showSelectionCheckboxes) {
     setShowSelectionCheckboxes(shouldShowCheckboxes);
   }
   let ref = useRef<HTMLTableElement | null>(null);
   let bodyRef = useRef<HTMLElement | null>(null);
-  let { collection } = state;
-  let { gridProps } = useTable(
+  let {collection} = state;
+  let {gridProps} = useTable(
     {
       ...props,
       onRowAction: props.onAction,
       scrollRef: bodyRef,
-      "aria-label": "example table",
+      'aria-label': 'example table'
     },
     state,
     ref
   );
   let layout = useMemo(
-    () => ({ ...layoutState, tableState: state }),
+    () => ({...layoutState, tableState: state}),
     [layoutState, state]
   );
 
@@ -91,23 +91,21 @@ export function Table(props) {
   }, []);
   useResizeObserver({
     ref,
-    onResize: () => setTableWidth(bodyRef.current!.clientWidth),
+    onResize: () => setTableWidth(bodyRef.current!.clientWidth)
   });
 
   return (
     <table
       {...gridProps}
       ref={ref}
-      className={classNames(ariaStyles, "aria-table")}
-    >
+      className={classNames(ariaStyles, 'aria-table')}>
       <TableRowGroup
         type="thead"
         className={classNames(
           ariaStyles,
-          "aria-table-rowGroup",
-          "aria-table-rowGroupHeader"
-        )}
-      >
+          'aria-table-rowGroup',
+          'aria-table-rowGroupHeader'
+        )}>
         {collection.headerRows.map((headerRow) => (
           <TableHeaderRow
             key={headerRow.key}
@@ -115,18 +113,16 @@ export function Table(props) {
             state={state}
             className={classNames(
               ariaStyles,
-              "aria-table-row",
-              "aria-table-headerRow"
-            )}
-          >
+              'aria-table-row',
+              'aria-table-headerRow'
+            )}>
             {[...state.collection.getChildren!(headerRow.key)].map((column) =>
               column.props.isSelectionCell ? (
                 <TableSelectAllCell
                   key={column.key}
                   column={column}
                   state={state}
-                  layout={layout}
-                />
+                  layout={layout} />
               ) : (
                 <TableColumnHeader
                   key={column.key}
@@ -135,8 +131,7 @@ export function Table(props) {
                   layout={layout}
                   onResizeStart={props.onResizeStart}
                   onResize={props.onResize}
-                  onResizeEnd={props.onResizeEnd}
-                />
+                  onResizeEnd={props.onResizeEnd} />
               )
             )}
           </TableHeaderRow>
@@ -145,30 +140,26 @@ export function Table(props) {
       <TableRowGroup
         type="tbody"
         ref={bodyRef}
-        className={classNames(ariaStyles, "aria-table-rowGroup")}
-      >
+        className={classNames(ariaStyles, 'aria-table-rowGroup')}>
         {[...collection].map((row) => (
           <TableRow
             key={row.key}
             item={row}
             state={state}
-            className={classNames(ariaStyles, "aria-table-row")}
-          >
+            className={classNames(ariaStyles, 'aria-table-row')}>
             {[...state.collection.getChildren!(row.key)].map((cell) =>
               cell.props.isSelectionCell ? (
                 <TableCheckboxCell
                   key={cell.key}
                   cell={cell}
                   state={state}
-                  layout={layout}
-                />
+                  layout={layout} />
               ) : (
                 <TableCell
                   key={cell.key}
                   cell={cell}
                   state={state}
-                  layout={layout}
-                />
+                  layout={layout} />
               )
             )}
           </TableRow>
@@ -179,8 +170,8 @@ export function Table(props) {
 }
 
 export const TableRowGroup = React.forwardRef((props: any, ref) => {
-  let { type: Element, style, children, className } = props;
-  let { rowGroupProps } = useTableRowGroup();
+  let {type: Element, style, children, className} = props;
+  let {rowGroupProps} = useTableRowGroup();
   return (
     <Element ref={ref} {...rowGroupProps} style={style} className={className}>
       {children}
@@ -188,9 +179,9 @@ export const TableRowGroup = React.forwardRef((props: any, ref) => {
   );
 });
 
-export function TableHeaderRow({ item, state, children, className }) {
+export function TableHeaderRow({item, state, children, className}) {
   let ref = useRef<HTMLTableRowElement | null>(null);
-  let { rowProps } = useTableHeaderRow({ node: item }, state, ref);
+  let {rowProps} = useTableHeaderRow({node: item}, state, ref);
 
   return (
     <tr {...rowProps} ref={ref} className={className}>
@@ -198,15 +189,15 @@ export function TableHeaderRow({ item, state, children, className }) {
     </tr>
   );
 }
-function Resizer({ column, layout, onResizeStart, onResize, onResizeEnd }) {
+function Resizer({column, layout, onResizeStart, onResize, onResizeEnd}) {
   let ref = useRef(null);
-  let { resizerProps, inputProps } = useTableColumnResize(
+  let {resizerProps, inputProps} = useTableColumnResize(
     {
       column,
-      "aria-label": "Resizer",
+      'aria-label': 'Resizer',
       onResizeStart,
       onResize,
-      onResizeEnd,
+      onResizeEnd
     } as AriaTableColumnResizeProps<any>,
     layout,
     ref
@@ -214,22 +205,21 @@ function Resizer({ column, layout, onResizeStart, onResize, onResizeEnd }) {
 
   return (
     <>
-      <FocusRing within focusRingClass={classNames(styles, "focus-ring")}>
+      <FocusRing within focusRingClass={classNames(styles, 'focus-ring')}>
         <div
           role="presentation"
           style={{
             cursor: undefined,
-            alignSelf: "stretch",
-            width: "20px",
-            border: "1px solid red",
-            touchAction: "none",
-            flex: "0 0 auto",
-            position: "absolute",
+            alignSelf: 'stretch',
+            width: '20px',
+            border: '1px solid red',
+            touchAction: 'none',
+            flex: '0 0 auto',
+            position: 'absolute',
             insetInlineEnd: 0,
-            height: "100%",
+            height: '100%'
           }}
-          {...resizerProps}
-        >
+          {...resizerProps}>
           <VisuallyHidden>
             <input ref={ref} {...inputProps} />
           </VisuallyHidden>
@@ -244,48 +234,46 @@ export function TableColumnHeader({
   layout,
   onResizeStart,
   onResize,
-  onResizeEnd,
+  onResizeEnd
 }) {
   let ref = useRef<HTMLTableHeaderCellElement | null>(null);
-  let { columnHeaderProps } = useTableColumnHeader(
-    { node: column },
+  let {columnHeaderProps} = useTableColumnHeader(
+    {node: column},
     state,
     ref
   );
-  let { isFocusVisible, focusProps } = useFocusRing();
-  let arrowIcon = state.sortDescriptor?.direction === "ascending" ? "▲" : "▼";
+  let {isFocusVisible, focusProps} = useFocusRing();
+  let arrowIcon = state.sortDescriptor?.direction === 'ascending' ? '▲' : '▼';
 
   return (
     <th
       {...mergeProps(columnHeaderProps, focusProps)}
       style={{
         width: layout.getColumnWidth(column.key),
-        textAlign: column.colSpan > 1 ? "center" : "left",
-        padding: "5px 10px",
-        outline: isFocusVisible ? "2px solid orange" : "none",
-        cursor: "default",
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        textOverflow: "ellipsis",
-        display: "block",
-        flex: "0 0 auto",
+        textAlign: column.colSpan > 1 ? 'center' : 'left',
+        padding: '5px 10px',
+        outline: isFocusVisible ? '2px solid orange' : 'none',
+        cursor: 'default',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        display: 'block',
+        flex: '0 0 auto'
       }}
-      ref={ref}
-    >
-      <div style={{ display: "flex", position: "relative" }}>
-        <div style={{ flex: "1 1 auto" }}>
+      ref={ref}>
+      <div style={{display: 'flex', position: 'relative'}}>
+        <div style={{flex: '1 1 auto'}}>
           {column.rendered}
           {column.props.allowsSorting && (
             <span
               aria-hidden="true"
               style={{
-                padding: "0 2px",
+                padding: '0 2px',
                 visibility:
                   state.sortDescriptor?.column === column.key
-                    ? "visible"
-                    : "hidden",
-              }}
-            >
+                    ? 'visible'
+                    : 'hidden'
+              }}>
               {arrowIcon}
             </span>
           )}
@@ -296,39 +284,37 @@ export function TableColumnHeader({
             layout={layout}
             onResizeStart={onResizeStart}
             onResize={onResize}
-            onResizeEnd={onResizeEnd}
-          />
+            onResizeEnd={onResizeEnd} />
         )}
       </div>
     </th>
   );
 }
 
-export function TableRow({ item, children, state, className }) {
+export function TableRow({item, children, state, className}) {
   let ref = useRef<HTMLTableRowElement | null>(null);
   let isSelected = state.selectionManager.isSelected(item.key);
-  let { rowProps } = useTableRow({ node: item }, state, ref);
-  let { isFocusVisible, focusProps } = useFocusRing();
+  let {rowProps} = useTableRow({node: item}, state, ref);
+  let {isFocusVisible, focusProps} = useFocusRing();
 
   return (
     <tr
       style={{
-        color: isSelected ? "white" : undefined,
-        outline: isFocusVisible ? "2px solid orange" : "none",
+        color: isSelected ? 'white' : undefined,
+        outline: isFocusVisible ? '2px solid orange' : 'none'
       }}
       className={className}
       {...mergeProps(rowProps, focusProps)}
-      ref={ref}
-    >
+      ref={ref}>
       {children}
     </tr>
   );
 }
 
-export function TableCell({ cell, state, layout }) {
+export function TableCell({cell, state, layout}) {
   let ref = useRef<HTMLTableCellElement | null>(null);
-  let { gridCellProps } = useTableCell({ node: cell }, state, ref);
-  let { isFocusVisible, focusProps } = useFocusRing();
+  let {gridCellProps} = useTableCell({node: cell}, state, ref);
+  let {isFocusVisible, focusProps} = useFocusRing();
   let column = cell.column;
   let isSelected = state.selectionManager.isSelected(cell.parentKey);
 
@@ -337,38 +323,37 @@ export function TableCell({ cell, state, layout }) {
       {...mergeProps(gridCellProps, focusProps)}
       style={{
         width: layout.getColumnWidth(column.key),
-        padding: "5px 10px",
-        outline: isFocusVisible ? "2px solid orange inset" : "none",
-        cursor: "default",
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        textOverflow: "ellipsis",
-        display: "block",
-        flex: "0 0 auto",
+        padding: '5px 10px',
+        outline: isFocusVisible ? '2px solid orange inset' : 'none',
+        cursor: 'default',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        display: 'block',
+        flex: '0 0 auto',
         // eslint-disable-next-line no-nested-ternary
         background: isSelected
-          ? "blueviolet"
+          ? 'blueviolet'
           : cell.parentKey % 2
-          ? "var(--spectrum-gray-75)"
-          : "var(--spectrum-gray-100)",
+          ? 'var(--spectrum-gray-75)'
+          : 'var(--spectrum-gray-100)'
       }}
-      ref={ref}
-    >
+      ref={ref}>
       {cell.rendered}
     </td>
   );
 }
 
-export function TableCheckboxCell({ cell, state, layout }) {
+export function TableCheckboxCell({cell, state, layout}) {
   let ref = useRef<HTMLTableCellElement | null>(null);
-  let { gridCellProps } = useTableCell({ node: cell }, state, ref);
-  let { checkboxProps } = useTableSelectionCheckbox(
-    { key: cell.parentKey },
+  let {gridCellProps} = useTableCell({node: cell}, state, ref);
+  let {checkboxProps} = useTableSelectionCheckbox(
+    {key: cell.parentKey},
     state
   );
 
   let inputRef = useRef(null);
-  let { inputProps } = useCheckbox(
+  let {inputProps} = useCheckbox(
     checkboxProps,
     useToggleState(checkboxProps),
     inputRef
@@ -379,27 +364,26 @@ export function TableCheckboxCell({ cell, state, layout }) {
     <td
       {...gridCellProps}
       style={{
-        width: layout.getColumnWidth(column.key),
+        width: layout.getColumnWidth(column.key)
       }}
-      ref={ref}
-    >
+      ref={ref}>
       <input {...inputProps} />
     </td>
   );
 }
 
-export function TableSelectAllCell({ column, state, layout }) {
+export function TableSelectAllCell({column, state, layout}) {
   let ref = useRef<HTMLTableCellElement | null>(null);
-  let isSingleSelectionMode = state.selectionManager.selectionMode === "single";
-  let { columnHeaderProps } = useTableColumnHeader(
-    { node: column },
+  let isSingleSelectionMode = state.selectionManager.selectionMode === 'single';
+  let {columnHeaderProps} = useTableColumnHeader(
+    {node: column},
     state,
     ref
   );
 
-  let { checkboxProps } = useTableSelectAllCheckbox(state);
+  let {checkboxProps} = useTableSelectAllCheckbox(state);
   let inputRef = useRef(null);
-  let { inputProps } = useCheckbox(
+  let {inputProps} = useCheckbox(
     checkboxProps,
     useToggleState(checkboxProps),
     inputRef
@@ -409,10 +393,9 @@ export function TableSelectAllCell({ column, state, layout }) {
     <th
       {...columnHeaderProps}
       style={{
-        width: layout.getColumnWidth(column.key),
+        width: layout.getColumnWidth(column.key)
       }}
-      ref={ref}
-    >
+      ref={ref}>
       {
         /*
           In single selection mode, the checkbox will be hidden.
@@ -421,14 +404,13 @@ export function TableSelectAllCell({ column, state, layout }) {
           which for single selection will be "Select."
         */
         isSingleSelectionMode && (
-          <VisuallyHidden>{inputProps["aria-label"]}</VisuallyHidden>
+          <VisuallyHidden>{inputProps['aria-label']}</VisuallyHidden>
         )
       }
       <input
         {...inputProps}
         ref={inputRef}
-        style={isSingleSelectionMode ? { visibility: "hidden" } : undefined}
-      />
+        style={isSingleSelectionMode ? {visibility: 'hidden'} : undefined} />
     </th>
   );
 }

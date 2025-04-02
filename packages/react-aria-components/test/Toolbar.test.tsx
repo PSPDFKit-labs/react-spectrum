@@ -10,24 +10,24 @@
  * governing permissions and limitations under the License.
  */
 
-import { act, fireEvent, render, screen } from "@testing-library/react";
-import { Button, Text, Toolbar, ToolbarContext } from "../";
-import { composeStory } from "@storybook/react";
-import { I18nProvider } from "@react-aria-nutrient/i18n";
+import {act, fireEvent, render, screen} from '@testing-library/react';
+import {Button, Text, Toolbar, ToolbarContext} from '../';
+import {composeStory} from '@storybook/react';
+import {I18nProvider} from '@react-aria-nutrient/i18n';
 
 import Meta, {
-  ToolbarExample as ToolbarExampleStory,
-} from "../stories/Toolbar.stories";
-import { pointerMap } from "@react-spectrum/test-utils-internal";
-import React, { createRef } from "react";
-import userEvent from "@testing-library/user-event";
+  ToolbarExample as ToolbarExampleStory
+} from '../stories/Toolbar.stories';
+import {pointerMap} from '@react-spectrum/test-utils-internal';
+import React, {createRef} from 'react';
+import userEvent from '@testing-library/user-event';
 
 const ToolbarExample = composeStory(ToolbarExampleStory, Meta);
 
-describe("Toolbar", () => {
+describe('Toolbar', () => {
   let user;
   beforeAll(() => {
-    user = userEvent.setup({ delay: null, pointerMap });
+    user = userEvent.setup({delay: null, pointerMap});
     jest.useFakeTimers();
   });
   afterEach(() => {
@@ -36,7 +36,7 @@ describe("Toolbar", () => {
     });
   });
 
-  it("renders", async () => {
+  it('renders', async () => {
     let ref = createRef<HTMLDivElement>();
     render(
       <Toolbar ref={ref}>
@@ -52,13 +52,13 @@ describe("Toolbar", () => {
       </Toolbar>
     );
 
-    let toolbar = screen.getByRole("toolbar");
-    expect(screen.getAllByRole("button")).toHaveLength(3);
-    expect(toolbar).toHaveAttribute("class", "react-aria-Toolbar");
+    let toolbar = screen.getByRole('toolbar');
+    expect(screen.getAllByRole('button')).toHaveLength(3);
+    expect(toolbar).toHaveAttribute('class', 'react-aria-Toolbar');
     expect(ref.current).toBe(toolbar);
   });
 
-  it("renders a custom classname and data-attributes", async () => {
+  it('renders a custom classname and data-attributes', async () => {
     render(
       <Toolbar className="test" data-testid="foo">
         <Button key="alignleft">
@@ -73,16 +73,15 @@ describe("Toolbar", () => {
       </Toolbar>
     );
 
-    let toolbar = screen.getByRole("toolbar");
-    expect(toolbar).toHaveAttribute("class", "test");
-    expect(toolbar).toHaveAttribute("data-testid", "foo");
+    let toolbar = screen.getByRole('toolbar');
+    expect(toolbar).toHaveAttribute('class', 'test');
+    expect(toolbar).toHaveAttribute('data-testid', 'foo');
   });
 
-  it("supports slots", async () => {
+  it('supports slots', async () => {
     render(
       <ToolbarContext.Provider
-        value={{ slots: { test: { "aria-label": "test label" } } }}
-      >
+        value={{slots: {test: {'aria-label': 'test label'}}}}>
         <Toolbar slot="test">
           <Button key="alignleft">
             <Text>Align left</Text>
@@ -97,15 +96,15 @@ describe("Toolbar", () => {
       </ToolbarContext.Provider>
     );
 
-    let toolbar = screen.getByRole("toolbar");
-    expect(toolbar).toHaveAttribute("slot", "test");
-    expect(toolbar).toHaveAttribute("aria-label", "test label");
+    let toolbar = screen.getByRole('toolbar');
+    expect(toolbar).toHaveAttribute('slot', 'test');
+    expect(toolbar).toHaveAttribute('aria-label', 'test label');
   });
 
-  it("support render props", async () => {
+  it('support render props', async () => {
     render(
       <Toolbar>
-        {({ orientation }) => (
+        {({orientation}) => (
           <div data-testid="foo" data-test={orientation}>
             <Button key="alignleft">
               <Text>Align left</Text>
@@ -121,12 +120,12 @@ describe("Toolbar", () => {
       </Toolbar>
     );
 
-    let toolbar = screen.getByTestId("foo");
-    expect(toolbar).toHaveAttribute("data-test", "horizontal");
+    let toolbar = screen.getByTestId('foo');
+    expect(toolbar).toHaveAttribute('data-test', 'horizontal');
   });
 
-  it("renders dividers", async () => {
-    const { rerender } = render(
+  it('renders dividers', async () => {
+    const {rerender} = render(
       <Toolbar>
         <Button key="alignleft">
           <Text>Align left</Text>
@@ -142,7 +141,7 @@ describe("Toolbar", () => {
       </Toolbar>
     );
 
-    expect(screen.getAllByRole("separator")).toHaveLength(2);
+    expect(screen.getAllByRole('separator')).toHaveLength(2);
 
     rerender(
       <Toolbar orientation="vertical">
@@ -159,10 +158,10 @@ describe("Toolbar", () => {
         </Button>
       </Toolbar>
     );
-    expect(screen.getAllByRole("separator")).toHaveLength(2);
+    expect(screen.getAllByRole('separator')).toHaveLength(2);
   });
 
-  it("sets aria-label", async () => {
+  it('sets aria-label', async () => {
     render(
       <>
         <span id="toolbar-label">Toolbar aria-labelledby</span>
@@ -180,15 +179,15 @@ describe("Toolbar", () => {
       </>
     );
 
-    expect(screen.getByLabelText("Toolbar aria-label")).not.toHaveAttribute(
-      "aria-labelledby"
+    expect(screen.getByLabelText('Toolbar aria-label')).not.toHaveAttribute(
+      'aria-labelledby'
     );
-    expect(screen.getByLabelText("Toolbar aria-label 2")).not.toHaveAttribute(
-      "aria-labelledby"
+    expect(screen.getByLabelText('Toolbar aria-label 2')).not.toHaveAttribute(
+      'aria-labelledby'
     );
   });
 
-  it("supports keyboard navigation", async () => {
+  it('supports keyboard navigation', async () => {
     render(
       <>
         <Button>Before</Button>
@@ -218,13 +217,13 @@ describe("Toolbar", () => {
       </>
     );
 
-    const before = screen.getByRole("button", { name: "Before" });
-    const alignLeft = screen.getByRole("button", { name: "Align left" });
-    const alignCenter = screen.getByRole("button", { name: "Align center" });
-    const alignRight = screen.getByRole("button", { name: "Align right" });
-    const zoomIn = screen.getByRole("button", { name: "Zoom in" });
-    const zoomOut = screen.getByRole("button", { name: "Zoom out" });
-    const after = screen.getByRole("button", { name: "After" });
+    const before = screen.getByRole('button', {name: 'Before'});
+    const alignLeft = screen.getByRole('button', {name: 'Align left'});
+    const alignCenter = screen.getByRole('button', {name: 'Align center'});
+    const alignRight = screen.getByRole('button', {name: 'Align right'});
+    const zoomIn = screen.getByRole('button', {name: 'Zoom in'});
+    const zoomOut = screen.getByRole('button', {name: 'Zoom out'});
+    const after = screen.getByRole('button', {name: 'After'});
 
     await user.tab();
 
@@ -233,17 +232,17 @@ describe("Toolbar", () => {
     expect(alignLeft).toHaveFocus();
 
     // Right arrow key navigates to next action buttons
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(alignCenter).toHaveFocus();
     // Down arrow key does nothing when horizontally oriented
-    await user.keyboard("{ArrowDown}");
+    await user.keyboard('{ArrowDown}');
     expect(alignCenter).toHaveFocus();
 
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     // Arrow keys navigate across dividers to other action groups
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(zoomIn).toHaveFocus();
-    await user.keyboard("{ArrowLeft}");
+    await user.keyboard('{ArrowLeft}');
     expect(alignRight).toHaveFocus();
 
     // Tab exits and shift-tab re-enters the toolbar at the last focused action button
@@ -257,10 +256,10 @@ describe("Toolbar", () => {
     });
     expect(after).toHaveFocus();
 
-    await user.tab({ shift: true });
+    await user.tab({shift: true});
     expect(alignRight).toHaveFocus();
 
-    await user.tab({ shift: true });
+    await user.tab({shift: true});
     act(() => {
       before.focus();
     });
@@ -270,13 +269,13 @@ describe("Toolbar", () => {
     expect(alignRight).toHaveFocus();
 
     // Left arrow key navigates to previous action buttons
-    await user.keyboard("{ArrowLeft}");
+    await user.keyboard('{ArrowLeft}');
     expect(alignCenter).toHaveFocus();
     // Up arrow key does nothing when horizontally oriented
-    await user.keyboard("{ArrowUp}");
+    await user.keyboard('{ArrowUp}');
     expect(alignCenter).toHaveFocus();
 
-    await user.keyboard("{ArrowLeft}");
+    await user.keyboard('{ArrowLeft}');
     // Blurring then tabbing re-enters toolbar at the last focused action button
     fireEvent.blur(alignLeft);
     act(() => {
@@ -286,18 +285,18 @@ describe("Toolbar", () => {
     expect(alignLeft).toHaveFocus();
 
     // Arrow keys do not wrap across collection
-    await user.keyboard("{ArrowLeft}");
+    await user.keyboard('{ArrowLeft}');
     expect(alignLeft).toHaveFocus();
     await user.click(zoomOut);
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(zoomOut).toHaveFocus();
 
     // Other keys don't affect focus
-    await user.keyboard("{Enter}");
+    await user.keyboard('{Enter}');
     expect(zoomOut).toHaveFocus();
   });
 
-  it("supports keyboard navigation with orientation vertical", async () => {
+  it('supports keyboard navigation with orientation vertical', async () => {
     render(
       <>
         <Button>Before</Button>
@@ -327,13 +326,13 @@ describe("Toolbar", () => {
       </>
     );
 
-    const before = screen.getByRole("button", { name: "Before" });
-    const alignLeft = screen.getByRole("button", { name: "Align left" });
-    const alignCenter = screen.getByRole("button", { name: "Align center" });
-    const alignRight = screen.getByRole("button", { name: "Align right" });
-    const zoomIn = screen.getByRole("button", { name: "Zoom in" });
-    const zoomOut = screen.getByRole("button", { name: "Zoom out" });
-    const after = screen.getByRole("button", { name: "After" });
+    const before = screen.getByRole('button', {name: 'Before'});
+    const alignLeft = screen.getByRole('button', {name: 'Align left'});
+    const alignCenter = screen.getByRole('button', {name: 'Align center'});
+    const alignRight = screen.getByRole('button', {name: 'Align right'});
+    const zoomIn = screen.getByRole('button', {name: 'Zoom in'});
+    const zoomOut = screen.getByRole('button', {name: 'Zoom out'});
+    const after = screen.getByRole('button', {name: 'After'});
 
     await user.tab();
 
@@ -342,17 +341,17 @@ describe("Toolbar", () => {
     expect(alignLeft).toHaveFocus();
 
     // Down arrow key navigates to next action buttons
-    await user.keyboard("{ArrowDown}");
+    await user.keyboard('{ArrowDown}');
     expect(alignCenter).toHaveFocus();
     // Right arrow key does nothing when vertically oriented
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(alignCenter).toHaveFocus();
 
-    await user.keyboard("{ArrowDown}");
+    await user.keyboard('{ArrowDown}');
     // Arrow keys navigate across dividers to other action groups
-    await user.keyboard("{ArrowDown}");
+    await user.keyboard('{ArrowDown}');
     expect(zoomIn).toHaveFocus();
-    await user.keyboard("{ArrowUp}");
+    await user.keyboard('{ArrowUp}');
     expect(alignRight).toHaveFocus();
 
     // Tab exits and shift-tab re-enters the toolbar at the last focused action button
@@ -366,10 +365,10 @@ describe("Toolbar", () => {
     });
     expect(after).toHaveFocus();
 
-    await user.tab({ shift: true });
+    await user.tab({shift: true});
     expect(alignRight).toHaveFocus();
 
-    await user.tab({ shift: true });
+    await user.tab({shift: true});
     act(() => {
       before.focus();
     });
@@ -379,13 +378,13 @@ describe("Toolbar", () => {
     expect(alignRight).toHaveFocus();
 
     // Up arrow key navigates to previous action buttons
-    await user.keyboard("{ArrowUp}");
+    await user.keyboard('{ArrowUp}');
     expect(alignCenter).toHaveFocus();
     // Left arrow key does nothing when vertically oriented
-    await user.keyboard("{ArrowLeft}");
+    await user.keyboard('{ArrowLeft}');
     expect(alignCenter).toHaveFocus();
 
-    await user.keyboard("{ArrowLeft}");
+    await user.keyboard('{ArrowLeft}');
     // Blurring then tabbing re-enters toolbar at the last focused action button
     fireEvent.blur(alignLeft);
     act(() => {
@@ -395,18 +394,18 @@ describe("Toolbar", () => {
     expect(alignLeft).toHaveFocus();
 
     // Arrow keys do not wrap across collection
-    await user.keyboard("{ArrowUp}");
+    await user.keyboard('{ArrowUp}');
     expect(alignLeft).toHaveFocus();
     await user.click(zoomOut);
-    await user.keyboard("{ArrowDown}");
+    await user.keyboard('{ArrowDown}');
     expect(zoomOut).toHaveFocus();
 
     // Other keys don't affect focus
-    await user.keyboard("{Enter}");
+    await user.keyboard('{Enter}');
     expect(zoomOut).toHaveFocus();
   });
 
-  it("supports RTL", async () => {
+  it('supports RTL', async () => {
     render(
       <I18nProvider locale="he-IL">
         <Button>Before</Button>
@@ -438,33 +437,33 @@ describe("Toolbar", () => {
 
     await user.tab();
     await user.tab();
-    expect(screen.getByRole("button", { name: "Align left" })).toHaveFocus();
+    expect(screen.getByRole('button', {name: 'Align left'})).toHaveFocus();
 
     // Left arrow key navigates to next action buttons
-    await user.keyboard("{ArrowLeft}");
-    expect(screen.getByRole("button", { name: "Align center" })).toHaveFocus();
-    await user.keyboard("{ArrowUp}");
-    expect(screen.getByRole("button", { name: "Align center" })).toHaveFocus();
+    await user.keyboard('{ArrowLeft}');
+    expect(screen.getByRole('button', {name: 'Align center'})).toHaveFocus();
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('button', {name: 'Align center'})).toHaveFocus();
 
-    await user.keyboard("{ArrowLeft}");
+    await user.keyboard('{ArrowLeft}');
     // Right arrow key navigates to previous action buttons
-    await user.keyboard("{ArrowRight}");
-    expect(screen.getByRole("button", { name: "Align center" })).toHaveFocus();
-    await user.keyboard("{ArrowDown}");
-    expect(screen.getByRole("button", { name: "Align center" })).toHaveFocus();
+    await user.keyboard('{ArrowRight}');
+    expect(screen.getByRole('button', {name: 'Align center'})).toHaveFocus();
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('button', {name: 'Align center'})).toHaveFocus();
   });
 
-  it("supports all the aria example children", async () => {
+  it('supports all the aria example children', async () => {
     render(<ToolbarExample />);
 
-    let before = screen.getByRole("textbox", { name: "Input Before Toolbar" });
-    let boldButton = screen.getByRole("button", { name: "B" });
-    let underlineButton = screen.getByRole("button", { name: "U" });
-    let italicButton = screen.getByRole("button", { name: "I" });
-    let nightModeCheckbox = screen.getByRole("checkbox", {
-      name: "Night Mode",
+    let before = screen.getByRole('textbox', {name: 'Input Before Toolbar'});
+    let boldButton = screen.getByRole('button', {name: 'B'});
+    let underlineButton = screen.getByRole('button', {name: 'U'});
+    let italicButton = screen.getByRole('button', {name: 'I'});
+    let nightModeCheckbox = screen.getByRole('checkbox', {
+      name: 'Night Mode'
     });
-    let helpLink = screen.getByRole("link", { name: "Help" });
+    let helpLink = screen.getByRole('link', {name: 'Help'});
 
     await user.tab();
     expect(before).toHaveFocus();
@@ -472,16 +471,16 @@ describe("Toolbar", () => {
     expect(boldButton).toHaveFocus();
     // can't unit test the tab out and back in for some reason, but it works in browsers
 
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(underlineButton).toHaveFocus();
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(italicButton).toHaveFocus();
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(nightModeCheckbox).toHaveFocus();
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(helpLink).toHaveFocus();
     // reached the end, should not wrap
-    await user.keyboard("{ArrowRight}");
+    await user.keyboard('{ArrowRight}');
     expect(helpLink).toHaveFocus();
   });
 });

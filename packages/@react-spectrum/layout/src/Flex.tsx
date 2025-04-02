@@ -17,20 +17,20 @@ import {
   StyleHandlers,
   useBreakpoint,
   useDOMRef,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { FlexProps } from "@react-types/layout";
-import React, { forwardRef } from "react";
-import styles from "./flex-gap.css";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {FlexProps} from '@react-types/layout';
+import React, {forwardRef} from 'react';
+import styles from './flex-gap.css';
 
 const flexStyleProps: StyleHandlers = {
-  direction: ["flexDirection", passthroughStyle],
-  wrap: ["flexWrap", flexWrapValue],
-  justifyContent: ["justifyContent", flexAlignValue],
-  alignItems: ["alignItems", flexAlignValue],
-  alignContent: ["alignContent", flexAlignValue],
+  direction: ['flexDirection', passthroughStyle],
+  wrap: ['flexWrap', flexWrapValue],
+  justifyContent: ['justifyContent', flexAlignValue],
+  alignItems: ['alignItems', flexAlignValue],
+  alignContent: ['alignContent', flexAlignValue]
 };
 
 /**
@@ -41,16 +41,16 @@ export const Flex = forwardRef(function Flex(
   props: FlexProps,
   ref: DOMRef<HTMLDivElement>
 ) {
-  let { children, ...otherProps } = props;
+  let {children, ...otherProps} = props;
   let breakpointProvider = useBreakpoint();
-  let matchedBreakpoints = breakpointProvider?.matchedBreakpoints || ["base"];
-  let { styleProps } = useStyleProps(otherProps);
-  let { styleProps: flexStyle } = useStyleProps(otherProps, flexStyleProps);
+  let matchedBreakpoints = breakpointProvider?.matchedBreakpoints || ['base'];
+  let {styleProps} = useStyleProps(otherProps);
+  let {styleProps: flexStyle} = useStyleProps(otherProps, flexStyleProps);
   let domRef = useDOMRef(ref);
 
   let style = {
     ...styleProps.style,
-    ...flexStyle.style,
+    ...flexStyle.style
   };
 
   if (props.gap != null) {
@@ -71,10 +71,9 @@ export const Flex = forwardRef(function Flex(
   return (
     <div
       {...filterDOMProps(otherProps)}
-      className={classNames(styles, "flex", styleProps.className)}
+      className={classNames(styles, 'flex', styleProps.className)}
       style={style}
-      ref={domRef}
-    >
+      ref={domRef}>
       {children}
     </div>
   );
@@ -85,12 +84,12 @@ export const Flex = forwardRef(function Flex(
  * in flex containers for browser compatibility.
  */
 function flexAlignValue(value) {
-  if (value === "start") {
-    return "flex-start";
+  if (value === 'start') {
+    return 'flex-start';
   }
 
-  if (value === "end") {
-    return "flex-end";
+  if (value === 'end') {
+    return 'flex-end';
   }
 
   return value;
@@ -100,8 +99,8 @@ function flexAlignValue(value) {
  * Takes a boolean and translates it to flex wrap or nowrap.
  */
 function flexWrapValue(value) {
-  if (typeof value === "boolean") {
-    return value ? "wrap" : "nowrap";
+  if (typeof value === 'boolean') {
+    return value ? 'wrap' : 'nowrap';
   }
 
   return value;

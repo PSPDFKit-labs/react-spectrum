@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-import { classNames, useDOMRef, useStyleProps } from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import React, { forwardRef } from "react";
-import { SpectrumStatusLightProps } from "@react-types/statuslight";
-import styles from "@adobe/spectrum-css-temp/components/statuslight/vars.css";
-import { useProviderProps } from "@react-spectrum/provider";
+import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import React, {forwardRef} from 'react';
+import {SpectrumStatusLightProps} from '@react-types/statuslight';
+import styles from '@adobe/spectrum-css-temp/components/statuslight/vars.css';
+import {useProviderProps} from '@react-spectrum/provider';
 
 /**
  * Status lights are used to color code categories and labels commonly found in data visualization.
@@ -26,45 +26,44 @@ export const StatusLight = forwardRef(function StatusLight(
   props: SpectrumStatusLightProps,
   ref: DOMRef<HTMLDivElement>
 ) {
-  let { variant, children, isDisabled, role, ...otherProps } =
+  let {variant, children, isDisabled, role, ...otherProps} =
     useProviderProps(props);
   let domRef = useDOMRef(ref);
-  let { styleProps } = useStyleProps(otherProps);
+  let {styleProps} = useStyleProps(otherProps);
 
   if (
     !children &&
-    !props["aria-label"] &&
-    process.env.NODE_ENV !== "production"
+    !props['aria-label'] &&
+    process.env.NODE_ENV !== 'production'
   ) {
     console.warn(
-      "If no children are provided, an aria-label must be specified"
+      'If no children are provided, an aria-label must be specified'
     );
   }
 
   if (
     !role &&
-    (props["aria-label"] || props["aria-labelledby"]) &&
-    process.env.NODE_ENV !== "production"
+    (props['aria-label'] || props['aria-labelledby']) &&
+    process.env.NODE_ENV !== 'production'
   ) {
-    console.warn("A labelled StatusLight must have a role.");
+    console.warn('A labelled StatusLight must have a role.');
   }
 
   return (
     <div
-      {...filterDOMProps(otherProps, { labelable: !!role })}
+      {...filterDOMProps(otherProps, {labelable: !!role})}
       {...styleProps}
       role={role}
       className={classNames(
         styles,
-        "spectrum-StatusLight",
+        'spectrum-StatusLight',
         `spectrum-StatusLight--${variant}`,
         {
-          "is-disabled": isDisabled,
+          'is-disabled': isDisabled
         },
         styleProps.className
       )}
-      ref={domRef}
-    >
+      ref={domRef}>
       {children}
     </div>
   );

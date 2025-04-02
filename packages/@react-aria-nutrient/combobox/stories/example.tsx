@@ -10,19 +10,19 @@
  * governing permissions and limitations under the License.
  */
 
-import { DismissButton, useOverlay } from "@react-aria-nutrient/overlays";
-import { FocusScope } from "@react-aria-nutrient/focus";
-import React from "react";
-import { useButton } from "@react-aria-nutrient/button";
-import { useComboBox } from "@react-aria-nutrient/combobox";
-import { useComboBoxState } from "@react-stately/combobox";
-import { useFilter } from "@react-aria-nutrient/i18n";
-import { useListBox, useOption } from "@react-aria-nutrient/listbox";
+import {DismissButton, useOverlay} from '@react-aria-nutrient/overlays';
+import {FocusScope} from '@react-aria-nutrient/focus';
+import React from 'react';
+import {useButton} from '@react-aria-nutrient/button';
+import {useComboBox} from '@react-aria-nutrient/combobox';
+import {useComboBoxState} from '@react-stately/combobox';
+import {useFilter} from '@react-aria-nutrient/i18n';
+import {useListBox, useOption} from '@react-aria-nutrient/listbox';
 
 export function ComboBox(props) {
   // Setup filter function and state.
-  let { contains } = useFilter({ sensitivity: "base" });
-  let state = useComboBoxState({ ...props, defaultFilter: contains });
+  let {contains} = useFilter({sensitivity: 'base'});
+  let state = useComboBoxState({...props, defaultFilter: contains});
 
   // Setup refs and get props for child elements.
   let buttonRef = React.useRef(null);
@@ -34,14 +34,14 @@ export function ComboBox(props) {
     buttonProps: triggerProps,
     inputProps,
     listBoxProps,
-    labelProps,
+    labelProps
   } = useComboBox(
     {
       ...props,
       inputRef,
       buttonRef,
       listBoxRef,
-      popoverRef,
+      popoverRef
     },
     state
   );
@@ -49,31 +49,29 @@ export function ComboBox(props) {
   // Call useButton to get props for the button element. Alternatively, you can
   // pass the triggerProps to a separate Button component using useButton
   // that you might already have in your component library.
-  let { buttonProps } = useButton(triggerProps, buttonRef);
+  let {buttonProps} = useButton(triggerProps, buttonRef);
 
   return (
-    <div style={{ display: "inline-flex", flexDirection: "column" }}>
+    <div style={{display: 'inline-flex', flexDirection: 'column'}}>
       <label {...labelProps}>{props.label}</label>
-      <div style={{ position: "relative", display: "inline-block" }}>
+      <div style={{position: 'relative', display: 'inline-block'}}>
         <input
           {...inputProps}
           ref={inputRef}
           style={{
             height: 24,
-            boxSizing: "border-box",
+            boxSizing: 'border-box',
             marginRight: 0,
-            fontSize: 16,
-          }}
-        />
+            fontSize: 16
+          }} />
         <button
           {...buttonProps}
           ref={buttonRef}
           style={{
             height: 24,
-            marginLeft: 0,
-          }}
-        >
-          <span aria-hidden="true" style={{ padding: "0 2px" }}>
+            marginLeft: 0
+          }}>
+          <span aria-hidden="true" style={{padding: '0 2px'}}>
             ▼
           </span>
         </button>
@@ -81,8 +79,7 @@ export function ComboBox(props) {
           <Popover
             popoverRef={popoverRef}
             isOpen={state.isOpen}
-            onClose={state.close}
-          >
+            onClose={state.close}>
             <ListBox {...listBoxProps} listBoxRef={listBoxRef} state={state} />
           </Popover>
         )}
@@ -93,16 +90,16 @@ export function ComboBox(props) {
 
 function Popover(props) {
   let ref = React.useRef(undefined);
-  let { popoverRef = ref, isOpen, onClose, children } = props;
+  let {popoverRef = ref, isOpen, onClose, children} = props;
 
   // Handle events that should cause the popup to close,
   // e.g. blur, clicking outside, or pressing the escape key.
-  let { overlayProps } = useOverlay(
+  let {overlayProps} = useOverlay(
     {
       isOpen,
       onClose,
       shouldCloseOnBlur: true,
-      isDismissable: true,
+      isDismissable: true
     },
     popoverRef
   );
@@ -115,13 +112,12 @@ function Popover(props) {
         {...overlayProps}
         ref={popoverRef}
         style={{
-          position: "absolute",
-          width: "100%",
-          border: "1px solid gray",
-          background: "lightgray",
-          marginTop: 4,
-        }}
-      >
+          position: 'absolute',
+          width: '100%',
+          border: '1px solid gray',
+          background: 'lightgray',
+          marginTop: 4
+        }}>
         {children}
         <DismissButton onDismiss={onClose} />
       </div>
@@ -131,8 +127,8 @@ function Popover(props) {
 
 function ListBox(props) {
   let ref = React.useRef(undefined);
-  let { listBoxRef = ref, state } = props;
-  let { listBoxProps } = useListBox(props, state, listBoxRef);
+  let {listBoxRef = ref, state} = props;
+  let {listBoxProps} = useListBox(props, state, listBoxRef);
 
   return (
     <ul
@@ -141,11 +137,10 @@ function ListBox(props) {
       style={{
         margin: 0,
         padding: 0,
-        listStyle: "none",
-        maxHeight: "150px",
-        overflow: "auto",
-      }}
-    >
+        listStyle: 'none',
+        maxHeight: '150px',
+        overflow: 'auto'
+      }}>
       {[...state.collection].map((item) => (
         <Option key={item.key} item={item} state={state} />
       ))}
@@ -153,25 +148,25 @@ function ListBox(props) {
   );
 }
 
-function Option({ item, state }) {
+function Option({item, state}) {
   let ref = React.useRef<HTMLLIElement | null>(null);
-  let { optionProps, isSelected, isFocused, isDisabled } = useOption(
-    { key: item.key },
+  let {optionProps, isSelected, isFocused, isDisabled} = useOption(
+    {key: item.key},
     state,
     ref
   );
 
   let backgroundColor;
-  let color = "black";
+  let color = 'black';
 
   if (isSelected) {
-    backgroundColor = "blueviolet";
-    color = "white";
+    backgroundColor = 'blueviolet';
+    color = 'white';
   } else if (isFocused) {
-    backgroundColor = "gray";
+    backgroundColor = 'gray';
   } else if (isDisabled) {
-    backgroundColor = "transparent";
-    color = "gray";
+    backgroundColor = 'transparent';
+    color = 'gray';
   }
 
   return (
@@ -181,11 +176,10 @@ function Option({ item, state }) {
       style={{
         background: backgroundColor,
         color: color,
-        padding: "2px 5px",
-        outline: "none",
-        cursor: "pointer",
-      }}
-    >
+        padding: '2px 5px',
+        outline: 'none',
+        cursor: 'pointer'
+      }}>
       {item.rendered}
     </li>
   );

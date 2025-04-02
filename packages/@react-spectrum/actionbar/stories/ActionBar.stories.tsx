@@ -10,33 +10,33 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
-import { ActionBar } from "../src";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Example } from "./Example";
-import React from "react";
-import { useViewportSize } from "@react-aria-nutrient/utils";
+import {action} from '@storybook/addon-actions';
+import {ActionBar} from '../src';
+import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
+import {Example} from './Example';
+import React from 'react';
+import {useViewportSize} from '@react-aria-nutrient/utils';
 
 export default {
-  title: "ActionBar",
+  title: 'ActionBar',
   component: ActionBar,
   args: {
-    onAction: action("onAction"),
+    onAction: action('onAction')
   },
   argTypes: {
     onAction: {
       table: {
-        disable: true,
-      },
+        disable: true
+      }
     },
     isEmphasized: {
-      control: "boolean",
+      control: 'boolean'
     },
     buttonLabelBehavior: {
-      control: "select",
-      options: ["show", "hide", "collapse"],
-    },
-  },
+      control: 'select',
+      options: ['show', 'hide', 'collapse']
+    }
+  }
 } as ComponentMeta<typeof ActionBar>;
 
 export type ActionBarStory = ComponentStoryObj<any>;
@@ -48,16 +48,16 @@ export const Default: ActionBarStory = {
       config: {
         // Fails due to TableView's known issue, ignoring here since it isn't pertinent to the story
         rules: [
-          { id: "aria-required-children", selector: '*:not([role="grid"])' },
-        ],
-      },
-    },
-  },
+          {id: 'aria-required-children', selector: '*:not([role="grid"])'}
+        ]
+      }
+    }
+  }
 };
 
 export const FullWidthStory: ActionBarStory = {
   ...Default,
-  render: (args) => <FullWidth {...args} />,
+  render: (args) => <FullWidth {...args} />
 };
 
 function FullWidth(props) {
@@ -67,16 +67,15 @@ function FullWidth(props) {
       tableWidth="100vw"
       containerHeight={viewport.height}
       isQuiet
-      {...props}
-    />
+      {...props} />
   );
 }
 
 export const DisabledKeysStory: ActionBarStory = {
   ...Default,
-  render: (args) => <DisabledKeys {...args} />,
+  render: (args) => <DisabledKeys {...args} />
 };
 
 function DisabledKeys(props) {
-  return <Example disabledKeys={["edit"]} {...props} />;
+  return <Example disabledKeys={['edit']} {...props} />;
 }

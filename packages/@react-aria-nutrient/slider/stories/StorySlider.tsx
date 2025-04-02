@@ -10,19 +10,19 @@
  * governing permissions and limitations under the License.
  */
 
-import { AriaSliderProps } from "@react-types/slider";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import React from "react";
-import styles from "./story-slider.css";
-import { useNumberFormatter } from "@react-aria-nutrient/i18n";
-import { useSlider, useSliderThumb } from "@react-aria-nutrient/slider";
-import { useSliderState } from "@react-stately/slider";
-import { VisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+import {AriaSliderProps} from '@react-types/slider';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import React from 'react';
+import styles from './story-slider.css';
+import {useNumberFormatter} from '@react-aria-nutrient/i18n';
+import {useSlider, useSliderThumb} from '@react-aria-nutrient/slider';
+import {useSliderState} from '@react-stately/slider';
+import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 interface StorySliderProps extends AriaSliderProps<number> {
-  origin?: number;
-  showTip?: boolean;
-  formatOptions?: Intl.NumberFormatOptions;
+  origin?: number,
+  showTip?: boolean,
+  formatOptions?: Intl.NumberFormatOptions
 }
 
 export function StorySlider(props: StorySliderProps) {
@@ -41,22 +41,22 @@ export function StorySlider(props: StorySliderProps) {
     onChangeEnd:
       props.onChangeEnd == null
         ? undefined
-        : (vals: number[]) => props.onChangeEnd?.(vals[0]),
+        : (vals: number[]) => props.onChangeEnd?.(vals[0])
   };
   const formatter = useNumberFormatter(props.formatOptions);
-  const state = useSliderState({ ...multiProps, numberFormatter: formatter });
-  const { groupProps, trackProps, labelProps, outputProps } = useSlider(
+  const state = useSliderState({...multiProps, numberFormatter: formatter});
+  const {groupProps, trackProps, labelProps, outputProps} = useSlider(
     multiProps,
     state,
     trackRef
   );
 
-  const { thumbProps, inputProps } = useSliderThumb(
+  const {thumbProps, inputProps} = useSliderThumb(
     {
       index: 0,
       isDisabled: props.isDisabled,
       trackRef,
-      inputRef,
+      inputRef
     },
     state
   );
@@ -89,29 +89,25 @@ export function StorySlider(props: StorySliderProps) {
               (state.getValuePercent(Math.max(value, origin)) -
                 state.getValuePercent(Math.min(value, origin))) *
               100
-            }%`,
-          }}
-        />
+            }%`
+          }} />
         <div ref={trackRef} className={styles.track} {...trackProps} />
         <FocusRing
           within
           focusRingClass={styles.thumbFocusVisible}
-          focusClass={styles.thumbFocused}
-        >
+          focusClass={styles.thumbFocused}>
           <div
             className={styles.thumb}
             style={{
-              left: `${state.getThumbPercent(0) * 100}%`,
-            }}
-          >
+              left: `${state.getThumbPercent(0) * 100}%`
+            }}>
             {/* We put thumbProps on thumbHandle, so that you cannot drag by the tip */}
             <div {...thumbProps} className={styles.thumbHandle}>
               <VisuallyHidden>
                 <input
                   className={styles.input}
                   ref={inputRef}
-                  {...inputProps}
-                />
+                  {...inputProps} />
               </VisuallyHidden>
             </div>
             {props.showTip && (

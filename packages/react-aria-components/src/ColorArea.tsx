@@ -1,27 +1,27 @@
-import { AriaColorAreaProps, useColorArea } from "react-aria";
-import { ColorAreaContext } from "./RSPContexts";
-import { ColorAreaState, useColorAreaState } from "react-stately";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { InternalColorThumbContext } from "./ColorThumb";
+import {AriaColorAreaProps, useColorArea} from 'react-aria';
+import {ColorAreaContext} from './RSPContexts';
+import {ColorAreaState, useColorAreaState} from 'react-stately';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {InternalColorThumbContext} from './ColorThumb';
 import {
   Provider,
   RenderProps,
   SlotProps,
   useContextProps,
-  useRenderProps,
-} from "./utils";
-import React, { createContext, ForwardedRef, forwardRef, useRef } from "react";
+  useRenderProps
+} from './utils';
+import React, {createContext, ForwardedRef, forwardRef, useRef} from 'react';
 
 export interface ColorAreaRenderProps {
   /**
    * Whether the color area is disabled.
    * @selector [data-disabled]
    */
-  isDisabled: boolean;
+  isDisabled: boolean,
   /**
    * State of the color area.
    */
-  state: ColorAreaState;
+  state: ColorAreaState
 }
 
 export interface ColorAreaProps
@@ -43,24 +43,24 @@ export const ColorArea = forwardRef(function ColorArea(
   let inputYRef = useRef(null);
 
   let state = useColorAreaState(props);
-  let { colorAreaProps, xInputProps, yInputProps, thumbProps } = useColorArea(
+  let {colorAreaProps, xInputProps, yInputProps, thumbProps} = useColorArea(
     {
       ...props,
       inputXRef,
       inputYRef,
-      containerRef: ref,
+      containerRef: ref
     },
     state
   );
 
   let renderProps = useRenderProps({
     ...props,
-    defaultClassName: "react-aria-ColorArea",
+    defaultClassName: 'react-aria-ColorArea',
     defaultStyle: colorAreaProps.style,
     values: {
       state,
-      isDisabled: props.isDisabled || false,
-    },
+      isDisabled: props.isDisabled || false
+    }
   });
 
   let DOMProps = filterDOMProps(props);
@@ -73,8 +73,7 @@ export const ColorArea = forwardRef(function ColorArea(
       {...DOMProps}
       {...renderProps}
       slot={props.slot || undefined}
-      data-disabled={props.isDisabled || undefined}
-    >
+      data-disabled={props.isDisabled || undefined}>
       <Provider
         values={[
           [ColorAreaStateContext, state],
@@ -87,11 +86,10 @@ export const ColorArea = forwardRef(function ColorArea(
               xInputProps,
               inputYRef,
               yInputProps,
-              isDisabled: props.isDisabled,
-            },
-          ],
-        ]}
-      >
+              isDisabled: props.isDisabled
+            }
+          ]
+        ]}>
         {renderProps.children}
       </Provider>
     </div>

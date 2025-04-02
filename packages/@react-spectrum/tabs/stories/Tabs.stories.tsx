@@ -10,180 +10,179 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
-import { ActionGroup, Flex, Heading, Text } from "@adobe/react-spectrum";
-import Bookmark from "@spectrum-icons/workflow/Bookmark";
-import { Button } from "@react-spectrum/button";
-import { ButtonGroup } from "@react-spectrum/buttongroup";
-import Calendar from "@spectrum-icons/workflow/Calendar";
-import Dashboard from "@spectrum-icons/workflow/Dashboard";
-import { Item, TabList, TabPanels, Tabs } from "..";
-import { Key } from "@react-types/shared";
-import { Picker } from "@react-spectrum/picker";
-import React, { ReactNode, useState } from "react";
-import { RouterProvider } from "@react-aria-nutrient/utils";
-import { SpectrumTabsProps } from "@react-types/tabs";
-import { TextField } from "@react-spectrum/textfield";
+import {action} from '@storybook/addon-actions';
+import {ActionGroup, Flex, Heading, Text} from '@adobe/react-spectrum';
+import Bookmark from '@spectrum-icons/workflow/Bookmark';
+import {Button} from '@react-spectrum/button';
+import {ButtonGroup} from '@react-spectrum/buttongroup';
+import Calendar from '@spectrum-icons/workflow/Calendar';
+import Dashboard from '@spectrum-icons/workflow/Dashboard';
+import {Item, TabList, TabPanels, Tabs} from '..';
+import {Key} from '@react-types/shared';
+import {Picker} from '@react-spectrum/picker';
+import React, {ReactNode, useState} from 'react';
+import {RouterProvider} from '@react-aria-nutrient/utils';
+import {SpectrumTabsProps} from '@react-types/tabs';
+import {TextField} from '@react-spectrum/textfield';
 
 export default {
-  title: "Tabs",
+  title: 'Tabs'
 };
 
 export const Default = () => render();
 export const WithFalsyItemKey = () => renderWithFalsyKey();
 
 WithFalsyItemKey.story = {
-  name: "with falsy item key",
+  name: 'with falsy item key'
 };
 
 export const DefaultSelectedKeyVal2 = () =>
-  render({ defaultSelectedKey: "val2" });
+  render({defaultSelectedKey: 'val2'});
 
 DefaultSelectedKeyVal2.story = {
-  name: "defaultSelectedKey: val2",
+  name: 'defaultSelectedKey: val2'
 };
 
-export const ControlledSelectedKeyVal3 = () => render({ selectedKey: "val3" });
+export const ControlledSelectedKeyVal3 = () => render({selectedKey: 'val3'});
 
 ControlledSelectedKeyVal3.story = {
-  name: "controlled: selectedKey: val3",
+  name: 'controlled: selectedKey: val3'
 };
 
-export const OrientationVertical = () => render({ orientation: "vertical" });
+export const OrientationVertical = () => render({orientation: 'vertical'});
 
 OrientationVertical.story = {
-  name: "orientation: vertical",
+  name: 'orientation: vertical'
 };
 
-export const DensityCompact = () => render({ density: "compact" });
+export const DensityCompact = () => render({density: 'compact'});
 
 DensityCompact.story = {
-  name: "density: compact",
+  name: 'density: compact'
 };
 
-export const IsQuiet = () => render({ isQuiet: true });
+export const IsQuiet = () => render({isQuiet: true});
 
 IsQuiet.story = {
-  name: "isQuiet",
+  name: 'isQuiet'
 };
 
 export const IsQuietDensityCompact = () =>
-  render({ isQuiet: true, density: "compact" });
+  render({isQuiet: true, density: 'compact'});
 
 IsQuietDensityCompact.story = {
-  name: "isQuiet, density: compact",
+  name: 'isQuiet, density: compact'
 };
 
 export const DensityCompactOrientationVertical = () =>
-  render({ density: "compact", orientation: "vertical" });
+  render({density: 'compact', orientation: 'vertical'});
 
 DensityCompactOrientationVertical.story = {
-  name: "density: compact, orientation: vertical",
+  name: 'density: compact, orientation: vertical'
 };
 
 export const Icons = () => renderWithIcons();
 
 Icons.story = {
-  name: "icons",
+  name: 'icons'
 };
 
 export const IconsDensityCompact = () =>
-  renderWithIcons({ density: "compact" });
+  renderWithIcons({density: 'compact'});
 
 IconsDensityCompact.story = {
-  name: "icons, density: compact",
+  name: 'icons, density: compact'
 };
 
 export const IconsOrientationVertical = () =>
-  renderWithIcons({ orientation: "vertical" });
+  renderWithIcons({orientation: 'vertical'});
 
 IconsOrientationVertical.story = {
-  name: "icons, orientation: vertical",
+  name: 'icons, orientation: vertical'
 };
 
 export const IconsDensityCompactOrientationVertical = () =>
-  renderWithIcons({ orientation: "vertical", density: "compact" });
+  renderWithIcons({orientation: 'vertical', density: 'compact'});
 
 IconsDensityCompactOrientationVertical.story = {
-  name: "icons, density: compact, orientation: vertical",
+  name: 'icons, density: compact, orientation: vertical'
 };
 
-export const IsEmphasizedTrue = () => render({ isEmphasized: true });
+export const IsEmphasizedTrue = () => render({isEmphasized: true});
 
 IsEmphasizedTrue.story = {
-  name: "isEmphasized: true",
+  name: 'isEmphasized: true'
 };
 
 export const IsEmphasizedTrueIconsIsQuietTrue = () =>
-  renderWithIcons({ isEmphasized: true, isQuiet: true });
+  renderWithIcons({isEmphasized: true, isQuiet: true});
 
 IsEmphasizedTrueIconsIsQuietTrue.story = {
-  name: "isEmphasized: true, icons, isQuiet: true",
+  name: 'isEmphasized: true, icons, isQuiet: true'
 };
 
 export const IsEmphasizedTrueOrientationVertical = () =>
-  render({ isEmphasized: true, orientation: "vertical" });
+  render({isEmphasized: true, orientation: 'vertical'});
 
 IsEmphasizedTrueOrientationVertical.story = {
-  name: "isEmphasized: true, orientation: vertical",
+  name: 'isEmphasized: true, orientation: vertical'
 };
 
-export const DisableAllTabs = () => render({ isDisabled: true });
+export const DisableAllTabs = () => render({isDisabled: true});
 
 DisableAllTabs.story = {
-  name: "disable all tabs",
+  name: 'disable all tabs'
 };
 
 export const KeyboardActivationManual = () =>
-  render({ keyboardActivation: "manual" });
+  render({keyboardActivation: 'manual'});
 
 KeyboardActivationManual.story = {
-  name: "keyboardActivation: manual",
+  name: 'keyboardActivation: manual'
 };
 
-export const MiddleDisabled = () => render({ disabledKeys: ["val2"] });
+export const MiddleDisabled = () => render({disabledKeys: ['val2']});
 
 MiddleDisabled.story = {
-  name: "middle disabled",
+  name: 'middle disabled'
 };
 
 export const AllDisabled = () =>
-  render({ disabledKeys: ["val1", "val2", "val3", "val4", "val5"] });
+  render({disabledKeys: ['val1', 'val2', 'val3', 'val4', 'val5']});
 
 AllDisabled.story = {
-  name: "all disabled",
+  name: 'all disabled'
 };
 
 export const Resizeable = () => (
   <div
     style={{
-      minWidth: "100px",
-      width: "300px",
-      height: "400px",
-      padding: "10px",
-      resize: "horizontal",
-      overflow: "auto",
-      backgroundColor: "var(--spectrum-global-color-gray-50)",
-    }}
-  >
+      minWidth: '100px',
+      width: '300px',
+      height: '400px',
+      padding: '10px',
+      resize: 'horizontal',
+      overflow: 'auto',
+      backgroundColor: 'var(--spectrum-global-color-gray-50)'
+    }}>
     {render()}
   </div>
 );
 
 Resizeable.story = {
-  name: "resizeable",
+  name: 'resizeable'
 };
 
 export const CollapseBehavior = () => <DynamicTabs />;
 
 CollapseBehavior.story = {
-  name: "collapse behavior",
+  name: 'collapse behavior'
 };
 
 export const CollapseBehaviorIsQuiet = () => <DynamicTabs isQuiet />;
 
 CollapseBehaviorIsQuiet.story = {
-  name: "collapse behavior, isQuiet",
+  name: 'collapse behavior, isQuiet'
 };
 
 export const CollapseBehaviorDensityCompact = () => (
@@ -191,7 +190,7 @@ export const CollapseBehaviorDensityCompact = () => (
 );
 
 CollapseBehaviorDensityCompact.story = {
-  name: "collapse behavior, density: compact",
+  name: 'collapse behavior, density: compact'
 };
 
 export const CollapseBehaviorDensityCompactIsQuiet = () => (
@@ -199,7 +198,7 @@ export const CollapseBehaviorDensityCompactIsQuiet = () => (
 );
 
 CollapseBehaviorDensityCompactIsQuiet.story = {
-  name: "collapse behavior, density: compact, isQuiet",
+  name: 'collapse behavior, density: compact, isQuiet'
 };
 
 export const CollapseBehaviorIsEmphasizedTrue = () => (
@@ -207,13 +206,13 @@ export const CollapseBehaviorIsEmphasizedTrue = () => (
 );
 
 CollapseBehaviorIsEmphasizedTrue.story = {
-  name: "collapse behavior, isEmphasized: true",
+  name: 'collapse behavior, isEmphasized: true'
 };
 
 export const _OrientationFlip = () => <OrientationFlip />;
 
 _OrientationFlip.story = {
-  name: "orientation flip",
+  name: 'orientation flip'
 };
 
 export const TestingTabsInFlex = () => (
@@ -222,11 +221,10 @@ export const TestingTabsInFlex = () => (
     minWidth={400}
     UNSAFE_style={{
       borderWidth: 1,
-      borderStyle: "solid",
-      borderColor: "var(--spectrum-global-color-gray-800)",
-      padding: "10px",
-    }}
-  >
+      borderStyle: 'solid',
+      borderColor: 'var(--spectrum-global-color-gray-800)',
+      padding: '10px'
+    }}>
     <Tabs>
       <TabList>
         <Item>Tab 1</Item>
@@ -241,7 +239,7 @@ export const TestingTabsInFlex = () => (
 );
 
 TestingTabsInFlex.story = {
-  name: "testing: tabs in flex",
+  name: 'testing: tabs in flex'
 };
 
 export const TransitionBetweenTabSizes = () => (
@@ -262,7 +260,7 @@ export const TransitionBetweenTabSizes = () => (
 );
 
 TransitionBetweenTabSizes.story = {
-  name: "transition between tab sizes",
+  name: 'transition between tab sizes'
 };
 
 export const TabWithFlexContainerInBetween = () => (
@@ -270,7 +268,7 @@ export const TabWithFlexContainerInBetween = () => (
 );
 
 TabWithFlexContainerInBetween.story = {
-  name: "Tab with flex container in between",
+  name: 'Tab with flex container in between'
 };
 
 export const TabsAtTheBottom = () => (
@@ -287,7 +285,7 @@ export const TabsAtTheBottom = () => (
 );
 
 TabsAtTheBottom.story = {
-  name: "tabs at the bottom",
+  name: 'tabs at the bottom'
 };
 
 export const TabsOnTheRight = () => (
@@ -304,7 +302,7 @@ export const TabsOnTheRight = () => (
 );
 
 TabsOnTheRight.story = {
-  name: "tabs on the right",
+  name: 'tabs on the right'
 };
 
 export const FocusableElementInTabPanel = () => (
@@ -325,11 +323,11 @@ export const FocusableElementInTabPanel = () => (
 );
 
 FocusableElementInTabPanel.story = {
-  name: "focusable element in tab panel",
+  name: 'focusable element in tab panel'
 };
 
 export const Tab1ControlledChild = () => {
-  let [tab1Text, setTab1Text] = useState("");
+  let [tab1Text, setTab1Text] = useState('');
 
   return (
     <Tabs maxWidth={500}>
@@ -350,12 +348,12 @@ export const Tab1ControlledChild = () => {
 };
 
 Tab1ControlledChild.story = {
-  name: "Tab 1 controlled child",
+  name: 'Tab 1 controlled child'
 };
 
 export const ChangingTabTitles = () => {
-  let [tab1Text, setTab1Text] = useState("Tab 1");
-  let [tab2Text, setTab2Text] = useState("Tab 2");
+  let [tab1Text, setTab1Text] = useState('Tab 1');
+  let [tab2Text, setTab2Text] = useState('Tab 2');
 
   return (
     <Flex minHeight={400} minWidth={400} direction="column">
@@ -376,25 +374,24 @@ export const ChangingTabTitles = () => {
 };
 
 ChangingTabTitles.story = {
-  name: "changing tab titles",
+  name: 'changing tab titles'
 };
 
 export const ChangingSelectionProgramatically = () => <ControlledSelection />;
 
 ChangingSelectionProgramatically.story = {
-  name: "changing selection programatically",
+  name: 'changing selection programatically'
 };
 
 export const Links = (args) => {
-  let [url, setUrl] = useState("/one");
+  let [url, setUrl] = useState('/one');
 
   return (
     <RouterProvider navigate={setUrl}>
       <Tabs
         selectedKey={url}
         aria-label="Some tabs"
-        width={args.collapsed ? 200 : 300}
-      >
+        width={args.collapsed ? 200 : 300}>
         <TabList>
           <Item key="/one" href="/one">
             Tab 1
@@ -426,13 +423,13 @@ export const Links = (args) => {
 
 Links.story = {
   args: {
-    collapsed: false,
-  },
+    collapsed: false
+  }
 };
 
 export const Nested = (props) => {
   return (
-    <Tabs aria-label="Some tabs" width={"500px"} {...props}>
+    <Tabs aria-label="Some tabs" width={'500px'} {...props}>
       <TabList>
         <Item key="one">Tab 1</Item>
         <Item key="two">Tab 2</Item>
@@ -485,8 +482,7 @@ function render(props = {}) {
       {...props}
       aria-label="Tab example"
       maxWidth={500}
-      onSelectionChange={action("onSelectionChange")}
-    >
+      onSelectionChange={action('onSelectionChange')}>
       <TabList>
         <Item key="val1">Tab 1</Item>
         <Item key="val2">Tab 2</Item>
@@ -606,8 +602,7 @@ function renderWithIcons(props = {}) {
       {...props}
       aria-label="Tab example"
       maxWidth={500}
-      onSelectionChange={action("onSelectionChange")}
-    >
+      onSelectionChange={action('onSelectionChange')}>
       <TabList>
         <Item key="dashboard">
           <Dashboard />
@@ -694,8 +689,7 @@ function renderWithFalsyKey(props = {}) {
       {...props}
       aria-label="Tab example"
       maxWidth={500}
-      onSelectionChange={action("onSelectionChange")}
-    >
+      onSelectionChange={action('onSelectionChange')}>
       <TabList>
         <Item key="">Tab 1</Item>
         <Item key="val2">Tab 2</Item>
@@ -810,29 +804,29 @@ function renderWithFalsyKey(props = {}) {
 }
 
 interface DynamicTabItem {
-  name: string;
-  children: ReactNode;
-  icon?: ReactNode;
+  name: string,
+  children: ReactNode,
+  icon?: ReactNode
 }
 
 let items = [
-  { name: "Tab 1", children: "Tab Body 1", icon: <Dashboard /> },
-  { name: "Tab 2", children: "Tab Body 2", icon: <Calendar /> },
-  { name: "Tab 3", children: "Tab Body 3", icon: <Bookmark /> },
-  { name: "Tab 4", children: "Tab Body 4", icon: <Dashboard /> },
-  { name: "Tab 5", children: "Tab Body 5", icon: <Calendar /> },
-  { name: "Tab 6", children: "Tab Body 6", icon: <Bookmark /> },
+  {name: 'Tab 1', children: 'Tab Body 1', icon: <Dashboard />},
+  {name: 'Tab 2', children: 'Tab Body 2', icon: <Calendar />},
+  {name: 'Tab 3', children: 'Tab Body 3', icon: <Bookmark />},
+  {name: 'Tab 4', children: 'Tab Body 4', icon: <Dashboard />},
+  {name: 'Tab 5', children: 'Tab Body 5', icon: <Calendar />},
+  {name: 'Tab 6', children: 'Tab Body 6', icon: <Bookmark />}
 ] as DynamicTabItem[];
 
 let DynamicTabs = (
-  props: Omit<SpectrumTabsProps<DynamicTabItem>, "children">
+  props: Omit<SpectrumTabsProps<DynamicTabItem>, 'children'>
 ) => {
   let [tabs, setTabs] = React.useState(items);
   let addTab = () => {
     let newTabs = [...tabs];
     newTabs.push({
       name: `Tab ${tabs.length + 1}`,
-      children: `Tab Body ${tabs.length + 1}`,
+      children: `Tab Body ${tabs.length + 1}`
     });
 
     setTabs(newTabs);
@@ -847,13 +841,12 @@ let DynamicTabs = (
   };
 
   return (
-    <div style={{ width: "80%" }}>
+    <div style={{width: '80%'}}>
       <Tabs
         {...props}
         aria-label="Tab example"
         items={tabs}
-        onSelectionChange={action("onSelectionChange")}
-      >
+        onSelectionChange={action('onSelectionChange')}>
         <TabList>
           {(item: DynamicTabItem) => (
             <Item key={item.name}>
@@ -904,14 +897,13 @@ let OrientationFlip = (props = {}) => {
   let [flipOrientation, setFlipOrientation] = React.useState(true);
 
   return (
-    <div style={{ width: "80%" }}>
+    <div style={{width: '80%'}}>
       <Tabs
         {...props}
         aria-label="Tab example"
         items={items}
-        onSelectionChange={action("onSelectionChange")}
-        orientation={flipOrientation ? "horizontal" : "vertical"}
-      >
+        onSelectionChange={action('onSelectionChange')}
+        orientation={flipOrientation ? 'horizontal' : 'vertical'}>
         <TabList>
           {(item: DynamicTabItem) => (
             <Item key={item.name}>
@@ -948,8 +940,7 @@ let OrientationFlip = (props = {}) => {
       </Tabs>
       <Button
         variant="secondary"
-        onPress={() => setFlipOrientation((state) => !state)}
-      >
+        onPress={() => setFlipOrientation((state) => !state)}>
         <Text>Flip Orientation</Text>
       </Button>
     </div>
@@ -962,7 +953,7 @@ let DynamicTabsWithDecoration = (props = {}) => {
     let newTabs = [...tabs];
     newTabs.push({
       name: `Tab ${tabs.length + 1}`,
-      children: `Tab Body ${tabs.length + 1}`,
+      children: `Tab Body ${tabs.length + 1}`
     });
 
     setTabs(newTabs);
@@ -977,15 +968,14 @@ let DynamicTabsWithDecoration = (props = {}) => {
   };
 
   return (
-    <div style={{ width: "80%" }}>
+    <div style={{width: '80%'}}>
       <Tabs
         {...props}
         aria-label="Tab example"
         items={tabs}
-        onSelectionChange={action("onSelectionChange")}
-      >
+        onSelectionChange={action('onSelectionChange')}>
         <Flex direction="row" alignItems="center">
-          <TabList flex="1 1 auto" UNSAFE_style={{ overflow: "hidden" }}>
+          <TabList flex="1 1 auto" UNSAFE_style={{overflow: 'hidden'}}>
             {(item: DynamicTabItem) => (
               <Item key={item.name}>
                 {item.icon}
@@ -1000,14 +990,12 @@ let DynamicTabsWithDecoration = (props = {}) => {
             alignSelf="stretch"
             UNSAFE_style={{
               borderBottom:
-                "var(--spectrum-alias-border-size-thick) solid var(--spectrum-global-color-gray-300)",
-            }}
-          >
+                'var(--spectrum-alias-border-size-thick) solid var(--spectrum-global-color-gray-300)'
+            }}>
             <ActionGroup
               marginEnd="30px"
-              disabledKeys={tabs.length === 1 ? ["remove"] : undefined}
-              onAction={(val) => (val === "add" ? addTab() : removeTab())}
-            >
+              disabledKeys={tabs.length === 1 ? ['remove'] : undefined}
+              onAction={(val) => (val === 'add' ? addTab() : removeTab())}>
               <Item key="add">
                 <Text>Add Tab</Text>
               </Item>
@@ -1048,24 +1036,22 @@ let DynamicTabsWithDecoration = (props = {}) => {
 };
 
 let ControlledSelection = () => {
-  let [selectedKey, setSelectedKey] = useState<Key>("Tab 1");
+  let [selectedKey, setSelectedKey] = useState<Key>('Tab 1');
 
   return (
-    <div style={{ width: "80%" }}>
+    <div style={{width: '80%'}}>
       <Picker
         label="Set selected tab"
         selectedKey={selectedKey}
         onSelectionChange={setSelectedKey}
-        items={items}
-      >
+        items={items}>
         {(item) => <Item key={item.name}>{item.name}</Item>}
       </Picker>
       <Tabs
         aria-label="Tab example"
         items={items}
         selectedKey={selectedKey}
-        onSelectionChange={setSelectedKey}
-      >
+        onSelectionChange={setSelectedKey}>
         <TabList>
           {(item: DynamicTabItem) => (
             <Item key={item.name}>

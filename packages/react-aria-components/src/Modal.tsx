@@ -15,17 +15,17 @@ import {
   DismissButton,
   Overlay,
   useIsSSR,
-  useModalOverlay,
-} from "react-aria";
+  useModalOverlay
+} from 'react-aria';
 import {
   ContextValue,
   Provider,
   RenderProps,
   SlotProps,
   useContextProps,
-  useRenderProps,
-} from "./utils";
-import { DOMAttributes, forwardRefType, RefObject } from "@react-types/shared";
+  useRenderProps
+} from './utils';
+import {DOMAttributes, forwardRefType, RefObject} from '@react-types/shared';
 import {
   filterDOMProps,
   mergeProps,
@@ -33,22 +33,22 @@ import {
   useEnterAnimation,
   useExitAnimation,
   useObjectRef,
-  useViewportSize,
-} from "@react-aria-nutrient/utils";
+  useViewportSize
+} from '@react-aria-nutrient/utils';
 import {
   OverlayTriggerProps,
   OverlayTriggerState,
-  useOverlayTriggerState,
-} from "react-stately";
-import { OverlayTriggerStateContext } from "./Dialog";
+  useOverlayTriggerState
+} from 'react-stately';
+import {OverlayTriggerStateContext} from './Dialog';
 import React, {
   createContext,
   ForwardedRef,
   forwardRef,
   useContext,
   useMemo,
-  useRef,
-} from "react";
+  useRef
+} from 'react';
 
 export interface ModalOverlayProps
   extends AriaModalOverlayProps,
@@ -58,23 +58,23 @@ export interface ModalOverlayProps
   /**
    * Whether the modal is currently performing an entry animation.
    */
-  isEntering?: boolean;
+  isEntering?: boolean,
   /**
    * Whether the modal is currently performing an exit animation.
    */
-  isExiting?: boolean;
+  isExiting?: boolean,
   /**
    * The container element in which the overlay portal will be placed. This may have unknown behavior depending on where it is portalled to.
    * @default document.body
    */
-  UNSTABLE_portalContainer?: Element;
+  UNSTABLE_portalContainer?: Element
 }
 
 interface InternalModalContextValue {
-  modalProps: DOMAttributes;
-  modalRef: RefObject<HTMLDivElement | null>;
-  isExiting: boolean;
-  isDismissable?: boolean;
+  modalProps: DOMAttributes,
+  modalRef: RefObject<HTMLDivElement | null>,
+  isExiting: boolean,
+  isDismissable?: boolean
 }
 
 export const ModalContext =
@@ -88,16 +88,16 @@ export interface ModalRenderProps {
    * Whether the modal is currently entering. Use this to apply animations.
    * @selector [data-entering]
    */
-  isEntering: boolean;
+  isEntering: boolean,
   /**
    * Whether the modal is currently exiting. Use this to apply animations.
    * @selector [data-exiting]
    */
-  isExiting: boolean;
+  isExiting: boolean,
   /**
    * State of the modal.
    */
-  state: OverlayTriggerState;
+  state: OverlayTriggerState
 }
 
 /**
@@ -139,8 +139,7 @@ export const Modal = /*#__PURE__*/ (forwardRef as forwardRefType)(
         isEntering={isEntering}
         isExiting={isExiting}
         UNSTABLE_portalContainer={UNSTABLE_portalContainer}
-        shouldCloseOnInteractOutside={shouldCloseOnInteractOutside}
-      >
+        shouldCloseOnInteractOutside={shouldCloseOnInteractOutside}>
         <ModalContent {...otherProps} modalRef={ref}>
           {children}
         </ModalContent>
@@ -150,10 +149,10 @@ export const Modal = /*#__PURE__*/ (forwardRef as forwardRefType)(
 );
 
 interface ModalOverlayInnerProps extends ModalOverlayProps {
-  overlayRef: RefObject<HTMLDivElement | null>;
-  modalRef: RefObject<HTMLDivElement | null>;
-  state: OverlayTriggerState;
-  isExiting: boolean;
+  overlayRef: RefObject<HTMLDivElement | null>,
+  modalRef: RefObject<HTMLDivElement | null>,
+  state: OverlayTriggerState,
+  isExiting: boolean
 }
 
 function ModalOverlayWithForwardRef(
@@ -186,8 +185,7 @@ function ModalOverlayWithForwardRef(
       state={state}
       isExiting={isExiting}
       overlayRef={objectRef}
-      modalRef={modalRef}
-    />
+      modalRef={modalRef} />
   );
 }
 
@@ -203,40 +201,38 @@ function ModalOverlayInner({
   ...props
 }: ModalOverlayInnerProps) {
   let modalRef = props.modalRef;
-  let { state } = props;
-  let { modalProps, underlayProps } = useModalOverlay(props, state, modalRef);
+  let {state} = props;
+  let {modalProps, underlayProps} = useModalOverlay(props, state, modalRef);
 
   let entering =
     useEnterAnimation(props.overlayRef) || props.isEntering || false;
   let renderProps = useRenderProps({
     ...props,
-    defaultClassName: "react-aria-ModalOverlay",
+    defaultClassName: 'react-aria-ModalOverlay',
     values: {
       isEntering: entering,
       isExiting: props.isExiting,
-      state,
-    },
+      state
+    }
   });
 
   let viewport = useViewportSize();
   let style = {
     ...renderProps.style,
-    "--visual-viewport-height": viewport.height + "px",
+    '--visual-viewport-height': viewport.height + 'px'
   };
 
   return (
     <Overlay
       isExiting={props.isExiting}
-      portalContainer={UNSTABLE_portalContainer}
-    >
+      portalContainer={UNSTABLE_portalContainer}>
       <div
         {...mergeProps(filterDOMProps(props as any), underlayProps)}
         {...renderProps}
         style={style}
         ref={props.overlayRef}
         data-entering={entering || undefined}
-        data-exiting={props.isExiting || undefined}
-      >
+        data-exiting={props.isExiting || undefined}>
         <Provider
           values={[
             [
@@ -245,12 +241,11 @@ function ModalOverlayInner({
                 modalProps,
                 modalRef,
                 isExiting: props.isExiting,
-                isDismissable: props.isDismissable,
-              },
+                isDismissable: props.isDismissable
+              }
             ],
-            [OverlayTriggerStateContext, state],
-          ]}
-        >
+            [OverlayTriggerStateContext, state]
+          ]}>
           {renderProps.children}
         </Provider>
       </div>
@@ -259,11 +254,11 @@ function ModalOverlayInner({
 }
 
 interface ModalContentProps extends RenderProps<ModalRenderProps> {
-  modalRef: ForwardedRef<HTMLDivElement>;
+  modalRef: ForwardedRef<HTMLDivElement>
 }
 
 function ModalContent(props: ModalContentProps) {
-  let { modalProps, modalRef, isExiting, isDismissable } =
+  let {modalProps, modalRef, isExiting, isDismissable} =
     useContext(InternalModalContext)!;
   let state = useContext(OverlayTriggerStateContext)!;
   let mergedRefs = useMemo(
@@ -275,12 +270,12 @@ function ModalContent(props: ModalContentProps) {
   let entering = useEnterAnimation(ref);
   let renderProps = useRenderProps({
     ...props,
-    defaultClassName: "react-aria-Modal",
+    defaultClassName: 'react-aria-Modal',
     values: {
       isEntering: entering,
       isExiting,
-      state,
-    },
+      state
+    }
   });
 
   return (
@@ -289,8 +284,7 @@ function ModalContent(props: ModalContentProps) {
       {...renderProps}
       ref={ref}
       data-entering={entering || undefined}
-      data-exiting={isExiting || undefined}
-    >
+      data-exiting={isExiting || undefined}>
       {isDismissable && <DismissButton onDismiss={state.close} />}
       {renderProps.children}
     </div>

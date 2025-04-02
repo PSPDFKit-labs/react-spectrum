@@ -10,42 +10,42 @@
  * governing permissions and limitations under the License.
  */
 
-import { ClearPressResponder } from "@react-aria-nutrient/interactions";
-import { FocusScope } from "@react-aria-nutrient/focus";
-import React, { ReactNode, useContext, useMemo, useState } from "react";
-import ReactDOM from "react-dom";
-import { useIsSSR } from "@react-aria-nutrient/ssr";
-import { useLayoutEffect } from "@react-aria-nutrient/utils";
-import { useUNSTABLE_PortalContext } from "./PortalProvider";
+import {ClearPressResponder} from '@react-aria-nutrient/interactions';
+import {FocusScope} from '@react-aria-nutrient/focus';
+import React, {ReactNode, useContext, useMemo, useState} from 'react';
+import ReactDOM from 'react-dom';
+import {useIsSSR} from '@react-aria-nutrient/ssr';
+import {useLayoutEffect} from '@react-aria-nutrient/utils';
+import {useUNSTABLE_PortalContext} from './PortalProvider';
 
 export interface OverlayProps {
   /**
    * The container element in which the overlay portal will be placed.
    * @default document.body
    */
-  portalContainer?: Element;
+  portalContainer?: Element,
   /** The overlay to render in the portal. */
-  children: ReactNode;
+  children: ReactNode,
   /**
    * Disables default focus management for the overlay, including containment and restoration.
    * This option should be used very carefully. When focus management is disabled, you must
    * implement focus containment and restoration to ensure the overlay is keyboard accessible.
    */
-  disableFocusManagement?: boolean;
+  disableFocusManagement?: boolean,
   /**
    * Whether to contain focus within the overlay.
    */
-  shouldContainFocus?: boolean;
+  shouldContainFocus?: boolean,
   /**
    * Whether the overlay is currently performing an exit animation. When true,
    * focus is allowed to move outside.
    */
-  isExiting?: boolean;
+  isExiting?: boolean
 }
 
 export const OverlayContext = React.createContext<{
-  contain: boolean;
-  setContain: React.Dispatch<React.SetStateAction<boolean>>;
+  contain: boolean,
+  setContain: React.Dispatch<React.SetStateAction<boolean>>
 } | null>(null);
 
 /**
@@ -54,14 +54,14 @@ export const OverlayContext = React.createContext<{
  */
 export function Overlay(props: OverlayProps): ReactNode | null {
   let isSSR = useIsSSR();
-  let { portalContainer = isSSR ? null : document.body, isExiting } = props;
+  let {portalContainer = isSSR ? null : document.body, isExiting} = props;
   let [contain, setContain] = useState(false);
   let contextValue = useMemo(
-    () => ({ contain, setContain }),
+    () => ({contain, setContain}),
     [contain, setContain]
   );
 
-  let { getContainer } = useUNSTABLE_PortalContext();
+  let {getContainer} = useUNSTABLE_PortalContext();
   if (!props.portalContainer && getContainer) {
     portalContainer = getContainer();
   }
@@ -75,8 +75,7 @@ export function Overlay(props: OverlayProps): ReactNode | null {
     contents = (
       <FocusScope
         restoreFocus
-        contain={(props.shouldContainFocus || contain) && !isExiting}
-      >
+        contain={(props.shouldContainFocus || contain) && !isExiting}>
         {contents}
       </FocusScope>
     );

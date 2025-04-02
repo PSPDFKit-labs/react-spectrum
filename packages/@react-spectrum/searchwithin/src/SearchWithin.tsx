@@ -15,21 +15,21 @@ import {
   SlotProvider,
   useFocusableRef,
   useResizeObserver,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { Field } from "@react-spectrum/label";
-import { FocusableRef } from "@react-types/shared";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {Field} from '@react-spectrum/label';
+import {FocusableRef} from '@react-types/shared';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import React, { useCallback, useRef, useState } from "react";
-import { SpectrumSearchWithinProps } from "@react-types/searchwithin";
-import styles from "@adobe/spectrum-css-temp/components/searchwithin/vars.css";
-import { useFormProps } from "@react-spectrum/form";
-import { useId, useLayoutEffect } from "@react-aria-nutrient/utils";
-import { useLabel } from "@react-aria-nutrient/label";
-import { useLocalizedStringFormatter } from "@react-aria-nutrient/i18n";
-import { useProvider, useProviderProps } from "@react-spectrum/provider";
-import { VisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+import intlMessages from '../intl/*.json';
+import React, {useCallback, useRef, useState} from 'react';
+import {SpectrumSearchWithinProps} from '@react-types/searchwithin';
+import styles from '@adobe/spectrum-css-temp/components/searchwithin/vars.css';
+import {useFormProps} from '@react-spectrum/form';
+import {useId, useLayoutEffect} from '@react-aria-nutrient/utils';
+import {useLabel} from '@react-aria-nutrient/label';
+import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
+import {useProvider, useProviderProps} from '@react-spectrum/provider';
+import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 /**
  * A SearchWithin combines a SearchField and a Picker into a single group. This allows a user to constrain the scope of their search to a particular category, for example.
@@ -42,23 +42,23 @@ export const SearchWithin = React.forwardRef(function SearchWithin(
   props = useFormProps(props);
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/searchwithin"
+    '@react-spectrum/searchwithin'
   );
-  let { styleProps } = useStyleProps(props);
-  let { children, isDisabled, isRequired, label } = props;
+  let {styleProps} = useStyleProps(props);
+  let {children, isDisabled, isRequired, label} = props;
 
-  let defaultAriaLabel = stringFormatter.format("search");
-  if (!label && !props["aria-label"] && !props["aria-labelledby"]) {
-    props["aria-label"] = defaultAriaLabel;
+  let defaultAriaLabel = stringFormatter.format('search');
+  if (!label && !props['aria-label'] && !props['aria-labelledby']) {
+    props['aria-label'] = defaultAriaLabel;
   }
   // Get label and group props (aka fieldProps)
-  let { labelProps, fieldProps } = useLabel(props);
+  let {labelProps, fieldProps} = useLabel(props);
 
   // Grab aria-labelledby for the search input. Will need the entire concatenated aria-labelledby if it exists since pointing at the group id doesn’t
   // suffice if there is a external label
   let labelledBy =
-    fieldProps["aria-labelledby"] ||
-    (fieldProps["aria-label"] !== defaultAriaLabel ? fieldProps.id : "");
+    fieldProps['aria-labelledby'] ||
+    (fieldProps['aria-label'] !== defaultAriaLabel ? fieldProps.id : '');
   let pickerId = useId();
 
   let domRef = useFocusableRef(ref);
@@ -66,7 +66,7 @@ export const SearchWithin = React.forwardRef(function SearchWithin(
 
   // Measure the width of the field to inform the width of the menu.
   let [menuWidth, setMenuWidth] = useState<number | null>(null);
-  let { scale } = useProvider();
+  let {scale} = useProvider();
 
   let onResize = useCallback(() => {
     let shouldUseGroup = !!label;
@@ -81,7 +81,7 @@ export const SearchWithin = React.forwardRef(function SearchWithin(
 
   useResizeObserver({
     ref: domRef,
-    onResize: onResize,
+    onResize: onResize
   });
 
   useLayoutEffect(onResize, [scale, onResize]);
@@ -96,14 +96,14 @@ export const SearchWithin = React.forwardRef(function SearchWithin(
     errorMessage: null,
     descriptionProps: null,
     errorMessageProps: null,
-    "aria-label": null,
+    'aria-label': null
   };
 
   let searchFieldClassName = classNames(
     styles,
-    "spectrum-SearchWithin-searchfield"
+    'spectrum-SearchWithin-searchfield'
   );
-  let pickerClassName = classNames(styles, "spectrum-SearchWithin-picker");
+  let pickerClassName = classNames(styles, 'spectrum-SearchWithin-picker');
   let visuallyHiddenId = useId();
 
   let slots = {
@@ -111,18 +111,18 @@ export const SearchWithin = React.forwardRef(function SearchWithin(
       ...defaultSlotValues,
       UNSAFE_className: searchFieldClassName,
       // Apply aria-labelledby of group or the group id to searchfield. No need to pass the group id (we want a new one) and aria-label (aria-labelledby will suffice)
-      "aria-labelledby": `${labelledBy} ${visuallyHiddenId} ${pickerId}`,
+      'aria-labelledby': `${labelledBy} ${visuallyHiddenId} ${pickerId}`,
       // When label is provided, input should have id referenced by htmlFor of label, instead of group
-      id: label && fieldProps.id,
+      id: label && fieldProps.id
     },
     picker: {
       ...defaultSlotValues,
       id: pickerId,
       UNSAFE_className: pickerClassName,
       menuWidth,
-      align: "end",
-      "aria-labelledby": `${labelledBy} ${visuallyHiddenId}`,
-    },
+      align: 'end',
+      'aria-labelledby': `${labelledBy} ${visuallyHiddenId}`
+    }
   };
 
   if (label) {
@@ -135,20 +135,18 @@ export const SearchWithin = React.forwardRef(function SearchWithin(
       {...props}
       labelProps={labelProps}
       ref={domRef}
-      wrapperClassName={classNames(styles, "spectrum-SearchWithin-container")}
-    >
+      wrapperClassName={classNames(styles, 'spectrum-SearchWithin-container')}>
       <div
         {...fieldProps}
         role="group"
         className={classNames(
           styles,
-          "spectrum-SearchWithin",
+          'spectrum-SearchWithin',
           styleProps.className
         )}
-        ref={groupRef}
-      >
+        ref={groupRef}>
         <VisuallyHidden id={visuallyHiddenId}>
-          {stringFormatter.format("searchWithin")}
+          {stringFormatter.format('searchWithin')}
         </VisuallyHidden>
         <SlotProvider slots={slots}>{children}</SlotProvider>
       </div>

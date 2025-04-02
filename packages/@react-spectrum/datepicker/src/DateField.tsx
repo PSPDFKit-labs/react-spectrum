@@ -10,25 +10,25 @@
  * governing permissions and limitations under the License.
  */
 
-import { classNames } from "@react-spectrum/utils";
-import { createCalendar } from "@internationalized/date";
-import { DatePickerSegment } from "./DatePickerSegment";
-import datepickerStyles from "./styles.css";
-import { DateValue, SpectrumDateFieldProps } from "@react-types/datepicker";
-import { Field } from "@react-spectrum/label";
-import { FocusableRef } from "@react-types/shared";
-import { Input } from "./Input";
-import React, { ReactElement, useRef } from "react";
-import { useDateField } from "@react-aria-nutrient/datepicker";
-import { useDateFieldState } from "@react-stately/datepicker";
+import {classNames} from '@react-spectrum/utils';
+import {createCalendar} from '@internationalized/date';
+import {DatePickerSegment} from './DatePickerSegment';
+import datepickerStyles from './styles.css';
+import {DateValue, SpectrumDateFieldProps} from '@react-types/datepicker';
+import {Field} from '@react-spectrum/label';
+import {FocusableRef} from '@react-types/shared';
+import {Input} from './Input';
+import React, {ReactElement, useRef} from 'react';
+import {useDateField} from '@react-aria-nutrient/datepicker';
+import {useDateFieldState} from '@react-stately/datepicker';
 import {
   useFocusManagerRef,
   useFormatHelpText,
-  useFormattedDateWidth,
-} from "./utils";
-import { useFormProps } from "@react-spectrum/form";
-import { useLocale } from "@react-aria-nutrient/i18n";
-import { useProviderProps } from "@react-spectrum/provider";
+  useFormattedDateWidth
+} from './utils';
+import {useFormProps} from '@react-spectrum/form';
+import {useLocale} from '@react-aria-nutrient/i18n';
+import {useProviderProps} from '@react-spectrum/provider';
 
 /**
  * DateFields allow users to enter and edit date and time values using a keyboard.
@@ -39,14 +39,14 @@ export const DateField = React.forwardRef(function DateField<
 >(props: SpectrumDateFieldProps<T>, ref: FocusableRef<HTMLElement>) {
   props = useProviderProps(props);
   props = useFormProps(props);
-  let { autoFocus, isDisabled, isReadOnly, isRequired, isQuiet } = props;
+  let {autoFocus, isDisabled, isReadOnly, isRequired, isQuiet} = props;
 
   let domRef = useFocusManagerRef(ref);
-  let { locale } = useLocale();
+  let {locale} = useLocale();
   let state = useDateFieldState({
     ...props,
     locale,
-    createCalendar,
+    createCalendar
   });
 
   let fieldRef = useRef<HTMLElement | null>(null);
@@ -59,11 +59,11 @@ export const DateField = React.forwardRef(function DateField<
     errorMessageProps,
     isInvalid,
     validationErrors,
-    validationDetails,
+    validationDetails
   } = useDateField(
     {
       ...props,
-      inputRef,
+      inputRef
     },
     state,
     fieldRef
@@ -76,9 +76,9 @@ export const DateField = React.forwardRef(function DateField<
     descriptionProps.id = undefined;
   }
 
-  let validationState = state.validationState || (isInvalid ? "invalid" : null);
+  let validationState = state.validationState || (isInvalid ? 'invalid' : null);
 
-  let approximateWidth = useFormattedDateWidth(state) + "ch";
+  let approximateWidth = useFormattedDateWidth(state) + 'ch';
 
   return (
     <Field
@@ -95,9 +95,8 @@ export const DateField = React.forwardRef(function DateField<
       validationDetails={validationDetails}
       wrapperClassName={classNames(
         datepickerStyles,
-        "react-spectrum-Datepicker-fieldWrapper"
-      )}
-    >
+        'react-spectrum-Datepicker-fieldWrapper'
+      )}>
       <Input
         ref={fieldRef}
         fieldProps={fieldProps}
@@ -106,8 +105,7 @@ export const DateField = React.forwardRef(function DateField<
         autoFocus={autoFocus}
         validationState={validationState}
         minWidth={approximateWidth}
-        className={classNames(datepickerStyles, "react-spectrum-DateField")}
-      >
+        className={classNames(datepickerStyles, 'react-spectrum-DateField')}>
         {state.segments.map((segment, i) => (
           <DatePickerSegment
             key={i}
@@ -115,8 +113,7 @@ export const DateField = React.forwardRef(function DateField<
             state={state}
             isDisabled={isDisabled}
             isReadOnly={isReadOnly}
-            isRequired={isRequired}
-          />
+            isRequired={isRequired} />
         ))}
         <input {...inputProps} ref={inputRef} />
       </Input>

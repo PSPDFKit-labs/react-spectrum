@@ -10,167 +10,167 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
-import { ActionButton, Button } from "@react-spectrum/button";
-import { AlertDialog, Dialog, DialogTrigger } from "../";
-import AlertMedium from "@spectrum-icons/ui/AlertMedium";
-import { ButtonGroup } from "@react-spectrum/buttongroup";
-import { chain } from "@react-aria-nutrient/utils";
-import { Checkbox } from "@react-spectrum/checkbox";
-import { Content, Footer, Header, View } from "@react-spectrum/view";
-import { Divider } from "@react-spectrum/divider";
-import { Flex, Grid } from "@react-spectrum/layout";
-import { Heading, Text } from "@react-spectrum/text";
-import { Image } from "@react-spectrum/image";
-import { Item, Menu, MenuTrigger } from "@react-spectrum/menu";
-import { Provider } from "@react-spectrum/provider";
-import React, { useState } from "react";
-import { Tooltip, TooltipTrigger } from "@react-spectrum/tooltip";
-import { TranslateDialog } from "./../chromatic/DialogLanguages.stories";
+import {action} from '@storybook/addon-actions';
+import {ActionButton, Button} from '@react-spectrum/button';
+import {AlertDialog, Dialog, DialogTrigger} from '../';
+import AlertMedium from '@spectrum-icons/ui/AlertMedium';
+import {ButtonGroup} from '@react-spectrum/buttongroup';
+import {chain} from '@react-aria-nutrient/utils';
+import {Checkbox} from '@react-spectrum/checkbox';
+import {Content, Footer, Header, View} from '@react-spectrum/view';
+import {Divider} from '@react-spectrum/divider';
+import {Flex, Grid} from '@react-spectrum/layout';
+import {Heading, Text} from '@react-spectrum/text';
+import {Image} from '@react-spectrum/image';
+import {Item, Menu, MenuTrigger} from '@react-spectrum/menu';
+import {Provider} from '@react-spectrum/provider';
+import React, {useState} from 'react';
+import {Tooltip, TooltipTrigger} from '@react-spectrum/tooltip';
+import {TranslateDialog} from './../chromatic/DialogLanguages.stories';
 
 export default {
-  title: "DialogTrigger",
-  providerSwitcher: { status: "notice" },
+  title: 'DialogTrigger',
+  providerSwitcher: {status: 'notice'},
   argTypes: {
     crossOffset: {
       control: {
-        type: "number",
-      },
+        type: 'number'
+      }
     },
     offset: {
       control: {
-        type: "number",
-      },
+        type: 'number'
+      }
     },
     placement: {
-      type: "select",
-      defaultValue: "top",
+      type: 'select',
+      defaultValue: 'top',
       options: [
-        "bottom",
-        "bottom left",
-        "bottom right",
-        "bottom start",
-        "bottom end",
-        "top",
-        "top left",
-        "top right",
-        "top start",
-        "top end",
-        "left",
-        "left top",
-        "left bottom",
-        "start",
-        "start top",
-        "start bottom",
-        "right",
-        "right top",
-        "right bottom",
-        "end",
-        "end top",
-        "end bottom",
-      ],
+        'bottom',
+        'bottom left',
+        'bottom right',
+        'bottom start',
+        'bottom end',
+        'top',
+        'top left',
+        'top right',
+        'top start',
+        'top end',
+        'left',
+        'left top',
+        'left bottom',
+        'start',
+        'start top',
+        'start bottom',
+        'right',
+        'right top',
+        'right bottom',
+        'end',
+        'end top',
+        'end bottom'
+      ]
     },
     buttonHeight: {
       control: {
-        type: "number",
-      },
+        type: 'number'
+      }
     },
     buttonWidth: {
       control: {
-        type: "number",
-      },
+        type: 'number'
+      }
     },
     shouldFlip: {
-      control: { type: "boolean" },
+      control: {type: 'boolean'}
     },
     isKeyboardDismissDisabled: {
-      control: { type: "boolean" },
+      control: {type: 'boolean'}
     },
     containerPadding: {
       control: {
-        type: "number",
-      },
-    },
-  },
+        type: 'number'
+      }
+    }
+  }
 };
 
 export const Default = (args) => render(args);
 
 Default.story = {
-  name: "default",
+  name: 'default'
 };
 
 export const TypePopover = (args) =>
-  renderPopover({ type: "popover", ...args });
+  renderPopover({type: 'popover', ...args});
 
 TypePopover.story = {
-  name: "type: popover",
+  name: 'type: popover'
 };
 
-export const TypeModal = (args) => render({ type: "modal", ...args });
+export const TypeModal = (args) => render({type: 'modal', ...args});
 
 TypeModal.story = {
-  name: "type: modal",
+  name: 'type: modal'
 };
 
 export const TypeModalIsDismissable = (args) =>
-  render({ type: "modal", isDismissable: true, ...args });
+  render({type: 'modal', isDismissable: true, ...args});
 
 TypeModalIsDismissable.story = {
-  name: "type: modal isDismissable",
+  name: 'type: modal isDismissable'
 };
 
-export const TypeFullscreen = (args) => render({ type: "fullscreen", ...args });
+export const TypeFullscreen = (args) => render({type: 'fullscreen', ...args});
 
 TypeFullscreen.story = {
-  name: "type: fullscreen",
+  name: 'type: fullscreen'
 };
 
 export const TypeFullscreenTakeover = (args) =>
-  render({ type: "fullscreenTakeover", ...args });
+  render({type: 'fullscreenTakeover', ...args});
 
 TypeFullscreenTakeover.story = {
-  name: "type: fullscreenTakeover",
+  name: 'type: fullscreenTakeover'
 };
 
-export const TypeTray = (args) => renderPopover({ type: "tray", ...args });
+export const TypeTray = (args) => renderPopover({type: 'tray', ...args});
 
 TypeTray.story = {
-  name: "type: tray",
+  name: 'type: tray'
 };
 
 export const MobileTypeFullscreen = (args) =>
-  render({ type: "modal", mobileType: "fullscreen", ...args });
+  render({type: 'modal', mobileType: 'fullscreen', ...args});
 
 MobileTypeFullscreen.story = {
-  name: "mobileType: fullscreen",
+  name: 'mobileType: fullscreen'
 };
 
 export const MobileTypeFullscreenTakeover = (args) =>
-  render({ type: "modal", mobileType: "fullscreenTakeover", ...args });
+  render({type: 'modal', mobileType: 'fullscreenTakeover', ...args});
 
 MobileTypeFullscreenTakeover.story = {
-  name: "mobileType: fullscreenTakeover",
+  name: 'mobileType: fullscreenTakeover'
 };
 
 export const PopoverWithMobileTypeModal = (args) =>
-  renderPopover({ type: "popover", mobileType: "modal", ...args });
+  renderPopover({type: 'popover', mobileType: 'modal', ...args});
 
 PopoverWithMobileTypeModal.story = {
-  name: "popover with mobileType: modal",
+  name: 'popover with mobileType: modal'
 };
 
 export const PopoverWithMobileTypeTray = (args) =>
-  renderPopover({ type: "popover", mobileType: "tray", ...args });
+  renderPopover({type: 'popover', mobileType: 'tray', ...args});
 
 PopoverWithMobileTypeTray.story = {
-  name: "popover with mobileType: tray",
+  name: 'popover with mobileType: tray'
 };
 
 export const NestedModals = () => (
-  <div style={{ paddingTop: 100 }}>
+  <div style={{paddingTop: 100}}>
     <input aria-label="test input" />
-    <Provider colorScheme="dark" UNSAFE_style={{ padding: 40, marginTop: 10 }}>
+    <Provider colorScheme="dark" UNSAFE_style={{padding: 40, marginTop: 10}}>
       <DialogTrigger isDismissable>
         <ActionButton>Trigger</ActionButton>
         <Dialog>
@@ -194,7 +194,7 @@ export const NestedModals = () => (
 );
 
 NestedModals.story = {
-  name: "nested modals",
+  name: 'nested modals'
 };
 
 export const NestedModalsFullscreentakeover = () => (
@@ -217,10 +217,10 @@ export const NestedModalsFullscreentakeover = () => (
           </DialogTrigger>
         </Content>
         <ButtonGroup>
-          <Button variant="secondary" onPress={chain(close, action("cancel"))}>
+          <Button variant="secondary" onPress={chain(close, action('cancel'))}>
             Cancel
           </Button>
-          <Button variant="cta" onPress={chain(close, action("confirm"))}>
+          <Button variant="cta" onPress={chain(close, action('confirm'))}>
             Confirm
           </Button>
         </ButtonGroup>
@@ -230,7 +230,7 @@ export const NestedModalsFullscreentakeover = () => (
 );
 
 NestedModalsFullscreentakeover.story = {
-  name: "nested modals, fullscreentakeover",
+  name: 'nested modals, fullscreentakeover'
 };
 
 export const WithMenuTrigger = () => (
@@ -253,11 +253,11 @@ export const WithMenuTrigger = () => (
 );
 
 WithMenuTrigger.story = {
-  name: "with menu trigger",
+  name: 'with menu trigger'
 };
 
 export const NestedPopovers = () => (
-  <div style={{ paddingTop: 100 }}>
+  <div style={{paddingTop: 100}}>
     <DialogTrigger type="popover">
       <ActionButton>Trigger</ActionButton>
       <Dialog>
@@ -277,13 +277,13 @@ export const NestedPopovers = () => (
 );
 
 NestedPopovers.story = {
-  name: "nested popovers",
+  name: 'nested popovers'
 };
 
 export const PopoverInsideScrollView = () => (
-  <div style={{ height: 100, display: "flex" }}>
-    <div style={{ paddingTop: 100, height: 100, overflow: "auto" }}>
-      <div style={{ height: 200 }}>
+  <div style={{height: 100, display: 'flex'}}>
+    <div style={{paddingTop: 100, height: 100, overflow: 'auto'}}>
+      <div style={{height: 200}}>
         <DialogTrigger type="popover">
           <ActionButton>Trigger</ActionButton>
           <Dialog>
@@ -295,33 +295,33 @@ export const PopoverInsideScrollView = () => (
         </DialogTrigger>
       </div>
     </div>
-    <div style={{ paddingTop: 100, height: 100, overflow: "auto", flex: 1 }}>
-      <div style={{ height: 200 }}>other</div>
+    <div style={{paddingTop: 100, height: 100, overflow: 'auto', flex: 1}}>
+      <div style={{height: 200}}>other</div>
     </div>
   </div>
 );
 
 PopoverInsideScrollView.story = {
-  name: "popover inside scroll view",
+  name: 'popover inside scroll view',
   parameters: {
     a11y: {
       config: {
-        rules: [{ id: "scrollable-region-focusable", enabled: false }],
-      },
-    },
-  },
+        rules: [{id: 'scrollable-region-focusable', enabled: false}]
+      }
+    }
+  }
 };
 
 export const ShouldFlipWithWidth = (args) =>
-  renderPopover({ type: "popover", width: "calc(100vh - 100px)", ...args });
+  renderPopover({type: 'popover', width: 'calc(100vh - 100px)', ...args});
 
 ShouldFlipWithWidth.story = {
-  name: "shouldFlip with width",
+  name: 'shouldFlip with width'
 };
 
 export const CloseFunctionWithButtonPopover = () => (
-  <div style={{ display: "flex", margin: "100px 0" }}>
-    <DialogTrigger type="popover" onOpenChange={action("open change")}>
+  <div style={{display: 'flex', margin: '100px 0'}}>
+    <DialogTrigger type="popover" onOpenChange={action('open change')}>
       <ActionButton>Trigger</ActionButton>
       {(close) => (
         <Dialog>
@@ -342,8 +342,7 @@ export const CloseFunctionWithButtonPopover = () => (
           <ButtonGroup>
             <Button
               variant="secondary"
-              onPress={chain(close, action("cancel"))}
-            >
+              onPress={chain(close, action('cancel'))}>
               Cancel
             </Button>
           </ButtonGroup>
@@ -354,19 +353,19 @@ export const CloseFunctionWithButtonPopover = () => (
 );
 
 CloseFunctionWithButtonPopover.story = {
-  name: "Close function with button: popover",
+  name: 'Close function with button: popover'
 };
 
 export const TargetRef = (args) => <TriggerWithRef type="popover" {...args} />;
 
 TargetRef.story = {
-  name: "targetRef",
+  name: 'targetRef'
 };
 
 export const _AlertDialog = (args) => renderAlert(args);
 
 _AlertDialog.story = {
-  name: "alert dialog",
+  name: 'alert dialog'
 };
 
 export const CrossoffsetExamples = () => (
@@ -376,18 +375,18 @@ export const CrossoffsetExamples = () => (
       <div>
         <span>-50</span>
         {renderPopover(
-          { type: "popover", placement: "left top", crossOffset: -50 },
+          {type: 'popover', placement: 'left top', crossOffset: -50},
           false
         )}
       </div>
       <div>
         <span>0</span>
-        {renderPopover({ type: "popover", placement: "left top" }, false)}
+        {renderPopover({type: 'popover', placement: 'left top'}, false)}
       </div>
       <div>
         <span>50</span>
         {renderPopover(
-          { type: "popover", placement: "left top", crossOffset: 50 },
+          {type: 'popover', placement: 'left top', crossOffset: 50},
           false
         )}
       </div>
@@ -397,18 +396,18 @@ export const CrossoffsetExamples = () => (
       <div>
         <span>-50</span>
         {renderPopover(
-          { type: "popover", placement: "left", crossOffset: -50 },
+          {type: 'popover', placement: 'left', crossOffset: -50},
           false
         )}
       </div>
       <div>
         <span>0</span>
-        {renderPopover({ type: "popover", placement: "left" }, false)}
+        {renderPopover({type: 'popover', placement: 'left'}, false)}
       </div>
       <div>
         <span>50</span>
         {renderPopover(
-          { type: "popover", placement: "left", crossOffset: 50 },
+          {type: 'popover', placement: 'left', crossOffset: 50},
           false
         )}
       </div>
@@ -418,18 +417,18 @@ export const CrossoffsetExamples = () => (
       <div>
         <span>-50</span>
         {renderPopover(
-          { type: "popover", placement: "left bottom", crossOffset: -50 },
+          {type: 'popover', placement: 'left bottom', crossOffset: -50},
           false
         )}
       </div>
       <div>
         <span>0</span>
-        {renderPopover({ type: "popover", placement: "left bottom" }, false)}
+        {renderPopover({type: 'popover', placement: 'left bottom'}, false)}
       </div>
       <div>
         <span>50</span>
         {renderPopover(
-          { type: "popover", placement: "left bottom", crossOffset: 50 },
+          {type: 'popover', placement: 'left bottom', crossOffset: 50},
           false
         )}
       </div>
@@ -438,14 +437,14 @@ export const CrossoffsetExamples = () => (
 );
 
 CrossoffsetExamples.story = {
-  name: "crossoffset examples",
+  name: 'crossoffset examples'
 };
 
 export const TriggerVisibleThroughUnderlay = (args) =>
   renderTriggerNotCentered(args);
 
 TriggerVisibleThroughUnderlay.story = {
-  name: "trigger visible through underlay",
+  name: 'trigger visible through underlay'
 };
 
 export const _2Popovers = () => (
@@ -469,17 +468,17 @@ export const _2Popovers = () => (
 );
 
 _2Popovers.story = {
-  name: "2 popovers",
+  name: '2 popovers'
 };
 
 export const _AdjustableDialog = () => <AdjustableDialog />;
 
 _AdjustableDialog.story = {
-  name: "adjustable dialog",
+  name: 'adjustable dialog'
 };
 
 export const WithTooltip = () => (
-  <div style={{ display: "flex", width: "auto", margin: "100px 0" }}>
+  <div style={{display: 'flex', width: 'auto', margin: '100px 0'}}>
     <DialogTrigger isDismissable>
       <ActionButton>Trigger</ActionButton>
       <Dialog>
@@ -501,7 +500,7 @@ export const WithTooltip = () => (
 );
 
 WithTooltip.story = {
-  name: "with tooltip inside",
+  name: 'with tooltip inside'
 };
 
 export const WithTooltipTrigger = () => (
@@ -540,10 +539,10 @@ export const WithTooltipTrigger = () => (
 );
 
 WithTooltipTrigger.story = {
-  name: "with tooltip wrapper",
+  name: 'with tooltip wrapper'
 };
 
-function CustomDialog({ close }) {
+function CustomDialog({close}) {
   return (
     <Dialog>
       <Content>Dialog content</Content>
@@ -559,26 +558,25 @@ function CustomDialog({ close }) {
 export const WithTranslations = () => <TranslateDialog />;
 
 WithTranslations.story = {
-  name: "with translations",
+  name: 'with translations',
   parameters: {
     description: {
-      data: "Translations included for: Arabic, English, Hebrew, Japanese, Korean, Simplified Chinese, and Traditional Chinese.",
-    },
-  },
+      data: 'Translations included for: Arabic, English, Hebrew, Japanese, Korean, Simplified Chinese, and Traditional Chinese.'
+    }
+  }
 };
 
 export const TriggersOnEdges = () => (
   <View width="100%" overflow="auto">
     <Grid
-      areas={["top    top", "start  end", "bottom bottom"]}
-      columns={["auto", "auto"]}
-      rows={["size-450", "auto", "size-450"]}
+      areas={['top    top', 'start  end', 'bottom bottom']}
+      columns={['auto', 'auto']}
+      rows={['size-450', 'auto', 'size-450']}
       height="1600px"
       width="calc(100vw + 100px)"
       marginTop="20px"
       marginBottom="20px"
-      gap="size-100"
-    >
+      gap="size-100">
       <View gridArea="top" justifySelf="center">
         <DialogTrigger type="popover" placement="end" shouldFlip={false}>
           <ActionButton>Trigger</ActionButton>
@@ -613,8 +611,7 @@ export const TriggersOnEdges = () => (
         <DialogTrigger
           type="popover"
           placement="start bottom"
-          shouldFlip={false}
-        >
+          shouldFlip={false}>
           <ActionButton>Trigger</ActionButton>
           <Dialog>
             <Content>Placement Start Bottom</Content>
@@ -637,8 +634,7 @@ export const TriggersOnEdges = () => (
         gridArea="start"
         justifySelf="start"
         alignSelf="center"
-        paddingStart="20px"
-      >
+        paddingStart="20px">
         <DialogTrigger type="popover" placement="top" shouldFlip={false}>
           <ActionButton>T</ActionButton>
           <Dialog>
@@ -670,8 +666,7 @@ export const TriggersOnEdges = () => (
         <DialogTrigger
           type="popover"
           placement="bottom start"
-          shouldFlip={false}
-        >
+          shouldFlip={false}>
           <ActionButton>T</ActionButton>
           <Dialog>
             <Content>Placement Bottom Start</Content>
@@ -703,8 +698,7 @@ export const TriggersOnEdges = () => (
         gridArea="end"
         justifySelf="end"
         alignSelf="center"
-        paddingEnd="20px"
-      >
+        paddingEnd="20px">
         <DialogTrigger type="popover" placement="top" shouldFlip={false}>
           <ActionButton>T</ActionButton>
           <Dialog>
@@ -743,8 +737,7 @@ export const TriggersOnEdges = () => (
         <DialogTrigger
           type="popover"
           placement="bottom start"
-          shouldFlip={false}
-        >
+          shouldFlip={false}>
           <ActionButton>T</ActionButton>
           <Dialog>
             <Content>Placement Bottom Start</Content>
@@ -793,8 +786,7 @@ export const TriggersOnEdges = () => (
         <DialogTrigger
           type="popover"
           placement="start bottom"
-          shouldFlip={false}
-        >
+          shouldFlip={false}>
           <ActionButton>Trigger</ActionButton>
           <Dialog>
             <Content>Placement Start Bottom</Content>
@@ -824,15 +816,15 @@ export const TriggersOnEdges = () => (
 );
 
 TriggersOnEdges.story = {
-  name: "popover triggers on edges",
+  name: 'popover triggers on edges'
 };
 
 function render(props) {
-  let { width = "auto", ...otherProps } = props;
+  let {width = 'auto', ...otherProps} = props;
 
   return (
-    <div style={{ display: "flex", width, margin: "100px 0" }}>
-      <DialogTrigger {...otherProps} onOpenChange={action("open change")}>
+    <div style={{display: 'flex', width, margin: '100px 0'}}>
+      <DialogTrigger {...otherProps} onOpenChange={action('open change')}>
         <ActionButton>Trigger</ActionButton>
         {(close) => (
           <Dialog>
@@ -854,11 +846,10 @@ function render(props) {
               <ButtonGroup>
                 <Button
                   variant="secondary"
-                  onPress={chain(close, action("cancel"))}
-                >
+                  onPress={chain(close, action('cancel'))}>
                   Cancel
                 </Button>
-                <Button variant="cta" onPress={chain(close, action("confirm"))}>
+                <Button variant="cta" onPress={chain(close, action('confirm'))}>
                   Confirm
                 </Button>
               </ButtonGroup>
@@ -871,10 +862,10 @@ function render(props) {
 }
 
 function renderTriggerNotCentered(props) {
-  let { buttonHeight, buttonWidth, ...otherProps } = props;
+  let {buttonHeight, buttonWidth, ...otherProps} = props;
 
   return (
-    <div style={{ position: "absolute", top: "100px", left: "100px" }}>
+    <div style={{position: 'absolute', top: '100px', left: '100px'}}>
       <div>
         action button shouldn't get any events if the underlay is up and you try
         to click it through the underlay
@@ -882,15 +873,13 @@ function renderTriggerNotCentered(props) {
       <DialogTrigger
         {...otherProps}
         isDismissable
-        onOpenChange={action("open change")}
-      >
+        onOpenChange={action('open change')}>
         <ActionButton
           height={buttonHeight}
           width={buttonWidth}
-          onPressStart={action("onPressStart")}
-          onPress={action("onPress")}
-          onPressEnd={action("onPressEnd")}
-        >
+          onPressStart={action('onPressStart')}
+          onPress={action('onPress')}
+          onPressEnd={action('onPressEnd')}>
           Trigger
         </ActionButton>
         <Dialog>
@@ -915,17 +904,16 @@ function renderTriggerNotCentered(props) {
 }
 
 function renderPopover(props, withMargin = true) {
-  let { width = "auto", buttonHeight, buttonWidth, ...otherProps } = props;
+  let {width = 'auto', buttonHeight, buttonWidth, ...otherProps} = props;
 
   return (
     <div
       style={{
-        display: "flex",
+        display: 'flex',
         width,
-        margin: withMargin ? "100px 0" : undefined,
-      }}
-    >
-      <DialogTrigger {...otherProps} onOpenChange={action("open change")}>
+        margin: withMargin ? '100px 0' : undefined
+      }}>
+      <DialogTrigger {...otherProps} onOpenChange={action('open change')}>
         <ActionButton height={buttonHeight} width={buttonWidth}>
           Trigger
         </ActionButton>
@@ -951,15 +939,14 @@ function renderPopover(props, withMargin = true) {
 }
 
 let TriggerWithRef = (props) => {
-  let { buttonHeight, buttonWidth, ...otherProps } = props;
+  let {buttonHeight, buttonWidth, ...otherProps} = props;
   let ref = React.useRef(null);
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{display: 'flex'}}>
       <DialogTrigger
         {...otherProps}
         targetRef={ref}
-        onOpenChange={action("open change")}
-      >
+        onOpenChange={action('open change')}>
         <ActionButton height={buttonHeight} width={buttonWidth}>
           Trigger
         </ActionButton>
@@ -980,7 +967,7 @@ let TriggerWithRef = (props) => {
           </Content>
         </Dialog>
       </DialogTrigger>
-      <span ref={ref} style={{ marginInlineStart: "200px" }}>
+      <span ref={ref} style={{marginInlineStart: '200px'}}>
         Popover appears over here
       </span>
     </div>
@@ -988,11 +975,11 @@ let TriggerWithRef = (props) => {
 };
 
 function renderAlert(props) {
-  let { buttonHeight, buttonWidth, width = "auto", ...otherProps } = props;
+  let {buttonHeight, buttonWidth, width = 'auto', ...otherProps} = props;
 
   return (
-    <div style={{ display: "flex", width, margin: "100px 0" }}>
-      <DialogTrigger {...otherProps} onOpenChange={action("open change")}>
+    <div style={{display: 'flex', width, margin: '100px 0'}}>
+      <DialogTrigger {...otherProps} onOpenChange={action('open change')}>
         <ActionButton height={buttonHeight} width={buttonWidth}>
           Trigger
         </ActionButton>
@@ -1003,10 +990,9 @@ function renderAlert(props) {
             primaryActionLabel="Accept"
             secondaryActionLabel="Whoa"
             cancelLabel="Cancel"
-            onCancel={chain(close, action("cancel"))}
-            onPrimaryAction={chain(close, action("primary"))}
-            onSecondaryAction={chain(close, action("secondary"))}
-          >
+            onCancel={chain(close, action('cancel'))}
+            onPrimaryAction={chain(close, action('primary'))}
+            onSecondaryAction={chain(close, action('secondary'))}>
             <Text>
               Fine! No, absolutely fine. It's not like I don't have, you know,
               ten thousand other test subjects begging me to help them escape.
@@ -1021,8 +1007,8 @@ function renderAlert(props) {
 
 function AdjustableDialog() {
   let headingStrings = [
-    "The Heading",
-    "The Heading of Maximum Truth That is Really Long to Go On and On a a a a a Again and Wraps",
+    'The Heading',
+    'The Heading of Maximum Truth That is Really Long to Go On and On a a a a a Again and Wraps'
   ];
   let [showHero, setShowHero] = useState(false);
   let [heading, setHeading] = useState(headingStrings[0]);
@@ -1041,8 +1027,7 @@ function AdjustableDialog() {
             isChecked
               ? setHeading(headingStrings[1])
               : setHeading(headingStrings[0]);
-          }}
-        >
+          }}>
           Toggle Heading Values
         </Checkbox>
         <Checkbox onChange={setShowHeader}>Show Header</Checkbox>
@@ -1062,8 +1047,7 @@ function AdjustableDialog() {
                 slot="hero"
                 alt=""
                 src="https://i.imgur.com/Z7AzH2c.png"
-                objectFit="cover"
-              />
+                objectFit="cover" />
             )}
             <Heading>{heading}</Heading>
             {showHeader && <Header>This is a long header</Header>}
@@ -1090,12 +1074,11 @@ function AdjustableDialog() {
             <ButtonGroup>
               <Button
                 variant="secondary"
-                onPress={chain(close, action("cancel"))}
-              >
-                Cancel {longButtonLabels && "and close this dialog"}
+                onPress={chain(close, action('cancel'))}>
+                Cancel {longButtonLabels && 'and close this dialog'}
               </Button>
-              <Button variant="cta" onPress={chain(close, action("confirm"))}>
-                Confirm {longButtonLabels && "and close this dialog"}
+              <Button variant="cta" onPress={chain(close, action('confirm'))}>
+                Confirm {longButtonLabels && 'and close this dialog'}
               </Button>
             </ButtonGroup>
           </Dialog>

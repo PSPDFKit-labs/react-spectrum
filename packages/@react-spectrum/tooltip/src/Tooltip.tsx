@@ -10,22 +10,22 @@
  * governing permissions and limitations under the License.
  */
 
-import AlertSmall from "@spectrum-icons/ui/AlertSmall";
-import { classNames, createDOMRef, useStyleProps } from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import InfoSmall from "@spectrum-icons/ui/InfoSmall";
-import { mergeProps } from "@react-aria-nutrient/utils";
-import React, { useContext, useImperativeHandle, useRef } from "react";
-import { SpectrumTooltipProps } from "@react-types/tooltip";
-import styles from "@adobe/spectrum-css-temp/components/tooltip/vars.css";
-import SuccessSmall from "@spectrum-icons/ui/SuccessSmall";
-import { TooltipContext } from "./context";
-import { useTooltip } from "@react-aria-nutrient/tooltip";
+import AlertSmall from '@spectrum-icons/ui/AlertSmall';
+import {classNames, createDOMRef, useStyleProps} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import InfoSmall from '@spectrum-icons/ui/InfoSmall';
+import {mergeProps} from '@react-aria-nutrient/utils';
+import React, {useContext, useImperativeHandle, useRef} from 'react';
+import {SpectrumTooltipProps} from '@react-types/tooltip';
+import styles from '@adobe/spectrum-css-temp/components/tooltip/vars.css';
+import SuccessSmall from '@spectrum-icons/ui/SuccessSmall';
+import {TooltipContext} from './context';
+import {useTooltip} from '@react-aria-nutrient/tooltip';
 
 let iconMap = {
   info: InfoSmall,
   positive: SuccessSmall,
-  negative: AlertSmall,
+  negative: AlertSmall
 };
 
 /**
@@ -47,17 +47,17 @@ export const Tooltip = React.forwardRef(function Tooltip(
   let backupPlacement = props.placement;
   props = mergeProps(props, tooltipProviderProps);
   let {
-    variant = "neutral",
+    variant = 'neutral',
     placement,
     isOpen,
     showIcon,
     ...otherProps
   } = props;
   if (placement == null) {
-    placement = backupPlacement ?? "top";
+    placement = backupPlacement ?? 'top';
   }
-  let { styleProps } = useStyleProps(otherProps);
-  let { tooltipProps } = useTooltip(props, state);
+  let {styleProps} = useStyleProps(otherProps);
+  let {tooltipProps} = useTooltip(props, state);
 
   // Sync ref with overlayRef from context.
   useImperativeHandle(ref, () => createDOMRef(overlayRef));
@@ -70,33 +70,30 @@ export const Tooltip = React.forwardRef(function Tooltip(
       {...tooltipProps}
       className={classNames(
         styles,
-        "spectrum-Tooltip",
+        'spectrum-Tooltip',
         `spectrum-Tooltip--${variant}`,
         `spectrum-Tooltip--${placement}`,
         {
-          "is-open": isOpen,
-          [`is-open--${placement}`]: isOpen,
+          'is-open': isOpen,
+          [`is-open--${placement}`]: isOpen
         },
         styleProps.className
       )}
-      ref={overlayRef}
-    >
-      {showIcon && variant !== "neutral" && (
+      ref={overlayRef}>
+      {showIcon && variant !== 'neutral' && (
         <Icon
-          UNSAFE_className={classNames(styles, "spectrum-Tooltip-typeIcon")}
-          aria-hidden
-        />
+          UNSAFE_className={classNames(styles, 'spectrum-Tooltip-typeIcon')}
+          aria-hidden />
       )}
       {props.children && (
-        <span className={classNames(styles, "spectrum-Tooltip-label")}>
+        <span className={classNames(styles, 'spectrum-Tooltip-label')}>
           {props.children}
         </span>
       )}
       <span
         {...arrowProps}
         ref={arrowRef}
-        className={classNames(styles, "spectrum-Tooltip-tip")}
-      />
+        className={classNames(styles, 'spectrum-Tooltip-tip')} />
     </div>
   );
 });

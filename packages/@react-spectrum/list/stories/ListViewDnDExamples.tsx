@@ -1,36 +1,36 @@
-import { action } from "@storybook/addon-actions";
-import { ActionMenu } from "@react-spectrum/menu";
-import { chain } from "@react-aria-nutrient/utils";
-import Delete from "@spectrum-icons/workflow/Delete";
-import Edit from "@spectrum-icons/workflow/Edit";
-import File from "@spectrum-icons/illustrations/File";
-import { Flex } from "@react-spectrum/layout";
-import Folder from "@spectrum-icons/illustrations/Folder";
-import { Item, ListView } from "../";
-import { ItemDropTarget, Key } from "@react-types/shared";
-import { items } from "./ListView.stories";
-import React from "react";
-import { Text } from "@react-spectrum/text";
-import { useDragAndDrop } from "@react-spectrum/dnd";
-import { useListData } from "@react-stately/data";
+import {action} from '@storybook/addon-actions';
+import {ActionMenu} from '@react-spectrum/menu';
+import {chain} from '@react-aria-nutrient/utils';
+import Delete from '@spectrum-icons/workflow/Delete';
+import Edit from '@spectrum-icons/workflow/Edit';
+import File from '@spectrum-icons/illustrations/File';
+import {Flex} from '@react-spectrum/layout';
+import Folder from '@spectrum-icons/illustrations/Folder';
+import {Item, ListView} from '../';
+import {ItemDropTarget, Key} from '@react-types/shared';
+import {items} from './ListView.stories';
+import React from 'react';
+import {Text} from '@react-spectrum/text';
+import {useDragAndDrop} from '@react-spectrum/dnd';
+import {useListData} from '@react-stately/data';
 
 export function DragExample(props?) {
-  let { listViewProps, dragHookOptions } = props;
+  let {listViewProps, dragHookOptions} = props;
   let getItems = (keys) =>
     [...keys].map((key) => {
       let item = items.find((item) => item.key === key);
       return {
-        "text/plain": item.name,
+        'text/plain': item.name
       };
     });
 
-  let { dragAndDropHooks } = useDragAndDrop({
+  let {dragAndDropHooks} = useDragAndDrop({
     getItems,
     getAllowedDropOperations() {
       props.getAllowedDropOperationsAction?.();
-      return ["move", "cancel"];
+      return ['move', 'cancel'];
     },
-    ...dragHookOptions,
+    ...dragHookOptions
   });
 
   return (
@@ -39,21 +39,19 @@ export function DragExample(props?) {
       width="300px"
       selectionMode="multiple"
       items={items}
-      disabledKeys={["f"]}
+      disabledKeys={['f']}
       dragAndDropHooks={dragAndDropHooks}
-      {...listViewProps}
-    >
+      {...listViewProps}>
       {(item: any) => (
         <Item
           key={item.key}
           textValue={item.name}
-          hasChildItems={item.type === "folder"}
-        >
-          {item.type === "folder" && <Folder />}
-          {item.key === "a" && <File />}
+          hasChildItems={item.type === 'folder'}>
+          {item.type === 'folder' && <Folder />}
+          {item.key === 'a' && <File />}
           <Text>{item.name}</Text>
-          {item.key === "b" && <Text slot="description">Beta</Text>}
-          <ActionMenu onAction={action("onAction")}>
+          {item.key === 'b' && <Text slot="description">Beta</Text>}
+          <ActionMenu onAction={action('onAction')}>
             <Item key="edit" textValue="Edit">
               <Edit />
               <Text>Edit</Text>
@@ -70,21 +68,21 @@ export function DragExample(props?) {
 }
 
 let itemList1 = [
-  { id: "1", type: "item", textValue: "Item One" },
-  { id: "2", type: "item", textValue: "Item Two" },
-  { id: "3", type: "item", textValue: "Item Three" },
-  { id: "4", type: "item", textValue: "Item Four" },
-  { id: "5", type: "item", textValue: "Item Five" },
-  { id: "6", type: "item", textValue: "Item Six" },
+  {id: '1', type: 'item', textValue: 'Item One'},
+  {id: '2', type: 'item', textValue: 'Item Two'},
+  {id: '3', type: 'item', textValue: 'Item Three'},
+  {id: '4', type: 'item', textValue: 'Item Four'},
+  {id: '5', type: 'item', textValue: 'Item Five'},
+  {id: '6', type: 'item', textValue: 'Item Six'}
 ];
 
 let itemList2 = [
-  { id: "7", type: "item", textValue: "Item Seven" },
-  { id: "8", type: "item", textValue: "Item Eight" },
-  { id: "9", type: "item", textValue: "Item Nine" },
-  { id: "10", type: "item", textValue: "Item Ten" },
-  { id: "11", type: "item", textValue: "Item Eleven" },
-  { id: "12", type: "item", textValue: "Item Twelve" },
+  {id: '7', type: 'item', textValue: 'Item Seven'},
+  {id: '8', type: 'item', textValue: 'Item Eight'},
+  {id: '9', type: 'item', textValue: 'Item Nine'},
+  {id: '10', type: 'item', textValue: 'Item Ten'},
+  {id: '11', type: 'item', textValue: 'Item Eleven'},
+  {id: '12', type: 'item', textValue: 'Item Twelve'}
 ];
 
 export function ReorderExample(props) {
@@ -93,11 +91,11 @@ export function ReorderExample(props) {
     onDrop,
     onDragStart,
     onDragEnd,
-    disabledKeys = ["2"],
+    disabledKeys = ['2'],
     ...otherprops
   } = props;
   let list = useListData({
-    initialItems: items || itemList1,
+    initialItems: items || itemList1
   });
 
   // Use a random drag type so the items can only be reordered within this list and not dragged elsewhere.
@@ -107,44 +105,44 @@ export function ReorderExample(props) {
   );
 
   let onMove = (keys: Key[], target: ItemDropTarget) => {
-    if (target.dropPosition === "before") {
+    if (target.dropPosition === 'before') {
       list.moveBefore(target.key, keys);
     } else {
       list.moveAfter(target.key, keys);
     }
   };
 
-  let { dragAndDropHooks } = useDragAndDrop({
+  let {dragAndDropHooks} = useDragAndDrop({
     getItems(keys) {
       return [...keys].map((key) => {
         key = JSON.stringify(key);
         return {
           [dragType]: key,
-          "text/plain": key,
+          'text/plain': key
         };
       });
     },
     getAllowedDropOperations() {
       props.getAllowedDropOperationsAction?.();
-      return ["move", "cancel"];
+      return ['move', 'cancel'];
     },
     onDragStart: onDragStart,
     onDragEnd: onDragEnd,
     async onDrop(e) {
       onDrop(e);
-      if (e.target.type !== "root" && e.target.dropPosition !== "on") {
+      if (e.target.type !== 'root' && e.target.dropPosition !== 'on') {
         let keys: Key[] = [];
         for (let item of e.items) {
-          if (item.kind === "text") {
+          if (item.kind === 'text') {
             let key: Key;
             if (item.types.has(dragType)) {
               key = JSON.parse(await item.getText(dragType));
               keys.push(key);
-            } else if (item.types.has("text/plain")) {
+            } else if (item.types.has('text/plain')) {
               // Fallback for Chrome Android case: https://bugs.chromium.org/p/chromium/issues/detail?id=1293803
               // Multiple drag items are contained in a single string so we need to split them out
-              key = await item.getText("text/plain");
-              keys = key.split("\n").map((val) => val.replaceAll('"', ""));
+              key = await item.getText('text/plain');
+              keys = key.split('\n').map((val) => val.replaceAll('"', ''));
             }
           }
         }
@@ -152,12 +150,12 @@ export function ReorderExample(props) {
       }
     },
     getDropOperation(target) {
-      if (target.type === "root" || target.dropPosition === "on") {
-        return "cancel";
+      if (target.type === 'root' || target.dropPosition === 'on') {
+        return 'cancel';
       }
 
-      return "move";
-    },
+      return 'move';
+    }
   });
 
   return (
@@ -169,8 +167,7 @@ export function ReorderExample(props) {
       items={list.items}
       disabledKeys={disabledKeys}
       dragAndDropHooks={dragAndDropHooks}
-      {...otherprops}
-    >
+      {...otherprops}>
       {(item: any) => <Item>{item.textValue}</Item>}
     </ListView>
   );
@@ -180,32 +177,32 @@ export function DragIntoItemExample(props) {
   let {
     listViewProps = {},
     dragHookOptions = {},
-    dropHookOptions = {},
+    dropHookOptions = {}
   } = props;
-  let { onDragStart, onDragEnd } = dragHookOptions;
-  let { onDrop } = dropHookOptions;
-  let onDropAction = chain(action("onDrop"), onDrop);
-  let getAllowedDropOperationsAction = action("getAllowedDropOperations");
+  let {onDragStart, onDragEnd} = dragHookOptions;
+  let {onDrop} = dropHookOptions;
+  let onDropAction = chain(action('onDrop'), onDrop);
+  let getAllowedDropOperationsAction = action('getAllowedDropOperations');
 
   let list = useListData({
     initialItems: [
       {
-        id: "0",
-        type: "folder",
-        textValue: "Folder 1",
-        childNodes: [] as any[],
+        id: '0',
+        type: 'folder',
+        textValue: 'Folder 1',
+        childNodes: [] as any[]
       },
-      { id: "1", type: "item", textValue: "One" },
-      { id: "2", type: "item", textValue: "Two" },
-      { id: "3", type: "item", textValue: "Three" },
-      { id: "4", type: "item", textValue: "Four" },
-      { id: "5", type: "item", textValue: "Five" },
-      { id: "6", type: "item", textValue: "Six" },
-      { id: "7", type: "folder", textValue: "Folder disabled", childNodes: [] },
-      { id: "8", type: "folder", textValue: "Folder 2", childNodes: [] },
-    ],
+      {id: '1', type: 'item', textValue: 'One'},
+      {id: '2', type: 'item', textValue: 'Two'},
+      {id: '3', type: 'item', textValue: 'Three'},
+      {id: '4', type: 'item', textValue: 'Four'},
+      {id: '5', type: 'item', textValue: 'Five'},
+      {id: '6', type: 'item', textValue: 'Six'},
+      {id: '7', type: 'folder', textValue: 'Folder disabled', childNodes: []},
+      {id: '8', type: 'folder', textValue: 'Folder 2', childNodes: []}
+    ]
   });
-  let disabledKeys: Key[] = ["2", "7"];
+  let disabledKeys: Key[] = ['2', '7'];
 
   // Use a random drag type so the items can only be reordered within this list and not dragged elsewhere.
   let dragType = React.useMemo(
@@ -218,42 +215,42 @@ export function DragIntoItemExample(props) {
     let draggedItems = keys.map((key) => list.getItem(key));
     list.update(target.key, {
       ...folderItem,
-      childNodes: [...(folderItem.childNodes || []), ...draggedItems],
+      childNodes: [...(folderItem.childNodes || []), ...draggedItems]
     });
     list.remove(...keys);
   };
 
-  let { dragAndDropHooks } = useDragAndDrop({
+  let {dragAndDropHooks} = useDragAndDrop({
     getItems(keys) {
       return [...keys].map((key) => {
         key = JSON.stringify(key);
         return {
           [dragType]: key,
-          "text/plain": key,
+          'text/plain': key
         };
       });
     },
     getAllowedDropOperations() {
       getAllowedDropOperationsAction();
-      return ["move", "cancel"];
+      return ['move', 'cancel'];
     },
-    onDragStart: chain(action("dragStart"), onDragStart),
-    onDragEnd: chain(action("dragEnd"), onDragEnd),
+    onDragStart: chain(action('dragStart'), onDragStart),
+    onDragEnd: chain(action('dragEnd'), onDragEnd),
     onDrop: async (e) => {
       onDropAction(e);
-      if (e.target.type !== "root" && e.target.dropPosition === "on") {
+      if (e.target.type !== 'root' && e.target.dropPosition === 'on') {
         let keys: Key[] = [];
         for (let item of e.items) {
-          if (item.kind === "text") {
+          if (item.kind === 'text') {
             let key: Key;
             if (item.types.has(dragType)) {
               key = JSON.parse(await item.getText(dragType));
               keys.push(key);
-            } else if (item.types.has("text/plain")) {
+            } else if (item.types.has('text/plain')) {
               // Fallback for Chrome Android case: https://bugs.chromium.org/p/chromium/issues/detail?id=1293803
               // Multiple drag items are contained in a single string so we need to split them out
-              key = await item.getText("text/plain");
-              keys = key.split("\n").map((val) => val.replaceAll('"', ""));
+              key = await item.getText('text/plain');
+              keys = key.split('\n').map((val) => val.replaceAll('"', ''));
             }
           }
         }
@@ -264,16 +261,16 @@ export function DragIntoItemExample(props) {
     },
     getDropOperation(target) {
       if (
-        target.type === "root" ||
-        target.dropPosition !== "on" ||
+        target.type === 'root' ||
+        target.dropPosition !== 'on' ||
         !list.getItem(target.key)!.childNodes ||
         disabledKeys.includes(target.key)
       ) {
-        return "cancel";
+        return 'cancel';
       }
 
-      return "move";
-    },
+      return 'move';
+    }
   });
 
   return (
@@ -284,16 +281,15 @@ export function DragIntoItemExample(props) {
       items={list.items}
       disabledKeys={disabledKeys}
       dragAndDropHooks={dragAndDropHooks}
-      {...listViewProps}
-    >
+      {...listViewProps}>
       {(item: any) => (
-        <Item textValue={item.textValue} hasChildItems={item.type === "folder"}>
+        <Item textValue={item.textValue} hasChildItems={item.type === 'folder'}>
           <Text>
-            {item.type === "folder"
+            {item.type === 'folder'
               ? `${item.textValue} (Drop items here)`
               : `Item ${item.textValue}`}
           </Text>
-          {item.type === "folder" && (
+          {item.type === 'folder' && (
             <>
               <Folder />
               <Text slot="description">{`contains ${item.childNodes.length} dropped item(s)`}</Text>
@@ -306,17 +302,17 @@ export function DragIntoItemExample(props) {
 }
 
 export function DragBetweenListsExample(props) {
-  let { onDragStart, onDragEnd, onDrop } = props;
-  let onDropAction = chain(action("onDrop"), onDrop);
-  onDragStart = chain(action("dragStart"), onDragStart);
-  onDragEnd = chain(action("dragEnd"), onDragEnd);
+  let {onDragStart, onDragEnd, onDrop} = props;
+  let onDropAction = chain(action('onDrop'), onDrop);
+  onDragStart = chain(action('dragStart'), onDragStart);
+  onDragEnd = chain(action('dragEnd'), onDragEnd);
 
   let list1 = useListData({
-    initialItems: props.items1 || itemList1,
+    initialItems: props.items1 || itemList1
   });
 
   let list2 = useListData({
-    initialItems: props.items2 || itemList2,
+    initialItems: props.items2 || itemList2
   });
 
   let onMove = (keys: Key[], target: ItemDropTarget) => {
@@ -325,14 +321,14 @@ export function DragBetweenListsExample(props) {
 
     if (sourceList === destinationList) {
       // Handle dragging within same list
-      if (target.dropPosition === "before") {
+      if (target.dropPosition === 'before') {
         sourceList.moveBefore(target.key, keys);
       } else {
         sourceList.moveAfter(target.key, keys);
       }
     } else {
       // Handle dragging between lists
-      if (target.dropPosition === "before") {
+      if (target.dropPosition === 'before') {
         destinationList.insertBefore(
           target.key,
           ...keys.map((key) => sourceList.getItem(key))
@@ -353,37 +349,37 @@ export function DragBetweenListsExample(props) {
     []
   );
 
-  let { dragAndDropHooks } = useDragAndDrop({
+  let {dragAndDropHooks} = useDragAndDrop({
     getItems(keys) {
       return [...keys].map((key) => {
         key = JSON.stringify(key);
         return {
           [dragType]: key,
-          "text/plain": key,
+          'text/plain': key
         };
       });
     },
     getAllowedDropOperations() {
       props.getAllowedDropOperationsAction?.();
-      return ["move", "cancel"];
+      return ['move', 'cancel'];
     },
     onDragStart,
     onDragEnd,
     onDrop: async (e) => {
       onDropAction(e);
-      if (e.target.type !== "root" && e.target.dropPosition !== "on") {
+      if (e.target.type !== 'root' && e.target.dropPosition !== 'on') {
         let keys: Key[] = [];
         for (let item of e.items) {
-          if (item.kind === "text") {
+          if (item.kind === 'text') {
             let key: Key;
             if (item.types.has(dragType)) {
               key = JSON.parse(await item.getText(dragType));
               keys.push(key);
-            } else if (item.types.has("text/plain")) {
+            } else if (item.types.has('text/plain')) {
               // Fallback for Chrome Android case: https://bugs.chromium.org/p/chromium/issues/detail?id=1293803
               // Multiple drag items are contained in a single string so we need to split them out
-              key = await item.getText("text/plain");
-              keys = key.split("\n").map((val) => val.replaceAll('"', ""));
+              key = await item.getText('text/plain');
+              keys = key.split('\n').map((val) => val.replaceAll('"', ''));
             }
           }
         }
@@ -391,12 +387,12 @@ export function DragBetweenListsExample(props) {
       }
     },
     getDropOperation(target) {
-      if (target.type === "root" || target.dropPosition === "on") {
-        return "cancel";
+      if (target.type === 'root' || target.dropPosition === 'on') {
+        return 'cancel';
       }
 
-      return "move";
-    },
+      return 'move';
+    }
   });
 
   return (
@@ -408,10 +404,9 @@ export function DragBetweenListsExample(props) {
           selectionMode="multiple"
           width="300px"
           items={list1.items}
-          disabledKeys={["2"]}
+          disabledKeys={['2']}
           dragAndDropHooks={dragAndDropHooks}
-          {...props}
-        >
+          {...props}>
           {(item: any) => <Item>{item.textValue}</Item>}
         </ListView>
       </Flex>
@@ -422,10 +417,9 @@ export function DragBetweenListsExample(props) {
           selectionMode="multiple"
           width="300px"
           items={list2.items}
-          disabledKeys={["2"]}
+          disabledKeys={['2']}
           dragAndDropHooks={dragAndDropHooks}
-          {...props}
-        >
+          {...props}>
           {(item: any) => <Item>{item.textValue}</Item>}
         </ListView>
       </Flex>
@@ -437,18 +431,18 @@ export function DragBetweenListsRootOnlyExample(props) {
   let {
     listViewProps = {},
     dragHookOptions = {},
-    dropHookOptions = {},
+    dropHookOptions = {}
   } = props;
-  let { onDragStart, onDragEnd } = dragHookOptions;
-  let { onDrop } = dropHookOptions;
-  let onDropAction = chain(action("onDrop"), onDrop);
+  let {onDragStart, onDragEnd} = dragHookOptions;
+  let {onDrop} = dropHookOptions;
+  let onDropAction = chain(action('onDrop'), onDrop);
 
   let list1 = useListData({
-    initialItems: props.items1 || itemList1,
+    initialItems: props.items1 || itemList1
   });
 
   let list2 = useListData({
-    initialItems: props.items2 || itemList2,
+    initialItems: props.items2 || itemList2
   });
 
   let onMove = (keys: Key[], destinationList) => {
@@ -459,37 +453,37 @@ export function DragBetweenListsRootOnlyExample(props) {
     destinationList.append(...items);
   };
 
-  let { dragAndDropHooks: dragAndDropHooksFirst } = useDragAndDrop({
+  let {dragAndDropHooks: dragAndDropHooksFirst} = useDragAndDrop({
     getItems(keys) {
       return [...keys].map((key) => {
         key = JSON.stringify(key);
         return {
           list1: key,
-          "text/plain": key,
+          'text/plain': key
         };
       });
     },
     getAllowedDropOperations() {
       props.getAllowedDropOperationsAction?.();
-      return ["move", "cancel"];
+      return ['move', 'cancel'];
     },
-    onDragStart: chain(action("dragStart"), onDragStart),
-    onDragEnd: chain(action("dragEnd"), onDragEnd),
+    onDragStart: chain(action('dragStart'), onDragStart),
+    onDragEnd: chain(action('dragEnd'), onDragEnd),
     onDrop: async (e) => {
       onDropAction(e);
-      if (e.target.type === "root") {
+      if (e.target.type === 'root') {
         let keys: Key[] = [];
         for (let item of e.items) {
-          if (item.kind === "text") {
+          if (item.kind === 'text') {
             let key: Key;
-            if (item.types.has("list2")) {
-              key = JSON.parse(await item.getText("list2"));
+            if (item.types.has('list2')) {
+              key = JSON.parse(await item.getText('list2'));
               keys.push(key);
-            } else if (item.types.has("text/plain")) {
+            } else if (item.types.has('text/plain')) {
               // Fallback for Chrome Android case: https://bugs.chromium.org/p/chromium/issues/detail?id=1293803
               // Multiple drag items are contained in a single string so we need to split them out
-              key = await item.getText("text/plain");
-              keys = key.split("\n").map((val) => val.replaceAll('"', ""));
+              key = await item.getText('text/plain');
+              keys = key.split('\n').map((val) => val.replaceAll('"', ''));
             }
           }
         }
@@ -498,47 +492,47 @@ export function DragBetweenListsRootOnlyExample(props) {
     },
     getDropOperation(target, types) {
       if (
-        target.type === "root" &&
-        (types.has("list2") || types.has("text/plain"))
+        target.type === 'root' &&
+        (types.has('list2') || types.has('text/plain'))
       ) {
-        return "move";
+        return 'move';
       }
 
-      return "cancel";
-    },
+      return 'cancel';
+    }
   });
 
-  let { dragAndDropHooks: dragAndDropHooksSecond } = useDragAndDrop({
+  let {dragAndDropHooks: dragAndDropHooksSecond} = useDragAndDrop({
     getItems(keys) {
       return [...keys].map((key) => {
         key = JSON.stringify(key);
         return {
           list2: key,
-          "text/plain": key,
+          'text/plain': key
         };
       });
     },
     getAllowedDropOperations() {
       props.getAllowedDropOperationsAction?.();
-      return ["move", "cancel"];
+      return ['move', 'cancel'];
     },
-    onDragStart: chain(action("dragStart"), onDragStart),
-    onDragEnd: chain(action("dragEnd"), onDragEnd),
+    onDragStart: chain(action('dragStart'), onDragStart),
+    onDragEnd: chain(action('dragEnd'), onDragEnd),
     onDrop: async (e) => {
       onDropAction(e);
-      if (e.target.type === "root") {
+      if (e.target.type === 'root') {
         let keys: Key[] = [];
         for (let item of e.items) {
-          if (item.kind === "text") {
+          if (item.kind === 'text') {
             let key: Key;
-            if (item.types.has("list1")) {
-              key = JSON.parse(await item.getText("list1"));
+            if (item.types.has('list1')) {
+              key = JSON.parse(await item.getText('list1'));
               keys.push(key);
-            } else if (item.types.has("text/plain")) {
+            } else if (item.types.has('text/plain')) {
               // Fallback for Chrome Android case: https://bugs.chromium.org/p/chromium/issues/detail?id=1293803
               // Multiple drag items are contained in a single string so we need to split them out
-              key = await item.getText("text/plain");
-              keys = key.split("\n").map((val) => val.replaceAll('"', ""));
+              key = await item.getText('text/plain');
+              keys = key.split('\n').map((val) => val.replaceAll('"', ''));
             }
           }
         }
@@ -547,14 +541,14 @@ export function DragBetweenListsRootOnlyExample(props) {
     },
     getDropOperation(target, types) {
       if (
-        target.type === "root" &&
-        (types.has("list1") || types.has("text/plain"))
+        target.type === 'root' &&
+        (types.has('list1') || types.has('text/plain'))
       ) {
-        return "move";
+        return 'move';
       }
 
-      return "cancel";
-    },
+      return 'cancel';
+    }
   });
 
   return (
@@ -566,10 +560,9 @@ export function DragBetweenListsRootOnlyExample(props) {
           selectionMode="multiple"
           width="300px"
           items={list1.items}
-          disabledKeys={["2"]}
+          disabledKeys={['2']}
           dragAndDropHooks={dragAndDropHooksFirst}
-          {...listViewProps}
-        >
+          {...listViewProps}>
           {(item: any) => <Item>{item.textValue}</Item>}
         </ListView>
       </Flex>
@@ -580,10 +573,9 @@ export function DragBetweenListsRootOnlyExample(props) {
           selectionMode="multiple"
           width="300px"
           items={list2.items}
-          disabledKeys={["2"]}
+          disabledKeys={['2']}
           dragAndDropHooks={dragAndDropHooksSecond}
-          {...listViewProps}
-        >
+          {...listViewProps}>
           {(item: any) => <Item>{item.textValue}</Item>}
         </ListView>
       </Flex>

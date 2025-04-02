@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-import { DismissButton, useOverlay } from "@react-aria-nutrient/overlays";
-import { FocusScope } from "@react-aria-nutrient/focus";
-import { HiddenSelect, useSelect } from "@react-aria-nutrient/select";
-import React from "react";
-import { useButton } from "@react-aria-nutrient/button";
-import { useListBox, useOption } from "@react-aria-nutrient/listbox";
-import { useSelectState } from "@react-stately/select";
+import {DismissButton, useOverlay} from '@react-aria-nutrient/overlays';
+import {FocusScope} from '@react-aria-nutrient/focus';
+import {HiddenSelect, useSelect} from '@react-aria-nutrient/select';
+import React from 'react';
+import {useButton} from '@react-aria-nutrient/button';
+import {useListBox, useOption} from '@react-aria-nutrient/listbox';
+import {useSelectState} from '@react-stately/select';
 
 export function Select(props) {
   // Create state based on the incoming props
@@ -24,31 +24,30 @@ export function Select(props) {
 
   // Get props for child elements from useSelect
   let ref = React.useRef(null);
-  let { labelProps, triggerProps, valueProps, menuProps } = useSelect(
+  let {labelProps, triggerProps, valueProps, menuProps} = useSelect(
     props,
     state,
     ref
   );
 
   // Get props for the button based on the trigger props from useSelect
-  let { buttonProps } = useButton(triggerProps, ref);
+  let {buttonProps} = useButton(triggerProps, ref);
 
   return (
-    <div style={{ position: "relative", display: "inline-block" }}>
+    <div style={{position: 'relative', display: 'inline-block'}}>
       <div {...labelProps}>{props.label}</div>
       <HiddenSelect
         state={state}
         triggerRef={ref}
         label={props.label}
-        name={props.name}
-      />
-      <button {...buttonProps} ref={ref} style={{ height: 30, fontSize: 14 }}>
+        name={props.name} />
+      <button {...buttonProps} ref={ref} style={{height: 30, fontSize: 14}}>
         <span {...valueProps}>
           {state.selectedItem
             ? state.selectedItem.rendered
-            : "Select an option"}
+            : 'Select an option'}
         </span>
-        <span aria-hidden="true" style={{ paddingLeft: 5 }}>
+        <span aria-hidden="true" style={{paddingLeft: 5}}>
           ▼
         </span>
       </button>
@@ -63,16 +62,16 @@ export function Select(props) {
 
 function Popover(props) {
   let ref = React.useRef(undefined);
-  let { popoverRef = ref, isOpen, onClose, children } = props;
+  let {popoverRef = ref, isOpen, onClose, children} = props;
 
   // Handle events that should cause the popup to close,
   // e.g. blur, clicking outside, or pressing the escape key.
-  let { overlayProps } = useOverlay(
+  let {overlayProps} = useOverlay(
     {
       isOpen,
       onClose,
       shouldCloseOnBlur: true,
-      isDismissable: true,
+      isDismissable: true
     },
     popoverRef
   );
@@ -85,13 +84,12 @@ function Popover(props) {
         {...overlayProps}
         ref={popoverRef}
         style={{
-          position: "absolute",
-          width: "100%",
-          border: "1px solid gray",
-          background: "lightgray",
-          marginTop: 4,
-        }}
-      >
+          position: 'absolute',
+          width: '100%',
+          border: '1px solid gray',
+          background: 'lightgray',
+          marginTop: 4
+        }}>
         {children}
         <DismissButton onDismiss={onClose} />
       </div>
@@ -101,8 +99,8 @@ function Popover(props) {
 
 function ListBox(props) {
   let ref = React.useRef(undefined);
-  let { listBoxRef = ref, state } = props;
-  let { listBoxProps } = useListBox(props, state, listBoxRef);
+  let {listBoxRef = ref, state} = props;
+  let {listBoxProps} = useListBox(props, state, listBoxRef);
 
   return (
     <ul
@@ -111,11 +109,10 @@ function ListBox(props) {
       style={{
         margin: 0,
         padding: 0,
-        listStyle: "none",
-        maxHeight: "150px",
-        overflow: "auto",
-      }}
-    >
+        listStyle: 'none',
+        maxHeight: '150px',
+        overflow: 'auto'
+      }}>
       {[...state.collection].map((item) => (
         <Option key={item.key} item={item} state={state} />
       ))}
@@ -123,25 +120,25 @@ function ListBox(props) {
   );
 }
 
-function Option({ item, state }) {
+function Option({item, state}) {
   let ref = React.useRef(null);
-  let { optionProps, isSelected, isFocused, isDisabled } = useOption(
-    { key: item.key },
+  let {optionProps, isSelected, isFocused, isDisabled} = useOption(
+    {key: item.key},
     state,
     ref
   );
 
   let backgroundColor;
-  let color = "black";
+  let color = 'black';
 
   if (isSelected) {
-    backgroundColor = "blueviolet";
-    color = "white";
+    backgroundColor = 'blueviolet';
+    color = 'white';
   } else if (isFocused) {
-    backgroundColor = "gray";
+    backgroundColor = 'gray';
   } else if (isDisabled) {
-    backgroundColor = "transparent";
-    color = "gray";
+    backgroundColor = 'transparent';
+    color = 'gray';
   }
 
   return (
@@ -151,11 +148,10 @@ function Option({ item, state }) {
       style={{
         background: backgroundColor,
         color: color,
-        padding: "2px 5px",
-        outline: "none",
-        cursor: "pointer",
-      }}
-    >
+        padding: '2px 5px',
+        outline: 'none',
+        cursor: 'pointer'
+      }}>
       {item.rendered}
     </li>
   );

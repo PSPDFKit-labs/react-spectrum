@@ -10,16 +10,16 @@
  * governing permissions and limitations under the License.
  */
 
-import { ContextValue, useContextProps } from "./utils";
-import { createLeafComponent } from "@react-aria-nutrient/collections";
-import React, { createContext, ForwardedRef, HTMLAttributes } from "react";
+import {ContextValue, useContextProps} from './utils';
+import {createLeafComponent} from '@react-aria-nutrient/collections';
+import React, {createContext, ForwardedRef, HTMLAttributes} from 'react';
 
 export const HeaderContext = createContext<
   ContextValue<HTMLAttributes<HTMLElement>, HTMLElement>
 >({});
 
 export const Header = /*#__PURE__*/ createLeafComponent(
-  "header",
+  'header',
   function Header(
     props: HTMLAttributes<HTMLElement>,
     ref: ForwardedRef<HTMLElement>

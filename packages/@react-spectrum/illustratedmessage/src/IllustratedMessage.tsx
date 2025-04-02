@@ -15,14 +15,14 @@ import {
   ClearSlots,
   SlotProvider,
   useSlotProps,
-  useStyleProps,
-} from "@react-spectrum/utils";
-import { DOMRef } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { Flex } from "@react-spectrum/layout";
-import React, { forwardRef } from "react";
-import { SpectrumIllustratedMessageProps } from "@react-types/illustratedmessage";
-import styles from "@adobe/spectrum-css-temp/components/illustratedmessage/vars.css";
+  useStyleProps
+} from '@react-spectrum/utils';
+import {DOMRef} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {Flex} from '@react-spectrum/layout';
+import React, {forwardRef} from 'react';
+import {SpectrumIllustratedMessageProps} from '@react-types/illustratedmessage';
+import styles from '@adobe/spectrum-css-temp/components/illustratedmessage/vars.css';
 
 /**
  * An IllustratedMessage displays an illustration and a message, usually
@@ -32,22 +32,22 @@ export const IllustratedMessage = forwardRef(function IllustratedMessage(
   props: SpectrumIllustratedMessageProps,
   ref: DOMRef<HTMLDivElement>
 ) {
-  props = useSlotProps(props, "illustration");
-  let { children, ...otherProps } = props;
+  props = useSlotProps(props, 'illustration');
+  let {children, ...otherProps} = props;
 
-  let { styleProps } = useStyleProps(otherProps);
+  let {styleProps} = useStyleProps(otherProps);
   let headingClassName = classNames(
     styles,
-    "spectrum-IllustratedMessage-heading"
+    'spectrum-IllustratedMessage-heading'
   );
   let contentClassName = classNames(
     styles,
-    "spectrum-IllustratedMessage-description"
+    'spectrum-IllustratedMessage-description'
   );
 
   let slots = {
-    heading: { UNSAFE_className: headingClassName },
-    content: { UNSAFE_className: contentClassName },
+    heading: {UNSAFE_className: headingClassName},
+    content: {UNSAFE_className: contentClassName}
   };
 
   return (
@@ -57,11 +57,10 @@ export const IllustratedMessage = forwardRef(function IllustratedMessage(
       isHidden={styleProps.hidden}
       UNSAFE_className={classNames(
         styles,
-        "spectrum-IllustratedMessage",
+        'spectrum-IllustratedMessage',
         styleProps.className
       )}
-      ref={ref}
-    >
+      ref={ref}>
       <ClearSlots>
         <SlotProvider slots={slots}>{children}</SlotProvider>
       </ClearSlots>

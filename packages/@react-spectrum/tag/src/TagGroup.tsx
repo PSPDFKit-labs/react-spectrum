@@ -10,28 +10,28 @@
  * governing permissions and limitations under the License.
  */
 
-import { ActionButton } from "@react-spectrum/button";
-import { AriaTagGroupProps, useTagGroup } from "@react-aria-nutrient/tag";
-import { classNames, useDOMRef } from "@react-spectrum/utils";
+import {ActionButton} from '@react-spectrum/button';
+import {AriaTagGroupProps, useTagGroup} from '@react-aria-nutrient/tag';
+import {classNames, useDOMRef} from '@react-spectrum/utils';
 import {
   Collection,
   DOMRef,
   Node,
   SpectrumLabelableProps,
   StyleProps,
-  Validation,
-} from "@react-types/shared";
-import { Field } from "@react-spectrum/label";
-import { FocusRing, FocusScope } from "@react-aria-nutrient/focus";
+  Validation
+} from '@react-types/shared';
+import {Field} from '@react-spectrum/label';
+import {FocusRing, FocusScope} from '@react-aria-nutrient/focus';
 // @ts-ignore
-import intlMessages from "../intl/*.json";
-import { ListCollection, useListState } from "@react-stately/list";
-import { ListKeyboardDelegate } from "@react-aria-nutrient/selection";
+import intlMessages from '../intl/*.json';
+import {ListCollection, useListState} from '@react-stately/list';
+import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
 import {
   Provider,
   useProvider,
-  useProviderProps,
-} from "@react-spectrum/provider";
+  useProviderProps
+} from '@react-spectrum/provider';
 import React, {
   JSX,
   ReactNode,
@@ -39,55 +39,55 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState,
-} from "react";
-import styles from "@adobe/spectrum-css-temp/components/tags/vars.css";
-import { Tag } from "./Tag";
-import { useFormProps } from "@react-spectrum/form";
+  useState
+} from 'react';
+import styles from '@adobe/spectrum-css-temp/components/tags/vars.css';
+import {Tag} from './Tag';
+import {useFormProps} from '@react-spectrum/form';
 import {
   useId,
   useLayoutEffect,
   useResizeObserver,
-  useValueEffect,
-} from "@react-aria-nutrient/utils";
+  useValueEffect
+} from '@react-aria-nutrient/utils';
 import {
   useLocale,
-  useLocalizedStringFormatter,
-} from "@react-aria-nutrient/i18n";
+  useLocalizedStringFormatter
+} from '@react-aria-nutrient/i18n';
 
 const TAG_STYLES = {
   medium: {
     height: 24,
-    margin: 4,
+    margin: 4
   },
   large: {
     height: 30,
-    margin: 5,
-  },
+    margin: 5
+  }
 };
 
 export interface SpectrumTagGroupProps<T>
   extends Omit<
       AriaTagGroupProps<T>,
-      | "selectionMode"
-      | "disallowEmptySelection"
-      | "selectedKeys"
-      | "defaultSelectedKeys"
-      | "onSelectionChange"
-      | "selectionBehavior"
-      | "disabledKeys"
+      | 'selectionMode'
+      | 'disallowEmptySelection'
+      | 'selectedKeys'
+      | 'defaultSelectedKeys'
+      | 'onSelectionChange'
+      | 'selectionBehavior'
+      | 'disabledKeys'
     >,
     StyleProps,
-    Omit<SpectrumLabelableProps, "isRequired" | "necessityIndicator">,
-    Pick<Validation<any>, "isInvalid" | "validationState"> {
+    Omit<SpectrumLabelableProps, 'isRequired' | 'necessityIndicator'>,
+    Pick<Validation<any>, 'isInvalid' | 'validationState'> {
   /** The label to display on the action button.  */
-  actionLabel?: string;
+  actionLabel?: string,
   /** Handler that is called when the action button is pressed. */
-  onAction?: () => void;
+  onAction?: () => void,
   /** Sets what the TagGroup should render when there are no tags to display. */
-  renderEmptyState?: () => JSX.Element;
+  renderEmptyState?: () => JSX.Element,
   /** Limit the number of rows initially shown. This will render a button that allows the user to expand to show all tags. */
-  maxRows?: number;
+  maxRows?: number
 }
 
 /** Tags allow users to categorize content. They can represent keywords or people, and are grouped to describe an item or a search request. */
@@ -103,22 +103,22 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
     actionLabel,
     onAction,
     labelPosition,
-    renderEmptyState = () => stringFormatter.format("noTags"),
+    renderEmptyState = () => stringFormatter.format('noTags')
   } = props;
   let domRef = useDOMRef(ref);
   let containerRef = useRef<HTMLDivElement>(null);
   let tagsRef = useRef<HTMLDivElement | null>(null);
-  let { direction } = useLocale();
-  let { scale } = useProvider();
+  let {direction} = useLocale();
+  let {scale} = useProvider();
   let stringFormatter = useLocalizedStringFormatter(
     intlMessages,
-    "@react-spectrum/tag"
+    '@react-spectrum/tag'
   );
   let [isCollapsed, setIsCollapsed] = useState(maxRows != null);
   let state = useListState(props);
   let [tagState, setTagState] = useValueEffect({
     visibleTagCount: state.collection.size,
-    showCollapseButton: false,
+    showCollapseButton: false
   });
   let keyboardDelegate = useMemo(() => {
     let collection = (
@@ -132,19 +132,19 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
       collection,
       ref: tagsRef,
       direction,
-      orientation: "horizontal",
+      orientation: 'horizontal'
     });
   }, [
     direction,
     isCollapsed,
     state.collection,
     tagState.visibleTagCount,
-    tagsRef,
+    tagsRef
   ]) as ListKeyboardDelegate<T>;
   // Remove onAction from props so it doesn't make it into useGridList.
   delete props.onAction;
-  let { gridProps, labelProps, descriptionProps, errorMessageProps } =
-    useTagGroup({ ...props, keyboardDelegate }, state, tagsRef);
+  let {gridProps, labelProps, descriptionProps, errorMessageProps} =
+    useTagGroup({...props, keyboardDelegate}, state, tagsRef);
   let actionsId = useId();
   let actionsRef = useRef<HTMLDivElement>(null);
 
@@ -163,7 +163,7 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
         ) {
           return {
             visibleTagCount: 0,
-            showCollapseButton: false,
+            showCollapseButton: false
           };
         }
 
@@ -174,7 +174,7 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
         let index = 0;
         let tagWidths: number[] = [];
         for (let tag of tags) {
-          let { width, y } = tag.getBoundingClientRect();
+          let {width, y} = tag.getBoundingClientRect();
 
           if (y !== currY) {
             currY = y;
@@ -201,7 +201,7 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
             0
           );
           buttonsWidth += TAG_STYLES[scale].margin * 2 * buttons.length;
-          let end = direction === "ltr" ? "right" : "left";
+          let end = direction === 'ltr' ? 'right' : 'left';
           let containerEnd =
             currContainerRef.parentElement.getBoundingClientRect()[end];
           let lastTagEnd = tags[index - 1]?.getBoundingClientRect()[end];
@@ -216,7 +216,7 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
 
         return {
           visibleTagCount: Math.max(index, 1),
-          showCollapseButton: index < state.collection.size,
+          showCollapseButton: index < state.collection.size
         };
       };
 
@@ -224,7 +224,7 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
         // Update to show all items.
         yield {
           visibleTagCount: state.collection.size,
-          showCollapseButton: true,
+          showCollapseButton: true
         };
 
         // Measure, and update to show the items until maxRows is reached.
@@ -233,7 +233,7 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
     }
   }, [maxRows, setTagState, direction, scale, state.collection.size]);
 
-  useResizeObserver({ ref: containerRef, onResize: updateVisibleTagCount });
+  useResizeObserver({ref: containerRef, onResize: updateVisibleTagCount});
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useLayoutEffect(updateVisibleTagCount, [children]);
 
@@ -267,7 +267,7 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
     }
     let maxHeight =
       (TAG_STYLES[scale].height + TAG_STYLES[scale].margin * 2) * maxRows;
-    return { maxHeight, overflow: "hidden" };
+    return {maxHeight, overflow: 'hidden'};
   }, [isCollapsed, maxRows, isEmpty, scale]);
 
   return (
@@ -280,23 +280,20 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
         showErrorIcon
         ref={domRef}
         elementType="span"
-        wrapperClassName={classNames(styles, "spectrum-Tags-fieldWrapper", {
-          "spectrum-Tags-fieldWrapper--positionSide": labelPosition === "side",
-        })}
-      >
+        wrapperClassName={classNames(styles, 'spectrum-Tags-fieldWrapper', {
+          'spectrum-Tags-fieldWrapper--positionSide': labelPosition === 'side'
+        })}>
         <div
           ref={containerRef}
           style={containerStyle}
-          className={classNames(styles, "spectrum-Tags-container", {
-            "spectrum-Tags-container--empty": isEmpty,
-          })}
-        >
-          <FocusRing focusRingClass={classNames(styles, "focus-ring")}>
+          className={classNames(styles, 'spectrum-Tags-container', {
+            'spectrum-Tags-container--empty': isEmpty
+          })}>
+          <FocusRing focusRingClass={classNames(styles, 'focus-ring')}>
             <div
               ref={tagsRef}
               {...gridProps}
-              className={classNames(styles, "spectrum-Tags")}
-            >
+              className={classNames(styles, 'spectrum-Tags')}>
               {visibleTags.map((item) => (
                 <Tag {...item.props} key={item.key} item={item} state={state}>
                   {item.rendered}
@@ -304,8 +301,7 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
               ))}
               {isEmpty && (
                 <div
-                  className={classNames(styles, "spectrum-Tags-empty-state")}
-                >
+                  className={classNames(styles, 'spectrum-Tags-empty-state')}>
                   {renderEmptyState()}
                 </div>
               )}
@@ -317,24 +313,22 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
                 role="group"
                 ref={actionsRef}
                 id={actionsId}
-                aria-label={stringFormatter.format("actions")}
+                aria-label={stringFormatter.format('actions')}
                 aria-labelledby={`${gridProps.id} ${actionsId}`}
-                className={classNames(styles, "spectrum-Tags-actions")}
-              >
+                className={classNames(styles, 'spectrum-Tags-actions')}>
                 {tagState.showCollapseButton && (
                   <ActionButton
                     isQuiet
                     onPress={handlePressCollapse}
                     UNSAFE_className={classNames(
                       styles,
-                      "spectrum-Tags-actionButton"
-                    )}
-                  >
+                      'spectrum-Tags-actionButton'
+                    )}>
                     {isCollapsed
-                      ? stringFormatter.format("showAllButtonLabel", {
-                          tagCount: state.collection.size,
-                        })
-                      : stringFormatter.format("hideButtonLabel")}
+                      ? stringFormatter.format('showAllButtonLabel', {
+                        tagCount: state.collection.size
+                      })
+                      : stringFormatter.format('hideButtonLabel')}
                   </ActionButton>
                 )}
                 {actionLabel && onAction && (
@@ -343,9 +337,8 @@ export const TagGroup = React.forwardRef(function TagGroup<T extends object>(
                     onPress={() => onAction?.()}
                     UNSAFE_className={classNames(
                       styles,
-                      "spectrum-Tags-actionButton"
-                    )}
-                  >
+                      'spectrum-Tags-actionButton'
+                    )}>
                     {actionLabel}
                   </ActionButton>
                 )}

@@ -10,93 +10,93 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
+import {action} from '@storybook/addon-actions';
 import {
   CalendarDate,
   CalendarDateTime,
   getLocalTimeZone,
   isWeekend,
   parseZonedDateTime,
-  today,
-} from "@internationalized/date";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { Custom454Calendar } from "@internationalized/date/tests/customCalendarImpl";
-import { DateValue } from "@react-types/calendar";
-import { Flex } from "@react-spectrum/layout";
-import { RangeCalendar } from "../";
-import React, { useState } from "react";
-import { TimeField } from "@react-spectrum/datepicker";
-import { useLocale } from "@react-aria-nutrient/i18n";
-import { View } from "@react-spectrum/view";
+  today
+} from '@internationalized/date';
+import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
+import {Custom454Calendar} from '@internationalized/date/tests/customCalendarImpl';
+import {DateValue} from '@react-types/calendar';
+import {Flex} from '@react-spectrum/layout';
+import {RangeCalendar} from '../';
+import React, {useState} from 'react';
+import {TimeField} from '@react-spectrum/datepicker';
+import {useLocale} from '@react-aria-nutrient/i18n';
+import {View} from '@react-spectrum/view';
 
 export type RangeCalendarStory = ComponentStoryObj<typeof RangeCalendar>;
 
 export default {
-  title: "Date and Time/RangeCalendar",
+  title: 'Date and Time/RangeCalendar',
   component: RangeCalendar,
   args: {
-    onChange: action("onChange"),
+    onChange: action('onChange')
   },
   argTypes: {
     onChange: {
       table: {
-        disable: true,
-      },
+        disable: true
+      }
     },
     defaultValue: {
       table: {
-        disable: true,
-      },
+        disable: true
+      }
     },
     minValue: {
       table: {
-        disable: true,
-      },
+        disable: true
+      }
     },
     value: {
       table: {
-        disable: true,
-      },
+        disable: true
+      }
     },
     maxValue: {
       table: {
-        disable: true,
-      },
+        disable: true
+      }
     },
     isDisabled: {
-      control: "boolean",
+      control: 'boolean'
     },
     isReadOnly: {
-      control: "boolean",
+      control: 'boolean'
     },
     allowsNonContiguousRanges: {
-      control: "boolean",
+      control: 'boolean'
     },
     autoFocus: {
-      control: "boolean",
+      control: 'boolean'
     },
     visibleMonths: {
-      control: "number",
+      control: 'number'
     },
     pageBehavior: {
-      control: "select",
-      options: [null, "single", "visible"],
+      control: 'select',
+      options: [null, 'single', 'visible']
     },
     firstDayOfWeek: {
-      control: "select",
-      options: [undefined, "sun", "mon", "tue", "wed", "thu", "fri", "sat"],
+      control: 'select',
+      options: [undefined, 'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
     },
     isInvalid: {
-      control: "boolean",
+      control: 'boolean'
     },
     errorMessage: {
-      control: "text",
-    },
-  },
+      control: 'text'
+    }
+  }
 } as ComponentMeta<typeof RangeCalendar>;
 
 export const Default: RangeCalendarStory = {
-  render: (args) => render(args),
+  render: (args) => render(args)
 };
 
 export const DefaultValue: RangeCalendarStory = {
@@ -104,9 +104,9 @@ export const DefaultValue: RangeCalendarStory = {
   args: {
     defaultValue: {
       start: new CalendarDate(2019, 6, 5),
-      end: new CalendarDate(2019, 6, 10),
-    },
-  },
+      end: new CalendarDate(2019, 6, 10)
+    }
+  }
 };
 
 export const ControlledValue: RangeCalendarStory = {
@@ -114,27 +114,27 @@ export const ControlledValue: RangeCalendarStory = {
   args: {
     value: {
       start: new CalendarDate(2019, 6, 5),
-      end: new CalendarDate(2019, 6, 10),
-    },
-  },
+      end: new CalendarDate(2019, 6, 10)
+    }
+  }
 };
 
 export const WithTime: RangeCalendarStory = {
-  render: (args) => <RangeCalendarWithTime {...args} />,
+  render: (args) => <RangeCalendarWithTime {...args} />
 };
 
 export const ZonedTime: RangeCalendarStory = {
   render: (args) => <RangeCalendarWithZonedTime {...args} />,
-  name: "with zoned time",
+  name: 'with zoned time'
 };
 
 export const OneWeek: RangeCalendarStory = {
   ...Default,
   args: {
     minValue: today(getLocalTimeZone()),
-    maxValue: today(getLocalTimeZone()).add({ weeks: 1 }),
+    maxValue: today(getLocalTimeZone()).add({weeks: 1})
   },
-  name: "minValue: today, maxValue: 1 week from now",
+  name: 'minValue: today, maxValue: 1 week from now'
 };
 
 export const DefaultMinMax: RangeCalendarStory = {
@@ -142,12 +142,12 @@ export const DefaultMinMax: RangeCalendarStory = {
   args: {
     defaultValue: {
       start: new CalendarDate(2019, 6, 10),
-      end: new CalendarDate(2019, 6, 12),
+      end: new CalendarDate(2019, 6, 12)
     },
     minValue: new CalendarDate(2019, 6, 5),
-    maxValue: new CalendarDate(2019, 6, 20),
+    maxValue: new CalendarDate(2019, 6, 20)
   },
-  name: "defaultValue + minValue + maxValue",
+  name: 'defaultValue + minValue + maxValue'
 };
 
 export const DateUnavailable: RangeCalendarStory = {
@@ -157,26 +157,26 @@ export const DateUnavailable: RangeCalendarStory = {
       const disabledIntervals = [
         [
           today(getLocalTimeZone()),
-          today(getLocalTimeZone()).add({ weeks: 1 }),
+          today(getLocalTimeZone()).add({weeks: 1})
         ],
         [
-          today(getLocalTimeZone()).add({ weeks: 2 }),
-          today(getLocalTimeZone()).add({ weeks: 3 }),
-        ],
+          today(getLocalTimeZone()).add({weeks: 2}),
+          today(getLocalTimeZone()).add({weeks: 3})
+        ]
       ];
       return disabledIntervals.some(
         (interval) =>
           date.compare(interval[0]) > 0 && date.compare(interval[1]) < 0
       );
-    },
+    }
   },
-  name: "isDateUnavailable",
+  name: 'isDateUnavailable'
 };
 
 export const MinValue: RangeCalendarStory = {
   ...Default,
-  args: { minValue: today(getLocalTimeZone()) },
-  name: "minValue: today",
+  args: {minValue: today(getLocalTimeZone())},
+  name: 'minValue: today'
 };
 
 export const DefaultValVisibleMonths: RangeCalendarStory = {
@@ -185,21 +185,21 @@ export const DefaultValVisibleMonths: RangeCalendarStory = {
     visibleMonths: 3,
     defaultValue: {
       start: new CalendarDate(2021, 10, 5),
-      end: new CalendarDate(2021, 12, 10),
-    },
+      end: new CalendarDate(2021, 12, 10)
+    }
   },
-  name: "defaultValue, visibleMonths: 3",
+  name: 'defaultValue, visibleMonths: 3'
 };
 
 export const DateUnavailableInvalid: RangeCalendarStory = {
   render: (args) => <DateUnavailableAndInvalid {...args} />,
-  name: "isDateUnavailable, invalid",
+  name: 'isDateUnavailable, invalid'
 };
 
 export const Custom454Story: RangeCalendarStory = {
   ...Default,
-  name: "Custom calendar",
-  render: (args) => <Custom454RangedCalendar {...args} />,
+  name: 'Custom calendar',
+  render: (args) => <Custom454RangedCalendar {...args} />
 };
 
 function render(props) {
@@ -213,7 +213,7 @@ function render(props) {
 function RangeCalendarWithTime(props) {
   let [value, setValue] = useState({
     start: new CalendarDateTime(2019, 6, 5, 8),
-    end: new CalendarDateTime(2019, 6, 10, 12),
+    end: new CalendarDateTime(2019, 6, 10, 12)
   });
   let onChange = (v) => {
     setValue(v);
@@ -227,13 +227,11 @@ function RangeCalendarWithTime(props) {
         <TimeField
           label="Start time"
           value={value.start}
-          onChange={(v) => onChange({ ...value, start: v })}
-        />
+          onChange={(v) => onChange({...value, start: v})} />
         <TimeField
           label="End time"
           value={value.end}
-          onChange={(v) => onChange({ ...value, end: v })}
-        />
+          onChange={(v) => onChange({...value, end: v})} />
       </Flex>
     </Flex>
   );
@@ -241,8 +239,8 @@ function RangeCalendarWithTime(props) {
 
 function RangeCalendarWithZonedTime(props) {
   let [value, setValue] = useState({
-    start: parseZonedDateTime("2021-03-10T00:45-05:00[America/New_York]"),
-    end: parseZonedDateTime("2021-03-26T18:05-07:00[America/Los_Angeles]"),
+    start: parseZonedDateTime('2021-03-10T00:45-05:00[America/New_York]'),
+    end: parseZonedDateTime('2021-03-26T18:05-07:00[America/Los_Angeles]')
   });
   let onChange = (v) => {
     setValue(v);
@@ -256,28 +254,26 @@ function RangeCalendarWithZonedTime(props) {
         <TimeField
           label="Start time"
           value={value.start}
-          onChange={(v) => onChange({ ...value, start: v })}
-        />
+          onChange={(v) => onChange({...value, start: v})} />
         <TimeField
           label="End time"
           value={value.end}
-          onChange={(v) => onChange({ ...value, end: v })}
-        />
+          onChange={(v) => onChange({...value, end: v})} />
       </Flex>
     </Flex>
   );
 }
 
 function DateUnavailableAndInvalid(props) {
-  let { locale } = useLocale();
+  let {locale} = useLocale();
   return render({
     ...props,
     isDateUnavailable: (date: DateValue) => isWeekend(date, locale),
     allowsNonContiguousRanges: true,
     defaultValue: {
       start: new CalendarDate(2021, 10, 3),
-      end: new CalendarDate(2021, 10, 16),
-    },
+      end: new CalendarDate(2021, 10, 16)
+    }
   });
 }
 
@@ -288,7 +284,7 @@ function Custom454RangedCalendar(props) {
     visibleMonths: 3,
     defaultValue: {
       start: new CalendarDate(2023, 8, 6),
-      end: new CalendarDate(2023, 10, 7),
-    },
+      end: new CalendarDate(2023, 10, 7)
+    }
   });
 }

@@ -10,53 +10,53 @@
  * governing permissions and limitations under the License.
  */
 
-import { action } from "@storybook/addon-actions";
-import { chain, mergeProps } from "@react-aria-nutrient/utils";
-import { classNames } from "@react-spectrum/utils";
-import dndStyles from "./dnd.css";
-import dropIndicatorStyles from "@adobe/spectrum-css-temp/components/dropindicator/vars.css";
-import { DroppableCollectionDropEvent } from "@react-types/shared";
-import { FocusRing } from "@react-aria-nutrient/focus";
-import Folder from "@spectrum-icons/workflow/Folder";
-import { Item } from "@react-stately/collections";
-import { ListDropTargetDelegate } from "@react-aria-nutrient/dnd";
-import { ListKeyboardDelegate } from "@react-aria-nutrient/selection";
-import React from "react";
-import { useDropIndicator, useDroppableCollection, useDroppableItem } from "..";
-import { useDroppableCollectionState } from "@react-stately/dnd";
-import { useListBox, useOption } from "@react-aria-nutrient/listbox";
-import { useListData } from "@react-stately/data";
-import { useListState } from "@react-stately/list";
-import { useVisuallyHidden } from "@react-aria-nutrient/visually-hidden";
+import {action} from '@storybook/addon-actions';
+import {chain, mergeProps} from '@react-aria-nutrient/utils';
+import {classNames} from '@react-spectrum/utils';
+import dndStyles from './dnd.css';
+import dropIndicatorStyles from '@adobe/spectrum-css-temp/components/dropindicator/vars.css';
+import {DroppableCollectionDropEvent} from '@react-types/shared';
+import {FocusRing} from '@react-aria-nutrient/focus';
+import Folder from '@spectrum-icons/workflow/Folder';
+import {Item} from '@react-stately/collections';
+import {ListDropTargetDelegate} from '@react-aria-nutrient/dnd';
+import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
+import React from 'react';
+import {useDropIndicator, useDroppableCollection, useDroppableItem} from '..';
+import {useDroppableCollectionState} from '@react-stately/dnd';
+import {useListBox, useOption} from '@react-aria-nutrient/listbox';
+import {useListData} from '@react-stately/data';
+import {useListState} from '@react-stately/list';
+import {useVisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 interface ItemValue {
-  id: string;
-  type: string;
-  text: string;
+  id: string,
+  type: string,
+  text: string
 }
 
 export function DroppableListBoxExample(props) {
   let id = React.useRef(props.items?.length || 3);
   let list = useListData({
     initialItems: props.items || [
-      { id: "1", type: "folder", text: "One" },
-      { id: "2", type: "item", text: "Two" },
-      { id: "3", type: "folder", text: "Three" },
-    ],
+      {id: '1', type: 'folder', text: 'One'},
+      {id: '2', type: 'item', text: 'Two'},
+      {id: '3', type: 'folder', text: 'Three'}
+    ]
   });
 
   let ref = React.useRef(null);
 
   let onDrop = async (e: DroppableCollectionDropEvent) => {
-    if (e.target.type === "root" || e.target.dropPosition !== "on") {
+    if (e.target.type === 'root' || e.target.dropPosition !== 'on') {
       let items: Array<ItemValue> = [];
       for (let item of e.items) {
         let type: string | undefined;
-        if (item.kind === "text") {
-          if (item.types.has("folder")) {
-            type = "folder";
-          } else if (item.types.has("item")) {
-            type = "item";
+        if (item.kind === 'text') {
+          if (item.types.has('folder')) {
+            type = 'folder';
+          } else if (item.types.has('item')) {
+            type = 'item';
           }
 
           if (!type) {
@@ -66,14 +66,14 @@ export function DroppableListBoxExample(props) {
           items.push({
             id: String(++id.current),
             type,
-            text: await item.getText(type),
+            text: await item.getText(type)
           });
         }
       }
 
-      if (e.target.type === "root") {
+      if (e.target.type === 'root') {
         list.prepend(...items);
-      } else if (e.target.dropPosition === "before") {
+      } else if (e.target.dropPosition === 'before') {
         list.insertBefore(e.target.key, ...items);
       } else {
         list.insertAfter(e.target.key, ...items);
@@ -86,11 +86,10 @@ export function DroppableListBoxExample(props) {
       items={list.items}
       onDrop={onDrop}
       ref={ref}
-      isDisabled={props.isDisabled}
-    >
+      isDisabled={props.isDisabled}>
       {(item) => (
         <Item textValue={item.text}>
-          {item.type === "folder" && <Folder size="S" />}
+          {item.type === 'folder' && <Folder size="S" />}
           <span>{item.text}</span>
         </Item>
       )}
@@ -101,10 +100,10 @@ export function DroppableListBoxExample(props) {
 export const DroppableListBox = React.forwardRef(function (props: any, ref) {
   let domRef = React.useRef<HTMLDivElement>(null);
   let onDrop = async (e) => {
-    action("onDrop")(e);
+    action('onDrop')(e);
     props.onDrop?.(e);
   };
-  let state = useListState({ ...props, selectionMode: "multiple" });
+  let state = useListState({...props, selectionMode: 'multiple'});
   let keyboardDelegate = new ListKeyboardDelegate(
     state.collection,
     new Set(),
@@ -115,7 +114,7 @@ export const DroppableListBox = React.forwardRef(function (props: any, ref) {
     focusItem(key) {
       state.selectionManager.setFocusedKey(key);
       state.selectionManager.setFocused(true);
-    },
+    }
   }));
 
   let dropState = useDroppableCollectionState({
@@ -123,89 +122,84 @@ export const DroppableListBox = React.forwardRef(function (props: any, ref) {
     collection: state.collection,
     selectionManager: state.selectionManager,
     getDropOperation: (target, _, allowedOperations) => {
-      if (target.type === "root") {
-        return "move";
+      if (target.type === 'root') {
+        return 'move';
       }
 
-      if (target.key === "2" && target.dropPosition === "on") {
-        return "cancel";
+      if (target.key === '2' && target.dropPosition === 'on') {
+        return 'cancel';
       }
 
-      return target.dropPosition !== "on" ? allowedOperations[0] : "copy";
+      return target.dropPosition !== 'on' ? allowedOperations[0] : 'copy';
     },
-    onDrop,
+    onDrop
   });
 
-  let { collectionProps } = useDroppableCollection(
+  let {collectionProps} = useDroppableCollection(
     {
       keyboardDelegate,
       dropTargetDelegate: new ListDropTargetDelegate(state.collection, domRef),
-      onDropActivate: chain(action("onDropActivate"), console.log),
-      onDrop,
+      onDropActivate: chain(action('onDropActivate'), console.log),
+      onDrop
     },
     dropState,
     domRef
   );
 
-  let { listBoxProps } = useListBox(
+  let {listBoxProps} = useListBox(
     {
       ...props,
-      "aria-label": "List",
-      keyboardDelegate,
+      'aria-label': 'List',
+      keyboardDelegate
     },
     state,
     domRef
   );
 
-  let isDropTarget = dropState.isDropTarget({ type: "root" });
+  let isDropTarget = dropState.isDropTarget({type: 'root'});
   let dropRef = React.useRef<HTMLDivElement | null>(null);
-  let { dropIndicatorProps } = useDropIndicator(
+  let {dropIndicatorProps} = useDropIndicator(
     {
-      target: { type: "root" },
+      target: {type: 'root'}
     },
     dropState,
     dropRef
   );
-  let { visuallyHiddenProps } = useVisuallyHidden();
+  let {visuallyHiddenProps} = useVisuallyHidden();
 
   return (
     <div
       {...mergeProps(collectionProps, listBoxProps)}
       ref={domRef}
-      className={classNames(dndStyles, "droppable-collection", {
-        "is-drop-target": isDropTarget,
-      })}
-    >
-      {!dropIndicatorProps["aria-hidden"] && (
+      className={classNames(dndStyles, 'droppable-collection', {
+        'is-drop-target': isDropTarget
+      })}>
+      {!dropIndicatorProps['aria-hidden'] && (
         <div
           role="option"
           aria-selected="false"
           {...visuallyHiddenProps}
           {...dropIndicatorProps}
-          ref={dropRef}
-        />
+          ref={dropRef} />
       )}
       {[...state.collection].map((item) => (
         <>
           <InsertionIndicator
-            key={item.key + "-before"}
+            key={item.key + '-before'}
             collectionRef={domRef}
-            target={{ type: "item", key: item.key, dropPosition: "before" }}
-            dropState={dropState}
-          />
+            target={{type: 'item', key: item.key, dropPosition: 'before'}}
+            dropState={dropState} />
           <CollectionItem
             key={item.key}
             item={item}
             state={state}
-            dropState={dropState}
-          />
+            dropState={dropState} />
           {state.collection.getKeyAfter(item.key) == null && (
             <InsertionIndicator
-              key={item.key + "-after"}
-              target={{ type: "item", key: item.key, dropPosition: "after" }}
+              key={item.key + '-after'}
+              target={{type: 'item', key: item.key, dropPosition: 'after'}}
               collectionRef={domRef}
-              dropState={dropState}
-            />
+              dropState={dropState} />
           )}
         </>
       ))}
@@ -213,39 +207,38 @@ export const DroppableListBox = React.forwardRef(function (props: any, ref) {
   );
 });
 
-function CollectionItem({ item, state, dropState }) {
+function CollectionItem({item, state, dropState}) {
   let ref = React.useRef<HTMLDivElement | null>(null);
-  let { optionProps } = useOption(
+  let {optionProps} = useOption(
     {
       key: item.key,
-      isSelected: state.selectionManager.isSelected(item.key),
+      isSelected: state.selectionManager.isSelected(item.key)
     },
     state,
     ref
   );
 
-  let { dropProps } = useDroppableItem(
+  let {dropProps} = useDroppableItem(
     {
-      target: { type: "item", key: item.key, dropPosition: "on" },
+      target: {type: 'item', key: item.key, dropPosition: 'on'}
     },
     dropState,
     ref
   );
 
   return (
-    <FocusRing focusRingClass={classNames(dndStyles, "focus-ring")}>
+    <FocusRing focusRingClass={classNames(dndStyles, 'focus-ring')}>
       <div
         {...mergeProps(optionProps, dropProps)}
         ref={ref}
-        className={classNames(dndStyles, "droppable", {
-          "is-drop-target": dropState.isDropTarget({
-            type: "item",
+        className={classNames(dndStyles, 'droppable', {
+          'is-drop-target': dropState.isDropTarget({
+            type: 'item',
             key: item.key,
-            dropPosition: "on",
+            dropPosition: 'on'
           }),
-          "is-selected": state.selectionManager.isSelected(item.key),
-        })}
-      >
+          'is-selected': state.selectionManager.isSelected(item.key)
+        })}>
         {item.rendered}
       </div>
     </FocusRing>
@@ -254,14 +247,14 @@ function CollectionItem({ item, state, dropState }) {
 
 function InsertionIndicator(props) {
   let ref = React.useRef<HTMLDivElement | null>(null);
-  let { dropIndicatorProps } = useDropIndicator(props, props.dropState, ref);
+  let {dropIndicatorProps} = useDropIndicator(props, props.dropState, ref);
 
   // If aria-hidden, we are either not in a drag session or the drop target is invalid.
   // In that case, there's no need to render anything at all unless we need to show the indicator visually.
   // This can happen when dragging using the native DnD API as opposed to keyboard dragging.
   if (
     !props.dropState.isDropTarget(props.target) &&
-    dropIndicatorProps["aria-hidden"]
+    dropIndicatorProps['aria-hidden']
   ) {
     return null;
   }
@@ -276,17 +269,16 @@ function InsertionIndicator(props) {
         props.dropState.isDropTarget(props.target)
           ? classNames(
               dropIndicatorStyles,
-              "spectrum-DropIndicator",
-              "spectrum-DropIndicator--horizontal"
+              'spectrum-DropIndicator',
+              'spectrum-DropIndicator--horizontal'
             )
           : undefined
       }
       style={{
-        width: "100%",
-        margin: "-5px 0",
+        width: '100%',
+        margin: '-5px 0',
         height: 2,
-        outline: "none",
-      }}
-    />
+        outline: 'none'
+      }} />
   );
 }

@@ -14,33 +14,33 @@ import {
   ContextValue,
   RenderProps,
   useContextProps,
-  useRenderProps,
-} from "./utils";
-import { DOMProps, forwardRefType } from "@react-types/shared";
-import { filterDOMProps } from "@react-aria-nutrient/utils";
-import { PlacementAxis } from "react-aria";
+  useRenderProps
+} from './utils';
+import {DOMProps, forwardRefType} from '@react-types/shared';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
+import {PlacementAxis} from 'react-aria';
 import React, {
   createContext,
   CSSProperties,
   ForwardedRef,
   forwardRef,
-  HTMLAttributes,
-} from "react";
+  HTMLAttributes
+} from 'react';
 
 interface OverlayArrowContextValue extends OverlayArrowProps {
-  placement: PlacementAxis | null;
+  placement: PlacementAxis | null
 }
 
 export const OverlayArrowContext = createContext<
   ContextValue<OverlayArrowContextValue, HTMLDivElement>
 >({
-  placement: "bottom",
+  placement: 'bottom'
 });
 
 export interface OverlayArrowProps
   extends Omit<
       HTMLAttributes<HTMLDivElement>,
-      "className" | "style" | "children"
+      'className' | 'style' | 'children'
     >,
     RenderProps<OverlayArrowRenderProps>,
     DOMProps {}
@@ -50,7 +50,7 @@ export interface OverlayArrowRenderProps {
    * The placement of the overlay relative to the trigger.
    * @selector [data-placement="left | right | top | bottom"]
    */
-  placement: PlacementAxis | null;
+  placement: PlacementAxis | null
 }
 
 /**
@@ -65,22 +65,22 @@ export const OverlayArrow = /*#__PURE__*/ (forwardRef as forwardRefType)(
     [props, ref] = useContextProps(props, ref, OverlayArrowContext);
     let placement = (props as OverlayArrowContextValue).placement;
     let style: CSSProperties = {
-      position: "absolute",
+      position: 'absolute',
       transform:
-        placement === "top" || placement === "bottom"
-          ? "translateX(-50%)"
-          : "translateY(-50%)",
+        placement === 'top' || placement === 'bottom'
+          ? 'translateX(-50%)'
+          : 'translateY(-50%)'
     };
     if (placement != null) {
-      style[placement] = "100%";
+      style[placement] = '100%';
     }
 
     let renderProps = useRenderProps({
       ...props,
-      defaultClassName: "react-aria-OverlayArrow",
+      defaultClassName: 'react-aria-OverlayArrow',
       values: {
-        placement,
-      },
+        placement
+      }
     });
     // remove undefined values from renderProps.style object so that it can be
     // spread merged with the other style object
@@ -100,11 +100,10 @@ export const OverlayArrow = /*#__PURE__*/ (forwardRef as forwardRefType)(
         {...renderProps}
         style={{
           ...style,
-          ...renderProps.style,
+          ...renderProps.style
         }}
         ref={ref}
-        data-placement={placement}
-      />
+        data-placement={placement} />
     );
   }
 );
