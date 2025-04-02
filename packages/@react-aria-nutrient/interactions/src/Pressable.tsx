@@ -97,9 +97,8 @@ export const Pressable = React.forwardRef(
       }
     }, [ref]);
 
-    // @ts-ignore
-    let childRef =
-      parseInt(React.version, 10) < 19 ? child.ref : child.props.ref;
+    // @ts-ignore 
+    let childRef = parseInt(React.version, 10) < 19 ? child.ref : child.props.ref;
 
     return React.cloneElement(child, {
       ...mergeProps(pressProps, focusableProps, child.props),

@@ -112,8 +112,8 @@ export function SSRProvider(props: SSRProviderProps): JSX.Element {
 
 let canUseDOM = Boolean(
   typeof window !== "undefined" &&
-    window.document &&
-    window.document.createElement
+  window.document &&
+  window.document.createElement
 );
 
 let componentIds = new WeakMap();
@@ -133,9 +133,8 @@ function useCounter(isDisabled = false) {
     // a weak map associated with the Fiber. On the second render, we reset the global counter to this value.
     // Since React runs the second render immediately after the first, this is safe.
     // @ts-ignore
-    let currentOwner =
-      React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED
-        ?.ReactCurrentOwner?.current;
+    let currentOwner = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED
+      ?.ReactCurrentOwner?.current;
     if (currentOwner) {
       let prevComponentValue = componentIds.get(currentOwner);
       if (prevComponentValue == null) {
@@ -212,7 +211,7 @@ function getServerSnapshot() {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function subscribe(onStoreChange: () => void): () => void {
   // noop
-  return () => {};
+  return () => { };
 }
 
 /**

@@ -41,7 +41,7 @@ import { useKeyboard } from "./useKeyboard";
 
 export interface FocusableOptions<T = FocusableElement>
   extends FocusableProps<T>,
-    FocusableDOMProps {
+  FocusableDOMProps {
   /** Whether focus should be disabled. */
   isDisabled?: boolean;
 }
@@ -218,8 +218,7 @@ export const Focusable = forwardRef(
     }, [ref, props.isDisabled]);
 
     // @ts-ignore
-    let childRef =
-      parseInt(React.version, 10) < 19 ? child.ref : child.props.ref;
+    let childRef = parseInt(React.version, 10) < 19 ? child.ref : child.props.ref;
 
     return React.cloneElement(child, {
       ...mergeProps(focusableProps, child.props),
