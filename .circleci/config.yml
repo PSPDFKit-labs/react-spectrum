@@ -565,9 +565,6 @@ workflows:
   commit:
     jobs:
       - install
-      - install-16
-      - install-17
-      - install-19
       - test:
           requires:
             - install
