@@ -121,16 +121,6 @@ jobs:
             - ~/react-spectrum
           key: react-spectrum-19-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
 
-  test-ssr:
-    executor: rsp
-    steps:
-      - restore_cache:
-          key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
-
-      - run:
-          name: test ssr
-          command: yarn test:ssr
-
   test:
     executor: rsp
     parallelism: 3
@@ -156,39 +146,6 @@ jobs:
           path: ~/junit
       - store_artifacts:
           path: ~/junit
-
-  test-ssr-16:
-    executor: rsp
-    steps:
-      - restore_cache:
-          key: react-spectrum16-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
-
-      - run:
-          name: test ssr
-          command: |
-            yarn test:ssr
-
-  test-ssr-17:
-    executor: rsp
-    steps:
-      - restore_cache:
-          key: react-spectrum17-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
-
-      - run:
-          name: test ssr
-          command: |
-            yarn test:ssr
-
-  test-ssr-19:
-    executor: rsp
-    steps:
-      - restore_cache:
-          key: react-spectrum-19-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
-
-      - run:
-          name: test ssr
-          command: |
-            yarn test:ssr
 
   test-16:
     executor: rsp
@@ -338,18 +295,8 @@ jobs:
           paths:
             - 'ts-diff.txt'
 
-  typecheck-docs:
-    executor: rsp-large
-    steps:
-      - restore_cache:
-          key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
-
-      - run:
-          name: check-examples
-          command: make check-examples
-
   storybook:
-    executor: rsp-large
+    executor: rsp
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -363,53 +310,8 @@ jobs:
           paths:
             - '*/storybook/'
 
-  storybook-16:
-    executor: rsp-large
-    steps:
-      - restore_cache:
-          key: react-spectrum16-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
-
-      - run:
-          name: build storybook-16
-          command: make storybook-16
-
-      - persist_to_workspace:
-          root: dist
-          paths:
-            - '*/storybook-16/'
-
-  storybook-17:
-    executor: rsp-large
-    steps:
-      - restore_cache:
-          key: react-spectrum17-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
-
-      - run:
-          name: build storybook-17
-          command: make storybook-17
-
-      - persist_to_workspace:
-          root: dist
-          paths:
-            - '*/storybook-17/'
-
-  storybook-19:
-    executor: rsp-large
-    steps:
-      - restore_cache:
-          key: react-spectrum-19-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
-
-      - run:
-          name: build storybook-19
-          command: make storybook-19
-
-      - persist_to_workspace:
-          root: dist
-          paths:
-            - '*/storybook-19/'
-
   storybook-s2:
-    executor: rsp-large
+    executor: rsp
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -720,6 +622,16 @@ jobs:
           name: Publish
           command: make publish-nightly
 
+  typecheck-docs:
+    executor: rsp
+    steps:
+      - restore_cache:
+          key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
+
+      - run:
+          name: check-examples
+          command: make check-examples
+
 workflows:
   version: 2
   commit:
@@ -728,28 +640,16 @@ workflows:
       - install-16
       - install-17
       - install-19
-      - test-ssr:
-          requires:
-            - install
       - test:
           requires:
             - install
-      - test-ssr-16:
-          requires:
-            - install-16
       - test-16:
           requires:
             - install-16
-      - test-ssr-17:
-          requires:
-            - install-17
       - test-17:
           requires:
             - install-17
       - test-19:
-          requires:
-            - install-19
-      - test-ssr-19:
           requires:
             - install-19
       - test-esm:
@@ -778,21 +678,6 @@ workflows:
             branches:
               ignore: main
       - typecheck-docs:
-          requires:
-            - install
-      - storybook:
-          requires:
-            - install
-      - storybook-16:
-          requires:
-            - install-16
-      - storybook-17:
-          requires:
-            - install-17
-      - storybook-19:
-          requires:
-            - install-19
-      - storybook-s2:
           requires:
             - install
       - docs:
@@ -845,18 +730,10 @@ workflows:
           requires:
             - ts-diff
             - lint
-            - test-ssr
             - test
-            - test-ssr-16
             - test-16
-            - test-ssr-17
             - test-17
             - test-esm
-            - storybook
-            - storybook-16
-            - storybook-17
-            - storybook-19
-            - storybook-s2
             - docs
       - comment:
           name: comment-verdaccio
