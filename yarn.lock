@@ -6284,7 +6284,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/interactions@npm:^3.1.0, @react-aria-nutrient/interactions@npm:^3.24.1, @react-aria-nutrient/interactions@workspace:packages/@react-aria-nutrient/interactions":
+"@react-aria-nutrient/interactions@npm:^3.24.1, @react-aria-nutrient/interactions@workspace:packages/@react-aria-nutrient/interactions":
   version: 0.0.0-use.local
   resolution: "@react-aria-nutrient/interactions@workspace:packages/@react-aria-nutrient/interactions"
   dependencies:
@@ -6856,7 +6856,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/visually-hidden@npm:^3.1.0, @react-aria-nutrient/visually-hidden@npm:^3.6.1, @react-aria-nutrient/visually-hidden@npm:^3.8.21, @react-aria-nutrient/visually-hidden@workspace:packages/@react-aria-nutrient/visually-hidden":
+"@react-aria-nutrient/visually-hidden@npm:^3.6.1, @react-aria-nutrient/visually-hidden@npm:^3.8.21, @react-aria-nutrient/visually-hidden@workspace:packages/@react-aria-nutrient/visually-hidden":
   version: 0.0.0-use.local
   resolution: "@react-aria-nutrient/visually-hidden@workspace:packages/@react-aria-nutrient/visually-hidden"
   dependencies:
@@ -6879,6 +6879,65 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
   checksum: 10c0/46e0b27ead8672f34f21086abe45adbfba2fc68f3192f7263dd22175ebfa910656db8bf889838da77c6c248ec5ac6994ef5090dbe1aca709359f5ddfe7f174a3
+  languageName: node
+  linkType: hard
+
+"@react-aria/interactions@npm:^3.1.0, @react-aria/interactions@npm:^3.24.1":
+  version: 3.24.1
+  resolution: "@react-aria/interactions@npm:3.24.1"
+  dependencies:
+    "@react-aria/ssr": "npm:^3.9.7"
+    "@react-aria/utils": "npm:^3.28.1"
+    "@react-stately/flags": "npm:^3.1.0"
+    "@react-types/shared": "npm:^3.28.0"
+    "@swc/helpers": "npm:^0.5.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+  checksum: 10c0/984c5782336eca52a09536733bd41e6b88b15ed648ebe471dbaccc4dabec7b8e3018d1f2c95054272c8ce723379384efd2908181209dee7e204ba5c663c80964
+  languageName: node
+  linkType: hard
+
+"@react-aria/ssr@npm:^3.9.7":
+  version: 3.9.7
+  resolution: "@react-aria/ssr@npm:3.9.7"
+  dependencies:
+    "@swc/helpers": "npm:^0.5.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+  checksum: 10c0/37168cd81b1e8223aedb906c1333381f3c436dadf58cbd675606ced314605ce5c49eee5c831309648bfbab78a8598c344be636a85962c742ebf11ae7e87ee93e
+  languageName: node
+  linkType: hard
+
+"@react-aria/utils@npm:^3.28.1":
+  version: 3.28.1
+  resolution: "@react-aria/utils@npm:3.28.1"
+  dependencies:
+    "@react-aria/ssr": "npm:^3.9.7"
+    "@react-stately/flags": "npm:^3.1.0"
+    "@react-stately/utils": "npm:^3.10.5"
+    "@react-types/shared": "npm:^3.28.0"
+    "@swc/helpers": "npm:^0.5.0"
+    clsx: "npm:^2.0.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+  checksum: 10c0/dcda0e238b3bbd9cd6a59563a0491320cf68f27b0b1e2bd4ee540ab4d7aaa7483cf20d96bbcd0041b5746598f4990239d1a697a6d57348607ac4cc452f69a147
+  languageName: node
+  linkType: hard
+
+"@react-aria/visually-hidden@npm:^3.1.0":
+  version: 3.8.21
+  resolution: "@react-aria/visually-hidden@npm:3.8.21"
+  dependencies:
+    "@react-aria/interactions": "npm:^3.24.1"
+    "@react-aria/utils": "npm:^3.28.1"
+    "@react-types/shared": "npm:^3.28.0"
+    "@swc/helpers": "npm:^0.5.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+  checksum: 10c0/cedb1eada8327187f828767e9934c3e5151ef18824c810b46883cc74e57a0ff64f7e40bad49e5866aab1e34de19ebc20ca93c1fef499d6ab5b7de51d64627ed3
   languageName: node
   linkType: hard
 
@@ -7404,9 +7463,9 @@ __metadata:
   dependencies:
     "@adobe/spectrum-css-temp": "npm:3.0.0-alpha.1"
     "@mdx-js/react": "npm:next"
-    "@react-aria-nutrient/interactions": "npm:^3.1.0"
-    "@react-aria-nutrient/visually-hidden": "npm:^3.1.0"
     "@react-aria/aria-modal-polyfill": "npm:^3.7.13"
+    "@react-aria/interactions": "npm:^3.1.0"
+    "@react-aria/visually-hidden": "npm:^3.1.0"
     "@react-spectrum/autocomplete": "npm:3.0.0-alpha.41"
     "@react-spectrum/breadcrumbs": "npm:^3.1.0"
     "@react-spectrum/button": "npm:^3.1.0"
