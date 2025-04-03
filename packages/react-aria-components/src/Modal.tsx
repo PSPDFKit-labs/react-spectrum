@@ -13,7 +13,7 @@
 import {AriaModalOverlayProps, DismissButton, Overlay, useIsSSR, useModalOverlay} from 'react-aria';
 import {ContextValue, Provider, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
 import {DOMAttributes, forwardRefType, RefObject} from '@react-types/shared';
-import {filterDOMProps, mergeProps, mergeRefs, useEnterAnimation, useExitAnimation, useObjectRef, useViewportSize} from '@react-aria/utils';
+import {filterDOMProps, mergeProps, mergeRefs, useEnterAnimation, useExitAnimation, useObjectRef, useViewportSize} from '@react-aria-nutrient/utils';
 import {OverlayTriggerProps, OverlayTriggerState, useOverlayTriggerState} from 'react-stately';
 import {OverlayTriggerStateContext} from './Dialog';
 import React, {createContext, ForwardedRef, forwardRef, useContext, useMemo, useRef} from 'react';

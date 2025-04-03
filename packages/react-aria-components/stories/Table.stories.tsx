@@ -18,7 +18,7 @@ import React, {Suspense, useMemo, useRef, useState} from 'react';
 import styles from '../example/index.css';
 import {UNSTABLE_TableLoadingIndicator} from '../src/Table';
 import {useAsyncList, useListData} from 'react-stately';
-import {useLoadMore} from '@react-aria/utils';
+import {useLoadMore} from '@react-aria-nutrient/utils';
 
 export default {
   title: 'React Aria Components',

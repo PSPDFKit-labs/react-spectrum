@@ -11,7 +11,7 @@
  */
 
 import {ContextValue, StyleRenderProps, useContextProps, useRenderProps} from './utils';
-import {createHideableComponent} from '@react-aria/collections';
+import {createHideableComponent} from '@react-aria-nutrient/collections';
 import {HoverEvents, mergeProps, useFocusRing, useHover} from 'react-aria';
 import React, {createContext, ForwardedRef, InputHTMLAttributes} from 'react';
 

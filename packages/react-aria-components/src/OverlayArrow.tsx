@@ -12,7 +12,7 @@
 
 import {ContextValue, RenderProps, useContextProps, useRenderProps} from './utils';
 import {DOMProps, forwardRefType} from '@react-types/shared';
-import {filterDOMProps} from '@react-aria/utils';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {PlacementAxis} from 'react-aria';
 import React, {createContext, CSSProperties, ForwardedRef, forwardRef, HTMLAttributes} from 'react';
 

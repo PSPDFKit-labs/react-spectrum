@@ -14,7 +14,7 @@ import {CheckboxContext} from './RSPContexts';
 import {CheckboxGroupState, useCheckboxGroupState, useToggleState} from 'react-stately';
 import {ContextValue, Provider, RACValidation, removeDataAttributes, RenderProps, SlotProps, useContextProps, useRenderProps, useSlot, useSlottedContext} from './utils';
 import {FieldErrorContext} from './FieldError';
-import {filterDOMProps, mergeRefs, useObjectRef} from '@react-aria/utils';
+import {filterDOMProps, mergeRefs, useObjectRef} from '@react-aria-nutrient/utils';
 import {FormContext} from './Form';
 import {forwardRefType, RefObject} from '@react-types/shared';
 import {LabelContext} from './Label';

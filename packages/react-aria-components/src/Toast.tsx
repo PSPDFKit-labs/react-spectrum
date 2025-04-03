@@ -18,8 +18,8 @@ import {forwardRefType} from '@react-types/shared';
 import {QueuedToast, ToastQueue, ToastState, useToastQueue} from 'react-stately';
 import React, {createContext, ForwardedRef, forwardRef, HTMLAttributes, JSX, ReactElement, useContext} from 'react';
 import {TextContext} from './Text';
-import {useIsSSR} from '@react-aria/ssr';
-import {useObjectRef} from '@react-aria/utils';
+import {useIsSSR} from '@react-aria-nutrient/ssr';
+import {useObjectRef} from '@react-aria-nutrient/utils';
 
 const ToastStateContext = createContext<ToastState<any> | null>(null);
 

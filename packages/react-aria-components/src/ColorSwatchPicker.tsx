@@ -2,7 +2,7 @@ import {AriaLabelingProps, HoverEvents, ValueBase} from '@react-types/shared';
 import {Color, parseColor, useColorPickerState} from 'react-stately';
 import {ColorSwatchContext} from './ColorSwatch';
 import {composeRenderProps, ContextValue, RenderProps, StyleRenderProps, useContextProps} from './utils';
-import {filterDOMProps} from '@react-aria/utils';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {ListBox, ListBoxItem, ListBoxItemRenderProps, ListBoxRenderProps} from './ListBox';

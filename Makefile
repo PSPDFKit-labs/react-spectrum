@@ -34,7 +34,7 @@ clean_dist:
 	rm -rf packages/{react-aria,react-aria-components,react-stately}/dist
 	rm -rf packages/{react-aria,react-aria-components,react-stately}/i18n
 	rm -rf packages/@adobe/react-spectrum/i18n
-	rm -rf packages/@react-aria/i18n/server
+	rm -rf packages/@react-aria-nutrient/i18n/server
 	rm -rf packages/@react-spectrum/s2/style/dist packages/@react-spectrum/s2/page.css packages/@react-spectrum/s2/icons packages/@react-spectrum/s2/illustrations
 
 clean_parcel:
@@ -102,9 +102,9 @@ publish-nightly: build
 	yarn publish:nightly
 
 build:
-	parcel build packages/@react-{spectrum,aria,stately}/*/ packages/@internationalized/{message,string,date,number}/ packages/react-aria-components --no-optimize --config .parcelrc-build
+	parcel build packages/@react-{spectrum,aria-nutrient,stately}/*/ packages/@internationalized/{message,string,date,number}/ packages/react-aria-components --no-optimize --config .parcelrc-build
 	yarn workspaces foreach --all -pt run prepublishOnly
-	for pkg in packages/@react-{spectrum,aria,stately}/*/  packages/@internationalized/{message,string,date,number}/ packages/@adobe/react-spectrum/ packages/react-aria/ packages/react-stately/ packages/react-aria-components/; \
+	for pkg in packages/@react-{spectrum,aria-nutrient,stately}/*/  packages/@internationalized/{message,string,date,number}/ packages/@adobe/react-spectrum/ packages/react-aria/ packages/react-stately/ packages/react-aria-components/; \
 		do node scripts/buildEsm.js $$pkg; \
 	done
 	node scripts/buildI18n.js
