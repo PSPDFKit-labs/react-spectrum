@@ -32,14 +32,6 @@ executors:
       CACHE_VERSION: v1
     working_directory: ~/react-spectrum
 
-  rsp-xlarge:
-    docker:
-      - image: cimg/node:18.20.3
-    resource_class: xlarge
-    environment:
-      CACHE_VERSION: v1
-    working_directory: ~/react-spectrum
-
 jobs:
   install:
     executor: rsp-large
@@ -130,7 +122,6 @@ jobs:
           key: react-spectrum-19-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
 
   test-ssr:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -141,7 +132,6 @@ jobs:
 
   test:
     parallelism: 3
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -166,7 +156,6 @@ jobs:
           path: ~/junit
 
   test-ssr-16:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum16-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -177,7 +166,6 @@ jobs:
             yarn test:ssr
 
   test-ssr-17:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum17-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -188,7 +176,6 @@ jobs:
             yarn test:ssr
 
   test-ssr-19:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-19-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -200,7 +187,6 @@ jobs:
 
   test-16:
     parallelism: 3
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum16-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -224,7 +210,6 @@ jobs:
 
   test-17:
     parallelism: 3
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum17-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -248,7 +233,6 @@ jobs:
 
   test-19:
     parallelism: 3
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-19-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -271,7 +255,6 @@ jobs:
           path: ~/junit
 
   test-esm:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -283,7 +266,6 @@ jobs:
             node --loader ./scripts/esm-support/loader.mjs ./scripts/esm-support/testESM.mjs
 
   lint:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -432,7 +414,6 @@ jobs:
             - '*/storybook-s2/'
 
   docs:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -447,7 +428,6 @@ jobs:
             - '*/docs/'
 
   docs-production:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -462,7 +442,6 @@ jobs:
             - '*/docs/'
 
   verdaccio:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -484,7 +463,6 @@ jobs:
             - storage
 
   v-docs:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -506,7 +484,6 @@ jobs:
             - '*/verdaccio/docs'
 
   v-rsp-cra-18:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -528,7 +505,6 @@ jobs:
             - '*/verdaccio/rsp-cra-18'
 
   v-webpack-4:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -550,7 +526,6 @@ jobs:
             - '*/verdaccio/webpack-4'
 
   v-nextjs:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -572,7 +547,6 @@ jobs:
             - '*/verdaccio/next'
 
   v-rac-tailwind:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -594,7 +568,6 @@ jobs:
             - '*/verdaccio/rac-tailwind'
 
   v-rac-rsp-tailwind:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -616,7 +589,6 @@ jobs:
             - '*/verdaccio/rac-spectrum-tailwind'
 
   v-s2-parcel:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -638,7 +610,6 @@ jobs:
             - '*/verdaccio/s2-parcel-example'
 
   v-s2-webpack:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -660,7 +631,6 @@ jobs:
             - '*/verdaccio/s2-webpack-5-example'
 
   v-icon-builder:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -714,7 +684,6 @@ jobs:
             fi
 
   publish-nightly:
-    executor: rsp-xlarge
     steps:
       - restore_cache:
           key: react-spectrum-{{ .Environment.CACHE_VERSION }}-{{ .Environment.CIRCLE_SHA1 }}
