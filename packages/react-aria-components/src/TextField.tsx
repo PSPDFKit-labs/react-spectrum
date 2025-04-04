@@ -12,9 +12,9 @@
 
 import {AriaTextFieldProps, useTextField} from 'react-aria';
 import {ContextValue, DOMProps, Provider, RACValidation, removeDataAttributes, RenderProps, SlotProps, useContextProps, useRenderProps, useSlot, useSlottedContext} from './utils';
-import {createHideableComponent} from '@react-aria/collections';
+import {createHideableComponent} from '@react-aria-nutrient/collections';
 import {FieldErrorContext} from './FieldError';
-import {filterDOMProps, mergeProps} from '@react-aria/utils';
+import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {FormContext} from './Form';
 import {InputContext} from './Input';
 import {LabelContext} from './Label';

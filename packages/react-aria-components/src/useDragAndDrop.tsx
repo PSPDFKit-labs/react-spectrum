@@ -40,7 +40,7 @@ import {
   useDraggableCollectionState,
   useDroppableCollectionState
 } from 'react-stately';
-import {isVirtualDragging} from '@react-aria/dnd';
+import {isVirtualDragging} from '@react-aria-nutrient/dnd';
 import {JSX, useMemo} from 'react';
 
 interface DraggableCollectionStateOpts extends Omit<DraggableCollectionStateOptions, 'getItems'> {}

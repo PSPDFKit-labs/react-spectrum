@@ -14,7 +14,7 @@ import {AriaColorFieldProps, useColorChannelField, useColorField, useLocale} fro
 import {ColorChannel, ColorFieldState, ColorSpace, useColorChannelFieldState, useColorFieldState} from 'react-stately';
 import {ColorFieldContext} from './RSPContexts';
 import {FieldErrorContext} from './FieldError';
-import {filterDOMProps} from '@react-aria/utils';
+import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {InputContext} from './Input';
 import {InputDOMProps, ValidationResult} from '@react-types/shared';
 import {LabelContext} from './Label';

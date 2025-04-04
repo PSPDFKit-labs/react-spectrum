@@ -320,7 +320,7 @@ There are many examples of other third party libraries that have successfully im
 
 ## Open Questions
 
-* In what package should we release the component API? Should it be part of the main `react-aria` monopackage, or a separate package like `react-aria-components` or `@react-aria/components`?
+* In what package should we release the component API? Should it be part of the main `react-aria` monopackage, or a separate package like `react-aria-components` or `@react-aria-nutrient/components`?
 * What should we rename the `key` prop to? So far I've used `id` but is this confusing with DOM ids?
 * How do we enable existing React Spectrum and React Aria components to use the new collection API with support for wrapping items without breaking changes?
 * Which React Spectrum components should we use React Aria Components in, and how should we update existing components?

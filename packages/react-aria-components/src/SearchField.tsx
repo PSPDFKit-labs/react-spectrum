@@ -13,9 +13,9 @@
 import {AriaSearchFieldProps, useSearchField} from 'react-aria';
 import {ButtonContext} from './Button';
 import {ContextValue, Provider, RACValidation, removeDataAttributes, RenderProps, SlotProps, useContextProps, useRenderProps, useSlot, useSlottedContext} from './utils';
-import {createHideableComponent} from '@react-aria/collections';
+import {createHideableComponent} from '@react-aria-nutrient/collections';
 import {FieldErrorContext} from './FieldError';
-import {filterDOMProps, mergeProps} from '@react-aria/utils';
+import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {FormContext} from './Form';
 import {GroupContext} from './Group';
 import {InputContext} from './Input';

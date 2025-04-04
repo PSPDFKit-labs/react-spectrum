@@ -17,7 +17,7 @@ import {DateFieldContext} from './DateField';
 import {DatePickerState, DatePickerStateOptions, DateRangePickerState, DateRangePickerStateOptions, useDatePickerState, useDateRangePickerState} from 'react-stately';
 import {DialogContext, OverlayTriggerStateContext} from './Dialog';
 import {FieldErrorContext} from './FieldError';
-import {filterDOMProps, useResizeObserver} from '@react-aria/utils';
+import {filterDOMProps, useResizeObserver} from '@react-aria-nutrient/utils';
 import {FormContext} from './Form';
 import {forwardRefType} from '@react-types/shared';
 import {GroupContext} from './Group';

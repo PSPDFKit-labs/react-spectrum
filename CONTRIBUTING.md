@@ -209,7 +209,7 @@ It's likely that you are using a different version of Node.js. Please use Node.j
 For example:
 
 ```
-@parcel/core: packages/@react-aria/virtualizer/src/index.ts does not export 'useVirtualizer'
+@parcel/core: packages/@react-aria-nutrient/virtualizer/src/index.ts does not export 'useVirtualizer'
 ```
 
 You may have run `yarn build` before. Please run `make clean_all && yarn` to clean up the build artifacts.
