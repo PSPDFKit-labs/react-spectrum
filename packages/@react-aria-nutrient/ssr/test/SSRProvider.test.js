@@ -129,7 +129,7 @@ describe('SSRProvider', function () {
     let env = process.env.NODE_ENV;
     process.env.NODE_ENV = 'test';
     let tree = render(<Test />);
-    expect(/^react-aria-/.test(tree.getByTestId('test').id)).toBe(true);
+    expect(/^@react-aria-nutrient\/react-aria-/.test(tree.getByTestId('test').id)).toBe(true);
     process.env.NODE_ENV = env;
   });
 });
