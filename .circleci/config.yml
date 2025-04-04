@@ -574,11 +574,9 @@ workflows:
             - lint
             - test
             - test-esm
-            - docs
       - comment:
           name: comment-verdaccio
           requires:
-            - v-docs
             - v-rsp-cra-18
             - v-webpack-4
             - v-nextjs
