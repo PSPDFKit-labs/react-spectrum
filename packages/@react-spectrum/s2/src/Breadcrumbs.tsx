@@ -23,7 +23,7 @@ import {
   Provider,
   Breadcrumbs as RACBreadcrumbs
 } from 'react-aria-components';
-import {AriaBreadcrumbItemProps, useLocale} from 'react-aria';
+import {AriaBreadcrumbItemProps, useLocale} from '@react-aria-nutrient/react-aria';
 import ChevronIcon from '../ui-icons/Chevron';
 import {Collection, DOMRef, DOMRefValue, LinkDOMProps, Node} from '@react-types/shared';
 import {createContext, forwardRef, Fragment, ReactNode, RefObject, useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react';

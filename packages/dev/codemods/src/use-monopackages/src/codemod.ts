@@ -31,8 +31,8 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
       monopackage: '@adobe/react-spectrum',
       individualPrefix: '@react-spectrum/'
     },
-    'react-aria': {
-      monopackage: 'react-aria',
+    '@react-aria-nutrient/react-aria': {
+      monopackage: '@react-aria-nutrient/react-aria',
       individualPrefix: '@react-aria-nutrient/'
     },
     'react-stately': {

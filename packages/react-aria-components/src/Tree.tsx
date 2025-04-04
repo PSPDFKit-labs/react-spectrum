@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaTreeItemOptions, AriaTreeProps, FocusScope, mergeProps, useFocusRing,  useGridListSelectionCheckbox, useHover, useTree, useTreeItem} from 'react-aria';
+import {AriaTreeItemOptions, AriaTreeProps, FocusScope, mergeProps, useFocusRing,  useGridListSelectionCheckbox, useHover, useTree, useTreeItem} from '@react-aria-nutrient/react-aria';
 import {ButtonContext} from './Button';
 import {CheckboxContext} from './RSPContexts';
 import {Collection, CollectionBuilder, CollectionNode, createBranchComponent, createLeafComponent, useCachedChildren} from '@react-aria-nutrient/collections';

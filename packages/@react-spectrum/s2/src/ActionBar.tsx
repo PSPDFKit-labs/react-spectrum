@@ -16,7 +16,7 @@ import {CloseButton} from './CloseButton';
 import {ContextValue, SlotProps} from 'react-aria-components';
 import {createContext, ForwardedRef, forwardRef, ReactElement, ReactNode, RefObject, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {DOMRef, DOMRefValue, Key} from '@react-types/shared';
-import {FocusScope, useKeyboard} from 'react-aria';
+import {FocusScope, useKeyboard} from '@react-aria-nutrient/react-aria';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {style} from '../style' with {type: 'macro'};

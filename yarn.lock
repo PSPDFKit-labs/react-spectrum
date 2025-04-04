@@ -6500,6 +6500,60 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@react-aria-nutrient/react-aria@npm:^3.38.1, @react-aria-nutrient/react-aria@workspace:packages/react-aria":
+  version: 0.0.0-use.local
+  resolution: "@react-aria-nutrient/react-aria@workspace:packages/react-aria"
+  dependencies:
+    "@babel/cli": "npm:^7.24.1"
+    "@babel/core": "npm:^7.24.3"
+    "@internationalized/string": "npm:^3.2.5"
+    "@react-aria-nutrient/breadcrumbs": "npm:^3.5.22"
+    "@react-aria-nutrient/button": "npm:^3.12.1"
+    "@react-aria-nutrient/calendar": "npm:^3.7.2"
+    "@react-aria-nutrient/checkbox": "npm:^3.15.3"
+    "@react-aria-nutrient/color": "npm:^3.0.5"
+    "@react-aria-nutrient/combobox": "npm:^3.12.1"
+    "@react-aria-nutrient/datepicker": "npm:^3.14.1"
+    "@react-aria-nutrient/dialog": "npm:^3.5.23"
+    "@react-aria-nutrient/disclosure": "npm:^3.0.3"
+    "@react-aria-nutrient/dnd": "npm:^3.9.1"
+    "@react-aria-nutrient/focus": "npm:^3.20.1"
+    "@react-aria-nutrient/gridlist": "npm:^3.11.1"
+    "@react-aria-nutrient/i18n": "npm:^3.12.7"
+    "@react-aria-nutrient/interactions": "npm:^3.24.1"
+    "@react-aria-nutrient/label": "npm:^3.7.16"
+    "@react-aria-nutrient/landmark": "npm:^3.0.1"
+    "@react-aria-nutrient/link": "npm:^3.7.10"
+    "@react-aria-nutrient/listbox": "npm:^3.14.2"
+    "@react-aria-nutrient/menu": "npm:^3.18.1"
+    "@react-aria-nutrient/meter": "npm:^3.4.21"
+    "@react-aria-nutrient/numberfield": "npm:^3.11.12"
+    "@react-aria-nutrient/overlays": "npm:^3.26.1"
+    "@react-aria-nutrient/progress": "npm:^3.4.21"
+    "@react-aria-nutrient/radio": "npm:^3.11.1"
+    "@react-aria-nutrient/searchfield": "npm:^3.8.2"
+    "@react-aria-nutrient/select": "npm:^3.15.3"
+    "@react-aria-nutrient/selection": "npm:^3.23.1"
+    "@react-aria-nutrient/separator": "npm:^3.4.7"
+    "@react-aria-nutrient/slider": "npm:^3.7.17"
+    "@react-aria-nutrient/ssr": "npm:^3.9.7"
+    "@react-aria-nutrient/switch": "npm:^3.7.1"
+    "@react-aria-nutrient/table": "npm:^3.17.1"
+    "@react-aria-nutrient/tabs": "npm:^3.10.1"
+    "@react-aria-nutrient/tag": "npm:^3.5.1"
+    "@react-aria-nutrient/textfield": "npm:^3.17.1"
+    "@react-aria-nutrient/toast": "npm:^3.0.1"
+    "@react-aria-nutrient/tooltip": "npm:^3.8.1"
+    "@react-aria-nutrient/tree": "npm:^3.0.1"
+    "@react-aria-nutrient/utils": "npm:^3.28.1"
+    "@react-aria-nutrient/visually-hidden": "npm:^3.8.21"
+    "@react-types/shared": "npm:^3.28.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+  languageName: unknown
+  linkType: soft
+
 "@react-aria-nutrient/searchfield@npm:^3.8.2, @react-aria-nutrient/searchfield@workspace:packages/@react-aria-nutrient/searchfield":
   version: 0.0.0-use.local
   resolution: "@react-aria-nutrient/searchfield@workspace:packages/@react-aria-nutrient/searchfield"
@@ -7999,6 +8053,7 @@ __metadata:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/live-announcer": "npm:^3.4.1"
+    "@react-aria-nutrient/react-aria": "npm:^3.38.1"
     "@react-aria-nutrient/test-utils": "npm:1.0.0-alpha.5"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-spectrum/utils": "npm:^3.12.3"
@@ -8015,7 +8070,6 @@ __metadata:
     "@testing-library/user-event": "npm:^14.0.0"
     csstype: "npm:^3.0.2"
     jest: "npm:^29.5.0"
-    react-aria: "npm:^3.38.1"
     react-aria-components: "npm:^1.7.1"
   peerDependencies:
     react: ^18.0.0 || ^19.0.0-rc.1
@@ -29310,6 +29364,7 @@ __metadata:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/live-announcer": "npm:^3.4.1"
+    "@react-aria-nutrient/react-aria": "npm:^3.38.1"
     "@react-aria-nutrient/ssr": "npm:^3.9.7"
     "@react-aria-nutrient/toolbar": "npm:3.0.0-beta.14"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
@@ -29327,63 +29382,8 @@ __metadata:
     "@swc/helpers": "npm:^0.5.0"
     "@tailwindcss/postcss": "npm:^4.0.0"
     client-only: "npm:^0.0.1"
-    react-aria: "npm:^3.38.1"
     react-stately: "npm:^3.36.1"
     use-sync-external-store: "npm:^1.4.0"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-    react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
-  languageName: unknown
-  linkType: soft
-
-"react-aria@npm:^3.38.1, react-aria@workspace:packages/react-aria":
-  version: 0.0.0-use.local
-  resolution: "react-aria@workspace:packages/react-aria"
-  dependencies:
-    "@babel/cli": "npm:^7.24.1"
-    "@babel/core": "npm:^7.24.3"
-    "@internationalized/string": "npm:^3.2.5"
-    "@react-aria-nutrient/breadcrumbs": "npm:^3.5.22"
-    "@react-aria-nutrient/button": "npm:^3.12.1"
-    "@react-aria-nutrient/calendar": "npm:^3.7.2"
-    "@react-aria-nutrient/checkbox": "npm:^3.15.3"
-    "@react-aria-nutrient/color": "npm:^3.0.5"
-    "@react-aria-nutrient/combobox": "npm:^3.12.1"
-    "@react-aria-nutrient/datepicker": "npm:^3.14.1"
-    "@react-aria-nutrient/dialog": "npm:^3.5.23"
-    "@react-aria-nutrient/disclosure": "npm:^3.0.3"
-    "@react-aria-nutrient/dnd": "npm:^3.9.1"
-    "@react-aria-nutrient/focus": "npm:^3.20.1"
-    "@react-aria-nutrient/gridlist": "npm:^3.11.1"
-    "@react-aria-nutrient/i18n": "npm:^3.12.7"
-    "@react-aria-nutrient/interactions": "npm:^3.24.1"
-    "@react-aria-nutrient/label": "npm:^3.7.16"
-    "@react-aria-nutrient/landmark": "npm:^3.0.1"
-    "@react-aria-nutrient/link": "npm:^3.7.10"
-    "@react-aria-nutrient/listbox": "npm:^3.14.2"
-    "@react-aria-nutrient/menu": "npm:^3.18.1"
-    "@react-aria-nutrient/meter": "npm:^3.4.21"
-    "@react-aria-nutrient/numberfield": "npm:^3.11.12"
-    "@react-aria-nutrient/overlays": "npm:^3.26.1"
-    "@react-aria-nutrient/progress": "npm:^3.4.21"
-    "@react-aria-nutrient/radio": "npm:^3.11.1"
-    "@react-aria-nutrient/searchfield": "npm:^3.8.2"
-    "@react-aria-nutrient/select": "npm:^3.15.3"
-    "@react-aria-nutrient/selection": "npm:^3.23.1"
-    "@react-aria-nutrient/separator": "npm:^3.4.7"
-    "@react-aria-nutrient/slider": "npm:^3.7.17"
-    "@react-aria-nutrient/ssr": "npm:^3.9.7"
-    "@react-aria-nutrient/switch": "npm:^3.7.1"
-    "@react-aria-nutrient/table": "npm:^3.17.1"
-    "@react-aria-nutrient/tabs": "npm:^3.10.1"
-    "@react-aria-nutrient/tag": "npm:^3.5.1"
-    "@react-aria-nutrient/textfield": "npm:^3.17.1"
-    "@react-aria-nutrient/toast": "npm:^3.0.1"
-    "@react-aria-nutrient/tooltip": "npm:^3.8.1"
-    "@react-aria-nutrient/tree": "npm:^3.0.1"
-    "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-aria-nutrient/visually-hidden": "npm:^3.8.21"
-    "@react-types/shared": "npm:^3.28.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
     react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1

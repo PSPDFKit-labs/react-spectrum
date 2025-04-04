@@ -52,7 +52,7 @@ import {HelpTextProps, SpectrumLabelableProps} from '@react-types/shared';
 import {IconContext} from './Icon';
 import {menu} from './Picker';
 import {mergeRefs, useResizeObserver} from '@react-aria-nutrient/utils';
-import {Placement} from 'react-aria';
+import {Placement} from '@react-aria-nutrient/react-aria';
 import {PopoverBase} from './Popover';
 import {pressScale} from './pressScale';
 import {TextFieldRef} from '@react-types/textfield';
