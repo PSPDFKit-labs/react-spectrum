@@ -143,4 +143,4 @@ export declare function createLocalizedStringDictionary(packages: string[]): Loc
 
 build('{@react-aria-nutrient/*,@react-stately/*,@react-spectrum/*,react-aria-components}', '@adobe/react-spectrum');
 build('{@react-aria-nutrient/*,@react-stately/*,react-aria-components}', 'react-aria-components');
-build('{@react-aria,@react-stately}/*', 'react-aria');
+build('{@react-aria,@react-stately}/*', '@react-aria-nutrient/react-aria');

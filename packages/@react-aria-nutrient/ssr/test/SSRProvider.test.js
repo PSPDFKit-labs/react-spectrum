@@ -30,7 +30,7 @@ describe('SSRProvider', function () {
 
     let divs = tree.getAllByTestId('test');
     if (React.useId) {
-      expect(divs[0].id.startsWith('react-aria')).toBe(true);
+      expect(divs[0].id.startsWith('@react-aria-nutrient/react-aria')).toBe(true);
       expect(divs[0].id).not.toBe(divs[1].id);
     } else {
       expect(divs[0].id).toBe('react-aria-1');

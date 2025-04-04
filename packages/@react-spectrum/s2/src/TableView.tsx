@@ -68,7 +68,7 @@ import {useLoadMore} from '@react-aria-nutrient/utils';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useScale} from './utils';
 import {useSpectrumContextProps} from './useSpectrumContextProps';
-import {VisuallyHidden} from 'react-aria';
+import {VisuallyHidden} from '@react-aria-nutrient/react-aria';
 
 interface S2TableProps {
   /** Whether the Table should be displayed with a quiet style. */

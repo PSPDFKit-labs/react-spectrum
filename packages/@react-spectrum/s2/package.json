@@ -146,7 +146,7 @@
     "@react-types/table": "^3.11.0",
     "@react-types/textfield": "^3.12.0",
     "csstype": "^3.0.2",
-    "react-aria": "^3.38.1",
+    "@react-aria-nutrient/react-aria": "^3.38.1",
     "react-aria-components": "^1.7.1"
   },
   "peerDependencies": {

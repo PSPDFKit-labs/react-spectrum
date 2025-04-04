@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaSwitchProps, HoverEvents, mergeProps, useFocusRing, useHover, useSwitch, VisuallyHidden} from 'react-aria';
+import {AriaSwitchProps, HoverEvents, mergeProps, useFocusRing, useHover, useSwitch, VisuallyHidden} from '@react-aria-nutrient/react-aria';
 import {ContextValue, removeDataAttributes, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
 import {filterDOMProps, mergeRefs, useObjectRef} from '@react-aria-nutrient/utils';
 import {forwardRefType, RefObject} from '@react-types/shared';

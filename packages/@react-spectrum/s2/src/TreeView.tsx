@@ -38,7 +38,7 @@ import {raw} from '../style/style-macro' with {type: 'macro'};
 import React, {createContext, forwardRef, JSXElementConstructor, ReactElement, ReactNode, useContext, useRef} from 'react';
 import {TextContext} from './Content';
 import {useDOMRef} from '@react-spectrum/utils';
-import {useLocale} from 'react-aria';
+import {useLocale} from '@react-aria-nutrient/react-aria';
 import {useScale} from './utils';
 
 interface S2TreeProps {

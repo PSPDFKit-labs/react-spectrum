@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaToastProps, AriaToastRegionProps, mergeProps, useFocusRing, useToast, useToastRegion} from 'react-aria';
+import {AriaToastProps, AriaToastRegionProps, mergeProps, useFocusRing, useToast, useToastRegion} from '@react-aria-nutrient/react-aria';
 import {ButtonContext} from './Button';
 import {ContextValue, DEFAULT_SLOT, Provider, RenderProps, StyleRenderProps, useContextProps, useRenderProps} from './utils';
 import {createPortal} from 'react-dom';
