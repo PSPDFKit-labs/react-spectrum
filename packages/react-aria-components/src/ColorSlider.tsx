@@ -1,4 +1,4 @@
-import {AriaColorSliderProps, Orientation, useColorSlider, useLocale} from 'react-aria';
+import {AriaColorSliderProps, Orientation, useColorSlider, useLocale} from '@react-aria-nutrient/react-aria';
 import {ColorSliderContext} from './RSPContexts';
 import {ColorSliderState, useColorSliderState} from 'react-stately';
 import {filterDOMProps} from '@react-aria-nutrient/utils';

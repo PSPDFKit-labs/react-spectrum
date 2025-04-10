@@ -11,7 +11,7 @@
  */
 
 import {AriaLabelingProps, FocusableElement, forwardRefType, RefObject} from '@react-types/shared';
-import {AriaPositionProps, mergeProps, OverlayContainer, Placement, PlacementAxis, PositionProps, useOverlayPosition, useTooltip, useTooltipTrigger} from 'react-aria';
+import {AriaPositionProps, mergeProps, OverlayContainer, Placement, PlacementAxis, PositionProps, useOverlayPosition, useTooltip, useTooltipTrigger} from '@react-aria-nutrient/react-aria';
 import {ContextValue, Provider, RenderProps, useContextProps, useRenderProps} from './utils';
 import {FocusableProvider} from '@react-aria-nutrient/focus';
 import {OverlayArrowContext} from './OverlayArrow';

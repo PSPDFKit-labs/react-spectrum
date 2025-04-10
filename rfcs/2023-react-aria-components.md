@@ -171,7 +171,7 @@ As described above, each component exposes a corresponding context which can be 
 
 ```jsx
 import {ListBoxContext, useContextProps} from 'react-aria-components';
-import {useListBox} from 'react-aria';
+import {useListBox} from '@react-aria-nutrient/react-aria';
 
 function MyListBox(props) {
   // Merge local props and ref with props from context.
@@ -215,7 +215,7 @@ import {MyListBox} from './MyListBox';
 This also works the other way. If you need to customize `ComboBox` itself, but want to reuse the components it contains, you can do so by providing the necessary contexts.
 
 ```jsx
-import {useComboBox} from 'react-aria';
+import {useComboBox} from '@react-aria-nutrient/react-aria';
 import {ButtonContext, InputContext, LabelContext, ListBoxContext, Provider} from 'react-aria-components';
 
 function MyComboBox(props) {

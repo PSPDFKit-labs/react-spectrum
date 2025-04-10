@@ -81,7 +81,7 @@ The `Popover` component uses an &lt;<TypeLink links={docs.links} type={docs.expo
 <TypeLink links={docs.links} type={docs.exports.usePopover} /> also hides content outside the popover from screen readers, which is important since the surrounding content won't be in context of the original trigger due to the portal. To allow screen reader users to dismiss the popover without a keyboard (e.g. on mobile), visually hidden &lt;<TypeLink links={docs.links} type={docs.exports.DismissButton} />&gt; elements are added at the start and end of the popover. An underlay is also used to prevent scrolling and interacting with elements outside the popover with a pointer, to avoid unintentially repositioning or closing it.
 
 ```tsx example export=true render=false
-import type {AriaPopoverProps} from 'react-aria';
+import type {AriaPopoverProps} from '@react-aria-nutrient/react-aria';
 import type {OverlayTriggerState} from 'react-stately';
 import {usePopover, Overlay, DismissButton} from '@react-aria-nutrient/overlays';
 

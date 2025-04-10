@@ -42,7 +42,7 @@ import {IconContext} from './Icon'; // chevron right removed??
 import {ImageContext} from './Image';
 import LinkOutIcon from '../ui-icons/LinkOut';
 import {mergeStyles} from '../style/runtime';
-import {Placement, useLocale} from 'react-aria';
+import {Placement, useLocale} from '@react-aria-nutrient/react-aria';
 import {PopoverBase} from './Popover';
 import {PressResponder} from '@react-aria-nutrient/interactions';
 import {pressScale} from './pressScale';

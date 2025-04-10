@@ -56,7 +56,7 @@ import {HeaderContext, HeadingContext, Text, TextContext} from './Content';
 import {IconContext} from './Icon';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {Placement} from 'react-aria';
+import {Placement} from '@react-aria-nutrient/react-aria';
 import {PopoverBase} from './Popover';
 import {PressResponder} from '@react-aria-nutrient/interactions';
 import {pressScale} from './pressScale';

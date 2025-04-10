@@ -19,7 +19,7 @@ import {
   useFocusRing,
   useHover,
   useId
-} from 'react-aria';
+} from '@react-aria-nutrient/react-aria';
 import {
   ContextValue,
   RenderProps,

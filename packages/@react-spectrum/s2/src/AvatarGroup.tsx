@@ -18,7 +18,7 @@ import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {getAllowedOverrides, StylesPropWithoutWidth, UnsafeStyles} from './style-utils' with {type: 'macro'};
 import {style} from '../style' with {type: 'macro'};
 import {useDOMRef} from '@react-spectrum/utils';
-import {useLabel} from 'react-aria';
+import {useLabel} from '@react-aria-nutrient/react-aria';
 import {useSpectrumContextProps} from './useSpectrumContextProps';
 
 export interface AvatarGroupProps extends UnsafeStyles, DOMProps, AriaLabelingProps, SlotProps {

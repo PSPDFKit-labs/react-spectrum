@@ -16,7 +16,7 @@ import {Cell, Column, Row, TableBody, TableHeader, TableView} from '@react-spect
 import {classNames} from '@react-spectrum/utils';
 import {Content} from '@react-spectrum/view';
 import {Draggable} from '@react-aria-nutrient/dnd/stories/dnd.stories';
-import {DropEvent, FileDropItem, TextDropItem, useDrag} from 'react-aria';
+import {DropEvent, FileDropItem, TextDropItem, useDrag} from '@react-aria-nutrient/react-aria';
 import {DropZone} from '../';
 import File from '@spectrum-icons/illustrations/File';
 import {FileTrigger} from 'react-aria-components';
