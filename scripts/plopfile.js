@@ -78,7 +78,7 @@ module.exports = function (plop) {
             type: 'addMany',
             templateFiles: '../plop-templates/@react-aria-nutrient/**',
             base: '../plop-templates/@react-aria-nutrient/',
-            destination: `../packages/@react-aria-nutrient/${packageName}`,
+            destination: `../packages/@react-aria/${packageName}`,
             data: {componentName, scopes}
           });
         }

@@ -34,7 +34,7 @@ const ERROR = 2;
 
 export default [{
     ignores: [
-        "packages/@react-aria-nutrient/i18n/server",
+        "packages/@react-aria/i18n/server",
         "packages/@spectrum-icons/color/**/*",
         "packages/@spectrum-icons/ui/**/*",
         "packages/@spectrum-icons/workflow/**/*",
@@ -462,8 +462,8 @@ export default [{
     },
 }, {
     files: [
-        "packages/@react-aria-nutrient/focus/src/**/*.ts",
-        "packages/@react-aria-nutrient/focus/src/**/*.tsx",
+        "packages/@react-aria/focus/src/**/*.ts",
+        "packages/@react-aria/focus/src/**/*.tsx",
     ],
 
     rules: {
@@ -477,8 +477,8 @@ export default [{
     },
 }, {
     files: [
-        "packages/@react-aria-nutrient/interactions/src/**/*.ts",
-        "packages/@react-aria-nutrient/interactions/src/**/*.tsx",
+        "packages/@react-aria/interactions/src/**/*.ts",
+        "packages/@react-aria/interactions/src/**/*.tsx",
     ],
 
     rules: {
