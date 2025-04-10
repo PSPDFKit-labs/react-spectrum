@@ -49,7 +49,7 @@
     "version:nightly": "yarn workspaces foreach --all --no-private -t version -d 3.0.0-nightly-$(git rev-parse --short HEAD)-$(date +'%y%m%d') && yarn apply-nightly --all",
     "publish:nightly": "yarn workspaces foreach --all --no-private -t npm publish --tag nightly --access public",
     "build:api-published": "node scripts/buildPublishedAPI.js",
-    "publish:continuous": "yarn workspaces foreach --all --no-private --include '@react-aria-nutrient/*' --include '@react-stately/*' -t exec 'npx pkg-pr-new publish'",
+    "publish:continuous": "yarn workspaces foreach --all --no-private -t exec 'npx pkg-pr-new publish'",
     "build:api-branch": "node scripts/buildBranchAPI.js",
     "compare:apis": "node scripts/compareAPIs.js",
     "check-apis": "yarn build:api-branch --githash=\"origin/main\" --output=\"base-api\" && yarn build:api-branch && yarn compare:apis",
