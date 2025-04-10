@@ -11,17 +11,17 @@
  */
 
 import {AriaLabelingProps, DOMAttributes, DOMProps, Key, KeyboardDelegate, RefObject} from '@react-types/shared';
-import {filterDOMProps, mergeProps, useId} from '@react-aria/utils';
+import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {GridCollection} from '@react-types/grid';
 import {GridKeyboardDelegate} from './GridKeyboardDelegate';
 import {gridMap} from './utils';
 import {GridState} from '@react-stately/grid';
 import {useCallback, useMemo} from 'react';
-import {useCollator, useLocale} from '@react-aria/i18n';
+import {useCollator, useLocale} from '@react-aria-nutrient/i18n';
 import {useGridSelectionAnnouncement} from './useGridSelectionAnnouncement';
-import {useHasTabbableChild} from '@react-aria/focus';
+import {useHasTabbableChild} from '@react-aria-nutrient/focus';
 import {useHighlightSelectionDescription} from './useHighlightSelectionDescription';
-import {useSelectableCollection} from '@react-aria/selection';
+import {useSelectableCollection} from '@react-aria-nutrient/selection';
 
 export interface GridProps extends DOMProps, AriaLabelingProps {
   /** Whether the grid uses virtual scrolling. */
@@ -53,7 +53,16 @@ export interface GridProps extends DOMProps, AriaLabelingProps {
   /** Handler that is called when a user performs an action on the row. */
   onRowAction?: (key: Key) => void,
   /** Handler that is called when a user performs an action on the cell. */
-  onCellAction?: (key: Key) => void
+  onCellAction?: (key: Key) => void,
+  /**
+   * Whether pressing the escape key should clear selection in the grid or not.
+   *
+   * Most experiences should not modify this option as it eliminates a keyboard user's ability to
+   * easily clear selection. Only use if the escape key is being handled externally or should not
+   * trigger selection clearing contextually.
+   * @default 'clearSelection'
+   */
+  escapeKeyBehavior?: 'clearSelection' | 'none'
 }
 
 export interface GridAria {
@@ -77,7 +86,8 @@ export function useGrid<T>(props: GridProps, state: GridState<T, GridCollection<
     scrollRef,
     getRowText,
     onRowAction,
-    onCellAction
+    onCellAction,
+    escapeKeyBehavior = 'clearSelection'
   } = props;
   let {selectionManager: manager} = state;
 
@@ -106,7 +116,8 @@ export function useGrid<T>(props: GridProps, state: GridState<T, GridCollection<
     keyboardDelegate: delegate,
     isVirtualized,
     scrollRef,
-    disallowTypeAhead
+    disallowTypeAhead,
+    escapeKeyBehavior
   });
 
   let id = useId(props.id);

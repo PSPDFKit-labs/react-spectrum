@@ -11,20 +11,20 @@
  */
 
 
-jest.mock('@react-aria/live-announcer');
-jest.mock('@react-aria/utils/src/scrollIntoView');
+jest.mock('@react-aria-nutrient/live-announcer');
+jest.mock('@react-aria-nutrient/utils/src/scrollIntoView');
 import {act, fireEvent, installPointerEvent, mockClickDefault, pointerMap, render as renderComponent, triggerTouch, within} from '@react-spectrum/test-utils-internal';
 import {ActionButton} from '@react-spectrum/button';
-import {announce} from '@react-aria/live-announcer';
+import {announce} from '@react-aria-nutrient/live-announcer';
 import {FocusExample} from '../stories/ListViewActions.stories';
 import {Item, ListView} from '../src';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
 import {renderEmptyState} from '../stories/ListView.stories';
-import {scrollIntoView} from '@react-aria/utils';
+import {scrollIntoView} from '@react-aria-nutrient/utils';
 import {Text} from '@react-spectrum/text';
 import {theme} from '@react-spectrum/theme-default';
-import {User} from '@react-aria/test-utils';
+import {User} from '@react-aria-nutrient/test-utils';
 import userEvent from '@testing-library/user-event';
 
 function pointerEvent(type, opts) {
@@ -810,6 +810,24 @@ describe('ListView', function () {
       await user.click(within(rows[2]).getByRole('checkbox'));
       expect(announce).toHaveBeenLastCalledWith('Baz not selected. 1 item selected.');
       expect(announce).toHaveBeenCalledTimes(3);
+    });
+
+    it('should prevent Esc from clearing selection if escapeKeyBehavior is "none"', async function () {
+      let tree = renderSelectionList({onSelectionChange, selectionMode: 'multiple', escapeKeyBehavior: 'none'});
+
+      let rows = tree.getAllByRole('row');
+      await user.click(within(rows[1]).getByRole('checkbox'));
+      checkSelection(onSelectionChange, ['bar']);
+
+      onSelectionChange.mockClear();
+      await user.click(within(rows[2]).getByRole('checkbox'));
+      checkSelection(onSelectionChange, ['bar', 'baz']);
+
+      onSelectionChange.mockClear();
+      await user.keyboard('{Escape}');
+      expect(onSelectionChange).not.toHaveBeenCalled();
+      expect(rows[1]).toHaveAttribute('aria-selected', 'true');
+      expect(rows[2]).toHaveAttribute('aria-selected', 'true');
     });
 
     it('should support range selection', async function () {

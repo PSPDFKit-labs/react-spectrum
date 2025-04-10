@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaModalOverlayProps, DismissButton, Overlay, useIsSSR, useModalOverlay} from 'react-aria';
+import {AriaModalOverlayProps, DismissButton, Overlay, useIsSSR, useModalOverlay} from '@react-aria-nutrient/react-aria';
 import {ContextValue, Provider, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
 import {DOMAttributes, forwardRefType, RefObject} from '@react-types/shared';
-import {filterDOMProps, mergeProps, mergeRefs, useEnterAnimation, useExitAnimation, useObjectRef, useViewportSize} from '@react-aria/utils';
+import {filterDOMProps, mergeProps, mergeRefs, useEnterAnimation, useExitAnimation, useObjectRef, useViewportSize} from '@react-aria-nutrient/utils';
 import {OverlayTriggerProps, OverlayTriggerState, useOverlayTriggerState} from 'react-stately';
 import {OverlayTriggerStateContext} from './Dialog';
 import React, {createContext, ForwardedRef, forwardRef, useContext, useMemo, useRef} from 'react';
@@ -30,6 +30,7 @@ export interface ModalOverlayProps extends AriaModalOverlayProps, OverlayTrigger
   /**
    * The container element in which the overlay portal will be placed. This may have unknown behavior depending on where it is portalled to.
    * @default document.body
+   * @deprecated - Use a parent UNSAFE_PortalProvider to set your portal container instead.
    */
   UNSTABLE_portalContainer?: Element
 }

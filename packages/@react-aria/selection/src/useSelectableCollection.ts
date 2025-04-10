@@ -10,15 +10,15 @@
  * governing permissions and limitations under the License.
  */
 
-import {CLEAR_FOCUS_EVENT, FOCUS_EVENT, focusWithoutScrolling, isCtrlKeyPressed, mergeProps, scrollIntoView, scrollIntoViewport, useEffectEvent, useEvent, useRouter, useUpdateLayoutEffect} from '@react-aria/utils';
+import {CLEAR_FOCUS_EVENT, FOCUS_EVENT, focusWithoutScrolling, isCtrlKeyPressed, mergeProps, scrollIntoView, scrollIntoViewport, useEffectEvent, useEvent, useRouter, useUpdateLayoutEffect} from '@react-aria-nutrient/utils';
 import {DOMAttributes, FocusableElement, FocusStrategy, Key, KeyboardDelegate, RefObject} from '@react-types/shared';
 import {flushSync} from 'react-dom';
 import {FocusEvent, KeyboardEvent, useEffect, useRef} from 'react';
-import {focusSafely, getInteractionModality} from '@react-aria/interactions';
-import {getFocusableTreeWalker, moveVirtualFocus} from '@react-aria/focus';
+import {focusSafely, getInteractionModality} from '@react-aria-nutrient/interactions';
+import {getFocusableTreeWalker, moveVirtualFocus} from '@react-aria-nutrient/focus';
 import {getItemElement, isNonContiguousSelectionModifier, useCollectionId} from './utils';
 import {MultipleSelectionManager} from '@react-stately/selection';
-import {useLocale} from '@react-aria/i18n';
+import {useLocale} from '@react-aria-nutrient/i18n';
 import {useTypeSelect} from './useTypeSelect';
 
 export interface AriaSelectableCollectionOptions {
@@ -54,6 +54,11 @@ export interface AriaSelectableCollectionOptions {
    * @default false
    */
   disallowSelectAll?: boolean,
+  /**
+   * Whether pressing the Escape should clear selection in the collection or not.
+   * @default 'clearSelection'
+   */
+  escapeKeyBehavior?: 'clearSelection' | 'none',
   /**
    * Whether selection should occur automatically on focus.
    * @default false
@@ -108,6 +113,7 @@ export function useSelectableCollection(options: AriaSelectableCollectionOptions
     shouldFocusWrap = false,
     disallowEmptySelection = false,
     disallowSelectAll = false,
+    escapeKeyBehavior = 'clearSelection',
     selectOnFocus = manager.selectionBehavior === 'replace',
     disallowTypeAhead = false,
     shouldUseVirtualFocus,
@@ -279,7 +285,7 @@ export function useSelectableCollection(options: AriaSelectableCollectionOptions
         }
         break;
       case 'Escape':
-        if (!disallowEmptySelection && manager.selectedKeys.size !== 0) {
+        if (escapeKeyBehavior === 'clearSelection' && !disallowEmptySelection && manager.selectedKeys.size !== 0) {
           e.stopPropagation();
           e.preventDefault();
           manager.clearSelection();

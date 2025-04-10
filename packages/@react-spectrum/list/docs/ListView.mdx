@@ -14,7 +14,7 @@ import Anatomy from './anatomy.svg';
 import ChevronRight from '@spectrum-icons/workflow/ChevronRight';
 import docs from 'docs:@react-spectrum/list';
 import dndDocs from 'docs:@react-spectrum/dnd';
-import gridlistUtil from 'docs:@react-aria/test-utils/src/gridlist.ts';
+import gridlistUtil from 'docs:@react-aria-nutrient/test-utils/src/gridlist.ts';
 import {HeaderInfo, PropTable, PageDescription, TypeLink, ClassAPI, VersionBadge} from '@react-spectrum/docs';
 import {Keyboard} from '@react-spectrum/text';
 import packageData from '@react-spectrum/list/package.json';
@@ -1205,7 +1205,7 @@ import {theme} from '@react-spectrum/theme-default';
 import {User} from '@react-spectrum/test-utils';
 
 let testUtilUser = new User({interactionType: 'mouse'});
-// ...
+// Other setup, be sure to check out the suggested mocks mentioned above in https://react-spectrum.adobe.com/react-spectrum/ListView.html#testing
 
 it('ListView can select a row via keyboard', async function () {
   // Render your test component/app and initialize the gridlist tester

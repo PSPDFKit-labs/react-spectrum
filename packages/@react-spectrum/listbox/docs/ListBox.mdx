@@ -13,7 +13,7 @@ export default Layout;
 import docs from 'docs:@react-spectrum/listbox';
 import {HeaderInfo, PropTable, PageDescription, ClassAPI, VersionBadge} from '@react-spectrum/docs';
 import packageData from '@react-spectrum/listbox/package.json';
-import listboxUtils from 'docs:@react-aria/test-utils/src/listbox.ts';
+import listboxUtils from 'docs:@react-aria-nutrient/test-utils/src/listbox.ts';
 
 ```jsx import
 import {ListBox, Section, Item} from '@react-spectrum/listbox';
@@ -423,7 +423,7 @@ import {theme} from '@react-spectrum/theme-default';
 import {User} from '@react-spectrum/test-utils';
 
 let testUtilUser = new User({interactionType: 'mouse'});
-// ...
+// Other setup, be sure to check out the suggested mocks mentioned above in https://react-spectrum.adobe.com/react-spectrum/ListBox.html#testing
 
 it('ListBox can select an option via keyboard', async function () {
   // Render your test component/app and initialize the listbox tester

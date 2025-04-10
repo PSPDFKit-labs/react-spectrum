@@ -10,14 +10,14 @@
  * governing permissions and limitations under the License.
  */
 
-jest.mock('@react-aria/live-announcer');
-jest.mock('@react-aria/utils/src/scrollIntoView');
+jest.mock('@react-aria-nutrient/live-announcer');
+jest.mock('@react-aria-nutrient/utils/src/scrollIntoView');
 import {act, render as renderComponent} from '@react-spectrum/test-utils-internal';
 import {Cell, Column, Row, TableBody, TableHeader, TableView} from '../';
 import {enableTableNestedRows} from '@react-stately/flags';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
-import {tableTests} from './Table.test';
+import {tableTests} from './TableTests';
 import {theme} from '@react-spectrum/theme-default';
 
 describe('TableView with expandable rows flag on', function () {

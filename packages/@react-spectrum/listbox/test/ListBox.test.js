@@ -19,7 +19,7 @@ import React from 'react';
 import {Text} from '@react-spectrum/text';
 import {theme} from '@react-spectrum/theme-default';
 import {useAsyncList} from '@react-stately/data';
-import {User} from '@react-aria/test-utils';
+import {User} from '@react-aria-nutrient/test-utils';
 import userEvent from '@testing-library/user-event';
 
 let withSection = [
@@ -498,6 +498,30 @@ describe('ListBox', function () {
       expect(checkmarks.length).toBe(2);
 
       expect(onSelectionChange).toBeCalledTimes(0);
+    });
+
+    it('should prevent Esc from clearing selection if escapeKeyBehavior is "none"', async function () {
+      let user = userEvent.setup({delay: null, pointerMap});
+      let tree = renderComponent({onSelectionChange, selectionMode: 'multiple', escapeKeyBehavior: 'none'});
+      let listbox = tree.getByRole('listbox');
+
+      let options = within(listbox).getAllByRole('option');
+      let firstItem = options[3];
+      await user.click(firstItem);
+      expect(firstItem).toHaveAttribute('aria-selected', 'true');
+
+      let secondItem = options[1];
+      await user.click(secondItem);
+      expect(secondItem).toHaveAttribute('aria-selected', 'true');
+
+      expect(onSelectionChange).toBeCalledTimes(2);
+      expect(onSelectionChange.mock.calls[0][0].has('Blah')).toBeTruthy();
+      expect(onSelectionChange.mock.calls[1][0].has('Bar')).toBeTruthy();
+
+      await user.keyboard('{Escape}');
+      expect(onSelectionChange).toBeCalledTimes(2);
+      expect(onSelectionChange.mock.calls[0][0].has('Blah')).toBeTruthy();
+      expect(onSelectionChange.mock.calls[1][0].has('Bar')).toBeTruthy();
     });
   });
 

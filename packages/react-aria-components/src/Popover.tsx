@@ -11,15 +11,15 @@
  */
 
 import {AriaLabelingProps, forwardRefType, RefObject} from '@react-types/shared';
-import {AriaPopoverProps, DismissButton, Overlay, PlacementAxis, PositionProps, useLocale, usePopover} from 'react-aria';
+import {AriaPopoverProps, DismissButton, Overlay, PlacementAxis, PositionProps, useLocale, usePopover} from '@react-aria-nutrient/react-aria';
 import {ContextValue, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
-import {filterDOMProps, mergeProps, useEnterAnimation, useExitAnimation, useLayoutEffect} from '@react-aria/utils';
-import {focusSafely} from '@react-aria/interactions';
+import {filterDOMProps, mergeProps, useEnterAnimation, useExitAnimation, useLayoutEffect} from '@react-aria-nutrient/utils';
+import {focusSafely} from '@react-aria-nutrient/interactions';
 import {OverlayArrowContext} from './OverlayArrow';
 import {OverlayTriggerProps, OverlayTriggerState, useOverlayTriggerState} from 'react-stately';
 import {OverlayTriggerStateContext} from './Dialog';
 import React, {createContext, ForwardedRef, forwardRef, useContext, useEffect, useRef, useState} from 'react';
-import {useIsHidden} from '@react-aria/collections';
+import {useIsHidden} from '@react-aria-nutrient/collections';
 
 export interface PopoverProps extends Omit<PositionProps, 'isOpen'>, Omit<AriaPopoverProps, 'popoverRef' | 'triggerRef' | 'groupRef' | 'offset' | 'arrowSize'>, OverlayTriggerProps, RenderProps<PopoverRenderProps>, SlotProps, AriaLabelingProps {
   /**
@@ -46,6 +46,7 @@ export interface PopoverProps extends Omit<PositionProps, 'isOpen'>, Omit<AriaPo
   /**
    * The container element in which the overlay portal will be placed. This may have unknown behavior depending on where it is portalled to.
    * @default document.body
+   * @deprecated - Use a parent UNSAFE_PortalProvider to set your portal container instead.
    */
   UNSTABLE_portalContainer?: Element,
   /**
@@ -154,7 +155,7 @@ function PopoverInner({state, isExiting, UNSTABLE_portalContainer, ...props}: Po
     ...props,
     offset: props.offset ?? 8,
     arrowSize: arrowWidth,
-    // If this is a submenu/subdialog, use the root popover's container 
+    // If this is a submenu/subdialog, use the root popover's container
     // to detect outside interaction and add aria-hidden.
     groupRef: isSubPopover ? groupCtx! : containerRef
   }, state);

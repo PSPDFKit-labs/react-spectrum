@@ -31,7 +31,7 @@ import {
   Virtualizer
 } from '../';
 import React from 'react';
-import {User} from '@react-aria/test-utils';
+import {User} from '@react-aria-nutrient/test-utils';
 import userEvent from '@testing-library/user-event';
 
 let TestGridList = ({listBoxProps, itemProps}) => (
@@ -246,6 +246,23 @@ describe('GridList', () => {
     expect(row).not.toHaveAttribute('aria-selected', 'true');
     expect(row).not.toHaveClass('selected');
     expect(within(row).getByRole('checkbox')).not.toBeChecked();
+  });
+
+  it('should prevent Esc from clearing selection if escapeKeyBehavior is "none"', async () => {
+    let {getByRole} = renderGridList({selectionMode: 'multiple', escapeKeyBehavior: 'none'});
+    let gridListTester = testUtilUser.createTester('GridList', {root: getByRole('grid')});
+
+    let row = gridListTester.rows[0];
+    expect(within(row).getByRole('checkbox')).not.toBeChecked();
+
+    await gridListTester.toggleRowSelection({row: 0});
+    expect(gridListTester.selectedRows).toHaveLength(1);
+
+    await gridListTester.toggleRowSelection({row: 1});
+    expect(gridListTester.selectedRows).toHaveLength(2);
+
+    await user.keyboard('{Escape}');
+    expect(gridListTester.selectedRows).toHaveLength(2);
   });
 
   it('should support disabled state', () => {

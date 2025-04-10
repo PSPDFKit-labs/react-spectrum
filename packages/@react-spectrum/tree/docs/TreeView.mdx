@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-spectrum/tree';
-import treeUtils from 'docs:@react-aria/test-utils/src/tree.ts';
+import treeUtils from 'docs:@react-aria-nutrient/test-utils/src/tree.ts';
 import {HeaderInfo, PropTable, PageDescription, TypeLink, VersionBadge, ClassAPI} from '@react-spectrum/docs';
 import {Keyboard} from '@react-spectrum/text';
 import packageData from '@react-spectrum/tree/package.json';
@@ -543,7 +543,7 @@ import {theme} from '@react-spectrum/theme-default';
 import {User} from '@react-spectrum/test-utils';
 
 let testUtilUser = new User({interactionType: 'mouse'});
-// ...
+// Other setup, be sure to check out the suggested mocks mentioned above in https://react-spectrum.adobe.com/react-spectrum/TreeView.html#testing
 
 it('TreeView can select a row via keyboard', async function () {
   // Render your test component/app and initialize the Tree tester

@@ -12,13 +12,13 @@
 
 import {action} from '@storybook/addon-actions';
 import {Button, Cell, Checkbox, CheckboxProps, Collection, Column, ColumnProps, ColumnResizer, Dialog, DialogTrigger, DropIndicator, Heading, Menu, MenuTrigger, Modal, ModalOverlay, Popover, ResizableTableContainer, Row, Table, TableBody, TableHeader, TableLayout, useDragAndDrop, Virtualizer} from 'react-aria-components';
-import {isTextDropItem} from 'react-aria';
+import {isTextDropItem} from '@react-aria-nutrient/react-aria';
 import {MyMenuItem} from './utils';
 import React, {Suspense, useMemo, useRef, useState} from 'react';
 import styles from '../example/index.css';
 import {UNSTABLE_TableLoadingIndicator} from '../src/Table';
 import {useAsyncList, useListData} from 'react-stately';
-import {useLoadMore} from '@react-aria/utils';
+import {useLoadMore} from '@react-aria-nutrient/utils';
 
 export default {
   title: 'React Aria Components',
@@ -101,7 +101,7 @@ export const ReorderableTableExample = () => (
   </>
 );
 
-export const TableExample = () => {
+const TableExample = (args) => {
   let list = useListData({
     initialItems: [
       {id: 1, name: 'Games', date: '6/7/2020', type: 'File folder'},
@@ -112,10 +112,11 @@ export const TableExample = () => {
   });
 
   return (
-    <ResizableTableContainer style={{width: 300, overflow: 'auto'}}>
-      <Table aria-label="Example table">
+    <ResizableTableContainer style={{width: 400, overflow: 'auto'}}>
+      <Table aria-label="Example table" {...args}>
         <TableHeader>
-          <MyColumn isRowHeader defaultWidth="50%">Name</MyColumn>
+          <Column width={30} minWidth={0}><MyCheckbox slot="selection" /></Column>
+          <MyColumn isRowHeader defaultWidth="30%">Name</MyColumn>
           <MyColumn>Type</MyColumn>
           <MyColumn>Date Modified</MyColumn>
           <MyColumn>Actions</MyColumn>
@@ -123,6 +124,7 @@ export const TableExample = () => {
         <TableBody items={list.items}>
           {item => (
             <Row>
+              <Cell><MyCheckbox slot="selection" /></Cell>
               <Cell>{item.name}</Cell>
               <Cell>{item.type}</Cell>
               <Cell>{item.date}</Cell>
@@ -173,6 +175,29 @@ export const TableExample = () => {
       </Table>
     </ResizableTableContainer>
   );
+};
+
+export const TableExampleStory = {
+  render: TableExample,
+  args: {
+    selectionMode: 'none',
+    selectionBehavior: 'toggle',
+    escapeKeyBehavior: 'clearSelection'
+  },
+  argTypes: {
+    selectionMode: {
+      control: 'radio',
+      options: ['none', 'single', 'multiple']
+    },
+    selectionBehavior: {
+      control: 'radio',
+      options: ['toggle', 'replace']
+    },
+    escapeKeyBehavior: {
+      control: 'radio',
+      options: ['clearSelection', 'none']
+    }
+  }
 };
 
 let columns = [

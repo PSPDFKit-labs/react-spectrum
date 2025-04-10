@@ -23,12 +23,12 @@ import {
   MultipleSelection,
   RefObject
 } from '@react-types/shared';
-import {filterDOMProps, mergeProps, useId} from '@react-aria/utils';
+import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {listMap} from './utils';
 import {ListState} from '@react-stately/list';
-import {useGridSelectionAnnouncement, useHighlightSelectionDescription} from '@react-aria/grid';
-import {useHasTabbableChild} from '@react-aria/focus';
-import {useSelectableList} from '@react-aria/selection';
+import {useGridSelectionAnnouncement, useHighlightSelectionDescription} from '@react-aria-nutrient/grid';
+import {useHasTabbableChild} from '@react-aria-nutrient/focus';
+import {useSelectableList} from '@react-aria-nutrient/selection';
 
 export interface GridListProps<T> extends CollectionBase<T>, MultipleSelection {
   /** Whether to auto focus the gridlist or an option. */
@@ -48,7 +48,16 @@ export interface AriaGridListProps<T> extends GridListProps<T>, DOMProps, AriaLa
    * via the left/right arrow keys or the tab key.
    * @default 'arrow'
    */
-  keyboardNavigationBehavior?: 'arrow' | 'tab'
+  keyboardNavigationBehavior?: 'arrow' | 'tab',
+  /**
+   * Whether pressing the escape key should clear selection in the grid list or not.
+   *
+   * Most experiences should not modify this option as it eliminates a keyboard user's ability to
+   * easily clear selection. Only use if the escape key is being handled externally or should not
+   * trigger selection clearing contextually.
+   * @default 'clearSelection'
+   */
+  escapeKeyBehavior?: 'clearSelection' | 'none'
 }
 
 export interface AriaGridListOptions<T> extends Omit<AriaGridListProps<T>, 'children'> {
@@ -105,7 +114,8 @@ export function useGridList<T>(props: AriaGridListOptions<T>, state: ListState<T
     onAction,
     disallowTypeAhead,
     linkBehavior = 'action',
-    keyboardNavigationBehavior = 'arrow'
+    keyboardNavigationBehavior = 'arrow',
+    escapeKeyBehavior = 'clearSelection'
   } = props;
 
   if (!props['aria-label'] && !props['aria-labelledby']) {
@@ -124,7 +134,8 @@ export function useGridList<T>(props: AriaGridListOptions<T>, state: ListState<T
     shouldFocusWrap: props.shouldFocusWrap,
     linkBehavior,
     disallowTypeAhead,
-    autoFocus: props.autoFocus
+    autoFocus: props.autoFocus,
+    escapeKeyBehavior
   });
 
   let id = useId(props.id);
