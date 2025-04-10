@@ -5915,9 +5915,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-aria-nutrient/actiongroup@npm:^3.7.14, @react-aria-nutrient/actiongroup@workspace:packages/@react-aria-nutrient/actiongroup":
+"@react-aria-nutrient/actiongroup@npm:^3.7.14, @react-aria-nutrient/actiongroup@workspace:packages/@react-aria/actiongroup":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/actiongroup@workspace:packages/@react-aria-nutrient/actiongroup"
+  resolution: "@react-aria-nutrient/actiongroup@workspace:packages/@react-aria/actiongroup"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -5933,9 +5933,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/aria-modal-polyfill@workspace:packages/@react-aria-nutrient/aria-modal-polyfill":
+"@react-aria-nutrient/aria-modal-polyfill@workspace:packages/@react-aria/aria-modal-polyfill":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/aria-modal-polyfill@workspace:packages/@react-aria-nutrient/aria-modal-polyfill"
+  resolution: "@react-aria-nutrient/aria-modal-polyfill@workspace:packages/@react-aria/aria-modal-polyfill"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
     aria-hidden: "npm:^1.2.3"
@@ -5944,9 +5944,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/autocomplete@npm:3.0.0-beta.1, @react-aria-nutrient/autocomplete@workspace:packages/@react-aria-nutrient/autocomplete":
+"@react-aria-nutrient/autocomplete@npm:3.0.0-beta.1, @react-aria-nutrient/autocomplete@workspace:packages/@react-aria/autocomplete":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/autocomplete@workspace:packages/@react-aria-nutrient/autocomplete"
+  resolution: "@react-aria-nutrient/autocomplete@workspace:packages/@react-aria/autocomplete"
   dependencies:
     "@react-aria-nutrient/combobox": "npm:^3.12.1"
     "@react-aria-nutrient/focus": "npm:^3.20.1"
@@ -5968,9 +5968,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/breadcrumbs@npm:^3.5.22, @react-aria-nutrient/breadcrumbs@workspace:packages/@react-aria-nutrient/breadcrumbs":
+"@react-aria-nutrient/breadcrumbs@npm:^3.5.22, @react-aria-nutrient/breadcrumbs@workspace:packages/@react-aria/breadcrumbs":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/breadcrumbs@workspace:packages/@react-aria-nutrient/breadcrumbs"
+  resolution: "@react-aria-nutrient/breadcrumbs@workspace:packages/@react-aria/breadcrumbs"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/link": "npm:^3.7.10"
@@ -5984,9 +5984,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/button@npm:^3.12.1, @react-aria-nutrient/button@workspace:packages/@react-aria-nutrient/button":
+"@react-aria-nutrient/button@npm:^3.12.1, @react-aria-nutrient/button@workspace:packages/@react-aria/button":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/button@workspace:packages/@react-aria-nutrient/button"
+  resolution: "@react-aria-nutrient/button@workspace:packages/@react-aria/button"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/toolbar": "npm:3.0.0-beta.14"
@@ -6001,9 +6001,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/calendar@npm:^3.7.2, @react-aria-nutrient/calendar@workspace:packages/@react-aria-nutrient/calendar":
+"@react-aria-nutrient/calendar@npm:^3.7.2, @react-aria-nutrient/calendar@workspace:packages/@react-aria/calendar":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/calendar@workspace:packages/@react-aria-nutrient/calendar"
+  resolution: "@react-aria-nutrient/calendar@workspace:packages/@react-aria/calendar"
   dependencies:
     "@internationalized/date": "npm:^3.7.0"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6021,9 +6021,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/checkbox@npm:^3.15.3, @react-aria-nutrient/checkbox@workspace:packages/@react-aria-nutrient/checkbox":
+"@react-aria-nutrient/checkbox@npm:^3.15.3, @react-aria-nutrient/checkbox@workspace:packages/@react-aria/checkbox":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/checkbox@workspace:packages/@react-aria-nutrient/checkbox"
+  resolution: "@react-aria-nutrient/checkbox@workspace:packages/@react-aria/checkbox"
   dependencies:
     "@react-aria-nutrient/form": "npm:^3.0.14"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
@@ -6042,9 +6042,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/collections@npm:3.0.0-beta.1, @react-aria-nutrient/collections@workspace:packages/@react-aria-nutrient/collections":
+"@react-aria-nutrient/collections@npm:3.0.0-beta.1, @react-aria-nutrient/collections@workspace:packages/@react-aria/collections":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/collections@workspace:packages/@react-aria-nutrient/collections"
+  resolution: "@react-aria-nutrient/collections@workspace:packages/@react-aria/collections"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/ssr": "npm:^3.9.7"
@@ -6058,9 +6058,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/color@npm:^3.0.5, @react-aria-nutrient/color@workspace:packages/@react-aria-nutrient/color":
+"@react-aria-nutrient/color@npm:^3.0.5, @react-aria-nutrient/color@workspace:packages/@react-aria/color":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/color@workspace:packages/@react-aria-nutrient/color"
+  resolution: "@react-aria-nutrient/color@workspace:packages/@react-aria/color"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
@@ -6081,9 +6081,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/combobox@npm:^3.12.1, @react-aria-nutrient/combobox@workspace:packages/@react-aria-nutrient/combobox":
+"@react-aria-nutrient/combobox@npm:^3.12.1, @react-aria-nutrient/combobox@workspace:packages/@react-aria/combobox":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/combobox@workspace:packages/@react-aria-nutrient/combobox"
+  resolution: "@react-aria-nutrient/combobox@workspace:packages/@react-aria/combobox"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6107,9 +6107,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/datepicker@npm:^3.14.1, @react-aria-nutrient/datepicker@workspace:packages/@react-aria-nutrient/datepicker":
+"@react-aria-nutrient/datepicker@npm:^3.14.1, @react-aria-nutrient/datepicker@workspace:packages/@react-aria/datepicker":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/datepicker@workspace:packages/@react-aria-nutrient/datepicker"
+  resolution: "@react-aria-nutrient/datepicker@workspace:packages/@react-aria/datepicker"
   dependencies:
     "@internationalized/date": "npm:^3.7.0"
     "@internationalized/number": "npm:^3.6.0"
@@ -6135,9 +6135,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/dialog@npm:^3.5.23, @react-aria-nutrient/dialog@workspace:packages/@react-aria-nutrient/dialog":
+"@react-aria-nutrient/dialog@npm:^3.5.23, @react-aria-nutrient/dialog@workspace:packages/@react-aria/dialog":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/dialog@workspace:packages/@react-aria-nutrient/dialog"
+  resolution: "@react-aria-nutrient/dialog@workspace:packages/@react-aria/dialog"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/overlays": "npm:^3.26.1"
@@ -6151,9 +6151,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/disclosure@npm:^3.0.3, @react-aria-nutrient/disclosure@workspace:packages/@react-aria-nutrient/disclosure":
+"@react-aria-nutrient/disclosure@npm:^3.0.3, @react-aria-nutrient/disclosure@workspace:packages/@react-aria/disclosure":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/disclosure@workspace:packages/@react-aria-nutrient/disclosure"
+  resolution: "@react-aria-nutrient/disclosure@workspace:packages/@react-aria/disclosure"
   dependencies:
     "@react-aria-nutrient/ssr": "npm:^3.9.7"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
@@ -6166,9 +6166,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/dnd@npm:^3.0.0, @react-aria-nutrient/dnd@npm:^3.1.0, @react-aria-nutrient/dnd@npm:^3.9.1, @react-aria-nutrient/dnd@workspace:packages/@react-aria-nutrient/dnd":
+"@react-aria-nutrient/dnd@npm:^3.0.0, @react-aria-nutrient/dnd@npm:^3.1.0, @react-aria-nutrient/dnd@npm:^3.9.1, @react-aria-nutrient/dnd@workspace:packages/@react-aria/dnd":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/dnd@workspace:packages/@react-aria-nutrient/dnd"
+  resolution: "@react-aria-nutrient/dnd@workspace:packages/@react-aria/dnd"
   dependencies:
     "@internationalized/string": "npm:^3.2.5"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6186,15 +6186,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/example-theme@workspace:packages/@react-aria-nutrient/example-theme":
+"@react-aria-nutrient/example-theme@workspace:packages/@react-aria/example-theme":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/example-theme@workspace:packages/@react-aria-nutrient/example-theme"
+  resolution: "@react-aria-nutrient/example-theme@workspace:packages/@react-aria/example-theme"
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/focus@npm:^3.20.1, @react-aria-nutrient/focus@workspace:packages/@react-aria-nutrient/focus":
+"@react-aria-nutrient/focus@npm:^3.20.1, @react-aria-nutrient/focus@workspace:packages/@react-aria/focus":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/focus@workspace:packages/@react-aria-nutrient/focus"
+  resolution: "@react-aria-nutrient/focus@workspace:packages/@react-aria/focus"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
@@ -6207,9 +6207,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/form@npm:^3.0.14, @react-aria-nutrient/form@workspace:packages/@react-aria-nutrient/form":
+"@react-aria-nutrient/form@npm:^3.0.14, @react-aria-nutrient/form@workspace:packages/@react-aria/form":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/form@workspace:packages/@react-aria-nutrient/form"
+  resolution: "@react-aria-nutrient/form@workspace:packages/@react-aria/form"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
@@ -6222,9 +6222,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/grid@npm:^3.12.1, @react-aria-nutrient/grid@workspace:packages/@react-aria-nutrient/grid":
+"@react-aria-nutrient/grid@npm:^3.12.1, @react-aria-nutrient/grid@workspace:packages/@react-aria/grid":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/grid@workspace:packages/@react-aria-nutrient/grid"
+  resolution: "@react-aria-nutrient/grid@workspace:packages/@react-aria/grid"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6245,9 +6245,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/gridlist@npm:^3.11.1, @react-aria-nutrient/gridlist@workspace:packages/@react-aria-nutrient/gridlist":
+"@react-aria-nutrient/gridlist@npm:^3.11.1, @react-aria-nutrient/gridlist@workspace:packages/@react-aria/gridlist":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/gridlist@workspace:packages/@react-aria-nutrient/gridlist"
+  resolution: "@react-aria-nutrient/gridlist@workspace:packages/@react-aria/gridlist"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/grid": "npm:^3.12.1"
@@ -6266,9 +6266,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/i18n@npm:^3.12.7, @react-aria-nutrient/i18n@npm:^3.6.3, @react-aria-nutrient/i18n@workspace:packages/@react-aria-nutrient/i18n":
+"@react-aria-nutrient/i18n@npm:^3.12.7, @react-aria-nutrient/i18n@npm:^3.6.3, @react-aria-nutrient/i18n@workspace:packages/@react-aria/i18n":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/i18n@workspace:packages/@react-aria-nutrient/i18n"
+  resolution: "@react-aria-nutrient/i18n@workspace:packages/@react-aria/i18n"
   dependencies:
     "@internationalized/date": "npm:^3.7.0"
     "@internationalized/message": "npm:^3.1.6"
@@ -6284,9 +6284,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/interactions@npm:^3.24.1, @react-aria-nutrient/interactions@workspace:packages/@react-aria-nutrient/interactions":
+"@react-aria-nutrient/interactions@npm:^3.24.1, @react-aria-nutrient/interactions@workspace:packages/@react-aria/interactions":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/interactions@workspace:packages/@react-aria-nutrient/interactions"
+  resolution: "@react-aria-nutrient/interactions@workspace:packages/@react-aria/interactions"
   dependencies:
     "@react-aria-nutrient/ssr": "npm:^3.9.7"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
@@ -6299,9 +6299,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/label@npm:^3.4.4, @react-aria-nutrient/label@npm:^3.7.16, @react-aria-nutrient/label@workspace:packages/@react-aria-nutrient/label":
+"@react-aria-nutrient/label@npm:^3.4.4, @react-aria-nutrient/label@npm:^3.7.16, @react-aria-nutrient/label@workspace:packages/@react-aria/label":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/label@workspace:packages/@react-aria-nutrient/label"
+  resolution: "@react-aria-nutrient/label@workspace:packages/@react-aria/label"
   dependencies:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-types/shared": "npm:^3.28.0"
@@ -6312,9 +6312,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/landmark@npm:^3.0.1, @react-aria-nutrient/landmark@workspace:packages/@react-aria-nutrient/landmark":
+"@react-aria-nutrient/landmark@npm:^3.0.1, @react-aria-nutrient/landmark@workspace:packages/@react-aria/landmark":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/landmark@workspace:packages/@react-aria-nutrient/landmark"
+  resolution: "@react-aria-nutrient/landmark@workspace:packages/@react-aria/landmark"
   dependencies:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-types/shared": "npm:^3.28.0"
@@ -6326,9 +6326,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/link@npm:^3.7.10, @react-aria-nutrient/link@workspace:packages/@react-aria-nutrient/link":
+"@react-aria-nutrient/link@npm:^3.7.10, @react-aria-nutrient/link@workspace:packages/@react-aria/link":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/link@workspace:packages/@react-aria-nutrient/link"
+  resolution: "@react-aria-nutrient/link@workspace:packages/@react-aria/link"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
@@ -6341,9 +6341,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/listbox@npm:^3.14.2, @react-aria-nutrient/listbox@workspace:packages/@react-aria-nutrient/listbox":
+"@react-aria-nutrient/listbox@npm:^3.14.2, @react-aria-nutrient/listbox@workspace:packages/@react-aria/listbox":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/listbox@workspace:packages/@react-aria-nutrient/listbox"
+  resolution: "@react-aria-nutrient/listbox@workspace:packages/@react-aria/listbox"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/label": "npm:^3.7.16"
@@ -6360,17 +6360,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/live-announcer@npm:^3.4.1, @react-aria-nutrient/live-announcer@workspace:packages/@react-aria-nutrient/live-announcer":
+"@react-aria-nutrient/live-announcer@npm:^3.4.1, @react-aria-nutrient/live-announcer@workspace:packages/@react-aria/live-announcer":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/live-announcer@workspace:packages/@react-aria-nutrient/live-announcer"
+  resolution: "@react-aria-nutrient/live-announcer@workspace:packages/@react-aria/live-announcer"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/menu@npm:^3.18.1, @react-aria-nutrient/menu@workspace:packages/@react-aria-nutrient/menu":
+"@react-aria-nutrient/menu@npm:^3.18.1, @react-aria-nutrient/menu@workspace:packages/@react-aria/menu":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/menu@workspace:packages/@react-aria-nutrient/menu"
+  resolution: "@react-aria-nutrient/menu@workspace:packages/@react-aria/menu"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6392,9 +6392,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/meter@npm:^3.4.21, @react-aria-nutrient/meter@workspace:packages/@react-aria-nutrient/meter":
+"@react-aria-nutrient/meter@npm:^3.4.21, @react-aria-nutrient/meter@workspace:packages/@react-aria/meter":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/meter@workspace:packages/@react-aria-nutrient/meter"
+  resolution: "@react-aria-nutrient/meter@workspace:packages/@react-aria/meter"
   dependencies:
     "@react-aria-nutrient/progress": "npm:^3.4.21"
     "@react-types/meter": "npm:^3.4.7"
@@ -6406,9 +6406,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/numberfield@npm:^3.11.12, @react-aria-nutrient/numberfield@workspace:packages/@react-aria-nutrient/numberfield":
+"@react-aria-nutrient/numberfield@npm:^3.11.12, @react-aria-nutrient/numberfield@workspace:packages/@react-aria/numberfield":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/numberfield@workspace:packages/@react-aria-nutrient/numberfield"
+  resolution: "@react-aria-nutrient/numberfield@workspace:packages/@react-aria/numberfield"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
@@ -6435,9 +6435,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/overlays@npm:^3.26.1, @react-aria-nutrient/overlays@workspace:packages/@react-aria-nutrient/overlays":
+"@react-aria-nutrient/overlays@npm:^3.26.1, @react-aria-nutrient/overlays@workspace:packages/@react-aria/overlays":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/overlays@workspace:packages/@react-aria-nutrient/overlays"
+  resolution: "@react-aria-nutrient/overlays@workspace:packages/@react-aria/overlays"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6464,9 +6464,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/progress@npm:^3.4.21, @react-aria-nutrient/progress@workspace:packages/@react-aria-nutrient/progress":
+"@react-aria-nutrient/progress@npm:^3.4.21, @react-aria-nutrient/progress@workspace:packages/@react-aria/progress":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/progress@workspace:packages/@react-aria-nutrient/progress"
+  resolution: "@react-aria-nutrient/progress@workspace:packages/@react-aria/progress"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/label": "npm:^3.7.16"
@@ -6480,9 +6480,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/radio@npm:^3.11.1, @react-aria-nutrient/radio@workspace:packages/@react-aria-nutrient/radio":
+"@react-aria-nutrient/radio@npm:^3.11.1, @react-aria-nutrient/radio@workspace:packages/@react-aria/radio":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/radio@workspace:packages/@react-aria-nutrient/radio"
+  resolution: "@react-aria-nutrient/radio@workspace:packages/@react-aria/radio"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/form": "npm:^3.0.14"
@@ -6500,9 +6500,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/searchfield@npm:^3.8.2, @react-aria-nutrient/searchfield@workspace:packages/@react-aria-nutrient/searchfield":
+"@react-aria-nutrient/searchfield@npm:^3.8.2, @react-aria-nutrient/searchfield@workspace:packages/@react-aria/searchfield":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/searchfield@workspace:packages/@react-aria-nutrient/searchfield"
+  resolution: "@react-aria-nutrient/searchfield@workspace:packages/@react-aria/searchfield"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/textfield": "npm:^3.17.1"
@@ -6518,9 +6518,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/select@npm:^3.15.3, @react-aria-nutrient/select@workspace:packages/@react-aria-nutrient/select":
+"@react-aria-nutrient/select@npm:^3.15.3, @react-aria-nutrient/select@workspace:packages/@react-aria/select":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/select@workspace:packages/@react-aria-nutrient/select"
+  resolution: "@react-aria-nutrient/select@workspace:packages/@react-aria/select"
   dependencies:
     "@react-aria-nutrient/form": "npm:^3.0.14"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6542,9 +6542,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/selection@npm:^3.23.1, @react-aria-nutrient/selection@workspace:packages/@react-aria-nutrient/selection":
+"@react-aria-nutrient/selection@npm:^3.23.1, @react-aria-nutrient/selection@workspace:packages/@react-aria/selection":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/selection@workspace:packages/@react-aria-nutrient/selection"
+  resolution: "@react-aria-nutrient/selection@workspace:packages/@react-aria/selection"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6559,9 +6559,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/separator@npm:^3.4.7, @react-aria-nutrient/separator@workspace:packages/@react-aria-nutrient/separator":
+"@react-aria-nutrient/separator@npm:^3.4.7, @react-aria-nutrient/separator@workspace:packages/@react-aria/separator":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/separator@workspace:packages/@react-aria-nutrient/separator"
+  resolution: "@react-aria-nutrient/separator@workspace:packages/@react-aria/separator"
   dependencies:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-types/shared": "npm:^3.28.0"
@@ -6572,9 +6572,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/slider@npm:^3.7.17, @react-aria-nutrient/slider@workspace:packages/@react-aria-nutrient/slider":
+"@react-aria-nutrient/slider@npm:^3.7.17, @react-aria-nutrient/slider@workspace:packages/@react-aria/slider":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/slider@workspace:packages/@react-aria-nutrient/slider"
+  resolution: "@react-aria-nutrient/slider@workspace:packages/@react-aria/slider"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
@@ -6590,9 +6590,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/spinbutton@npm:^3.6.13, @react-aria-nutrient/spinbutton@workspace:packages/@react-aria-nutrient/spinbutton":
+"@react-aria-nutrient/spinbutton@npm:^3.6.13, @react-aria-nutrient/spinbutton@workspace:packages/@react-aria/spinbutton":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/spinbutton@workspace:packages/@react-aria-nutrient/spinbutton"
+  resolution: "@react-aria-nutrient/spinbutton@workspace:packages/@react-aria/spinbutton"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/live-announcer": "npm:^3.4.1"
@@ -6606,9 +6606,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/ssr@npm:^3.0.0, @react-aria-nutrient/ssr@npm:^3.9.7, @react-aria-nutrient/ssr@workspace:packages/@react-aria-nutrient/ssr":
+"@react-aria-nutrient/ssr@npm:^3.0.0, @react-aria-nutrient/ssr@npm:^3.9.7, @react-aria-nutrient/ssr@workspace:packages/@react-aria/ssr":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/ssr@workspace:packages/@react-aria-nutrient/ssr"
+  resolution: "@react-aria-nutrient/ssr@workspace:packages/@react-aria/ssr"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6616,9 +6616,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/steplist@npm:3.0.0-alpha.15, @react-aria-nutrient/steplist@workspace:packages/@react-aria-nutrient/steplist":
+"@react-aria-nutrient/steplist@npm:3.0.0-alpha.15, @react-aria-nutrient/steplist@workspace:packages/@react-aria/steplist":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/steplist@workspace:packages/@react-aria-nutrient/steplist"
+  resolution: "@react-aria-nutrient/steplist@workspace:packages/@react-aria/steplist"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
@@ -6632,9 +6632,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/switch@npm:^3.7.1, @react-aria-nutrient/switch@workspace:packages/@react-aria-nutrient/switch":
+"@react-aria-nutrient/switch@npm:^3.7.1, @react-aria-nutrient/switch@workspace:packages/@react-aria/switch":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/switch@workspace:packages/@react-aria-nutrient/switch"
+  resolution: "@react-aria-nutrient/switch@workspace:packages/@react-aria/switch"
   dependencies:
     "@react-aria-nutrient/toggle": "npm:^3.11.1"
     "@react-stately/toggle": "npm:^3.8.2"
@@ -6647,9 +6647,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/table@npm:^3.17.1, @react-aria-nutrient/table@workspace:packages/@react-aria-nutrient/table":
+"@react-aria-nutrient/table@npm:^3.17.1, @react-aria-nutrient/table@workspace:packages/@react-aria/table":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/table@workspace:packages/@react-aria-nutrient/table"
+  resolution: "@react-aria-nutrient/table@workspace:packages/@react-aria/table"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/grid": "npm:^3.12.1"
@@ -6672,9 +6672,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/tabs@npm:^3.10.1, @react-aria-nutrient/tabs@workspace:packages/@react-aria-nutrient/tabs":
+"@react-aria-nutrient/tabs@npm:^3.10.1, @react-aria-nutrient/tabs@workspace:packages/@react-aria/tabs":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/tabs@workspace:packages/@react-aria-nutrient/tabs"
+  resolution: "@react-aria-nutrient/tabs@workspace:packages/@react-aria/tabs"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6690,9 +6690,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/tag@npm:^3.5.1, @react-aria-nutrient/tag@workspace:packages/@react-aria-nutrient/tag":
+"@react-aria-nutrient/tag@npm:^3.5.1, @react-aria-nutrient/tag@workspace:packages/@react-aria/tag":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/tag@workspace:packages/@react-aria-nutrient/tag"
+  resolution: "@react-aria-nutrient/tag@workspace:packages/@react-aria/tag"
   dependencies:
     "@react-aria-nutrient/gridlist": "npm:^3.11.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6710,9 +6710,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/test-utils@npm:1.0.0-alpha.5, @react-aria-nutrient/test-utils@workspace:packages/@react-aria-nutrient/test-utils":
+"@react-aria-nutrient/test-utils@npm:1.0.0-alpha.5, @react-aria-nutrient/test-utils@workspace:packages/@react-aria/test-utils":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/test-utils@workspace:packages/@react-aria-nutrient/test-utils"
+  resolution: "@react-aria-nutrient/test-utils@workspace:packages/@react-aria/test-utils"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6722,9 +6722,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/textfield@npm:^3.17.1, @react-aria-nutrient/textfield@workspace:packages/@react-aria-nutrient/textfield":
+"@react-aria-nutrient/textfield@npm:^3.17.1, @react-aria-nutrient/textfield@workspace:packages/@react-aria/textfield":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/textfield@workspace:packages/@react-aria-nutrient/textfield"
+  resolution: "@react-aria-nutrient/textfield@workspace:packages/@react-aria/textfield"
   dependencies:
     "@react-aria-nutrient/form": "npm:^3.0.14"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
@@ -6741,9 +6741,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/toast@npm:^3.0.1, @react-aria-nutrient/toast@workspace:packages/@react-aria-nutrient/toast":
+"@react-aria-nutrient/toast@npm:^3.0.1, @react-aria-nutrient/toast@workspace:packages/@react-aria/toast":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/toast@workspace:packages/@react-aria-nutrient/toast"
+  resolution: "@react-aria-nutrient/toast@workspace:packages/@react-aria/toast"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
@@ -6759,9 +6759,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/toggle@npm:^3.11.1, @react-aria-nutrient/toggle@workspace:packages/@react-aria-nutrient/toggle":
+"@react-aria-nutrient/toggle@npm:^3.11.1, @react-aria-nutrient/toggle@workspace:packages/@react-aria/toggle":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/toggle@workspace:packages/@react-aria-nutrient/toggle"
+  resolution: "@react-aria-nutrient/toggle@workspace:packages/@react-aria/toggle"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
@@ -6775,9 +6775,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/toolbar@npm:3.0.0-beta.14, @react-aria-nutrient/toolbar@workspace:packages/@react-aria-nutrient/toolbar":
+"@react-aria-nutrient/toolbar@npm:3.0.0-beta.14, @react-aria-nutrient/toolbar@workspace:packages/@react-aria/toolbar":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/toolbar@workspace:packages/@react-aria-nutrient/toolbar"
+  resolution: "@react-aria-nutrient/toolbar@workspace:packages/@react-aria/toolbar"
   dependencies:
     "@react-aria-nutrient/focus": "npm:^3.20.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6790,9 +6790,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/tooltip@npm:^3.8.1, @react-aria-nutrient/tooltip@workspace:packages/@react-aria-nutrient/tooltip":
+"@react-aria-nutrient/tooltip@npm:^3.8.1, @react-aria-nutrient/tooltip@workspace:packages/@react-aria/tooltip":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/tooltip@workspace:packages/@react-aria-nutrient/tooltip"
+  resolution: "@react-aria-nutrient/tooltip@workspace:packages/@react-aria/tooltip"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
@@ -6806,9 +6806,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/tree@npm:^3.0.1, @react-aria-nutrient/tree@workspace:packages/@react-aria-nutrient/tree":
+"@react-aria-nutrient/tree@npm:^3.0.1, @react-aria-nutrient/tree@workspace:packages/@react-aria/tree":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/tree@workspace:packages/@react-aria-nutrient/tree"
+  resolution: "@react-aria-nutrient/tree@workspace:packages/@react-aria/tree"
   dependencies:
     "@react-aria-nutrient/gridlist": "npm:^3.11.1"
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
@@ -6824,9 +6824,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/utils@npm:^3.14.2, @react-aria-nutrient/utils@npm:^3.28.1, @react-aria-nutrient/utils@npm:^3.8.0, @react-aria-nutrient/utils@workspace:packages/@react-aria-nutrient/utils":
+"@react-aria-nutrient/utils@npm:^3.14.2, @react-aria-nutrient/utils@npm:^3.28.1, @react-aria-nutrient/utils@npm:^3.8.0, @react-aria-nutrient/utils@workspace:packages/@react-aria/utils":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/utils@workspace:packages/@react-aria-nutrient/utils"
+  resolution: "@react-aria-nutrient/utils@workspace:packages/@react-aria/utils"
   dependencies:
     "@react-aria-nutrient/ssr": "npm:^3.9.7"
     "@react-stately/flags": "npm:^3.1.0"
@@ -6840,9 +6840,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/virtualizer@npm:^4.1.3, @react-aria-nutrient/virtualizer@workspace:packages/@react-aria-nutrient/virtualizer":
+"@react-aria-nutrient/virtualizer@npm:^4.1.3, @react-aria-nutrient/virtualizer@workspace:packages/@react-aria/virtualizer":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/virtualizer@workspace:packages/@react-aria-nutrient/virtualizer"
+  resolution: "@react-aria-nutrient/virtualizer@workspace:packages/@react-aria/virtualizer"
   dependencies:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
@@ -6856,9 +6856,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-aria-nutrient/visually-hidden@npm:^3.6.1, @react-aria-nutrient/visually-hidden@npm:^3.8.21, @react-aria-nutrient/visually-hidden@workspace:packages/@react-aria-nutrient/visually-hidden":
+"@react-aria-nutrient/visually-hidden@npm:^3.6.1, @react-aria-nutrient/visually-hidden@npm:^3.8.21, @react-aria-nutrient/visually-hidden@workspace:packages/@react-aria/visually-hidden":
   version: 0.0.0-use.local
-  resolution: "@react-aria-nutrient/visually-hidden@workspace:packages/@react-aria-nutrient/visually-hidden"
+  resolution: "@react-aria-nutrient/visually-hidden@workspace:packages/@react-aria/visually-hidden"
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"

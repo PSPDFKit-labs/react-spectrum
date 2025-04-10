@@ -109,7 +109,7 @@ function MyTreeItemContent`);
   }
 }
 
-let theme = fs.readFileSync('packages/@react-aria-nutrient/example-theme/src/index.css', 'utf8');
+let theme = fs.readFileSync('packages/@react-aria/example-theme/src/index.css', 'utf8');
 theme = `/* Base styles */
 :root {
   font-family: system-ui;
