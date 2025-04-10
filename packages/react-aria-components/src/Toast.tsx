@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaToastProps, AriaToastRegionProps, mergeProps, useFocusRing, useToast, useToastRegion} from 'react-aria';
+import {AriaToastProps, AriaToastRegionProps, mergeProps, useFocusRing, useToast, useToastRegion} from '@react-aria-nutrient/react-aria';
 import {ButtonContext} from './Button';
 import {ContextValue, DEFAULT_SLOT, Provider, RenderProps, StyleRenderProps, useContextProps, useRenderProps} from './utils';
 import {createPortal} from 'react-dom';
@@ -18,9 +18,8 @@ import {forwardRefType} from '@react-types/shared';
 import {QueuedToast, ToastQueue, ToastState, useToastQueue} from 'react-stately';
 import React, {createContext, ForwardedRef, forwardRef, HTMLAttributes, JSX, ReactElement, useContext} from 'react';
 import {TextContext} from './Text';
-import {useIsSSR} from '@react-aria/ssr';
-import {useObjectRef} from '@react-aria/utils';
-import {useUNSAFE_PortalContext} from '@react-aria/overlays';
+import {useIsSSR} from '@react-aria-nutrient/ssr';
+import {useObjectRef} from '@react-aria-nutrient/utils';
 
 const ToastStateContext = createContext<ToastState<any> | null>(null);
 
@@ -43,7 +42,12 @@ export interface ToastRegionProps<T> extends AriaToastRegionProps, StyleRenderPr
   /** The queue of toasts to display. */
   queue: ToastQueue<T>,
   /** A function to render each toast. */
-  children: (renderProps: {toast: QueuedToast<T>}) => ReactElement
+  children: (renderProps: {toast: QueuedToast<T>}) => ReactElement,
+  /**
+   * The container element in which the toast region portal will be placed.
+   * @default document.body
+   */
+  portalContainer?: Element
 }
 
 /**
@@ -67,14 +71,7 @@ export const ToastRegion = /*#__PURE__*/ (forwardRef as forwardRefType)(function
     }
   });
 
-  let portalContainer;
-  let {getContainer} = useUNSAFE_PortalContext();
-  if (!isSSR) {
-    portalContainer = document.body;
-    if (getContainer) {
-      portalContainer = getContainer();
-    }
-  }
+  let {portalContainer = isSSR ? null : document.body} = props;
 
   let region = (
     <ToastStateContext.Provider value={state}>

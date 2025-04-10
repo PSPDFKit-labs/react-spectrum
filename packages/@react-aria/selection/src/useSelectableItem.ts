@@ -11,10 +11,10 @@
  */
 
 import {DOMAttributes, DOMProps, FocusableElement, Key, LongPressEvent, PointerType, PressEvent, RefObject} from '@react-types/shared';
-import {focusSafely, PressHookProps, useLongPress, usePress} from '@react-aria/interactions';
+import {focusSafely, PressProps, useLongPress, usePress} from '@react-aria-nutrient/interactions';
 import {getCollectionId, isNonContiguousSelectionModifier} from './utils';
-import {isCtrlKeyPressed, mergeProps, openLink, useId, useRouter} from '@react-aria/utils';
-import {moveVirtualFocus} from '@react-aria/focus';
+import {isCtrlKeyPressed, mergeProps, openLink, useId, useRouter} from '@react-aria-nutrient/utils';
+import {moveVirtualFocus} from '@react-aria-nutrient/focus';
 import {MultipleSelectionManager} from '@react-stately/selection';
 import {useEffect, useRef} from 'react';
 
@@ -239,7 +239,7 @@ export function useSelectableItem(options: SelectableItemOptions): SelectableIte
   // we want to be able to have the pointer down on the trigger that opens the menu and
   // the pointer up on the menu item rather than requiring a separate press.
   // For keyboard events, selection still occurs on key down.
-  let itemPressProps: PressHookProps = {ref};
+  let itemPressProps: PressProps = {};
   if (shouldSelectOnPressUp) {
     itemPressProps.onPressStart = (e) => {
       modality.current = e.pointerType;

@@ -15,8 +15,8 @@ import {AriaMenuTests} from './AriaMenu.test-util';
 import {Button, Collection, Header, Heading, Input, Keyboard, Label, Menu, MenuContext, MenuItem, MenuSection, MenuTrigger, Popover, Pressable, Separator, SubmenuTrigger, Text, TextField} from '..';
 import React, {useState} from 'react';
 import {Selection, SelectionMode} from '@react-types/shared';
-import {UNSAFE_PortalProvider} from '@react-aria/overlays';
-import {User} from '@react-aria/test-utils';
+import {UNSTABLE_PortalProvider} from '@react-aria-nutrient/overlays';
+import {User} from '@react-aria-nutrient/test-utils';
 import userEvent from '@testing-library/user-event';
 
 let TestMenu = ({menuProps = {}, itemProps = {}, hasSubmenu, hasNestedSubmenu}: {menuProps?: any, itemProps?: any, hasSubmenu?: boolean, hasNestedSubmenu?: any}) => (
@@ -55,7 +55,7 @@ let renderMenu = (menuProps = {}, itemProps = {}) => render(<TestMenu {...{menuP
 
 describe('Menu', () => {
   let user;
-  let testUtilUser = new User({advanceTimer: jest.advanceTimersByTime});
+  let testUtilUser = new User();
 
   beforeAll(() => {
     user = userEvent.setup({delay: null, pointerMap});
@@ -384,19 +384,6 @@ describe('Menu', () => {
       await user.keyboard('{ArrowDown}');
       expect(document.activeElement).toBe(item);
     }
-  });
-
-  it('should prevent Esc from clearing selection if escapeKeyBehavior is "none"', async () => {
-    let {getAllByRole} = renderMenu({selectionMode: 'multiple', escapeKeyBehavior: 'none'});
-    let menuitem = getAllByRole('menuitemcheckbox')[0];
-
-    expect(menuitem).not.toHaveAttribute('aria-checked', 'true');
-
-    await user.click(menuitem);
-    expect(menuitem).toHaveAttribute('aria-checked', 'true');
-
-    await user.keyboard('{Escape}');
-    expect(menuitem).toHaveAttribute('aria-checked', 'true');
   });
 
   it('should support disabled state', () => {
@@ -1349,7 +1336,7 @@ describe('Menu', () => {
   describe('portalContainer', () => {
     function InfoMenu(props) {
       return (
-        <UNSAFE_PortalProvider getContainer={() => props.container.current}>
+        <UNSTABLE_PortalProvider getContainer={() => props.container.current}>
           <MenuTrigger>
             <Button aria-label="trigger" />
             <Popover>
@@ -1360,7 +1347,7 @@ describe('Menu', () => {
               </Menu>
             </Popover>
           </MenuTrigger>
-        </UNSAFE_PortalProvider>
+        </UNSTABLE_PortalProvider>
       );
     }
 
