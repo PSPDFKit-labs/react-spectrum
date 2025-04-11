@@ -27,7 +27,7 @@ import {
   StyleProps,
   Validation,
   ValueBase
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {ReactElement, ReactNode} from 'react';
 
 export interface ToggleStateOptions extends InputBase {

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes, FocusableDOMProps, FocusableElement, FocusableProps, RefObject} from '@react-types/shared';
+import {DOMAttributes, FocusableDOMProps, FocusableElement, FocusableProps, RefObject} from '@react-types-nutrient/shared';
 import {focusSafely} from './';
 import {getOwnerWindow, isFocusable, mergeProps, mergeRefs, useObjectRef, useSyncRef} from '@react-aria-nutrient/utils';
 import React, {ForwardedRef, forwardRef, MutableRefObject, ReactElement, ReactNode, useContext, useEffect, useRef} from 'react';

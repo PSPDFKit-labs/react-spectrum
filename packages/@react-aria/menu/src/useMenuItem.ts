@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes, DOMProps, FocusableElement, FocusEvents, HoverEvents, Key, KeyboardEvents, PressEvent, PressEvents, RefObject, RouterOptions} from '@react-types/shared';
+import {DOMAttributes, DOMProps, FocusableElement, FocusEvents, HoverEvents, Key, KeyboardEvents, PressEvent, PressEvents, RefObject, RouterOptions} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useLinkProps, useRouter, useSlotId} from '@react-aria-nutrient/utils';
 import {getItemCount} from '@react-stately/collections';
 import {isFocusVisible, useFocus, useHover, useKeyboard, usePress} from '@react-aria-nutrient/interactions';

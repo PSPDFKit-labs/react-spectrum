@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, CollectionBase, DOMAttributes, DOMProps, HelpTextProps, Key, KeyboardDelegate, LabelableProps, MultipleSelection, RefObject, SelectionBehavior} from '@react-types/shared';
+import {AriaLabelingProps, CollectionBase, DOMAttributes, DOMProps, HelpTextProps, Key, KeyboardDelegate, LabelableProps, MultipleSelection, RefObject, SelectionBehavior} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
 import type {ListState} from '@react-stately/list';

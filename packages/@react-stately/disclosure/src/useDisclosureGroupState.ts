@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {useControlledState} from '@react-stately/utils';
 import {useEffect, useMemo} from 'react';
 

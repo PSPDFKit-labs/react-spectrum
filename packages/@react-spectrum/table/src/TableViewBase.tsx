@@ -22,14 +22,14 @@ import {
   useStyleProps,
   useUnwrapDOMRef
 } from '@react-spectrum/utils';
-import {ColumnSize, SpectrumColumnProps, TableCollection} from '@react-types/table';
-import {DOMRef, DropTarget, FocusableElement, FocusableRef, Key, RefObject} from '@react-types/shared';
+import {ColumnSize, SpectrumColumnProps, TableCollection} from '@react-types-nutrient/table';
+import {DOMRef, DropTarget, FocusableElement, FocusableRef, Key, RefObject} from '@react-types-nutrient/shared';
 import type {DragAndDropHooks} from '@react-spectrum/dnd';
 import type {DraggableCollectionState, DroppableCollectionState} from '@react-stately/dnd';
 import type {DraggableItemResult, DropIndicatorAria, DroppableCollectionResult} from '@react-aria-nutrient/dnd';
 import {FocusRing, FocusScope, useFocusRing} from '@react-aria-nutrient/focus';
 import {getInteractionModality, HoverProps, isFocusVisible, useHover, usePress} from '@react-aria-nutrient/interactions';
-import {GridNode} from '@react-types/grid';
+import {GridNode} from '@react-types-nutrient/grid';
 import {InsertionIndicator} from './InsertionIndicator';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

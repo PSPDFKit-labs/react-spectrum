@@ -16,7 +16,7 @@ import {Heading} from '@react-spectrum/text';
 import {Meta} from '@storybook/react';
 import React from 'react';
 import {Slider} from '../';
-import {SpectrumSliderProps} from '@react-types/slider';
+import {SpectrumSliderProps} from '@react-types-nutrient/slider';
 
 const meta: Meta<SpectrumSliderProps> = {
   title: 'Slider',

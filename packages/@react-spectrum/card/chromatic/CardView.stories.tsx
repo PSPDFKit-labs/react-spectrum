@@ -17,7 +17,7 @@ import {Heading, Text} from '@react-spectrum/text';
 import {Image} from '@react-spectrum/image';
 import {Meta} from '@storybook/react';
 import React, {useMemo} from 'react';
-import {SpectrumCardViewProps} from '@react-types/card';
+import {SpectrumCardViewProps} from '@react-types-nutrient/card';
 import {useCollator} from '@react-aria-nutrient/i18n';
 
 const meta: Meta<SpectrumCardViewProps<object>> = {

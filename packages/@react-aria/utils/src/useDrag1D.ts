@@ -13,7 +13,7 @@
  /* eslint-disable rulesdir/pure-render */
 
 import {getOffset} from './getOffset';
-import {Orientation} from '@react-types/shared';
+import {Orientation} from '@react-types-nutrient/shared';
 import React, {HTMLAttributes, MutableRefObject, useRef} from 'react';
 
 interface UseDrag1DProps {

@@ -49,7 +49,7 @@ import {
   FieldLabel,
   HelpText
 } from './Field';
-import {FocusableRef, FocusableRefValue, HelpTextProps, PressEvent, SpectrumLabelableProps} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue, HelpTextProps, PressEvent, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {FormContext, useFormProps} from './Form';
 import {forwardRefType} from './types';
 import {HeaderContext, HeadingContext, Text, TextContext} from './Content';

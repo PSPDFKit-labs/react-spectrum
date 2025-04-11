@@ -12,7 +12,7 @@
 
 import {ContextValue, ProgressBar as RACProgressBar, ProgressBarProps as RACProgressBarProps} from 'react-aria-components';
 import {createContext, forwardRef} from 'react';
-import {DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {getAllowedOverrides, staticColor, StylesPropWithHeight, UnsafeStyles} from './style-utils' with {type: 'macro'};
 import {keyframes} from '../style/style-macro' with {type: 'macro'};
 import {style} from '../style' with {type: 'macro'};

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, ItemElement, ItemRenderer, Key, MultipleSelection, Orientation, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, ItemElement, ItemRenderer, Key, MultipleSelection, Orientation, StyleProps} from '@react-types-nutrient/shared';
 import {ReactElement} from 'react';
 
 // Not extending CollectionBase to avoid async loading props

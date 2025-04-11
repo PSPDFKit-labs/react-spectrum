@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaBreadcrumbItemProps} from '@react-types/breadcrumbs';
-import {DOMAttributes, FocusableElement, RefObject} from '@react-types/shared';
+import {AriaBreadcrumbItemProps} from '@react-types-nutrient/breadcrumbs';
+import {DOMAttributes, FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {useLink} from '@react-aria-nutrient/link';
 
 export interface BreadcrumbItemAria {

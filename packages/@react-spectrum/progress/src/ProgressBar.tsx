@@ -11,10 +11,10 @@
  */
 
 import {classNames} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {ProgressBarBase} from './ProgressBarBase';
 import React from 'react';
-import {SpectrumProgressBarProps} from '@react-types/progress';
+import {SpectrumProgressBarProps} from '@react-types-nutrient/progress';
 import styles from '@adobe/spectrum-css-temp/components/barloader/vars.css';
 import {useProgressBar} from '@react-aria-nutrient/progress';
 

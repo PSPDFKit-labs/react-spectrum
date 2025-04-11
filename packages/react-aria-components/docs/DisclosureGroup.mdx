@@ -166,7 +166,7 @@ function MyDisclosure({title, children, ...props}: MyDisclosureProps) {
 A controlled DisclosureGroup can be expanded and collapsed using `expandedKeys` and `onExpandedChange`. The `expandedKeys` must match the `id` on the disclosure component(s) that you wish to expand.
 
 ```tsx example
-import {Key} from "@react-types/shared";
+import {Key} from "@react-types-nutrient/shared";
 
 function ControlledExpanded(){
   let [expandedKeys, setExpandedKeys] = React.useState<Set<Key>>(new Set(["system"]));

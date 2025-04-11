@@ -18,7 +18,7 @@ import {Grid, repeat} from '@react-spectrum/layout';
 import {Heading} from '@react-spectrum/text';
 import {Meta, StoryFn} from '@storybook/react';
 import React from 'react';
-import {SpectrumComboBoxProps} from '@react-types/combobox';
+import {SpectrumComboBoxProps} from '@react-types-nutrient/combobox';
 
 // Skipping focus styles because don't have a way of applying it via classnames
 // No controlled open state also means no menu

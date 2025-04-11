@@ -11,7 +11,7 @@
  */
 
 import {chain, getScrollParent, mergeProps, scrollIntoViewport, useSlotId, useSyntheticLinkProps} from '@react-aria-nutrient/utils';
-import {DOMAttributes, FocusableElement, Key, RefObject, Node as RSNode} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, Key, RefObject, Node as RSNode} from '@react-types-nutrient/shared';
 import {focusSafely, getFocusableTreeWalker} from '@react-aria-nutrient/focus';
 import {getLastItem} from '@react-stately/collections';
 import {getRowId, listMap} from './utils';

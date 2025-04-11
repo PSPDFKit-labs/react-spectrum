@@ -13,6 +13,6 @@
 export {useToggleState} from './useToggleState';
 export {useToggleGroupState} from './useToggleGroupState';
 
-export type {ToggleProps} from '@react-types/checkbox';
+export type {ToggleProps} from '@react-types-nutrient/checkbox';
 export type {ToggleState, ToggleStateOptions} from './useToggleState';
 export type {ToggleGroupProps, ToggleGroupState} from './useToggleGroupState';

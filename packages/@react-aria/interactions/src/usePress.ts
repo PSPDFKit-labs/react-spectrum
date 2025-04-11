@@ -33,7 +33,7 @@ import {
 } from '@react-aria-nutrient/utils';
 import {createSyntheticEvent, preventFocus, setEventTarget} from './utils';
 import {disableTextSelection, restoreTextSelection} from './textSelection';
-import {DOMAttributes, FocusableElement, PressEvent as IPressEvent, PointerType, PressEvents, RefObject} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, PressEvent as IPressEvent, PointerType, PressEvents, RefObject} from '@react-types-nutrient/shared';
 import {flushSync} from 'react-dom';
 import {PressResponderContext} from './context';
 import {MouseEvent as RMouseEvent, TouchEvent as RTouchEvent, useContext, useEffect, useMemo, useRef, useState} from 'react';

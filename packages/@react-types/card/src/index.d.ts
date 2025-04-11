@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, AsyncLoadable, Collection, CollectionBase, Direction, DOMProps, KeyboardDelegate, LoadingState, MultipleSelection, Node, Orientation, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, AsyncLoadable, Collection, CollectionBase, Direction, DOMProps, KeyboardDelegate, LoadingState, MultipleSelection, Node, Orientation, StyleProps} from '@react-types-nutrient/shared';
 import {Layout} from '@react-stately/virtualizer';
 import {ReactNode} from 'react';
-import {Scale} from '@react-types/provider';
+import {Scale} from '@react-types-nutrient/provider';
 
 interface AriaCardProps extends AriaLabelingProps {}
 

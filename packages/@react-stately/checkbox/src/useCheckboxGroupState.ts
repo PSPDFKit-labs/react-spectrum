@@ -10,11 +10,11 @@
  * governing permissions and limitations under the License.
  */
 
-import {CheckboxGroupProps} from '@react-types/checkbox';
+import {CheckboxGroupProps} from '@react-types-nutrient/checkbox';
 import {FormValidationState, mergeValidation, useFormValidationState} from '@react-stately/form';
 import {useControlledState} from '@react-stately/utils';
 import {useRef} from 'react';
-import {ValidationResult, ValidationState} from '@react-types/shared';
+import {ValidationResult, ValidationState} from '@react-types-nutrient/shared';
 
 export interface CheckboxGroupState extends FormValidationState {
   /** Current selected values. */

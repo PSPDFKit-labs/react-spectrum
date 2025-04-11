@@ -11,7 +11,7 @@
  */
 
 import {HTMLAttributes, MutableRefObject, ReactElement, ReactNode} from 'react';
-import {StyleProps} from '@react-types/shared';
+import {StyleProps} from '@react-types-nutrient/shared';
 
 export type Placement = 'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' |
     'top' | 'top left' | 'top right' | 'top start' | 'top end' |

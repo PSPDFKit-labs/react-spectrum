@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
-import {AriaDatePickerProps, DateValue} from '@react-types/datepicker';
-import {AriaDialogProps} from '@react-types/dialog';
-import {CalendarProps} from '@react-types/calendar';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {AriaDatePickerProps, DateValue} from '@react-types-nutrient/datepicker';
+import {AriaDialogProps} from '@react-types-nutrient/dialog';
+import {CalendarProps} from '@react-types-nutrient/calendar';
 import {createFocusManager} from '@react-aria-nutrient/focus';
 import {DatePickerState} from '@react-stately/datepicker';
-import {DOMAttributes, GroupDOMAttributes, KeyboardEvent, RefObject, ValidationResult} from '@react-types/shared';
+import {DOMAttributes, GroupDOMAttributes, KeyboardEvent, RefObject, ValidationResult} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useDescription, useId} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

@@ -11,11 +11,11 @@
  * governing permissions and limitations under the License.
  */
 
-import {Direction, Key, KeyboardDelegate, Node} from '@react-types/shared';
+import {Direction, Key, KeyboardDelegate, Node} from '@react-types-nutrient/shared';
 import {getChildNodes, getFirstItem} from '@react-stately/collections';
 import {GridCollection} from '@react-stately/grid';
 import {InvalidationContext, Layout, LayoutInfo, Rect, Size} from '@react-stately/virtualizer';
-import {Scale} from '@react-types/provider';
+import {Scale} from '@react-types-nutrient/provider';
 
 export interface BaseLayoutOptions {
   collator?: Intl.Collator,

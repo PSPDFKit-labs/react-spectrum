@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import React, {forwardRef} from 'react';
-import {TextProps} from '@react-types/text';
+import {TextProps} from '@react-types-nutrient/text';
 import {useDOMRef, useSlotProps, useStyleProps} from '@react-spectrum/utils';
 
 /**

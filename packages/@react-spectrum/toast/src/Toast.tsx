@@ -14,7 +14,7 @@ import AlertMedium from '@spectrum-icons/ui/AlertMedium';
 import {Button, ClearButton} from '@react-spectrum/button';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
 import CrossMedium from '@spectrum-icons/ui/CrossMedium';
-import {DOMProps, DOMRef} from '@react-types/shared';
+import {DOMProps, DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import InfoMedium from '@spectrum-icons/ui/InfoMedium';
 // @ts-ignore

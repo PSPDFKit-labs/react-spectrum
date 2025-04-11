@@ -33,7 +33,7 @@ export type {ToastState, QueuedToast, ToastStateProps, ToastOptions} from '@reac
 export type {ToggleProps, ToggleState, ToggleGroupProps, ToggleGroupState} from '@react-stately/toggle';
 export type {TooltipTriggerProps, TooltipTriggerState} from '@react-stately/tooltip';
 export type {TreeProps, TreeState} from '@react-stately/tree';
-export type {ItemProps, Key, SectionProps, Collection, Node, Orientation, DisabledBehavior, Selection, SelectionBehavior, SelectionMode, SortDescriptor, SortDirection, ValidationState} from '@react-types/shared';
+export type {ItemProps, Key, SectionProps, Collection, Node, Orientation, DisabledBehavior, Selection, SelectionBehavior, SelectionMode, SortDescriptor, SortDirection, ValidationState} from '@react-types-nutrient/shared';
 
 export {useCalendarState, useRangeCalendarState} from '@react-stately/calendar';
 export {useCheckboxGroupState} from '@react-stately/checkbox';

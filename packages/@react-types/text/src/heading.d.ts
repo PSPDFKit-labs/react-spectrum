@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMProps, StyleProps} from '@react-types/shared';
+import {DOMProps, StyleProps} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export interface HeadingProps extends DOMProps, StyleProps {

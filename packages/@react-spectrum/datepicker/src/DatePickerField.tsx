@@ -14,7 +14,7 @@ import {classNames} from '@react-spectrum/utils';
 import {createCalendar} from '@internationalized/date';
 import {DatePickerSegment} from './DatePickerSegment';
 import datepickerStyles from './styles.css';
-import {DateValue, SpectrumDatePickerProps} from '@react-types/datepicker';
+import {DateValue, SpectrumDatePickerProps} from '@react-types-nutrient/datepicker';
 import React, {ReactNode, useRef} from 'react';
 import {useDateField} from '@react-aria-nutrient/datepicker';
 import {useDateFieldState} from '@react-stately/datepicker';

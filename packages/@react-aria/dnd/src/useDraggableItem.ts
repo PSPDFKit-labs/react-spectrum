@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import {clearGlobalDnDState, isInternalDropOperation, setDraggingKeys, useDragModality} from './utils';
 import {DraggableCollectionState} from '@react-stately/dnd';
 import {HTMLAttributes} from 'react';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {useDescription} from '@react-aria-nutrient/utils';
 import {useDrag} from './useDrag';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';

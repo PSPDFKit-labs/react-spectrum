@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, HoverEvents} from '@react-types/shared';
+import {AriaLabelingProps, HoverEvents} from '@react-types-nutrient/shared';
 import {ContextValue, Provider, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
 import {DropOptions, mergeProps, useButton, useClipboard, useDrop, useFocusRing, useHover, useLocalizedStringFormatter, VisuallyHidden} from '@react-aria-nutrient/react-aria';
 import {filterDOMProps, isFocusable, useLabels, useObjectRef, useSlotId} from '@react-aria-nutrient/utils';

@@ -15,7 +15,7 @@ import {ButtonRenderProps, ContextValue, Link, LinkProps, OverlayTriggerStateCon
 import {centerBaseline} from './CenterBaseline';
 import {centerPadding, getAllowedOverrides, staticColor, StyleProps} from './style-utils' with {type: 'macro'};
 import {createContext, forwardRef, ReactNode, useContext, useEffect, useState} from 'react';
-import {FocusableRef, FocusableRefValue} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue} from '@react-types-nutrient/shared';
 import {IconContext} from './Icon';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

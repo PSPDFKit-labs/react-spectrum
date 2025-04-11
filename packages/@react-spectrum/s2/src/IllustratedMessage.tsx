@@ -14,7 +14,7 @@ import {ButtonGroupContext} from './ButtonGroup';
 import {ContentContext, HeadingContext} from './Content';
 import {ContextValue, Provider} from 'react-aria-components';
 import {createContext, forwardRef, ReactNode} from 'react';
-import {DOMProps, DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMProps, DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {getAllowedOverrides, StylesPropWithHeight, UnsafeStyles} from './style-utils' with {type: 'macro'};
 import {IllustrationContext} from './Icon';

@@ -13,7 +13,7 @@
 import {classNames} from '@react-spectrum/utils';
 import dndStyles from './dnd.css';
 import dropIndicatorStyles from '@adobe/spectrum-css-temp/components/dropindicator/vars.css';
-import {DroppableCollectionDropEvent} from '@react-types/shared';
+import {DroppableCollectionDropEvent} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import Folder from '@spectrum-icons/workflow/Folder';
 import {GridCollection, useGridState} from '@react-stately/grid';

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DimensionValue} from '@react-types/shared';
+import {DimensionValue} from '@react-types-nutrient/shared';
 
 const dimensions = {
   'size-0': 0,

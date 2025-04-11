@@ -15,7 +15,7 @@ import ChevronRightMedium from '@spectrum-icons/ui/ChevronRightMedium';
 import {classNames, ClearSlots, SlotProvider, useHasChild} from '@react-spectrum/utils';
 import {CSSTransition} from 'react-transition-group';
 import type {DraggableItemResult, DropIndicatorAria} from '@react-aria-nutrient/dnd';
-import {DropTarget, Node} from '@react-types/shared';
+import {DropTarget, Node} from '@react-types-nutrient/shared';
 import {FocusRing, useFocusRing} from '@react-aria-nutrient/focus';
 import {Grid} from '@react-spectrum/layout';
 import {isFocusVisible as isGlobalFocusVisible, useHover} from '@react-aria-nutrient/interactions';

@@ -47,9 +47,9 @@ import {centerPadding, getAllowedOverrides, StylesPropWithHeight, UnsafeStyles} 
 import {Checkbox} from './Checkbox';
 import Chevron from '../ui-icons/Chevron';
 import {colorMix, focusRing, fontRelative, lightDark, space, style} from '../style' with {type: 'macro'};
-import {ColumnSize} from '@react-types/table';
-import {DOMRef, DOMRefValue, forwardRefType, LoadingState, Node} from '@react-types/shared';
-import {GridNode} from '@react-types/grid';
+import {ColumnSize} from '@react-types-nutrient/table';
+import {DOMRef, DOMRefValue, forwardRefType, LoadingState, Node} from '@react-types-nutrient/shared';
+import {GridNode} from '@react-types-nutrient/grid';
 import {IconContext} from './Icon';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

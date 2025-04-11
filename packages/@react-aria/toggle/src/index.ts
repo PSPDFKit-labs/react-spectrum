@@ -11,5 +11,5 @@
  */
 
 export {useToggle} from './useToggle';
-export type {AriaToggleProps} from '@react-types/checkbox';
+export type {AriaToggleProps} from '@react-types-nutrient/checkbox';
 export type {ToggleAria} from './useToggle';

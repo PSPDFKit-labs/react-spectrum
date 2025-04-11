@@ -11,11 +11,11 @@
  */
 
 import {ChangeEvent, useCallback, useEffect, useRef} from 'react';
-import {ColumnSize} from '@react-types/table';
-import {DOMAttributes, FocusableElement, Key, RefObject} from '@react-types/shared';
+import {ColumnSize} from '@react-types-nutrient/table';
+import {DOMAttributes, FocusableElement, Key, RefObject} from '@react-types-nutrient/shared';
 import {focusSafely, useInteractionModality, useKeyboard, useMove, usePress} from '@react-aria-nutrient/interactions';
 import {getColumnHeaderId} from './utils';
-import {GridNode} from '@react-types/grid';
+import {GridNode} from '@react-types-nutrient/grid';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {mergeProps, useDescription, useEffectEvent, useId} from '@react-aria-nutrient/utils';

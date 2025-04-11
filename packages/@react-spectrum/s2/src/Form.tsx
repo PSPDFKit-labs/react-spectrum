@@ -11,7 +11,7 @@
  */
 
 import {createContext, forwardRef, ReactNode, useContext, useMemo} from 'react';
-import {DOMRef, SpectrumLabelableProps} from '@react-types/shared';
+import {DOMRef, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};
 import {Form as RACForm, FormProps as RACFormProps} from 'react-aria-components';
 import {style} from '../style' with {type: 'macro'};

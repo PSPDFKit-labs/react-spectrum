@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {RefObject, ScrollEvents} from '@react-types/shared';
+import {RefObject, ScrollEvents} from '@react-types-nutrient/shared';
 import {useCallback} from 'react';
 import {useEvent} from '@react-aria-nutrient/utils';
 

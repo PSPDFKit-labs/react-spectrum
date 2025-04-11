@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {PlacementAxis} from '@react-types/overlays';
+import {PlacementAxis} from '@react-types-nutrient/overlays';
 import React, {HTMLAttributes} from 'react';
-import {RefObject, StyleProps} from '@react-types/shared';
+import {RefObject, StyleProps} from '@react-types-nutrient/shared';
 import {TooltipTriggerState} from '@react-stately/tooltip';
 
 interface TooltipContextProps extends StyleProps {

@@ -17,7 +17,7 @@ import {
 } from 'react-aria-components';
 import {baseColor, focusRing, style} from '../style' with {type: 'macro'};
 import {CenterBaseline} from './CenterBaseline';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {FormContext, useFormProps} from './Form';
 import {forwardRef, ReactNode, useContext, useRef} from 'react';
 import {getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};

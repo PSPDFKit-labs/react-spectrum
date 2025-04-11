@@ -9,10 +9,10 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import {classNames, dimensionValue, useFocusableRef, useIsMobileDevice, useResizeObserver, useUnwrapDOMRef} from '@react-spectrum/utils';
 import {ClearButton} from '@react-spectrum/button';
-import {DOMRefValue, FocusableRef} from '@react-types/shared';
+import {DOMRefValue, FocusableRef} from '@react-types-nutrient/shared';
 import {Field} from '@react-spectrum/label';
 import {filterDOMProps, useLayoutEffect} from '@react-aria-nutrient/utils';
 import {FocusRing} from '@react-aria-nutrient/focus';
@@ -35,7 +35,7 @@ import React, {
 } from 'react';
 import searchAutocompleteStyles from './searchautocomplete.css';
 import searchStyles from '@adobe/spectrum-css-temp/components/search/vars.css';
-import {SpectrumSearchAutocompleteProps} from '@react-types/autocomplete';
+import {SpectrumSearchAutocompleteProps} from '@react-types-nutrient/autocomplete';
 import styles from '@adobe/spectrum-css-temp/components/inputgroup/vars.css';
 import {TextFieldBase} from '@react-spectrum/textfield';
 import textfieldStyles from '@adobe/spectrum-css-temp/components/textfield/vars.css';

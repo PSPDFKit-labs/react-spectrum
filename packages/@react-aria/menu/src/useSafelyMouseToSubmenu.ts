@@ -1,5 +1,5 @@
 
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {useEffect, useRef, useState} from 'react';
 import {useEffectEvent, useResizeObserver} from '@react-aria-nutrient/utils';
 import {useInteractionModality} from '@react-aria-nutrient/interactions';

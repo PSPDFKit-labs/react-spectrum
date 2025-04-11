@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {CellProps} from '@react-types/table';
+import {CellProps} from '@react-types-nutrient/table';
 import {JSX, ReactElement} from 'react';
 import {PartialNode} from '@react-stately/collections';
 

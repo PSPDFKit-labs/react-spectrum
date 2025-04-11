@@ -14,7 +14,7 @@ import {baseColor, focusRing, style} from '../style' with {type: 'macro'};
 import {Button, ButtonProps, ContextValue} from 'react-aria-components';
 import {createContext, forwardRef} from 'react';
 import CrossIcon from '../ui-icons/Cross';
-import {FocusableRef, FocusableRefValue} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue} from '@react-types-nutrient/shared';
 import {getAllowedOverrides, staticColor, StyleProps} from './style-utils' with {type: 'macro'};
 // @ts-ignore
 import intlMessages from '../intl/*.json';

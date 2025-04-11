@@ -18,10 +18,10 @@ import {
   InputHTMLAttributes,
   RefObject
 } from 'react';
-import {AriaToggleButtonProps} from '@react-types/button';
+import {AriaToggleButtonProps} from '@react-types-nutrient/button';
 import {ButtonAria, useButton} from './useButton';
 import {chain, mergeProps} from '@react-aria-nutrient/utils';
-import {DOMAttributes} from '@react-types/shared';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {ToggleState} from '@react-stately/toggle';
 
 export interface AriaToggleButtonOptions<E extends ElementType> extends Omit<AriaToggleButtonProps<E>, 'children'> {}

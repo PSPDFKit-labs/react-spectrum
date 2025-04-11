@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaCheckboxGroupProps} from '@react-types/checkbox';
+import {AriaCheckboxGroupProps} from '@react-types-nutrient/checkbox';
 import {checkboxGroupData} from './utils';
 import {CheckboxGroupState} from '@react-stately/checkbox';
-import {DOMAttributes, ValidationResult} from '@react-types/shared';
+import {DOMAttributes, ValidationResult} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {useField} from '@react-aria-nutrient/label';
 import {useFocusWithin} from '@react-aria-nutrient/interactions';

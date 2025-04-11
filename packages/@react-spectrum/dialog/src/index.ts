@@ -18,5 +18,5 @@ export {DialogTrigger} from './DialogTrigger';
 export {DialogContainer} from './DialogContainer';
 export {useDialogContainer} from './useDialogContainer';
 
-export type {SpectrumAlertDialogProps, SpectrumDialogProps, SpectrumDialogContainerProps, SpectrumDialogTriggerProps} from '@react-types/dialog';
+export type {SpectrumAlertDialogProps, SpectrumDialogProps, SpectrumDialogContainerProps, SpectrumDialogTriggerProps} from '@react-types-nutrient/dialog';
 export type {DialogContainerValue} from './useDialogContainer';

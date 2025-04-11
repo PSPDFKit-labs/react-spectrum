@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {useEffect} from 'react';
 import {useEffectEvent} from './useEffectEvent';
 

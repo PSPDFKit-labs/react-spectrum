@@ -14,7 +14,7 @@ import {Collection, CollectionBuilder, createLeafComponent} from '@react-aria-nu
 import {CollectionProps, CollectionRendererContext} from './Collection';
 import {ContextValue, RenderProps, SlotProps, StyleProps, useContextProps, useRenderProps, useSlottedContext} from './utils';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
-import {forwardRefType, Key} from '@react-types/shared';
+import {forwardRefType, Key} from '@react-types-nutrient/shared';
 import {LinkContext} from './Link';
 import {Node} from 'react-stately';
 import React, {createContext, ForwardedRef, forwardRef, useContext} from 'react';

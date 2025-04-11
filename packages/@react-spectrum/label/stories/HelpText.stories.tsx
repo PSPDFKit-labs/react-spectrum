@@ -13,7 +13,7 @@ import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import {Flex} from '@react-spectrum/layout';
 import {Radio, RadioGroup} from '@react-spectrum/radio';
 import React, {useState} from 'react';
-import {SpectrumTextFieldProps} from '@react-types/textfield';
+import {SpectrumTextFieldProps} from '@react-types-nutrient/textfield';
 import {TextField} from '@react-spectrum/textfield';
 
 type HelpTextStory = ComponentStoryObj<typeof TextField>;

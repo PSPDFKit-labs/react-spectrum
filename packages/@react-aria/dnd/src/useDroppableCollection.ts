@@ -32,7 +32,7 @@ import {
   KeyboardDelegate,
   Node,
   RefObject
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import * as DragManager from './DragManager';
 import {DroppableCollectionState} from '@react-stately/dnd';
 import {HTMLAttributes, useCallback, useEffect, useRef} from 'react';

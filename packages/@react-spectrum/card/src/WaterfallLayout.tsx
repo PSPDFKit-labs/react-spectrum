@@ -14,7 +14,7 @@
 import {BaseLayout, BaseLayoutOptions} from './BaseLayout';
 import {getChildNodes, getFirstItem} from '@react-stately/collections';
 import {InvalidationContext, LayoutInfo, Rect, Size} from '@react-stately/virtualizer';
-import {Key, KeyboardDelegate} from '@react-types/shared';
+import {Key, KeyboardDelegate} from '@react-types-nutrient/shared';
 
 export interface WaterfallLayoutOptions extends BaseLayoutOptions {
   /**

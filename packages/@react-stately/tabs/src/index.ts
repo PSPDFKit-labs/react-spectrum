@@ -12,5 +12,5 @@
 
 export {useTabListState} from './useTabListState';
 
-export type {TabListProps} from '@react-types/tabs';
+export type {TabListProps} from '@react-types-nutrient/tabs';
 export type {TabListStateOptions, TabListState} from './useTabListState';

@@ -19,7 +19,7 @@ import {Form} from '@react-spectrum/form';
 import {Meta} from '@storybook/react';
 import {NumberField} from '@react-spectrum/numberfield';
 import {Provider} from '../';
-import {ProviderProps} from '@react-types/provider';
+import {ProviderProps} from '@react-types-nutrient/provider';
 import {Radio, RadioGroup} from '@react-spectrum/radio';
 import React from 'react';
 import scaleLarge from '@adobe/spectrum-css-temp/vars/spectrum-large.css';

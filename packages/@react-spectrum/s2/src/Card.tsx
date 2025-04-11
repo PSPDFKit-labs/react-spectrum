@@ -19,7 +19,7 @@ import {composeRenderProps, ContextValue, DEFAULT_SLOT, type GridListItem, GridL
 import {ContentContext, FooterContext, TextContext} from './Content';
 import {createContext, CSSProperties, forwardRef, ReactNode, useContext} from 'react';
 import {DividerContext} from './Divider';
-import {DOMProps, DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMProps, DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {filterDOMProps, inertValue} from '@react-aria-nutrient/utils';
 import {focusRing, lightDark, space, style} from '../style' with {type: 'macro'};
 import {getAllowedOverrides, StyleProps, UnsafeStyles} from './style-utils' with {type: 'macro'};

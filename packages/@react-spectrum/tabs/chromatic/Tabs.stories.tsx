@@ -14,7 +14,7 @@ import {Heading, Text} from '@react-spectrum/text';
 import {Item, TabList, TabPanels, Tabs} from '../';
 import {Meta} from '@storybook/react';
 import React from 'react';
-import {SpectrumTabsProps} from '@react-types/tabs';
+import {SpectrumTabsProps} from '@react-types-nutrient/tabs';
 
 const meta: Meta<SpectrumTabsProps<object>> = {
   title: 'Tabs',

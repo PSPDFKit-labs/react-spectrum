@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
-import {DOMAttributes, FocusableElement, Node, RefObject} from '@react-types/shared';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {DOMAttributes, FocusableElement, Node, RefObject} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useDescription, useId, useSyntheticLinkProps} from '@react-aria-nutrient/utils';
 import {hookData} from './useTagGroup';
 // @ts-ignore

@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaTabPanelProps, SpectrumTabListProps, SpectrumTabPanelsProps, SpectrumTabsProps} from '@react-types/tabs';
+import {AriaTabPanelProps, SpectrumTabListProps, SpectrumTabPanelsProps, SpectrumTabsProps} from '@react-types-nutrient/tabs';
 import {classNames, SlotProvider, unwrapDOMRef, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMProps, DOMRef, DOMRefValue, Key, Node, Orientation, RefObject, StyleProps} from '@react-types/shared';
+import {DOMProps, DOMRef, DOMRefValue, Key, Node, Orientation, RefObject, StyleProps} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useId, useLayoutEffect, useResizeObserver} from '@react-aria-nutrient/utils';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {Item, Picker} from '@react-spectrum/picker';
@@ -28,7 +28,7 @@ import React, {
   useRef,
   useState
 } from 'react';
-import {SpectrumPickerProps} from '@react-types/select';
+import {SpectrumPickerProps} from '@react-types-nutrient/select';
 import styles from '@adobe/spectrum-css-temp/components/tabs/vars.css';
 import {TabListState, useTabListState} from '@react-stately/tabs';
 import {Text} from '@react-spectrum/text';

@@ -12,7 +12,7 @@
 
 import {ModalContext, useSlottedContext} from 'react-aria-components';
 import React, {ReactElement, ReactNode, useState} from 'react';
-import {SpectrumDialogContainerProps} from '@react-types/dialog';
+import {SpectrumDialogContainerProps} from '@react-types-nutrient/dialog';
 
 export interface DialogContainerProps extends Omit<SpectrumDialogContainerProps, 'type' | 'isDismissable' | 'isKeyboardDismissDisabled'> {}
 

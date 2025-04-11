@@ -11,13 +11,13 @@
  */
 
 import {classNames} from '@react-spectrum/utils';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import React from 'react';
 import {SliderBase, SliderBaseChildArguments, SliderBaseProps} from './SliderBase';
 import {SliderThumb} from './SliderThumb';
-import {SpectrumRangeSliderProps} from '@react-types/slider';
+import {SpectrumRangeSliderProps} from '@react-types-nutrient/slider';
 import styles from '@adobe/spectrum-css-temp/components/slider/vars.css';
 import {useLocale, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 

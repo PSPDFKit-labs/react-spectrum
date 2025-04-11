@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, Key, Node} from '@react-types/shared';
+import {Collection, Key, Node} from '@react-types-nutrient/shared';
 
 export class ListCollection<T> implements Collection<Node<T>> {
   private keyMap: Map<Key, Node<T>> = new Map();

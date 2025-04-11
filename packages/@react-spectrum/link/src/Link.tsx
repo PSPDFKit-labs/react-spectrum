@@ -14,7 +14,7 @@ import {classNames, getWrappedElement, useSlotProps, useStyleProps} from '@react
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps, mergeRefs} from '@react-aria-nutrient/utils';
 import React, {ForwardedRef, JSX, MutableRefObject, ReactNode, useRef} from 'react';
-import {SpectrumLinkProps} from '@react-types/link';
+import {SpectrumLinkProps} from '@react-types-nutrient/link';
 import styles from '@adobe/spectrum-css-temp/components/link/vars.css';
 import {useHover} from '@react-aria-nutrient/interactions';
 import {useLink} from '@react-aria-nutrient/link';

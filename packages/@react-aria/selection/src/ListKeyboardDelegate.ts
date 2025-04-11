@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, Direction, DisabledBehavior, Key, KeyboardDelegate, LayoutDelegate, Node, Orientation, Rect, RefObject} from '@react-types/shared';
+import {Collection, Direction, DisabledBehavior, Key, KeyboardDelegate, LayoutDelegate, Node, Orientation, Rect, RefObject} from '@react-types-nutrient/shared';
 import {DOMLayoutDelegate} from './DOMLayoutDelegate';
 import {isScrollable} from '@react-aria-nutrient/utils';
 

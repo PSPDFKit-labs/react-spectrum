@@ -11,8 +11,8 @@
  */
 
 import {ColorSwatchPicker as AriaColorSwatchPicker, ColorSwatchPickerItem as AriaColorSwatchPickerItem} from 'react-aria-components';
-import {Color} from '@react-types/color';
-import {DOMRef, StyleProps, ValueBase} from '@react-types/shared';
+import {Color} from '@react-types-nutrient/color';
+import {DOMRef, StyleProps, ValueBase} from '@react-types-nutrient/shared';
 import React, {forwardRef, ReactElement, ReactNode} from 'react';
 import {SpectrumColorSwatchContext, SpectrumColorSwatchProps} from './ColorSwatch';
 import {style} from '@react-spectrum/style-macro-s1' with {type: 'macro'};

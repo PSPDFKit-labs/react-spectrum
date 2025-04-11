@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {useLayoutEffect} from '@react-aria-nutrient/utils';
 import {useState} from 'react';
 

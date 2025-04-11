@@ -11,9 +11,9 @@
  */
 
 import {classNames, useDOMRef, useSlotProps, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import React, {ElementType} from 'react';
-import {SpectrumDividerProps} from '@react-types/divider';
+import {SpectrumDividerProps} from '@react-types-nutrient/divider';
 import styles from '@adobe/spectrum-css-temp/components/rule/vars.css';
 import {useSeparator} from '@react-aria-nutrient/separator';
 

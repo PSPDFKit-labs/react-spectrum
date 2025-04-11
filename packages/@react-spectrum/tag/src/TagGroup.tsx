@@ -13,7 +13,7 @@
 import {ActionButton} from '@react-spectrum/button';
 import {AriaTagGroupProps, useTagGroup} from '@react-aria-nutrient/tag';
 import {classNames, useDOMRef} from '@react-spectrum/utils';
-import {Collection, DOMRef, Node, SpectrumLabelableProps, StyleProps, Validation} from '@react-types/shared';
+import {Collection, DOMRef, Node, SpectrumLabelableProps, StyleProps, Validation} from '@react-types-nutrient/shared';
 import {Field} from '@react-spectrum/label';
 import {FocusRing, FocusScope} from '@react-aria-nutrient/focus';
 // @ts-ignore

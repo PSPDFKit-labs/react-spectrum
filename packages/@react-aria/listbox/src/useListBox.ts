@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaListBoxProps} from '@react-types/listbox';
-import {DOMAttributes, KeyboardDelegate, LayoutDelegate, RefObject} from '@react-types/shared';
+import {AriaListBoxProps} from '@react-types-nutrient/listbox';
+import {DOMAttributes, KeyboardDelegate, LayoutDelegate, RefObject} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {listData} from './utils';
 import {ListState} from '@react-stately/list';

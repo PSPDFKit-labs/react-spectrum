@@ -47,8 +47,8 @@
     "@react-spectrum/utils": "^3.12.3",
     "@react-stately/collections": "^3.12.2",
     "@react-stately/list": "^3.12.0",
-    "@react-types/actiongroup": "^3.4.15",
-    "@react-types/shared": "^3.28.0",
+    "@react-types-nutrient/actiongroup": "^3.4.15",
+    "@react-types-nutrient/shared": "^3.28.0",
     "@spectrum-icons/ui": "^3.6.14",
     "@spectrum-icons/workflow": "^4.2.19",
     "@swc/helpers": "^0.5.0"

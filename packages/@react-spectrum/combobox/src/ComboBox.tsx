@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import ChevronDownMedium from '@spectrum-icons/ui/ChevronDownMedium';
 import {
   classNames,
@@ -21,7 +21,7 @@ import {
   useUnwrapDOMRef
 } from '@react-spectrum/utils';
 import comboboxStyles from './combobox.css';
-import {DOMRefValue, FocusableRef, FocusableRefValue} from '@react-types/shared';
+import {DOMRefValue, FocusableRef, FocusableRefValue} from '@react-types-nutrient/shared';
 import {Field} from '@react-spectrum/label';
 import {FieldButton} from '@react-spectrum/button';
 import {FocusRing} from '@react-aria-nutrient/focus';
@@ -42,7 +42,7 @@ import React, {
   useRef,
   useState
 } from 'react';
-import {SpectrumComboBoxProps} from '@react-types/combobox';
+import {SpectrumComboBoxProps} from '@react-types-nutrient/combobox';
 import styles from '@adobe/spectrum-css-temp/components/inputgroup/vars.css';
 import {TextFieldBase} from '@react-spectrum/textfield';
 import textfieldStyles from '@adobe/spectrum-css-temp/components/textfield/vars.css';

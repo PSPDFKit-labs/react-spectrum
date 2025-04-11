@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {useState} from 'react';
 
 export interface TreeOptions<T extends object> {

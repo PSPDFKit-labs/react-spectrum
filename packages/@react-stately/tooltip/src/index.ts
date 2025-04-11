@@ -12,5 +12,5 @@
 
 export {useTooltipTriggerState} from './useTooltipTriggerState';
 
-export type {TooltipTriggerProps} from '@react-types/tooltip';
+export type {TooltipTriggerProps} from '@react-types-nutrient/tooltip';
 export type {TooltipTriggerState} from './useTooltipTriggerState';

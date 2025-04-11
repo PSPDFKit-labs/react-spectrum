@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {FocusableElement} from '@react-types/shared';
+import {FocusableElement} from '@react-types-nutrient/shared';
 import {mergeProps, useObjectRef, useSyncRef} from '@react-aria-nutrient/utils';
 import {PressProps} from './usePress';
 import {PressResponderContext} from './context';

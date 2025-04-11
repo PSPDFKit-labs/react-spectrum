@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-import {Alignment, DOMRef, LabelPosition, SpectrumLabelableProps} from '@react-types/shared';
+import {Alignment, DOMRef, LabelPosition, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {FormValidationContext} from '@react-stately/form';
 import {Provider, useProviderProps} from '@react-spectrum/provider';
 import React, {useContext} from 'react';
-import {SpectrumFormProps} from '@react-types/form';
+import {SpectrumFormProps} from '@react-types-nutrient/form';
 import styles from '@adobe/spectrum-css-temp/components/fieldlabel/vars.css';
 
 interface FormContextValue extends SpectrumLabelableProps {

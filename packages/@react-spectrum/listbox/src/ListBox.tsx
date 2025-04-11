@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {ListBoxBase, useListBoxLayout} from './ListBoxBase';
 import React, {ReactElement} from 'react';
-import {SpectrumListBoxProps} from '@react-types/listbox';
+import {SpectrumListBoxProps} from '@react-types-nutrient/listbox';
 import {useDOMRef} from '@react-spectrum/utils';
 import {useListState} from '@react-stately/list';
 

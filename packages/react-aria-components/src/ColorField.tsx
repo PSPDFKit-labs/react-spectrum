@@ -16,7 +16,7 @@ import {ColorFieldContext} from './RSPContexts';
 import {FieldErrorContext} from './FieldError';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {InputContext} from './Input';
-import {InputDOMProps, ValidationResult} from '@react-types/shared';
+import {InputDOMProps, ValidationResult} from '@react-types-nutrient/shared';
 import {LabelContext} from './Label';
 import {Provider, RACValidation, removeDataAttributes, RenderProps, SlotProps, useContextProps, useRenderProps, useSlot} from './utils';
 import React, {createContext, ForwardedRef, forwardRef, HTMLAttributes, InputHTMLAttributes, LabelHTMLAttributes, Ref, useRef} from 'react';

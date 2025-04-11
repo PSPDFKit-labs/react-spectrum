@@ -13,7 +13,7 @@
 
 import {BaseLayout, BaseLayoutOptions} from './BaseLayout';
 import {getChildNodes, getFirstItem} from '@react-stately/collections';
-import {Key, Node, Orientation} from '@react-types/shared';
+import {Key, Node, Orientation} from '@react-types-nutrient/shared';
 import {LayoutInfo, Rect, Size} from '@react-stately/virtualizer';
 
 export interface GridLayoutOptions extends BaseLayoutOptions {

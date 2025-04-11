@@ -18,6 +18,6 @@ export {Menu} from './Menu';
 export {ActionMenu} from './ActionMenu';
 export {ContextualHelpTrigger} from './ContextualHelpTrigger';
 export {Item, Section} from '@react-stately/collections';
-export type {SpectrumActionMenuProps, SpectrumMenuProps, SpectrumMenuTriggerProps} from '@react-types/menu';
+export type {SpectrumActionMenuProps, SpectrumMenuProps, SpectrumMenuTriggerProps} from '@react-types-nutrient/menu';
 export type {SpectrumMenuDialogTriggerProps} from './ContextualHelpTrigger';
 export type {SpectrumSubmenuTriggerProps} from './SubmenuTrigger';

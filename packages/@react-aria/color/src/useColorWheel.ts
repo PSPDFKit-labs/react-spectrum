@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaColorWheelProps} from '@react-types/color';
+import {AriaColorWheelProps} from '@react-types-nutrient/color';
 import {ColorWheelState} from '@react-stately/color';
-import {DOMAttributes, RefObject} from '@react-types/shared';
+import {DOMAttributes, RefObject} from '@react-types-nutrient/shared';
 import {focusWithoutScrolling, mergeProps, useFormReset, useGlobalListeners, useLabels} from '@react-aria-nutrient/utils';
 import React, {ChangeEvent, InputHTMLAttributes, useCallback, useRef} from 'react';
 import {useKeyboard, useMove} from '@react-aria-nutrient/interactions';

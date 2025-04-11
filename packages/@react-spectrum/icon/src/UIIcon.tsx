@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, StyleProps} from '@react-types-nutrient/shared';
 import {classNames, useSlotProps, useStyleProps} from '@react-spectrum/utils';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {ProviderContext, useProvider} from '@react-spectrum/provider';

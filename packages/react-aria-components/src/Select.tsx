@@ -18,7 +18,7 @@ import {ContextValue, Provider, RACValidation, removeDataAttributes, RenderProps
 import {FieldErrorContext} from './FieldError';
 import {filterDOMProps, useResizeObserver} from '@react-aria-nutrient/utils';
 import {FormContext} from './Form';
-import {forwardRefType} from '@react-types/shared';
+import {forwardRefType} from '@react-types-nutrient/shared';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {ItemRenderProps} from './Collection';

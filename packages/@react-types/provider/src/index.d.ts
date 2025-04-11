@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMProps, Href, RouterOptions, StyleProps, ValidationState} from '@react-types/shared';
+import {DOMProps, Href, RouterOptions, StyleProps, ValidationState} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export type ColorScheme = 'light' | 'dark';

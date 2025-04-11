@@ -17,8 +17,8 @@ import {
   HTMLAttributes,
   InputHTMLAttributes
 } from 'react';
-import {AriaLabelingProps, DOMAttributes, Orientation, RefObject} from '@react-types/shared';
-import {AriaToggleButtonGroupItemProps} from '@react-types/button';
+import {AriaLabelingProps, DOMAttributes, Orientation, RefObject} from '@react-types-nutrient/shared';
+import {AriaToggleButtonGroupItemProps} from '@react-types-nutrient/button';
 import {ToggleButtonAria, useToggleButton} from './useToggleButton';
 import {ToggleGroupProps, ToggleGroupState, ToggleState} from '@react-stately/toggle';
 import {useToolbar} from '@react-aria-nutrient/toolbar';

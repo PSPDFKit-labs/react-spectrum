@@ -20,7 +20,7 @@ import {mergeProps} from '@react-aria-nutrient/utils';
 import {Meta, StoryFn} from '@storybook/react';
 import {NumberField} from '../src';
 import React from 'react';
-import {SpectrumNumberFieldProps} from '@react-types/numberfield';
+import {SpectrumNumberFieldProps} from '@react-types-nutrient/numberfield';
 import stepperStyles from '@adobe/spectrum-css-temp/components/stepper/vars.css';
 
 let states = [

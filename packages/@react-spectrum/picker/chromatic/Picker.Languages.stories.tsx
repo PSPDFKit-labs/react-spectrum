@@ -13,7 +13,7 @@
 import {Item, Picker, Section} from '..';
 import {Meta} from '@storybook/react';
 import React from 'react';
-import {SpectrumPickerProps} from '@react-types/select';
+import {SpectrumPickerProps} from '@react-types-nutrient/select';
 
 export default {
   title: 'Languages/Picker',

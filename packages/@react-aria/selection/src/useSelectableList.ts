@@ -11,7 +11,7 @@
  */
 
 import {AriaSelectableCollectionOptions, useSelectableCollection} from './useSelectableCollection';
-import {Collection, DOMAttributes, Key, KeyboardDelegate, LayoutDelegate, Node} from '@react-types/shared';
+import {Collection, DOMAttributes, Key, KeyboardDelegate, LayoutDelegate, Node} from '@react-types-nutrient/shared';
 import {ListKeyboardDelegate} from './ListKeyboardDelegate';
 import {useCollator} from '@react-aria-nutrient/i18n';
 import {useMemo} from 'react';

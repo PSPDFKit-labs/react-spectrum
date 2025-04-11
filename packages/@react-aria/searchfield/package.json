@@ -26,9 +26,9 @@
     "@react-aria-nutrient/textfield": "^3.17.1",
     "@react-aria-nutrient/utils": "^3.28.1",
     "@react-stately/searchfield": "^3.5.10",
-    "@react-types/button": "^3.11.0",
-    "@react-types/searchfield": "^3.6.0",
-    "@react-types/shared": "^3.28.0",
+    "@react-types-nutrient/button": "^3.11.0",
+    "@react-types-nutrient/searchfield": "^3.6.0",
+    "@react-types-nutrient/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"
   },
   "peerDependencies": {

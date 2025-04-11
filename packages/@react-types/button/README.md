@@ -1,3 +1,3 @@
-# @react-types/button
+# @react-types-nutrient/button
 
 This package is part of [react-spectrum](https://github.com/adobe/react-spectrum). See the repo for more details.

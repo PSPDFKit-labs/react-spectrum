@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, Direction, Key, KeyboardDelegate, Node, Orientation} from '@react-types/shared';
+import {Collection, Direction, Key, KeyboardDelegate, Node, Orientation} from '@react-types-nutrient/shared';
 
 export class TabsKeyboardDelegate<T> implements KeyboardDelegate {
   private collection: Collection<Node<T>>;

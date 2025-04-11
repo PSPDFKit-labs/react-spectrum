@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Direction} from '@react-types/shared';
+import {Direction} from '@react-types-nutrient/shared';
 import {isRTL} from './utils';
 import {useEffect, useState} from 'react';
 import {useIsSSR} from '@react-aria-nutrient/ssr';

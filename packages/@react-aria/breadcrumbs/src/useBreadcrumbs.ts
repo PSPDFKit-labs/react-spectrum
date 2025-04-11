@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaBreadcrumbsProps} from '@react-types/breadcrumbs';
-import {DOMAttributes} from '@react-types/shared';
+import {AriaBreadcrumbsProps} from '@react-types-nutrient/breadcrumbs';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

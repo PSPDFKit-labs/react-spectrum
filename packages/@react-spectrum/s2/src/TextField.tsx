@@ -25,11 +25,11 @@ import {createContext, forwardRef, ReactNode, Ref, useContext, useImperativeHand
 import {createFocusableRef} from '@react-spectrum/utils';
 import {FieldErrorIcon, FieldGroup, FieldLabel, HelpText, Input} from './Field';
 import {FormContext, useFormProps} from './Form';
-import {HelpTextProps, SpectrumLabelableProps} from '@react-types/shared';
+import {HelpTextProps, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {mergeRefs} from '@react-aria-nutrient/utils';
 import {style} from '../style' with {type: 'macro'};
 import {StyleString} from '../style/types';
-import {TextFieldRef} from '@react-types/textfield';
+import {TextFieldRef} from '@react-types-nutrient/textfield';
 import {useSpectrumContextProps} from './useSpectrumContextProps';
 
 export interface TextFieldProps extends Omit<AriaTextFieldProps, 'children' | 'className' | 'style'>, StyleProps, SpectrumLabelableProps, HelpTextProps {

@@ -11,8 +11,8 @@
  */
 
 import {CollectionBuilderContext} from './useTableState';
-import {ColumnProps} from '@react-types/table';
-import {GridNode} from '@react-types/grid';
+import {ColumnProps} from '@react-types-nutrient/table';
+import {GridNode} from '@react-types-nutrient/grid';
 import {PartialNode} from '@react-stately/collections';
 import React, {JSX, ReactElement} from 'react';
 

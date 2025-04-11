@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, CollectionBase, Key, Node, SingleSelection} from '@react-types/shared';
+import {Collection, CollectionBase, Key, Node, SingleSelection} from '@react-types-nutrient/shared';
 import {SingleSelectListState, useSingleSelectListState} from '@react-stately/list';
 import {useCallback, useEffect, useMemo} from 'react';
 import {useControlledState} from '@react-stately/utils';

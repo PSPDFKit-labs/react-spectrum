@@ -15,7 +15,7 @@ import {BaseNode, Document, ElementNode} from './Document';
 import {CachedChildrenOptions, useCachedChildren} from './useCachedChildren';
 import {createPortal} from 'react-dom';
 import {FocusableContext} from '@react-aria-nutrient/interactions';
-import {forwardRefType, Node} from '@react-types/shared';
+import {forwardRefType, Node} from '@react-types-nutrient/shared';
 import {Hidden} from './Hidden';
 import React, {createContext, ForwardedRef, forwardRef, JSX, ReactElement, ReactNode, useCallback, useContext, useMemo, useRef, useState} from 'react';
 import {useIsSSR} from '@react-aria-nutrient/ssr';

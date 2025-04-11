@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Color, ColorWheelProps} from '@react-types/color';
+import {Color, ColorWheelProps} from '@react-types-nutrient/color';
 import {normalizeColor, parseColor} from './Color';
 import {useControlledState} from '@react-stately/utils';
 import {useMemo, useRef, useState} from 'react';

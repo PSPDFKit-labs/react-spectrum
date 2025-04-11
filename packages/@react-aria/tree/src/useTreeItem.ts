@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import {AriaGridListItemOptions, GridListItemAria, useGridListItem} from '@react-aria-nutrient/gridlist';
-import {DOMAttributes, FocusableElement, Node, RefObject} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, Node, RefObject} from '@react-types-nutrient/shared';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {isAndroid, useLabels} from '@react-aria-nutrient/utils';

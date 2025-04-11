@@ -14,7 +14,7 @@
 import {CardBase} from './CardBase';
 import {CardViewContext, useCardViewContext} from './CardViewContext';
 import {classNames, useDOMRef, useStyleProps, useUnwrapDOMRef} from '@react-spectrum/utils';
-import {DOMRef, DOMRefValue, Node} from '@react-types/shared';
+import {DOMRef, DOMRefValue, Node} from '@react-types-nutrient/shared';
 import {GridCollection, useGridState} from '@react-stately/grid';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
@@ -22,7 +22,7 @@ import {mergeProps} from '@react-aria-nutrient/utils';
 import {ProgressCircle} from '@react-spectrum/progress';
 import React, {ReactElement, ReactNode, useCallback, useMemo, useRef} from 'react';
 import {ReusableView} from '@react-stately/virtualizer';
-import {SpectrumCardViewProps} from '@react-types/card';
+import {SpectrumCardViewProps} from '@react-types-nutrient/card';
 import styles from '@adobe/spectrum-css-temp/components/card/vars.css';
 import {useCollator, useLocale, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useGrid, useGridCell, useGridRow} from '@react-aria-nutrient/grid';

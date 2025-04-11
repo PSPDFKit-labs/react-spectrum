@@ -1,6 +1,6 @@
-import {AriaSliderThumbProps} from '@react-types/slider';
+import {AriaSliderThumbProps} from '@react-types-nutrient/slider';
 import {clamp, focusWithoutScrolling, mergeProps, useFormReset, useGlobalListeners} from '@react-aria-nutrient/utils';
-import {DOMAttributes, RefObject} from '@react-types/shared';
+import {DOMAttributes, RefObject} from '@react-types-nutrient/shared';
 import {getSliderThumbId, sliderData} from './utils';
 import React, {ChangeEvent, InputHTMLAttributes, LabelHTMLAttributes, useCallback, useEffect, useRef} from 'react';
 import {SliderState} from '@react-stately/slider';

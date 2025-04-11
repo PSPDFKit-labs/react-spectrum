@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaMeterProps} from '@react-types/meter';
-import {DOMAttributes} from '@react-types/shared';
+import {AriaMeterProps} from '@react-types-nutrient/meter';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {useProgressBar} from '@react-aria-nutrient/progress';
 
 export interface MeterAria {

@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, StyleProps} from '@react-types/shared';
-import {OverlayTriggerProps, Placement, PositionProps} from '@react-types/overlays';
+import {AriaLabelingProps, DOMProps, StyleProps} from '@react-types-nutrient/shared';
+import {OverlayTriggerProps, Placement, PositionProps} from '@react-types-nutrient/overlays';
 import {ReactNode} from 'react';
 
 export interface SpectrumContextualHelpProps extends OverlayTriggerProps, PositionProps, StyleProps, DOMProps, AriaLabelingProps {

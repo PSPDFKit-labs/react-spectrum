@@ -12,7 +12,7 @@
 
 import {Meta} from '@storybook/react';
 import React from 'react';
-import {SpectrumWellProps} from '@react-types/well';
+import {SpectrumWellProps} from '@react-types-nutrient/well';
 import {Well} from '../';
 
 const meta: Meta<SpectrumWellProps> = {

@@ -13,7 +13,7 @@
 import {AriaSliderProps, AriaSliderThumbProps, HoverEvents, mergeProps, Orientation, useFocusRing, useHover, useNumberFormatter, useSlider, useSliderThumb, VisuallyHidden} from '@react-aria-nutrient/react-aria';
 import {ContextValue, Provider, RenderProps, SlotProps, useContextProps, useRenderProps, useSlot, useSlottedContext} from './utils';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
-import {forwardRefType, RefObject} from '@react-types/shared';
+import {forwardRefType, RefObject} from '@react-types-nutrient/shared';
 import {LabelContext} from './Label';
 import React, {createContext, ForwardedRef, forwardRef, HTMLAttributes, OutputHTMLAttributes, useContext, useRef} from 'react';
 import {SliderState, useSliderState} from 'react-stately';

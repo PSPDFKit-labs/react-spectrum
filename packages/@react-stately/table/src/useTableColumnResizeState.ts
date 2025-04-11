@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {ColumnSize} from '@react-types/table';
-import {GridNode} from '@react-types/grid';
-import {Key} from '@react-types/shared';
+import {ColumnSize} from '@react-types-nutrient/table';
+import {GridNode} from '@react-types-nutrient/grid';
+import {Key} from '@react-types-nutrient/shared';
 import {TableColumnLayout} from './TableColumnLayout';
 import {TableState} from './useTableState';
 import {useCallback, useMemo, useState} from 'react';

@@ -13,7 +13,7 @@
 import {act, fireEvent} from '@react-spectrum/test-utils-internal';
 import {Cell, Column, Row, TableBody, TableHeader} from '@react-stately/table';
 import {composeStories} from '@storybook/react';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import React from 'react';
 import {render} from '@testing-library/react';
 import {Table as ResizingTable} from '../stories/example-resizing';

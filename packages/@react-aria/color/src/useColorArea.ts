@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaColorAreaProps, ColorChannel} from '@react-types/color';
+import {AriaColorAreaProps, ColorChannel} from '@react-types-nutrient/color';
 import {ColorAreaState} from '@react-stately/color';
-import {DOMAttributes, RefObject} from '@react-types/shared';
+import {DOMAttributes, RefObject} from '@react-types-nutrient/shared';
 import {focusWithoutScrolling, isAndroid, isIOS, mergeProps, useFormReset, useGlobalListeners, useLabels} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

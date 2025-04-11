@@ -7,7 +7,7 @@ import File from '@spectrum-icons/illustrations/File';
 import {Flex} from '@react-spectrum/layout';
 import Folder from '@spectrum-icons/illustrations/Folder';
 import {Item, ListView} from '../';
-import {ItemDropTarget, Key} from '@react-types/shared';
+import {ItemDropTarget, Key} from '@react-types-nutrient/shared';
 import {items} from './ListView.stories';
 import React from 'react';
 import {Text} from '@react-spectrum/text';

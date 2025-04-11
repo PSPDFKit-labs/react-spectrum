@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMProps, ItemElement, ItemRenderer, Key, StyleProps} from '@react-types/shared';
+import {DOMProps, ItemElement, ItemRenderer, Key, StyleProps} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export interface ActionBarProps<T> {

@@ -19,7 +19,7 @@ import {Flex} from '@react-spectrum/layout';
 import {Link} from '@react-spectrum/link';
 import React, {useState} from 'react';
 import SaveTo from '@spectrum-icons/workflow/SaveTo';
-import {SpectrumTooltipTriggerProps} from '@react-types/tooltip';
+import {SpectrumTooltipTriggerProps} from '@react-types-nutrient/tooltip';
 import {Tooltip, TooltipTrigger} from '../src';
 
 interface TooltipTooltipTriggerProps {

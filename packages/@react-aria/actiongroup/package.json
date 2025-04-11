@@ -27,8 +27,8 @@
     "@react-aria-nutrient/interactions": "^3.24.1",
     "@react-aria-nutrient/utils": "^3.28.1",
     "@react-stately/list": "^3.12.0",
-    "@react-types/actiongroup": "^3.4.15",
-    "@react-types/shared": "^3.28.0",
+    "@react-types-nutrient/actiongroup": "^3.4.15",
+    "@react-types-nutrient/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"
   },
   "peerDependencies": {

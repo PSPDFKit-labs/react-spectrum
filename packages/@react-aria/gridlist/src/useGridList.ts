@@ -22,7 +22,7 @@ import {
   LayoutDelegate,
   MultipleSelection,
   RefObject
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {listMap} from './utils';
 import {ListState} from '@react-stately/list';

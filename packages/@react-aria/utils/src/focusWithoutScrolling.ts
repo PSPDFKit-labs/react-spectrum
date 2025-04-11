@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {FocusableElement} from '@react-types/shared';
+import {FocusableElement} from '@react-types-nutrient/shared';
 
 // This is a polyfill for element.focus({preventScroll: true});
 // Currently necessary for Safari and old Edge:

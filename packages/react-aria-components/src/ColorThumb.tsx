@@ -1,6 +1,6 @@
 import {Color} from 'react-stately';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
-import {HoverEvents, RefObject} from '@react-types/shared';
+import {HoverEvents, RefObject} from '@react-types-nutrient/shared';
 import {mergeProps, useFocusRing, useHover} from '@react-aria-nutrient/react-aria';
 import React, {createContext, ForwardedRef, forwardRef, HTMLAttributes, InputHTMLAttributes, useContext} from 'react';
 import {RenderProps, useRenderProps} from './utils';

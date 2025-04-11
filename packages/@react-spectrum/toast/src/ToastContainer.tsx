@@ -12,7 +12,7 @@
 
 import {AriaToastRegionProps} from '@react-aria-nutrient/toast';
 import {classNames} from '@react-spectrum/utils';
-import {DOMProps} from '@react-types/shared';
+import {DOMProps} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {flushSync} from 'react-dom';
 import React, {ReactElement, useEffect, useMemo, useRef} from 'react';

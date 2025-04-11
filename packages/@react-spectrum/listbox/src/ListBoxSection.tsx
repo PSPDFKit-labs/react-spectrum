@@ -14,7 +14,7 @@ import {classNames} from '@react-spectrum/utils';
 import {LayoutInfo} from '@react-stately/virtualizer';
 import {layoutInfoToStyle, useVirtualizerItem, VirtualizerItemOptions} from '@react-aria-nutrient/virtualizer';
 import {ListBoxContext} from './ListBoxContext';
-import {Node} from '@react-types/shared';
+import {Node} from '@react-types-nutrient/shared';
 import React, {Fragment, ReactNode, useContext, useRef} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
 import {useListBoxSection} from '@react-aria-nutrient/listbox';

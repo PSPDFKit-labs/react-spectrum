@@ -14,7 +14,7 @@ import {ButtonGroupContext} from './ButtonGroup';
 import {CloseButton} from './CloseButton';
 import {composeRenderProps, OverlayTriggerStateContext, Provider, Dialog as RACDialog, DialogProps as RACDialogProps} from 'react-aria-components';
 import {ContentContext, FooterContext, HeaderContext, HeadingContext} from './Content';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {forwardRef} from 'react';
 import {ImageContext} from './Image';
 import {Modal} from './Modal';

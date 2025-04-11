@@ -11,8 +11,8 @@
  */
 
 import {announce, clearAnnouncer} from '@react-aria-nutrient/live-announcer';
-import {AriaButtonProps} from '@react-types/button';
-import {DOMAttributes, InputBase, RangeInputBase, Validation, ValueBase} from '@react-types/shared';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {DOMAttributes, InputBase, RangeInputBase, Validation, ValueBase} from '@react-types-nutrient/shared';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {useEffect, useRef} from 'react';

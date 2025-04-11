@@ -1,14 +1,14 @@
 
 import {classNames} from '@react-spectrum/utils';
-import {ColumnSize} from '@react-types/table';
+import {ColumnSize} from '@react-types-nutrient/table';
 import eCursor from 'bundle-text:./cursors/Cur_MoveToRight_9_9.svg';
 import ewCursor from 'bundle-text:./cursors/Cur_MoveHorizontal_9_9.svg';
 import {FocusRing} from '@react-aria-nutrient/focus';
-import {GridNode} from '@react-types/grid';
+import {GridNode} from '@react-types-nutrient/grid';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {isWebKit, mergeProps, useObjectRef} from '@react-aria-nutrient/utils';
-import {Key, RefObject} from '@react-types/shared';
+import {Key, RefObject} from '@react-types-nutrient/shared';
 import React, {createContext, ForwardedRef, useContext, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import styles from '@adobe/spectrum-css-temp/components/table/vars.css';

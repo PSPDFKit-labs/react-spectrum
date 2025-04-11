@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps} from '@react-types/shared';
+import {AriaLabelingProps} from '@react-types-nutrient/shared';
 import {useLayoutEffect} from './useLayoutEffect';
 import {useState} from 'react';
 

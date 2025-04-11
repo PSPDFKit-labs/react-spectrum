@@ -12,5 +12,5 @@
 
 export {useRadioGroupState} from './useRadioGroupState';
 
-export type {RadioGroupProps} from '@react-types/radio';
+export type {RadioGroupProps} from '@react-types-nutrient/radio';
 export type {RadioGroupState} from './useRadioGroupState';

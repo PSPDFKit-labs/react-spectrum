@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaDateFieldProps as AriaDateFieldPropsBase, AriaTimeFieldProps, DateValue, TimeValue} from '@react-types/datepicker';
+import {AriaDateFieldProps as AriaDateFieldPropsBase, AriaTimeFieldProps, DateValue, TimeValue} from '@react-types-nutrient/datepicker';
 import {createFocusManager, FocusManager} from '@react-aria-nutrient/focus';
 import {DateFieldState, TimeFieldState} from '@react-stately/datepicker';
-import {DOMAttributes, GroupDOMAttributes, KeyboardEvent, RefObject, ValidationResult} from '@react-types/shared';
+import {DOMAttributes, GroupDOMAttributes, KeyboardEvent, RefObject, ValidationResult} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useDescription, useFormReset} from '@react-aria-nutrient/utils';
 import {InputHTMLAttributes, useEffect, useMemo, useRef} from 'react';
 // @ts-ignore

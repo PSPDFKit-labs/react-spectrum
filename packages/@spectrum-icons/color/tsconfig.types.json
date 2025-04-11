@@ -11,7 +11,7 @@
   },
   "include": [
     "src",
-    "../../@react-types/shared/src/css.d.ts",
+    "../../@react-types-nutrient/shared/src/css.d.ts",
   ],
   "exclude": ["scripts", "node_modules", "stories", "chromatic"]
 }

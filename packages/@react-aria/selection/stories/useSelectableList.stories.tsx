@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {CollectionBase, Node} from '@react-types/shared';
+import {CollectionBase, Node} from '@react-types-nutrient/shared';
 import {Item} from '@react-spectrum/actiongroup';
 import {List} from './List';
 import {ListState, useListState} from '@react-stately/list';

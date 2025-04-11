@@ -1,4 +1,4 @@
-import {DOMAttributes} from '@react-types/shared';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {isFocusVisible, useFocus, useFocusVisibleListener, useFocusWithin} from '@react-aria-nutrient/interactions';
 import {useCallback, useRef, useState} from 'react';
 

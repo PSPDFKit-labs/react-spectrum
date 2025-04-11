@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, DOMRef, DOMRefValue} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {centerBaseline} from './CenterBaseline';
 import {centerPadding, getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};
 import {ContextValue, Provider, TextContext as RACTextContext, SlotProps} from 'react-aria-components';

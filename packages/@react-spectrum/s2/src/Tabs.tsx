@@ -25,7 +25,7 @@ import {
   TabListStateContext
 } from 'react-aria-components';
 import {centerBaseline} from './CenterBaseline';
-import {Collection, DOMRef, DOMRefValue, Key, Node, Orientation, RefObject} from '@react-types/shared';
+import {Collection, DOMRef, DOMRefValue, Key, Node, Orientation, RefObject} from '@react-types-nutrient/shared';
 import {CollectionBuilder} from '@react-aria-nutrient/collections';
 import {createContext, forwardRef, ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react';
 import {focusRing, size, style} from '../style' with {type: 'macro'};

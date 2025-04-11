@@ -25,7 +25,7 @@ import {
 } from 'react-aria-components';
 import {AriaBreadcrumbItemProps, useLocale} from '@react-aria-nutrient/react-aria';
 import ChevronIcon from '../ui-icons/Chevron';
-import {Collection, DOMRef, DOMRefValue, LinkDOMProps, Node} from '@react-types/shared';
+import {Collection, DOMRef, DOMRefValue, LinkDOMProps, Node} from '@react-types-nutrient/shared';
 import {createContext, forwardRef, Fragment, ReactNode, RefObject, useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react';
 import {focusRing, size, style} from '../style' with { type: 'macro' };
 import FolderIcon from '../s2wf-icons/S2_Icon_FolderBreadcrumb_20_N.svg';

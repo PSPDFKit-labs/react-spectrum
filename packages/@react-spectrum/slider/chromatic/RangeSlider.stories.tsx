@@ -16,7 +16,7 @@ import {Heading} from '@react-spectrum/text';
 import {Meta} from '@storybook/react';
 import {RangeSlider} from '../';
 import React from 'react';
-import {SpectrumRangeSliderProps} from '@react-types/slider';
+import {SpectrumRangeSliderProps} from '@react-types-nutrient/slider';
 
 const meta: Meta<SpectrumRangeSliderProps> = {
   title: 'RangeSlider',

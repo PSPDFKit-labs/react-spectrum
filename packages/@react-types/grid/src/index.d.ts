@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, Key, Node} from '@react-types/shared';
+import {Collection, Key, Node} from '@react-types-nutrient/shared';
 
 export interface GridCollection<T> extends Collection<GridNode<T>> {
   /** The number of columns in the grid. */

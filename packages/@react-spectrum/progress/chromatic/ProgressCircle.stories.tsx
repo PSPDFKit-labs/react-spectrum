@@ -13,7 +13,7 @@
 import {Meta} from '@storybook/react';
 import {ProgressCircle} from '../';
 import React, {CSSProperties} from 'react';
-import {SpectrumProgressCircleProps} from '@react-types/progress';
+import {SpectrumProgressCircleProps} from '@react-types-nutrient/progress';
 
 const meta: Meta<SpectrumProgressCircleProps> = {
   title: 'ProgressCircle',

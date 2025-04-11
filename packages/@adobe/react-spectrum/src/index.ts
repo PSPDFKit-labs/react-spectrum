@@ -127,5 +127,5 @@ export type {VisuallyHiddenAria, VisuallyHiddenProps} from '@react-aria-nutrient
 export type {DateFormatter, DateFormatterOptions, Filter, FormatMessage, Locale, LocalizedStrings} from '@react-aria-nutrient/i18n';
 export type {SSRProviderProps} from '@react-aria-nutrient/ssr';
 export type {DirectoryDropItem, DragAndDropHooks, DragAndDropOptions, DraggableCollectionEndEvent, DraggableCollectionMoveEvent, DraggableCollectionStartEvent, DragPreviewRenderer, DragTypes, DropItem, DropOperation, DroppableCollectionDropEvent, DroppableCollectionEnterEvent, DroppableCollectionExitEvent, DroppableCollectionInsertDropEvent, DroppableCollectionMoveEvent, DroppableCollectionOnItemDropEvent, DroppableCollectionReorderEvent, DroppableCollectionRootDropEvent, DropPosition, DropTarget, FileDropItem, ItemDropTarget, RootDropTarget, TextDropItem} from '@react-spectrum/dnd';
-export type {Key, Selection, ItemProps, SectionProps, RouterConfig} from '@react-types/shared';
+export type {Key, Selection, ItemProps, SectionProps, RouterConfig} from '@react-types-nutrient/shared';
 export type {SpectrumAccordionProps, SpectrumDisclosureProps, SpectrumDisclosurePanelProps, SpectrumDisclosureTitleProps} from '@react-spectrum/accordion';

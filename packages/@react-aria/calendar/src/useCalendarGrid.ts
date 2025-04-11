@@ -12,7 +12,7 @@
 
 import {CalendarDate, getWeeksInMonth, startOfWeek, today} from '@internationalized/date';
 import {CalendarState, RangeCalendarState} from '@react-stately/calendar';
-import {DOMAttributes} from '@react-types/shared';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {hookData, useVisibleRangeDescription} from './utils';
 import {KeyboardEvent, useMemo} from 'react';
 import {mergeProps, useLabels} from '@react-aria-nutrient/utils';

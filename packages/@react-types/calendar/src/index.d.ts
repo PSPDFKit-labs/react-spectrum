@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, RangeValue, StyleProps, ValidationState, ValueBase} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, RangeValue, StyleProps, ValidationState, ValueBase} from '@react-types-nutrient/shared';
 import type {CalendarDate, CalendarDateTime, CalendarIdentifier, Calendar as ICalendar, ZonedDateTime} from '@internationalized/date';
 import {ReactNode} from 'react';
 

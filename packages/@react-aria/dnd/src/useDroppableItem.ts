@@ -12,7 +12,7 @@
 
 import * as DragManager from './DragManager';
 import {DroppableCollectionState} from '@react-stately/dnd';
-import {DropTarget, RefObject} from '@react-types/shared';
+import {DropTarget, RefObject} from '@react-types-nutrient/shared';
 import {getDroppableCollectionRef, getTypes, globalDndState, isInternalDropOperation} from './utils';
 import {HTMLAttributes, useEffect} from 'react';
 import {useVirtualDrop} from './useVirtualDrop';

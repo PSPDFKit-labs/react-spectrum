@@ -18,11 +18,11 @@ import {ButtonGroup} from '@react-spectrum/buttongroup';
 import Calendar from '@spectrum-icons/workflow/Calendar';
 import Dashboard from '@spectrum-icons/workflow/Dashboard';
 import {Item, TabList, TabPanels, Tabs} from '..';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {Picker} from '@react-spectrum/picker';
 import React, {ReactNode, useState} from 'react';
 import {RouterProvider} from '@react-aria-nutrient/utils';
-import {SpectrumTabsProps} from '@react-types/tabs';
+import {SpectrumTabsProps} from '@react-types-nutrient/tabs';
 import {TextField} from '@react-spectrum/textfield';
 
 export default {

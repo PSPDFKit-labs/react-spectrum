@@ -13,7 +13,7 @@ import {
   StyleProps,
   ValidationState,
   ValueBase
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export interface SliderProps<T = number | number[]> extends RangeInputBase<number>, ValueBase<T>, LabelableProps {

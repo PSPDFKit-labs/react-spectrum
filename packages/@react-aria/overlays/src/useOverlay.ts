@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes, RefObject} from '@react-types/shared';
+import {DOMAttributes, RefObject} from '@react-types-nutrient/shared';
 import {isElementInChildOfActiveScope} from '@react-aria-nutrient/focus';
 import {useEffect} from 'react';
 import {useFocusWithin, useInteractOutside} from '@react-aria-nutrient/interactions';

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps} from '@react-types-nutrient/shared';
 import {ComponentType, Context, createContext, FunctionComponent, ReactNode, SVGProps, useRef} from 'react';
 import {ContextValue, SlotProps} from 'react-aria-components';
 import {SkeletonWrapper, useSkeletonIcon} from './Skeleton';

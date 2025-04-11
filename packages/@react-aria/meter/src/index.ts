@@ -10,5 +10,5 @@
  * governing permissions and limitations under the License.
  */
 export {useMeter} from './useMeter';
-export type {AriaMeterProps} from '@react-types/meter';
+export type {AriaMeterProps} from '@react-types-nutrient/meter';
 export type {MeterAria} from './useMeter';

@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaColorSliderProps} from '@react-types/color';
+import {AriaColorSliderProps} from '@react-types-nutrient/color';
 import {ColorSliderState} from '@react-stately/color';
-import {DOMAttributes, RefObject} from '@react-types/shared';
+import {DOMAttributes, RefObject} from '@react-types-nutrient/shared';
 import {InputHTMLAttributes} from 'react';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import {useLocale} from '@react-aria-nutrient/i18n';

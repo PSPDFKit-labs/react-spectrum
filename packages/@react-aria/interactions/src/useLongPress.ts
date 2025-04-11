@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes, FocusableElement, LongPressEvent} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, LongPressEvent} from '@react-types-nutrient/shared';
 import {focusWithoutScrolling, getOwnerDocument, mergeProps, useDescription, useGlobalListeners} from '@react-aria-nutrient/utils';
 import {usePress} from './usePress';
 import {useRef} from 'react';

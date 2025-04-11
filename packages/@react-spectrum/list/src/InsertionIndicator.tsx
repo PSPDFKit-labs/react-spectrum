@@ -1,5 +1,5 @@
 import {classNames} from '@react-spectrum/utils';
-import {ItemDropTarget} from '@react-types/shared';
+import {ItemDropTarget} from '@react-types-nutrient/shared';
 import listStyles from './styles.css';
 import {ListViewContext} from './ListView';
 import React, {ReactNode, useContext, useRef} from 'react';

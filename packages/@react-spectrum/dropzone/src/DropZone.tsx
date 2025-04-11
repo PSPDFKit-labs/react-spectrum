@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, DOMRef, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, DOMRef, StyleProps} from '@react-types-nutrient/shared';
 import {classNames, SlotProvider, useDOMRef, useStyleProps} from '@react-spectrum/utils';
 import {DropZoneProps, HeadingContext, Provider, DropZone as RACDropZone} from 'react-aria-components';
 // @ts-ignore

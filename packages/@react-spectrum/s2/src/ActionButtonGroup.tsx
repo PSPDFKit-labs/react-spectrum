@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps} from '@react-types/shared';
+import {AriaLabelingProps} from '@react-types-nutrient/shared';
 import {ContextValue, SlotProps, Toolbar} from 'react-aria-components';
 import {createContext, ForwardedRef, forwardRef, ReactNode} from 'react';
 import {getAllowedOverrides, StylesPropWithHeight, UnsafeStyles} from './style-utils' with {type: 'macro'};

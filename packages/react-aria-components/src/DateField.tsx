@@ -16,7 +16,7 @@ import {DateFieldState, DateSegmentType, DateSegment as IDateSegment, TimeFieldS
 import {FieldErrorContext} from './FieldError';
 import {filterDOMProps, useObjectRef} from '@react-aria-nutrient/utils';
 import {FormContext} from './Form';
-import {forwardRefType} from '@react-types/shared';
+import {forwardRefType} from '@react-types-nutrient/shared';
 import {Group, GroupContext} from './Group';
 import {Input, InputContext} from './Input';
 import {LabelContext} from './Label';

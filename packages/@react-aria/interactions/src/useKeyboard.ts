@@ -11,7 +11,7 @@
  */
 
 import {createEventHandler} from './createEventHandler';
-import {DOMAttributes, KeyboardEvents} from '@react-types/shared';
+import {DOMAttributes, KeyboardEvents} from '@react-types-nutrient/shared';
 
 export interface KeyboardProps extends KeyboardEvents {
   /** Whether the keyboard events should be disabled. */

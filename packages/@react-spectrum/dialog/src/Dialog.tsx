@@ -22,13 +22,13 @@ import {
 } from '@react-spectrum/utils';
 import CrossLarge from '@spectrum-icons/ui/CrossLarge';
 import {DialogContext, DialogContextValue} from './context';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {Grid} from '@react-spectrum/layout';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {useContext, useMemo, useRef} from 'react';
-import {SpectrumDialogProps} from '@react-types/dialog';
+import {SpectrumDialogProps} from '@react-types-nutrient/dialog';
 import styles from '@adobe/spectrum-css-temp/components/dialog/vars.css';
 import {useDialog} from '@react-aria-nutrient/dialog';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';

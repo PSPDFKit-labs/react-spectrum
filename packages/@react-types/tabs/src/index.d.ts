@@ -18,7 +18,7 @@ import {
   Orientation,
   SingleSelection,
   StyleProps
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export interface AriaTabProps extends AriaLabelingProps {

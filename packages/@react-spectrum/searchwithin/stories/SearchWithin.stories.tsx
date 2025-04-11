@@ -17,9 +17,9 @@ import {Item, Picker} from '@react-spectrum/picker';
 import React, {useState} from 'react';
 import {SearchField} from '@react-spectrum/searchfield';
 import {SearchWithin} from '../';
-import {SpectrumPickerProps} from '@react-types/select';
-import {SpectrumSearchFieldProps} from '@react-types/searchfield';
-import {SpectrumSearchWithinProps} from '@react-types/searchwithin';
+import {SpectrumPickerProps} from '@react-types-nutrient/select';
+import {SpectrumSearchFieldProps} from '@react-types-nutrient/searchfield';
+import {SpectrumSearchWithinProps} from '@react-types-nutrient/searchwithin';
 
 export default {
   title: 'SearchWithin'

@@ -12,7 +12,7 @@
 
 import {AriaLinkOptions, HoverEvents, mergeProps, useFocusRing, useHover, useLink} from '@react-aria-nutrient/react-aria';
 import {ContextValue, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
-import {forwardRefType} from '@react-types/shared';
+import {forwardRefType} from '@react-types-nutrient/shared';
 import React, {createContext, ElementType, ForwardedRef, forwardRef} from 'react';
 
 export interface LinkProps extends Omit<AriaLinkOptions, 'elementType'>, HoverEvents, RenderProps<LinkRenderProps>, SlotProps {}

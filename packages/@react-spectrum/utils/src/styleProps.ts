@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {BackgroundColorValue, BorderColorValue, BorderRadiusValue, BorderSizeValue, ColorValue, ColorVersion, DimensionValue, Direction, Responsive, ResponsiveProp, StyleProps, ViewStyleProps} from '@react-types/shared';
+import {BackgroundColorValue, BorderColorValue, BorderRadiusValue, BorderSizeValue, ColorValue, ColorVersion, DimensionValue, Direction, Responsive, ResponsiveProp, StyleProps, ViewStyleProps} from '@react-types-nutrient/shared';
 import {CSSProperties, HTMLAttributes} from 'react';
 import {useBreakpoint} from './BreakpointProvider';
 import {useLocale} from '@react-aria-nutrient/i18n';

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {TooltipTriggerProps} from '@react-types/tooltip';
+import {TooltipTriggerProps} from '@react-types-nutrient/tooltip';
 import {useEffect, useMemo, useRef} from 'react';
 import {useOverlayTriggerState} from '@react-stately/overlays';
 

@@ -11,9 +11,9 @@
  */
 
 import {AriaColorSwatchProps, useColorSwatch} from '@react-aria-nutrient/color';
-import {Color} from '@react-types/color';
+import {Color} from '@react-types-nutrient/color';
 import {ColorSwatchContext, useContextProps} from 'react-aria-components';
-import {DOMRef, StyleProps} from '@react-types/shared';
+import {DOMRef, StyleProps} from '@react-types-nutrient/shared';
 import React, {createContext, forwardRef, JSX, ReactElement, useContext} from 'react';
 import {style} from '@react-spectrum/style-macro-s1' with {type: 'macro'};
 import {useDOMRef, useStyleProps} from '@react-spectrum/utils';

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, FocusableDOMProps, FocusableProps, InputBase, InputDOMProps, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, FocusableDOMProps, FocusableProps, InputBase, InputDOMProps, StyleProps} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 interface SwitchBase extends InputBase, FocusableProps {

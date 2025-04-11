@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, AsyncLoadable, CollectionBase, DOMProps, FocusEvents, FocusStrategy, Key, MultipleSelection, SelectionBehavior, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, AsyncLoadable, CollectionBase, DOMProps, FocusEvents, FocusStrategy, Key, MultipleSelection, SelectionBehavior, StyleProps} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export interface ListBoxProps<T> extends CollectionBase<T>, MultipleSelection, FocusEvents {

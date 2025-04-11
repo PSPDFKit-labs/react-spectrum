@@ -12,7 +12,7 @@
 
 import {AriaStepListProps, useStepList} from '@react-aria-nutrient/steplist';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef, Orientation, StyleProps} from '@react-types/shared';
+import {DOMRef, Orientation, StyleProps} from '@react-types-nutrient/shared';
 import React, {ReactElement} from 'react';
 import {StepListContext} from './StepListContext';
 import {StepListItem} from './StepListItem';

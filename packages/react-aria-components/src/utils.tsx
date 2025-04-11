@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, RefObject,  DOMProps as SharedDOMProps} from '@react-types/shared';
+import {AriaLabelingProps, RefObject,  DOMProps as SharedDOMProps} from '@react-types-nutrient/shared';
 import {mergeProps, mergeRefs, useLayoutEffect, useObjectRef} from '@react-aria-nutrient/utils';
 import React, {Context, CSSProperties, ForwardedRef, JSX, ReactNode, RefCallback, UIEvent, useCallback, useContext, useMemo, useRef, useState} from 'react';
 

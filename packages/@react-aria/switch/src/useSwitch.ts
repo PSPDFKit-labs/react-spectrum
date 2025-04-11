@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaSwitchProps} from '@react-types/switch';
+import {AriaSwitchProps} from '@react-types-nutrient/switch';
 import {InputHTMLAttributes, LabelHTMLAttributes} from 'react';
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {ToggleState} from '@react-stately/toggle';
 import {useToggle} from '@react-aria-nutrient/toggle';
 

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DropTarget, DropTargetDelegate, ItemDropTarget, Key, Node} from '@react-types/shared';
+import {DropTarget, DropTargetDelegate, ItemDropTarget, Key, Node} from '@react-types-nutrient/shared';
 import {InvalidationContext, Layout, LayoutInfo, Rect, Size} from '@react-stately/virtualizer';
 
 export interface GridLayoutOptions {

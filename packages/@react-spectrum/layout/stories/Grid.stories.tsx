@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {BackgroundColorValue, Responsive as TResponsive} from '@react-types/shared';
+import {BackgroundColorValue, Responsive as TResponsive} from '@react-types-nutrient/shared';
 import {Grid, repeat} from '@react-spectrum/layout';
 import React from 'react';
 import {View} from '@react-spectrum/view';

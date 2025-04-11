@@ -20,7 +20,7 @@ import {FocusRing} from '@react-aria-nutrient/focus';
 import Folder from '@spectrum-icons/workflow/Folder';
 import {GridCollection, useGridState} from '@react-stately/grid';
 import {Item} from '@react-stately/collections';
-import {ItemDropTarget, Key} from '@react-types/shared';
+import {ItemDropTarget, Key} from '@react-types-nutrient/shared';
 import {ListDropTargetDelegate} from '@react-aria-nutrient/dnd';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
 import React, {useRef} from 'react';

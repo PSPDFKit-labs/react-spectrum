@@ -11,10 +11,10 @@
  */
 
 import {FormValidationState, useFormValidationState} from '@react-stately/form';
-import {RadioGroupProps} from '@react-types/radio';
+import {RadioGroupProps} from '@react-types-nutrient/radio';
 import {useControlledState} from '@react-stately/utils';
 import {useMemo, useState} from 'react';
-import {ValidationState} from '@react-types/shared';
+import {ValidationState} from '@react-types-nutrient/shared';
 
 export interface RadioGroupState extends FormValidationState {
   /**

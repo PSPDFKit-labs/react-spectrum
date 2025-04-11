@@ -12,7 +12,7 @@
 
 import {clamp, snapValueToStep, useControlledState} from '@react-stately/utils';
 import {FormValidationState, useFormValidationState} from '@react-stately/form';
-import {NumberFieldProps} from '@react-types/numberfield';
+import {NumberFieldProps} from '@react-types-nutrient/numberfield';
 import {NumberFormatter, NumberParser} from '@internationalized/number';
 import {useCallback, useMemo, useState} from 'react';
 

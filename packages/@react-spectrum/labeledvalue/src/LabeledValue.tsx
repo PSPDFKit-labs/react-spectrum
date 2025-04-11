@@ -12,7 +12,7 @@
 
 import {CalendarDate, CalendarDateTime, getLocalTimeZone, Time, toCalendarDateTime, today, ZonedDateTime} from '@internationalized/date';
 import {classNames, useDOMRef} from '@react-spectrum/utils';
-import type {DOMProps, DOMRef, RangeValue, SpectrumLabelableProps, StyleProps} from '@react-types/shared';
+import type {DOMProps, DOMRef, RangeValue, SpectrumLabelableProps, StyleProps} from '@react-types-nutrient/shared';
 import {Field} from '@react-spectrum/label';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import labelStyles from '@adobe/spectrum-css-temp/components/fieldlabel/vars.css';

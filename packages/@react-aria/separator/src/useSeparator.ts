@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMAttributes, DOMProps, Orientation} from '@react-types/shared';
+import {AriaLabelingProps, DOMAttributes, DOMProps, Orientation} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 
 export interface SeparatorProps extends DOMProps, AriaLabelingProps {

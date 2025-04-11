@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
-import {DOMProps, RefObject} from '@react-types/shared';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {DOMProps, RefObject} from '@react-types-nutrient/shared';
 import {onCloseMap} from './useCloseOnScroll';
 import {OverlayTriggerState} from '@react-stately/overlays';
 import {useEffect} from 'react';

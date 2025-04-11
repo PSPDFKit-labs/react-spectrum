@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, CollectionBase, DOMProps, Expandable, MultipleSelection, Node, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, CollectionBase, DOMProps, Expandable, MultipleSelection, Node, StyleProps} from '@react-types-nutrient/shared';
 import {HTMLAttributes, ReactNode} from 'react';
 
 export interface SideNavProps<T> extends CollectionBase<T>, Expandable, MultipleSelection {

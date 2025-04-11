@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaTextFieldProps} from '@react-types/textfield';
-import {DOMAttributes, ValidationResult} from '@react-types/shared';
+import {AriaTextFieldProps} from '@react-types-nutrient/textfield';
+import {DOMAttributes, ValidationResult} from '@react-types-nutrient/shared';
 import {filterDOMProps, getOwnerWindow, mergeProps, useFormReset} from '@react-aria-nutrient/utils';
 import React, {
   ChangeEvent,

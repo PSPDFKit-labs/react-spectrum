@@ -11,12 +11,12 @@
  */
 
 import {classNames} from '@react-spectrum/utils';
-import {ColorChannel, SpectrumColorFieldProps} from '@react-types/color';
+import {ColorChannel, SpectrumColorFieldProps} from '@react-types-nutrient/color';
 import {ColorFieldContext, useContextProps} from 'react-aria-components';
 import React, {Ref, useRef} from 'react';
 import styles from './colorfield.css';
 import {TextFieldBase} from '@react-spectrum/textfield';
-import {TextFieldRef} from '@react-types/textfield';
+import {TextFieldRef} from '@react-types-nutrient/textfield';
 import {useColorChannelField, useColorField} from '@react-aria-nutrient/color';
 import {useColorChannelFieldState, useColorFieldState} from '@react-stately/color';
 import {useFormProps} from '@react-spectrum/form';

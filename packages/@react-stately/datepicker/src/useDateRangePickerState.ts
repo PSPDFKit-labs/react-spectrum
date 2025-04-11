@@ -12,11 +12,11 @@
 
 
 import {DateFormatter, toCalendarDate, toCalendarDateTime} from '@internationalized/date';
-import {DateRange, DateRangePickerProps, DateValue, Granularity, MappedDateValue, TimeValue} from '@react-types/datepicker';
+import {DateRange, DateRangePickerProps, DateValue, Granularity, MappedDateValue, TimeValue} from '@react-types-nutrient/datepicker';
 import {FieldOptions, FormatterOptions, getFormatOptions, getPlaceholderTime, getRangeValidationResult, useDefaultProps} from './utils';
 import {FormValidationState, useFormValidationState} from '@react-stately/form';
 import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately/overlays';
-import {RangeValue, ValidationState} from '@react-types/shared';
+import {RangeValue, ValidationState} from '@react-types-nutrient/shared';
 import {useControlledState} from '@react-stately/utils';
 import {useMemo, useState} from 'react';
 

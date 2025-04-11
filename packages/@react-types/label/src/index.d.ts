@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Alignment, DOMProps, LabelPosition, NecessityIndicator, SpectrumFieldValidation, SpectrumHelpTextProps, StyleProps, Validation, ValidationResult} from '@react-types/shared';
+import {Alignment, DOMProps, LabelPosition, NecessityIndicator, SpectrumFieldValidation, SpectrumHelpTextProps, StyleProps, Validation, ValidationResult} from '@react-types-nutrient/shared';
 import {ElementType, HTMLAttributes, LabelHTMLAttributes, ReactElement, ReactNode} from 'react';
 
 export interface LabelProps {

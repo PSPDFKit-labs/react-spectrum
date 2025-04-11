@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, ItemProps, Key, LinkDOMProps, StyleProps} from '@react-types/shared';
-import {AriaLinkProps} from '@react-types/link';
+import {AriaLabelingProps, DOMProps, ItemProps, Key, LinkDOMProps, StyleProps} from '@react-types-nutrient/shared';
+import {AriaLinkProps} from '@react-types-nutrient/link';
 import {ReactElement, ReactNode} from 'react';
 
 export interface BreadcrumbItemProps extends AriaLinkProps, LinkDOMProps {

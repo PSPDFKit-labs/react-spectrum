@@ -11,7 +11,7 @@
  */
 
 import AlertMedium from '@spectrum-icons/ui/AlertMedium';
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import buttonStyles from '@adobe/spectrum-css-temp/components/button/vars.css';
 import CheckmarkMedium from '@spectrum-icons/ui/CheckmarkMedium';
 import ChevronDownMedium from '@spectrum-icons/ui/ChevronDownMedium';
@@ -21,7 +21,7 @@ import {ComboBoxState, useComboBoxState} from '@react-stately/combobox';
 import comboboxStyles from './combobox.css';
 import {DismissButton, useOverlayTrigger} from '@react-aria-nutrient/overlays';
 import {Field} from '@react-spectrum/label';
-import {FocusableRef, FocusableRefValue, ValidationState} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue, ValidationState} from '@react-types-nutrient/shared';
 import {FocusRing, FocusScope} from '@react-aria-nutrient/focus';
 import {focusSafely, setInteractionModality, useHover} from '@react-aria-nutrient/interactions';
 // @ts-ignore
@@ -32,7 +32,7 @@ import {mergeProps, useFormReset, useId, useObjectRef} from '@react-aria-nutrien
 import {ProgressCircle} from '@react-spectrum/progress';
 import React, {ForwardedRef, HTMLAttributes, InputHTMLAttributes, ReactElement, ReactNode, useCallback, useEffect, useRef, useState} from 'react';
 import searchStyles from '@adobe/spectrum-css-temp/components/search/vars.css';
-import {SpectrumComboBoxProps} from '@react-types/combobox';
+import {SpectrumComboBoxProps} from '@react-types-nutrient/combobox';
 import styles from '@adobe/spectrum-css-temp/components/inputgroup/vars.css';
 import {TextFieldBase} from '@react-spectrum/textfield';
 import textfieldStyles from '@adobe/spectrum-css-temp/components/textfield/vars.css';

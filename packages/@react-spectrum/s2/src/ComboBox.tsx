@@ -48,14 +48,14 @@ import {FieldErrorIcon, FieldGroup, FieldLabel, HelpText, Input} from './Field';
 import {FormContext, useFormProps} from './Form';
 import {forwardRefType} from './types';
 import {HeaderContext, HeadingContext, Text, TextContext} from './Content';
-import {HelpTextProps, SpectrumLabelableProps} from '@react-types/shared';
+import {HelpTextProps, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {IconContext} from './Icon';
 import {menu} from './Picker';
 import {mergeRefs, useResizeObserver} from '@react-aria-nutrient/utils';
 import {Placement} from '@react-aria-nutrient/react-aria';
 import {PopoverBase} from './Popover';
 import {pressScale} from './pressScale';
-import {TextFieldRef} from '@react-types/textfield';
+import {TextFieldRef} from '@react-types-nutrient/textfield';
 import {useSpectrumContextProps} from './useSpectrumContextProps';
 
 

@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaMenuProps} from '@react-types/menu';
-import {DOMAttributes, KeyboardDelegate, KeyboardEvents, RefObject} from '@react-types/shared';
+import {AriaMenuProps} from '@react-types-nutrient/menu';
+import {DOMAttributes, KeyboardDelegate, KeyboardEvents, RefObject} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {menuData} from './utils';
 import {TreeState} from '@react-stately/tree';

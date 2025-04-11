@@ -11,7 +11,7 @@
  */
 
 import {ActionButton, ActionButtonProps} from './ActionButton';
-import {AriaLabelingProps, DOMProps, FocusableRef, FocusableRefValue} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, FocusableRef, FocusableRefValue} from '@react-types-nutrient/shared';
 import {ContextValue} from 'react-aria-components';
 import {createContext, forwardRef} from 'react';
 import {filterDOMProps} from '@react-aria-nutrient/utils';

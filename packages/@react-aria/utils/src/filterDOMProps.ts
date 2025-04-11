@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, LinkDOMProps} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, LinkDOMProps} from '@react-types-nutrient/shared';
 
 const DOMPropNames = new Set([
   'id'

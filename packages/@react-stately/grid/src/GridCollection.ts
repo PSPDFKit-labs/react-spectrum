@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {GridNode, GridRow, GridCollection as IGridCollection} from '@react-types/grid';
-import {Key} from '@react-types/shared';
+import {GridNode, GridRow, GridCollection as IGridCollection} from '@react-types-nutrient/grid';
+import {Key} from '@react-types-nutrient/shared';
 
 interface GridCollectionOptions<T> {
   columnCount: number,

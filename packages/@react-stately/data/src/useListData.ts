@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Key, Selection} from '@react-types/shared';
+import {Key, Selection} from '@react-types-nutrient/shared';
 import {useMemo, useState} from 'react';
 
 export interface ListOptions<T> {

@@ -12,8 +12,8 @@
 
 import {Button} from '@react-spectrum/button';
 import {Cell, Column, Row, SpectrumColumnProps, TableBody, TableHeader, TableView} from '../';
-import {ColumnSize} from '@react-types/table';
-import {Key} from '@react-types/shared';
+import {ColumnSize} from '@react-types-nutrient/table';
+import {Key} from '@react-types-nutrient/shared';
 import React, {useCallback, useMemo, useState} from 'react';
 
 export interface PokemonColumn extends Omit<SpectrumColumnProps<any>, 'children'> {

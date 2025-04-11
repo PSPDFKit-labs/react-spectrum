@@ -17,7 +17,7 @@ import {CenterBaseline} from './CenterBaseline';
 import {chain} from '@react-aria-nutrient/utils';
 import {Content, Heading} from './Content';
 import {Dialog} from './Dialog';
-import {DOMProps, DOMRef} from '@react-types/shared';
+import {DOMProps, DOMRef} from '@react-types-nutrient/shared';
 import {forwardRef, ReactNode} from 'react';
 import {IconContext} from './Icon';
 // @ts-ignore

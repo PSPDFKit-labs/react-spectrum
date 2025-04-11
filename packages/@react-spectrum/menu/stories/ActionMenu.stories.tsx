@@ -12,14 +12,14 @@
 
 import {action} from '@storybook/addon-actions';
 import {ActionMenu} from '..';
-import {Alignment} from '@react-types/shared';
+import {Alignment} from '@react-types-nutrient/shared';
 import {Checkbox} from '@react-spectrum/checkbox';
 import {Flex} from '@react-spectrum/layout';
 import {Item} from '../';
 import {Meta} from '@storybook/react';
 import {Picker} from '@react-spectrum/picker';
 import React, {useState} from 'react';
-import {SpectrumActionMenuProps} from '@react-types/menu';
+import {SpectrumActionMenuProps} from '@react-types-nutrient/menu';
 import {Tooltip, TooltipTrigger} from '@react-spectrum/tooltip';
 
 const meta: Meta<SpectrumActionMenuProps<object>> = {

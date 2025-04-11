@@ -13,7 +13,7 @@
 import {ColorSwatchPicker as AriaColorSwatchPicker, ColorSwatchPickerItem as AriaColorSwatchPickerItem, Color, ContextValue, SlotProps} from 'react-aria-components';
 import {ColorSwatchProps, InternalColorSwatchContext} from './ColorSwatch';
 import {createContext, forwardRef, ReactElement, ReactNode} from 'react';
-import {DOMRef, DOMRefValue, ValueBase} from '@react-types/shared';
+import {DOMRef, DOMRefValue, ValueBase} from '@react-types-nutrient/shared';
 import {focusRing, space, style} from '../style' with {type: 'macro'};
 import {getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};
 import {useDOMRef} from '@react-spectrum/utils';

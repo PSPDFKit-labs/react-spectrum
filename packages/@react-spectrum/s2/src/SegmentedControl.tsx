@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMRef, DOMRefValue, FocusableRef, Key} from '@react-types/shared';
+import {AriaLabelingProps, DOMRef, DOMRefValue, FocusableRef, Key} from '@react-types-nutrient/shared';
 import {centerBaseline} from './CenterBaseline';
 import {ContextValue, DEFAULT_SLOT, Provider, TextContext as RACTextContext, SlotProps, ToggleButton, ToggleButtonGroup, ToggleGroupStateContext} from 'react-aria-components';
 import {createContext, forwardRef, ReactNode, RefObject, useCallback, useContext, useRef} from 'react';

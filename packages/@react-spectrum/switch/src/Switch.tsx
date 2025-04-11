@@ -11,10 +11,10 @@
  */
 
 import {classNames, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import React, {forwardRef, useRef} from 'react';
-import {SpectrumSwitchProps} from '@react-types/switch';
+import {SpectrumSwitchProps} from '@react-types-nutrient/switch';
 import styles from '@adobe/spectrum-css-temp/components/toggle/vars.css';
 import {useHover} from '@react-aria-nutrient/interactions';
 import {useProviderProps} from '@react-spectrum/provider';

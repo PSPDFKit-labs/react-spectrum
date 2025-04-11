@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
 */
 
-import {Color, ColorChannel} from '@react-types/color';
+import {Color, ColorChannel} from '@react-types-nutrient/color';
 import {ColorAreaState, parseColor} from '@react-stately/color';
 import {CSSProperties, useMemo} from 'react';
 

@@ -13,4 +13,4 @@ export type {TextFieldAria} from './useTextField';
 export {useTextField} from './useTextField';
 export {useFormattedTextField} from './useFormattedTextField';
 export type {AriaTextFieldOptions} from './useTextField';
-export type {AriaTextFieldProps} from '@react-types/textfield';
+export type {AriaTextFieldProps} from '@react-types-nutrient/textfield';

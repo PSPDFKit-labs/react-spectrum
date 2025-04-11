@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, DraggableCollectionEndEvent, DraggableCollectionProps, DragItem, DragMoveEvent, DragPreviewRenderer, DragStartEvent, DropOperation, Key, Node, RefObject} from '@react-types/shared';
+import {Collection, DraggableCollectionEndEvent, DraggableCollectionProps, DragItem, DragMoveEvent, DragPreviewRenderer, DragStartEvent, DropOperation, Key, Node, RefObject} from '@react-types-nutrient/shared';
 import {MultipleSelectionManager} from '@react-stately/selection';
 import {useRef, useState} from 'react';
 

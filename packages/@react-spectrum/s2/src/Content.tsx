@@ -12,7 +12,7 @@
 
 import {ContextValue, Keyboard as KeyboardAria, Header as RACHeader, Heading as RACHeading, TextContext as RACTextContext, SlotProps, Text as TextAria} from 'react-aria-components';
 import {createContext, forwardRef, ReactNode, useContext} from 'react';
-import {DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {inertValue} from '@react-aria-nutrient/utils';
 import {StyleString} from '../style/types';
 import {UnsafeStyles} from './style-utils';

@@ -11,7 +11,7 @@
  */
 export {useRadio} from './useRadio';
 export {useRadioGroup} from './useRadioGroup';
-export type {AriaRadioGroupProps, AriaRadioProps} from '@react-types/radio';
-export type {Orientation} from '@react-types/shared';
+export type {AriaRadioGroupProps, AriaRadioProps} from '@react-types-nutrient/radio';
+export type {Orientation} from '@react-types-nutrient/shared';
 export type {RadioAria} from './useRadio';
 export type {RadioGroupAria} from './useRadioGroup';

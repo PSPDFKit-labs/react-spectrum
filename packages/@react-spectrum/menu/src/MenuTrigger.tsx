@@ -11,13 +11,13 @@
  */
 
 import {classNames, SlotProvider, unwrapDOMRef, useDOMRef, useIsMobileDevice} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {MenuContext} from './context';
-import {Placement} from '@react-types/overlays';
+import {Placement} from '@react-types-nutrient/overlays';
 import {Popover, Tray} from '@react-spectrum/overlays';
 import {PressResponder, useInteractOutside} from '@react-aria-nutrient/interactions';
 import React, {forwardRef, Fragment, useRef} from 'react';
-import {SpectrumMenuTriggerProps} from '@react-types/menu';
+import {SpectrumMenuTriggerProps} from '@react-types-nutrient/menu';
 import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
 import {useMenuTrigger} from '@react-aria-nutrient/menu';
 import {useMenuTriggerState} from '@react-stately/menu';

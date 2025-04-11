@@ -11,7 +11,7 @@
  */
 
 import React, {forwardRef, Ref, useRef} from 'react';
-import {SpectrumTextFieldProps, TextFieldRef} from '@react-types/textfield';
+import {SpectrumTextFieldProps, TextFieldRef} from '@react-types-nutrient/textfield';
 import {TextFieldBase} from './TextFieldBase';
 import {useFormProps} from '@react-spectrum/form';
 import {useProviderProps} from '@react-spectrum/provider';

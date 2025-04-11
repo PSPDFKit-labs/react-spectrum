@@ -11,10 +11,10 @@
  */
 
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import React, {forwardRef} from 'react';
-import {SpectrumStatusLightProps} from '@react-types/statuslight';
+import {SpectrumStatusLightProps} from '@react-types-nutrient/statuslight';
 import styles from '@adobe/spectrum-css-temp/components/statuslight/vars.css';
 import {useProviderProps} from '@react-spectrum/provider';
 

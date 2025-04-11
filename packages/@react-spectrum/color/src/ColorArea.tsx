@@ -13,10 +13,10 @@
 import {classNames, dimensionValue, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
 import {ColorAreaContext, useContextProps} from 'react-aria-components';
 import {ColorThumb} from './ColorThumb';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {ReactElement, useRef} from 'react';
-import {SpectrumColorAreaProps} from '@react-types/color';
+import {SpectrumColorAreaProps} from '@react-types-nutrient/color';
 import styles from '@adobe/spectrum-css-temp/components/colorarea/vars.css';
 import {useColorArea} from '@react-aria-nutrient/color';
 import {useColorAreaState} from '@react-stately/color';

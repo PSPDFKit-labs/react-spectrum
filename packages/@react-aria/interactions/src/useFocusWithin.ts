@@ -16,7 +16,7 @@
 // See https://github.com/facebook/react/tree/cc7c1aece46a6b69b41958d731e0fd27c94bfc6c/packages/react-interactions
 
 import {createSyntheticEvent, setEventTarget, useSyntheticBlurEvent} from './utils';
-import {DOMAttributes} from '@react-types/shared';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {FocusEvent, useCallback, useRef} from 'react';
 import {getActiveElement, getEventTarget, getOwnerDocument, nodeContains, useGlobalListeners} from '@react-aria-nutrient/utils';
 

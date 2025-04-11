@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import React, {ReactElement, useState} from 'react';
 import {SpectrumTableProps} from './TableViewWrapper';
 import {TableViewBase} from './TableViewBase';

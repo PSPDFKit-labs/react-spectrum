@@ -17,7 +17,7 @@ import {Meta, StoryFn} from '@storybook/react';
 import React from 'react';
 import {SearchField} from '@react-spectrum/searchfield';
 import {SearchWithin} from '../';
-import {SpectrumSearchWithinProps} from '@react-types/searchwithin';
+import {SpectrumSearchWithinProps} from '@react-types-nutrient/searchwithin';
 
 let states = [
   {isRequired: true},

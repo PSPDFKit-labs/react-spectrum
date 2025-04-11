@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, Key, Node} from '@react-types/shared';
+import {Collection, Key, Node} from '@react-types-nutrient/shared';
 import {Item} from '@react-stately/collections';
 import React, {useMemo, useRef} from 'react';
 import {TreeCollection} from '../src/TreeCollection';

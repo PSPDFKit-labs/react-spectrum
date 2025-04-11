@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 import {actHook as act, renderHook} from '@react-spectrum/test-utils-internal';
-import {PressEvent} from '@react-types/shared';
+import {PressEvent} from '@react-types-nutrient/shared';
 import {useDisclosure} from '../src/useDisclosure';
 import {useDisclosureState} from '@react-stately/disclosure';
 

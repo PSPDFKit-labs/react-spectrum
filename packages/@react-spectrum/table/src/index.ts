@@ -15,7 +15,7 @@
 export {TableView} from './TableViewWrapper';
 import {Column} from '@react-stately/table';
 import {JSX} from 'react';
-import {SpectrumColumnProps} from '@react-types/table';
+import {SpectrumColumnProps} from '@react-types-nutrient/table';
 
 // Override TS for Column to support spectrum specific props.
 const SpectrumColumn = Column as <T>(props: SpectrumColumnProps<T>) => JSX.Element;
@@ -29,5 +29,5 @@ export {
   Cell
 } from '@react-stately/table';
 
-export type {SpectrumColumnProps, TableHeaderProps, TableBodyProps, RowProps, CellProps} from '@react-types/table';
+export type {SpectrumColumnProps, TableHeaderProps, TableBodyProps, RowProps, CellProps} from '@react-types-nutrient/table';
 export type {SpectrumTableProps} from './TableViewWrapper';

@@ -12,7 +12,7 @@
 
 import {ariaHideOutside} from './ariaHideOutside';
 import {AriaOverlayProps, useOverlay} from './useOverlay';
-import {DOMAttributes, RefObject} from '@react-types/shared';
+import {DOMAttributes, RefObject} from '@react-types-nutrient/shared';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import {OverlayTriggerState} from '@react-stately/overlays';
 import {useEffect} from 'react';

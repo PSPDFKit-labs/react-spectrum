@@ -21,7 +21,7 @@ import {
   useSlotProps,
   useUnwrapDOMRef
 } from '@react-spectrum/utils';
-import {DOMRef, DOMRefValue, FocusableRefValue, LabelPosition} from '@react-types/shared';
+import {DOMRef, DOMRefValue, FocusableRefValue, LabelPosition} from '@react-types-nutrient/shared';
 import {Field} from '@react-spectrum/label';
 import {FieldButton} from '@react-spectrum/button';
 import {HiddenSelect, useSelect} from '@react-aria-nutrient/select';
@@ -33,7 +33,7 @@ import {Popover, Tray} from '@react-spectrum/overlays';
 import {PressResponder, useHover} from '@react-aria-nutrient/interactions';
 import {ProgressCircle} from '@react-spectrum/progress';
 import React, {ReactElement, useCallback, useRef, useState} from 'react';
-import {SpectrumPickerProps} from '@react-types/select';
+import {SpectrumPickerProps} from '@react-types-nutrient/select';
 import styles from '@adobe/spectrum-css-temp/components/dropdown/vars.css';
 import {Text} from '@react-spectrum/text';
 import {useFormProps} from '@react-spectrum/form';

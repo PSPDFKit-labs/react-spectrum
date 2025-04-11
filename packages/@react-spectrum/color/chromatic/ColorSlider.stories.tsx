@@ -18,7 +18,7 @@ import {Grid, repeat} from '@react-spectrum/layout';
 import {Heading} from '@react-spectrum/text';
 import {Meta, StoryFn} from '@storybook/react';
 import React from 'react';
-import {SpectrumColorSliderProps} from '@react-types/color';
+import {SpectrumColorSliderProps} from '@react-types-nutrient/color';
 
 let states = [
   {isDisabled: true},

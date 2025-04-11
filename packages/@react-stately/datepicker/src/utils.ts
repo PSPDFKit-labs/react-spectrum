@@ -11,12 +11,12 @@
  */
 
 import {Calendar, DateFormatter, getLocalTimeZone, now, Time, toCalendar, toCalendarDate, toCalendarDateTime} from '@internationalized/date';
-import {DatePickerProps, DateValue, Granularity, TimeValue} from '@react-types/datepicker';
+import {DatePickerProps, DateValue, Granularity, TimeValue} from '@react-types-nutrient/datepicker';
 // @ts-ignore
 import i18nMessages from '../intl/*.json';
 import {LocalizedStringDictionary, LocalizedStringFormatter} from '@internationalized/string';
 import {mergeValidation, VALID_VALIDITY_STATE} from '@react-stately/form';
-import {RangeValue, ValidationResult} from '@react-types/shared';
+import {RangeValue, ValidationResult} from '@react-types-nutrient/shared';
 import {useState} from 'react';
 
 const dictionary = new LocalizedStringDictionary(i18nMessages);

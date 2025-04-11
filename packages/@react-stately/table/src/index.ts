@@ -12,7 +12,7 @@
 
 export type {TableColumnResizeState, TableColumnResizeStateProps} from './useTableColumnResizeState';
 export type {TableState, CollectionBuilderContext, TableStateProps} from './useTableState';
-export type {TableHeaderProps, TableBodyProps, ColumnProps, RowProps, CellProps} from '@react-types/table';
+export type {TableHeaderProps, TableBodyProps, ColumnProps, RowProps, CellProps} from '@react-types-nutrient/table';
 export type {TreeGridState, TreeGridStateProps} from './useTreeGridState';
 
 export {useTableColumnResizeState} from './useTableColumnResizeState';

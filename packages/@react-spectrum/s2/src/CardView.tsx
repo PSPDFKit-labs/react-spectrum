@@ -22,7 +22,7 @@ import {
 } from 'react-aria-components';
 import {CardContext, InternalCardViewContext} from './Card';
 import {createContext, forwardRef, ReactElement, useMemo, useRef, useState} from 'react';
-import {DOMRef, DOMRefValue, forwardRefType, Key, LoadingState} from '@react-types/shared';
+import {DOMRef, DOMRefValue, forwardRefType, Key, LoadingState} from '@react-types-nutrient/shared';
 import {focusRing, style} from '../style' with {type: 'macro'};
 import {getAllowedOverrides, StylesPropWithHeight, UnsafeStyles} from './style-utils' with {type: 'macro'};
 import {ImageCoordinator} from './ImageCoordinator';

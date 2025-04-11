@@ -11,10 +11,10 @@
  */
 
 import {classNames} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {ProgressBarBase} from '@react-spectrum/progress';
 import React from 'react';
-import {SpectrumMeterProps} from '@react-types/meter';
+import {SpectrumMeterProps} from '@react-types-nutrient/meter';
 import styles from '@adobe/spectrum-css-temp/components/barloader/vars.css';
 import {useMeter} from '@react-aria-nutrient/meter';
 

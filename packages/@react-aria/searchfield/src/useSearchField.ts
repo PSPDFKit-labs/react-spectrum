@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
-import {AriaSearchFieldProps} from '@react-types/searchfield';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {AriaSearchFieldProps} from '@react-types-nutrient/searchfield';
 import {chain} from '@react-aria-nutrient/utils';
-import {DOMAttributes, RefObject, ValidationResult} from '@react-types/shared';
+import {DOMAttributes, RefObject, ValidationResult} from '@react-types-nutrient/shared';
 import {InputHTMLAttributes, LabelHTMLAttributes} from 'react';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

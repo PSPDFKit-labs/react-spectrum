@@ -17,7 +17,7 @@ import {
 } from 'react-aria-components';
 import {bar, track} from './bar-utils'  with {type: 'macro'};
 import {createContext, forwardRef, ReactNode} from 'react';
-import {DOMRef, DOMRefValue, LabelPosition} from '@react-types/shared';
+import {DOMRef, DOMRefValue, LabelPosition} from '@react-types-nutrient/shared';
 import {FieldLabel} from './Field';
 import {fieldLabel, getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};
 import {lightDark, style} from '../style' with {type: 'macro'};

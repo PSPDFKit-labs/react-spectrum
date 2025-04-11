@@ -15,7 +15,7 @@ import {Checkbox, CheckboxGroup} from '../';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import {Content, ContextualHelp, Flex, Heading} from '@adobe/react-spectrum';
 import React, {useState} from 'react';
-import {SpectrumCheckboxGroupProps} from '@react-types/checkbox';
+import {SpectrumCheckboxGroupProps} from '@react-types-nutrient/checkbox';
 
 export type CheckboxGroupStory = ComponentStoryObj<typeof CheckboxGroup>;
 

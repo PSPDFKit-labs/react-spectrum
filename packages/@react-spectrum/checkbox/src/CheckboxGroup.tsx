@@ -12,11 +12,11 @@
 
 import {CheckboxGroupContext} from './context';
 import {classNames, useDOMRef} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {Field} from '@react-spectrum/label';
 import {Provider, useProviderProps} from '@react-spectrum/provider';
 import React from 'react';
-import {SpectrumCheckboxGroupProps} from '@react-types/checkbox';
+import {SpectrumCheckboxGroupProps} from '@react-types-nutrient/checkbox';
 import styles from '@adobe/spectrum-css-temp/components/fieldgroup/vars.css';
 import {useCheckboxGroup} from '@react-aria-nutrient/checkbox';
 import {useCheckboxGroupState} from '@react-stately/checkbox';

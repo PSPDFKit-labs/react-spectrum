@@ -14,7 +14,7 @@ import {classNames} from '@react-spectrum/utils';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import intlMessages from '../intl';
 import {mergeProps, useId} from '@react-aria-nutrient/utils';
-import {Node} from '@react-types/shared';
+import {Node} from '@react-types-nutrient/shared';
 import React, {ReactNode, useContext, useRef} from 'react';
 import {StepListContext} from './StepListContext';
 import styles from '@adobe/spectrum-css-temp/components/steplist/vars.css';

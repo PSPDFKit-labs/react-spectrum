@@ -14,7 +14,7 @@ import {act, fireEvent, installPointerEvent, pointerMap, render as renderCompone
 import {composeStories} from '@storybook/react';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
-import type {Scale} from '@react-types/provider';
+import type {Scale} from '@react-types-nutrient/provider';
 import * as stories from '../stories/Submenu.stories';
 import {theme} from '@react-spectrum/theme-default';
 import userEvent from '@testing-library/user-event';

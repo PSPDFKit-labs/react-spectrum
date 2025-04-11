@@ -1,3 +1,3 @@
-# @react-types/label
+# @react-types-nutrient/label
 
 This package is part of [react-spectrum](https://github.com/adobe/react-spectrum). See the repo for more details.

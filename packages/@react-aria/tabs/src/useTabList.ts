@@ -10,8 +10,8 @@
 * governing permissions and limitations under the License.
 */
 
-import {AriaTabListProps} from '@react-types/tabs';
-import {DOMAttributes, RefObject} from '@react-types/shared';
+import {AriaTabListProps} from '@react-types-nutrient/tabs';
+import {DOMAttributes, RefObject} from '@react-types-nutrient/shared';
 import {mergeProps, useId, useLabels} from '@react-aria-nutrient/utils';
 import {TabListState} from '@react-stately/tabs';
 import {tabsIds} from './utils';

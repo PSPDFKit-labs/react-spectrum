@@ -1,5 +1,5 @@
 import {ActionButton} from './ActionButton';
-import {AriaLabelingProps, DOMProps, FocusableRef, FocusableRefValue} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, FocusableRef, FocusableRefValue} from '@react-types-nutrient/shared';
 import {ContentContext, FooterContext, HeadingContext} from './Content';
 import {ContextValue, DEFAULT_SLOT, Provider, Dialog as RACDialog, TextContext} from 'react-aria-components';
 import {createContext, forwardRef, ReactNode} from 'react';

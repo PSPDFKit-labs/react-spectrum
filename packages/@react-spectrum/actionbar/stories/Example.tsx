@@ -20,7 +20,7 @@ import Edit from '@spectrum-icons/workflow/Edit';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import Move from '@spectrum-icons/workflow/Move';
 import React, {useRef, useState} from 'react';
-import {Selection} from '@react-types/shared';
+import {Selection} from '@react-types-nutrient/shared';
 import {Text} from '@react-spectrum/text';
 
 let columns = [

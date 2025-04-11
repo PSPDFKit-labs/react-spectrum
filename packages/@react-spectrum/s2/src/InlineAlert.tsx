@@ -15,7 +15,7 @@ import CheckmarkCircle from '../s2wf-icons/S2_Icon_CheckmarkCircle_20_N.svg';
 import {ComponentType, createContext, forwardRef, ReactNode, useEffect, useRef} from 'react';
 import {ContentContext, HeadingContext} from './Content';
 import {ContextValue, Provider, SlotProps} from 'react-aria-components';
-import {DOMProps, DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMProps, DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {focusRing, style} from '../style' with {type: 'macro'};
 import {getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};

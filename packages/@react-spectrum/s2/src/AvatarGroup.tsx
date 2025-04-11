@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, DOMRef, DOMRefValue} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {AvatarContext} from './Avatar';
 import {ContextValue, SlotProps} from 'react-aria-components';
 import {createContext, CSSProperties, forwardRef, ReactNode} from 'react';

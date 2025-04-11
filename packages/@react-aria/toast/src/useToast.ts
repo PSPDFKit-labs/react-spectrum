@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
-import {AriaLabelingProps, DOMAttributes, FocusableElement, RefObject} from '@react-types/shared';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {AriaLabelingProps, DOMAttributes, FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {filterDOMProps, useId, useSlotId} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

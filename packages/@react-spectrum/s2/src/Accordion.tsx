@@ -12,7 +12,7 @@
 
 import {ContextValue, DisclosureGroup, DisclosureGroupProps, SlotProps} from 'react-aria-components';
 import {DisclosureContext} from './Disclosure';
-import {DOMProps, DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMProps, DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {getAllowedOverrides, StylesPropWithHeight, UnsafeStyles} from './style-utils' with { type: 'macro' };
 import React, {createContext, forwardRef} from 'react';
 import {style} from '../style' with { type: 'macro' };

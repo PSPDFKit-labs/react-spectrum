@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {ButtonProps} from '@react-types/button';
+import {ButtonProps} from '@react-types-nutrient/button';
 import {classNames, SlotProvider, useFocusableRef, useSlotProps, useStyleProps} from '@react-spectrum/utils';
-import {DOMProps, FocusableRef, RefObject, StyleProps} from '@react-types/shared';
+import {DOMProps, FocusableRef, RefObject, StyleProps} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React from 'react';

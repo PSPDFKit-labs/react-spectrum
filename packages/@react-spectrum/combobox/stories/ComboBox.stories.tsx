@@ -27,7 +27,7 @@ import {Dialog, DialogTrigger} from '@react-spectrum/dialog';
 import Draw from '@spectrum-icons/workflow/Draw';
 import {Flex} from '@react-spectrum/layout';
 import {Heading, Text} from '@react-spectrum/text';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {Link} from '@react-spectrum/link';
 import React, {useRef, useState} from 'react';
 import {useAsyncList, useListData, useTreeData} from '@react-stately/data';

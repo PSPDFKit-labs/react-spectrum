@@ -10,12 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaCheckboxGroupItemProps} from '@react-types/checkbox';
+import {AriaCheckboxGroupItemProps} from '@react-types-nutrient/checkbox';
 import {CheckboxAria, useCheckbox} from './useCheckbox';
 import {checkboxGroupData} from './utils';
 import {CheckboxGroupState} from '@react-stately/checkbox';
 import {DEFAULT_VALIDATION_RESULT, privateValidationStateProp, useFormValidationState} from '@react-stately/form';
-import {RefObject, ValidationResult} from '@react-types/shared';
+import {RefObject, ValidationResult} from '@react-types-nutrient/shared';
 import {useEffect, useRef} from 'react';
 import {useToggleState} from '@react-stately/toggle';
 

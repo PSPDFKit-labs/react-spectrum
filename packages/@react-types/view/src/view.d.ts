@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {ColorVersion, DOMProps, ViewStyleProps} from '@react-types/shared';
+import {ColorVersion, DOMProps, ViewStyleProps} from '@react-types-nutrient/shared';
 import {JSXElementConstructor, ReactNode} from 'react';
 
 export interface ViewProps<C extends ColorVersion> extends ViewStyleProps<C>, DOMProps {

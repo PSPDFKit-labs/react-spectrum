@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaActionGroupProps} from '@react-types/actiongroup';
+import {AriaActionGroupProps} from '@react-types-nutrient/actiongroup';
 import {createFocusManager} from '@react-aria-nutrient/focus';
-import {DOMAttributes, FocusableElement, Orientation, RefObject} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, Orientation, RefObject} from '@react-types-nutrient/shared';
 import {filterDOMProps, useLayoutEffect} from '@react-aria-nutrient/utils';
 import {ListState} from '@react-stately/list';
 import {useLocale} from '@react-aria-nutrient/i18n';

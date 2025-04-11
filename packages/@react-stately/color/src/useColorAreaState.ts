@@ -11,7 +11,7 @@
  */
 
 import {clamp, snapValueToStep, useControlledState} from '@react-stately/utils';
-import {Color, ColorAreaProps, ColorChannel} from '@react-types/color';
+import {Color, ColorAreaProps, ColorChannel} from '@react-types-nutrient/color';
 import {normalizeColor, parseColor} from './Color';
 import {useMemo, useRef, useState} from 'react';
 

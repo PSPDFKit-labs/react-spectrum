@@ -10,12 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaSliderThumbProps} from '@react-types/slider';
+import {AriaSliderThumbProps} from '@react-types-nutrient/slider';
 import {classNames} from '@react-spectrum/utils';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {ReactNode, useRef} from 'react';
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {SliderState} from '@react-stately/slider';
 import styles from '@adobe/spectrum-css-temp/components/slider/vars.css';
 import {useHover} from '@react-aria-nutrient/interactions';

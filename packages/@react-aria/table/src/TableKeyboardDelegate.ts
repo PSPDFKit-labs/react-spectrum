@@ -12,8 +12,8 @@
 
 import {getChildNodes, getFirstItem} from '@react-stately/collections';
 import {GridKeyboardDelegate} from '@react-aria-nutrient/grid';
-import {Key, Node} from '@react-types/shared';
-import {TableCollection} from '@react-types/table';
+import {Key, Node} from '@react-types-nutrient/shared';
+import {TableCollection} from '@react-types-nutrient/table';
 
 export class TableKeyboardDelegate<T> extends GridKeyboardDelegate<T, TableCollection<T>> {
 

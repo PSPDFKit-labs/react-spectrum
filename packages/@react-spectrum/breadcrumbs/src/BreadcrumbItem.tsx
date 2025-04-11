@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {BreadcrumbItemProps} from '@react-types/breadcrumbs';
+import {BreadcrumbItemProps} from '@react-types-nutrient/breadcrumbs';
 import ChevronRightSmall from '@spectrum-icons/ui/ChevronRightSmall';
 import {classNames} from '@react-spectrum/utils';
 import {FocusRing} from '@react-aria-nutrient/focus';

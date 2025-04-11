@@ -28,7 +28,7 @@ import {FormTranslatedText} from './../chromatic/FormLanguages.stories';
 import {Heading} from '@react-spectrum/text';
 import {InlineAlert} from '@react-spectrum/inlinealert';
 import {Item, Picker} from '@react-spectrum/picker';
-import {Key, ValidationState} from '@react-types/shared';
+import {Key, ValidationState} from '@react-types-nutrient/shared';
 import {NumberField} from '@react-spectrum/numberfield';
 import {Radio, RadioGroup} from '@react-spectrum/radio';
 import React, {useEffect, useState} from 'react';

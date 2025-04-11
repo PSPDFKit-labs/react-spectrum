@@ -13,7 +13,7 @@
 import {AriaToggleButtonProps, HoverEvents, mergeProps, useFocusRing, useHover, useToggleButton, useToggleButtonGroupItem} from '@react-aria-nutrient/react-aria';
 import {ButtonRenderProps} from './Button';
 import {ContextValue, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
-import {forwardRefType, Key} from '@react-types/shared';
+import {forwardRefType, Key} from '@react-types-nutrient/shared';
 import React, {createContext, ForwardedRef, forwardRef, useContext} from 'react';
 import {ToggleGroupStateContext} from './ToggleButtonGroup';
 import {ToggleState, useToggleState} from 'react-stately';

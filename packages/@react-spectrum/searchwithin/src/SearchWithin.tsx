@@ -12,11 +12,11 @@
 
 import {classNames, SlotProvider, useFocusableRef, useResizeObserver, useStyleProps} from '@react-spectrum/utils';
 import {Field} from '@react-spectrum/label';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import React, {useCallback, useRef, useState} from 'react';
-import {SpectrumSearchWithinProps} from '@react-types/searchwithin';
+import {SpectrumSearchWithinProps} from '@react-types-nutrient/searchwithin';
 import styles from '@adobe/spectrum-css-temp/components/searchwithin/vars.css';
 import {useFormProps} from '@react-spectrum/form';
 import {useId, useLayoutEffect} from '@react-aria-nutrient/utils';

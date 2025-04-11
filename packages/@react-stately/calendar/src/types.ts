@@ -11,8 +11,8 @@
  */
 
 import {CalendarDate} from '@internationalized/date';
-import {DateValue} from '@react-types/calendar';
-import {RangeValue, ValidationState} from '@react-types/shared';
+import {DateValue} from '@react-types-nutrient/calendar';
+import {RangeValue, ValidationState} from '@react-types-nutrient/shared';
 
 interface CalendarStateBase {
   /** Whether the calendar is disabled. */

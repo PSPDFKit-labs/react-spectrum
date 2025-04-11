@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMAttributes, FocusableElement, RefObject} from '@react-types/shared';
+import {AriaLabelingProps, DOMAttributes, FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {useCallback, useEffect, useState} from 'react';
 import {useLayoutEffect} from '@react-aria-nutrient/utils';
 import {useSyncExternalStore} from 'use-sync-external-store/shim/index.js';

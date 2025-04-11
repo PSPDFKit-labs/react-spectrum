@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMProps, GridStyleProps} from '@react-types/shared';
+import {DOMProps, GridStyleProps} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export interface GridProps extends DOMProps, GridStyleProps {

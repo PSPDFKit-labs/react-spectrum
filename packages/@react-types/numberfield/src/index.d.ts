@@ -22,7 +22,7 @@ import {
   TextInputDOMEvents,
   Validation,
   ValueBase
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 
 export interface NumberFieldProps extends InputBase, Validation<number>, FocusableProps, TextInputBase, ValueBase<number>, RangeInputBase<number>, LabelableProps, HelpTextProps {
   /**

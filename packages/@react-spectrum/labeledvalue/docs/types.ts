@@ -1,5 +1,5 @@
 import {DateTime, LabeledValueBaseProps} from '@react-spectrum/labeledvalue/src/LabeledValue';
-import {RangeValue} from '@react-types/shared';
+import {RangeValue} from '@react-types-nutrient/shared';
 import {ReactElement} from 'react';
 
 // The doc generator is not smart enough to handle the real types for LabeledValue so this is a simpler one.

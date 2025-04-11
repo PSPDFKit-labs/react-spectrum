@@ -11,10 +11,10 @@
  */
 
 import {classNames, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import React, {forwardRef, useRef} from 'react';
-import {SpectrumRadioProps} from '@react-types/radio';
+import {SpectrumRadioProps} from '@react-types-nutrient/radio';
 import styles from '@adobe/spectrum-css-temp/components/radio/vars.css';
 import {useHover} from '@react-aria-nutrient/interactions';
 import {useRadio} from '@react-aria-nutrient/radio';

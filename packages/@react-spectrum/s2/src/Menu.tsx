@@ -35,7 +35,7 @@ import CheckmarkIcon from '../ui-icons/Checkmark';
 import ChevronRightIcon from '../ui-icons/Chevron';
 import {createContext, forwardRef, JSX, ReactNode, useContext, useRef, useState} from 'react';
 import {divider} from './Divider';
-import {DOMRef, DOMRefValue, PressEvent} from '@react-types/shared';
+import {DOMRef, DOMRefValue, PressEvent} from '@react-types-nutrient/shared';
 import {forwardRefType} from './types';
 import {HeaderContext, HeadingContext, KeyboardContext, Text, TextContext} from './Content';
 import {IconContext} from './Icon'; // chevron right removed??

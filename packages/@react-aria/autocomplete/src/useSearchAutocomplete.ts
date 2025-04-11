@@ -10,11 +10,11 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import {AriaListBoxOptions} from '@react-aria-nutrient/listbox';
-import {AriaSearchAutocompleteProps} from '@react-types/autocomplete';
+import {AriaSearchAutocompleteProps} from '@react-types-nutrient/autocomplete';
 import {ComboBoxState} from '@react-stately/combobox';
-import {DOMAttributes, KeyboardDelegate, LayoutDelegate, RefObject, ValidationResult} from '@react-types/shared';
+import {DOMAttributes, KeyboardDelegate, LayoutDelegate, RefObject, ValidationResult} from '@react-types-nutrient/shared';
 import {InputHTMLAttributes} from 'react';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import {useComboBox} from '@react-aria-nutrient/combobox';

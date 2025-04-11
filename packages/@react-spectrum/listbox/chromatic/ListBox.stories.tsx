@@ -23,7 +23,7 @@ import {Label} from '@react-spectrum/label';
 import {Meta} from '@storybook/react';
 import Paste from '@spectrum-icons/workflow/Paste';
 import React from 'react';
-import {SpectrumListBoxProps} from '@react-types/listbox';
+import {SpectrumListBoxProps} from '@react-types-nutrient/listbox';
 import {Text} from '@react-spectrum/text';
 
 let iconMap = {

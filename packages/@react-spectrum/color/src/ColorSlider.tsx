@@ -13,10 +13,10 @@
 import {classNames, SlotProvider, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
 import {ColorSliderContext, useContextProps} from 'react-aria-components';
 import {ColorThumb} from './ColorThumb';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {Label} from '@react-spectrum/label';
 import React, {useRef, useState} from 'react';
-import {SpectrumColorSliderProps} from '@react-types/color';
+import {SpectrumColorSliderProps} from '@react-types-nutrient/color';
 import styles from '@adobe/spectrum-css-temp/components/colorslider/vars.css';
 import {useColorSlider} from '@react-aria-nutrient/color';
 import {useColorSliderState} from '@react-stately/color';

@@ -13,9 +13,9 @@
 import {action} from '@storybook/addon-actions';
 import {Table as BackwardCompatTable} from './example-backwards-compat';
 import {Cell, Column, Row, TableBody, TableHeader} from '@react-stately/table';
-import {ColumnSize} from '@react-types/table';
+import {ColumnSize} from '@react-types-nutrient/table';
 import {Table as DocsTable} from './example-docs';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {Meta, StoryFn} from '@storybook/react';
 import React, {useCallback, useMemo, useState} from 'react';
 import {Table as ResizingTable} from './example-resizing';

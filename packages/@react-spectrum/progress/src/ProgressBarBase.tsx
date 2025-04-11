@@ -12,8 +12,8 @@
 
 import {clamp} from '@react-aria-nutrient/utils';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
-import {ProgressBarProps, SpectrumProgressBarBaseProps} from '@react-types/progress';
+import {DOMRef} from '@react-types-nutrient/shared';
+import {ProgressBarProps, SpectrumProgressBarBaseProps} from '@react-types-nutrient/progress';
 import React, {CSSProperties, HTMLAttributes} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/barloader/vars.css';
 

@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import type {GridCollection} from '@react-types/grid';
+import type {GridCollection} from '@react-types-nutrient/grid';
 import type {GridState} from '@react-stately/grid';
-import type {Key, KeyboardDelegate} from '@react-types/shared';
+import type {Key, KeyboardDelegate} from '@react-types-nutrient/shared';
 
 interface GridMapShared {
   keyboardDelegate: KeyboardDelegate,

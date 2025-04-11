@@ -11,7 +11,7 @@
  */
 
 import {MutableRefObject} from 'react';
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {useLayoutEffect} from './';
 
 interface ContextValue<T> {

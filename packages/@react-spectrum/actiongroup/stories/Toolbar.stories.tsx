@@ -11,7 +11,7 @@
  */
 
 import {ActionGroup} from '../';
-import {AriaLabelingProps, Orientation} from '@react-types/shared';
+import {AriaLabelingProps, Orientation} from '@react-types-nutrient/shared';
 import {classNames, SlotProvider, useSlotProps} from '@react-spectrum/utils';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import CopyIcon from '@spectrum-icons/workflow/Copy';

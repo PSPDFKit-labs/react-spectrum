@@ -11,7 +11,7 @@
  */
 
 import {classNames, useIsMobileDevice} from '@react-spectrum/utils';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {MenuContext, SubmenuTriggerContext, useMenuStateContext} from './context';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import {Popover} from '@react-spectrum/overlays';

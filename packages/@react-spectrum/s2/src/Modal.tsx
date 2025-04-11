@@ -12,7 +12,7 @@
 
 import {colorScheme} from './style-utils' with {type: 'macro'};
 import {ColorSchemeContext} from './Provider';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {forwardRef, MutableRefObject, useCallback, useContext} from 'react';
 import {ModalOverlay, ModalOverlayProps, Modal as RACModal, useLocale} from 'react-aria-components';
 import {style} from '../style' with {type: 'macro'};

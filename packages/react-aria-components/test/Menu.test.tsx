@@ -14,7 +14,7 @@ import {act, fireEvent, mockClickDefault, pointerMap, render, within} from '@rea
 import {AriaMenuTests} from './AriaMenu.test-util';
 import {Button, Collection, Header, Heading, Input, Keyboard, Label, Menu, MenuContext, MenuItem, MenuSection, MenuTrigger, Popover, Pressable, Separator, SubmenuTrigger, Text, TextField} from '..';
 import React, {useState} from 'react';
-import {Selection, SelectionMode} from '@react-types/shared';
+import {Selection, SelectionMode} from '@react-types-nutrient/shared';
 import {UNSAFE_PortalProvider} from '@react-aria-nutrient/overlays';
 import {User} from '@react-aria-nutrient/test-utils';
 import userEvent from '@testing-library/user-event';

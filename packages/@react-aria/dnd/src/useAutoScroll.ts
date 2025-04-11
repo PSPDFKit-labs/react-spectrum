@@ -11,7 +11,7 @@
  */
 
 import {getScrollParent, isIOS, isScrollable, isWebKit} from '@react-aria-nutrient/utils';
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {useCallback, useEffect, useRef} from 'react';
 
 const AUTOSCROLL_AREA_SIZE = 20;

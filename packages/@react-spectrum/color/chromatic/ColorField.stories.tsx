@@ -18,7 +18,7 @@ import {Grid, repeat} from '@react-spectrum/layout';
 import {Heading} from '@react-spectrum/text';
 import {Meta, StoryFn} from '@storybook/react';
 import React from 'react';
-import {SpectrumColorFieldProps} from '@react-types/color';
+import {SpectrumColorFieldProps} from '@react-types-nutrient/color';
 
 // Ignore read only because it doesn't apply any distingishable visual features
 let states = [

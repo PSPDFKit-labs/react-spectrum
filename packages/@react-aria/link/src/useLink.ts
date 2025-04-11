@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLinkProps} from '@react-types/link';
-import {DOMAttributes, FocusableElement, RefObject} from '@react-types/shared';
+import {AriaLinkProps} from '@react-types-nutrient/link';
+import {DOMAttributes, FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, shouldClientNavigate, useLinkProps, useRouter} from '@react-aria-nutrient/utils';
 import React from 'react';
 import {useFocusable, usePress} from '@react-aria-nutrient/interactions';

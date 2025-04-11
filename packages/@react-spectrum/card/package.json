@@ -49,9 +49,9 @@
     "@react-stately/grid": "^3.11.0",
     "@react-stately/list": "^3.12.0",
     "@react-stately/virtualizer": "^4.3.1",
-    "@react-types/card": "3.0.0-alpha.34",
-    "@react-types/provider": "^3.8.7",
-    "@react-types/shared": "^3.28.0",
+    "@react-types-nutrient/card": "3.0.0-alpha.34",
+    "@react-types-nutrient/provider": "^3.8.7",
+    "@react-types-nutrient/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"
   },
   "devDependencies": {

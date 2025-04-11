@@ -15,7 +15,7 @@ import {ContextValue, SlotProps, useSlottedContext} from 'react-aria-components'
 import {mergeProps, useObjectRef} from '@react-aria-nutrient/react-aria';
 import {mergeRefs} from '@react-aria-nutrient/utils';
 import {mergeStyles} from '../style/runtime';
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 
 export function useSpectrumContextProps<T, U extends SlotProps, E>(props: T & SlotProps, ref: ForwardedRef<E>, context: Context<ContextValue<U, E>>): [T, RefObject<E | null>] {
   let ctx = useSlottedContext(context, props.slot) || {};

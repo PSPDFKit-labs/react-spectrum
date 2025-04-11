@@ -11,7 +11,7 @@
  */
 
 import {act, fireEvent, installMouseEvent, installPointerEvent, pointerMap, render} from '@react-spectrum/test-utils-internal';
-import {ColorWheelProps} from '@react-types/color';
+import {ColorWheelProps} from '@react-types-nutrient/color';
 import {parseColor, useColorWheelState} from '@react-stately/color';
 import React, {useRef} from 'react';
 import {useColorWheel} from '../';
