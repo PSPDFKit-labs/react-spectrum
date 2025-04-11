@@ -14,7 +14,7 @@ import {action} from '@storybook/addon-actions';
 import {ColorArea, ColorField, ColorSlider, ColorSwatch, ColorWheel} from '../';
 import {ComponentStoryObj, Meta, StoryFn} from '@storybook/react';
 import {Flex, Grid, useLocale, View} from '@adobe/react-spectrum';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import React, {useState} from 'react';
 import {SpectrumColorAreaProps} from '@react-types/color';
 

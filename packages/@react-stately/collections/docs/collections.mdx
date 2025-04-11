@@ -10,8 +10,8 @@ governing permissions and limitations under the License. */}
 import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
-import docs from 'docs:@react-stately/collections';
-import dataDocs from 'docs:@react-stately/data';
+import docs from 'docs:@react-stately-nutrient/collections';
+import dataDocs from 'docs:@react-stately-nutrient/data';
 import {HeaderInfo, PropTable, TypeLink} from '@react-spectrum/docs';
 
 ---
@@ -191,7 +191,7 @@ state when they are removed from the list. See the [useListBox docs](../react-ar
 The following example shows how you might append a new item to the list.
 
 ```tsx
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 let list = useListData({
   initialItems: [
@@ -258,7 +258,7 @@ removing items from the selection when they are removed from the list. See the
 [useTreeData docs](useTreeData.html) for more details.
 
 ```tsx
-import {useTreeData} from '@react-stately/data';
+import {useTreeData} from '@react-stately-nutrient/data';
 
 let tree = useTreeData({
   initialItems: [
@@ -302,7 +302,7 @@ Many collection components support loading data asynchronously. This is supporte
 which is `true` while the data is loading. Once the data is loaded, `isLoading` should be set to `false`, and the
 `items` prop should be set to the loaded data.
 
-The <TypeLink links={dataDocs.links} type={dataDocs.exports.useAsyncList} /> hook from `@react-stately/data` can be
+The <TypeLink links={dataDocs.links} type={dataDocs.exports.useAsyncList} /> hook from `@react-stately-nutrient/data` can be
 used to manage async data loading from an API. Pass a `load` function to `useAsyncList`, which returns the items
 to render. You can use whatever data fetching library you want, or the built-in
 [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) API.
@@ -310,7 +310,7 @@ to render. You can use whatever data fetching library you want, or the built-in
 This example fetches a list of Pokemon from an API and displays them in a Picker.
 
 ```tsx
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 
 let list = useAsyncList({
   async load({signal}) {
@@ -339,7 +339,7 @@ collection components notifies you when you should load more data as the user sc
 This example expands on the previous one to support infinite scrolling through all known Pokemon.
 
 ```tsx
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 
 let list = useAsyncList({
   async load({signal, cursor}) {

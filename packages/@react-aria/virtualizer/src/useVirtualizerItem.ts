@@ -11,7 +11,7 @@
  */
 
 import {Key, RefObject} from '@react-types/shared';
-import {LayoutInfo, Size} from '@react-stately/virtualizer';
+import {LayoutInfo, Size} from '@react-stately-nutrient/virtualizer';
 import {useCallback} from 'react';
 import {useLayoutEffect} from '@react-aria-nutrient/utils';
 

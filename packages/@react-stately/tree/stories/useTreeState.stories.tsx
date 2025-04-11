@@ -11,7 +11,7 @@
  */
 
 import {Collection, Key, Node} from '@react-types/shared';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import React, {useMemo, useRef} from 'react';
 import {TreeCollection} from '../src/TreeCollection';
 import {usePress} from '@react-aria-nutrient/interactions';

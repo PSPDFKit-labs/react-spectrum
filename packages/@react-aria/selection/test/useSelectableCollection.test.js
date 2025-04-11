@@ -11,7 +11,7 @@
  */
 
 import {fireEvent, installPointerEvent, pointerMap, render, simulateDesktop, simulateMobile, within} from '@react-spectrum/test-utils-internal';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import {List} from '../stories/List';
 import React from 'react';
 import userEvent from '@testing-library/user-event';

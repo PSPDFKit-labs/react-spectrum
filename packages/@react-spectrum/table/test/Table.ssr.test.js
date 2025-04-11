@@ -49,7 +49,7 @@ describe('Table Nested Rows SSR', function () {
       import {Provider} from '@react-spectrum/provider';
       import {theme} from '@react-spectrum/theme-default';
       import {Cell, Column, Row, TableBody, TableHeader, TableView} from '../';
-      import {enableTableNestedRows} from '@react-stately/flags';
+      import {enableTableNestedRows} from '@react-stately-nutrient/flags';
       enableTableNestedRows();
 
       let nestedItems = [
@@ -94,7 +94,7 @@ describe('Table Static SSR', function () {
       import {Provider} from '@react-spectrum/provider';
       import {theme} from '@react-spectrum/theme-default';
       import {Cell, Column, Row, TableBody, TableHeader, TableView} from '../';
-      import {enableTableNestedRows} from '@react-stately/flags';
+      import {enableTableNestedRows} from '@react-stately-nutrient/flags';
       enableTableNestedRows();
 
       <Provider theme={theme}>

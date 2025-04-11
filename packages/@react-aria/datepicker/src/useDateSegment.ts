@@ -11,7 +11,7 @@
  */
 
 import {CalendarDate, toCalendar} from '@internationalized/date';
-import {DateFieldState, DateSegment} from '@react-stately/datepicker';
+import {DateFieldState, DateSegment} from '@react-stately-nutrient/datepicker';
 import {getScrollParent, isIOS, isMac, mergeProps, scrollIntoViewport, useEvent, useId, useLabels, useLayoutEffect} from '@react-aria-nutrient/utils';
 import {hookData} from './useDateField';
 import {NumberParser} from '@internationalized/number';

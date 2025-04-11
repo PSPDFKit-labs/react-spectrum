@@ -15,7 +15,7 @@ import {Button} from '@react-spectrum/button';
 import {ButtonGroup} from '@react-spectrum/buttongroup';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import {Flex} from '@react-spectrum/layout';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import {Key} from '@react-types/shared';
 import {Picker} from '@react-spectrum/picker';
 import React, {useCallback, useMemo, useState} from 'react';

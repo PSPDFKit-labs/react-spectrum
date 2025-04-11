@@ -17,7 +17,7 @@ import CheckmarkMedium from '@spectrum-icons/ui/CheckmarkMedium';
 import ChevronDownMedium from '@spectrum-icons/ui/ChevronDownMedium';
 import {classNames, unwrapDOMRef, useFocusableRef} from '@react-spectrum/utils';
 import {ClearButton} from '@react-spectrum/button';
-import {ComboBoxState, useComboBoxState} from '@react-stately/combobox';
+import {ComboBoxState, useComboBoxState} from '@react-stately-nutrient/combobox';
 import comboboxStyles from './combobox.css';
 import {DismissButton, useOverlayTrigger} from '@react-aria-nutrient/overlays';
 import {Field} from '@react-spectrum/label';

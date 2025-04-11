@@ -12,9 +12,9 @@
 
 import {Collection, CollectionStateBase, Key, LayoutDelegate, Node} from '@react-types/shared';
 import {ListCollection} from './ListCollection';
-import {MultipleSelectionStateProps, SelectionManager, useMultipleSelectionState} from '@react-stately/selection';
+import {MultipleSelectionStateProps, SelectionManager, useMultipleSelectionState} from '@react-stately-nutrient/selection';
 import {useCallback, useEffect, useMemo, useRef} from 'react';
-import {useCollection} from '@react-stately/collections';
+import {useCollection} from '@react-stately-nutrient/collections';
 
 export interface ListProps<T> extends CollectionStateBase<T>, MultipleSelectionStateProps {
   /** Filter function to generate a filtered list of nodes. */

@@ -12,7 +12,7 @@
 
 import {AriaTabListProps, useTab, useTabList, useTabPanel} from '@react-aria-nutrient/tabs';
 import React from 'react';
-import {useTabListState} from '@react-stately/tabs';
+import {useTabListState} from '@react-stately-nutrient/tabs';
 
 interface TabProps extends AriaTabListProps<any> {
   shouldSelectOnPressUp?: boolean

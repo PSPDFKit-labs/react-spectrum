@@ -14,7 +14,7 @@ import {ariaHideOutside} from './ariaHideOutside';
 import {AriaOverlayProps, useOverlay} from './useOverlay';
 import {DOMAttributes, RefObject} from '@react-types/shared';
 import {mergeProps} from '@react-aria-nutrient/utils';
-import {OverlayTriggerState} from '@react-stately/overlays';
+import {OverlayTriggerState} from '@react-stately-nutrient/overlays';
 import {useEffect} from 'react';
 import {useOverlayFocusContain} from './Overlay';
 import {usePreventScroll} from './usePreventScroll';

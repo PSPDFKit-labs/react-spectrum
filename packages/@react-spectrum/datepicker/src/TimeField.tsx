@@ -23,7 +23,7 @@ import {useFormProps} from '@react-spectrum/form';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useProviderProps} from '@react-spectrum/provider';
 import {useTimeField} from '@react-aria-nutrient/datepicker';
-import {useTimeFieldState} from '@react-stately/datepicker';
+import {useTimeFieldState} from '@react-stately-nutrient/datepicker';
 
 /**
  * TimeFields allow users to enter and edit time values using a keyboard.

@@ -19,7 +19,7 @@ import DeleteIcon from '@spectrum-icons/workflow/Delete';
 import {Divider} from '@react-spectrum/divider';
 import DrawIcon from '@spectrum-icons/workflow/Draw';
 import InfoIcon from '@spectrum-icons/workflow/Info';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import PropertiesIcon from '@spectrum-icons/workflow/Properties';
 import {Toolbar as RACToolbar} from 'react-aria-components';
 import React, {ForwardedRef, forwardRef, ReactElement, ReactNode, useMemo} from 'react';

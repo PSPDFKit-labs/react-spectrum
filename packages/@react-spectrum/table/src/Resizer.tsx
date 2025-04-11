@@ -12,7 +12,7 @@ import {Key, RefObject} from '@react-types/shared';
 import React, {createContext, ForwardedRef, useContext, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import styles from '@adobe/spectrum-css-temp/components/table/vars.css';
-import {TableColumnResizeState} from '@react-stately/table';
+import {TableColumnResizeState} from '@react-stately-nutrient/table';
 import {useLocale, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useTableColumnResize} from '@react-aria-nutrient/table';
 import {useTableContext, useVirtualizerContext} from './TableViewBase';

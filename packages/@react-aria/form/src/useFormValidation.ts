@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {FormValidationState} from '@react-stately/form';
+import {FormValidationState} from '@react-stately-nutrient/form';
 import {RefObject, Validation, ValidationResult} from '@react-types/shared';
 import {setInteractionModality} from '@react-aria-nutrient/interactions';
 import {useEffect} from 'react';

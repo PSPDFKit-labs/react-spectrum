@@ -3,7 +3,7 @@ import {ColorField} from './ColorField';
 import {ColorSlider} from './ColorSlider';
 import {ColorSpace} from '@react-types/color';
 import {DOMRef} from '@react-types/shared';
-import {getColorChannels} from '@react-stately/color';
+import {getColorChannels} from '@react-stately-nutrient/color';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {Item, Picker} from '@react-spectrum/picker';

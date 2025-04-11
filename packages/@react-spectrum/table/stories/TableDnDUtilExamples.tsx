@@ -5,7 +5,7 @@ import {DIRECTORY_DRAG_TYPE, useDragAndDrop} from '@react-spectrum/dnd';
 import {Flex} from '@react-spectrum/layout';
 import React from 'react';
 import {Text} from '@react-spectrum/text';
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 let onSelectionChange = action('onSelectionChange');
 

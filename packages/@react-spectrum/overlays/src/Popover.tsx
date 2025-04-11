@@ -16,7 +16,7 @@ import {DOMRef, RefObject, StyleProps} from '@react-types/shared';
 import {FocusWithinProps, useFocusWithin} from '@react-aria-nutrient/interactions';
 import {mergeProps, useLayoutEffect, useObjectRef} from '@react-aria-nutrient/utils';
 import {Overlay} from './Overlay';
-import {OverlayTriggerState} from '@react-stately/overlays';
+import {OverlayTriggerState} from '@react-stately-nutrient/overlays';
 import overrideStyles from './overlays.css';
 import React, {ForwardedRef, forwardRef, ReactNode, useRef, useState} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/popover/vars.css';

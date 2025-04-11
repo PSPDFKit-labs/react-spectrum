@@ -11,7 +11,7 @@
  */
 
 import {Key} from '@react-types/shared';
-import {TableState} from '@react-stately/table';
+import {TableState} from '@react-stately-nutrient/table';
 
 export const gridIds = new WeakMap<TableState<unknown>, string>();
 

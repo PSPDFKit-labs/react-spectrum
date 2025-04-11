@@ -21,7 +21,7 @@ import {Text} from '@react-spectrum/text';
 import {useHover} from '@react-aria-nutrient/interactions';
 import {useProviderProps} from '@react-spectrum/provider';
 import {useToggleButton} from '@react-aria-nutrient/button';
-import {useToggleState} from '@react-stately/toggle';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 
 /**
  * ToggleButtons allow users to toggle a selection on or off, for example

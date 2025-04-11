@@ -30,7 +30,7 @@ import {Heading, Text} from '@react-spectrum/text';
 import {Key} from '@react-types/shared';
 import {Link} from '@react-spectrum/link';
 import React, {useRef, useState} from 'react';
-import {useAsyncList, useListData, useTreeData} from '@react-stately/data';
+import {useAsyncList, useListData, useTreeData} from '@react-stately-nutrient/data';
 import {useFilter} from '@react-aria-nutrient/i18n';
 
 let items = [

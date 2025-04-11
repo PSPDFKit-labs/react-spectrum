@@ -11,7 +11,7 @@
  */
 
 import {DropTarget, DropTargetDelegate, Key, LayoutDelegate, Node} from '@react-types/shared';
-import {InvalidationContext, Layout, LayoutInfo, Point, Rect, Size} from '@react-stately/virtualizer';
+import {InvalidationContext, Layout, LayoutInfo, Point, Rect, Size} from '@react-stately-nutrient/virtualizer';
 
 export interface WaterfallLayoutOptions {
   /**

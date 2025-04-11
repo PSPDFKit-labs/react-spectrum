@@ -16,7 +16,7 @@ import {CalendarState, RangeCalendarState} from './types';
 import {DateValue, MappedDateValue, RangeCalendarProps} from '@react-types/calendar';
 import {RangeValue, ValidationState} from '@react-types/shared';
 import {useCalendarState} from './useCalendarState';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useMemo, useRef, useState} from 'react';
 
 export interface RangeCalendarStateOptions<T extends DateValue = DateValue> extends RangeCalendarProps<T> {

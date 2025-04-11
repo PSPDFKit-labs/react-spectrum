@@ -12,7 +12,7 @@
 
 
 import {act} from 'react-dom/test-utils';
-import {enableShadowDOM} from '@react-stately/flags';
+import {enableShadowDOM} from '@react-stately-nutrient/flags';
 import {getActiveElement, getOwnerWindow} from '../';
 
 describe('getOwnerWindow', () => {

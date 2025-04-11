@@ -14,7 +14,7 @@ import {announce} from '@react-aria-nutrient/live-announcer';
 import {Collection, Key, Node, Selection} from '@react-types/shared';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {SelectionManager} from '@react-stately/selection';
+import {SelectionManager} from '@react-stately-nutrient/selection';
 import {useEffectEvent, useUpdateEffect} from '@react-aria-nutrient/utils';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useRef} from 'react';

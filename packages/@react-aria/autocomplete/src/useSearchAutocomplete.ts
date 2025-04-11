@@ -13,7 +13,7 @@
 import {AriaButtonProps} from '@react-types/button';
 import {AriaListBoxOptions} from '@react-aria-nutrient/listbox';
 import {AriaSearchAutocompleteProps} from '@react-types/autocomplete';
-import {ComboBoxState} from '@react-stately/combobox';
+import {ComboBoxState} from '@react-stately-nutrient/combobox';
 import {DOMAttributes, KeyboardDelegate, LayoutDelegate, RefObject, ValidationResult} from '@react-types/shared';
 import {InputHTMLAttributes} from 'react';
 import {mergeProps} from '@react-aria-nutrient/utils';

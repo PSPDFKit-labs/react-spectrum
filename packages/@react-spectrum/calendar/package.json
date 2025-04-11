@@ -46,7 +46,7 @@
     "@react-spectrum/button": "^3.16.12",
     "@react-spectrum/label": "^3.16.13",
     "@react-spectrum/utils": "^3.12.3",
-    "@react-stately/calendar": "^3.7.1",
+    "@react-stately-nutrient/calendar": "^3.7.1",
     "@react-types/button": "^3.11.0",
     "@react-types/calendar": "^3.6.1",
     "@react-types/shared": "^3.28.0",

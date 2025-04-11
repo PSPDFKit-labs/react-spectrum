@@ -27,7 +27,7 @@ import {Label} from '@react-spectrum/label';
 import Paste from '@spectrum-icons/workflow/Paste';
 import React, {useRef, useState} from 'react';
 import {TranslateListBox} from './../chromatic/ListBoxLanguages.stories';
-import {useAsyncList, useTreeData} from '@react-stately/data';
+import {useAsyncList, useTreeData} from '@react-stately-nutrient/data';
 
 let iconMap = {
   AlignCenter,

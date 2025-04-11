@@ -15,7 +15,7 @@ import {getRowLabelledBy} from './utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {Key} from '@react-types/shared';
-import {TableState} from '@react-stately/table';
+import {TableState} from '@react-stately-nutrient/table';
 import {useGridSelectionCheckbox} from '@react-aria-nutrient/grid';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 

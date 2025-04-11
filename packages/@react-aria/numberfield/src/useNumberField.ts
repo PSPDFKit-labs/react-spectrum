@@ -24,8 +24,8 @@ import {
 } from 'react';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {NumberFieldState} from '@react-stately/numberfield';
-import {privateValidationStateProp} from '@react-stately/form';
+import {NumberFieldState} from '@react-stately-nutrient/numberfield';
+import {privateValidationStateProp} from '@react-stately-nutrient/form';
 import {useFocus, useFocusWithin, useScrollWheel} from '@react-aria-nutrient/interactions';
 import {useFormattedTextField} from '@react-aria-nutrient/textfield';
 import {

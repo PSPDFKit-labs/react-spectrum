@@ -16,7 +16,7 @@ import {DOMRef, RefObject, StyleProps} from '@react-types/shared';
 import modalStyles from '@adobe/spectrum-css-temp/components/modal/vars.css';
 import {Overlay} from './Overlay';
 import {OverlayProps} from '@react-types/overlays';
-import {OverlayTriggerState} from '@react-stately/overlays';
+import {OverlayTriggerState} from '@react-stately-nutrient/overlays';
 import overrideStyles from './overlays.css';
 import React, {ForwardedRef, forwardRef, ReactNode, useRef} from 'react';
 import {Underlay} from './Underlay';

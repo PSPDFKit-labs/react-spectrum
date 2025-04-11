@@ -12,7 +12,7 @@ import {Item, ListView} from '../';
 import React from 'react';
 import RemoveCircle from '@spectrum-icons/workflow/RemoveCircle';
 import {Text} from '@react-spectrum/text';
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 export default {
   title: 'ListView/Actions',

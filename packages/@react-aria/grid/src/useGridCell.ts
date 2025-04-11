@@ -16,7 +16,7 @@ import {getFocusableTreeWalker} from '@react-aria-nutrient/focus';
 import {getScrollParent, mergeProps, scrollIntoViewport} from '@react-aria-nutrient/utils';
 import {GridCollection, GridNode} from '@react-types/grid';
 import {gridMap} from './utils';
-import {GridState} from '@react-stately/grid';
+import {GridState} from '@react-stately-nutrient/grid';
 import {KeyboardEvent as ReactKeyboardEvent, useRef} from 'react';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useSelectableItem} from '@react-aria-nutrient/selection';

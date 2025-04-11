@@ -25,7 +25,7 @@ import {
 } from '@react-types/shared';
 import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {listMap} from './utils';
-import {ListState} from '@react-stately/list';
+import {ListState} from '@react-stately-nutrient/list';
 import {useGridSelectionAnnouncement, useHighlightSelectionDescription} from '@react-aria-nutrient/grid';
 import {useHasTabbableChild} from '@react-aria-nutrient/focus';
 import {useSelectableList} from '@react-aria-nutrient/selection';

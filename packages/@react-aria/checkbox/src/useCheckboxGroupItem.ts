@@ -13,11 +13,11 @@
 import {AriaCheckboxGroupItemProps} from '@react-types/checkbox';
 import {CheckboxAria, useCheckbox} from './useCheckbox';
 import {checkboxGroupData} from './utils';
-import {CheckboxGroupState} from '@react-stately/checkbox';
-import {DEFAULT_VALIDATION_RESULT, privateValidationStateProp, useFormValidationState} from '@react-stately/form';
+import {CheckboxGroupState} from '@react-stately-nutrient/checkbox';
+import {DEFAULT_VALIDATION_RESULT, privateValidationStateProp, useFormValidationState} from '@react-stately-nutrient/form';
 import {RefObject, ValidationResult} from '@react-types/shared';
 import {useEffect, useRef} from 'react';
-import {useToggleState} from '@react-stately/toggle';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 
 /**
  * Provides the behavior and accessibility implementation for a checkbox component contained within a checkbox group.

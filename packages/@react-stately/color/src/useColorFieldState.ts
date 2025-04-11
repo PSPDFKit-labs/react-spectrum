@@ -11,10 +11,10 @@
  */
 
 import {Color, ColorFieldProps} from '@react-types/color';
-import {FormValidationState, useFormValidationState} from '@react-stately/form';
+import {FormValidationState, useFormValidationState} from '@react-stately-nutrient/form';
 import {parseColor} from './Color';
 import {useColor} from './useColor';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useMemo, useState} from 'react';
 
 export interface ColorFieldState extends FormValidationState {

@@ -11,7 +11,7 @@
  */
 
 import {SearchFieldProps} from '@react-types/searchfield';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export interface SearchFieldState {
   /** The current value of the search field. */

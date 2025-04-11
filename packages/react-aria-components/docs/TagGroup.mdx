@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:react-aria-components';
-import statelyDocs from 'docs:@react-stately/list';
+import statelyDocs from 'docs:@react-stately-nutrient/list';
 import {PropTable, HeaderInfo, PageDescription, StateTable, ContextTable, TypeLink} from '@react-spectrum/docs';
 import styles from '@react-spectrum/docs/src/docs.css';
 import packageData from 'react-aria-components/package.json';
@@ -253,7 +253,7 @@ function MyTag({children, ...props}: TagProps) {
 The `onRemove` prop can be used to allow the user to remove tags. In the above example, an additional `<Button slot="remove>` element is rendered when a tag group allows removing. The user can also press the backspace key while a tag is focused to remove the tag from the group. Additionally, when [selection](#selection) is enabled, all selected items will be deleted when pressing the backspace key on a selected tag.
 
 ```tsx example
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 function Example() {
   let list = useListData({

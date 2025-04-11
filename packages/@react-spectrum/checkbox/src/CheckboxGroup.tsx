@@ -19,7 +19,7 @@ import React from 'react';
 import {SpectrumCheckboxGroupProps} from '@react-types/checkbox';
 import styles from '@adobe/spectrum-css-temp/components/fieldgroup/vars.css';
 import {useCheckboxGroup} from '@react-aria-nutrient/checkbox';
-import {useCheckboxGroupState} from '@react-stately/checkbox';
+import {useCheckboxGroupState} from '@react-stately-nutrient/checkbox';
 import {useFormProps} from '@react-spectrum/form';
 
 /**

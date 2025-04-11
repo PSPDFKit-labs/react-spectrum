@@ -44,7 +44,7 @@
     "@react-spectrum/progress": "^3.7.14",
     "@react-spectrum/text": "^3.5.13",
     "@react-spectrum/utils": "^3.12.3",
-    "@react-stately/toggle": "^3.8.2",
+    "@react-stately-nutrient/toggle": "^3.8.2",
     "@react-types/button": "^3.11.0",
     "@react-types/shared": "^3.28.0",
     "@spectrum-icons/ui": "^3.6.14",

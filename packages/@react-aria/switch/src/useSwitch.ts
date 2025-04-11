@@ -13,7 +13,7 @@
 import {AriaSwitchProps} from '@react-types/switch';
 import {InputHTMLAttributes, LabelHTMLAttributes} from 'react';
 import {RefObject} from '@react-types/shared';
-import {ToggleState} from '@react-stately/toggle';
+import {ToggleState} from '@react-stately-nutrient/toggle';
 import {useToggle} from '@react-aria-nutrient/toggle';
 
 export interface SwitchAria {

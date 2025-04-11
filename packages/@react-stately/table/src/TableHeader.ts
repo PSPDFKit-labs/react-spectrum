@@ -11,7 +11,7 @@
  */
 
 import {CollectionBuilderContext} from './useTableState';
-import {PartialNode} from '@react-stately/collections';
+import {PartialNode} from '@react-stately-nutrient/collections';
 import React, {JSX, ReactElement} from 'react';
 import {TableHeaderProps} from '@react-types/table';
 

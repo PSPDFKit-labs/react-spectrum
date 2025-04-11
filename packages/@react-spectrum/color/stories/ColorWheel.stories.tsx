@@ -14,7 +14,7 @@ import {action} from '@storybook/addon-actions';
 import {ColorSwatch, ColorWheel} from '../';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import {Flex, useLocale} from '@adobe/react-spectrum';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import React, {useState} from 'react';
 
 export type ColorWheelStory = ComponentStoryObj<typeof ColorWheel>;

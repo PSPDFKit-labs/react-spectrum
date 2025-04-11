@@ -18,7 +18,7 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {SpectrumColorWheelProps} from '@react-types/color';
 import styles from '@adobe/spectrum-css-temp/components/colorwheel/vars.css';
 import {useColorWheel} from '@react-aria-nutrient/color';
-import {useColorWheelState} from '@react-stately/color';
+import {useColorWheelState} from '@react-stately-nutrient/color';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 import {useProviderProps} from '@react-spectrum/provider';
 import {useResizeObserver} from '@react-aria-nutrient/utils';

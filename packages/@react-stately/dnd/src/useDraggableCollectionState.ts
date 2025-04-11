@@ -11,7 +11,7 @@
  */
 
 import {Collection, DraggableCollectionEndEvent, DraggableCollectionProps, DragItem, DragMoveEvent, DragPreviewRenderer, DragStartEvent, DropOperation, Key, Node, RefObject} from '@react-types/shared';
-import {MultipleSelectionManager} from '@react-stately/selection';
+import {MultipleSelectionManager} from '@react-stately-nutrient/selection';
 import {useRef, useState} from 'react';
 
 export interface DraggableCollectionStateOptions extends DraggableCollectionProps {

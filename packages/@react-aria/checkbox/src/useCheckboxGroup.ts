@@ -12,7 +12,7 @@
 
 import {AriaCheckboxGroupProps} from '@react-types/checkbox';
 import {checkboxGroupData} from './utils';
-import {CheckboxGroupState} from '@react-stately/checkbox';
+import {CheckboxGroupState} from '@react-stately-nutrient/checkbox';
 import {DOMAttributes, ValidationResult} from '@react-types/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {useField} from '@react-aria-nutrient/label';

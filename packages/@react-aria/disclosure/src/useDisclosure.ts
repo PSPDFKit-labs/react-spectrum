@@ -11,7 +11,7 @@
  */
 
 import {AriaButtonProps} from '@react-types/button';
-import {DisclosureState} from '@react-stately/disclosure';
+import {DisclosureState} from '@react-stately-nutrient/disclosure';
 import {flushSync} from 'react-dom';
 import {HTMLAttributes, RefObject, useCallback, useEffect, useRef} from 'react';
 import {useEvent, useId, useLayoutEffect} from '@react-aria-nutrient/utils';

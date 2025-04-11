@@ -19,7 +19,7 @@ import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import InfoMedium from '@spectrum-icons/ui/InfoMedium';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {QueuedToast, ToastState} from '@react-stately/toast';
+import {QueuedToast, ToastState} from '@react-stately-nutrient/toast';
 import React from 'react';
 import styles from '@adobe/spectrum-css-temp/components/toast/vars.css';
 import SuccessMedium from '@spectrum-icons/ui/SuccessMedium';

@@ -16,7 +16,7 @@ import {FocusableElement, RefObject} from '@react-types/shared';
 import {focusWithoutScrolling, useId} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {MenuTriggerState} from '@react-stately/menu';
+import {MenuTriggerState} from '@react-stately-nutrient/menu';
 import {MenuTriggerType} from '@react-types/menu';
 import {PressProps, useLongPress} from '@react-aria-nutrient/interactions';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';

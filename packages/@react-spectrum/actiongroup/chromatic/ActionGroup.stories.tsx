@@ -18,7 +18,7 @@ import DocumentIcon from '@spectrum-icons/workflow/Document';
 import DrawIcon from '@spectrum-icons/workflow/Draw';
 import {Flex} from '@react-spectrum/layout';
 import InfoIcon from '@spectrum-icons/workflow/Info';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import PropertiesIcon from '@spectrum-icons/workflow/Properties';
 import React from 'react';
 import SettingsIcon from '@spectrum-icons/workflow/Settings';

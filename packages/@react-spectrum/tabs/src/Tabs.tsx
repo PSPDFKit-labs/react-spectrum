@@ -16,7 +16,7 @@ import {DOMProps, DOMRef, DOMRefValue, Key, Node, Orientation, RefObject, StyleP
 import {filterDOMProps, mergeProps, useId, useLayoutEffect, useResizeObserver} from '@react-aria-nutrient/utils';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {Item, Picker} from '@react-spectrum/picker';
-import {ListCollection} from '@react-stately/list';
+import {ListCollection} from '@react-stately-nutrient/list';
 import React, {
   CSSProperties,
   HTMLAttributes,
@@ -30,9 +30,9 @@ import React, {
 } from 'react';
 import {SpectrumPickerProps} from '@react-types/select';
 import styles from '@adobe/spectrum-css-temp/components/tabs/vars.css';
-import {TabListState, useTabListState} from '@react-stately/tabs';
+import {TabListState, useTabListState} from '@react-stately-nutrient/tabs';
 import {Text} from '@react-spectrum/text';
-import {useCollection} from '@react-stately/collections';
+import {useCollection} from '@react-stately-nutrient/collections';
 import {useHover} from '@react-aria-nutrient/interactions';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useProvider, useProviderProps} from '@react-spectrum/provider';

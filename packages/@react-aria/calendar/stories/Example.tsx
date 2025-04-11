@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 import {Button} from '@react-spectrum/button';
-import {CalendarState, RangeCalendarState, useCalendarState} from '@react-stately/calendar';
+import {CalendarState, RangeCalendarState, useCalendarState} from '@react-stately-nutrient/calendar';
 import {createCalendar, DateDuration, startOfWeek} from '@internationalized/date';
 import React, {ReactElement, useMemo, useRef} from 'react';
 import {useCalendar, useCalendarCell, useCalendarGrid} from '../src';

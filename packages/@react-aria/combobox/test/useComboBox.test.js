@@ -11,10 +11,10 @@
  */
 
 import {actHook as act, renderHook} from '@react-spectrum/test-utils-internal';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import React from 'react';
 import {useComboBox} from '../';
-import {useComboBoxState} from '@react-stately/combobox';
+import {useComboBoxState} from '@react-stately-nutrient/combobox';
 
 describe('useComboBox', function () {
   let preventDefault = jest.fn();

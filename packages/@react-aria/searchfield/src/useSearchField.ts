@@ -17,7 +17,7 @@ import {DOMAttributes, RefObject, ValidationResult} from '@react-types/shared';
 import {InputHTMLAttributes, LabelHTMLAttributes} from 'react';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {SearchFieldState} from '@react-stately/searchfield';
+import {SearchFieldState} from '@react-stately-nutrient/searchfield';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useTextField} from '@react-aria-nutrient/textfield';
 

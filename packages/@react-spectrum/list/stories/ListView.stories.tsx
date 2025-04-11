@@ -20,7 +20,7 @@ import {Item, ListView} from '../';
 import {Link} from '@react-spectrum/link';
 import NoSearchResults from '@spectrum-icons/illustrations/NoSearchResults';
 import React, {useEffect, useState} from 'react';
-import {useAsyncList, useListData} from '@react-stately/data';
+import {useAsyncList, useListData} from '@react-stately-nutrient/data';
 
 export const items: any = [
   {key: 'a', name: 'Adobe Photoshop', type: 'file'},

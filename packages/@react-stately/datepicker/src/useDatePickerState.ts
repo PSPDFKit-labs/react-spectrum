@@ -13,9 +13,9 @@
 import {CalendarDate, DateFormatter, toCalendarDate, toCalendarDateTime} from '@internationalized/date';
 import {DatePickerProps, DateValue, Granularity, MappedDateValue, TimeValue} from '@react-types/datepicker';
 import {FieldOptions, FormatterOptions, getFormatOptions, getPlaceholderTime, getValidationResult, useDefaultProps} from './utils';
-import {FormValidationState, useFormValidationState} from '@react-stately/form';
-import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately/overlays';
-import {useControlledState} from '@react-stately/utils';
+import {FormValidationState, useFormValidationState} from '@react-stately-nutrient/form';
+import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately-nutrient/overlays';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useMemo, useState} from 'react';
 import {ValidationState} from '@react-types/shared';
 

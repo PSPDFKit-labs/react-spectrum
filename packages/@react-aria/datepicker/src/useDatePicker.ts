@@ -15,12 +15,12 @@ import {AriaDatePickerProps, DateValue} from '@react-types/datepicker';
 import {AriaDialogProps} from '@react-types/dialog';
 import {CalendarProps} from '@react-types/calendar';
 import {createFocusManager} from '@react-aria-nutrient/focus';
-import {DatePickerState} from '@react-stately/datepicker';
+import {DatePickerState} from '@react-stately-nutrient/datepicker';
 import {DOMAttributes, GroupDOMAttributes, KeyboardEvent, RefObject, ValidationResult} from '@react-types/shared';
 import {filterDOMProps, mergeProps, useDescription, useId} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {privateValidationStateProp} from '@react-stately/form';
+import {privateValidationStateProp} from '@react-stately-nutrient/form';
 import {roleSymbol} from './useDateField';
 import {useDatePickerGroup} from './useDatePickerGroup';
 import {useField} from '@react-aria-nutrient/label';

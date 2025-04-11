@@ -13,7 +13,7 @@
 
 import {CardBase} from './CardBase';
 import {DOMRef, DOMRefValue, ItemProps} from '@react-types/shared';
-import {PartialNode} from '@react-stately/collections';
+import {PartialNode} from '@react-stately-nutrient/collections';
 import React, {forwardRef, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes} from 'react';
 import {SpectrumCardProps} from '@react-types/card';
 import {useCardViewContext} from './CardViewContext';

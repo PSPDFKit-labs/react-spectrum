@@ -11,15 +11,15 @@
  */
 
 import {FocusableElement, RefObject} from '@react-types/shared';
-import {getLastItem} from '@react-stately/collections';
+import {getLastItem} from '@react-stately-nutrient/collections';
 import {getRowLabelledBy} from './utils';
 import type {GridNode} from '@react-types/grid';
 import {GridRowAria, GridRowProps, useGridRow} from '@react-aria-nutrient/grid';
 import {HTMLAttributes} from 'react';
 import {mergeProps, useSyntheticLinkProps} from '@react-aria-nutrient/utils';
 import {TableCollection} from '@react-types/table';
-import {tableNestedRows} from '@react-stately/flags';
-import {TableState, TreeGridState} from '@react-stately/table';
+import {tableNestedRows} from '@react-stately-nutrient/flags';
+import {TableState, TreeGridState} from '@react-stately-nutrient/table';
 import {useLocale} from '@react-aria-nutrient/i18n';
 
 const EXPANSION_KEYS = {

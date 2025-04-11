@@ -16,7 +16,7 @@ function areSpecifiersAlphabetized(specifiers: ImportSpecifier[]) {
  * Works for:
  * - `@react-spectrum/*` -> `@adobe/react-spectrum`.
  * - `@react-aria/*` -> `react-aria`.
- * - `@react-stately/*` -> `react-stately`.
+ * - `@react-stately-nutrient/*` -> `react-stately`.
  *
  * By default this will apply to all the above packages, or optionally you can specify which packages to apply this by passing a comma-separated list to the packages option: `--packages=react-aria,react-stately,react-spectrum`.
  *
@@ -37,7 +37,7 @@ export default function transformer(file: FileInfo, api: API, options: Options) 
     },
     'react-stately': {
       monopackage: 'react-stately',
-      individualPrefix: '@react-stately/'
+      individualPrefix: '@react-stately-nutrient/'
     }
   };
 

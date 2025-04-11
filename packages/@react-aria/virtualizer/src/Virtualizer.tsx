@@ -11,7 +11,7 @@
  */
 
 import {Collection, Key, RefObject} from '@react-types/shared';
-import {Layout, Rect, ReusableView, useVirtualizerState} from '@react-stately/virtualizer';
+import {Layout, Rect, ReusableView, useVirtualizerState} from '@react-stately-nutrient/virtualizer';
 import {mergeProps, useLoadMore, useObjectRef} from '@react-aria-nutrient/utils';
 import React, {ForwardedRef, HTMLAttributes, ReactElement, ReactNode, useCallback} from 'react';
 import {ScrollView} from './ScrollView';

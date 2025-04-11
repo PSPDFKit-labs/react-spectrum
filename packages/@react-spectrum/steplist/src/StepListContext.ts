@@ -11,6 +11,6 @@
  */
 
 import React from 'react';
-import {StepListState} from '@react-stately/steplist';
+import {StepListState} from '@react-stately-nutrient/steplist';
 
 export const StepListContext = React.createContext<StepListState<unknown> | null>(null);

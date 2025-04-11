@@ -11,7 +11,7 @@
  */
 
 import {act, fireEvent} from '@react-spectrum/test-utils-internal';
-import {Cell, Column, Row, TableBody, TableHeader} from '@react-stately/table';
+import {Cell, Column, Row, TableBody, TableHeader} from '@react-stately-nutrient/table';
 import {composeStories} from '@storybook/react';
 import {Key} from '@react-types/shared';
 import React from 'react';

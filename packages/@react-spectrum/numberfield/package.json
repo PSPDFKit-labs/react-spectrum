@@ -46,7 +46,7 @@
     "@react-spectrum/label": "^3.16.13",
     "@react-spectrum/textfield": "^3.13.1",
     "@react-spectrum/utils": "^3.12.3",
-    "@react-stately/numberfield": "^3.9.10",
+    "@react-stately-nutrient/numberfield": "^3.9.10",
     "@react-types/button": "^3.11.0",
     "@react-types/numberfield": "^3.8.9",
     "@react-types/shared": "^3.28.0",

@@ -22,7 +22,7 @@ import React from 'react';
 import scaleMedium from '@adobe/spectrum-css-temp/vars/spectrum-medium-unique.css';
 import {SSRProvider} from '@react-aria-nutrient/ssr';
 import themeLight from '@adobe/spectrum-css-temp/vars/spectrum-light-unique.css';
-import {useAsyncList, useListData} from '@react-stately/data';
+import {useAsyncList, useListData} from '@react-stately-nutrient/data';
 import {useFilter} from '@react-aria-nutrient/i18n';
 import {User} from '@react-aria-nutrient/test-utils';
 import userEvent from '@testing-library/user-event';

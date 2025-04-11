@@ -14,7 +14,7 @@ import {AriaListBoxProps} from '@react-types/listbox';
 import {DOMAttributes, KeyboardDelegate, LayoutDelegate, RefObject} from '@react-types/shared';
 import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {listData} from './utils';
-import {ListState} from '@react-stately/list';
+import {ListState} from '@react-stately-nutrient/list';
 import {useFocusWithin} from '@react-aria-nutrient/interactions';
 import {useLabel} from '@react-aria-nutrient/label';
 import {useSelectableList} from '@react-aria-nutrient/selection';

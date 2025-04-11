@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import React from 'react';
 import {Tabs} from './example';
 

@@ -14,7 +14,7 @@ import {announce} from '@react-aria-nutrient/live-announcer';
 import {AriaButtonProps} from '@react-types/button';
 import {AriaLabelingProps, DOMAttributes, DOMProps} from '@react-types/shared';
 import {CalendarPropsBase} from '@react-types/calendar';
-import {CalendarState, RangeCalendarState} from '@react-stately/calendar';
+import {CalendarState, RangeCalendarState} from '@react-stately-nutrient/calendar';
 import {filterDOMProps, mergeProps, useLabels, useSlotId, useUpdateEffect} from '@react-aria-nutrient/utils';
 import {hookData, useSelectedDateDescription, useVisibleRangeDescription} from './utils';
 // @ts-ignore

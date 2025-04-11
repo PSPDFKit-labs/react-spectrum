@@ -12,7 +12,7 @@
 
 import {CollectionBranchProps, CollectionRenderer, CollectionRendererContext, CollectionRootProps} from './Collection';
 import {DropPosition, DropTarget, DropTargetDelegate, ItemDropTarget, Node} from '@react-types/shared';
-import {Layout, ReusableView, useVirtualizerState, VirtualizerState} from '@react-stately/virtualizer';
+import {Layout, ReusableView, useVirtualizerState, VirtualizerState} from '@react-stately-nutrient/virtualizer';
 import React, {createContext, ReactNode, useContext, useMemo} from 'react';
 import {useScrollView, VirtualizerItem} from '@react-aria-nutrient/virtualizer';
 

@@ -16,7 +16,7 @@ import {DOMAttributes, FocusableElement, Node, RefObject} from '@react-types/sha
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {isAndroid, useLabels} from '@react-aria-nutrient/utils';
-import {TreeState} from '@react-stately/tree';
+import {TreeState} from '@react-stately-nutrient/tree';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 
 export interface AriaTreeItemOptions extends Omit<AriaGridListItemOptions, 'isVirtualized'> {

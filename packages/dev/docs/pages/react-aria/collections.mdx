@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:react-aria-components';
-import dataDocs from 'docs:@react-stately/data';
+import dataDocs from 'docs:@react-stately-nutrient/data';
 import {HeaderInfo, TypeContext, InterfaceType, TypeLink} from '@react-spectrum/docs';
 import {InlineAlert, Content, Heading} from '@adobe/react-spectrum';
 
@@ -156,7 +156,7 @@ state when they are removed from the list. See the [useListData](../react-statel
 The following example shows how you might append a new item to the list.
 
 ```tsx
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 let list = useListData({
   initialItems: [
@@ -230,7 +230,7 @@ removing items from the selection when they are removed from the list.
 See the [useTreeData](../react-stately/useTreeData.html) docs for more details.
 
 ```tsx
-import {useTreeData} from '@react-stately/data';
+import {useTreeData} from '@react-stately-nutrient/data';
 
 let tree = useTreeData({
   initialItems: [
@@ -284,7 +284,7 @@ to render. You can use whatever data fetching library you want, or the built-in
 This example fetches a list of Pokemon from an API and displays them in a Select.
 
 ```tsx
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 
 let list = useAsyncList({
   async load({signal}) {

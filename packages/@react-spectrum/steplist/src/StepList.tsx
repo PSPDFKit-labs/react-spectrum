@@ -18,7 +18,7 @@ import {StepListContext} from './StepListContext';
 import {StepListItem} from './StepListItem';
 import styles from '@adobe/spectrum-css-temp/components/steplist/vars.css';
 import {useProviderProps} from '@react-spectrum/provider';
-import {useStepListState} from '@react-stately/steplist';
+import {useStepListState} from '@react-stately-nutrient/steplist';
 
 export interface SpectrumStepListProps<T> extends AriaStepListProps<T>, StyleProps {
   /**

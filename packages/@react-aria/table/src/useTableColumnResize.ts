@@ -19,7 +19,7 @@ import {GridNode} from '@react-types/grid';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {mergeProps, useDescription, useEffectEvent, useId} from '@react-aria-nutrient/utils';
-import {TableColumnResizeState} from '@react-stately/table';
+import {TableColumnResizeState} from '@react-stately-nutrient/table';
 import {useLocale, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useVisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 

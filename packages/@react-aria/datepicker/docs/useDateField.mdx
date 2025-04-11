@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/datepicker';
-import statelyDocs from 'docs:@react-stately/datepicker';
+import statelyDocs from 'docs:@react-stately-nutrient/datepicker';
 import i18nDocs from 'docs:@internationalized/date';
 import {FunctionAPI, HeaderInfo, InterfaceType, TypeContext, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/datepicker/package.json';
@@ -77,7 +77,7 @@ input via the `aria-describedby` attribute.
 
 Note that most of this anatomy is shared with [useTimeField](useTimeField.html), so you can reuse many components between them if you have both.
 
-State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useDateFieldState} /> hook from `@react-stately/datepicker`.
+State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useDateFieldState} /> hook from `@react-stately-nutrient/datepicker`.
 The state object should be passed as an option to `useDateField` and `useDateSegment`.
 
 If the date field does not have a visible label, an `aria-label` or `aria-labelledby` prop must be passed instead to
@@ -94,7 +94,7 @@ Dates and times are represented in many different ways by cultures around the wo
 ## Example
 
 ```tsx example export=true
-import {useDateFieldState} from '@react-stately/datepicker';
+import {useDateFieldState} from '@react-stately-nutrient/datepicker';
 import {useDateField, useDateSegment} from '@react-aria-nutrient/datepicker';
 import {createCalendar} from '@internationalized/date';
 import {useLocale} from '@react-aria-nutrient/i18n';
@@ -398,7 +398,7 @@ By default, this includes [all calendar systems](../internationalized/date/Calen
 For example, if your application only supports Gregorian dates, you could implement a `createCalendar` function like this:
 
 ```jsx
-import {useDateFieldState} from '@react-stately/datepicker';
+import {useDateFieldState} from '@react-stately-nutrient/datepicker';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {GregorianCalendar} from '@internationalized/date';
 

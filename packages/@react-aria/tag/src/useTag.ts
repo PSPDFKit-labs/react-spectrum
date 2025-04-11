@@ -17,7 +17,7 @@ import {hookData} from './useTagGroup';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {KeyboardEvent} from 'react';
-import type {ListState} from '@react-stately/list';
+import type {ListState} from '@react-stately-nutrient/list';
 import {SelectableItemStates} from '@react-aria-nutrient/selection';
 import {useFocusable, useInteractionModality} from '@react-aria-nutrient/interactions';
 import {useGridListItem} from '@react-aria-nutrient/gridlist';

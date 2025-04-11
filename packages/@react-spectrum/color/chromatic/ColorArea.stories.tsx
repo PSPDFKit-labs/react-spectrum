@@ -13,7 +13,7 @@
 import {ColorArea, ColorField, ColorSlider, ColorSwatch, ColorWheel} from '../';
 import {Flex} from '@adobe/react-spectrum';
 import {Meta, StoryFn} from '@storybook/react';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import React, {useState} from 'react';
 import {SpectrumColorAreaProps} from '@react-types/color';
 

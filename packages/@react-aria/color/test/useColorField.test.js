@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {parseColor, useColorFieldState} from '@react-stately/color';
+import {parseColor, useColorFieldState} from '@react-stately-nutrient/color';
 import React from 'react';
 import {renderHook} from '@react-spectrum/test-utils-internal';
 import {useColorField} from '../';

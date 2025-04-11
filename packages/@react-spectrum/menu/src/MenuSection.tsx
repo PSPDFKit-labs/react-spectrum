@@ -11,12 +11,12 @@
  */
 
 import {classNames} from '@react-spectrum/utils';
-import {getChildNodes} from '@react-stately/collections';
+import {getChildNodes} from '@react-stately-nutrient/collections';
 import {MenuItem} from './MenuItem';
 import {Node} from '@react-types/shared';
 import React, {Fragment, ReactNode} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
-import {TreeState} from '@react-stately/tree';
+import {TreeState} from '@react-stately-nutrient/tree';
 import {useMenuSection} from '@react-aria-nutrient/menu';
 import {useSeparator} from '@react-aria-nutrient/separator';
 

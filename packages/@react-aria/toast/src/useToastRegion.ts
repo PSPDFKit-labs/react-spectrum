@@ -15,7 +15,7 @@ import {focusWithoutScrolling, mergeProps, useEffectEvent, useLayoutEffect} from
 import {getInteractionModality, useFocusWithin, useHover} from '@react-aria-nutrient/interactions';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {ToastState} from '@react-stately/toast';
+import {ToastState} from '@react-stately-nutrient/toast';
 import {useEffect, useRef} from 'react';
 import {useLandmark} from '@react-aria-nutrient/landmark';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';

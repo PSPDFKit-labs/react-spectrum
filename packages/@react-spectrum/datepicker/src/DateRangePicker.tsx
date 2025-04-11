@@ -30,7 +30,7 @@ import React, {ReactElement, useRef} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/inputgroup/vars.css';
 import {TimeField} from './TimeField';
 import {useDateRangePicker} from '@react-aria-nutrient/datepicker';
-import {useDateRangePickerState} from '@react-stately/datepicker';
+import {useDateRangePickerState} from '@react-stately-nutrient/datepicker';
 import {useFocusManagerRef, useFormatHelpText, useFormattedDateWidth, useVisibleMonths} from './utils';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 import {useFormProps} from '@react-spectrum/form';

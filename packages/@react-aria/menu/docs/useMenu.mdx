@@ -15,8 +15,8 @@ import overlaysDocs from 'docs:@react-aria-nutrient/overlays';
 import focusDocs from 'docs:@react-aria-nutrient/focus';
 import menuDocs from 'docs:@react-aria-nutrient/menu';
 import buttonDocs from 'docs:@react-aria-nutrient/button';
-import statelyDocs from 'docs:@react-stately/menu';
-import treeDocs from 'docs:@react-stately/tree';
+import statelyDocs from 'docs:@react-stately-nutrient/menu';
+import treeDocs from 'docs:@react-stately-nutrient/tree';
 import utilsDocs from 'docs:@react-aria-nutrient/utils';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/menu/package.json';
@@ -99,8 +99,8 @@ and `useMenuSection` handle exposing this to assistive technology using ARIA, al
 </TypeContext.Provider>
 
 State for the trigger is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useMenuTriggerState} />
-hook from `@react-stately/menu`. State for the menu itself is managed by the <TypeLink links={treeDocs.links} type={treeDocs.exports.useTreeState} />
-hook from `@react-stately/tree`. These state objects should be passed to the appropriate React Aria hooks.
+hook from `@react-stately-nutrient/menu`. State for the menu itself is managed by the <TypeLink links={treeDocs.links} type={treeDocs.exports.useTreeState} />
+hook from `@react-stately-nutrient/tree`. These state objects should be passed to the appropriate React Aria hooks.
 
 If a menu, menu item, or group does not have a visible label, an `aria-label` or `aria-labelledby`
 prop must be passed instead to identify the element to assistive technology.
@@ -118,10 +118,10 @@ The `Popover` and `Button` components used in this example are independent, and 
 The code is available below, and documentation is available on the corresponding pages.
 
 ```tsx example export=true render=false
-import type {MenuTriggerProps} from '@react-stately/menu';
-import {useMenuTriggerState} from '@react-stately/menu';
+import type {MenuTriggerProps} from '@react-stately-nutrient/menu';
+import {useMenuTriggerState} from '@react-stately-nutrient/menu';
 import {useMenuTrigger} from '@react-aria-nutrient/menu';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 
 // Reuse the Popover, and Button from your component library. See below for details.
 import {Popover, Button} from 'your-component-library';
@@ -168,7 +168,7 @@ For each item in the collection in state, we render either a `MenuItem` or `Menu
 ```tsx example export=true render=false
 import type {AriaMenuProps} from '@react-aria-nutrient/menu';
 import {useMenu} from '@react-aria-nutrient/menu';
-import {useTreeState} from '@react-stately/tree';
+import {useTreeState} from '@react-stately-nutrient/tree';
 
 function Menu<T extends object>(props: AriaMenuProps<T>) {
   // Create menu state based on the incoming props
@@ -458,7 +458,7 @@ function MenuSection({section, state}) {
 With this in place, we can now render a static menu with multiple sections:
 
 ```tsx example
-import {Section} from '@react-stately/collections';
+import {Section} from '@react-stately-nutrient/collections';
 
 <MenuButton label="Actions" onAction={alert}>
   <Section title="Styles">

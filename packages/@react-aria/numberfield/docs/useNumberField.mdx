@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/numberfield';
-import statelyDocs from 'docs:@react-stately/numberfield';
+import statelyDocs from 'docs:@react-stately-nutrient/numberfield';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/numberfield/package.json';
 import Anatomy from './anatomy.svg';
@@ -84,7 +84,7 @@ input via the `aria-describedby` attribute.
 </TypeContext.Provider>
 
 State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useNumberFieldState} />
-hook from `@react-stately/numberfield`. The state object should be passed as an option to `useNumberField`
+hook from `@react-stately-nutrient/numberfield`. The state object should be passed as an option to `useNumberField`
 
 If there is no visual label, an `aria-label` or `aria-labelledby` prop must be passed instead
 to identify the element to screen readers.
@@ -105,7 +105,7 @@ In addition, see [useTextField](useTextField.html) for an example of the descrip
 
 ```tsx example export=true
 import {useNumberField} from '@react-aria-nutrient/numberfield';
-import {useNumberFieldState} from '@react-stately/numberfield';
+import {useNumberFieldState} from '@react-stately-nutrient/numberfield';
 import {useLocale} from '@react-aria-nutrient/i18n';
 
 // Reuse the Button from your component library. See below for details.

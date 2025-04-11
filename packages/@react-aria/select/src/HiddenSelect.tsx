@@ -13,7 +13,7 @@
 import {FocusableElement, RefObject} from '@react-types/shared';
 import React, {ReactNode, useRef} from 'react';
 import {selectData} from './useSelect';
-import {SelectState} from '@react-stately/select';
+import {SelectState} from '@react-stately-nutrient/select';
 import {useFormReset} from '@react-aria-nutrient/utils';
 import {useFormValidation} from '@react-aria-nutrient/form';
 import {useVisuallyHidden} from '@react-aria-nutrient/visually-hidden';

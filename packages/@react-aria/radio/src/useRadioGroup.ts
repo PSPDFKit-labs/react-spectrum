@@ -15,7 +15,7 @@ import {DOMAttributes, ValidationResult} from '@react-types/shared';
 import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {getFocusableTreeWalker} from '@react-aria-nutrient/focus';
 import {radioGroupData} from './utils';
-import {RadioGroupState} from '@react-stately/radio';
+import {RadioGroupState} from '@react-stately-nutrient/radio';
 import {useField} from '@react-aria-nutrient/label';
 import {useFocusWithin} from '@react-aria-nutrient/interactions';
 import {useLocale} from '@react-aria-nutrient/i18n';

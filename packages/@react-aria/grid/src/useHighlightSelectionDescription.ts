@@ -13,7 +13,7 @@
 import {AriaLabelingProps} from '@react-types/shared';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {MultipleSelectionManager} from '@react-stately/selection';
+import {MultipleSelectionManager} from '@react-stately-nutrient/selection';
 import {useDescription} from '@react-aria-nutrient/utils';
 import {useInteractionModality} from '@react-aria-nutrient/interactions';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';

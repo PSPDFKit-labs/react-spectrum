@@ -11,7 +11,7 @@
  */
 
 import {Key} from '@react-types/shared';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useEffect, useMemo} from 'react';
 
 export interface DisclosureGroupProps {

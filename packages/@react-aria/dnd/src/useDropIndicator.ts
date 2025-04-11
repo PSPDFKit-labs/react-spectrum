@@ -11,7 +11,7 @@
  */
 
 import * as DragManager from './DragManager';
-import {DroppableCollectionState} from '@react-stately/dnd';
+import {DroppableCollectionState} from '@react-stately-nutrient/dnd';
 import {DropTarget, Key, RefObject} from '@react-types/shared';
 import {getDroppableCollectionId} from './utils';
 import {HTMLAttributes} from 'react';

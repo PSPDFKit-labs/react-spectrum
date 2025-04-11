@@ -19,7 +19,7 @@ import {filterDOMProps, mergeRefs, useObjectRef, useResizeObserver} from '@react
 import {FocusStrategy, forwardRefType, HoverEvents, Key, LinkDOMProps, MultipleSelection} from '@react-types/shared';
 import {HeaderContext} from './Header';
 import {KeyboardContext} from './Keyboard';
-import {MultipleSelectionState, SelectionManager, useMultipleSelectionState} from '@react-stately/selection';
+import {MultipleSelectionState, SelectionManager, useMultipleSelectionState} from '@react-stately-nutrient/selection';
 import {OverlayTriggerStateContext} from './Dialog';
 import {PopoverContext} from './Popover';
 import {PressResponder} from '@react-aria-nutrient/interactions';

@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/button';
-import statelyDocs from 'docs:@react-stately/toggle';
+import statelyDocs from 'docs:@react-stately-nutrient/toggle';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import {Keyboard} from '@react-spectrum/text';
 import packageData from '@react-aria-nutrient/button/package.json';
@@ -62,7 +62,7 @@ whether the user is currently pressing the button:
 </TypeContext.Provider>
 
 Selection state is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useToggleState} />
-hook in `@react-stately/toggle`. The state object should be passed as an option to `useToggleButton`.
+hook in `@react-stately-nutrient/toggle`. The state object should be passed as an option to `useToggleButton`.
 
 If a visual label is not provided (e.g. an icon only button), then an `aria-label` or
 `aria-labelledby` prop must be passed to identify the button to assistive technology.
@@ -80,7 +80,7 @@ In addition, the `isPressed` state is used to adjust the background to be darker
 ```tsx example export=true
 import {useRef} from 'react';
 import {useToggleButton} from '@react-aria-nutrient/button';
-import {useToggleState} from '@react-stately/toggle';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 
 function ToggleButton(props) {
   let ref = useRef<HTMLButtonElement | null>(null);

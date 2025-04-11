@@ -15,7 +15,7 @@ import {PropTable, HeaderInfo, TypeLink, PageDescription, StateTable, ContextTab
 import styles from '@react-spectrum/docs/src/docs.css';
 import packageData from 'react-aria-components/package.json';
 import ChevronRight from '@spectrum-icons/workflow/ChevronRight';
-import statelyDocs from 'docs:@react-stately/autocomplete';
+import statelyDocs from 'docs:@react-stately-nutrient/autocomplete';
 import {ExampleCard} from '@react-spectrum/docs/src/ExampleCard';
 import {ExampleList} from '@react-spectrum/docs/src/ExampleList';
 import SearchField from '@react-spectrum/docs/pages/assets/component-illustrations/SearchField.svg';
@@ -338,7 +338,7 @@ This example uses the [useAsyncList](../react-stately/useAsyncList.html) hook to
 and filtering of data from a server. No `filter` prop is provided to `Autocomplete` since filtering is done on the server.
 
 ```tsx example
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 
 function AsyncLoadingExample() {
   let list = useAsyncList<{name: string}>({

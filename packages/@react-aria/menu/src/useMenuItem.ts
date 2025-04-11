@@ -12,11 +12,11 @@
 
 import {DOMAttributes, DOMProps, FocusableElement, FocusEvents, HoverEvents, Key, KeyboardEvents, PressEvent, PressEvents, RefObject, RouterOptions} from '@react-types/shared';
 import {filterDOMProps, mergeProps, useLinkProps, useRouter, useSlotId} from '@react-aria-nutrient/utils';
-import {getItemCount} from '@react-stately/collections';
+import {getItemCount} from '@react-stately-nutrient/collections';
 import {isFocusVisible, useFocus, useHover, useKeyboard, usePress} from '@react-aria-nutrient/interactions';
 import {menuData} from './utils';
-import {SelectionManager} from '@react-stately/selection';
-import {TreeState} from '@react-stately/tree';
+import {SelectionManager} from '@react-stately-nutrient/selection';
+import {TreeState} from '@react-stately-nutrient/tree';
 import {useSelectableItem} from '@react-aria-nutrient/selection';
 
 export interface MenuItemAria {

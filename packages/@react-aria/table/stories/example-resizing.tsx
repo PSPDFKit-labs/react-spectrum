@@ -29,8 +29,8 @@ import {mergeProps, useLayoutEffect, useResizeObserver} from '@react-aria-nutrie
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/table/vars.css';
 import {useCheckbox} from '@react-aria-nutrient/checkbox';
-import {useTableColumnResizeState, useTableState} from '@react-stately/table';
-import {useToggleState} from '@react-stately/toggle';
+import {useTableColumnResizeState, useTableState} from '@react-stately-nutrient/table';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 export function Table(props) {

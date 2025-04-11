@@ -12,13 +12,13 @@
 
 import {Collection, CollectionStateBase, FocusStrategy, Node} from '@react-types/shared';
 import {ComboBoxProps, MenuTriggerAction} from '@react-types/combobox';
-import {FormValidationState, useFormValidationState} from '@react-stately/form';
-import {getChildNodes} from '@react-stately/collections';
-import {ListCollection, useSingleSelectListState} from '@react-stately/list';
-import {SelectState} from '@react-stately/select';
+import {FormValidationState, useFormValidationState} from '@react-stately-nutrient/form';
+import {getChildNodes} from '@react-stately-nutrient/collections';
+import {ListCollection, useSingleSelectListState} from '@react-stately-nutrient/list';
+import {SelectState} from '@react-stately-nutrient/select';
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import {useControlledState} from '@react-stately/utils';
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useControlledState} from '@react-stately-nutrient/utils';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 
 export interface ComboBoxState<T> extends SelectState<T>, FormValidationState{
   /** The current value of the combo box input. */

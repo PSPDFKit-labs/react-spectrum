@@ -12,7 +12,7 @@
 
 import {OverlayTriggerProps} from '@react-types/overlays';
 import {useCallback} from 'react';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export interface OverlayTriggerState {
   /** Whether the overlay is currently open. */

@@ -16,7 +16,7 @@ import {HiddenSelect, useSelect} from '@react-aria-nutrient/select';
 import React from 'react';
 import {useButton} from '@react-aria-nutrient/button';
 import {useListBox, useOption} from '@react-aria-nutrient/listbox';
-import {useSelectState} from '@react-stately/select';
+import {useSelectState} from '@react-stately-nutrient/select';
 
 export function Select(props) {
   // Create state based on the incoming props

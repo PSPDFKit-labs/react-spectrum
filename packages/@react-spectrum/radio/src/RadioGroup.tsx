@@ -20,7 +20,7 @@ import styles from '@adobe/spectrum-css-temp/components/fieldgroup/vars.css';
 import {useFormProps} from '@react-spectrum/form';
 import {useProviderProps} from '@react-spectrum/provider';
 import {useRadioGroup} from '@react-aria-nutrient/radio';
-import {useRadioGroupState} from '@react-stately/radio';
+import {useRadioGroupState} from '@react-stately-nutrient/radio';
 
 /**
  * Radio groups allow users to select a single option from a list of mutually exclusive options.

@@ -12,7 +12,7 @@
 
 import {Color, ColorWheelProps} from '@react-types/color';
 import {normalizeColor, parseColor} from './Color';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useMemo, useRef, useState} from 'react';
 
 export interface ColorWheelState {

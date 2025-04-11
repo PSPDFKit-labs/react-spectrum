@@ -11,7 +11,7 @@
  */
 
 import {AriaColorSliderProps} from '@react-types/color';
-import {ColorSliderState} from '@react-stately/color';
+import {ColorSliderState} from '@react-stately-nutrient/color';
 import {DOMAttributes, RefObject} from '@react-types/shared';
 import {InputHTMLAttributes} from 'react';
 import {mergeProps} from '@react-aria-nutrient/utils';

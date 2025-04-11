@@ -13,7 +13,7 @@ import { useState } from "react";
 import Moon from "@spectrum-icons/workflow/Moon";
 import Light from "@spectrum-icons/workflow/Light";
 import { ToastContainer } from "@react-spectrum/toast";
-import {enableTableNestedRows} from '@react-stately/flags';
+import {enableTableNestedRows} from '@react-stately-nutrient/flags';
 import {useRouter, type NextRouter} from 'next/router';
 import Script from 'next/script';
 

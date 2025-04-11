@@ -15,7 +15,7 @@ import {ListBoxBase, useListBoxLayout} from './ListBoxBase';
 import React, {ReactElement} from 'react';
 import {SpectrumListBoxProps} from '@react-types/listbox';
 import {useDOMRef} from '@react-spectrum/utils';
-import {useListState} from '@react-stately/list';
+import {useListState} from '@react-stately-nutrient/list';
 
 // forwardRef doesn't support generic parameters, so cast the result to the correct type
 // https://stackoverflow.com/questions/58469229/react-with-typescript-generics-while-using-react-forwardref

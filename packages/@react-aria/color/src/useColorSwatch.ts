@@ -16,7 +16,7 @@ import {filterDOMProps, useId} from '@react-aria-nutrient/utils';
 import {HTMLAttributes, useMemo} from 'react';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import {useLocale, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 
 export interface AriaColorSwatchProps extends AriaLabelingProps, DOMProps {

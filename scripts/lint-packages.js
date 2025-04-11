@@ -100,7 +100,7 @@ for (let pkg of packagePaths) {
   }
 
   let aria = `@react-aria-nutrient/${basename}`;
-  let stately = `@react-stately/${basename}`;
+  let stately = `@react-stately-nutrient/${basename}`;
   let types = `@react-types/${basename}`;
 
   if (scope === '@react-spectrum' && isDepUsed(aria, globSrc)) {

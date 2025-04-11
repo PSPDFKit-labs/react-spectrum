@@ -12,7 +12,7 @@
 
 import {act, fireEvent, installMouseEvent, installPointerEvent, pointerMap, renderv3 as render} from '@react-spectrum/test-utils-internal';
 import {ColorSlider} from '../';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 

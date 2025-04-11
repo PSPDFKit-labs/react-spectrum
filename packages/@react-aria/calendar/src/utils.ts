@@ -11,7 +11,7 @@
  */
 
 import {CalendarDate, DateFormatter, endOfMonth, isSameDay, startOfMonth} from '@internationalized/date';
-import {CalendarState, RangeCalendarState} from '@react-stately/calendar';
+import {CalendarState, RangeCalendarState} from '@react-stately-nutrient/calendar';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import type {LocalizedStringFormatter} from '@internationalized/string';

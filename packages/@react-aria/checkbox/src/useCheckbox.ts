@@ -13,9 +13,9 @@
 import {AriaCheckboxProps} from '@react-types/checkbox';
 import {InputHTMLAttributes, LabelHTMLAttributes, useEffect} from 'react';
 import {mergeProps} from '@react-aria-nutrient/utils';
-import {privateValidationStateProp, useFormValidationState} from '@react-stately/form';
+import {privateValidationStateProp, useFormValidationState} from '@react-stately-nutrient/form';
 import {RefObject, ValidationResult} from '@react-types/shared';
-import {ToggleState} from '@react-stately/toggle';
+import {ToggleState} from '@react-stately-nutrient/toggle';
 import {useFormValidation} from '@react-aria-nutrient/form';
 import {usePress} from '@react-aria-nutrient/interactions';
 import {useToggle} from '@react-aria-nutrient/toggle';

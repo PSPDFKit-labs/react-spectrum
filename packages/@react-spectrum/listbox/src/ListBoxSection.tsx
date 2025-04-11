@@ -11,7 +11,7 @@
  */
 
 import {classNames} from '@react-spectrum/utils';
-import {LayoutInfo} from '@react-stately/virtualizer';
+import {LayoutInfo} from '@react-stately-nutrient/virtualizer';
 import {layoutInfoToStyle, useVirtualizerItem, VirtualizerItemOptions} from '@react-aria-nutrient/virtualizer';
 import {ListBoxContext} from './ListBoxContext';
 import {Node} from '@react-types/shared';

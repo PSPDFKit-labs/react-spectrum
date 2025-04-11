@@ -34,7 +34,7 @@ import {IconContext} from './Icon';
 import {inertValue, useEffectEvent, useId, useLabels, useLayoutEffect, useResizeObserver} from '@react-aria-nutrient/utils';
 import {Picker, PickerItem} from './TabsPicker';
 import {Text, TextContext} from './Content';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useDOMRef} from '@react-spectrum/utils';
 import {useHasTabbableChild} from '@react-aria-nutrient/focus';
 import {useLocale} from '@react-aria-nutrient/i18n';

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {clamp, snapValueToStep, useControlledState} from '@react-stately/utils';
+import {clamp, snapValueToStep, useControlledState} from '@react-stately-nutrient/utils';
 import {Orientation} from '@react-types/shared';
 import {SliderProps} from '@react-types/slider';
 import {useCallback, useMemo, useRef, useState} from 'react';

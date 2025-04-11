@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {CheckboxGroupState} from '@react-stately/checkbox';
+import {CheckboxGroupState} from '@react-stately-nutrient/checkbox';
 
 interface CheckboxGroupData {
   name?: string,

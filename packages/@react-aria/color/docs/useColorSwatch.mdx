@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/color';
-import statelyDocs from 'docs:@react-stately/color';
+import statelyDocs from 'docs:@react-stately-nutrient/color';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/color/package.json';
 
@@ -88,7 +88,7 @@ The following examples show how to use the `ColorSwatch` component created in th
 ColorSwatch accepts a value via the `color` prop. The value should be a color string or <TypeLink links={statelyDocs.links} type={statelyDocs.exports.Color} /> object. This example uses the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.parseColor} /> function to parse a color from an HSL string.
 
 ```tsx example
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 <ColorSwatch color={parseColor('hsl(35, 100%, 50%)')} />
 ```

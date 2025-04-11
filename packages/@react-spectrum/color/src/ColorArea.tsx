@@ -19,7 +19,7 @@ import React, {ReactElement, useRef} from 'react';
 import {SpectrumColorAreaProps} from '@react-types/color';
 import styles from '@adobe/spectrum-css-temp/components/colorarea/vars.css';
 import {useColorArea} from '@react-aria-nutrient/color';
-import {useColorAreaState} from '@react-stately/color';
+import {useColorAreaState} from '@react-stately-nutrient/color';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 import {useProviderProps} from '@react-spectrum/provider';
 

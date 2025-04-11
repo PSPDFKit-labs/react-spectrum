@@ -12,7 +12,7 @@ import {items} from './ListView.stories';
 import React from 'react';
 import {Text} from '@react-spectrum/text';
 import {useDragAndDrop} from '@react-spectrum/dnd';
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 export function DragExample(props?) {
   let {listViewProps, dragHookOptions} = props;

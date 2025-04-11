@@ -16,7 +16,7 @@ import {Field} from '@react-spectrum/label';
 import {FocusableRef, RefObject} from '@react-types/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
-import {NumberFieldState, useNumberFieldState} from '@react-stately/numberfield';
+import {NumberFieldState, useNumberFieldState} from '@react-stately-nutrient/numberfield';
 import React, {HTMLAttributes, InputHTMLAttributes, Ref, useRef} from 'react';
 import {SpectrumNumberFieldProps} from '@react-types/numberfield';
 import {StepButton} from './StepButton';

@@ -11,8 +11,8 @@
  */
 
 import {CheckboxGroupProps} from '@react-types/checkbox';
-import {FormValidationState, mergeValidation, useFormValidationState} from '@react-stately/form';
-import {useControlledState} from '@react-stately/utils';
+import {FormValidationState, mergeValidation, useFormValidationState} from '@react-stately-nutrient/form';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useRef} from 'react';
 import {ValidationResult, ValidationState} from '@react-types/shared';
 

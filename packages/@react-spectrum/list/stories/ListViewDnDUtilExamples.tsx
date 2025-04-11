@@ -6,7 +6,7 @@ import {Item, ListView} from '../';
 import React from 'react';
 import {Text} from '@react-spectrum/text';
 import {useDragAndDrop} from '@react-spectrum/dnd';
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 let itemProcessor = async (items, acceptedDragTypes) => {
   let processedItems: any[] = [];

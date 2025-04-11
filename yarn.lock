@@ -125,8 +125,8 @@ __metadata:
     "@react-spectrum/tree": "npm:^3.0.1"
     "@react-spectrum/view": "npm:^3.6.17"
     "@react-spectrum/well": "npm:^3.4.21"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/data": "npm:^3.12.2"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/data": "npm:^3.12.2"
     "@react-types/shared": "npm:^3.28.0"
     client-only: "npm:^0.0.1"
   peerDependencies:
@@ -5923,7 +5923,7 @@ __metadata:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/list": "npm:^3.12.0"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
     "@react-types/actiongroup": "npm:^3.4.15"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -5956,8 +5956,8 @@ __metadata:
     "@react-aria-nutrient/searchfield": "npm:^3.8.2"
     "@react-aria-nutrient/textfield": "npm:^3.17.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/autocomplete": "npm:3.0.0-beta.0"
-    "@react-stately/combobox": "npm:^3.10.3"
+    "@react-stately-nutrient/autocomplete": "npm:3.0.0-beta.0"
+    "@react-stately-nutrient/combobox": "npm:^3.10.3"
     "@react-types/autocomplete": "npm:3.0.0-alpha.29"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
@@ -5991,7 +5991,7 @@ __metadata:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/toolbar": "npm:3.0.0-beta.14"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/toggle": "npm:^3.8.2"
+    "@react-stately-nutrient/toggle": "npm:^3.8.2"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6010,7 +6010,7 @@ __metadata:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/live-announcer": "npm:^3.4.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/calendar": "npm:^3.7.1"
+    "@react-stately-nutrient/calendar": "npm:^3.7.1"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/calendar": "npm:^3.6.1"
     "@react-types/shared": "npm:^3.28.0"
@@ -6030,9 +6030,9 @@ __metadata:
     "@react-aria-nutrient/label": "npm:^3.7.16"
     "@react-aria-nutrient/toggle": "npm:^3.11.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/checkbox": "npm:^3.6.12"
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/toggle": "npm:^3.8.2"
+    "@react-stately-nutrient/checkbox": "npm:^3.6.12"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/toggle": "npm:^3.8.2"
     "@react-types/checkbox": "npm:^3.9.2"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6070,8 +6070,8 @@ __metadata:
     "@react-aria-nutrient/textfield": "npm:^3.17.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-aria-nutrient/visually-hidden": "npm:^3.8.21"
-    "@react-stately/color": "npm:^3.8.3"
-    "@react-stately/form": "npm:^3.1.2"
+    "@react-stately-nutrient/color": "npm:^3.8.3"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
     "@react-types/color": "npm:^3.0.3"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6094,9 +6094,9 @@ __metadata:
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/textfield": "npm:^3.17.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/combobox": "npm:^3.10.3"
-    "@react-stately/form": "npm:^3.1.2"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/combobox": "npm:^3.10.3"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/combobox": "npm:^3.13.3"
     "@react-types/shared": "npm:^3.28.0"
@@ -6121,8 +6121,8 @@ __metadata:
     "@react-aria-nutrient/label": "npm:^3.7.16"
     "@react-aria-nutrient/spinbutton": "npm:^3.6.13"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/datepicker": "npm:^3.13.0"
-    "@react-stately/form": "npm:^3.1.2"
+    "@react-stately-nutrient/datepicker": "npm:^3.13.0"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/calendar": "npm:^3.6.1"
     "@react-types/datepicker": "npm:^3.11.0"
@@ -6157,7 +6157,7 @@ __metadata:
   dependencies:
     "@react-aria-nutrient/ssr": "npm:^3.9.7"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/disclosure": "npm:^3.0.2"
+    "@react-stately-nutrient/disclosure": "npm:^3.0.2"
     "@react-types/button": "npm:^3.11.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6176,7 +6176,7 @@ __metadata:
     "@react-aria-nutrient/live-announcer": "npm:^3.4.1"
     "@react-aria-nutrient/overlays": "npm:^3.26.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/dnd": "npm:^3.5.2"
+    "@react-stately-nutrient/dnd": "npm:^3.5.2"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6213,7 +6213,7 @@ __metadata:
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/form": "npm:^3.1.2"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6232,9 +6232,9 @@ __metadata:
     "@react-aria-nutrient/live-announcer": "npm:^3.4.1"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/grid": "npm:^3.11.0"
-    "@react-stately/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/grid": "npm:^3.11.0"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
     "@react-types/checkbox": "npm:^3.9.2"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/shared": "npm:^3.28.0"
@@ -6255,9 +6255,9 @@ __metadata:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/tree": "npm:^3.8.8"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/tree": "npm:^3.8.8"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6290,7 +6290,7 @@ __metadata:
   dependencies:
     "@react-aria-nutrient/ssr": "npm:^3.9.7"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/flags": "npm:^3.1.0"
+    "@react-stately-nutrient/flags": "npm:^3.1.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6349,8 +6349,8 @@ __metadata:
     "@react-aria-nutrient/label": "npm:^3.7.16"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/list": "npm:^3.12.0"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
     "@react-types/listbox": "npm:^3.5.5"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6378,10 +6378,10 @@ __metadata:
     "@react-aria-nutrient/overlays": "npm:^3.26.1"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/menu": "npm:^3.9.2"
-    "@react-stately/selection": "npm:^3.20.0"
-    "@react-stately/tree": "npm:^3.8.8"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/menu": "npm:^3.9.2"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/tree": "npm:^3.8.8"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/menu": "npm:^3.9.15"
     "@react-types/shared": "npm:^3.28.0"
@@ -6415,8 +6415,8 @@ __metadata:
     "@react-aria-nutrient/spinbutton": "npm:^3.6.13"
     "@react-aria-nutrient/textfield": "npm:^3.17.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/numberfield": "npm:^3.9.10"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/numberfield": "npm:^3.9.10"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/numberfield": "npm:^3.8.9"
     "@react-types/shared": "npm:^3.28.0"
@@ -6446,7 +6446,7 @@ __metadata:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-aria-nutrient/visually-hidden": "npm:^3.8.21"
     "@react-aria/ssr": "npm:^3.9.7"
-    "@react-stately/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/overlays": "npm:^3.8.13"
     "@react-types/shared": "npm:^3.28.0"
@@ -6491,7 +6491,7 @@ __metadata:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/label": "npm:^3.7.16"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/radio": "npm:^3.10.11"
+    "@react-stately-nutrient/radio": "npm:^3.10.11"
     "@react-types/radio": "npm:^3.8.7"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6562,7 +6562,7 @@ __metadata:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/textfield": "npm:^3.17.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/searchfield": "npm:^3.5.10"
+    "@react-stately-nutrient/searchfield": "npm:^3.5.10"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/searchfield": "npm:^3.6.0"
     "@react-types/shared": "npm:^3.28.0"
@@ -6586,7 +6586,7 @@ __metadata:
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-aria-nutrient/visually-hidden": "npm:^3.8.21"
-    "@react-stately/select": "npm:^3.6.11"
+    "@react-stately-nutrient/select": "npm:^3.6.11"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/select": "npm:^3.9.10"
     "@react-types/shared": "npm:^3.28.0"
@@ -6605,7 +6605,7 @@ __metadata:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6635,7 +6635,7 @@ __metadata:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/label": "npm:^3.7.16"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/slider": "npm:^3.6.2"
+    "@react-stately-nutrient/slider": "npm:^3.6.2"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/slider": "npm:^3.7.9"
     "@swc/helpers": "npm:^0.5.0"
@@ -6678,7 +6678,7 @@ __metadata:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/steplist": "npm:3.0.0-alpha.12"
+    "@react-stately-nutrient/steplist": "npm:3.0.0-alpha.12"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6692,7 +6692,7 @@ __metadata:
   resolution: "@react-aria-nutrient/switch@workspace:packages/@react-aria/switch"
   dependencies:
     "@react-aria-nutrient/toggle": "npm:^3.11.1"
-    "@react-stately/toggle": "npm:^3.8.2"
+    "@react-stately-nutrient/toggle": "npm:^3.8.2"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/switch": "npm:^3.5.9"
     "@swc/helpers": "npm:^0.5.0"
@@ -6713,9 +6713,9 @@ __metadata:
     "@react-aria-nutrient/live-announcer": "npm:^3.4.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-aria-nutrient/visually-hidden": "npm:^3.8.21"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/flags": "npm:^3.1.0"
-    "@react-stately/table": "npm:^3.14.0"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/flags": "npm:^3.1.0"
+    "@react-stately-nutrient/table": "npm:^3.14.0"
     "@react-types/checkbox": "npm:^3.9.2"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/shared": "npm:^3.28.0"
@@ -6735,7 +6735,7 @@ __metadata:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/tabs": "npm:^3.8.0"
+    "@react-stately-nutrient/tabs": "npm:^3.8.0"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/tabs": "npm:^3.3.13"
     "@swc/helpers": "npm:^0.5.0"
@@ -6755,7 +6755,7 @@ __metadata:
     "@react-aria-nutrient/label": "npm:^3.7.16"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/list": "npm:^3.12.0"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6786,8 +6786,8 @@ __metadata:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/label": "npm:^3.7.16"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/textfield": "npm:^3.12.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6805,7 +6805,7 @@ __metadata:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/landmark": "npm:^3.0.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/toast": "npm:^3.0.0"
+    "@react-stately-nutrient/toast": "npm:^3.0.0"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6821,7 +6821,7 @@ __metadata:
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/toggle": "npm:^3.8.2"
+    "@react-stately-nutrient/toggle": "npm:^3.8.2"
     "@react-types/checkbox": "npm:^3.9.2"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6852,7 +6852,7 @@ __metadata:
   dependencies:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/tooltip": "npm:^3.5.2"
+    "@react-stately-nutrient/tooltip": "npm:^3.5.2"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/tooltip": "npm:^3.4.15"
     "@swc/helpers": "npm:^0.5.0"
@@ -6870,7 +6870,7 @@ __metadata:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/selection": "npm:^3.23.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/tree": "npm:^3.8.8"
+    "@react-stately-nutrient/tree": "npm:^3.8.8"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -6885,8 +6885,8 @@ __metadata:
   resolution: "@react-aria-nutrient/utils@workspace:packages/@react-aria/utils"
   dependencies:
     "@react-aria-nutrient/ssr": "npm:^3.9.7"
-    "@react-stately/flags": "npm:^3.1.0"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/flags": "npm:^3.1.0"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
     clsx: "npm:^2.0.0"
@@ -6903,7 +6903,7 @@ __metadata:
     "@react-aria-nutrient/i18n": "npm:^3.12.7"
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
-    "@react-stately/virtualizer": "npm:^4.3.1"
+    "@react-stately-nutrient/virtualizer": "npm:^4.3.1"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6944,7 +6944,7 @@ __metadata:
   dependencies:
     "@react-aria/ssr": "npm:^3.9.7"
     "@react-aria/utils": "npm:^3.28.1"
-    "@react-stately/flags": "npm:^3.1.0"
+    "@react-stately-nutrient/flags": "npm:^3.1.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -6970,8 +6970,8 @@ __metadata:
   resolution: "@react-aria/utils@npm:3.28.1"
   dependencies:
     "@react-aria/ssr": "npm:^3.9.7"
-    "@react-stately/flags": "npm:^3.1.0"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/flags": "npm:^3.1.0"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
     clsx: "npm:^2.0.0"
@@ -7030,7 +7030,7 @@ __metadata:
     "@react-spectrum/overlays": "npm:^5.7.3"
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-types/actionbar": "npm:^3.1.13"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -7056,8 +7056,8 @@ __metadata:
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/tooltip": "npm:^3.7.3"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/list": "npm:^3.12.0"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
     "@react-types/actiongroup": "npm:^3.4.15"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -7093,8 +7093,8 @@ __metadata:
     "@react-spectrum/progress": "npm:^3.7.14"
     "@react-spectrum/textfield": "npm:^3.13.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/combobox": "npm:^3.10.3"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/combobox": "npm:^3.10.3"
     "@react-types/autocomplete": "npm:3.0.0-alpha.29"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
@@ -7155,7 +7155,7 @@ __metadata:
     "@react-spectrum/button": "npm:^3.16.12"
     "@react-spectrum/menu": "npm:^3.21.3"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-types/breadcrumbs": "npm:^3.7.11"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -7181,7 +7181,7 @@ __metadata:
     "@react-spectrum/test-utils-internal": "npm:3.0.0-alpha.1"
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/toggle": "npm:^3.8.2"
+    "@react-stately-nutrient/toggle": "npm:^3.8.2"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -7228,7 +7228,7 @@ __metadata:
     "@react-spectrum/label": "npm:^3.16.13"
     "@react-spectrum/test-utils-internal": "npm:3.0.0-alpha.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/calendar": "npm:^3.7.1"
+    "@react-stately-nutrient/calendar": "npm:^3.7.1"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/calendar": "npm:^3.6.1"
     "@react-types/shared": "npm:^3.28.0"
@@ -7255,10 +7255,10 @@ __metadata:
     "@react-spectrum/checkbox": "npm:^3.9.14"
     "@react-spectrum/progress": "npm:^3.7.14"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/grid": "npm:^3.11.0"
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/virtualizer": "npm:^4.3.1"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/grid": "npm:^3.11.0"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/virtualizer": "npm:^4.3.1"
     "@react-types/card": "npm:3.0.0-alpha.34"
     "@react-types/provider": "npm:^3.8.7"
     "@react-types/shared": "npm:^3.28.0"
@@ -7281,8 +7281,8 @@ __metadata:
     "@react-spectrum/form": "npm:^3.7.13"
     "@react-spectrum/label": "npm:^3.16.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/checkbox": "npm:^3.6.12"
-    "@react-stately/toggle": "npm:^3.8.2"
+    "@react-stately-nutrient/checkbox": "npm:^3.6.12"
+    "@react-stately-nutrient/toggle": "npm:^3.8.2"
     "@react-types/checkbox": "npm:^3.9.2"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -7343,7 +7343,7 @@ __metadata:
     "@react-spectrum/textfield": "npm:^3.13.1"
     "@react-spectrum/utils": "npm:^3.12.3"
     "@react-spectrum/view": "npm:^3.6.17"
-    "@react-stately/color": "npm:^3.8.3"
+    "@react-stately-nutrient/color": "npm:^3.8.3"
     "@react-types/color": "npm:^3.0.3"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/textfield": "npm:^3.12.0"
@@ -7379,8 +7379,8 @@ __metadata:
     "@react-spectrum/progress": "npm:^3.7.14"
     "@react-spectrum/textfield": "npm:^3.13.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/combobox": "npm:^3.10.3"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/combobox": "npm:^3.10.3"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/combobox": "npm:^3.13.3"
     "@react-types/shared": "npm:^3.28.0"
@@ -7436,7 +7436,7 @@ __metadata:
     "@react-spectrum/test-utils-internal": "npm:3.0.0-alpha.1"
     "@react-spectrum/utils": "npm:^3.12.3"
     "@react-spectrum/view": "npm:^3.6.17"
-    "@react-stately/datepicker": "npm:^3.13.0"
+    "@react-stately-nutrient/datepicker": "npm:^3.13.0"
     "@react-types/datepicker": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -7468,7 +7468,7 @@ __metadata:
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
     "@react-spectrum/view": "npm:^3.6.17"
-    "@react-stately/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/dialog": "npm:^3.5.16"
     "@react-types/shared": "npm:^3.28.0"
@@ -7503,7 +7503,7 @@ __metadata:
   dependencies:
     "@adobe/spectrum-css-temp": "npm:3.0.0-alpha.1"
     "@react-aria-nutrient/dnd": "npm:^3.9.1"
-    "@react-stately/dnd": "npm:^3.5.2"
+    "@react-stately-nutrient/dnd": "npm:^3.5.2"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -7593,7 +7593,7 @@ __metadata:
     "@adobe/spectrum-css-temp": "npm:3.0.0-alpha.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/form": "npm:^3.1.2"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
     "@react-types/form": "npm:^3.7.10"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -7774,11 +7774,11 @@ __metadata:
     "@react-spectrum/progress": "npm:^3.7.14"
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/dnd": "npm:^3.0.0"
-    "@react-stately/layout": "npm:^4.2.1"
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/virtualizer": "npm:^4.3.1"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/dnd": "npm:^3.0.0"
+    "@react-stately-nutrient/layout": "npm:^4.2.1"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/virtualizer": "npm:^4.3.1"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -7806,10 +7806,10 @@ __metadata:
     "@react-spectrum/progress": "npm:^3.7.14"
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/layout": "npm:^4.2.1"
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/virtualizer": "npm:^4.3.1"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/layout": "npm:^4.2.1"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/virtualizer": "npm:^4.3.1"
     "@react-types/listbox": "npm:^3.5.5"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -7838,10 +7838,10 @@ __metadata:
     "@react-spectrum/overlays": "npm:^5.7.3"
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/menu": "npm:^3.9.2"
-    "@react-stately/overlays": "npm:^3.6.14"
-    "@react-stately/tree": "npm:^3.8.8"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/menu": "npm:^3.9.2"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/tree": "npm:^3.8.8"
     "@react-types/menu": "npm:^3.9.15"
     "@react-types/overlays": "npm:^3.8.13"
     "@react-types/shared": "npm:^3.28.0"
@@ -7889,7 +7889,7 @@ __metadata:
     "@react-spectrum/test-utils-internal": "npm:3.0.0-alpha.1"
     "@react-spectrum/textfield": "npm:^3.13.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/numberfield": "npm:^3.9.10"
+    "@react-stately-nutrient/numberfield": "npm:^3.9.10"
     "@react-types/button": "npm:^3.11.0"
     "@react-types/numberfield": "npm:^3.8.9"
     "@react-types/shared": "npm:^3.28.0"
@@ -7912,7 +7912,7 @@ __metadata:
     "@react-aria-nutrient/overlays": "npm:^3.26.1"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
     "@react-types/overlays": "npm:^3.8.13"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -7953,8 +7953,8 @@ __metadata:
     "@react-spectrum/progress": "npm:^3.7.14"
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/select": "npm:^3.6.11"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/select": "npm:^3.6.11"
     "@react-types/select": "npm:^3.9.10"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -8014,7 +8014,7 @@ __metadata:
     "@react-spectrum/form": "npm:^3.7.13"
     "@react-spectrum/label": "npm:^3.16.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/radio": "npm:^3.10.11"
+    "@react-stately-nutrient/radio": "npm:^3.10.11"
     "@react-types/radio": "npm:^3.8.7"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8059,8 +8059,8 @@ __metadata:
     "@react-aria-nutrient/test-utils": "npm:1.0.0-alpha.5"
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/layout": "npm:^4.2.1"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/layout": "npm:^4.2.1"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/dialog": "npm:^3.5.16"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/provider": "npm:^3.8.7"
@@ -8090,7 +8090,7 @@ __metadata:
     "@react-spectrum/test-utils-internal": "npm:3.0.0-alpha.1"
     "@react-spectrum/textfield": "npm:^3.13.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/searchfield": "npm:^3.5.10"
+    "@react-stately-nutrient/searchfield": "npm:^3.5.10"
     "@react-types/searchfield": "npm:^3.6.0"
     "@react-types/textfield": "npm:^3.12.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -8136,7 +8136,7 @@ __metadata:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-aria-nutrient/visually-hidden": "npm:^3.8.21"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/slider": "npm:^3.6.2"
+    "@react-stately-nutrient/slider": "npm:^3.6.2"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/slider": "npm:^3.7.9"
     "@swc/helpers": "npm:^0.5.0"
@@ -8176,8 +8176,8 @@ __metadata:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-aria-nutrient/visually-hidden": "npm:^3.8.21"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/steplist": "npm:3.0.0-alpha.12"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/steplist": "npm:3.0.0-alpha.12"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
     "@swc/helpers": "npm:^0.5.0"
@@ -8216,7 +8216,7 @@ __metadata:
     "@react-aria-nutrient/interactions": "npm:^3.24.1"
     "@react-aria-nutrient/switch": "npm:^3.7.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/toggle": "npm:^3.8.2"
+    "@react-stately-nutrient/toggle": "npm:^3.8.2"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/switch": "npm:^3.5.9"
     "@swc/helpers": "npm:^0.5.0"
@@ -8250,11 +8250,11 @@ __metadata:
     "@react-spectrum/progress": "npm:^3.7.14"
     "@react-spectrum/tooltip": "npm:^3.7.3"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/dnd": "npm:^3.1.0"
-    "@react-stately/flags": "npm:^3.1.0"
-    "@react-stately/layout": "npm:^4.2.1"
-    "@react-stately/table": "npm:^3.14.0"
-    "@react-stately/virtualizer": "npm:^4.3.1"
+    "@react-stately-nutrient/dnd": "npm:^3.1.0"
+    "@react-stately-nutrient/flags": "npm:^3.1.0"
+    "@react-stately-nutrient/layout": "npm:^4.2.1"
+    "@react-stately-nutrient/table": "npm:^3.14.0"
+    "@react-stately-nutrient/virtualizer": "npm:^4.3.1"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/table": "npm:^3.11.0"
@@ -8280,9 +8280,9 @@ __metadata:
     "@react-spectrum/picker": "npm:^3.15.7"
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/tabs": "npm:^3.8.0"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/tabs": "npm:^3.8.0"
     "@react-types/select": "npm:^3.9.10"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/tabs": "npm:^3.3.13"
@@ -8310,8 +8310,8 @@ __metadata:
     "@react-spectrum/label": "npm:^3.16.13"
     "@react-spectrum/text": "npm:^3.5.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/list": "npm:^3.12.0"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8390,7 +8390,7 @@ __metadata:
     "@react-spectrum/form": "npm:^3.7.13"
     "@react-spectrum/label": "npm:^3.16.13"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/textfield": "npm:^3.12.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
@@ -8465,7 +8465,7 @@ __metadata:
     "@react-spectrum/button": "npm:^3.16.12"
     "@react-spectrum/test-utils-internal": "npm:3.0.0-alpha.1"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/toast": "npm:^3.0.0"
+    "@react-stately-nutrient/toast": "npm:^3.0.0"
     "@react-types/shared": "npm:^3.28.0"
     "@spectrum-icons/ui": "npm:^3.6.14"
     "@swc/helpers": "npm:^0.5.0"
@@ -8489,7 +8489,7 @@ __metadata:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-spectrum/overlays": "npm:^5.7.3"
     "@react-spectrum/utils": "npm:^3.12.3"
-    "@react-stately/tooltip": "npm:^3.5.2"
+    "@react-stately-nutrient/tooltip": "npm:^3.5.2"
     "@react-types/overlays": "npm:^3.8.13"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/tooltip": "npm:^3.4.15"
@@ -8581,23 +8581,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/autocomplete@npm:3.0.0-beta.0, @react-stately/autocomplete@workspace:packages/@react-stately/autocomplete":
+"@react-stately-nutrient/autocomplete@npm:3.0.0-beta.0, @react-stately-nutrient/autocomplete@workspace:packages/@react-stately/autocomplete":
   version: 0.0.0-use.local
-  resolution: "@react-stately/autocomplete@workspace:packages/@react-stately/autocomplete"
+  resolution: "@react-stately-nutrient/autocomplete@workspace:packages/@react-stately/autocomplete"
   dependencies:
-    "@react-stately/utils": "npm:^3.10.4"
+    "@react-stately-nutrient/utils": "npm:^3.10.4"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
   languageName: unknown
   linkType: soft
 
-"@react-stately/calendar@npm:^3.7.1, @react-stately/calendar@workspace:packages/@react-stately/calendar":
+"@react-stately-nutrient/calendar@npm:^3.7.1, @react-stately-nutrient/calendar@workspace:packages/@react-stately/calendar":
   version: 0.0.0-use.local
-  resolution: "@react-stately/calendar@workspace:packages/@react-stately/calendar"
+  resolution: "@react-stately-nutrient/calendar@workspace:packages/@react-stately/calendar"
   dependencies:
     "@internationalized/date": "npm:^3.7.0"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/calendar": "npm:^3.6.1"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8606,12 +8606,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/checkbox@npm:^3.6.12, @react-stately/checkbox@workspace:packages/@react-stately/checkbox":
+"@react-stately-nutrient/checkbox@npm:^3.6.12, @react-stately-nutrient/checkbox@workspace:packages/@react-stately/checkbox":
   version: 0.0.0-use.local
-  resolution: "@react-stately/checkbox@workspace:packages/@react-stately/checkbox"
+  resolution: "@react-stately-nutrient/checkbox@workspace:packages/@react-stately/checkbox"
   dependencies:
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/checkbox": "npm:^3.9.2"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8620,9 +8620,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/collections@npm:^3.12.2, @react-stately/collections@workspace:packages/@react-stately/collections":
+"@react-stately-nutrient/collections@npm:^3.12.2, @react-stately-nutrient/collections@workspace:packages/@react-stately/collections":
   version: 0.0.0-use.local
-  resolution: "@react-stately/collections@workspace:packages/@react-stately/collections"
+  resolution: "@react-stately-nutrient/collections@workspace:packages/@react-stately/collections"
   dependencies:
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8631,16 +8631,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/color@npm:^3.8.3, @react-stately/color@workspace:packages/@react-stately/color":
+"@react-stately-nutrient/color@npm:^3.8.3, @react-stately-nutrient/color@workspace:packages/@react-stately/color":
   version: 0.0.0-use.local
-  resolution: "@react-stately/color@workspace:packages/@react-stately/color"
+  resolution: "@react-stately-nutrient/color@workspace:packages/@react-stately/color"
   dependencies:
     "@internationalized/number": "npm:^3.6.0"
     "@internationalized/string": "npm:^3.2.5"
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/numberfield": "npm:^3.9.10"
-    "@react-stately/slider": "npm:^3.6.2"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/numberfield": "npm:^3.9.10"
+    "@react-stately-nutrient/slider": "npm:^3.6.2"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/color": "npm:^3.0.3"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8649,16 +8649,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/combobox@npm:^3.10.3, @react-stately/combobox@workspace:packages/@react-stately/combobox":
+"@react-stately-nutrient/combobox@npm:^3.10.3, @react-stately-nutrient/combobox@workspace:packages/@react-stately/combobox":
   version: 0.0.0-use.local
-  resolution: "@react-stately/combobox@workspace:packages/@react-stately/combobox"
+  resolution: "@react-stately-nutrient/combobox@workspace:packages/@react-stately/combobox"
   dependencies:
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/overlays": "npm:^3.6.14"
-    "@react-stately/select": "npm:^3.6.11"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/select": "npm:^3.6.11"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/combobox": "npm:^3.13.3"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8667,9 +8667,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/data@npm:^3.12.2, @react-stately/data@workspace:packages/@react-stately/data":
+"@react-stately-nutrient/data@npm:^3.12.2, @react-stately-nutrient/data@workspace:packages/@react-stately/data":
   version: 0.0.0-use.local
-  resolution: "@react-stately/data@workspace:packages/@react-stately/data"
+  resolution: "@react-stately-nutrient/data@workspace:packages/@react-stately/data"
   dependencies:
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8678,15 +8678,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/datepicker@npm:^3.13.0, @react-stately/datepicker@workspace:packages/@react-stately/datepicker":
+"@react-stately-nutrient/datepicker@npm:^3.13.0, @react-stately-nutrient/datepicker@workspace:packages/@react-stately/datepicker":
   version: 0.0.0-use.local
-  resolution: "@react-stately/datepicker@workspace:packages/@react-stately/datepicker"
+  resolution: "@react-stately-nutrient/datepicker@workspace:packages/@react-stately/datepicker"
   dependencies:
     "@internationalized/date": "npm:^3.7.0"
     "@internationalized/string": "npm:^3.2.5"
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/overlays": "npm:^3.6.14"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/datepicker": "npm:^3.11.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8695,11 +8695,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/disclosure@npm:^3.0.2, @react-stately/disclosure@workspace:packages/@react-stately/disclosure":
+"@react-stately-nutrient/disclosure@npm:^3.0.2, @react-stately-nutrient/disclosure@workspace:packages/@react-stately/disclosure":
   version: 0.0.0-use.local
-  resolution: "@react-stately/disclosure@workspace:packages/@react-stately/disclosure"
+  resolution: "@react-stately-nutrient/disclosure@workspace:packages/@react-stately/disclosure"
   dependencies:
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8707,11 +8707,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/dnd@npm:^3.0.0, @react-stately/dnd@npm:^3.1.0, @react-stately/dnd@npm:^3.5.2, @react-stately/dnd@workspace:packages/@react-stately/dnd":
+"@react-stately-nutrient/dnd@npm:^3.0.0, @react-stately-nutrient/dnd@npm:^3.1.0, @react-stately-nutrient/dnd@npm:^3.5.2, @react-stately-nutrient/dnd@workspace:packages/@react-stately/dnd":
   version: 0.0.0-use.local
-  resolution: "@react-stately/dnd@workspace:packages/@react-stately/dnd"
+  resolution: "@react-stately-nutrient/dnd@workspace:packages/@react-stately/dnd"
   dependencies:
-    "@react-stately/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8719,17 +8719,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/flags@npm:^3.1.0, @react-stately/flags@workspace:packages/@react-stately/flags":
+"@react-stately-nutrient/flags@npm:^3.1.0, @react-stately-nutrient/flags@workspace:packages/@react-stately/flags":
   version: 0.0.0-use.local
-  resolution: "@react-stately/flags@workspace:packages/@react-stately/flags"
+  resolution: "@react-stately-nutrient/flags@workspace:packages/@react-stately/flags"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
   languageName: unknown
   linkType: soft
 
-"@react-stately/form@npm:^3.1.2, @react-stately/form@workspace:packages/@react-stately/form":
+"@react-stately-nutrient/form@npm:^3.1.2, @react-stately-nutrient/form@workspace:packages/@react-stately/form":
   version: 0.0.0-use.local
-  resolution: "@react-stately/form@workspace:packages/@react-stately/form"
+  resolution: "@react-stately-nutrient/form@workspace:packages/@react-stately/form"
   dependencies:
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8738,12 +8738,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/grid@npm:^3.11.0, @react-stately/grid@workspace:packages/@react-stately/grid":
+"@react-stately-nutrient/grid@npm:^3.11.0, @react-stately-nutrient/grid@workspace:packages/@react-stately/grid":
   version: 0.0.0-use.local
-  resolution: "@react-stately/grid@workspace:packages/@react-stately/grid"
+  resolution: "@react-stately-nutrient/grid@workspace:packages/@react-stately/grid"
   dependencies:
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8752,13 +8752,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/layout@npm:^4.2.1, @react-stately/layout@workspace:packages/@react-stately/layout":
+"@react-stately-nutrient/layout@npm:^4.2.1, @react-stately-nutrient/layout@workspace:packages/@react-stately/layout":
   version: 0.0.0-use.local
-  resolution: "@react-stately/layout@workspace:packages/@react-stately/layout"
+  resolution: "@react-stately-nutrient/layout@workspace:packages/@react-stately/layout"
   dependencies:
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/table": "npm:^3.14.0"
-    "@react-stately/virtualizer": "npm:^4.3.1"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/table": "npm:^3.14.0"
+    "@react-stately-nutrient/virtualizer": "npm:^4.3.1"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/table": "npm:^3.11.0"
@@ -8769,13 +8769,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/list@npm:^3.12.0, @react-stately/list@workspace:packages/@react-stately/list":
+"@react-stately-nutrient/list@npm:^3.12.0, @react-stately-nutrient/list@workspace:packages/@react-stately/list":
   version: 0.0.0-use.local
-  resolution: "@react-stately/list@workspace:packages/@react-stately/list"
+  resolution: "@react-stately-nutrient/list@workspace:packages/@react-stately/list"
   dependencies:
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/selection": "npm:^3.20.0"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8783,11 +8783,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/menu@npm:^3.9.2, @react-stately/menu@workspace:packages/@react-stately/menu":
+"@react-stately-nutrient/menu@npm:^3.9.2, @react-stately-nutrient/menu@workspace:packages/@react-stately/menu":
   version: 0.0.0-use.local
-  resolution: "@react-stately/menu@workspace:packages/@react-stately/menu"
+  resolution: "@react-stately-nutrient/menu@workspace:packages/@react-stately/menu"
   dependencies:
-    "@react-stately/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
     "@react-types/menu": "npm:^3.9.15"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8796,13 +8796,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/numberfield@npm:^3.9.10, @react-stately/numberfield@workspace:packages/@react-stately/numberfield":
+"@react-stately-nutrient/numberfield@npm:^3.9.10, @react-stately-nutrient/numberfield@workspace:packages/@react-stately/numberfield":
   version: 0.0.0-use.local
-  resolution: "@react-stately/numberfield@workspace:packages/@react-stately/numberfield"
+  resolution: "@react-stately-nutrient/numberfield@workspace:packages/@react-stately/numberfield"
   dependencies:
     "@internationalized/number": "npm:^3.6.0"
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/numberfield": "npm:^3.8.9"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8810,11 +8810,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/overlays@npm:^3.6.14, @react-stately/overlays@workspace:packages/@react-stately/overlays":
+"@react-stately-nutrient/overlays@npm:^3.6.14, @react-stately-nutrient/overlays@workspace:packages/@react-stately/overlays":
   version: 0.0.0-use.local
-  resolution: "@react-stately/overlays@workspace:packages/@react-stately/overlays"
+  resolution: "@react-stately-nutrient/overlays@workspace:packages/@react-stately/overlays"
   dependencies:
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/overlays": "npm:^3.8.13"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8822,12 +8822,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/radio@npm:^3.10.11, @react-stately/radio@workspace:packages/@react-stately/radio":
+"@react-stately-nutrient/radio@npm:^3.10.11, @react-stately-nutrient/radio@workspace:packages/@react-stately/radio":
   version: 0.0.0-use.local
-  resolution: "@react-stately/radio@workspace:packages/@react-stately/radio"
+  resolution: "@react-stately-nutrient/radio@workspace:packages/@react-stately/radio"
   dependencies:
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/radio": "npm:^3.8.7"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8836,11 +8836,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/searchfield@npm:^3.5.10, @react-stately/searchfield@workspace:packages/@react-stately/searchfield":
+"@react-stately-nutrient/searchfield@npm:^3.5.10, @react-stately-nutrient/searchfield@workspace:packages/@react-stately/searchfield":
   version: 0.0.0-use.local
-  resolution: "@react-stately/searchfield@workspace:packages/@react-stately/searchfield"
+  resolution: "@react-stately-nutrient/searchfield@workspace:packages/@react-stately/searchfield"
   dependencies:
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/searchfield": "npm:^3.6.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8848,13 +8848,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/select@npm:^3.6.11, @react-stately/select@workspace:packages/@react-stately/select":
+"@react-stately-nutrient/select@npm:^3.6.11, @react-stately-nutrient/select@workspace:packages/@react-stately/select":
   version: 0.0.0-use.local
-  resolution: "@react-stately/select@workspace:packages/@react-stately/select"
+  resolution: "@react-stately-nutrient/select@workspace:packages/@react-stately/select"
   dependencies:
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
     "@react-types/select": "npm:^3.9.10"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8863,12 +8863,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/selection@npm:^3.20.0, @react-stately/selection@workspace:packages/@react-stately/selection":
+"@react-stately-nutrient/selection@npm:^3.20.0, @react-stately-nutrient/selection@workspace:packages/@react-stately/selection":
   version: 0.0.0-use.local
-  resolution: "@react-stately/selection@workspace:packages/@react-stately/selection"
+  resolution: "@react-stately-nutrient/selection@workspace:packages/@react-stately/selection"
   dependencies:
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8876,11 +8876,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/slider@npm:^3.6.2, @react-stately/slider@workspace:packages/@react-stately/slider":
+"@react-stately-nutrient/slider@npm:^3.6.2, @react-stately-nutrient/slider@workspace:packages/@react-stately/slider":
   version: 0.0.0-use.local
-  resolution: "@react-stately/slider@workspace:packages/@react-stately/slider"
+  resolution: "@react-stately-nutrient/slider@workspace:packages/@react-stately/slider"
   dependencies:
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/slider": "npm:^3.7.9"
     "@swc/helpers": "npm:^0.5.0"
@@ -8889,12 +8889,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/steplist@npm:3.0.0-alpha.12, @react-stately/steplist@workspace:packages/@react-stately/steplist":
+"@react-stately-nutrient/steplist@npm:3.0.0-alpha.12, @react-stately-nutrient/steplist@workspace:packages/@react-stately/steplist":
   version: 0.0.0-use.local
-  resolution: "@react-stately/steplist@workspace:packages/@react-stately/steplist"
+  resolution: "@react-stately-nutrient/steplist@workspace:packages/@react-stately/steplist"
   dependencies:
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8902,15 +8902,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/table@npm:^3.14.0, @react-stately/table@workspace:packages/@react-stately/table":
+"@react-stately-nutrient/table@npm:^3.14.0, @react-stately-nutrient/table@workspace:packages/@react-stately/table":
   version: 0.0.0-use.local
-  resolution: "@react-stately/table@workspace:packages/@react-stately/table"
+  resolution: "@react-stately-nutrient/table@workspace:packages/@react-stately/table"
   dependencies:
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/flags": "npm:^3.1.0"
-    "@react-stately/grid": "npm:^3.11.0"
-    "@react-stately/selection": "npm:^3.20.0"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/flags": "npm:^3.1.0"
+    "@react-stately-nutrient/grid": "npm:^3.11.0"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/table": "npm:^3.11.0"
@@ -8920,11 +8920,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/tabs@npm:^3.8.0, @react-stately/tabs@workspace:packages/@react-stately/tabs":
+"@react-stately-nutrient/tabs@npm:^3.8.0, @react-stately-nutrient/tabs@workspace:packages/@react-stately/tabs":
   version: 0.0.0-use.local
-  resolution: "@react-stately/tabs@workspace:packages/@react-stately/tabs"
+  resolution: "@react-stately-nutrient/tabs@workspace:packages/@react-stately/tabs"
   dependencies:
-    "@react-stately/list": "npm:^3.12.0"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
     "@react-types/shared": "npm:^3.28.0"
     "@react-types/tabs": "npm:^3.3.13"
     "@swc/helpers": "npm:^0.5.0"
@@ -8933,9 +8933,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/toast@npm:^3.0.0, @react-stately/toast@workspace:packages/@react-stately/toast":
+"@react-stately-nutrient/toast@npm:^3.0.0, @react-stately-nutrient/toast@workspace:packages/@react-stately/toast":
   version: 0.0.0-use.local
-  resolution: "@react-stately/toast@workspace:packages/@react-stately/toast"
+  resolution: "@react-stately-nutrient/toast@workspace:packages/@react-stately/toast"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
     "@types/use-sync-external-store": "npm:^0.0.3"
@@ -8945,11 +8945,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/toggle@npm:^3.8.2, @react-stately/toggle@workspace:packages/@react-stately/toggle":
+"@react-stately-nutrient/toggle@npm:^3.8.2, @react-stately-nutrient/toggle@workspace:packages/@react-stately/toggle":
   version: 0.0.0-use.local
-  resolution: "@react-stately/toggle@workspace:packages/@react-stately/toggle"
+  resolution: "@react-stately-nutrient/toggle@workspace:packages/@react-stately/toggle"
   dependencies:
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/checkbox": "npm:^3.9.2"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8958,11 +8958,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/tooltip@npm:^3.5.2, @react-stately/tooltip@workspace:packages/@react-stately/tooltip":
+"@react-stately-nutrient/tooltip@npm:^3.5.2, @react-stately-nutrient/tooltip@workspace:packages/@react-stately/tooltip":
   version: 0.0.0-use.local
-  resolution: "@react-stately/tooltip@workspace:packages/@react-stately/tooltip"
+  resolution: "@react-stately-nutrient/tooltip@workspace:packages/@react-stately/tooltip"
   dependencies:
-    "@react-stately/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
     "@react-types/tooltip": "npm:^3.4.15"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8970,13 +8970,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/tree@npm:^3.8.8, @react-stately/tree@workspace:packages/@react-stately/tree":
+"@react-stately-nutrient/tree@npm:^3.8.8, @react-stately-nutrient/tree@workspace:packages/@react-stately/tree":
   version: 0.0.0-use.local
-  resolution: "@react-stately/tree@workspace:packages/@react-stately/tree"
+  resolution: "@react-stately-nutrient/tree@workspace:packages/@react-stately/tree"
   dependencies:
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/selection": "npm:^3.20.0"
-    "@react-stately/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8984,9 +8984,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/utils@npm:^3.10.4, @react-stately/utils@npm:^3.10.5, @react-stately/utils@workspace:packages/@react-stately/utils":
+"@react-stately-nutrient/utils@npm:^3.10.4, @react-stately-nutrient/utils@npm:^3.10.5, @react-stately-nutrient/utils@workspace:packages/@react-stately/utils":
   version: 0.0.0-use.local
-  resolution: "@react-stately/utils@workspace:packages/@react-stately/utils"
+  resolution: "@react-stately-nutrient/utils@workspace:packages/@react-stately/utils"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8994,9 +8994,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately/virtualizer@npm:^4.0.0, @react-stately/virtualizer@npm:^4.3.1, @react-stately/virtualizer@workspace:packages/@react-stately/virtualizer":
+"@react-stately-nutrient/virtualizer@npm:^4.0.0, @react-stately-nutrient/virtualizer@npm:^4.3.1, @react-stately-nutrient/virtualizer@workspace:packages/@react-stately/virtualizer":
   version: 0.0.0-use.local
-  resolution: "@react-stately/virtualizer@workspace:packages/@react-stately/virtualizer"
+  resolution: "@react-stately-nutrient/virtualizer@workspace:packages/@react-stately/virtualizer"
   dependencies:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-types/shared": "npm:^3.28.0"
@@ -9105,7 +9105,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@react-types/card@workspace:packages/@react-types/card"
   dependencies:
-    "@react-stately/virtualizer": "npm:^4.3.1"
+    "@react-stately-nutrient/virtualizer": "npm:^4.3.1"
     "@react-types/provider": "npm:^3.8.7"
     "@react-types/shared": "npm:^3.28.0"
   peerDependencies:
@@ -9397,7 +9397,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@react-types/sidenav@workspace:packages/@react-types/sidenav"
   dependencies:
-    "@react-stately/virtualizer": "npm:^4.0.0"
+    "@react-stately-nutrient/virtualizer": "npm:^4.0.0"
     "@react-types/shared": "npm:^3.1.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
@@ -29377,12 +29377,12 @@ __metadata:
     "@react-aria-nutrient/virtualizer": "npm:^4.1.3"
     "@react-aria/ssr": "npm:^3.9.7"
     "@react-aria/utils": "npm:^3.28.1"
-    "@react-stately/autocomplete": "npm:3.0.0-beta.0"
-    "@react-stately/layout": "npm:^4.2.1"
-    "@react-stately/selection": "npm:^3.20.0"
-    "@react-stately/table": "npm:^3.14.0"
-    "@react-stately/utils": "npm:^3.10.5"
-    "@react-stately/virtualizer": "npm:^4.3.1"
+    "@react-stately-nutrient/autocomplete": "npm:3.0.0-beta.0"
+    "@react-stately-nutrient/layout": "npm:^4.2.1"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/table": "npm:^3.14.0"
+    "@react-stately-nutrient/utils": "npm:^3.10.5"
+    "@react-stately-nutrient/virtualizer": "npm:^4.3.1"
     "@react-types/form": "npm:^3.7.10"
     "@react-types/grid": "npm:^3.3.0"
     "@react-types/shared": "npm:^3.28.0"
@@ -29729,31 +29729,31 @@ __metadata:
   dependencies:
     "@babel/cli": "npm:^7.24.1"
     "@babel/core": "npm:^7.24.3"
-    "@react-stately/calendar": "npm:^3.7.1"
-    "@react-stately/checkbox": "npm:^3.6.12"
-    "@react-stately/collections": "npm:^3.12.2"
-    "@react-stately/color": "npm:^3.8.3"
-    "@react-stately/combobox": "npm:^3.10.3"
-    "@react-stately/data": "npm:^3.12.2"
-    "@react-stately/datepicker": "npm:^3.13.0"
-    "@react-stately/disclosure": "npm:^3.0.2"
-    "@react-stately/dnd": "npm:^3.5.2"
-    "@react-stately/form": "npm:^3.1.2"
-    "@react-stately/list": "npm:^3.12.0"
-    "@react-stately/menu": "npm:^3.9.2"
-    "@react-stately/numberfield": "npm:^3.9.10"
-    "@react-stately/overlays": "npm:^3.6.14"
-    "@react-stately/radio": "npm:^3.10.11"
-    "@react-stately/searchfield": "npm:^3.5.10"
-    "@react-stately/select": "npm:^3.6.11"
-    "@react-stately/selection": "npm:^3.20.0"
-    "@react-stately/slider": "npm:^3.6.2"
-    "@react-stately/table": "npm:^3.14.0"
-    "@react-stately/tabs": "npm:^3.8.0"
-    "@react-stately/toast": "npm:^3.0.0"
-    "@react-stately/toggle": "npm:^3.8.2"
-    "@react-stately/tooltip": "npm:^3.5.2"
-    "@react-stately/tree": "npm:^3.8.8"
+    "@react-stately-nutrient/calendar": "npm:^3.7.1"
+    "@react-stately-nutrient/checkbox": "npm:^3.6.12"
+    "@react-stately-nutrient/collections": "npm:^3.12.2"
+    "@react-stately-nutrient/color": "npm:^3.8.3"
+    "@react-stately-nutrient/combobox": "npm:^3.10.3"
+    "@react-stately-nutrient/data": "npm:^3.12.2"
+    "@react-stately-nutrient/datepicker": "npm:^3.13.0"
+    "@react-stately-nutrient/disclosure": "npm:^3.0.2"
+    "@react-stately-nutrient/dnd": "npm:^3.5.2"
+    "@react-stately-nutrient/form": "npm:^3.1.2"
+    "@react-stately-nutrient/list": "npm:^3.12.0"
+    "@react-stately-nutrient/menu": "npm:^3.9.2"
+    "@react-stately-nutrient/numberfield": "npm:^3.9.10"
+    "@react-stately-nutrient/overlays": "npm:^3.6.14"
+    "@react-stately-nutrient/radio": "npm:^3.10.11"
+    "@react-stately-nutrient/searchfield": "npm:^3.5.10"
+    "@react-stately-nutrient/select": "npm:^3.6.11"
+    "@react-stately-nutrient/selection": "npm:^3.20.0"
+    "@react-stately-nutrient/slider": "npm:^3.6.2"
+    "@react-stately-nutrient/table": "npm:^3.14.0"
+    "@react-stately-nutrient/tabs": "npm:^3.8.0"
+    "@react-stately-nutrient/toast": "npm:^3.0.0"
+    "@react-stately-nutrient/toggle": "npm:^3.8.2"
+    "@react-stately-nutrient/tooltip": "npm:^3.5.2"
+    "@react-stately-nutrient/tree": "npm:^3.8.8"
     "@react-types/shared": "npm:^3.28.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1

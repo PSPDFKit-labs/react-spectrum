@@ -56,6 +56,6 @@ interface Radio extends FocusableProps, DOMProps, StyleProps {
 | `renderLabel` | -            | removed. pass no children if you don’t want to render a label.                                            |
 
 ## Packages
-- `@react-stately/radio`
+- `@react-stately-nutrient/radio`
 - `@react-aria-nutrient/radio`
 - `@react-spectrum/radio`

@@ -12,7 +12,7 @@
 
 import {AriaCalendarCellProps, useCalendarCell} from '@react-aria-nutrient/calendar';
 import {CalendarDate, getDayOfWeek, isSameDay, isSameMonth, isToday} from '@internationalized/date';
-import {CalendarState, RangeCalendarState} from '@react-stately/calendar';
+import {CalendarState, RangeCalendarState} from '@react-stately-nutrient/calendar';
 import {classNames} from '@react-spectrum/utils';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {ReactNode, useRef} from 'react';

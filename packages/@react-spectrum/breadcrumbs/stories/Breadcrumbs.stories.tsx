@@ -14,7 +14,7 @@ import {action} from '@storybook/addon-actions';
 import {Breadcrumbs} from '../';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 // import {Heading} from '@react-spectrum/text';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import React from 'react';
 
 let styles = {

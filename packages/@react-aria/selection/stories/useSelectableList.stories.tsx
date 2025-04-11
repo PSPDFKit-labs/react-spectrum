@@ -13,7 +13,7 @@
 import {CollectionBase, Node} from '@react-types/shared';
 import {Item} from '@react-spectrum/actiongroup';
 import {List} from './List';
-import {ListState, useListState} from '@react-stately/list';
+import {ListState, useListState} from '@react-stately-nutrient/list';
 import * as React from 'react';
 import {Section} from '@react-spectrum/menu';
 import styles from './styles.css';

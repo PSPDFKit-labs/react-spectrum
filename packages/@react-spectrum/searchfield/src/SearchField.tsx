@@ -21,7 +21,7 @@ import {TextFieldRef} from '@react-types/textfield';
 import {useFormProps} from '@react-spectrum/form';
 import {useProviderProps} from '@react-spectrum/provider';
 import {useSearchField} from '@react-aria-nutrient/searchfield';
-import {useSearchFieldState} from '@react-stately/searchfield';
+import {useSearchFieldState} from '@react-stately-nutrient/searchfield';
 
 /**
  * A SearchField is a text field designed for searches.

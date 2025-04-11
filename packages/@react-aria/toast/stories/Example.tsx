@@ -11,7 +11,7 @@
  */
 
 import React, {createContext, useContext, useRef} from 'react';
-import {ToastState, useToastState} from '@react-stately/toast';
+import {ToastState, useToastState} from '@react-stately-nutrient/toast';
 import {useButton} from '@react-aria-nutrient/react-aria';
 import {useToast, useToastRegion} from '../src';
 

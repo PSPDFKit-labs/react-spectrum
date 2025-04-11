@@ -22,7 +22,7 @@ export {TableBody} from './TableBody';
 export {Column} from './Column';
 export {Row} from './Row';
 export {Cell} from './Cell';
-export {Section} from '@react-stately/collections';
+export {Section} from '@react-stately-nutrient/collections';
 export {TableCollection, buildHeaderRows} from './TableCollection';
 export {TableColumnLayout} from './TableColumnLayout';
 export {UNSTABLE_useTreeGridState} from './useTreeGridState';

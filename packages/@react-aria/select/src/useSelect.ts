@@ -17,7 +17,7 @@ import {chain, filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/uti
 import {DOMAttributes, KeyboardDelegate, RefObject, ValidationResult} from '@react-types/shared';
 import {FocusEvent, useMemo} from 'react';
 import {ListKeyboardDelegate, useTypeSelect} from '@react-aria-nutrient/selection';
-import {SelectState} from '@react-stately/select';
+import {SelectState} from '@react-stately-nutrient/select';
 import {setInteractionModality} from '@react-aria-nutrient/interactions';
 import {useCollator} from '@react-aria-nutrient/i18n';
 import {useField} from '@react-aria-nutrient/label';

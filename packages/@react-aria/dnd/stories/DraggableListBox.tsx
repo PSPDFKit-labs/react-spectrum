@@ -3,10 +3,10 @@ import dndStyles from './dnd.css';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React from 'react';
 import {useDraggableCollection, useDraggableItem} from '@react-aria-nutrient/dnd';
-import {useDraggableCollectionState} from '@react-stately/dnd';
+import {useDraggableCollectionState} from '@react-stately-nutrient/dnd';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 import {useListBox, useOption} from '@react-aria-nutrient/listbox';
-import {useListState} from '@react-stately/list';
+import {useListState} from '@react-stately-nutrient/list';
 
 export function DraggableListBox(props) {
   let state = useListState(props);

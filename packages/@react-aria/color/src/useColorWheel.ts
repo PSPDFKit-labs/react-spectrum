@@ -11,7 +11,7 @@
  */
 
 import {AriaColorWheelProps} from '@react-types/color';
-import {ColorWheelState} from '@react-stately/color';
+import {ColorWheelState} from '@react-stately-nutrient/color';
 import {DOMAttributes, RefObject} from '@react-types/shared';
 import {focusWithoutScrolling, mergeProps, useFormReset, useGlobalListeners, useLabels} from '@react-aria-nutrient/utils';
 import React, {ChangeEvent, InputHTMLAttributes, useCallback, useRef} from 'react';

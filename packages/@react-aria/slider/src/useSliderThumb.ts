@@ -3,7 +3,7 @@ import {clamp, focusWithoutScrolling, mergeProps, useFormReset, useGlobalListene
 import {DOMAttributes, RefObject} from '@react-types/shared';
 import {getSliderThumbId, sliderData} from './utils';
 import React, {ChangeEvent, InputHTMLAttributes, LabelHTMLAttributes, useCallback, useEffect, useRef} from 'react';
-import {SliderState} from '@react-stately/slider';
+import {SliderState} from '@react-stately-nutrient/slider';
 import {useFocusable, useKeyboard, useMove} from '@react-aria-nutrient/interactions';
 import {useLabel} from '@react-aria-nutrient/label';
 import {useLocale} from '@react-aria-nutrient/i18n';

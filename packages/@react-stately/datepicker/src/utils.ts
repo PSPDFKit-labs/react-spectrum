@@ -15,7 +15,7 @@ import {DatePickerProps, DateValue, Granularity, TimeValue} from '@react-types/d
 // @ts-ignore
 import i18nMessages from '../intl/*.json';
 import {LocalizedStringDictionary, LocalizedStringFormatter} from '@internationalized/string';
-import {mergeValidation, VALID_VALIDITY_STATE} from '@react-stately/form';
+import {mergeValidation, VALID_VALIDITY_STATE} from '@react-stately-nutrient/form';
 import {RangeValue, ValidationResult} from '@react-types/shared';
 import {useState} from 'react';
 
@@ -43,7 +43,7 @@ export function getValidationResult(
 
   if (isInvalid) {
     let locale = getLocale();
-    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately/datepicker') || dictionary;
+    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately-nutrient/datepicker') || dictionary;
     let formatter = new LocalizedStringFormatter(locale, strings);
     let dateFormatter = new DateFormatter(locale, getFormatOptions({}, options));
     let timeZone = dateFormatter.resolvedOptions().timeZone;
@@ -105,7 +105,7 @@ export function getRangeValidationResult(
 
   let result = mergeValidation(startValidation, endValidation);
   if (value?.end != null && value.start != null && value.end.compare(value.start) < 0) {
-    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately/datepicker') || dictionary;
+    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately-nutrient/datepicker') || dictionary;
     result = mergeValidation(result, {
       isInvalid: true,
       validationErrors: [strings.getStringForLocale('rangeReversed', getLocale())],

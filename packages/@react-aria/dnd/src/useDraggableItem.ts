@@ -12,7 +12,7 @@
 
 import {AriaButtonProps} from '@react-types/button';
 import {clearGlobalDnDState, isInternalDropOperation, setDraggingKeys, useDragModality} from './utils';
-import {DraggableCollectionState} from '@react-stately/dnd';
+import {DraggableCollectionState} from '@react-stately-nutrient/dnd';
 import {HTMLAttributes} from 'react';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

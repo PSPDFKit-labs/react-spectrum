@@ -20,7 +20,7 @@ import {Item, SearchAutocomplete} from '@react-spectrum/autocomplete';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React from 'react';
 import {Text} from '@react-spectrum/text';
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 
 
 type SearchAutocompleteStory = ComponentStoryObj<typeof SearchAutocomplete>;

@@ -14,7 +14,7 @@ import {action} from '@storybook/addon-actions';
 import {Collection, DropIndicator, GridLayout, Header, ListBox, ListBoxItem, ListBoxProps, ListBoxSection, ListLayout, Separator, Text, useDragAndDrop, Virtualizer, WaterfallLayout} from 'react-aria-components';
 import {MyListBoxItem} from './utils';
 import React from 'react';
-import {Size} from '@react-stately/virtualizer';
+import {Size} from '@react-stately-nutrient/virtualizer';
 import styles from '../example/index.css';
 import {useListData} from 'react-stately';
 

@@ -12,7 +12,7 @@
  */
 
 import {BaseLayout, BaseLayoutOptions} from './BaseLayout';
-import {LayoutInfo, Rect, Size} from '@react-stately/virtualizer';
+import {LayoutInfo, Rect, Size} from '@react-stately-nutrient/virtualizer';
 
 export interface GalleryLayoutOptions extends BaseLayoutOptions {
   // /**

@@ -15,7 +15,7 @@ import {AriaLabelingProps, DOMAttributes, FocusableElement, RefObject} from '@re
 import {filterDOMProps, useId, useSlotId} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {QueuedToast, ToastState} from '@react-stately/toast';
+import {QueuedToast, ToastState} from '@react-stately-nutrient/toast';
 import {useEffect, useState} from 'react';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 

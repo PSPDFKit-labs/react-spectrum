@@ -11,7 +11,7 @@
  */
 
 import {ToggleStateOptions} from '@react-types/checkbox';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export type {ToggleStateOptions};
 

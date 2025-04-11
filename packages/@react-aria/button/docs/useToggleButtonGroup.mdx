@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/button';
-import statelyDocs from 'docs:@react-stately/toggle';
+import statelyDocs from 'docs:@react-stately-nutrient/toggle';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import {Keyboard} from '@react-spectrum/text';
 import packageData from '@react-aria-nutrient/button/package.json';
@@ -66,7 +66,7 @@ A toggle button group consists of a set of toggle buttons, and coordinates the s
 </TypeContext.Provider>
 
 Selection state is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useToggleGroupState} />
-hook in `@react-stately/toggle`. The state object should be passed as an option to `useToggleButtonGroup`
+hook in `@react-stately-nutrient/toggle`. The state object should be passed as an option to `useToggleButtonGroup`
 and `useToggleButtonGroupItem`.
 
 **Note:** `useToggleButtonGroupItem` should only be used when it is contained within a toggle button group. For a
@@ -76,9 +76,9 @@ standalone toggle button, use the [useToggleButton](useToggleButton.html) hook i
 
 ```tsx example export=true
 import type {AriaToggleButtonGroupProps, AriaToggleButtonGroupItemProps} from '@react-aria-nutrient/button';
-import type {ToggleGroupState} from '@react-stately/toggle';
+import type {ToggleGroupState} from '@react-stately-nutrient/toggle';
 import {useToggleButtonGroup, useToggleButtonGroupItem} from '@react-aria-nutrient/button';
-import {useToggleGroupState} from '@react-stately/toggle';
+import {useToggleGroupState} from '@react-stately-nutrient/toggle';
 
 interface ToggleButtonGroupProps extends AriaToggleButtonGroupProps {
   children: React.ReactNode

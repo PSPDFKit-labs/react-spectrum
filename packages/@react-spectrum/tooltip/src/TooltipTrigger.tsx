@@ -18,7 +18,7 @@ import {TooltipContext} from './context';
 import {useLayoutEffect} from '@react-aria-nutrient/utils';
 import {useOverlayPosition} from '@react-aria-nutrient/overlays';
 import {useTooltipTrigger} from '@react-aria-nutrient/tooltip';
-import {useTooltipTriggerState} from '@react-stately/tooltip';
+import {useTooltipTriggerState} from '@react-stately-nutrient/tooltip';
 
 const DEFAULT_OFFSET = -1; // Offset needed to reach 4px/5px (med/large) distance between tooltip and trigger button
 const DEFAULT_CROSS_OFFSET = 0;

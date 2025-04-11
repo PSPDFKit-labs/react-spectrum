@@ -12,7 +12,7 @@
 
 import {ColorThumb} from '../src/ColorThumb';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import React from 'react';
 
 export type ColorThumbStory = ComponentStoryObj<typeof ColorThumb>;

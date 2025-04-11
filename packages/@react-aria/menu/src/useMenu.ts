@@ -14,7 +14,7 @@ import {AriaMenuProps} from '@react-types/menu';
 import {DOMAttributes, KeyboardDelegate, KeyboardEvents, RefObject} from '@react-types/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {menuData} from './utils';
-import {TreeState} from '@react-stately/tree';
+import {TreeState} from '@react-stately-nutrient/tree';
 import {useSelectableList} from '@react-aria-nutrient/selection';
 
 export interface MenuAria {

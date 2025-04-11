@@ -42,7 +42,7 @@
     "@react-aria-nutrient/utils": "^3.28.1",
     "@react-spectrum/overlays": "^5.7.3",
     "@react-spectrum/utils": "^3.12.3",
-    "@react-stately/tooltip": "^3.5.2",
+    "@react-stately-nutrient/tooltip": "^3.5.2",
     "@react-types/overlays": "^3.8.13",
     "@react-types/shared": "^3.28.0",
     "@react-types/tooltip": "^3.4.15",

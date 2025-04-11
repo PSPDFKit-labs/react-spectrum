@@ -13,7 +13,7 @@
 import {CollectionBuilderContext} from './useTableState';
 import {ColumnProps} from '@react-types/table';
 import {GridNode} from '@react-types/grid';
-import {PartialNode} from '@react-stately/collections';
+import {PartialNode} from '@react-stately-nutrient/collections';
 import React, {JSX, ReactElement} from 'react';
 
 function Column<T>(props: ColumnProps<T>): ReactElement | null { // eslint-disable-line @typescript-eslint/no-unused-vars

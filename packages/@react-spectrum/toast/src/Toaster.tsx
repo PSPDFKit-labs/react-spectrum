@@ -19,7 +19,7 @@ import React, {createContext, ReactElement, ReactNode, useMemo, useRef} from 're
 import ReactDOM from 'react-dom';
 import toastContainerStyles from './toastContainer.css';
 import type {ToastPlacement} from './ToastContainer';
-import {ToastState} from '@react-stately/toast';
+import {ToastState} from '@react-stately-nutrient/toast';
 import {useUNSAFE_PortalContext} from '@react-aria-nutrient/overlays';
 
 interface ToastContainerProps extends AriaToastRegionProps {

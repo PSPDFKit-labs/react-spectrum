@@ -567,7 +567,7 @@ function transformExample(node, preRelease, keepIndividualImports) {
   /* Replace individual package imports in the code
    * with monorepo imports if building for production and not a pre-release
    */
-  if (!preRelease && /@react-spectrum|@react-aria|@react-stately/.test(node.value)) {
+  if (!preRelease && /@react-spectrum|@react-aria|@react-stately-nutrient/.test(node.value)) {
     let specifiers = {};
     let typeSpecifiers = {};
     const recast = require('recast');

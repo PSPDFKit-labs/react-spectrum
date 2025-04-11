@@ -18,7 +18,7 @@ import {Provider} from '@react-spectrum/provider';
 import React from 'react';
 import {Text} from '@react-spectrum/text';
 import {theme} from '@react-spectrum/theme-default';
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 import {User} from '@react-aria-nutrient/test-utils';
 import userEvent from '@testing-library/user-event';
 

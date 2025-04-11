@@ -12,7 +12,7 @@
 
 import {act, pointerMap, render} from '@react-spectrum/test-utils-internal';
 import {Grid} from '../stories/example';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import React from 'react';
 import {Switch} from '@react-spectrum/switch';
 import userEvent from '@testing-library/user-event';

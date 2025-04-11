@@ -23,8 +23,8 @@ import {
   useTableRowGroup, useTableSelectAllCheckbox,
   useTableSelectionCheckbox
 } from '../src';
-import {useTableState} from '@react-stately/table';
-import {useToggleState} from '@react-stately/toggle';
+import {useTableState} from '@react-stately-nutrient/table';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 export function Table(props) {

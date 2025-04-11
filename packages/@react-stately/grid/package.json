@@ -1,5 +1,5 @@
 {
-  "name": "@react-stately/grid",
+  "name": "@react-stately-nutrient/grid",
   "version": "3.11.0",
   "description": "Spectrum UI components in React",
   "license": "Apache-2.0",
@@ -22,8 +22,8 @@
     "url": "https://github.com/adobe/react-spectrum"
   },
   "dependencies": {
-    "@react-stately/collections": "^3.12.2",
-    "@react-stately/selection": "^3.20.0",
+    "@react-stately-nutrient/collections": "^3.12.2",
+    "@react-stately-nutrient/selection": "^3.20.0",
     "@react-types/grid": "^3.3.0",
     "@react-types/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"

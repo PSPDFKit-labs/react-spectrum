@@ -11,7 +11,7 @@
  */
 
 import {useCallback} from 'react';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export interface DisclosureProps {
   /** Whether the disclosure is expanded (controlled). */

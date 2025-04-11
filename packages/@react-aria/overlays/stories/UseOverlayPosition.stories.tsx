@@ -15,7 +15,7 @@ import {Placement} from '@react-types/overlays';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {useOverlayPosition, useOverlayTrigger} from '../src';
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 
 function Trigger(props: {
   withPortal: boolean,

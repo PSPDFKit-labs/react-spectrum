@@ -11,7 +11,7 @@
  */
 
 import {AriaColorAreaProps, ColorChannel} from '@react-types/color';
-import {ColorAreaState} from '@react-stately/color';
+import {ColorAreaState} from '@react-stately-nutrient/color';
 import {DOMAttributes, RefObject} from '@react-types/shared';
 import {focusWithoutScrolling, isAndroid, isIOS, mergeProps, useFormReset, useGlobalListeners, useLabels} from '@react-aria-nutrient/utils';
 // @ts-ignore
