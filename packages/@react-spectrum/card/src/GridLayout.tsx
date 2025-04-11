@@ -12,9 +12,9 @@
  */
 
 import {BaseLayout, BaseLayoutOptions} from './BaseLayout';
-import {getChildNodes, getFirstItem} from '@react-stately/collections';
+import {getChildNodes, getFirstItem} from '@react-stately-nutrient/collections';
 import {Key, Node, Orientation} from '@react-types/shared';
-import {LayoutInfo, Rect, Size} from '@react-stately/virtualizer';
+import {LayoutInfo, Rect, Size} from '@react-stately-nutrient/virtualizer';
 
 export interface GridLayoutOptions extends BaseLayoutOptions {
   // /**

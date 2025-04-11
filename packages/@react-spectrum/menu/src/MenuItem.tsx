@@ -24,7 +24,7 @@ import {mergeRefs, useObjectRef, useSlotId} from '@react-aria-nutrient/utils';
 import React, {ReactNode, useMemo, useRef} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
 import {Text} from '@react-spectrum/text';
-import {TreeState} from '@react-stately/tree';
+import {TreeState} from '@react-stately-nutrient/tree';
 import {useLocale, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useMenuContext, useSubmenuTriggerContext} from './context';
 import {useMenuItem} from '@react-aria-nutrient/menu';

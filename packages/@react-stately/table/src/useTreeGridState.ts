@@ -10,14 +10,14 @@
  * governing permissions and limitations under the License.
  */
 
-import {CollectionBuilder} from '@react-stately/collections';
+import {CollectionBuilder} from '@react-stately-nutrient/collections';
 import {GridNode} from '@react-types/grid';
 import {Key} from '@react-types/shared';
 import {ReactElement, useMemo} from 'react';
 import {TableCollection} from './TableCollection';
-import {tableNestedRows} from '@react-stately/flags';
+import {tableNestedRows} from '@react-stately-nutrient/flags';
 import {TableState, TableStateProps, useTableState} from './useTableState';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export interface TreeGridState<T> extends TableState<T> {
   /** A set of keys for items that are expanded. */

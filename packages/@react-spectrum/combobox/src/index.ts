@@ -13,5 +13,5 @@
 /// <reference types="css-module-types" />
 
 export {ComboBox} from './ComboBox';
-export {Item, Section} from '@react-stately/collections';
+export {Item, Section} from '@react-stately-nutrient/collections';
 export type {SpectrumComboBoxProps} from '@react-types/combobox';

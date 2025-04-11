@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/calendar';
-import statelyDocs from 'docs:@react-stately/calendar';
+import statelyDocs from 'docs:@react-stately-nutrient/calendar';
 import i18nDocs from 'docs:@internationalized/date';
 import {FunctionAPI, HeaderInfo, InterfaceType, TypeContext, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/calendar/package.json';
@@ -85,7 +85,7 @@ A calendar consists of a grouping element containing one or more date grids (e.g
   <InterfaceType properties={docs.links[docs.exports.useCalendarCell.return.id].properties} />
 </TypeContext.Provider>
 
-State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useCalendarState} /> hook from `@react-stately/calendar`. The state object should be passed as an option to `useCalendar`, `useCalendarGrid`, and `useCalendarCell`.
+State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useCalendarState} /> hook from `@react-stately-nutrient/calendar`. The state object should be passed as an option to `useCalendar`, `useCalendarGrid`, and `useCalendarCell`.
 
 Note that much of this anatomy is shared with [range calendars](useRangeCalendar.html). The only difference is that `useCalendarState` is used instead of `useRangeCalendarState`, and `useCalendar` is used instead of `useRangeCalendar`.
 
@@ -104,7 +104,7 @@ A `Calendar` consists of three components: the main calendar wrapper element wit
 For simplicity, this example only displays a single month at a time. See the [styled examples](#styled-examples) section for more examples with multiple months, as well as other time ranges like weeks.
 
 ```tsx example render=false export=true
-import {useCalendarState} from '@react-stately/calendar';
+import {useCalendarState} from '@react-stately-nutrient/calendar';
 import {useCalendar} from '@react-aria-nutrient/calendar';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {createCalendar} from '@internationalized/date';
@@ -545,7 +545,7 @@ By default, this includes [all calendar systems](../internationalized/date/Calen
 For example, if your application only supports Gregorian dates, you could implement a `createCalendar` function like this:
 
 ```jsx
-import {useCalendarState} from '@react-stately/datepicker';
+import {useCalendarState} from '@react-stately-nutrient/datepicker';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {GregorianCalendar} from '@internationalized/date';
 

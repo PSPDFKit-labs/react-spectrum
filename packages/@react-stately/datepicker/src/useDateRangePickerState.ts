@@ -14,10 +14,10 @@
 import {DateFormatter, toCalendarDate, toCalendarDateTime} from '@internationalized/date';
 import {DateRange, DateRangePickerProps, DateValue, Granularity, MappedDateValue, TimeValue} from '@react-types/datepicker';
 import {FieldOptions, FormatterOptions, getFormatOptions, getPlaceholderTime, getRangeValidationResult, useDefaultProps} from './utils';
-import {FormValidationState, useFormValidationState} from '@react-stately/form';
-import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately/overlays';
+import {FormValidationState, useFormValidationState} from '@react-stately-nutrient/form';
+import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 import {RangeValue, ValidationState} from '@react-types/shared';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useMemo, useState} from 'react';
 
 export interface DateRangePickerStateOptions<T extends DateValue = DateValue> extends DateRangePickerProps<T> {

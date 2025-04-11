@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {clamp, snapValueToStep, useControlledState} from '@react-stately/utils';
-import {FormValidationState, useFormValidationState} from '@react-stately/form';
+import {clamp, snapValueToStep, useControlledState} from '@react-stately-nutrient/utils';
+import {FormValidationState, useFormValidationState} from '@react-stately-nutrient/form';
 import {NumberFieldProps} from '@react-types/numberfield';
 import {NumberFormatter, NumberParser} from '@internationalized/number';
 import {useCallback, useMemo, useState} from 'react';

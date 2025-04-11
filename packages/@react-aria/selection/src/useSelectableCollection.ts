@@ -17,7 +17,7 @@ import {FocusEvent, KeyboardEvent, useEffect, useRef} from 'react';
 import {focusSafely, getInteractionModality} from '@react-aria-nutrient/interactions';
 import {getFocusableTreeWalker, moveVirtualFocus} from '@react-aria-nutrient/focus';
 import {getItemElement, isNonContiguousSelectionModifier, useCollectionId} from './utils';
-import {MultipleSelectionManager} from '@react-stately/selection';
+import {MultipleSelectionManager} from '@react-stately-nutrient/selection';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useTypeSelect} from './useTypeSelect';
 

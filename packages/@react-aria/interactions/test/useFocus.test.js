@@ -11,7 +11,7 @@
  */
 
 import {act, createShadowRoot, render, waitFor} from '@react-spectrum/test-utils-internal';
-import {enableShadowDOM} from '@react-stately/flags';
+import {enableShadowDOM} from '@react-stately-nutrient/flags';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {useFocus} from '../';

@@ -36,7 +36,7 @@ import {
   DroppableCollectionStateOptions,
   useDraggableCollectionState,
   useDroppableCollectionState
-} from '@react-stately/dnd';
+} from '@react-stately-nutrient/dnd';
 import {JSX, useMemo} from 'react';
 
 interface DraggableCollectionStateOpts extends Omit<DraggableCollectionStateOptions, 'getItems'> {}

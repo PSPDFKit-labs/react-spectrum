@@ -12,7 +12,7 @@ export default Layout;
 
 import ChevronRight from '@spectrum-icons/workflow/ChevronRight';
 import docs from 'docs:@react-aria-nutrient/color';
-import statelyDocs from 'docs:@react-stately/color';
+import statelyDocs from 'docs:@react-stately-nutrient/color';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/color/package.json';
 import Anatomy from './ColorAreaAnatomy.svg';
@@ -74,7 +74,7 @@ values to assistive technologies.
 </TypeContext.Provider>
 
 State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useColorAreaState} />
-hook from `@react-stately/color`. The state object should be passed as an option to `useColorArea`.
+hook from `@react-stately-nutrient/color`. The state object should be passed as an option to `useColorArea`.
 
 By default, `useColorArea` provides an `aria-label` for the localized string "Color Picker",
 which labels the visually hidden `<input>` elements for the two color channels, or on mobile devices,
@@ -94,7 +94,7 @@ from view. The thumb also uses the
 
 ```tsx example export=true
 import {useColorArea} from '@react-aria-nutrient/color';
-import {useColorAreaState} from '@react-stately/color';
+import {useColorAreaState} from '@react-stately-nutrient/color';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 
 const SIZE = 192;
@@ -187,7 +187,7 @@ like a color slider using the [useColorSlider](useColorSlider.html) hook or a co
 The `onChangeEnd` prop can be used to handle when a user stops dragging the color area.
 
 ```tsx example
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [
@@ -285,7 +285,7 @@ It is built using the [useColorSlider](useColorSlider.html) hook, and can be sha
 
 ```tsx example export=true render=false
   import {useColorSlider} from '@react-aria-nutrient/color';
-  import {useColorSliderState} from '@react-stately/color';
+  import {useColorSliderState} from '@react-stately-nutrient/color';
   import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
   import {useLocale} from '@react-aria-nutrient/i18n';
   import {useFocusRing} from '@react-aria-nutrient/focus';
@@ -462,7 +462,7 @@ To get a localized channel name to use as a label, you can use the `color.getCha
 
 #### RGB
 ```tsx example
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [
@@ -524,7 +524,7 @@ function Example() {
 ```
 #### HSL
 ```tsx example
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [
@@ -586,7 +586,7 @@ function Example() {
 ```
 #### HSB
 ```tsx example
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [

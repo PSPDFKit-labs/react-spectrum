@@ -15,7 +15,7 @@ import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {GridCollection} from '@react-types/grid';
 import {GridKeyboardDelegate} from './GridKeyboardDelegate';
 import {gridMap} from './utils';
-import {GridState} from '@react-stately/grid';
+import {GridState} from '@react-stately-nutrient/grid';
 import {useCallback, useMemo} from 'react';
 import {useCollator, useLocale} from '@react-aria-nutrient/i18n';
 import {useGridSelectionAnnouncement} from './useGridSelectionAnnouncement';

@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/dnd';
-import statelyDocs from 'docs:@react-stately/dnd';
+import statelyDocs from 'docs:@react-stately-nutrient/dnd';
 import sharedDocs from 'docs:@react-types/shared';
 import selectionDocs from 'docs:@react-aria-nutrient/selection';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
@@ -57,11 +57,11 @@ This example renders a ListBox using the [useListBox](useListBox.html) hook, and
 
 ```tsx example export=true
 import {useListBox, useOption} from '@react-aria-nutrient/listbox';
-import {useListState} from '@react-stately/list';
-import {Item} from '@react-stately/collections';
+import {useListState} from '@react-stately-nutrient/list';
+import {Item} from '@react-stately-nutrient/collections';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
-import {useDraggableCollectionState} from '@react-stately/dnd';
+import {useDraggableCollectionState} from '@react-stately-nutrient/dnd';
 import {useDraggableCollection, useDraggableItem} from '@react-aria-nutrient/dnd';
 
 function ListBox(props) {
@@ -416,7 +416,7 @@ The `onDragEnd` event allows the drag source to respond when a drag that it init
 This example removes the dragged items from the UI when a move operation is completed. It uses the [useListData](../react-stately/useListData.html) hook to help manage and update the list of items. Try holding the <Keyboard>Option</Keyboard> or <Keyboard>Alt</Keyboard> keys to change the operation to copy, and see how the behavior changes.
 
 ```tsx example
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 function Example() {
   let list = useListData({
@@ -468,7 +468,7 @@ The drag source can also control which drop operations are allowed for the data.
 Drag and drop can be combined in the same collection component to allow reordering items. See [useDroppableCollection](useDroppableCollection.html) for more details.
 
 ```tsx example export=true render=false
-import {useDroppableCollectionState} from '@react-stately/dnd';
+import {useDroppableCollectionState} from '@react-stately-nutrient/dnd';
 import {useDroppableCollection, useDropIndicator, ListDropTargetDelegate} from '@react-aria-nutrient/dnd';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
 
@@ -601,7 +601,7 @@ function DropIndicator(props) {
 Now, we can render an example ListBox, which allows the user to reorder items. The `onReorder` event is triggered when the user drops dragged items which originated within the same collection. As above, [useListData](../react-stately/useListData.html) is used to manage the list items in this example, but it is not a requirement.
 
 ```tsx example
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 function Example() {
   let list = useListData({

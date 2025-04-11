@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/toast';
-import statelyDocs from 'docs:@react-stately/toast';
+import statelyDocs from 'docs:@react-stately-nutrient/toast';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, PageDescription, TypeLink} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/toast/package.json';
 import Anatomy from './toast-anatomy.svg';
@@ -75,7 +75,7 @@ Landmark regions including the toast container can be navigated using the keyboa
 Toasts consist of three components. The first is a `ToastProvider` component which will manage the state for the toast queue with the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useToastState} /> hook. Alternatively, you could use a global toast queue ([see below](#global-toast-queue)).
 
 ```tsx
-import {useToastState} from '@react-stately/toast';
+import {useToastState} from '@react-stately-nutrient/toast';
 
 function ToastProvider({children, ...props}) {
   let state = useToastState({
@@ -102,7 +102,7 @@ The `ToastRegion` component will be rendered when there are toasts to display. I
 
 ```tsx example export=true render=false
 import type {AriaToastRegionProps} from '@react-aria-nutrient/toast';
-import type {ToastState} from '@react-stately/toast';
+import type {ToastState} from '@react-stately-nutrient/toast';
 import {useToastRegion} from '@react-aria-nutrient/toast';
 
 interface ToastRegionProps<T> extends AriaToastRegionProps {
@@ -286,7 +286,7 @@ function Example() {
 In the above examples, each `ToastProvider` has a separate queue. This setup is simple, and fine for most cases where you can wrap the entire app in a single `ToastProvider`. However, in more complex situations, you may want to keep the toast queue outside the React tree so that toasts can be queued from anywhere. This can be done by creating your own <TypeLink links={statelyDocs.links} type={statelyDocs.exports.ToastQueue} /> and subscribing to it using the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useToastQueue} /> hook rather than `useToastState`.
 
 ```tsx example export=true hidden
-import {ToastQueue, useToastQueue} from '@react-stately/toast';
+import {ToastQueue, useToastQueue} from '@react-stately-nutrient/toast';
 import {createPortal} from 'react-dom';
 
 // Create a global toast queue.
@@ -323,7 +323,7 @@ Now you can queue a toast from anywhere:
 A `ToastQueue` and `useToastState` use a generic type to represent toast content. The examples so far have used strings, but you can type this however you want to enable passing custom objects or options. This example uses a custom object to support toasts with both a title and description.
 
 ```tsx
-import type {QueuedToast} from '@react-stately/toast';
+import type {QueuedToast} from '@react-stately-nutrient/toast';
 
 /*- begin highlight -*/
 interface MyToast {

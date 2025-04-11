@@ -30,7 +30,7 @@ import '@adobe/spectrum-css-temp/components/textfield/vars.css'; // HACK: must b
 import styles from '@adobe/spectrum-css-temp/components/inputgroup/vars.css';
 import {TimeField} from './TimeField';
 import {useDatePicker} from '@react-aria-nutrient/datepicker';
-import {useDatePickerState} from '@react-stately/datepicker';
+import {useDatePickerState} from '@react-stately-nutrient/datepicker';
 import {useFocusManagerRef, useFormatHelpText, useFormattedDateWidth, useVisibleMonths} from './utils';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 import {useFormProps} from '@react-spectrum/form';

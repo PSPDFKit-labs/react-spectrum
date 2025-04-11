@@ -11,7 +11,7 @@
  */
 
 import {ReactNode, useState} from 'react';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export interface AutocompleteState {
   /** The current value of the autocomplete input. */

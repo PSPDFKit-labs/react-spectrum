@@ -11,7 +11,7 @@
  */
 
 import {FocusStrategy, Key} from '@react-types/shared';
-import type {OverlayTriggerState} from '@react-stately/overlays';
+import type {OverlayTriggerState} from '@react-stately-nutrient/overlays';
 import {RootMenuTriggerState} from './useMenuTriggerState';
 import {useCallback, useMemo, useState} from 'react';
 

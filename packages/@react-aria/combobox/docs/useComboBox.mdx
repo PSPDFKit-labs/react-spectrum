@@ -17,8 +17,8 @@ import i18nDocs from 'docs:@react-aria-nutrient/i18n';
 import listboxDocs from 'docs:@react-aria-nutrient/listbox';
 import overlaysDocs from 'docs:@react-aria-nutrient/overlays';
 import packageData from '@react-aria-nutrient/combobox/package.json';
-import selectionDocs from 'docs:@react-stately/selection';
-import statelyDocs from 'docs:@react-stately/combobox';
+import selectionDocs from 'docs:@react-stately-nutrient/selection';
+import statelyDocs from 'docs:@react-stately-nutrient/combobox';
 import Anatomy from './anatomy.svg';
 import ChevronRight from '@spectrum-icons/workflow/ChevronRight';
 import {ExampleCard} from '@react-spectrum/docs/src/ExampleCard';
@@ -100,7 +100,7 @@ input via the `aria-describedby` attribute.
   <InterfaceType properties={docs.links[docs.exports.useComboBox.return.base?.id ?? docs.exports.useComboBox.return.id].properties} />
 </TypeContext.Provider>
 
-State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useComboBoxState} /> hook from `@react-stately/combobox`.
+State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useComboBoxState} /> hook from `@react-stately-nutrient/combobox`.
 The state object should be passed as an option to `useComboBox`.
 
 If the combo box does not have a visible label, an `aria-label` or `aria-labelledby` prop must be passed instead to
@@ -113,7 +113,7 @@ navigation and other interactions. It does this using the <TypeLink links={colle
 interface, which is a generic interface to access sequential unique keyed data. You can
 implement this interface yourself, e.g. by using a prop to pass a list of item objects,
 but <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useComboBoxState} /> from
-`@react-stately/combobox` implements a JSX based interface for building collections instead.
+`@react-stately-nutrient/combobox` implements a JSX based interface for building collections instead.
 See [Collection Components](/react-stately/collections.html) for more information,
 and [Collection Interface](/react-stately/Collection.html) for internal details.
 
@@ -140,9 +140,9 @@ In addition, see [useListBox](useListBox.html) for examples of sections (option 
 options. For an example of the description and error message elements, see [useTextField](useTextField.html).
 
 ```tsx example export=true
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import {useButton} from '@react-aria-nutrient/button';
-import {useComboBoxState} from '@react-stately/combobox'
+import {useComboBoxState} from '@react-stately-nutrient/combobox'
 import {useComboBox} from '@react-aria-nutrient/combobox';
 import {useFilter} from '@react-aria-nutrient/i18n';
 
@@ -642,7 +642,7 @@ state to the user, or support features like infinite scroll to load more data. S
 of a ComboBox supporting those features.
 
 ```tsx example
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 
 function AsyncLoadingExample() {
   let list = useAsyncList({

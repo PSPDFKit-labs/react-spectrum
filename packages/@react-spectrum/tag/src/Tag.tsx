@@ -13,7 +13,7 @@
 import {AriaTagProps, useTag} from '@react-aria-nutrient/tag';
 import {classNames, ClearSlots, SlotProvider, useStyleProps} from '@react-spectrum/utils';
 import {ClearButton} from '@react-spectrum/button';
-import type {ListState} from '@react-stately/list';
+import type {ListState} from '@react-stately-nutrient/list';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {ReactNode, useRef} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/tags/vars.css';

@@ -14,7 +14,7 @@ import {DialogContext} from './context';
 import {Modal} from '@react-spectrum/overlays';
 import React, {ReactElement, ReactNode, useState} from 'react';
 import {SpectrumDialogContainerProps} from '@react-types/dialog';
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 
 /**
  * A DialogContainer accepts a single Dialog as a child, and manages showing and hiding

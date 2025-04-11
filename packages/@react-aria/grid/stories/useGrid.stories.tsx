@@ -11,7 +11,7 @@
  */
 
 import {Grid} from './example';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import React from 'react';
 import {Switch} from '@react-spectrum/switch';
 

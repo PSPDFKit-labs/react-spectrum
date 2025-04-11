@@ -14,5 +14,5 @@
 
 export {ListBox} from './ListBox';
 export {useListBoxLayout, ListBoxBase} from './ListBoxBase';
-export {Item, Section} from '@react-stately/collections';
+export {Item, Section} from '@react-stately-nutrient/collections';
 export type {SpectrumListBoxProps} from '@react-types/listbox';

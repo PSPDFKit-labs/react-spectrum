@@ -20,7 +20,7 @@ import {FocusScope, useKeyboard} from '@react-aria-nutrient/react-aria';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {style} from '../style' with {type: 'macro'};
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useDOMRef} from '@react-spectrum/utils';
 import {useEnterAnimation, useExitAnimation, useObjectRef, useResizeObserver} from '@react-aria-nutrient/utils';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';

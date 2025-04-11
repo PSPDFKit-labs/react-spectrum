@@ -3,7 +3,7 @@ import * as React from 'react';
 import {useRef} from 'react';
 import userEvent from '@testing-library/user-event';
 import {useSlider, useSliderThumb} from '../src';
-import {useSliderState} from '@react-stately/slider';
+import {useSliderState} from '@react-stately-nutrient/slider';
 
 describe('useSliderThumb', () => {
   let numberFormatter = new Intl.NumberFormat('en-US', {});

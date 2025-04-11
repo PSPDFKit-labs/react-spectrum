@@ -22,7 +22,7 @@ import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
 import {SubmenuTriggerContext, useMenuStateContext} from './context';
 import {TrayHeaderWrapper} from './Menu';
 import {useSubmenuTrigger} from '@react-aria-nutrient/menu';
-import {useSubmenuTriggerState} from '@react-stately/menu';
+import {useSubmenuTriggerState} from '@react-stately-nutrient/menu';
 
 interface MenuDialogTriggerProps {
   /** Whether the menu item is currently unavailable. */

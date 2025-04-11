@@ -11,7 +11,7 @@
  */
 
 import {Key} from '@react-types/shared';
-import {TreeState} from '@react-stately/tree';
+import {TreeState} from '@react-stately-nutrient/tree';
 
 interface MenuData {
   onClose?: () => void,

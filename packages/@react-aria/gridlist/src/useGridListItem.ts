@@ -13,13 +13,13 @@
 import {chain, getScrollParent, mergeProps, scrollIntoViewport, useSlotId, useSyntheticLinkProps} from '@react-aria-nutrient/utils';
 import {DOMAttributes, FocusableElement, Key, RefObject, Node as RSNode} from '@react-types/shared';
 import {focusSafely, getFocusableTreeWalker} from '@react-aria-nutrient/focus';
-import {getLastItem} from '@react-stately/collections';
+import {getLastItem} from '@react-stately-nutrient/collections';
 import {getRowId, listMap} from './utils';
 import {HTMLAttributes, KeyboardEvent as ReactKeyboardEvent, useRef} from 'react';
 import {isFocusVisible} from '@react-aria-nutrient/interactions';
-import type {ListState} from '@react-stately/list';
+import type {ListState} from '@react-stately-nutrient/list';
 import {SelectableItemStates, useSelectableItem} from '@react-aria-nutrient/selection';
-import type {TreeState} from '@react-stately/tree';
+import type {TreeState} from '@react-stately-nutrient/tree';
 import {useLocale} from '@react-aria-nutrient/i18n';
 
 export interface AriaGridListItemOptions {

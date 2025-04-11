@@ -12,7 +12,7 @@
 
 import {createShadowRoot, render} from '@react-spectrum/test-utils-internal';
 import {createShadowTreeWalker} from '../src';
-import {enableShadowDOM} from '@react-stately/flags';
+import {enableShadowDOM} from '@react-stately-nutrient/flags';
 import React from 'react';
 import ReactDOM from 'react-dom';
 

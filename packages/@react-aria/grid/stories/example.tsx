@@ -10,12 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
-import {GridCollection, useGridState} from '@react-stately/grid';
+import {GridCollection, useGridState} from '@react-stately-nutrient/grid';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React from 'react';
 import {useFocus} from '@react-aria-nutrient/interactions';
 import {useGrid, useGridCell, useGridRow} from '../';
-import {useListState} from '@react-stately/list';
+import {useListState} from '@react-stately-nutrient/list';
 
 export function Grid(props) {
   let {gridFocusMode = 'row', cellFocusMode = 'child'} = props;

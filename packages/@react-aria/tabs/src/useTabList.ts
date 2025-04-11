@@ -13,7 +13,7 @@
 import {AriaTabListProps} from '@react-types/tabs';
 import {DOMAttributes, RefObject} from '@react-types/shared';
 import {mergeProps, useId, useLabels} from '@react-aria-nutrient/utils';
-import {TabListState} from '@react-stately/tabs';
+import {TabListState} from '@react-stately-nutrient/tabs';
 import {tabsIds} from './utils';
 import {TabsKeyboardDelegate} from './TabsKeyboardDelegate';
 import {useLocale} from '@react-aria-nutrient/i18n';

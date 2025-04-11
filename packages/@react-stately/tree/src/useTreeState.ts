@@ -11,11 +11,11 @@
  */
 
 import {Collection, CollectionStateBase, DisabledBehavior, Expandable, Key, MultipleSelection, Node} from '@react-types/shared';
-import {SelectionManager, useMultipleSelectionState} from '@react-stately/selection';
+import {SelectionManager, useMultipleSelectionState} from '@react-stately-nutrient/selection';
 import {TreeCollection} from './TreeCollection';
 import {useCallback, useEffect, useMemo} from 'react';
-import {useCollection} from '@react-stately/collections';
-import {useControlledState} from '@react-stately/utils';
+import {useCollection} from '@react-stately-nutrient/collections';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export interface TreeProps<T> extends CollectionStateBase<T>, Expandable, MultipleSelection {
   /** Whether `disabledKeys` applies to all interactions, or only selection. */

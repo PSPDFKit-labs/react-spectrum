@@ -14,7 +14,7 @@ import type {AriaLabelingProps, DisabledBehavior, DOMProps, DOMRef, Key, Spectru
 import type {ColumnSize, TableProps} from '@react-types/table';
 import type {DragAndDropHooks} from '@react-spectrum/dnd';
 import React, {JSX, ReactElement} from 'react';
-import {tableNestedRows} from '@react-stately/flags';
+import {tableNestedRows} from '@react-stately-nutrient/flags';
 import {TableView} from './TableView';
 import {TreeGridTableView} from './TreeGridTableView';
 

@@ -12,7 +12,7 @@
 
 import {FocusStrategy, Key} from '@react-types/shared';
 import {MenuTriggerProps} from '@react-types/menu';
-import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately/overlays';
+import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 import {useState} from 'react';
 
 export interface MenuTriggerState extends OverlayTriggerState {

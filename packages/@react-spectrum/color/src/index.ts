@@ -19,7 +19,7 @@ export {ColorSwatch} from './ColorSwatch';
 export {ColorPicker} from './ColorPicker';
 export {ColorEditor} from './ColorEditor';
 export {ColorSwatchPicker} from './ColorSwatchPicker';
-export {parseColor, getColorChannels} from '@react-stately/color';
+export {parseColor, getColorChannels} from '@react-stately-nutrient/color';
 export type {SpectrumColorAreaProps, SpectrumColorFieldProps, SpectrumColorSliderProps, SpectrumColorWheelProps} from '@react-types/color';
 export type {SpectrumColorSwatchProps} from './ColorSwatch';
 export type {SpectrumColorPickerProps} from './ColorPicker';

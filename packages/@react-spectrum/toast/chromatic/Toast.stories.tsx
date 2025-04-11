@@ -12,7 +12,7 @@
 
 import React from 'react';
 import {Toast} from '../src/Toast';
-import {useToastState} from '@react-stately/toast';
+import {useToastState} from '@react-stately-nutrient/toast';
 
 function FakeToast(props) {
   let state = useToastState<any>();

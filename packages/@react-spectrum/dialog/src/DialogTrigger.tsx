@@ -12,7 +12,7 @@
 
 import {DialogContext} from './context';
 import {Modal, Popover, Tray} from '@react-spectrum/overlays';
-import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately/overlays';
+import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 import {PressResponder} from '@react-aria-nutrient/interactions';
 import React, {Fragment, JSX, ReactElement, useEffect, useRef} from 'react';
 import {SpectrumDialogClose, SpectrumDialogProps, SpectrumDialogTriggerProps} from '@react-types/dialog';

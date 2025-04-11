@@ -12,7 +12,7 @@ import colorTypes from 'docs:@react-types/color/src/index.d.ts';
 import {HeaderInfo, PropTable, TypeLink, PageDescription} from '@react-spectrum/docs';
 import {Layout} from '@react-spectrum/docs';
 import packageData from '@react-spectrum/color/package.json';
-import statelyDocs from 'docs:@react-stately/color';
+import statelyDocs from 'docs:@react-stately-nutrient/color';
 
 export default Layout;
 
@@ -54,7 +54,7 @@ In the example below, the <TypeLink links={statelyDocs.links} type={statelyDocs.
 so that `value`'s type remains consistent.
 
 ```tsx example
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [value, setValue] = React.useState(parseColor('hsl(30, 100%, 50%)'));

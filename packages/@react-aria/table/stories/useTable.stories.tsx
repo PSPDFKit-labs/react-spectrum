@@ -12,7 +12,7 @@
 
 import {action} from '@storybook/addon-actions';
 import {Table as BackwardCompatTable} from './example-backwards-compat';
-import {Cell, Column, Row, TableBody, TableHeader} from '@react-stately/table';
+import {Cell, Column, Row, TableBody, TableHeader} from '@react-stately-nutrient/table';
 import {ColumnSize} from '@react-types/table';
 import {Table as DocsTable} from './example-docs';
 import {Key} from '@react-types/shared';

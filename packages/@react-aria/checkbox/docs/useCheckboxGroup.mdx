@@ -13,7 +13,7 @@ export default Layout;
 import docs from 'docs:@react-aria-nutrient/checkbox';
 import hiddenDocs from 'docs:@react-aria-nutrient/visually-hidden';
 import focusDocs from 'docs:@react-aria-nutrient/focus';
-import statelyDocs from 'docs:@react-stately/checkbox';
+import statelyDocs from 'docs:@react-stately-nutrient/checkbox';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import {Keyboard} from '@react-spectrum/text';
 import packageData from '@react-aria-nutrient/checkbox/package.json';
@@ -82,7 +82,7 @@ onto the appropriate element:
 </TypeContext.Provider>
 
 Selection state is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useCheckboxGroupState} />
-hook in `@react-stately/checkbox`. The state object should be passed as an option to `useCheckboxGroup`
+hook in `@react-stately-nutrient/checkbox`. The state object should be passed as an option to `useCheckboxGroup`
 and `useCheckboxGroupItem`.
 
 Individual checkboxes must have a visual label. If the checkbox group does not have a visible label,
@@ -100,7 +100,7 @@ for the checkbox.
 
 ```tsx example export=true
 import {useCheckboxGroup, useCheckboxGroupItem} from '@react-aria-nutrient/checkbox';
-import {useCheckboxGroupState} from '@react-stately/checkbox';
+import {useCheckboxGroupState} from '@react-stately-nutrient/checkbox';
 
 let CheckboxGroupContext = React.createContext(null);
 

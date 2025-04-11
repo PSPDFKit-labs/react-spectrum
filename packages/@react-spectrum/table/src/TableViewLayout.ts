@@ -11,9 +11,9 @@
  */
 import {DropTarget} from '@react-types/shared';
 import {GridNode} from '@react-types/grid';
-import {LayoutInfo, Rect} from '@react-stately/virtualizer';
-import {LayoutNode, TableLayout} from '@react-stately/layout';
-import {TableCollection} from '@react-stately/table';
+import {LayoutInfo, Rect} from '@react-stately-nutrient/virtualizer';
+import {LayoutNode, TableLayout} from '@react-stately-nutrient/layout';
+import {TableCollection} from '@react-stately-nutrient/table';
 
 export class TableViewLayout<T> extends TableLayout<T> {
   private isLoading: boolean = false;

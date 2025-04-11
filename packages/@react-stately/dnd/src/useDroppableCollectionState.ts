@@ -11,7 +11,7 @@
  */
 
 import {Collection, DragTypes, DropOperation, DroppableCollectionProps, DropTarget, ItemDropTarget, Key, Node} from '@react-types/shared';
-import {MultipleSelectionManager} from '@react-stately/selection';
+import {MultipleSelectionManager} from '@react-stately-nutrient/selection';
 import {useCallback, useRef, useState} from 'react';
 
 interface DropOperationEvent {

@@ -16,7 +16,7 @@ import {Cell, Column, Row, SpectrumTableProps, TableBody, TableHeader, TableView
 import {chain} from '@react-aria-nutrient/utils';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import defaultConfig, {columns, EmptyStateTable, TableStory} from './Table.stories';
-import {enableTableNestedRows} from '@react-stately/flags';
+import {enableTableNestedRows} from '@react-stately-nutrient/flags';
 import {Flex} from '@react-spectrum/layout';
 import {Key} from '@react-types/shared';
 import React, {useState} from 'react';

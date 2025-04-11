@@ -22,7 +22,7 @@ import {AriaToggleButtonProps} from '@react-types/button';
 import {ButtonAria, useButton} from './useButton';
 import {chain, mergeProps} from '@react-aria-nutrient/utils';
 import {DOMAttributes} from '@react-types/shared';
-import {ToggleState} from '@react-stately/toggle';
+import {ToggleState} from '@react-stately-nutrient/toggle';
 
 export interface AriaToggleButtonOptions<E extends ElementType> extends Omit<AriaToggleButtonProps<E>, 'children'> {}
 

@@ -13,7 +13,7 @@ export default Layout;
 import docs from 'docs:@react-aria-nutrient/radio';
 import hiddenDocs from 'docs:@react-aria-nutrient/visually-hidden';
 import focusDocs from 'docs:@react-aria-nutrient/focus';
-import statelyDocs from 'docs:@react-stately/radio';
+import statelyDocs from 'docs:@react-stately-nutrient/radio';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import {Keyboard} from '@react-spectrum/text';
 import packageData from '@react-aria-nutrient/radio/package.json';
@@ -83,7 +83,7 @@ onto the appropriate element:
 </TypeContext.Provider>
 
 Selection state is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useRadioGroupState} />
-hook in `@react-stately/radio`. The state object should be passed as an option to `useRadio`.
+hook in `@react-stately-nutrient/radio`. The state object should be passed as an option to `useRadio`.
 
 Individual radio buttons must have a visual label. If the radio group does not have a visible label,
 an `aria-label` or `aria-labelledby` prop must be passed instead to identify the element to assistive
@@ -97,7 +97,7 @@ for the radio.
 
 ```tsx example
 import {useRadioGroup, useRadio} from '@react-aria-nutrient/radio';
-import {useRadioGroupState} from '@react-stately/radio';
+import {useRadioGroupState} from '@react-stately-nutrient/radio';
 
 let RadioContext = React.createContext(null);
 

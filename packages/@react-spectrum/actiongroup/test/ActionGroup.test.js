@@ -15,7 +15,7 @@ import {ActionGroup} from '../';
 import {Button} from '@react-spectrum/button';
 import {Dialog, DialogTrigger} from '@react-spectrum/dialog';
 import Edit from '@spectrum-icons/workflow/Edit';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
 import {Text} from '@react-spectrum/text';

@@ -12,8 +12,8 @@ export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/table';
 import collectionsDocs from 'docs:@react-types/shared/src/collections.d.ts';
-import selectionDocs from 'docs:@react-stately/selection';
-import statelyDocs from 'docs:@react-stately/table';
+import selectionDocs from 'docs:@react-stately-nutrient/selection';
+import statelyDocs from 'docs:@react-stately-nutrient/table';
 import focusDocs from 'docs:@react-aria-nutrient/focus';
 import checkboxDocs from 'docs:@react-aria-nutrient/checkbox';
 import utilsDocs from 'docs:@react-aria-nutrient/utils';
@@ -93,7 +93,7 @@ to assistive technology using ARIA. <TypeLink links={docs.links} type={docs.expo
 for assistive technology. Each of these hooks returns props to be spread onto the appropriate HTML element.
 
 State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useTableState} />
-hook from `@react-stately/table`. The state object should be passed as an option to each of the above hooks where applicable.
+hook from `@react-stately-nutrient/table`. The state object should be passed as an option to each of the above hooks where applicable.
 
 Note that an `aria-label` or `aria-labelledby` must be passed to the table to identify the element to assistive technology.
 
@@ -105,7 +105,7 @@ the <TypeLink links={collectionsDocs.links} type={collectionsDocs.exports.Collec
 interface, which is a generic interface to access sequential unique keyed data. You can
 implement this interface yourself, e.g. by using a prop to pass a list of item objects,
 but <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useTableState} /> from
-`@react-stately/table` implements a JSX based interface for building collections instead.
+`@react-stately-nutrient/table` implements a JSX based interface for building collections instead.
 See [Collection Components](/react-stately/collections.html) for more information,
 and [Collection Interface](/react-stately/Collection.html) for internal details.
 
@@ -131,7 +131,7 @@ and manage state such as the focused row/cell, selection, and sort column/direct
 the rows and cells of the table and render the relevant components, which we'll define below.
 
 ```tsx example export=true render=false
-import {Cell, Column, Row, TableBody, TableHeader, useTableState} from '@react-stately/table';
+import {Cell, Column, Row, TableBody, TableHeader, useTableState} from '@react-stately-nutrient/table';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import {useRef} from 'react';
 import {useFocusRing} from '@react-aria-nutrient/focus';
@@ -489,7 +489,7 @@ hook, and can be shared with many other components.
   <summary style={{fontWeight: 'bold'}}><ChevronRight size="S" /> Show code</summary>
 
 ```tsx example export=true render=false
-import {useToggleState} from '@react-stately/toggle';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 import {useCheckbox} from '@react-aria-nutrient/checkbox';
 
 function Checkbox(props) {
@@ -711,7 +711,7 @@ This example performs client side sorting by passing a `sort` function to the [u
 See the docs for more information on how to perform server side sorting.
 
 ```tsx example
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 
 interface Character {
   name: string,
@@ -869,7 +869,7 @@ let rows = [
 ## Resizable Columns
 
 For resizable column support, two additional hooks need to be added to the table implementation above. The <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useTableColumnResizeState} />
-hook from `@react-stately/table` is responsible for initializing and tracking the widths of every column in your table, returning functions that you can use to
+hook from `@react-stately-nutrient/table` is responsible for initializing and tracking the widths of every column in your table, returning functions that you can use to
 update the column widths during a column resize operation. Note that this state is supplementary to the state returned by <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useTableState} />.
 
 The second column resizing hook is <TypeLink links={docs.links} type={docs.exports.useTableColumnResize} />. This hook handles the interactions for a table column's resizer
@@ -887,7 +887,7 @@ The various style changes below are to add a wrapper div so the table is scrolla
 
 ```tsx example export=true render=false
 import {useCallback} from 'react';
-import {useTableColumnResizeState} from '@react-stately/table';
+import {useTableColumnResizeState} from '@react-stately-nutrient/table';
 
 function ResizableColumnsTable(props) {
   let state = useTableState(props);

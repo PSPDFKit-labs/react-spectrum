@@ -46,7 +46,7 @@
     "@react-spectrum/overlays": "^5.7.3",
     "@react-spectrum/text": "^3.5.13",
     "@react-spectrum/utils": "^3.12.3",
-    "@react-stately/collections": "^3.12.2",
+    "@react-stately-nutrient/collections": "^3.12.2",
     "@react-types/actionbar": "^3.1.13",
     "@react-types/shared": "^3.28.0",
     "@spectrum-icons/ui": "^3.6.14",

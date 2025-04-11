@@ -17,7 +17,7 @@ import datepickerStyles from './styles.css';
 import {DateValue, SpectrumDatePickerProps} from '@react-types/datepicker';
 import React, {ReactNode, useRef} from 'react';
 import {useDateField} from '@react-aria-nutrient/datepicker';
-import {useDateFieldState} from '@react-stately/datepicker';
+import {useDateFieldState} from '@react-stately-nutrient/datepicker';
 import {useLocale} from '@react-aria-nutrient/i18n';
 
 interface DatePickerFieldProps<T extends DateValue> extends SpectrumDatePickerProps<T> {

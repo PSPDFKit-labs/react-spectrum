@@ -15,7 +15,7 @@ import {Button} from '@react-spectrum/button';
 import {chain} from '@react-aria-nutrient/utils';
 import {ColorField} from '../';
 import {Form} from '@react-spectrum/form';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import {Provider} from '@react-spectrum/provider';
 import React, {useState} from 'react';
 import {theme} from '@react-spectrum/theme-default';

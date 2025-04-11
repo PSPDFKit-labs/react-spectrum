@@ -1,7 +1,7 @@
 // https://github.com/microsoft/tabster/blob/a89fc5d7e332d48f68d03b1ca6e344489d1c3898/src/Shadowdomize/ShadowTreeWalker.ts
 
 import {nodeContains} from './DOMFunctions';
-import {shadowDOM} from '@react-stately/flags';
+import {shadowDOM} from '@react-stately-nutrient/flags';
 
 export class ShadowTreeWalker implements TreeWalker {
   public readonly filter: NodeFilter | null;

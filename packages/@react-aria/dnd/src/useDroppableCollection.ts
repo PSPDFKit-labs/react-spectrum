@@ -34,7 +34,7 @@ import {
   RefObject
 } from '@react-types/shared';
 import * as DragManager from './DragManager';
-import {DroppableCollectionState} from '@react-stately/dnd';
+import {DroppableCollectionState} from '@react-stately-nutrient/dnd';
 import {HTMLAttributes, useCallback, useEffect, useRef} from 'react';
 import {mergeProps, useId, useLayoutEffect} from '@react-aria-nutrient/utils';
 import {setInteractionModality} from '@react-aria-nutrient/interactions';

@@ -29,7 +29,7 @@ import More from '@spectrum-icons/workflow/More';
 import NoSearchResults from '@spectrum-icons/illustrations/NoSearchResults';
 import React, {useState} from 'react';
 import {TextField} from '@react-spectrum/textfield';
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 export function CRUDExample(props) {
   let list = useListData({

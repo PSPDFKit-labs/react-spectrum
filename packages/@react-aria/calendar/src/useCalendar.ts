@@ -12,7 +12,7 @@
 
 import {AriaCalendarProps, DateValue} from '@react-types/calendar';
 import {CalendarAria, useCalendarBase} from './useCalendarBase';
-import {CalendarState} from '@react-stately/calendar';
+import {CalendarState} from '@react-stately-nutrient/calendar';
 
 /**
  * Provides the behavior and accessibility implementation for a calendar component.

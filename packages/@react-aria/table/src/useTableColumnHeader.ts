@@ -16,7 +16,7 @@ import {GridNode} from '@react-types/grid';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {isAndroid, mergeProps, useDescription} from '@react-aria-nutrient/utils';
-import {TableState} from '@react-stately/table';
+import {TableState} from '@react-stately-nutrient/table';
 import {useEffect} from 'react';
 import {useFocusable, usePress} from '@react-aria-nutrient/interactions';
 import {useGridCell} from '@react-aria-nutrient/grid';

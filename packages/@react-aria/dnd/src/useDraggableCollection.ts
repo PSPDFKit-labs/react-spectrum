@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DraggableCollectionState} from '@react-stately/dnd';
+import {DraggableCollectionState} from '@react-stately-nutrient/dnd';
 import {globalDndState, setDraggingCollectionRef} from './utils';
 import {RefObject} from '@react-types/shared';
 

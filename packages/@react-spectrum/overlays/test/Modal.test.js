@@ -15,7 +15,7 @@ import {Modal} from '../';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
 import {theme} from '@react-spectrum/theme-default';
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 
 function TestModal(props) {
   let state = useOverlayTriggerState(props);

@@ -18,7 +18,7 @@ import {Field} from '@react-spectrum/label';
 import {FocusRing, FocusScope} from '@react-aria-nutrient/focus';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {ListCollection, useListState} from '@react-stately/list';
+import {ListCollection, useListState} from '@react-stately-nutrient/list';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
 import {Provider, useProvider, useProviderProps} from '@react-spectrum/provider';
 import React, {JSX, ReactNode, useCallback, useEffect, useMemo, useRef, useState} from 'react';

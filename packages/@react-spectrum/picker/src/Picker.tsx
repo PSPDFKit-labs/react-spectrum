@@ -39,7 +39,7 @@ import {Text} from '@react-spectrum/text';
 import {useFormProps} from '@react-spectrum/form';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useProvider, useProviderProps} from '@react-spectrum/provider';
-import {useSelectState} from '@react-stately/select';
+import {useSelectState} from '@react-stately-nutrient/select';
 
 /**
  * Pickers allow users to choose a single option from a collapsible list of options when space is limited.

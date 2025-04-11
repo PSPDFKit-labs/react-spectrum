@@ -12,7 +12,7 @@
 
 import {act, pointerMap, render, within} from '@react-spectrum/test-utils-internal';
 import {Breadcrumbs} from '../';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import {Provider} from '@react-spectrum/provider';
 import React, {useRef} from 'react';
 import {theme} from '@react-spectrum/theme-default';

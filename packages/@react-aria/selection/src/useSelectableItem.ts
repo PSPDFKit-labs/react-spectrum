@@ -15,7 +15,7 @@ import {focusSafely, PressHookProps, useLongPress, usePress} from '@react-aria-n
 import {getCollectionId, isNonContiguousSelectionModifier} from './utils';
 import {isCtrlKeyPressed, mergeProps, openLink, useId, useRouter} from '@react-aria-nutrient/utils';
 import {moveVirtualFocus} from '@react-aria-nutrient/focus';
-import {MultipleSelectionManager} from '@react-stately/selection';
+import {MultipleSelectionManager} from '@react-stately-nutrient/selection';
 import {useEffect, useRef} from 'react';
 
 export interface SelectableItemOptions extends DOMProps {

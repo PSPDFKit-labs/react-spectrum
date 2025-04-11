@@ -20,7 +20,7 @@ import React, {forwardRef, Fragment, useRef} from 'react';
 import {SpectrumMenuTriggerProps} from '@react-types/menu';
 import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
 import {useMenuTrigger} from '@react-aria-nutrient/menu';
-import {useMenuTriggerState} from '@react-stately/menu';
+import {useMenuTriggerState} from '@react-stately-nutrient/menu';
 
 /**
  * The MenuTrigger serves as a wrapper around a Menu and its associated trigger,

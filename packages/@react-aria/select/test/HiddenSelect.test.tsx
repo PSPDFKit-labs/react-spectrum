@@ -3,7 +3,7 @@ import {Item} from 'react-stately';
 import {pointerMap} from '@react-spectrum/test-utils-internal';
 import React, {useRef} from 'react';
 import {render, screen} from '@testing-library/react';
-import {SelectProps, useSelectState} from '@react-stately/select';
+import {SelectProps, useSelectState} from '@react-stately-nutrient/select';
 import userEvent from '@testing-library/user-event';
 
 const HiddenSelectExample = (props: Partial<SelectProps<{ key: number, value: string }>> & { hiddenProps?: Partial<HiddenSelectProps<any>> }) => {

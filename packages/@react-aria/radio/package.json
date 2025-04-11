@@ -28,7 +28,7 @@
     "@react-aria-nutrient/interactions": "^3.24.1",
     "@react-aria-nutrient/label": "^3.7.16",
     "@react-aria-nutrient/utils": "^3.28.1",
-    "@react-stately/radio": "^3.10.11",
+    "@react-stately-nutrient/radio": "^3.10.11",
     "@react-types/radio": "^3.8.7",
     "@react-types/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"

@@ -12,7 +12,7 @@
 import {actHook as act, renderHook} from '@react-spectrum/test-utils-internal';
 import {PressEvent} from '@react-types/shared';
 import {useDisclosure} from '../src/useDisclosure';
-import {useDisclosureState} from '@react-stately/disclosure';
+import {useDisclosureState} from '@react-stately-nutrient/disclosure';
 
 describe('useDisclosure', () => {
   let defaultProps = {};

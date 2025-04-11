@@ -18,8 +18,8 @@ import {DragPreview} from '../src';
 import dropIndicatorStyles from '@adobe/spectrum-css-temp/components/dropindicator/vars.css';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import Folder from '@spectrum-icons/workflow/Folder';
-import {GridCollection, useGridState} from '@react-stately/grid';
-import {Item} from '@react-stately/collections';
+import {GridCollection, useGridState} from '@react-stately-nutrient/grid';
+import {Item} from '@react-stately-nutrient/collections';
 import {ItemDropTarget, Key} from '@react-types/shared';
 import {ListDropTargetDelegate} from '@react-aria-nutrient/dnd';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
@@ -27,10 +27,10 @@ import React, {useRef} from 'react';
 import ShowMenu from '@spectrum-icons/workflow/ShowMenu';
 import {useButton} from '@react-aria-nutrient/button';
 import {useDraggableCollection, useDraggableItem, useDropIndicator, useDroppableCollection} from '..';
-import {useDraggableCollectionState, useDroppableCollectionState} from '@react-stately/dnd';
+import {useDraggableCollectionState, useDroppableCollectionState} from '@react-stately-nutrient/dnd';
 import {useGrid, useGridCell, useGridRow} from '@react-aria-nutrient/grid';
-import {useListData} from '@react-stately/data';
-import {useListState} from '@react-stately/list';
+import {useListData} from '@react-stately-nutrient/data';
+import {useListState} from '@react-stately-nutrient/list';
 import {useVisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 export function ReorderableGridExample(props) {

@@ -32,7 +32,7 @@ import {Provider} from '@react-spectrum/provider';
 import React from 'react';
 import {theme} from '@react-spectrum/theme-default';
 import {useDragAndDrop} from '@react-spectrum/dnd';
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 import userEvent from '@testing-library/user-event';
 
 // getComputedStyle is very slow in our version of jsdom.

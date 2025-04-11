@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {clamp, snapValueToStep, useControlledState} from '@react-stately/utils';
+import {clamp, snapValueToStep, useControlledState} from '@react-stately-nutrient/utils';
 import {Color, ColorAreaProps, ColorChannel} from '@react-types/color';
 import {normalizeColor, parseColor} from './Color';
 import {useMemo, useRef, useState} from 'react';

@@ -36,4 +36,4 @@ interface PaginationField extends PaginationBase {}
 ## Packages
 - `@react-spectrum/pagination`
 - `@react-aria-nutrient/pagination`
-- `@react-stately/pagination`
+- `@react-stately-nutrient/pagination`

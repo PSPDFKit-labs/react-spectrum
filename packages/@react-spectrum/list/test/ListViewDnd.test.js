@@ -34,7 +34,7 @@ import React from 'react';
 import {Text} from '@react-spectrum/text';
 import {theme} from '@react-spectrum/theme-default';
 import {useDragAndDrop} from '@react-spectrum/dnd';
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 import userEvent from '@testing-library/user-event';
 
 let isReact18 = parseInt(React.version, 10) === 18;

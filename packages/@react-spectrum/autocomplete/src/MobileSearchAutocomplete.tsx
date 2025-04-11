@@ -15,7 +15,7 @@ import {AriaButtonProps} from '@react-types/button';
 import CheckmarkMedium from '@spectrum-icons/ui/CheckmarkMedium';
 import {classNames, useFocusableRef} from '@react-spectrum/utils';
 import {ClearButton} from '@react-spectrum/button';
-import {ComboBoxState, useComboBoxState} from '@react-stately/combobox';
+import {ComboBoxState, useComboBoxState} from '@react-stately-nutrient/combobox';
 import {DismissButton, useOverlayTrigger} from '@react-aria-nutrient/overlays';
 import {Field} from '@react-spectrum/label';
 import {FocusableRef, ValidationState} from '@react-types/shared';

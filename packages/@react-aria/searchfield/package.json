@@ -25,7 +25,7 @@
     "@react-aria-nutrient/i18n": "^3.12.7",
     "@react-aria-nutrient/textfield": "^3.17.1",
     "@react-aria-nutrient/utils": "^3.28.1",
-    "@react-stately/searchfield": "^3.5.10",
+    "@react-stately-nutrient/searchfield": "^3.5.10",
     "@react-types/button": "^3.11.0",
     "@react-types/searchfield": "^3.6.0",
     "@react-types/shared": "^3.28.0",

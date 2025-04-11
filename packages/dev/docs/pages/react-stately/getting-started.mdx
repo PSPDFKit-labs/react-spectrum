@@ -43,7 +43,7 @@ install the hooks you use, or more granularly manage their versions. The individ
 under the [@react-stately](https://www.npmjs.com/org/react-stately) scope on npm. For example:
 
 ```
-yarn add @react-stately/radio
+yarn add @react-stately-nutrient/radio
 ```
 
 Once installed, hooks can be used from the monopackage or individual packages the same way.
@@ -55,7 +55,7 @@ import {useRadioGroupState} from 'react-stately';
 
 ```tsx keepIndividualImports
 // Individual packages
-import {useRadioGroupState} from '@react-stately/radio';
+import {useRadioGroupState} from '@react-stately-nutrient/radio';
 ```
 
 ## Building a component
@@ -66,7 +66,7 @@ selection state. The example shows [uncontrolled](https://reactjs.org/docs/uncon
 using the `defaultValue` prop, and `useRadioGroupState` handles firing the `onChange` event with the new selected value.
 
 ```tsx example
-import {useRadioGroupState} from '@react-stately/radio';
+import {useRadioGroupState} from '@react-stately-nutrient/radio';
 
 function RadioGroup(props) {
   let state = useRadioGroupState(props);

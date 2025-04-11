@@ -11,7 +11,7 @@
  */
 
 import {Key} from '@react-types/shared';
-import type {ListState} from '@react-stately/list';
+import type {ListState} from '@react-stately-nutrient/list';
 
 interface ListMapShared {
   id: string,

@@ -1,4 +1,4 @@
-import {SliderState} from '@react-stately/slider';
+import {SliderState} from '@react-stately-nutrient/slider';
 
 interface SliderData {
   id: string,

@@ -13,7 +13,7 @@ export default Layout;
 import docs from 'docs:@react-aria-nutrient/autocomplete';
 import {FunctionAPI, HeaderInfo, InterfaceType, TypeContext, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/autocomplete/package.json';
-import statelyDocs from 'docs:@react-stately/autocomplete';
+import statelyDocs from 'docs:@react-stately-nutrient/autocomplete';
 import {InlineAlert, Content, Heading} from '@adobe/react-spectrum';
 
 ---
@@ -56,7 +56,7 @@ to filter the collection. `useAutocomplete` handles exposing the correct ARIA at
   <InterfaceType properties={docs.links[docs.exports.useAutocomplete.return.base?.id ?? docs.exports.useAutocomplete.return.id].properties} />
 </TypeContext.Provider>
 
-State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useAutocompleteState} /> hook from `@react-stately/autocomplete`.
+State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useAutocompleteState} /> hook from `@react-stately-nutrient/autocomplete`.
 The state object should be passed as an option to `useAutocomplete`.
 
 ## Internationalization

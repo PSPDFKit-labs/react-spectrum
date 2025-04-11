@@ -14,7 +14,7 @@ import {AriaActionGroupProps} from '@react-types/actiongroup';
 import {createFocusManager} from '@react-aria-nutrient/focus';
 import {DOMAttributes, FocusableElement, Orientation, RefObject} from '@react-types/shared';
 import {filterDOMProps, useLayoutEffect} from '@react-aria-nutrient/utils';
-import {ListState} from '@react-stately/list';
+import {ListState} from '@react-stately-nutrient/list';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useState} from 'react';
 

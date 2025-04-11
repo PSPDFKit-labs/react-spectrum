@@ -13,7 +13,7 @@
 import {fireEvent, render} from '@react-spectrum/test-utils-internal';
 import React, {useRef} from 'react';
 import {useOverlayPosition, useOverlayTrigger} from '../';
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 
 function Example(props) {
   let ref = useRef();

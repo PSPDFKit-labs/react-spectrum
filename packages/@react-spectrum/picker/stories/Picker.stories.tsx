@@ -26,7 +26,7 @@ import {Heading, Text} from '@react-spectrum/text';
 import {Item, Picker, Section, SpectrumPickerProps} from '../';
 import Paste from '@spectrum-icons/workflow/Paste';
 import React,  {useState} from 'react';
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 import {userEvent, within} from '@storybook/testing-library';
 
 let flatOptions = [

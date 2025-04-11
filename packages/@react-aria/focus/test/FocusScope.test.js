@@ -13,7 +13,7 @@
 import {act, createShadowRoot, fireEvent, pointerMap, render, waitFor} from '@react-spectrum/test-utils-internal';
 import {defaultTheme} from '@adobe/react-spectrum';
 import {DialogContainer} from '@react-spectrum/dialog';
-import {enableShadowDOM} from '@react-stately/flags';
+import {enableShadowDOM} from '@react-stately-nutrient/flags';
 import {FocusScope, useFocusManager} from '../';
 import {focusScopeTree} from '../src/FocusScope';
 import {Provider} from '@react-spectrum/provider';

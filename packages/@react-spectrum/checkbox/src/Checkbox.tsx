@@ -24,7 +24,7 @@ import {useCheckbox, useCheckboxGroupItem} from '@react-aria-nutrient/checkbox';
 import {useFormProps} from '@react-spectrum/form';
 import {useHover} from '@react-aria-nutrient/interactions';
 import {useProviderProps} from '@react-spectrum/provider';
-import {useToggleState} from '@react-stately/toggle';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 
 /**
  * Checkboxes allow users to select multiple items from a list of individual items,

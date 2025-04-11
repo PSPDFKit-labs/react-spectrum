@@ -10,13 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-import {GridState, useGridState} from '@react-stately/grid';
+import {GridState, useGridState} from '@react-stately-nutrient/grid';
 import {TableCollection as ITableCollection, TableBodyProps, TableHeaderProps} from '@react-types/table';
 import {Key, Node, SelectionMode, Sortable, SortDescriptor, SortDirection} from '@react-types/shared';
-import {MultipleSelectionState, MultipleSelectionStateProps} from '@react-stately/selection';
+import {MultipleSelectionState, MultipleSelectionStateProps} from '@react-stately-nutrient/selection';
 import {ReactElement, useCallback, useMemo, useState} from 'react';
 import {TableCollection} from './TableCollection';
-import {useCollection} from '@react-stately/collections';
+import {useCollection} from '@react-stately-nutrient/collections';
 
 export interface TableState<T> extends GridState<T, ITableCollection<T>> {
   /** A collection of rows and columns in the table. */

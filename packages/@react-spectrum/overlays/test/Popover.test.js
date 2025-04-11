@@ -16,7 +16,7 @@ import {Popover} from '../';
 import {Provider} from '@react-spectrum/provider';
 import React, {useRef} from 'react';
 import {theme} from '@react-spectrum/theme-default';
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 import userEvent from '@testing-library/user-event';
 
 function PopoverWithDialog({children}) {

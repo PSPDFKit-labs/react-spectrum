@@ -11,7 +11,7 @@
  */
 
 import {Direction} from '@react-types/shared';
-import {LayoutInfo} from '@react-stately/virtualizer';
+import {LayoutInfo} from '@react-stately-nutrient/virtualizer';
 import React, {CSSProperties, ReactNode, useRef} from 'react';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useVirtualizerItem, VirtualizerItemOptions} from './useVirtualizerItem';

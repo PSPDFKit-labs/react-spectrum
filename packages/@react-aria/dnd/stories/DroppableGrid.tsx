@@ -16,17 +16,17 @@ import dropIndicatorStyles from '@adobe/spectrum-css-temp/components/dropindicat
 import {DroppableCollectionDropEvent} from '@react-types/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import Folder from '@spectrum-icons/workflow/Folder';
-import {GridCollection, useGridState} from '@react-stately/grid';
-import {Item} from '@react-stately/collections';
+import {GridCollection, useGridState} from '@react-stately-nutrient/grid';
+import {Item} from '@react-stately-nutrient/collections';
 import {ListDropTargetDelegate} from '@react-aria-nutrient/dnd';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React from 'react';
 import {useClipboard, useDropIndicator, useDroppableCollection} from '..';
-import {useDroppableCollectionState} from '@react-stately/dnd';
+import {useDroppableCollectionState} from '@react-stately-nutrient/dnd';
 import {useGrid, useGridCell, useGridRow} from '@react-aria-nutrient/grid';
-import {useListData} from '@react-stately/data';
-import {useListState} from '@react-stately/list';
+import {useListData} from '@react-stately-nutrient/data';
+import {useListState} from '@react-stately-nutrient/list';
 import {useVisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 interface ListItem {

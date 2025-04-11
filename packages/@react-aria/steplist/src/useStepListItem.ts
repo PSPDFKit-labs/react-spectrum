@@ -12,7 +12,7 @@
 
 import {HTMLAttributes} from 'react';
 import {Key, RefObject} from '@react-types/shared';
-import {StepListState} from '@react-stately/steplist';
+import {StepListState} from '@react-stately-nutrient/steplist';
 import {useSelectableItem} from '@react-aria-nutrient/selection';
 
 export interface AriaStepListItemProps {

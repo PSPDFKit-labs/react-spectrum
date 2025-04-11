@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {getChildNodes, getFirstItem} from '@react-stately/collections';
+import {getChildNodes, getFirstItem} from '@react-stately-nutrient/collections';
 import {GridKeyboardDelegate} from '@react-aria-nutrient/grid';
 import {Key, Node} from '@react-types/shared';
 import {TableCollection} from '@react-types/table';

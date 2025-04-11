@@ -14,7 +14,7 @@ import {ActionButton} from '@react-spectrum/button';
 import {Cell, Column, Row, SpectrumTableProps, TableBody, TableHeader, TableView} from '../';
 import {Content, View} from '@react-spectrum/view';
 import Delete from '@spectrum-icons/workflow/Delete';
-import {enableTableNestedRows} from '@react-stately/flags';
+import {enableTableNestedRows} from '@react-stately-nutrient/flags';
 import {generatePowerset} from '@react-spectrum/story-utils';
 import {Grid, repeat} from '@react-spectrum/layout';
 import {Heading} from '@react-spectrum/text';

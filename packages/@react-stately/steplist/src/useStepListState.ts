@@ -11,9 +11,9 @@
  */
 
 import {Collection, CollectionBase, Key, Node, SingleSelection} from '@react-types/shared';
-import {SingleSelectListState, useSingleSelectListState} from '@react-stately/list';
+import {SingleSelectListState, useSingleSelectListState} from '@react-stately-nutrient/list';
 import {useCallback, useEffect, useMemo} from 'react';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export interface StepListProps<T> extends CollectionBase<T>, SingleSelection {
   /** The key of the last completed step (controlled). */

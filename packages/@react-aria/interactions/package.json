@@ -24,7 +24,7 @@
   "dependencies": {
     "@react-aria-nutrient/ssr": "^3.9.7",
     "@react-aria-nutrient/utils": "^3.28.1",
-    "@react-stately/flags": "^3.1.0",
+    "@react-stately-nutrient/flags": "^3.1.0",
     "@react-types/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"
   },

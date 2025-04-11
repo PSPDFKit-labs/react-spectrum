@@ -15,8 +15,8 @@ import React, {useRef, useState} from 'react';
 import {useCheckbox} from '@react-aria-nutrient/checkbox';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 import {useTable, useTableCell, useTableColumnHeader, useTableHeaderRow, useTableRow, useTableRowGroup, useTableSelectAllCheckbox, useTableSelectionCheckbox} from '@react-aria-nutrient/table';
-import {useTableState} from '@react-stately/table';
-import {useToggleState} from '@react-stately/toggle';
+import {useTableState} from '@react-stately-nutrient/table';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 export function Table(props) {

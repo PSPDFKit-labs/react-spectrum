@@ -11,7 +11,7 @@
  */
 
 import {ComboBox} from './example';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import React from 'react';
 
 export default {

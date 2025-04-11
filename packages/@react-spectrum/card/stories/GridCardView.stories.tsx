@@ -25,10 +25,10 @@ import {Image} from '@react-spectrum/image';
 import {Key} from '@react-types/shared';
 import {Link} from '@react-spectrum/link';
 import React, {useMemo, useState} from 'react';
-import {Size} from '@react-stately/virtualizer';
+import {Size} from '@react-stately-nutrient/virtualizer';
 import {SpectrumCardViewProps} from '@react-types/card';
 import {TextField} from '@react-spectrum/textfield';
-import {useAsyncList} from '@react-stately/data';
+import {useAsyncList} from '@react-stately-nutrient/data';
 import {useCollator} from '@react-aria-nutrient/i18n';
 import {useProvider} from '@react-spectrum/provider';
 

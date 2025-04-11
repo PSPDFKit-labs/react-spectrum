@@ -13,7 +13,7 @@
 import {AriaLabelingProps, CollectionBase, DOMAttributes, DOMProps, HelpTextProps, Key, KeyboardDelegate, LabelableProps, MultipleSelection, RefObject, SelectionBehavior} from '@react-types/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
-import type {ListState} from '@react-stately/list';
+import type {ListState} from '@react-stately-nutrient/list';
 import {ReactNode, useEffect, useRef, useState} from 'react';
 import {useField} from '@react-aria-nutrient/label';
 import {useFocusWithin} from '@react-aria-nutrient/interactions';

@@ -96,9 +96,9 @@ module.exports = function (plop) {
         if (scopes.includes('@react-stately')) {
           actions.push({
             type: 'addMany',
-            templateFiles: '../plop-templates/@react-stately/**',
-            base: '../plop-templates/@react-stately/',
-            destination: `../packages/@react-stately/${packageName}`,
+            templateFiles: '../plop-templates/@react-stately-nutrient/**',
+            base: '../plop-templates/@react-stately-nutrient/',
+            destination: `../packages/@react-stately-nutrient/${packageName}`,
             data: {packageName, componentName, scopes}
           });
         }

@@ -14,7 +14,7 @@ jest.mock('@react-aria-nutrient/live-announcer');
 jest.mock('@react-aria-nutrient/utils/src/scrollIntoView');
 import {act, render as renderComponent} from '@react-spectrum/test-utils-internal';
 import {Cell, Column, Row, TableBody, TableHeader, TableView} from '../';
-import {enableTableNestedRows} from '@react-stately/flags';
+import {enableTableNestedRows} from '@react-stately-nutrient/flags';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
 import {tableTests} from './TableTests';

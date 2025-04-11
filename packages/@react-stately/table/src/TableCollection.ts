@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {getFirstItem, getLastItem} from '@react-stately/collections';
-import {GridCollection} from '@react-stately/grid';
+import {getFirstItem, getLastItem} from '@react-stately-nutrient/collections';
+import {GridCollection} from '@react-stately-nutrient/grid';
 import {GridNode} from '@react-types/grid';
 import {TableCollection as ITableCollection} from '@react-types/table';
 import {Key} from '@react-types/shared';

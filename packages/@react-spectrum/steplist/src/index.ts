@@ -13,5 +13,5 @@
 /// <reference types="css-module-types" />
 
 export {StepList} from './StepList';
-export {Item} from '@react-stately/collections';
+export {Item} from '@react-stately-nutrient/collections';
 export type {SpectrumStepListProps} from './StepList';

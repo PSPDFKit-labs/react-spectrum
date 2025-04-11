@@ -11,10 +11,10 @@
  */
 
 import {CollectionStateBase, FocusStrategy} from '@react-types/shared';
-import {FormValidationState, useFormValidationState} from '@react-stately/form';
-import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately/overlays';
+import {FormValidationState, useFormValidationState} from '@react-stately-nutrient/form';
+import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 import {SelectProps} from '@react-types/select';
-import {SingleSelectListState, useSingleSelectListState} from '@react-stately/list';
+import {SingleSelectListState, useSingleSelectListState} from '@react-stately-nutrient/list';
 import {useState} from 'react';
 
 export interface SelectStateOptions<T> extends Omit<SelectProps<T>, 'children'>, CollectionStateBase<T> {}

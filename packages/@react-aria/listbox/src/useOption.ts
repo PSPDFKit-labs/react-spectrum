@@ -12,10 +12,10 @@
 
 import {chain, filterDOMProps, isMac, isWebKit, mergeProps, useLinkProps, useSlotId} from '@react-aria-nutrient/utils';
 import {DOMAttributes, FocusableElement, Key, RefObject} from '@react-types/shared';
-import {getItemCount} from '@react-stately/collections';
+import {getItemCount} from '@react-stately-nutrient/collections';
 import {getItemId, listData} from './utils';
 import {isFocusVisible, useHover} from '@react-aria-nutrient/interactions';
-import {ListState} from '@react-stately/list';
+import {ListState} from '@react-stately-nutrient/list';
 import {SelectableItemStates, useSelectableItem} from '@react-aria-nutrient/selection';
 
 export interface OptionAria extends SelectableItemStates {

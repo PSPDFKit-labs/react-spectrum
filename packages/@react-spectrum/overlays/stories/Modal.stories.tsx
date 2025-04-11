@@ -19,7 +19,7 @@ import {Flex} from '@react-spectrum/layout';
 import {Heading, Text} from '@react-spectrum/text';
 import {Modal} from '../';
 import React, {Fragment} from 'react';
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 
 export default {
   title: 'Modal',

@@ -11,12 +11,12 @@
  */
 
 import {DropTarget, ItemDropTarget, Key} from '@react-types/shared';
-import {getChildNodes} from '@react-stately/collections';
+import {getChildNodes} from '@react-stately-nutrient/collections';
 import {GridNode} from '@react-types/grid';
-import {InvalidationContext, LayoutInfo, Point, Rect, Size} from '@react-stately/virtualizer';
+import {InvalidationContext, LayoutInfo, Point, Rect, Size} from '@react-stately-nutrient/virtualizer';
 import {LayoutNode, ListLayout, ListLayoutOptions} from './ListLayout';
 import {TableCollection} from '@react-types/table';
-import {TableColumnLayout} from '@react-stately/table';
+import {TableColumnLayout} from '@react-stately-nutrient/table';
 
 export interface TableLayoutProps extends ListLayoutOptions {
   columnWidths?: Map<Key, number>

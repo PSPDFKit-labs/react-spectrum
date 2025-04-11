@@ -18,15 +18,15 @@ import dropIndicatorStyles from '@adobe/spectrum-css-temp/components/dropindicat
 import {DroppableCollectionDropEvent} from '@react-types/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import Folder from '@spectrum-icons/workflow/Folder';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import {ListDropTargetDelegate} from '@react-aria-nutrient/dnd';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
 import React from 'react';
 import {useDropIndicator, useDroppableCollection, useDroppableItem} from '..';
-import {useDroppableCollectionState} from '@react-stately/dnd';
+import {useDroppableCollectionState} from '@react-stately-nutrient/dnd';
 import {useListBox, useOption} from '@react-aria-nutrient/listbox';
-import {useListData} from '@react-stately/data';
-import {useListState} from '@react-stately/list';
+import {useListData} from '@react-stately-nutrient/data';
+import {useListState} from '@react-stately-nutrient/list';
 import {useVisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 interface ItemValue {

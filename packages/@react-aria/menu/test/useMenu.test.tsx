@@ -11,11 +11,11 @@
  */
 
 import {AriaMenuProps, useMenu, useMenuItem} from '../';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import {pointerMap, render} from '@react-spectrum/test-utils-internal';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import {useTreeState} from '@react-stately/tree';
+import {useTreeState} from '@react-stately-nutrient/tree';
 
 function Menu<T extends object>(props: AriaMenuProps<T> & {onSelect: () => void}) {
   // Create menu state based on the incoming props

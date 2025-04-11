@@ -18,8 +18,8 @@ import intlMessages from '../intl/*.json';
 import {Key, LayoutDelegate, Rect, RefObject, Size} from '@react-types/shared';
 import {mergeProps, useDescription, useId, useUpdateEffect} from '@react-aria-nutrient/utils';
 import {TableKeyboardDelegate} from './TableKeyboardDelegate';
-import {tableNestedRows} from '@react-stately/flags';
-import {TableState, TreeGridState} from '@react-stately/table';
+import {tableNestedRows} from '@react-stately-nutrient/flags';
+import {TableState, TreeGridState} from '@react-stately-nutrient/table';
 import {useCollator, useLocale, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useMemo} from 'react';
 

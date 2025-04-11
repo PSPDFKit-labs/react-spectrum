@@ -15,7 +15,7 @@ import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {HTMLAttributes} from 'react';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {StepListProps, StepListState} from '@react-stately/steplist';
+import {StepListProps, StepListState} from '@react-stately-nutrient/steplist';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useSelectableList} from '@react-aria-nutrient/selection';
 

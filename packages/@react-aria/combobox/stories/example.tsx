@@ -15,7 +15,7 @@ import {FocusScope} from '@react-aria-nutrient/focus';
 import React from 'react';
 import {useButton} from '@react-aria-nutrient/button';
 import {useComboBox} from '@react-aria-nutrient/combobox';
-import {useComboBoxState} from '@react-stately/combobox';
+import {useComboBoxState} from '@react-stately-nutrient/combobox';
 import {useFilter} from '@react-aria-nutrient/i18n';
 import {useListBox, useOption} from '@react-aria-nutrient/listbox';
 

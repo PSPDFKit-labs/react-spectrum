@@ -20,7 +20,7 @@ import {
 import {AriaLabelingProps, DOMAttributes, Orientation, RefObject} from '@react-types/shared';
 import {AriaToggleButtonGroupItemProps} from '@react-types/button';
 import {ToggleButtonAria, useToggleButton} from './useToggleButton';
-import {ToggleGroupProps, ToggleGroupState, ToggleState} from '@react-stately/toggle';
+import {ToggleGroupProps, ToggleGroupState, ToggleState} from '@react-stately-nutrient/toggle';
 import {useToolbar} from '@react-aria-nutrient/toolbar';
 
 export interface AriaToggleButtonGroupProps extends ToggleGroupProps, AriaLabelingProps {

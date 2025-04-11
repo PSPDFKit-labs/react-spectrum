@@ -7,7 +7,7 @@ import {ItemDropTarget, Key} from '@react-types/shared';
 import React from 'react';
 import {Text} from '@react-spectrum/text';
 import {useDragAndDrop} from '@react-spectrum/dnd';
-import {useListData} from '@react-stately/data';
+import {useListData} from '@react-stately-nutrient/data';
 
 let onSelectionChange = action('onSelectionChange');
 

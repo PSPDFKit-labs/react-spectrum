@@ -22,7 +22,7 @@ import {
 } from '@react-spectrum/test-utils-internal';
 import {announce} from '@react-aria-nutrient/live-announcer';
 import {composeStories} from '@storybook/react';
-import {enableTableNestedRows} from '@react-stately/flags';
+import {enableTableNestedRows} from '@react-stately-nutrient/flags';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
 import {Scale} from '@react-types/provider';

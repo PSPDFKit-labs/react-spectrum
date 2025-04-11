@@ -13,7 +13,7 @@
 import {AriaTooltipProps} from '@react-types/tooltip';
 import {DOMAttributes} from '@react-types/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
-import {TooltipTriggerState} from '@react-stately/tooltip';
+import {TooltipTriggerState} from '@react-stately-nutrient/tooltip';
 import {useHover} from '@react-aria-nutrient/interactions';
 
 export interface TooltipAria {

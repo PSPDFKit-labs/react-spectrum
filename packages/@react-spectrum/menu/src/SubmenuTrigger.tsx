@@ -20,7 +20,7 @@ import ReactDOM from 'react-dom';
 import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useSubmenuTrigger} from '@react-aria-nutrient/menu';
-import {useSubmenuTriggerState} from '@react-stately/menu';
+import {useSubmenuTriggerState} from '@react-stately-nutrient/menu';
 
 interface SubmenuTriggerProps {
   /**

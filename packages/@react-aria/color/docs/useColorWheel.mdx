@@ -11,7 +11,7 @@ import {Layout} from '@react-spectrum/docs';
 export default Layout;
 
 import docs from 'docs:@react-aria-nutrient/color';
-import statelyDocs from 'docs:@react-stately/color';
+import statelyDocs from 'docs:@react-stately-nutrient/color';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-aria-nutrient/color/package.json';
 import Anatomy from './ColorWheelAnatomy.svg';
@@ -70,7 +70,7 @@ A visually hidden `<input>` element is used to represent the value to assistive 
 </TypeContext.Provider>
 
 State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useColorWheelState} />
-hook from `@react-stately/color`. The state object should be passed as an option to `useColorWheel`
+hook from `@react-stately-nutrient/color`. The state object should be passed as an option to `useColorWheel`
 
 By default, `useColorWheel` provides an `aria-label` for the localized string "Hue". If you wish to override this
 with a more specific label, an `aria-label` or `aria-labelledby` prop may be passed instead to identify the element
@@ -85,7 +85,7 @@ uses the [useFocusRing](useFocusRing.html) hook to grow in size when it is keybo
 
 ```tsx example export=true
 import {useColorWheel} from '@react-aria-nutrient/color';
-import {useColorWheelState} from '@react-stately/color';
+import {useColorWheelState} from '@react-stately-nutrient/color';
 import {useFocusRing} from '@react-aria-nutrient/focus';
 
 const RADIUS = 100;
@@ -153,7 +153,7 @@ function is used to parse the initial color from an HSL string, stored in state.
 is used to update the value in state when the user drags the thumb.
 
 ```tsx example
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [color, setColor] = React.useState(parseColor('hsl(0, 100%, 50%)'));

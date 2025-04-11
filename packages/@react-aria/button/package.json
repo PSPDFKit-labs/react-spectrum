@@ -25,7 +25,7 @@
     "@react-aria-nutrient/interactions": "^3.24.1",
     "@react-aria-nutrient/toolbar": "3.0.0-beta.14",
     "@react-aria-nutrient/utils": "^3.28.1",
-    "@react-stately/toggle": "^3.8.2",
+    "@react-stately-nutrient/toggle": "^3.8.2",
     "@react-types/button": "^3.11.0",
     "@react-types/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"

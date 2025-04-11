@@ -18,7 +18,7 @@ The easiest way to start building a component library with React Stately is by f
 Here is a very basic example of using React Aria.
 
 ```jsx
-import {useRadioGroupState} from '@react-stately/radio';
+import {useRadioGroupState} from '@react-stately-nutrient/radio';
 
 function RadioGroup(props) {
   let state = useRadioGroupState(props);

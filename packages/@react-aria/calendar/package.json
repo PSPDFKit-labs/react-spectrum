@@ -27,7 +27,7 @@
     "@react-aria-nutrient/interactions": "^3.24.1",
     "@react-aria-nutrient/live-announcer": "^3.4.1",
     "@react-aria-nutrient/utils": "^3.28.1",
-    "@react-stately/calendar": "^3.7.1",
+    "@react-stately-nutrient/calendar": "^3.7.1",
     "@react-types/button": "^3.11.0",
     "@react-types/calendar": "^3.6.1",
     "@react-types/shared": "^3.28.0",

@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import React from 'react';
 import {renderHook} from '@react-spectrum/test-utils-internal';
-import {useComboBoxState} from '@react-stately/combobox';
+import {useComboBoxState} from '@react-stately-nutrient/combobox';
 import {useSearchAutocomplete} from '../';
 
 describe('useSearchAutocomplete', function () {

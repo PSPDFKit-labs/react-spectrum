@@ -25,7 +25,7 @@ import {
 import {filterDOMProps, mergeProps, useId, useLayoutEffect, useResizeObserver, useValueEffect} from '@react-aria-nutrient/utils';
 import {FocusScope} from '@react-aria-nutrient/focus';
 import {Item, Menu, MenuTrigger} from '@react-spectrum/menu';
-import {ListState, useListState} from '@react-stately/list';
+import {ListState, useListState} from '@react-stately-nutrient/list';
 import More from '@spectrum-icons/workflow/More';
 import {PressResponder, useHover} from '@react-aria-nutrient/interactions';
 import {Provider, useProviderProps} from '@react-spectrum/provider';

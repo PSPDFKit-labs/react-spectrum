@@ -17,14 +17,14 @@ import {ariaHideOutside} from '@react-aria-nutrient/overlays';
 import {AriaListBoxOptions, getItemId, listData} from '@react-aria-nutrient/listbox';
 import {BaseEvent, DOMAttributes, KeyboardDelegate, LayoutDelegate, PressEvent, RefObject, RouterOptions, ValidationResult} from '@react-types/shared';
 import {chain, getActiveElement, getOwnerDocument, isAppleDevice, mergeProps, useLabels, useRouter, useUpdateEffect} from '@react-aria-nutrient/utils';
-import {ComboBoxState} from '@react-stately/combobox';
+import {ComboBoxState} from '@react-stately-nutrient/combobox';
 import {dispatchVirtualFocus} from '@react-aria-nutrient/focus';
 import {FocusEvent, InputHTMLAttributes, KeyboardEvent, TouchEvent, useEffect, useMemo, useRef} from 'react';
-import {getChildNodes, getItemCount} from '@react-stately/collections';
+import {getChildNodes, getItemCount} from '@react-stately-nutrient/collections';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {ListKeyboardDelegate, useSelectableCollection} from '@react-aria-nutrient/selection';
-import {privateValidationStateProp} from '@react-stately/form';
+import {privateValidationStateProp} from '@react-stately-nutrient/form';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useMenuTrigger} from '@react-aria-nutrient/menu';
 import {useTextField} from '@react-aria-nutrient/textfield';

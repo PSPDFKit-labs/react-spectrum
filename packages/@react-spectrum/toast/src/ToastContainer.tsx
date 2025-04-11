@@ -19,7 +19,7 @@ import React, {ReactElement, useEffect, useMemo, useRef} from 'react';
 import {SpectrumToastValue, Toast} from './Toast';
 import toastContainerStyles from './toastContainer.css';
 import {Toaster} from './Toaster';
-import {ToastOptions, ToastQueue, useToastQueue} from '@react-stately/toast';
+import {ToastOptions, ToastQueue, useToastQueue} from '@react-stately-nutrient/toast';
 import {useSyncExternalStore} from 'use-sync-external-store/shim/index.js';
 
 export type ToastPlacement = 'top' | 'top end' | 'bottom' | 'bottom end';

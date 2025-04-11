@@ -20,7 +20,7 @@ import {DisabledBehavior, Expandable, forwardRefType, HoverEvents, Key, LinkDOMP
 import {filterDOMProps, useObjectRef} from '@react-aria-nutrient/utils';
 import {Collection as ICollection, Node, SelectionBehavior, TreeState, useTreeState} from 'react-stately';
 import React, {createContext, ForwardedRef, forwardRef, ReactNode, useContext, useEffect, useMemo, useRef} from 'react';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 class TreeCollection<T> implements ICollection<Node<T>> {
   private flattenedRows: Node<T>[];

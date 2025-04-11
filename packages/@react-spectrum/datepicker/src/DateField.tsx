@@ -20,7 +20,7 @@ import {FocusableRef} from '@react-types/shared';
 import {Input} from './Input';
 import React, {ReactElement, useRef} from 'react';
 import {useDateField} from '@react-aria-nutrient/datepicker';
-import {useDateFieldState} from '@react-stately/datepicker';
+import {useDateFieldState} from '@react-stately-nutrient/datepicker';
 import {useFocusManagerRef, useFormatHelpText, useFormattedDateWidth} from './utils';
 import {useFormProps} from '@react-spectrum/form';
 import {useLocale} from '@react-aria-nutrient/i18n';

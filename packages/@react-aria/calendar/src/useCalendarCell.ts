@@ -11,7 +11,7 @@
  */
 
 import {CalendarDate, isEqualDay, isSameDay, isToday} from '@internationalized/date';
-import {CalendarState, RangeCalendarState} from '@react-stately/calendar';
+import {CalendarState, RangeCalendarState} from '@react-stately-nutrient/calendar';
 import {DOMAttributes, RefObject} from '@react-types/shared';
 import {focusWithoutScrolling, getScrollParent, mergeProps, scrollIntoViewport, useDeepMemo, useDescription} from '@react-aria-nutrient/utils';
 import {getEraFormat, hookData} from './utils';

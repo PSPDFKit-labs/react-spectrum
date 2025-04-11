@@ -9,8 +9,8 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-import {InvalidationContext, LayoutInfo, Rect} from '@react-stately/virtualizer';
-import {LayoutNode, ListLayout, ListLayoutOptions} from '@react-stately/layout';
+import {InvalidationContext, LayoutInfo, Rect} from '@react-stately-nutrient/virtualizer';
+import {LayoutNode, ListLayout, ListLayoutOptions} from '@react-stately-nutrient/layout';
 import {Node} from '@react-types/shared';
 
 interface ListViewLayoutProps extends ListLayoutOptions {

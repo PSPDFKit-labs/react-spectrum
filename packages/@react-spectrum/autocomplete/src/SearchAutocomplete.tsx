@@ -39,7 +39,7 @@ import {SpectrumSearchAutocompleteProps} from '@react-types/autocomplete';
 import styles from '@adobe/spectrum-css-temp/components/inputgroup/vars.css';
 import {TextFieldBase} from '@react-spectrum/textfield';
 import textfieldStyles from '@adobe/spectrum-css-temp/components/textfield/vars.css';
-import {useComboBoxState} from '@react-stately/combobox';
+import {useComboBoxState} from '@react-stately-nutrient/combobox';
 import {useFilter, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useFormProps} from '@react-spectrum/form';
 import {useHover} from '@react-aria-nutrient/interactions';

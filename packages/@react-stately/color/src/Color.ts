@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {clamp, toFixedNumber} from '@react-stately/utils';
+import {clamp, toFixedNumber} from '@react-stately-nutrient/utils';
 import {ColorAxes, ColorChannel, ColorChannelRange, ColorFormat, ColorSpace, Color as IColor} from '@react-types/color';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
@@ -112,7 +112,7 @@ abstract class Color implements IColor {
   }
 
   getChannelName(channel: ColorChannel, locale: string) {
-    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately/color') || dictionary;
+    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately-nutrient/color') || dictionary;
     return strings.getStringForLocale(channel, locale);
   }
 
@@ -133,7 +133,7 @@ abstract class Color implements IColor {
     // Convert to oklch color space, which has perceptually uniform lightness across all hues.
     let [l, c, h] = toOKLCH(this);
 
-    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately/color') || dictionary;
+    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately-nutrient/color') || dictionary;
     if (l > 0.999) {
       return strings.getStringForLocale('white', locale);
     }
@@ -197,7 +197,7 @@ abstract class Color implements IColor {
   }
 
   private getOklchHue(l: number, c: number, h: number, locale: string): [string, number] {
-    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately/color') || dictionary;
+    let strings = LocalizedStringDictionary.getGlobalDictionaryForPackage('@react-stately-nutrient/color') || dictionary;
     if (c < GRAY_THRESHOLD) {
       return [strings.getStringForLocale('gray', locale), l];
     }

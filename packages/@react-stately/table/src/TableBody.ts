@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {PartialNode} from '@react-stately/collections';
+import {PartialNode} from '@react-stately-nutrient/collections';
 import React, {JSX, ReactElement} from 'react';
 import {TableBodyProps} from '@react-types/table';
 

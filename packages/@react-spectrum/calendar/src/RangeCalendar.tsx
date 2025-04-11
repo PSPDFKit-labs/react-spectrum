@@ -19,7 +19,7 @@ import React, {ReactElement, useImperativeHandle, useMemo, useRef} from 'react';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useProviderProps} from '@react-spectrum/provider';
 import {useRangeCalendar} from '@react-aria-nutrient/calendar';
-import {useRangeCalendarState} from '@react-stately/calendar';
+import {useRangeCalendarState} from '@react-stately-nutrient/calendar';
 
 /**
  * RangeCalendars display a grid of days in one or more months and allow users to select a contiguous range of dates.

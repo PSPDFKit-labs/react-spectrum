@@ -28,9 +28,9 @@ import dropzoneStyles from '@adobe/spectrum-css-temp/components/dnd/vars.css';
 import {Flex} from '@react-spectrum/layout';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import Folder from '@spectrum-icons/workflow/Folder';
-import {GridCollection, useGridState} from '@react-stately/grid';
+import {GridCollection, useGridState} from '@react-stately-nutrient/grid';
 import {Heading} from '@react-spectrum/text';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import Paste from '@spectrum-icons/workflow/Paste';
 import {PressResponder} from '@react-aria-nutrient/interactions';
 import React, {useRef} from 'react';
@@ -38,10 +38,10 @@ import {ReorderableGridExample} from './Reorderable';
 import ShowMenu from '@spectrum-icons/workflow/ShowMenu';
 import {useButton} from '@react-aria-nutrient/button';
 import {useClipboard, useDrag, useDraggableCollection, useDraggableItem, useDrop} from '..';
-import {useDraggableCollectionState} from '@react-stately/dnd';
+import {useDraggableCollectionState} from '@react-stately-nutrient/dnd';
 import {useGrid, useGridCell, useGridRow} from '@react-aria-nutrient/grid';
-import {useListData} from '@react-stately/data';
-import {useListState} from '@react-stately/list';
+import {useListData} from '@react-stately-nutrient/data';
+import {useListState} from '@react-stately-nutrient/list';
 import {VirtualizedListBoxExample} from './VirtualizedListBox';
 
 interface ItemValue {

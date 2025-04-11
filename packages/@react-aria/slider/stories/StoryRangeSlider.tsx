@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './story-slider.css';
 import {useNumberFormatter} from '@react-aria-nutrient/i18n';
 import {useSlider, useSliderThumb} from '@react-aria-nutrient/slider';
-import {useSliderState} from '@react-stately/slider';
+import {useSliderState} from '@react-stately-nutrient/slider';
 import {VisuallyHidden} from '@react-aria-nutrient/visually-hidden';
 
 

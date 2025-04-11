@@ -11,8 +11,8 @@
  */
 
 import {Collection, DropTarget, DropTargetDelegate, ItemDropTarget, Key, Node} from '@react-types/shared';
-import {getChildNodes} from '@react-stately/collections';
-import {InvalidationContext, Layout, LayoutInfo, Rect, Size} from '@react-stately/virtualizer';
+import {getChildNodes} from '@react-stately-nutrient/collections';
+import {InvalidationContext, Layout, LayoutInfo, Rect, Size} from '@react-stately-nutrient/virtualizer';
 
 export interface ListLayoutOptions {
   /**

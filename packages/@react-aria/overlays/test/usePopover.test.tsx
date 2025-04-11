@@ -11,7 +11,7 @@
  */
 
 import {fireEvent, render} from '@react-spectrum/test-utils-internal';
-import {type OverlayTriggerProps, useOverlayTriggerState} from '@react-stately/overlays';
+import {type OverlayTriggerProps, useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 import React, {useRef} from 'react';
 import {useOverlayTrigger, usePopover} from '../';
 

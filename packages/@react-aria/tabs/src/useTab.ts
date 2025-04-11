@@ -14,7 +14,7 @@ import {AriaTabProps} from '@react-types/tabs';
 import {DOMAttributes, FocusableElement, RefObject} from '@react-types/shared';
 import {filterDOMProps, mergeProps, useLinkProps} from '@react-aria-nutrient/utils';
 import {generateId} from './utils';
-import {TabListState} from '@react-stately/tabs';
+import {TabListState} from '@react-stately-nutrient/tabs';
 import {useFocusable} from '@react-aria-nutrient/focus';
 import {useSelectableItem} from '@react-aria-nutrient/selection';
 

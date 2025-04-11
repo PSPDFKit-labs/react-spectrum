@@ -13,7 +13,7 @@ export default Layout;
 import docs from 'docs:@react-aria-nutrient/overlays';
 import focusDocs from 'docs:@react-aria-nutrient/focus';
 import dialogDocs from 'docs:@react-aria-nutrient/dialog';
-import statelyDocs from 'docs:@react-stately/overlays';
+import statelyDocs from 'docs:@react-stately-nutrient/overlays';
 import typesDocs from 'docs:@react-types/overlays';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import {Keyboard} from '@react-spectrum/text';
@@ -68,7 +68,7 @@ A popover consists of a trigger element (e.g. button) and an overlay, which is p
 </TypeContext.Provider>
 
 State is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useOverlayTriggerState} />
-hook in `@react-stately/overlays`. The state object should be passed as an argument to `usePopover`.
+hook in `@react-stately-nutrient/overlays`. The state object should be passed as an argument to `usePopover`.
 
 ## Example
 
@@ -120,7 +120,7 @@ function Popover({children, state, offset = 8, ...props}: PopoverProps) {
 The above `Popover` component can be used as part of many different patterns, such as [ComboBox](useComboBox.html), [Select](useSelect.html), and [DatePicker](useDatePicker.html). To use it standalone, we need a trigger element. The below `PopoverTrigger` component uses the <TypeLink links={docs.links} type={docs.exports.useOverlayTrigger} /> hook to trigger the popover when a button is pressed. This hook also ensures that the button and popover are semantically connected via ARIA.
 
 ```tsx example export=true render=false
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 import {useOverlayTrigger} from '@react-aria-nutrient/overlays';
 
 // Reuse the Button from your component library. See below for details.

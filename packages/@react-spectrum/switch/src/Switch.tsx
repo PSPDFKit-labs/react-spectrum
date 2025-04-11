@@ -19,7 +19,7 @@ import styles from '@adobe/spectrum-css-temp/components/toggle/vars.css';
 import {useHover} from '@react-aria-nutrient/interactions';
 import {useProviderProps} from '@react-spectrum/provider';
 import {useSwitch} from '@react-aria-nutrient/switch';
-import {useToggleState} from '@react-stately/toggle';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 
 /**
  * Switches allow users to turn an individual option on or off.

@@ -12,7 +12,7 @@
 
 import {AriaLabelingProps, BaseEvent, DOMProps, RefObject} from '@react-types/shared';
 import {AriaTextFieldProps} from '@react-aria-nutrient/textfield';
-import {AutocompleteProps, AutocompleteState} from '@react-stately/autocomplete';
+import {AutocompleteProps, AutocompleteState} from '@react-stately-nutrient/autocomplete';
 import {CLEAR_FOCUS_EVENT, FOCUS_EVENT, getActiveElement, getOwnerDocument, isCtrlKeyPressed, mergeProps, mergeRefs, useEffectEvent, useId, useLabels, useObjectRef} from '@react-aria-nutrient/utils';
 import {dispatchVirtualBlur, dispatchVirtualFocus, moveVirtualFocus} from '@react-aria-nutrient/focus';
 import {getInteractionModality} from '@react-aria-nutrient/interactions';

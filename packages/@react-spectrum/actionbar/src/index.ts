@@ -12,6 +12,6 @@
 /// <reference types="css-module-types" />
 export {ActionBar} from './ActionBar';
 export {ActionBarContainer} from './ActionBarContainer';
-export {Item} from '@react-stately/collections';
+export {Item} from '@react-stately-nutrient/collections';
 export type {SpectrumActionBarContainerProps} from '@react-types/actionbar';
 export type {SpectrumActionBarProps} from '@react-types/actionbar';

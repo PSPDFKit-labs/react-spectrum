@@ -14,7 +14,7 @@ import {DOMRef} from '@react-types/shared';
 import React, {ReactElement, useState} from 'react';
 import {SpectrumTableProps} from './TableViewWrapper';
 import {TableViewBase} from './TableViewBase';
-import {useTableState} from '@react-stately/table';
+import {useTableState} from '@react-stately-nutrient/table';
 
 interface TableProps<T> extends Omit<SpectrumTableProps<T>, 'UNSTABLE_allowsExpandableRows'> {}
 

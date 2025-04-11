@@ -14,7 +14,7 @@ import {DateFieldState, useDateFieldState} from '.';
 import {DateValue, MappedTimeValue, TimePickerProps, TimeValue} from '@react-types/datepicker';
 import {getLocalTimeZone, GregorianCalendar, Time, toCalendarDateTime, today, toTime, toZoned} from '@internationalized/date';
 import {useCallback, useMemo} from 'react';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 
 export interface TimeFieldStateOptions<T extends TimeValue = TimeValue> extends TimePickerProps<T> {
   /** The locale to display and edit the value according to. */

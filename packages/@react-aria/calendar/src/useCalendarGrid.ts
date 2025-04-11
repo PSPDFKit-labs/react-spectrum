@@ -11,7 +11,7 @@
  */
 
 import {CalendarDate, getWeeksInMonth, startOfWeek, today} from '@internationalized/date';
-import {CalendarState, RangeCalendarState} from '@react-stately/calendar';
+import {CalendarState, RangeCalendarState} from '@react-stately-nutrient/calendar';
 import {DOMAttributes} from '@react-types/shared';
 import {hookData, useVisibleRangeDescription} from './utils';
 import {KeyboardEvent, useMemo} from 'react';

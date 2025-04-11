@@ -11,7 +11,7 @@
  */
 
 import {classNames} from '@react-spectrum/utils';
-import {DateFieldState, DateSegment} from '@react-stately/datepicker';
+import {DateFieldState, DateSegment} from '@react-stately-nutrient/datepicker';
 import {DatePickerBase, DateValue} from '@react-types/datepicker';
 import React, {ReactNode, useRef} from 'react';
 import styles from './styles.css';

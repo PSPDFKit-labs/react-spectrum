@@ -18,7 +18,7 @@ import styles from './colorfield.css';
 import {TextFieldBase} from '@react-spectrum/textfield';
 import {TextFieldRef} from '@react-types/textfield';
 import {useColorChannelField, useColorField} from '@react-aria-nutrient/color';
-import {useColorChannelFieldState, useColorFieldState} from '@react-stately/color';
+import {useColorChannelFieldState, useColorFieldState} from '@react-stately-nutrient/color';
 import {useFormProps} from '@react-spectrum/form';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useProviderProps} from '@react-spectrum/provider';

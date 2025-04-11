@@ -13,7 +13,7 @@ export default Layout;
 import docs from 'docs:@react-spectrum/color';
 import {HeaderInfo, PropTable, TypeLink, PageDescription} from '@react-spectrum/docs';
 import packageData from '@react-spectrum/color/package.json';
-import statelyDocs from 'docs:@react-stately/color';
+import statelyDocs from 'docs:@react-stately-nutrient/color';
 import colorTypes from 'docs:@react-types/color/src/index.d.ts';
 
 ```jsx import
@@ -51,7 +51,7 @@ In the example below, the <TypeLink links={statelyDocs.links} type={statelyDocs.
 from a hex value, stored in state.
 
 ```tsx example
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [value, setValue] = React.useState(parseColor('#e73623'));

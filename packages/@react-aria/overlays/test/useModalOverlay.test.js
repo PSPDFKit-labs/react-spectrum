@@ -2,7 +2,7 @@ import {fireEvent, installMouseEvent, installPointerEvent, render} from '@react-
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {useRef} from 'react';
 import {useModalOverlay} from '..';
-import {useOverlayTriggerState} from '@react-stately/overlays';
+import {useOverlayTriggerState} from '@react-stately-nutrient/overlays';
 
 function Example(props) {
   let ref = useRef();

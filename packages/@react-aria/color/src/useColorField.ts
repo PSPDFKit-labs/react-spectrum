@@ -11,7 +11,7 @@
  */
 
 import {AriaColorFieldProps} from '@react-types/color';
-import {ColorFieldState} from '@react-stately/color';
+import {ColorFieldState} from '@react-stately-nutrient/color';
 import {DOMAttributes, ValidationResult} from '@react-types/shared';
 import {
   InputHTMLAttributes,
@@ -21,7 +21,7 @@ import {
   useState
 } from 'react';
 import {mergeProps, useId} from '@react-aria-nutrient/utils';
-import {privateValidationStateProp} from '@react-stately/form';
+import {privateValidationStateProp} from '@react-stately-nutrient/form';
 import {useFocusWithin, useScrollWheel} from '@react-aria-nutrient/interactions';
 import {useFormattedTextField} from '@react-aria-nutrient/textfield';
 import {useSpinButton} from '@react-aria-nutrient/spinbutton';

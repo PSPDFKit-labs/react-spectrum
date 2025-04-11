@@ -15,16 +15,16 @@ import dndStyles from './dnd.css';
 import {DragPreview} from '../src';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import Folder from '@spectrum-icons/workflow/Folder';
-import {GridCollection, useGridState} from '@react-stately/grid';
-import {Item} from '@react-stately/collections';
+import {GridCollection, useGridState} from '@react-stately-nutrient/grid';
+import {Item} from '@react-stately-nutrient/collections';
 import React, {useRef} from 'react';
 import ShowMenu from '@spectrum-icons/workflow/ShowMenu';
 import {useButton} from '@react-aria-nutrient/button';
 import {useDraggableCollection, useDraggableItem} from '..';
-import {useDraggableCollectionState} from '@react-stately/dnd';
+import {useDraggableCollectionState} from '@react-stately-nutrient/dnd';
 import {useGrid, useGridCell, useGridRow} from '@react-aria-nutrient/grid';
-import {useListData} from '@react-stately/data';
-import {useListState} from '@react-stately/list';
+import {useListData} from '@react-stately-nutrient/data';
+import {useListState} from '@react-stately-nutrient/list';
 
 interface ItemValue {
   id: string,

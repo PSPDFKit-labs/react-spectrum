@@ -12,8 +12,8 @@
 
 import {Color, ColorSliderProps} from '@react-types/color';
 import {normalizeColor, parseColor} from './Color';
-import {SliderState, useSliderState} from '@react-stately/slider';
-import {useControlledState} from '@react-stately/utils';
+import {SliderState, useSliderState} from '@react-stately-nutrient/slider';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useMemo} from 'react';
 
 export interface ColorSliderState extends SliderState {

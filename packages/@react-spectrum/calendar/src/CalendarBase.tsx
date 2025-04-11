@@ -15,7 +15,7 @@ import {AriaButtonProps} from '@react-types/button';
 import {CalendarDate} from '@internationalized/date';
 import {CalendarMonth} from './CalendarMonth';
 import {CalendarPropsBase} from '@react-types/calendar';
-import {CalendarState, RangeCalendarState} from '@react-stately/calendar';
+import {CalendarState, RangeCalendarState} from '@react-stately-nutrient/calendar';
 import ChevronLeft from '@spectrum-icons/ui/ChevronLeftLarge';
 import ChevronRight from '@spectrum-icons/ui/ChevronRightLarge';
 import {classNames, useStyleProps} from '@react-spectrum/utils';

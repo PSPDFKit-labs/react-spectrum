@@ -13,7 +13,7 @@ export default Layout;
 import docs from 'docs:@react-aria-nutrient/checkbox';
 import hiddenDocs from 'docs:@react-aria-nutrient/visually-hidden';
 import focusDocs from 'docs:@react-aria-nutrient/focus';
-import statelyDocs from 'docs:@react-stately/toggle';
+import statelyDocs from 'docs:@react-stately-nutrient/toggle';
 import {HeaderInfo, FunctionAPI, TypeContext, InterfaceType, TypeLink, PageDescription} from '@react-spectrum/docs';
 import {Keyboard} from '@react-spectrum/text';
 import packageData from '@react-aria-nutrient/checkbox/package.json';
@@ -69,7 +69,7 @@ to toggle the selection state, or use the <Keyboard>Tab</Keyboard> key to naviga
 </TypeContext.Provider>
 
 Selection state is managed by the <TypeLink links={statelyDocs.links} type={statelyDocs.exports.useToggleState} />
-hook in `@react-stately/toggle`. The state object should be passed as an option to `useCheckbox`.
+hook in `@react-stately-nutrient/toggle`. The state object should be passed as an option to `useCheckbox`.
 
 In most cases, checkboxes should have a visual label. If the checkbox does not have a visible label,
 an `aria-label` or `aria-labelledby` prop must be passed instead to identify the element to assistive
@@ -79,7 +79,7 @@ technology.
 
 ```tsx example
 import {useCheckbox} from '@react-aria-nutrient/checkbox';
-import {useToggleState} from '@react-stately/toggle';
+import {useToggleState} from '@react-stately-nutrient/toggle';
 
 function Checkbox(props) {
   let {children} = props;

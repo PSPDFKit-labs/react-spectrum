@@ -31,7 +31,7 @@
     "@react-aria-nutrient/selection": "^3.23.1",
     "@react-aria-nutrient/utils": "^3.28.1",
     "@react-aria-nutrient/visually-hidden": "^3.8.21",
-    "@react-stately/select": "^3.6.11",
+    "@react-stately-nutrient/select": "^3.6.11",
     "@react-types/button": "^3.11.0",
     "@react-types/select": "^3.9.10",
     "@react-types/shared": "^3.28.0",

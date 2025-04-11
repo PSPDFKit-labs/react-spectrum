@@ -16,7 +16,7 @@ import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {ReactNode, useRef} from 'react';
 import {RefObject} from '@react-types/shared';
-import {SliderState} from '@react-stately/slider';
+import {SliderState} from '@react-stately-nutrient/slider';
 import styles from '@adobe/spectrum-css-temp/components/slider/vars.css';
 import {useHover} from '@react-aria-nutrient/interactions';
 import {useSliderThumb} from '@react-aria-nutrient/slider';

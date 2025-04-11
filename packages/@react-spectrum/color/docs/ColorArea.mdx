@@ -12,7 +12,7 @@ import docs from 'docs:@react-spectrum/color';
 import {HeaderInfo, PropTable, TypeLink, PageDescription} from '@react-spectrum/docs';
 import {Layout} from '@react-spectrum/docs';
 import packageData from '@react-spectrum/color/package.json';
-import statelyDocs from 'docs:@react-stately/color';
+import statelyDocs from 'docs:@react-stately-nutrient/color';
 
 export default Layout;
 
@@ -61,7 +61,7 @@ so that `value`'s type remains consistent.
 import {ColorArea} from '@react-spectrum/color';
 import {Flex} from '@react-spectrum/layout';
 import {Label} from '@react-spectrum/label';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [value, setValue] = React.useState(parseColor('hsl(0, 100%, 50%)'));
@@ -166,7 +166,7 @@ The example below uses `onChange` and `onChangeEnd` to update two separate eleme
 
 ```tsx example
 import {ColorArea} from '@react-spectrum/color';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [currentValue, setCurrentValue] = React.useState(parseColor('hsl(50, 100%, 50%)'));
@@ -206,7 +206,7 @@ color is modified.
 import {ColorArea, ColorSlider} from '@react-spectrum/color';
 import {Flex} from '@react-spectrum/layout';
 import {Label} from '@react-spectrum/label';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 
 function Example() {
   let [color, setColor] = React.useState(parseColor('#ff00ff'));
@@ -234,7 +234,7 @@ and a ColorWheel instead of a ColorSlider for the Hue channel.
 import {ColorArea, ColorSlider, ColorWheel} from '@react-spectrum/color';
 import {Flex, Grid} from '@react-spectrum/layout';
 import {Label} from '@react-spectrum/label';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import {View} from '@react-spectrum/view';
 
 function Example() {
@@ -282,7 +282,7 @@ This example shows how to build an HSBA color picker.
 import {ColorArea, ColorSlider, ColorWheel} from '@react-spectrum/color';
 import {Flex, Grid} from '@react-spectrum/layout';
 import {Label} from '@react-spectrum/label';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import {View} from '@react-spectrum/view';
 
 function Example() {

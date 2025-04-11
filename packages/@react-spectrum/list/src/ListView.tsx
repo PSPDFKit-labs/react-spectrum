@@ -14,7 +14,7 @@ import {AriaGridListProps, useGridList} from '@react-aria-nutrient/gridlist';
 import {AsyncLoadable, DOMRef, Key, LoadingState, Node, SpectrumSelectionProps, StyleProps} from '@react-types/shared';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
 import type {DragAndDropHooks} from '@react-spectrum/dnd';
-import type {DraggableCollectionState, DroppableCollectionState} from '@react-stately/dnd';
+import type {DraggableCollectionState, DroppableCollectionState} from '@react-stately-nutrient/dnd';
 import type {DroppableCollectionResult} from '@react-aria-nutrient/dnd';
 import {filterDOMProps, mergeProps, useLayoutEffect} from '@react-aria-nutrient/utils';
 import {FocusRing, FocusScope} from '@react-aria-nutrient/focus';
@@ -22,7 +22,7 @@ import InsertionIndicator from './InsertionIndicator';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {ListKeyboardDelegate} from '@react-aria-nutrient/selection';
-import {ListState, useListState} from '@react-stately/list';
+import {ListState, useListState} from '@react-stately-nutrient/list';
 import listStyles from './styles.css';
 import {ListViewItem} from './ListViewItem';
 import {ListViewLayout} from './ListViewLayout';

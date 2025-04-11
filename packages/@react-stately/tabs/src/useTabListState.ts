@@ -11,7 +11,7 @@
  */
 
 import {Collection, CollectionStateBase, Key, Node} from '@react-types/shared';
-import {SingleSelectListState, useSingleSelectListState} from '@react-stately/list';
+import {SingleSelectListState, useSingleSelectListState} from '@react-stately-nutrient/list';
 import {TabListProps} from '@react-types/tabs';
 import {useEffect, useRef} from 'react';
 

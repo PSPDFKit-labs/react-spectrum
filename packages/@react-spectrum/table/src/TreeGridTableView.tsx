@@ -14,7 +14,7 @@ import {DOMRef} from '@react-types/shared';
 import React, {ReactElement, useState} from 'react';
 import {SpectrumTableProps} from './TableViewWrapper';
 import {TableViewBase} from './TableViewBase';
-import {UNSTABLE_useTreeGridState} from '@react-stately/table';
+import {UNSTABLE_useTreeGridState} from '@react-stately-nutrient/table';
 
 export interface TreeGridTableProps<T> extends Omit<SpectrumTableProps<T>, 'UNSTABLE_allowsExpandableRows'> {}
 

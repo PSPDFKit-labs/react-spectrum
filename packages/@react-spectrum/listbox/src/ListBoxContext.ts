@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {ListState} from '@react-stately/list';
+import {ListState} from '@react-stately-nutrient/list';
 import React, {ReactNode} from 'react';
 
 interface ListBoxContextValue {

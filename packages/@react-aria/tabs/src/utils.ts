@@ -11,7 +11,7 @@
  */
 
 import {Key} from '@react-types/shared';
-import {TabListState} from '@react-stately/tabs';
+import {TabListState} from '@react-stately-nutrient/tabs';
 
 export const tabsIds = new WeakMap<TabListState<unknown>, string>();
 

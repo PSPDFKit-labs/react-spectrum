@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {RadioGroupState} from '@react-stately/radio';
+import {RadioGroupState} from '@react-stately-nutrient/radio';
 import React, {useContext} from 'react';
 
 interface RadioGroupContext {

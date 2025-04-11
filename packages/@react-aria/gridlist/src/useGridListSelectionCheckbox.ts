@@ -12,7 +12,7 @@
 
 import {AriaGridSelectionCheckboxProps, GridSelectionCheckboxAria, useGridSelectionCheckbox} from '@react-aria-nutrient/grid';
 import {getRowId} from './utils';
-import type {ListState} from '@react-stately/list';
+import type {ListState} from '@react-stately-nutrient/list';
 
 /**
  * Provides the behavior and accessibility implementation for a selection checkbox in a grid list.

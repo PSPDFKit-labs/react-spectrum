@@ -23,7 +23,7 @@ import DuplicateIcon from '@spectrum-icons/workflow/Duplicate';
 import {Flex} from '@react-spectrum/layout';
 import Heal from '@spectrum-icons/workflow/Heal';
 import InfoIcon from '@spectrum-icons/workflow/Info';
-import {Item} from '@react-stately/collections';
+import {Item} from '@react-stately-nutrient/collections';
 import MoveIcon from '@spectrum-icons/workflow/MoveTo';
 import PropertiesIcon from '@spectrum-icons/workflow/Properties';
 import React from 'react';

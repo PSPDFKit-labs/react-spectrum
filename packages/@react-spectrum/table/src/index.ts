@@ -13,7 +13,7 @@
 /// <reference types="css-module-types" />
 
 export {TableView} from './TableViewWrapper';
-import {Column} from '@react-stately/table';
+import {Column} from '@react-stately-nutrient/table';
 import {JSX} from 'react';
 import {SpectrumColumnProps} from '@react-types/table';
 
@@ -27,7 +27,7 @@ export {
   Section,
   Row,
   Cell
-} from '@react-stately/table';
+} from '@react-stately-nutrient/table';
 
 export type {SpectrumColumnProps, TableHeaderProps, TableBodyProps, RowProps, CellProps} from '@react-types/table';
 export type {SpectrumTableProps} from './TableViewWrapper';

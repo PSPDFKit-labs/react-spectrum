@@ -13,9 +13,9 @@
 import {Calendar, CalendarIdentifier, DateFormatter, getMinimumDayInMonth, getMinimumMonthInYear, GregorianCalendar, isEqualCalendar, toCalendar} from '@internationalized/date';
 import {convertValue, createPlaceholderDate, FieldOptions, FormatterOptions, getFormatOptions, getValidationResult, useDefaultProps} from './utils';
 import {DatePickerProps, DateValue, Granularity, MappedDateValue} from '@react-types/datepicker';
-import {FormValidationState, useFormValidationState} from '@react-stately/form';
+import {FormValidationState, useFormValidationState} from '@react-stately-nutrient/form';
 import {getPlaceholder} from './placeholders';
-import {useControlledState} from '@react-stately/utils';
+import {useControlledState} from '@react-stately-nutrient/utils';
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {ValidationState} from '@react-types/shared';
 

@@ -25,7 +25,7 @@
     "@react-aria-nutrient/i18n": "^3.12.7",
     "@react-aria-nutrient/interactions": "^3.24.1",
     "@react-aria-nutrient/utils": "^3.28.1",
-    "@react-stately/virtualizer": "^4.3.1",
+    "@react-stately-nutrient/virtualizer": "^4.3.1",
     "@react-types/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"
   },

@@ -15,7 +15,7 @@ import {AriaMenuOptions} from './useMenu';
 import type {AriaPopoverProps, OverlayProps} from '@react-aria-nutrient/overlays';
 import {FocusableElement, FocusStrategy, KeyboardEvent, Node, PressEvent, RefObject} from '@react-types/shared';
 import {focusWithoutScrolling, useEffectEvent, useId, useLayoutEffect} from '@react-aria-nutrient/utils';
-import type {SubmenuTriggerState} from '@react-stately/menu';
+import type {SubmenuTriggerState} from '@react-stately-nutrient/menu';
 import {useCallback, useRef} from 'react';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useSafelyMouseToSubmenu} from './useSafelyMouseToSubmenu';

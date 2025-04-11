@@ -17,7 +17,7 @@ import {Content} from '@react-spectrum/view';
 import {ContextualHelp} from '@react-spectrum/contextualhelp';
 import {Flex} from '@react-spectrum/layout';
 import {Heading, Text} from '@react-spectrum/text';
-import {parseColor} from '@react-stately/color';
+import {parseColor} from '@react-stately-nutrient/color';
 import React, {useState} from 'react';
 import {useLocale} from '@react-aria-nutrient/i18n';
 
