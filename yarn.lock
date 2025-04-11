@@ -8581,9 +8581,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/autocomplete@npm:3.0.0-beta.0, @react-stately-nutrient/autocomplete@workspace:packages/@react-stately-nutrient/autocomplete":
+"@react-stately-nutrient/autocomplete@npm:3.0.0-beta.0, @react-stately-nutrient/autocomplete@workspace:packages/@react-stately/autocomplete":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/autocomplete@workspace:packages/@react-stately-nutrient/autocomplete"
+  resolution: "@react-stately-nutrient/autocomplete@workspace:packages/@react-stately/autocomplete"
   dependencies:
     "@react-stately-nutrient/utils": "npm:^3.10.4"
     "@swc/helpers": "npm:^0.5.0"
@@ -8592,9 +8592,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/calendar@npm:^3.7.1, @react-stately-nutrient/calendar@workspace:packages/@react-stately-nutrient/calendar":
+"@react-stately-nutrient/calendar@npm:^3.7.1, @react-stately-nutrient/calendar@workspace:packages/@react-stately/calendar":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/calendar@workspace:packages/@react-stately-nutrient/calendar"
+  resolution: "@react-stately-nutrient/calendar@workspace:packages/@react-stately/calendar"
   dependencies:
     "@internationalized/date": "npm:^3.7.0"
     "@react-stately-nutrient/utils": "npm:^3.10.5"
@@ -8606,9 +8606,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/checkbox@npm:^3.6.12, @react-stately-nutrient/checkbox@workspace:packages/@react-stately-nutrient/checkbox":
+"@react-stately-nutrient/checkbox@npm:^3.6.12, @react-stately-nutrient/checkbox@workspace:packages/@react-stately/checkbox":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/checkbox@workspace:packages/@react-stately-nutrient/checkbox"
+  resolution: "@react-stately-nutrient/checkbox@workspace:packages/@react-stately/checkbox"
   dependencies:
     "@react-stately-nutrient/form": "npm:^3.1.2"
     "@react-stately-nutrient/utils": "npm:^3.10.5"
@@ -8620,9 +8620,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/collections@npm:^3.12.2, @react-stately-nutrient/collections@workspace:packages/@react-stately-nutrient/collections":
+"@react-stately-nutrient/collections@npm:^3.12.2, @react-stately-nutrient/collections@workspace:packages/@react-stately/collections":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/collections@workspace:packages/@react-stately-nutrient/collections"
+  resolution: "@react-stately-nutrient/collections@workspace:packages/@react-stately/collections"
   dependencies:
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8631,9 +8631,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/color@npm:^3.8.3, @react-stately-nutrient/color@workspace:packages/@react-stately-nutrient/color":
+"@react-stately-nutrient/color@npm:^3.8.3, @react-stately-nutrient/color@workspace:packages/@react-stately/color":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/color@workspace:packages/@react-stately-nutrient/color"
+  resolution: "@react-stately-nutrient/color@workspace:packages/@react-stately/color"
   dependencies:
     "@internationalized/number": "npm:^3.6.0"
     "@internationalized/string": "npm:^3.2.5"
@@ -8649,9 +8649,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/combobox@npm:^3.10.3, @react-stately-nutrient/combobox@workspace:packages/@react-stately-nutrient/combobox":
+"@react-stately-nutrient/combobox@npm:^3.10.3, @react-stately-nutrient/combobox@workspace:packages/@react-stately/combobox":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/combobox@workspace:packages/@react-stately-nutrient/combobox"
+  resolution: "@react-stately-nutrient/combobox@workspace:packages/@react-stately/combobox"
   dependencies:
     "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-stately-nutrient/form": "npm:^3.1.2"
@@ -8667,9 +8667,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/data@npm:^3.12.2, @react-stately-nutrient/data@workspace:packages/@react-stately-nutrient/data":
+"@react-stately-nutrient/data@npm:^3.12.2, @react-stately-nutrient/data@workspace:packages/@react-stately/data":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/data@workspace:packages/@react-stately-nutrient/data"
+  resolution: "@react-stately-nutrient/data@workspace:packages/@react-stately/data"
   dependencies:
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8678,9 +8678,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/datepicker@npm:^3.13.0, @react-stately-nutrient/datepicker@workspace:packages/@react-stately-nutrient/datepicker":
+"@react-stately-nutrient/datepicker@npm:^3.13.0, @react-stately-nutrient/datepicker@workspace:packages/@react-stately/datepicker":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/datepicker@workspace:packages/@react-stately-nutrient/datepicker"
+  resolution: "@react-stately-nutrient/datepicker@workspace:packages/@react-stately/datepicker"
   dependencies:
     "@internationalized/date": "npm:^3.7.0"
     "@internationalized/string": "npm:^3.2.5"
@@ -8695,9 +8695,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/disclosure@npm:^3.0.2, @react-stately-nutrient/disclosure@workspace:packages/@react-stately-nutrient/disclosure":
+"@react-stately-nutrient/disclosure@npm:^3.0.2, @react-stately-nutrient/disclosure@workspace:packages/@react-stately/disclosure":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/disclosure@workspace:packages/@react-stately-nutrient/disclosure"
+  resolution: "@react-stately-nutrient/disclosure@workspace:packages/@react-stately/disclosure"
   dependencies:
     "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
@@ -8707,9 +8707,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/dnd@npm:^3.0.0, @react-stately-nutrient/dnd@npm:^3.1.0, @react-stately-nutrient/dnd@npm:^3.5.2, @react-stately-nutrient/dnd@workspace:packages/@react-stately-nutrient/dnd":
+"@react-stately-nutrient/dnd@npm:^3.0.0, @react-stately-nutrient/dnd@npm:^3.1.0, @react-stately-nutrient/dnd@npm:^3.5.2, @react-stately-nutrient/dnd@workspace:packages/@react-stately/dnd":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/dnd@workspace:packages/@react-stately-nutrient/dnd"
+  resolution: "@react-stately-nutrient/dnd@workspace:packages/@react-stately/dnd"
   dependencies:
     "@react-stately-nutrient/selection": "npm:^3.20.0"
     "@react-types/shared": "npm:^3.28.0"
@@ -8719,17 +8719,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/flags@npm:^3.1.0, @react-stately-nutrient/flags@workspace:packages/@react-stately-nutrient/flags":
+"@react-stately-nutrient/flags@npm:^3.1.0, @react-stately-nutrient/flags@workspace:packages/@react-stately/flags":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/flags@workspace:packages/@react-stately-nutrient/flags"
+  resolution: "@react-stately-nutrient/flags@workspace:packages/@react-stately/flags"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/form@npm:^3.1.2, @react-stately-nutrient/form@workspace:packages/@react-stately-nutrient/form":
+"@react-stately-nutrient/form@npm:^3.1.2, @react-stately-nutrient/form@workspace:packages/@react-stately/form":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/form@workspace:packages/@react-stately-nutrient/form"
+  resolution: "@react-stately-nutrient/form@workspace:packages/@react-stately/form"
   dependencies:
     "@react-types/shared": "npm:^3.28.0"
     "@swc/helpers": "npm:^0.5.0"
@@ -8738,9 +8738,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/grid@npm:^3.11.0, @react-stately-nutrient/grid@workspace:packages/@react-stately-nutrient/grid":
+"@react-stately-nutrient/grid@npm:^3.11.0, @react-stately-nutrient/grid@workspace:packages/@react-stately/grid":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/grid@workspace:packages/@react-stately-nutrient/grid"
+  resolution: "@react-stately-nutrient/grid@workspace:packages/@react-stately/grid"
   dependencies:
     "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-stately-nutrient/selection": "npm:^3.20.0"
@@ -8752,9 +8752,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/layout@npm:^4.2.1, @react-stately-nutrient/layout@workspace:packages/@react-stately-nutrient/layout":
+"@react-stately-nutrient/layout@npm:^4.2.1, @react-stately-nutrient/layout@workspace:packages/@react-stately/layout":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/layout@workspace:packages/@react-stately-nutrient/layout"
+  resolution: "@react-stately-nutrient/layout@workspace:packages/@react-stately/layout"
   dependencies:
     "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-stately-nutrient/table": "npm:^3.14.0"
@@ -8769,9 +8769,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/list@npm:^3.12.0, @react-stately-nutrient/list@workspace:packages/@react-stately-nutrient/list":
+"@react-stately-nutrient/list@npm:^3.12.0, @react-stately-nutrient/list@workspace:packages/@react-stately/list":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/list@workspace:packages/@react-stately-nutrient/list"
+  resolution: "@react-stately-nutrient/list@workspace:packages/@react-stately/list"
   dependencies:
     "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-stately-nutrient/selection": "npm:^3.20.0"
@@ -8783,9 +8783,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/menu@npm:^3.9.2, @react-stately-nutrient/menu@workspace:packages/@react-stately-nutrient/menu":
+"@react-stately-nutrient/menu@npm:^3.9.2, @react-stately-nutrient/menu@workspace:packages/@react-stately/menu":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/menu@workspace:packages/@react-stately-nutrient/menu"
+  resolution: "@react-stately-nutrient/menu@workspace:packages/@react-stately/menu"
   dependencies:
     "@react-stately-nutrient/overlays": "npm:^3.6.14"
     "@react-types/menu": "npm:^3.9.15"
@@ -8796,9 +8796,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/numberfield@npm:^3.9.10, @react-stately-nutrient/numberfield@workspace:packages/@react-stately-nutrient/numberfield":
+"@react-stately-nutrient/numberfield@npm:^3.9.10, @react-stately-nutrient/numberfield@workspace:packages/@react-stately/numberfield":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/numberfield@workspace:packages/@react-stately-nutrient/numberfield"
+  resolution: "@react-stately-nutrient/numberfield@workspace:packages/@react-stately/numberfield"
   dependencies:
     "@internationalized/number": "npm:^3.6.0"
     "@react-stately-nutrient/form": "npm:^3.1.2"
@@ -8810,9 +8810,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/overlays@npm:^3.6.14, @react-stately-nutrient/overlays@workspace:packages/@react-stately-nutrient/overlays":
+"@react-stately-nutrient/overlays@npm:^3.6.14, @react-stately-nutrient/overlays@workspace:packages/@react-stately/overlays":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/overlays@workspace:packages/@react-stately-nutrient/overlays"
+  resolution: "@react-stately-nutrient/overlays@workspace:packages/@react-stately/overlays"
   dependencies:
     "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/overlays": "npm:^3.8.13"
@@ -8822,9 +8822,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/radio@npm:^3.10.11, @react-stately-nutrient/radio@workspace:packages/@react-stately-nutrient/radio":
+"@react-stately-nutrient/radio@npm:^3.10.11, @react-stately-nutrient/radio@workspace:packages/@react-stately/radio":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/radio@workspace:packages/@react-stately-nutrient/radio"
+  resolution: "@react-stately-nutrient/radio@workspace:packages/@react-stately/radio"
   dependencies:
     "@react-stately-nutrient/form": "npm:^3.1.2"
     "@react-stately-nutrient/utils": "npm:^3.10.5"
@@ -8836,9 +8836,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/searchfield@npm:^3.5.10, @react-stately-nutrient/searchfield@workspace:packages/@react-stately-nutrient/searchfield":
+"@react-stately-nutrient/searchfield@npm:^3.5.10, @react-stately-nutrient/searchfield@workspace:packages/@react-stately/searchfield":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/searchfield@workspace:packages/@react-stately-nutrient/searchfield"
+  resolution: "@react-stately-nutrient/searchfield@workspace:packages/@react-stately/searchfield"
   dependencies:
     "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/searchfield": "npm:^3.6.0"
@@ -8848,9 +8848,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/select@npm:^3.6.11, @react-stately-nutrient/select@workspace:packages/@react-stately-nutrient/select":
+"@react-stately-nutrient/select@npm:^3.6.11, @react-stately-nutrient/select@workspace:packages/@react-stately/select":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/select@workspace:packages/@react-stately-nutrient/select"
+  resolution: "@react-stately-nutrient/select@workspace:packages/@react-stately/select"
   dependencies:
     "@react-stately-nutrient/form": "npm:^3.1.2"
     "@react-stately-nutrient/list": "npm:^3.12.0"
@@ -8863,9 +8863,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/selection@npm:^3.20.0, @react-stately-nutrient/selection@workspace:packages/@react-stately-nutrient/selection":
+"@react-stately-nutrient/selection@npm:^3.20.0, @react-stately-nutrient/selection@workspace:packages/@react-stately/selection":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/selection@workspace:packages/@react-stately-nutrient/selection"
+  resolution: "@react-stately-nutrient/selection@workspace:packages/@react-stately/selection"
   dependencies:
     "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-stately-nutrient/utils": "npm:^3.10.5"
@@ -8876,9 +8876,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/slider@npm:^3.6.2, @react-stately-nutrient/slider@workspace:packages/@react-stately-nutrient/slider":
+"@react-stately-nutrient/slider@npm:^3.6.2, @react-stately-nutrient/slider@workspace:packages/@react-stately/slider":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/slider@workspace:packages/@react-stately-nutrient/slider"
+  resolution: "@react-stately-nutrient/slider@workspace:packages/@react-stately/slider"
   dependencies:
     "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/shared": "npm:^3.28.0"
@@ -8889,9 +8889,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/steplist@npm:3.0.0-alpha.12, @react-stately-nutrient/steplist@workspace:packages/@react-stately-nutrient/steplist":
+"@react-stately-nutrient/steplist@npm:3.0.0-alpha.12, @react-stately-nutrient/steplist@workspace:packages/@react-stately/steplist":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/steplist@workspace:packages/@react-stately-nutrient/steplist"
+  resolution: "@react-stately-nutrient/steplist@workspace:packages/@react-stately/steplist"
   dependencies:
     "@react-stately-nutrient/list": "npm:^3.12.0"
     "@react-stately-nutrient/utils": "npm:^3.10.5"
@@ -8902,9 +8902,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/table@npm:^3.14.0, @react-stately-nutrient/table@workspace:packages/@react-stately-nutrient/table":
+"@react-stately-nutrient/table@npm:^3.14.0, @react-stately-nutrient/table@workspace:packages/@react-stately/table":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/table@workspace:packages/@react-stately-nutrient/table"
+  resolution: "@react-stately-nutrient/table@workspace:packages/@react-stately/table"
   dependencies:
     "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-stately-nutrient/flags": "npm:^3.1.0"
@@ -8920,9 +8920,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/tabs@npm:^3.8.0, @react-stately-nutrient/tabs@workspace:packages/@react-stately-nutrient/tabs":
+"@react-stately-nutrient/tabs@npm:^3.8.0, @react-stately-nutrient/tabs@workspace:packages/@react-stately/tabs":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/tabs@workspace:packages/@react-stately-nutrient/tabs"
+  resolution: "@react-stately-nutrient/tabs@workspace:packages/@react-stately/tabs"
   dependencies:
     "@react-stately-nutrient/list": "npm:^3.12.0"
     "@react-types/shared": "npm:^3.28.0"
@@ -8933,9 +8933,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/toast@npm:^3.0.0, @react-stately-nutrient/toast@workspace:packages/@react-stately-nutrient/toast":
+"@react-stately-nutrient/toast@npm:^3.0.0, @react-stately-nutrient/toast@workspace:packages/@react-stately/toast":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/toast@workspace:packages/@react-stately-nutrient/toast"
+  resolution: "@react-stately-nutrient/toast@workspace:packages/@react-stately/toast"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
     "@types/use-sync-external-store": "npm:^0.0.3"
@@ -8945,9 +8945,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/toggle@npm:^3.8.2, @react-stately-nutrient/toggle@workspace:packages/@react-stately-nutrient/toggle":
+"@react-stately-nutrient/toggle@npm:^3.8.2, @react-stately-nutrient/toggle@workspace:packages/@react-stately/toggle":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/toggle@workspace:packages/@react-stately-nutrient/toggle"
+  resolution: "@react-stately-nutrient/toggle@workspace:packages/@react-stately/toggle"
   dependencies:
     "@react-stately-nutrient/utils": "npm:^3.10.5"
     "@react-types/checkbox": "npm:^3.9.2"
@@ -8958,9 +8958,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/tooltip@npm:^3.5.2, @react-stately-nutrient/tooltip@workspace:packages/@react-stately-nutrient/tooltip":
+"@react-stately-nutrient/tooltip@npm:^3.5.2, @react-stately-nutrient/tooltip@workspace:packages/@react-stately/tooltip":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/tooltip@workspace:packages/@react-stately-nutrient/tooltip"
+  resolution: "@react-stately-nutrient/tooltip@workspace:packages/@react-stately/tooltip"
   dependencies:
     "@react-stately-nutrient/overlays": "npm:^3.6.14"
     "@react-types/tooltip": "npm:^3.4.15"
@@ -8970,9 +8970,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/tree@npm:^3.8.8, @react-stately-nutrient/tree@workspace:packages/@react-stately-nutrient/tree":
+"@react-stately-nutrient/tree@npm:^3.8.8, @react-stately-nutrient/tree@workspace:packages/@react-stately/tree":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/tree@workspace:packages/@react-stately-nutrient/tree"
+  resolution: "@react-stately-nutrient/tree@workspace:packages/@react-stately/tree"
   dependencies:
     "@react-stately-nutrient/collections": "npm:^3.12.2"
     "@react-stately-nutrient/selection": "npm:^3.20.0"
@@ -8984,9 +8984,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/utils@npm:^3.10.4, @react-stately-nutrient/utils@npm:^3.10.5, @react-stately-nutrient/utils@workspace:packages/@react-stately-nutrient/utils":
+"@react-stately-nutrient/utils@npm:^3.10.4, @react-stately-nutrient/utils@npm:^3.10.5, @react-stately-nutrient/utils@workspace:packages/@react-stately/utils":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/utils@workspace:packages/@react-stately-nutrient/utils"
+  resolution: "@react-stately-nutrient/utils@workspace:packages/@react-stately/utils"
   dependencies:
     "@swc/helpers": "npm:^0.5.0"
   peerDependencies:
@@ -8994,9 +8994,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@react-stately-nutrient/virtualizer@npm:^4.0.0, @react-stately-nutrient/virtualizer@npm:^4.3.1, @react-stately-nutrient/virtualizer@workspace:packages/@react-stately-nutrient/virtualizer":
+"@react-stately-nutrient/virtualizer@npm:^4.0.0, @react-stately-nutrient/virtualizer@npm:^4.3.1, @react-stately-nutrient/virtualizer@workspace:packages/@react-stately/virtualizer":
   version: 0.0.0-use.local
-  resolution: "@react-stately-nutrient/virtualizer@workspace:packages/@react-stately-nutrient/virtualizer"
+  resolution: "@react-stately-nutrient/virtualizer@workspace:packages/@react-stately/virtualizer"
   dependencies:
     "@react-aria-nutrient/utils": "npm:^3.28.1"
     "@react-types/shared": "npm:^3.28.0"
