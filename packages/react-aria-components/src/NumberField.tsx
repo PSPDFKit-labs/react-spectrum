@@ -16,7 +16,7 @@ import {ContextValue, Provider, RACValidation, removeDataAttributes, RenderProps
 import {FieldErrorContext} from './FieldError';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {FormContext} from './Form';
-import {forwardRefType, InputDOMProps} from '@react-types/shared';
+import {forwardRefType, InputDOMProps} from '@react-types-nutrient/shared';
 import {GroupContext} from './Group';
 import {InputContext} from './Input';
 import {LabelContext} from './Label';

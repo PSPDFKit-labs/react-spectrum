@@ -22,7 +22,7 @@ import Cut from '@spectrum-icons/workflow/Cut';
 import Delete from '@spectrum-icons/workflow/Delete';
 import {FocusScope} from '@react-aria-nutrient/focus';
 import {Item, ListBox, Section} from '../';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {Label} from '@react-spectrum/label';
 import Paste from '@spectrum-icons/workflow/Paste';
 import React, {useRef, useState} from 'react';

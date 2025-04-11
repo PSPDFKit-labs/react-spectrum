@@ -11,7 +11,7 @@
  */
 
 import {classNames} from '@react-spectrum/utils';
-import {FocusableElement, ItemDropTarget} from '@react-types/shared';
+import {FocusableElement, ItemDropTarget} from '@react-types-nutrient/shared';
 import React, {DOMAttributes, HTMLAttributes, ReactNode, useRef} from 'react';
 import styles from './table.css';
 import {useTableContext} from './TableViewBase';

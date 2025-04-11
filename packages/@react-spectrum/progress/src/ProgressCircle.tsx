@@ -12,9 +12,9 @@
 
 import {clamp} from '@react-aria-nutrient/utils';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import React, {CSSProperties} from 'react';
-import {SpectrumProgressCircleProps} from '@react-types/progress';
+import {SpectrumProgressCircleProps} from '@react-types-nutrient/progress';
 import styles from '@adobe/spectrum-css-temp/components/circleloader/vars.css';
 import {useProgressBar} from '@react-aria-nutrient/progress';
 

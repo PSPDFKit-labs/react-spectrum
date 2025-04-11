@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {FocusableElement} from '@react-types/shared';
+import {FocusableElement} from '@react-types-nutrient/shared';
 import {PressProps} from './usePress';
 import React, {MutableRefObject} from 'react';
 

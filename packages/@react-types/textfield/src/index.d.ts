@@ -27,7 +27,7 @@ import {
   TextInputDOMProps,
   Validation,
   ValueBase
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {ReactElement} from 'react';
 
 export interface TextFieldProps<T = HTMLInputElement> extends InputBase, Validation<string>, HelpTextProps, FocusableProps<T>, TextInputBase, ValueBase<string>, LabelableProps {}

@@ -13,8 +13,8 @@
 import {CalendarBase} from './CalendarBase';
 import {createCalendar} from '@internationalized/date';
 import {createDOMRef} from '@react-spectrum/utils';
-import {DateValue, SpectrumCalendarProps} from '@react-types/calendar';
-import {FocusableRef} from '@react-types/shared';
+import {DateValue, SpectrumCalendarProps} from '@react-types-nutrient/calendar';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import React, {ReactElement, useImperativeHandle, useMemo, useRef} from 'react';
 import {useCalendar} from '@react-aria-nutrient/calendar';
 import {useCalendarState} from '@react-stately/calendar';

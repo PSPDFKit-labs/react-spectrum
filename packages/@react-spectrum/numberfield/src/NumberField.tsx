@@ -10,15 +10,15 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import {classNames, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
 import {Field} from '@react-spectrum/label';
-import {FocusableRef, RefObject} from '@react-types/shared';
+import {FocusableRef, RefObject} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import {NumberFieldState, useNumberFieldState} from '@react-stately/numberfield';
 import React, {HTMLAttributes, InputHTMLAttributes, Ref, useRef} from 'react';
-import {SpectrumNumberFieldProps} from '@react-types/numberfield';
+import {SpectrumNumberFieldProps} from '@react-types-nutrient/numberfield';
 import {StepButton} from './StepButton';
 import stepperStyle from '@adobe/spectrum-css-temp/components/stepper/vars.css';
 import {TextFieldBase} from '@react-spectrum/textfield';

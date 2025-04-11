@@ -11,11 +11,11 @@
  */
 
 import {announce} from '@react-aria-nutrient/live-announcer';
-import {AriaButtonProps} from '@react-types/button';
-import {AriaComboBoxProps} from '@react-types/combobox';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {AriaComboBoxProps} from '@react-types-nutrient/combobox';
 import {ariaHideOutside} from '@react-aria-nutrient/overlays';
 import {AriaListBoxOptions, getItemId, listData} from '@react-aria-nutrient/listbox';
-import {BaseEvent, DOMAttributes, KeyboardDelegate, LayoutDelegate, PressEvent, RefObject, RouterOptions, ValidationResult} from '@react-types/shared';
+import {BaseEvent, DOMAttributes, KeyboardDelegate, LayoutDelegate, PressEvent, RefObject, RouterOptions, ValidationResult} from '@react-types-nutrient/shared';
 import {chain, getActiveElement, getOwnerDocument, isAppleDevice, mergeProps, useLabels, useRouter, useUpdateEffect} from '@react-aria-nutrient/utils';
 import {ComboBoxState} from '@react-stately/combobox';
 import {dispatchVirtualFocus} from '@react-aria-nutrient/focus';

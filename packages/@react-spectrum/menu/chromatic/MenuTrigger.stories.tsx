@@ -23,7 +23,7 @@ import {Keyboard, Text} from '@react-spectrum/text';
 import {Meta} from '@storybook/react';
 import Paste from '@spectrum-icons/workflow/Paste';
 import React from 'react';
-import {SpectrumMenuTriggerProps} from '@react-types/menu';
+import {SpectrumMenuTriggerProps} from '@react-types-nutrient/menu';
 
 const meta: Meta<SpectrumMenuTriggerProps> = {
   title: 'MenuTrigger',

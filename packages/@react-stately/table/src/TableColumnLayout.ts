@@ -15,9 +15,9 @@ import {
   getMaxWidth,
   getMinWidth
 } from './TableUtils';
-import {ColumnSize, TableCollection} from '@react-types/table';
-import {GridNode} from '@react-types/grid';
-import {Key} from '@react-types/shared';
+import {ColumnSize, TableCollection} from '@react-types-nutrient/table';
+import {GridNode} from '@react-types-nutrient/grid';
+import {Key} from '@react-types-nutrient/shared';
 
 export interface TableColumnLayoutOptions<T> {
   getDefaultWidth?: (column: GridNode<T>) => ColumnSize | null | undefined,

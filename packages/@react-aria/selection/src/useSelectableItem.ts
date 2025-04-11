@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes, DOMProps, FocusableElement, Key, LongPressEvent, PointerType, PressEvent, RefObject} from '@react-types/shared';
+import {DOMAttributes, DOMProps, FocusableElement, Key, LongPressEvent, PointerType, PressEvent, RefObject} from '@react-types-nutrient/shared';
 import {focusSafely, PressHookProps, useLongPress, usePress} from '@react-aria-nutrient/interactions';
 import {getCollectionId, isNonContiguousSelectionModifier} from './utils';
 import {isCtrlKeyPressed, mergeProps, openLink, useId, useRouter} from '@react-aria-nutrient/utils';

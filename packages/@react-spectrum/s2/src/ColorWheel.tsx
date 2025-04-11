@@ -18,7 +18,7 @@ import {
 } from 'react-aria-components';
 import {ColorHandle} from './ColorHandle';
 import {createContext, forwardRef} from 'react';
-import {DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {style} from '../style' with {type: 'macro'};
 import {StyleProps} from './style-utils';
 import {useDOMRef} from '@react-spectrum/utils';

@@ -12,7 +12,7 @@
 
 import {Flex} from '@react-spectrum/layout';
 import React from 'react';
-import {SpectrumStatusLightProps} from '@react-types/statuslight';
+import {SpectrumStatusLightProps} from '@react-types-nutrient/statuslight';
 import {StatusLight} from '../';
 import {View} from '@react-spectrum/view';
 

@@ -11,7 +11,7 @@
  */
 
 import {announce} from '@react-aria-nutrient/live-announcer';
-import {Collection, Key, Node, Selection} from '@react-types/shared';
+import {Collection, Key, Node, Selection} from '@react-types-nutrient/shared';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {SelectionManager} from '@react-stately/selection';

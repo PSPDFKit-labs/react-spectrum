@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaCheckboxGroupItemProps, AriaCheckboxGroupProps} from '@react-types/checkbox';
+import {AriaCheckboxGroupItemProps, AriaCheckboxGroupProps} from '@react-types-nutrient/checkbox';
 import {CheckboxGroupState, useCheckboxGroupState} from '@react-stately/checkbox';
 import {pointerMap, render} from '@react-spectrum/test-utils-internal';
 import React, {useRef} from 'react';

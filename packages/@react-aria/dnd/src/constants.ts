@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DropOperation} from '@react-types/shared';
+import {DropOperation} from '@react-types-nutrient/shared';
 
 export enum DROP_OPERATION {
   none = 0,

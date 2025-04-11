@@ -11,7 +11,7 @@
  */
 
 import {InvalidationContext} from './types';
-import {ItemDropTarget, Key, LayoutDelegate, Node} from '@react-types/shared';
+import {ItemDropTarget, Key, LayoutDelegate, Node} from '@react-types-nutrient/shared';
 import {LayoutInfo} from './LayoutInfo';
 import {Rect} from './Rect';
 import {Size} from './Size';

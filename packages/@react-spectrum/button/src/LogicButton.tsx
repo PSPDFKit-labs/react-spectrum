@@ -11,11 +11,11 @@
  */
 
 import {classNames, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React from 'react';
-import {SpectrumLogicButtonProps} from '@react-types/button';
+import {SpectrumLogicButtonProps} from '@react-types-nutrient/button';
 import styles from '@adobe/spectrum-css-temp/components/button/vars.css';
 import {useButton} from '@react-aria-nutrient/button';
 import {useHover} from '@react-aria-nutrient/interactions';

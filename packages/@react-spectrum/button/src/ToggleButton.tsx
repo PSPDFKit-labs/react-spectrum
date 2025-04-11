@@ -11,11 +11,11 @@
  */
 
 import {classNames, SlotProvider, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React from 'react';
-import {SpectrumToggleButtonProps} from '@react-types/button';
+import {SpectrumToggleButtonProps} from '@react-types-nutrient/button';
 import styles from '@adobe/spectrum-css-temp/components/button/vars.css';
 import {Text} from '@react-spectrum/text';
 import {useHover} from '@react-aria-nutrient/interactions';

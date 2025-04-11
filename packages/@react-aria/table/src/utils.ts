@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {TableState} from '@react-stately/table';
 
 export const gridIds = new WeakMap<TableState<unknown>, string>();

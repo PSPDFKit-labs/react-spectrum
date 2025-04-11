@@ -26,7 +26,7 @@ import {
 import {Checkbox} from '@react-spectrum/checkbox';
 import ChevronLeftMedium from '@spectrum-icons/ui/ChevronLeftMedium';
 import ChevronRightMedium from '@spectrum-icons/ui/ChevronRightMedium';
-import {DOMRef, Expandable, Key, SelectionBehavior, SpectrumSelectionProps, StyleProps} from '@react-types/shared';
+import {DOMRef, Expandable, Key, SelectionBehavior, SpectrumSelectionProps, StyleProps} from '@react-types-nutrient/shared';
 import {focusRing, style} from '@react-spectrum/style-macro-s1' with {type: 'macro'};
 import {isAndroid} from '@react-aria-nutrient/utils';
 import React, {createContext, JSX, JSXElementConstructor, ReactElement, ReactNode, useRef} from 'react';

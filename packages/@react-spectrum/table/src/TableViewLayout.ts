@@ -9,8 +9,8 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-import {DropTarget} from '@react-types/shared';
-import {GridNode} from '@react-types/grid';
+import {DropTarget} from '@react-types-nutrient/shared';
+import {GridNode} from '@react-types-nutrient/grid';
 import {LayoutInfo, Rect} from '@react-stately/virtualizer';
 import {LayoutNode, TableLayout} from '@react-stately/layout';
 import {TableCollection} from '@react-stately/table';

@@ -17,7 +17,7 @@ import {
 } from 'react-aria-components';
 import {CheckboxContext} from './Checkbox';
 import {createContext, forwardRef, ReactNode, useContext} from 'react';
-import {DOMRef, DOMRefValue, HelpTextProps, Orientation, SpectrumLabelableProps} from '@react-types/shared';
+import {DOMRef, DOMRefValue, HelpTextProps, Orientation, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {field, getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};
 import {FieldLabel, HelpText} from './Field';
 import {FormContext, useFormProps} from './Form';

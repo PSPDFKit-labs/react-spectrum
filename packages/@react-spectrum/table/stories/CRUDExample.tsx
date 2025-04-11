@@ -24,7 +24,7 @@ import {Form} from '@react-spectrum/form';
 import {Heading} from '@react-spectrum/text';
 import {IllustratedMessage} from '@react-spectrum/illustratedmessage';
 import {Item, Menu, MenuTrigger} from '@react-spectrum/menu';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import More from '@spectrum-icons/workflow/More';
 import NoSearchResults from '@spectrum-icons/illustrations/NoSearchResults';
 import React, {useState} from 'react';

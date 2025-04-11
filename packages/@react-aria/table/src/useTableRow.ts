@@ -10,14 +10,14 @@
  * governing permissions and limitations under the License.
  */
 
-import {FocusableElement, RefObject} from '@react-types/shared';
+import {FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {getLastItem} from '@react-stately/collections';
 import {getRowLabelledBy} from './utils';
-import type {GridNode} from '@react-types/grid';
+import type {GridNode} from '@react-types-nutrient/grid';
 import {GridRowAria, GridRowProps, useGridRow} from '@react-aria-nutrient/grid';
 import {HTMLAttributes} from 'react';
 import {mergeProps, useSyntheticLinkProps} from '@react-aria-nutrient/utils';
-import {TableCollection} from '@react-types/table';
+import {TableCollection} from '@react-types-nutrient/table';
 import {tableNestedRows} from '@react-stately/flags';
 import {TableState, TreeGridState} from '@react-stately/table';
 import {useLocale} from '@react-aria-nutrient/i18n';

@@ -1,5 +1,5 @@
 {
-  "name": "@react-types/card",
+  "name": "@react-types-nutrient/card",
   "version": "3.0.0-alpha.34",
   "description": "Spectrum UI components in React",
   "license": "Apache-2.0",
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@react-stately/virtualizer": "^4.3.1",
-    "@react-types/provider": "^3.8.7",
-    "@react-types/shared": "^3.28.0"
+    "@react-types-nutrient/provider": "^3.8.7",
+    "@react-types-nutrient/shared": "^3.28.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1",

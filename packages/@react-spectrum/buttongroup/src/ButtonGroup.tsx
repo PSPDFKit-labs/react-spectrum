@@ -18,11 +18,11 @@ import {
   useSlotProps,
   useStyleProps
 } from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps, useLayoutEffect, useValueEffect} from '@react-aria-nutrient/utils';
 import {Provider, useProvider, useProviderProps} from '@react-spectrum/provider';
 import React, {useCallback, useRef} from 'react';
-import {SpectrumButtonGroupProps} from '@react-types/buttongroup';
+import {SpectrumButtonGroupProps} from '@react-types-nutrient/buttongroup';
 import styles from '@adobe/spectrum-css-temp/components/buttongroup/vars.css';
 
 /**

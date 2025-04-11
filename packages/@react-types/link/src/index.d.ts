@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, FocusableProps, LinkDOMProps, PressEvents, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, FocusableProps, LinkDOMProps, PressEvents, StyleProps} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export interface LinkProps extends PressEvents, FocusableProps {}

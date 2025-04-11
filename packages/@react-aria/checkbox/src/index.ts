@@ -13,5 +13,5 @@ export type {CheckboxAria} from './useCheckbox';
 export {useCheckbox} from './useCheckbox';
 export {useCheckboxGroup} from './useCheckboxGroup';
 export {useCheckboxGroupItem} from './useCheckboxGroupItem';
-export type {AriaCheckboxGroupItemProps, AriaCheckboxGroupProps, AriaCheckboxProps} from '@react-types/checkbox';
+export type {AriaCheckboxGroupItemProps, AriaCheckboxGroupProps, AriaCheckboxProps} from '@react-types-nutrient/checkbox';
 export type {CheckboxGroupAria} from './useCheckboxGroup';

@@ -147,5 +147,5 @@ export type {VirtualizerProps} from './Virtualizer';
 export type {DateValue, DateRange, TimeValue} from '@react-aria-nutrient/react-aria';
 export type {DirectoryDropItem, DraggableCollectionEndEvent, DraggableCollectionMoveEvent, DraggableCollectionStartEvent, DragPreviewRenderer, DragTypes, DropItem, DropOperation, DroppableCollectionDropEvent, DroppableCollectionEnterEvent, DroppableCollectionExitEvent, DroppableCollectionInsertDropEvent, DroppableCollectionMoveEvent, DroppableCollectionOnItemDropEvent, DroppableCollectionReorderEvent, DroppableCollectionRootDropEvent, DropPosition, DropTarget, FileDropItem, ItemDropTarget, RootDropTarget, TextDropItem, PressEvent} from '@react-aria-nutrient/react-aria';
 export type {Color, ColorSpace, ColorFormat, Key, QueuedToast, Selection, SortDescriptor, SortDirection, SelectionMode, ToastOptions} from 'react-stately';
-export type {ValidationResult, RouterConfig} from '@react-types/shared';
+export type {ValidationResult, RouterConfig} from '@react-types-nutrient/shared';
 export type {ListLayoutOptions, GridLayoutOptions, WaterfallLayoutOptions} from '@react-stately/layout';

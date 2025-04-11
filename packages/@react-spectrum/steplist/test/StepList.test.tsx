@@ -11,7 +11,7 @@
  */
 
 import {act} from '@testing-library/react';
-import {DOMRefValue} from '@react-types/shared';
+import {DOMRefValue} from '@react-types-nutrient/shared';
 import {Item} from '@react-stately/collections';
 import {pointerMap, render, within} from '@react-spectrum/test-utils-internal';
 import {Provider} from '@react-spectrum/provider';

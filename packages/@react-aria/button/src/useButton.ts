@@ -18,8 +18,8 @@ import {
   InputHTMLAttributes,
   RefObject
 } from 'react';
-import {AriaButtonProps} from '@react-types/button';
-import {DOMAttributes} from '@react-types/shared';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {useFocusable, usePress} from '@react-aria-nutrient/interactions';
 

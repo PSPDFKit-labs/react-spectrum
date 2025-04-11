@@ -1,6 +1,6 @@
 import {getChildNodes, getFirstItem, getLastItem} from '@react-stately/collections';
-import {GridCollection, GridNode} from '@react-types/grid';
-import {Key} from '@react-types/shared';
+import {GridCollection, GridNode} from '@react-types-nutrient/grid';
+import {Key} from '@react-types-nutrient/shared';
 import {MultipleSelectionState, MultipleSelectionStateProps, SelectionManager, useMultipleSelectionState} from '@react-stately/selection';
 import {useEffect, useMemo, useRef} from 'react';
 

@@ -14,7 +14,7 @@ import {ActionButton} from '@react-spectrum/button';
 import {AlertDialog, DialogTrigger} from '../';
 import React from 'react';
 import {singleParagraph} from './Dialog.stories';
-import {SpectrumAlertDialogProps} from '@react-types/dialog';
+import {SpectrumAlertDialogProps} from '@react-types-nutrient/dialog';
 
 export default {
   title: 'Dialog/Alert'

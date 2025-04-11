@@ -11,7 +11,7 @@
  */
 
 import AlertIcon from '../s2wf-icons/S2_Icon_AlertTriangle_20_N.svg';
-import {Alignment, DOMRef, NecessityIndicator} from '@react-types/shared';
+import {Alignment, DOMRef, NecessityIndicator} from '@react-types-nutrient/shared';
 import AsteriskIcon from '../ui-icons/Asterisk';
 import {baseColor, focusRing, fontRelative, style} from '../style' with {type: 'macro'};
 import {CenterBaseline, centerBaseline, centerBaselineBefore} from './CenterBaseline';

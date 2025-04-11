@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMProps, FocusStrategy, HoverEvents, KeyboardEvents, PressEvents, RefObject} from '@react-types/shared';
+import {DOMProps, FocusStrategy, HoverEvents, KeyboardEvents, PressEvents, RefObject} from '@react-types-nutrient/shared';
 import React, {HTMLAttributes, useContext} from 'react';
 import {RootMenuTriggerState} from '@react-stately/menu';
 import {TreeState} from '@react-stately/tree';

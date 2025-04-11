@@ -24,11 +24,11 @@ import {field, getAllowedOverrides, StyleProps} from './style-utils' with {type:
 import {FieldGroup, FieldLabel, HelpText, Input} from './Field';
 import {fontRelative, style} from '../style' with {type: 'macro'};
 import {FormContext, useFormProps} from './Form';
-import {HelpTextProps, SpectrumLabelableProps} from '@react-types/shared';
+import {HelpTextProps, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {IconContext} from './Icon';
 import {raw} from '../style/style-macro' with {type: 'macro'};
 import SearchIcon from '../s2wf-icons/S2_Icon_Search_20_N.svg';
-import {TextFieldRef} from '@react-types/textfield';
+import {TextFieldRef} from '@react-types-nutrient/textfield';
 import {useSpectrumContextProps} from './useSpectrumContextProps';
 
 export interface SearchFieldProps extends Omit<AriaSearchFieldProps, 'className' | 'style' | 'children'>, StyleProps, SpectrumLabelableProps, HelpTextProps {

@@ -11,10 +11,10 @@
  */
 
 import {classNames, dimensionValue, useDOMRef, useSlotProps, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import React, {forwardRef} from 'react';
-import {SpectrumAvatarProps} from '@react-types/avatar';
+import {SpectrumAvatarProps} from '@react-types-nutrient/avatar';
 import styles from '@adobe/spectrum-css-temp/components/avatar/vars.css';
 import {useProviderProps} from '@react-spectrum/provider';
 

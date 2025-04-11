@@ -23,7 +23,7 @@ import {Item, Picker, Section} from '../';
 import {Meta} from '@storybook/react';
 import Paste from '@spectrum-icons/workflow/Paste';
 import React from 'react';
-import {SpectrumPickerProps} from '@react-types/select';
+import {SpectrumPickerProps} from '@react-types-nutrient/select';
 
 const meta: Meta<SpectrumPickerProps<object>> = {
   title: 'Picker',

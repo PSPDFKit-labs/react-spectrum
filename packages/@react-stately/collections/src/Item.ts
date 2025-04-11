@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {ItemElement, ItemProps} from '@react-types/shared';
+import {ItemElement, ItemProps} from '@react-types-nutrient/shared';
 import {PartialNode} from './types';
 import React, {JSX, ReactElement} from 'react';
 

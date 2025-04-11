@@ -13,7 +13,7 @@
 import {Link} from '../';
 import {Meta} from '@storybook/react';
 import React from 'react';
-import {SpectrumLinkProps} from '@react-types/link';
+import {SpectrumLinkProps} from '@react-types-nutrient/link';
 
 const meta: Meta<SpectrumLinkProps> = {
   title: 'Link',

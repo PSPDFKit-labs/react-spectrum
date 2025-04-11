@@ -13,7 +13,7 @@
 import {ArgTypes, ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import {Link} from '../';
 import React from 'react';
-import {SpectrumLinkProps} from '@react-types/link';
+import {SpectrumLinkProps} from '@react-types-nutrient/link';
 
 type LinkStory = ComponentStoryObj<typeof Link>;
 

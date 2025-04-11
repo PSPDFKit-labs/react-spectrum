@@ -1,8 +1,8 @@
-import {Color} from '@react-types/color';
+import {Color} from '@react-types-nutrient/color';
 import {parseColor} from './Color';
 import {useColor} from './useColor';
 import {useControlledState} from '@react-stately/utils';
-import {ValueBase} from '@react-types/shared';
+import {ValueBase} from '@react-types-nutrient/shared';
 
 export interface ColorPickerProps extends ValueBase<string | Color, Color> {}
 

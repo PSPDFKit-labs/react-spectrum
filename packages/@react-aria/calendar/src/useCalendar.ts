@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaCalendarProps, DateValue} from '@react-types/calendar';
+import {AriaCalendarProps, DateValue} from '@react-types-nutrient/calendar';
 import {CalendarAria, useCalendarBase} from './useCalendarBase';
 import {CalendarState} from '@react-stately/calendar';
 

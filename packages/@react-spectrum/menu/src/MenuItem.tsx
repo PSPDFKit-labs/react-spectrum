@@ -14,7 +14,7 @@ import CheckmarkMedium from '@spectrum-icons/ui/CheckmarkMedium';
 import ChevronLeft from '@spectrum-icons/workflow/ChevronLeft';
 import ChevronRight from '@spectrum-icons/workflow/ChevronRight';
 import {classNames, ClearSlots, SlotProvider} from '@react-spectrum/utils';
-import {DOMAttributes, Node} from '@react-types/shared';
+import {DOMAttributes, Node} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {Grid} from '@react-spectrum/layout';
 import InfoOutline from '@spectrum-icons/workflow/InfoOutline';

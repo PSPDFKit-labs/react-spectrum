@@ -10,12 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
-import {DropTarget, ItemDropTarget, Key} from '@react-types/shared';
+import {DropTarget, ItemDropTarget, Key} from '@react-types-nutrient/shared';
 import {getChildNodes} from '@react-stately/collections';
-import {GridNode} from '@react-types/grid';
+import {GridNode} from '@react-types-nutrient/grid';
 import {InvalidationContext, LayoutInfo, Point, Rect, Size} from '@react-stately/virtualizer';
 import {LayoutNode, ListLayout, ListLayoutOptions} from './ListLayout';
-import {TableCollection} from '@react-types/table';
+import {TableCollection} from '@react-types-nutrient/table';
 import {TableColumnLayout} from '@react-stately/table';
 
 export interface TableLayoutProps extends ListLayoutOptions {

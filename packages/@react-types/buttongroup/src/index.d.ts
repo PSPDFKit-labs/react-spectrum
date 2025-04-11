@@ -11,7 +11,7 @@
  */
 
 
-import {Alignment, DOMProps, Orientation, StyleProps} from '@react-types/shared';
+import {Alignment, DOMProps, Orientation, StyleProps} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 export interface SpectrumButtonGroupProps extends DOMProps, StyleProps {

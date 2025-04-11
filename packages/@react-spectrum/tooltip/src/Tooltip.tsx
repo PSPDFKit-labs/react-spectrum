@@ -12,11 +12,11 @@
 
 import AlertSmall from '@spectrum-icons/ui/AlertSmall';
 import {classNames, createDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import InfoSmall from '@spectrum-icons/ui/InfoSmall';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {useContext, useImperativeHandle, useRef} from 'react';
-import {SpectrumTooltipProps} from '@react-types/tooltip';
+import {SpectrumTooltipProps} from '@react-types-nutrient/tooltip';
 import styles from '@adobe/spectrum-css-temp/components/tooltip/vars.css';
 import SuccessSmall from '@spectrum-icons/ui/SuccessSmall';
 import {TooltipContext} from './context';

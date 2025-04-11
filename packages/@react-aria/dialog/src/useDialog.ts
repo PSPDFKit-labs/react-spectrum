@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaDialogProps} from '@react-types/dialog';
-import {DOMAttributes, FocusableElement, RefObject} from '@react-types/shared';
+import {AriaDialogProps} from '@react-types-nutrient/dialog';
+import {DOMAttributes, FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {filterDOMProps, useSlotId} from '@react-aria-nutrient/utils';
 import {focusSafely} from '@react-aria-nutrient/interactions';
 import {useEffect, useRef} from 'react';

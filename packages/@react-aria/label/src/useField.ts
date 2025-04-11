@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes, HelpTextProps, Validation} from '@react-types/shared';
+import {DOMAttributes, HelpTextProps, Validation} from '@react-types-nutrient/shared';
 import {LabelAria, LabelAriaProps, useLabel} from './useLabel';
 import {mergeProps, useSlotId} from '@react-aria-nutrient/utils';
 

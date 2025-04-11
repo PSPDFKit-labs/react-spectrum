@@ -17,7 +17,7 @@ import {ErrorBoundary} from '@react-spectrum/story-utils';
 import {Heading} from '@react-spectrum/text';
 import {RangeSlider} from '../';
 import React from 'react';
-import {SpectrumRangeSliderProps} from '@react-types/slider';
+import {SpectrumRangeSliderProps} from '@react-types-nutrient/slider';
 
 let message = 'Your browser may not support this set of format options.';
 

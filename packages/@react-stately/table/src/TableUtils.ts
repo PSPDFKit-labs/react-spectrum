@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {ColumnSize} from '@react-types/table';
-import {Key} from '@react-types/shared';
+import {ColumnSize} from '@react-types-nutrient/table';
+import {Key} from '@react-types-nutrient/shared';
 
 // numbers and percents are considered static. *fr units or a lack of units are considered dynamic.
 export function isStatic(width?: ColumnSize | null): boolean {

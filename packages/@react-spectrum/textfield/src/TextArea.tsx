@@ -12,7 +12,7 @@
 
 import {chain, useLayoutEffect} from '@react-aria-nutrient/utils';
 import React, {Ref, useCallback, useRef} from 'react';
-import {SpectrumTextAreaProps, SpectrumTextFieldBaseProps, TextFieldRef} from '@react-types/textfield';
+import {SpectrumTextAreaProps, SpectrumTextFieldBaseProps, TextFieldRef} from '@react-types-nutrient/textfield';
 import {TextFieldBase} from './TextFieldBase';
 import {useControlledState} from '@react-stately/utils';
 import {useFormProps} from '@react-spectrum/form';

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, Orientation, RefObject} from '@react-types/shared';
+import {AriaLabelingProps, Orientation, RefObject} from '@react-types-nutrient/shared';
 import {createFocusManager} from '@react-aria-nutrient/focus';
 import {filterDOMProps, useLayoutEffect} from '@react-aria-nutrient/utils';
 import {HTMLAttributes, KeyboardEventHandler, useRef, useState} from 'react';

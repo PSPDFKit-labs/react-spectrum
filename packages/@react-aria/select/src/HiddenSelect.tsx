@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {FocusableElement, RefObject} from '@react-types/shared';
+import {FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import React, {ReactNode, useRef} from 'react';
 import {selectData} from './useSelect';
 import {SelectState} from '@react-stately/select';

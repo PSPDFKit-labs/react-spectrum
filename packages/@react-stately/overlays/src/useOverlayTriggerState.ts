@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {OverlayTriggerProps} from '@react-types/overlays';
+import {OverlayTriggerProps} from '@react-types-nutrient/overlays';
 import {useCallback} from 'react';
 import {useControlledState} from '@react-stately/utils';
 

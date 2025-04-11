@@ -12,7 +12,7 @@
 
 import * as DragManager from './DragManager';
 import {DroppableCollectionState} from '@react-stately/dnd';
-import {DropTarget, Key, RefObject} from '@react-types/shared';
+import {DropTarget, Key, RefObject} from '@react-types-nutrient/shared';
 import {getDroppableCollectionId} from './utils';
 import {HTMLAttributes} from 'react';
 // @ts-ignore

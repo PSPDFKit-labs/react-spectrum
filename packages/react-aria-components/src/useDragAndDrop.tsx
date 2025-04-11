@@ -31,7 +31,7 @@ import {
   useDroppableCollection,
   useDroppableItem
 } from '@react-aria-nutrient/react-aria';
-import {DraggableCollectionProps, DroppableCollectionProps, Key, RefObject} from '@react-types/shared';
+import {DraggableCollectionProps, DroppableCollectionProps, Key, RefObject} from '@react-types-nutrient/shared';
 import {
   DraggableCollectionState,
   DraggableCollectionStateOptions,

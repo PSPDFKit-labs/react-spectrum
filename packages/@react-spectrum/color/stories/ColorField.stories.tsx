@@ -11,7 +11,7 @@
  */
 
 import {action} from '@storybook/addon-actions';
-import {Color, SpectrumColorFieldProps} from '@react-types/color';
+import {Color, SpectrumColorFieldProps} from '@react-types-nutrient/color';
 import {ColorField} from '../';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import {Content, View} from '@react-spectrum/view';

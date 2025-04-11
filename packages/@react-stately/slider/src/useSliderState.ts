@@ -11,8 +11,8 @@
  */
 
 import {clamp, snapValueToStep, useControlledState} from '@react-stately/utils';
-import {Orientation} from '@react-types/shared';
-import {SliderProps} from '@react-types/slider';
+import {Orientation} from '@react-types-nutrient/shared';
+import {SliderProps} from '@react-types-nutrient/slider';
 import {useCallback, useMemo, useRef, useState} from 'react';
 
 export interface SliderState {

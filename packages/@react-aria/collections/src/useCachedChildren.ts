@@ -11,7 +11,7 @@
  */
 
 import {cloneElement, ReactElement, ReactNode, useMemo} from 'react';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 
 export interface CachedChildrenOptions<T> {
   /** Item objects in the collection. */

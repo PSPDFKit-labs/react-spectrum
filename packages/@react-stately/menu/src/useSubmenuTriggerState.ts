@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {FocusStrategy, Key} from '@react-types/shared';
+import {FocusStrategy, Key} from '@react-types-nutrient/shared';
 import type {OverlayTriggerState} from '@react-stately/overlays';
 import {RootMenuTriggerState} from './useMenuTriggerState';
 import {useCallback, useMemo, useState} from 'react';

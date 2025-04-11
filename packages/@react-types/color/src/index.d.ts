@@ -29,9 +29,9 @@ import {
   TextInputDOMProps,
   Validation,
   ValueBase
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
-import {SliderProps} from '@react-types/slider';
+import {SliderProps} from '@react-types-nutrient/slider';
 
 /** A list of supported color formats. */
 export type ColorFormat = 'hex' | 'hexa' | 'rgb' | 'rgba' | 'hsl' | 'hsla' | 'hsb' | 'hsba';

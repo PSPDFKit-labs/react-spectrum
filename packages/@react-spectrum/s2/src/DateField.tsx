@@ -20,7 +20,7 @@ import {
   Label,
   Text
 } from 'react-aria-components';
-import {HelpTextProps} from '@react-types/shared';
+import {HelpTextProps} from '@react-types-nutrient/shared';
 import {ReactNode} from 'react';
 
 

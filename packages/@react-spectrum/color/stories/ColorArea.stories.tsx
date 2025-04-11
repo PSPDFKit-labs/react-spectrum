@@ -16,7 +16,7 @@ import {ComponentStoryObj, Meta, StoryFn} from '@storybook/react';
 import {Flex, Grid, useLocale, View} from '@adobe/react-spectrum';
 import {parseColor} from '@react-stately/color';
 import React, {useState} from 'react';
-import {SpectrumColorAreaProps} from '@react-types/color';
+import {SpectrumColorAreaProps} from '@react-types-nutrient/color';
 
 const meta: Meta<SpectrumColorAreaProps> = {
   title: 'ColorArea',

@@ -13,5 +13,5 @@ export {useButton} from './useButton';
 export {useToggleButton} from './useToggleButton';
 export {useToggleButtonGroup, useToggleButtonGroupItem} from './useToggleButtonGroup';
 export type {AriaButtonOptions, ButtonAria} from './useButton';
-export type {AriaButtonProps, AriaToggleButtonProps} from '@react-types/button';
+export type {AriaButtonProps, AriaToggleButtonProps} from '@react-types-nutrient/button';
 export type {AriaToggleButtonGroupProps, ToggleButtonGroupAria, AriaToggleButtonGroupItemProps} from './useToggleButtonGroup';

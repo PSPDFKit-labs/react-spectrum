@@ -13,7 +13,7 @@
 import {ButtonGroupContext} from './ButtonGroup';
 import {composeRenderProps, OverlayTriggerStateContext, Provider, Dialog as RACDialog, DialogProps as RACDialogProps} from 'react-aria-components';
 import {ContentContext, HeaderContext, HeadingContext} from './Content';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {forwardRef} from 'react';
 import {Modal} from './Modal';
 import {style} from '../style' with {type: 'macro'};

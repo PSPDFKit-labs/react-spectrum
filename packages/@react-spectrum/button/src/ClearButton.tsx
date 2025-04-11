@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonElementTypeProps, ButtonProps} from '@react-types/button';
+import {AriaButtonElementTypeProps, ButtonProps} from '@react-types-nutrient/button';
 import {classNames, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
 import CrossSmall from '@spectrum-icons/ui/CrossSmall';
-import {DOMProps, FocusableRef, StyleProps} from '@react-types/shared';
+import {DOMProps, FocusableRef, StyleProps} from '@react-types-nutrient/shared';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {ElementType} from 'react';

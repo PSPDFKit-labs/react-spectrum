@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaSliderProps} from '@react-types/slider';
+import {AriaSliderProps} from '@react-types-nutrient/slider';
 import {clamp, mergeProps, useGlobalListeners} from '@react-aria-nutrient/utils';
-import {DOMAttributes, RefObject} from '@react-types/shared';
+import {DOMAttributes, RefObject} from '@react-types-nutrient/shared';
 import {getSliderThumbId, sliderData} from './utils';
 import React, {LabelHTMLAttributes, OutputHTMLAttributes, useRef} from 'react';
 import {setInteractionModality, useMove} from '@react-aria-nutrient/interactions';

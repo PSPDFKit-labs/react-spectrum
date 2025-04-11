@@ -12,7 +12,7 @@
 
 import {AriaPopoverProps, DismissButton, PopoverAria, usePopover} from '@react-aria-nutrient/overlays';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef, RefObject, StyleProps} from '@react-types/shared';
+import {DOMRef, RefObject, StyleProps} from '@react-types-nutrient/shared';
 import {FocusWithinProps, useFocusWithin} from '@react-aria-nutrient/interactions';
 import {mergeProps, useLayoutEffect, useObjectRef} from '@react-aria-nutrient/utils';
 import {Overlay} from './Overlay';

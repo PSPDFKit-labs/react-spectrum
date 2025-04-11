@@ -11,8 +11,8 @@
  */
 export {useSlider} from './useSlider';
 export {useSliderThumb} from './useSliderThumb';
-export type {AriaSliderProps} from '@react-types/slider';
+export type {AriaSliderProps} from '@react-types-nutrient/slider';
 export type {SliderAria} from './useSlider';
 export type {AriaSliderThumbOptions, SliderThumbAria} from './useSliderThumb';
-export type {AriaSliderThumbProps} from '@react-types/slider';
-export type {Orientation} from '@react-types/shared';
+export type {AriaSliderThumbProps} from '@react-types-nutrient/slider';
+export type {Orientation} from '@react-types-nutrient/shared';

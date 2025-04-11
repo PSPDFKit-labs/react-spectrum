@@ -15,7 +15,7 @@
 // NOTICE file in the root directory of this source tree.
 // See https://github.com/facebook/react/tree/cc7c1aece46a6b69b41958d731e0fd27c94bfc6c/packages/react-interactions
 
-import {DOMAttributes, HoverEvents} from '@react-types/shared';
+import {DOMAttributes, HoverEvents} from '@react-types-nutrient/shared';
 import {getOwnerDocument, nodeContains, useGlobalListeners} from '@react-aria-nutrient/utils';
 import {useEffect, useMemo, useRef, useState} from 'react';
 

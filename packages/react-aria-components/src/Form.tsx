@@ -13,7 +13,7 @@
 import {ContextValue, DOMProps, useContextProps} from './utils';
 import {FormValidationContext} from 'react-stately';
 import React, {createContext, ForwardedRef, forwardRef} from 'react';
-import {FormProps as SharedFormProps} from '@react-types/form';
+import {FormProps as SharedFormProps} from '@react-types-nutrient/form';
 
 export interface FormProps extends SharedFormProps, DOMProps {
   /**

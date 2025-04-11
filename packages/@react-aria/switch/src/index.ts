@@ -11,5 +11,5 @@
  */
 export {useSwitch} from './useSwitch';
 
-export type {AriaSwitchProps} from '@react-types/switch';
+export type {AriaSwitchProps} from '@react-types-nutrient/switch';
 export type {SwitchAria} from './useSwitch';

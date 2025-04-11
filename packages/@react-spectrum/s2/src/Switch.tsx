@@ -19,7 +19,7 @@ import {
 import {baseColor, focusRing, fontRelative, style} from '../style' with {type: 'macro'};
 import {CenterBaseline} from './CenterBaseline';
 import {createContext, forwardRef, ReactNode, useContext, useRef} from 'react';
-import {FocusableRef, FocusableRefValue} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue} from '@react-types-nutrient/shared';
 import {FormContext, useFormProps} from './Form';
 import {getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};
 import {pressScale} from './pressScale';

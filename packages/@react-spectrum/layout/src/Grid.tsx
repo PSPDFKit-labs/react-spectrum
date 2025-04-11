@@ -18,9 +18,9 @@ import {
   useDOMRef,
   useStyleProps
 } from '@react-spectrum/utils';
-import {DimensionValue, DOMRef} from '@react-types/shared';
+import {DimensionValue, DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
-import {GridProps} from '@react-types/layout';
+import {GridProps} from '@react-types-nutrient/layout';
 import React, {forwardRef} from 'react';
 
 const gridStyleProps: StyleHandlers = {

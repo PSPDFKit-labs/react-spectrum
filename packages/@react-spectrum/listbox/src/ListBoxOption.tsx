@@ -17,7 +17,7 @@ import {Grid} from '@react-spectrum/layout';
 import {isFocusVisible, useHover} from '@react-aria-nutrient/interactions';
 import {ListBoxContext} from './ListBoxContext';
 import {mergeProps} from '@react-aria-nutrient/utils';
-import {Node} from '@react-types/shared';
+import {Node} from '@react-types-nutrient/shared';
 import React, {ReactNode, useContext, useRef} from 'react';
 import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
 import {Text} from '@react-spectrum/text';

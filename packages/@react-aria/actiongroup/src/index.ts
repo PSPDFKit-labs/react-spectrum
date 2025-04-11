@@ -12,5 +12,5 @@
 export type {ActionGroupAria} from './useActionGroup';
 export {useActionGroup} from './useActionGroup';
 export {useActionGroupItem} from './useActionGroupItem';
-export type {AriaActionGroupProps} from '@react-types/actiongroup';
+export type {AriaActionGroupProps} from '@react-types-nutrient/actiongroup';
 export type {ActionGroupItemAria, AriaActionGroupItemProps} from './useActionGroupItem';

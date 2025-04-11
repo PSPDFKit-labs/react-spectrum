@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaRadioGroupProps} from '@react-types/radio';
-import {DOMAttributes, ValidationResult} from '@react-types/shared';
+import {AriaRadioGroupProps} from '@react-types-nutrient/radio';
+import {DOMAttributes, ValidationResult} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
 import {getFocusableTreeWalker} from '@react-aria-nutrient/focus';
 import {radioGroupData} from './utils';

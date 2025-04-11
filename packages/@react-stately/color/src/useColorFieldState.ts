@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Color, ColorFieldProps} from '@react-types/color';
+import {Color, ColorFieldProps} from '@react-types-nutrient/color';
 import {FormValidationState, useFormValidationState} from '@react-stately/form';
 import {parseColor} from './Color';
 import {useColor} from './useColor';

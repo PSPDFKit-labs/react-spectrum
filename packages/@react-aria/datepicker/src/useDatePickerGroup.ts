@@ -1,6 +1,6 @@
 import {createFocusManager, getFocusableTreeWalker} from '@react-aria-nutrient/focus';
 import {DateFieldState, DatePickerState, DateRangePickerState} from '@react-stately/datepicker';
-import {DOMAttributes, FocusableElement, KeyboardEvent, RefObject} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, KeyboardEvent, RefObject} from '@react-types-nutrient/shared';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import {useLocale} from '@react-aria-nutrient/i18n';
 import {useMemo} from 'react';

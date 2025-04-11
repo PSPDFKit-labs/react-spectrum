@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DisabledBehavior, FocusStrategy, Key, MultipleSelection, SelectionBehavior, SelectionMode} from '@react-types/shared';
+import {DisabledBehavior, FocusStrategy, Key, MultipleSelection, SelectionBehavior, SelectionMode} from '@react-types-nutrient/shared';
 import {MultipleSelectionState} from './types';
 import {Selection} from './Selection';
 import {useControlledState} from '@react-stately/utils';

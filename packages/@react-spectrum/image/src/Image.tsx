@@ -11,10 +11,10 @@
  */
 
 import {classNames, useDOMRef, useSlotProps, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import React from 'react';
-import {SpectrumImageProps} from '@react-types/image';
+import {SpectrumImageProps} from '@react-types-nutrient/image';
 import styles from '@adobe/spectrum-css-temp/components/image/vars.css';
 import {useProviderProps} from '@react-spectrum/provider';
 

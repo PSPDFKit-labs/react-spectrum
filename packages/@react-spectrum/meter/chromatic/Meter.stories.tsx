@@ -12,7 +12,7 @@
 
 import {Meta} from '@storybook/react';
 import {Meter} from '../';
-import {SpectrumMeterProps} from '@react-types/meter';
+import {SpectrumMeterProps} from '@react-types-nutrient/meter';
 
 const meta: Meta<SpectrumMeterProps> = {
   title: 'Meter',

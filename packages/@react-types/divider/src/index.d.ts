@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, Orientation, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, Orientation, StyleProps} from '@react-types-nutrient/shared';
 
 export interface SpectrumDividerProps extends DOMProps, AriaLabelingProps, StyleProps {
   /**

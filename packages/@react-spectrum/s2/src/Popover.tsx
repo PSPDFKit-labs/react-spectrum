@@ -22,7 +22,7 @@ import {
 } from 'react-aria-components';
 import {colorScheme, getAllowedOverrides, StyleProps, UnsafeStyles} from './style-utils' with {type: 'macro'};
 import {ColorSchemeContext} from './Provider';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {forwardRef, MutableRefObject, useCallback, useContext} from 'react';
 import {mergeStyles} from '../style/runtime';
 import {style} from '../style' with {type: 'macro'};

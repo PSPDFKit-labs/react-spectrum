@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {CollectionStateBase, FocusStrategy} from '@react-types/shared';
+import {CollectionStateBase, FocusStrategy} from '@react-types-nutrient/shared';
 import {FormValidationState, useFormValidationState} from '@react-stately/form';
 import {OverlayTriggerState, useOverlayTriggerState} from '@react-stately/overlays';
-import {SelectProps} from '@react-types/select';
+import {SelectProps} from '@react-types-nutrient/select';
 import {SingleSelectListState, useSingleSelectListState} from '@react-stately/list';
 import {useState} from 'react';
 

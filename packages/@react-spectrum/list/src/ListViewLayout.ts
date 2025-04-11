@@ -11,7 +11,7 @@
  */
 import {InvalidationContext, LayoutInfo, Rect} from '@react-stately/virtualizer';
 import {LayoutNode, ListLayout, ListLayoutOptions} from '@react-stately/layout';
-import {Node} from '@react-types/shared';
+import {Node} from '@react-types-nutrient/shared';
 
 interface ListViewLayoutProps extends ListLayoutOptions {
   isLoading?: boolean

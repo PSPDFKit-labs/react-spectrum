@@ -12,10 +12,10 @@
 import {createDOMRef} from '@react-spectrum/utils';
 import {createFocusManager} from '@react-aria-nutrient/focus';
 import {DateFormatter, useDateFormatter, useLocale} from '@react-aria-nutrient/i18n';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {FormatterOptions} from '@react-stately/datepicker';
 import React, {ReactNode, useImperativeHandle, useMemo, useRef, useState} from 'react';
-import {SpectrumDatePickerBase} from '@react-types/datepicker';
+import {SpectrumDatePickerBase} from '@react-types-nutrient/datepicker';
 import {useDisplayNames} from '@react-aria-nutrient/datepicker';
 import {useLayoutEffect} from '@react-aria-nutrient/utils';
 import {useProvider} from '@react-spectrum/provider';

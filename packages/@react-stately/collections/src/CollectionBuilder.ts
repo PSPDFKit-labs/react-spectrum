@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {CollectionBase, CollectionElement, Key, Node} from '@react-types/shared';
+import {CollectionBase, CollectionElement, Key, Node} from '@react-types-nutrient/shared';
 import {PartialNode} from './types';
 import React, {ReactElement} from 'react';
 

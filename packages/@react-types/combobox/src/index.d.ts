@@ -30,7 +30,7 @@ import {
   StyleProps,
   TextInputBase,
   Validation
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 
 export type MenuTriggerAction = 'focus' | 'input' | 'manual';
 

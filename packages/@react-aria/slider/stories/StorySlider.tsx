@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaSliderProps} from '@react-types/slider';
+import {AriaSliderProps} from '@react-types-nutrient/slider';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import React from 'react';
 import styles from './story-slider.css';

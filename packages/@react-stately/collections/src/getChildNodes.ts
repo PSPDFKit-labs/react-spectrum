@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import type {Collection, Node} from '@react-types/shared';
+import type {Collection, Node} from '@react-types-nutrient/shared';
 
 export function getChildNodes<T>(node: Node<T>, collection: Collection<Node<T>>): Iterable<Node<T>> {
   // New API: call collection.getChildren with the node key.

@@ -12,7 +12,7 @@
 
 import {ContextValue, SlotProps} from 'react-aria-components';
 import {createContext, forwardRef} from 'react';
-import {DOMProps, DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMProps, DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {getAllowedOverrides, StylesPropWithoutWidth, UnsafeStyles} from './style-utils' with {type: 'macro'};
 import {Image} from './Image';

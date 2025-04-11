@@ -12,11 +12,11 @@
 
 import {clamp} from '@react-aria-nutrient/utils';
 import {classNames} from '@react-spectrum/utils';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import React, {ReactNode} from 'react';
 import {SliderBase, SliderBaseChildArguments, SliderBaseProps} from './SliderBase';
 import {SliderThumb} from './SliderThumb';
-import {SpectrumSliderProps} from '@react-types/slider';
+import {SpectrumSliderProps} from '@react-types-nutrient/slider';
 import styles from '@adobe/spectrum-css-temp/components/slider/vars.css';
 import {useLocale} from '@react-aria-nutrient/i18n';
 

@@ -11,14 +11,14 @@
  */
 
 import AlertMedium from '@spectrum-icons/ui/AlertMedium';
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import CheckmarkMedium from '@spectrum-icons/ui/CheckmarkMedium';
 import {classNames, useFocusableRef} from '@react-spectrum/utils';
 import {ClearButton} from '@react-spectrum/button';
 import {ComboBoxState, useComboBoxState} from '@react-stately/combobox';
 import {DismissButton, useOverlayTrigger} from '@react-aria-nutrient/overlays';
 import {Field} from '@react-spectrum/label';
-import {FocusableRef, ValidationState} from '@react-types/shared';
+import {FocusableRef, ValidationState} from '@react-types-nutrient/shared';
 import {focusSafely, setInteractionModality, useHover} from '@react-aria-nutrient/interactions';
 import {FocusScope, useFocusRing} from '@react-aria-nutrient/focus';
 // @ts-ignore
@@ -39,7 +39,7 @@ import React, {
 } from 'react';
 import searchAutocompleteStyles from './searchautocomplete.css';
 import searchStyles from '@adobe/spectrum-css-temp/components/search/vars.css';
-import {SpectrumSearchAutocompleteProps} from '@react-types/autocomplete';
+import {SpectrumSearchAutocompleteProps} from '@react-types-nutrient/autocomplete';
 import styles from '@adobe/spectrum-css-temp/components/inputgroup/vars.css';
 import {TextFieldBase} from '@react-spectrum/textfield';
 import textfieldStyles from '@adobe/spectrum-css-temp/components/textfield/vars.css';

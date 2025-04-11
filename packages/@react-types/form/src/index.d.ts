@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, SpectrumLabelableProps, StyleProps, ValidationErrors, ValidationState} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, SpectrumLabelableProps, StyleProps, ValidationErrors, ValidationState} from '@react-types-nutrient/shared';
 import {FormEvent, FormHTMLAttributes, ReactElement} from 'react';
 
 export interface FormProps extends AriaLabelingProps {

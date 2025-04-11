@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes, FocusableElement, RefObject} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {getColumnHeaderId} from './utils';
-import {GridNode} from '@react-types/grid';
+import {GridNode} from '@react-types-nutrient/grid';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {isAndroid, mergeProps, useDescription} from '@react-aria-nutrient/utils';

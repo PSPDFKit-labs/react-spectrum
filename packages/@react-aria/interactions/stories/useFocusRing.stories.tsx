@@ -13,7 +13,7 @@
 import {addWindowFocusTracking} from '../src';
 import {Cell, Column, Row, TableBody, TableHeader, TableView} from '@react-spectrum/table';
 import Frame from 'react-frame-component';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {useEffect, useRef, useState} from 'react';
 import {SearchField} from '@react-spectrum/searchfield';

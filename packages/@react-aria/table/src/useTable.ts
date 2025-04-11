@@ -15,7 +15,7 @@ import {GridAria, GridProps, useGrid} from '@react-aria-nutrient/grid';
 import {gridIds} from './utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {Key, LayoutDelegate, Rect, RefObject, Size} from '@react-types/shared';
+import {Key, LayoutDelegate, Rect, RefObject, Size} from '@react-types-nutrient/shared';
 import {mergeProps, useDescription, useId, useUpdateEffect} from '@react-aria-nutrient/utils';
 import {TableKeyboardDelegate} from './TableKeyboardDelegate';
 import {tableNestedRows} from '@react-stately/flags';

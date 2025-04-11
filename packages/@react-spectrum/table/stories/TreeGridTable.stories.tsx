@@ -18,7 +18,7 @@ import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import defaultConfig, {columns, EmptyStateTable, TableStory} from './Table.stories';
 import {enableTableNestedRows} from '@react-stately/flags';
 import {Flex} from '@react-spectrum/layout';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import React, {useState} from 'react';
 
 enableTableNestedRows();

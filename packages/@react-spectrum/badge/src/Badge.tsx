@@ -11,10 +11,10 @@
  */
 
 import {classNames, SlotProvider, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import React, {forwardRef} from 'react';
-import {SpectrumBadgeProps} from '@react-types/badge';
+import {SpectrumBadgeProps} from '@react-types-nutrient/badge';
 import styles from '@adobe/spectrum-css-temp/components/badge/vars.css';
 import {Text} from '@react-spectrum/text';
 import {useProviderProps} from '@react-spectrum/provider';

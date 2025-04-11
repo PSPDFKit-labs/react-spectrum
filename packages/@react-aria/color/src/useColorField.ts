@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaColorFieldProps} from '@react-types/color';
+import {AriaColorFieldProps} from '@react-types-nutrient/color';
 import {ColorFieldState} from '@react-stately/color';
-import {DOMAttributes, ValidationResult} from '@react-types/shared';
+import {DOMAttributes, ValidationResult} from '@react-types-nutrient/shared';
 import {
   InputHTMLAttributes,
   LabelHTMLAttributes,

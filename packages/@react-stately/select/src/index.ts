@@ -12,5 +12,5 @@
 
 export {useSelectState} from './useSelectState';
 
-export type {SelectProps} from '@react-types/select';
+export type {SelectProps} from '@react-types-nutrient/select';
 export type {SelectState, SelectStateOptions} from './useSelectState';

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaProgressBarBaseProps, ProgressBarBaseProps, SpectrumProgressBarBaseProps} from '@react-types/progress';
+import {AriaProgressBarBaseProps, ProgressBarBaseProps, SpectrumProgressBarBaseProps} from '@react-types-nutrient/progress';
 
 export type MeterProps = ProgressBarBaseProps;
 export interface AriaMeterProps extends AriaProgressBarBaseProps {}

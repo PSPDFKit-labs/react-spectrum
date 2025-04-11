@@ -51,7 +51,7 @@ export type {
   ItemDropTarget,
   RootDropTarget,
   TextDropItem
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 
 export {DIRECTORY_DRAG_TYPE} from './utils';
 export {useDrag} from './useDrag';

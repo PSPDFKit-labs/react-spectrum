@@ -13,4 +13,4 @@
 /// <reference types="css-module-types" />
 
 export {SearchWithin} from './SearchWithin';
-export type {SpectrumSearchWithinProps} from '@react-types/searchwithin';
+export type {SpectrumSearchWithinProps} from '@react-types-nutrient/searchwithin';

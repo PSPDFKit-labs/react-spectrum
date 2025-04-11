@@ -16,7 +16,7 @@ import {getScrollParent, isIOS, isMac, mergeProps, scrollIntoViewport, useEvent,
 import {hookData} from './useDateField';
 import {NumberParser} from '@internationalized/number';
 import React, {CSSProperties, useMemo, useRef} from 'react';
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {useDateFormatter, useFilter, useLocale} from '@react-aria-nutrient/i18n';
 import {useDisplayNames} from './useDisplayNames';
 import {useSpinButton} from '@react-aria-nutrient/spinbutton';

@@ -10,11 +10,11 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaCheckboxProps} from '@react-types/checkbox';
+import {AriaCheckboxProps} from '@react-types-nutrient/checkbox';
 import {getRowLabelledBy} from './utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {TableState} from '@react-stately/table';
 import {useGridSelectionCheckbox} from '@react-aria-nutrient/grid';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';

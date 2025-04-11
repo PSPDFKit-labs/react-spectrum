@@ -11,7 +11,7 @@
  */
 
 import {classNames, SlotProvider, unwrapDOMRef, useIsMobileDevice} from '@react-spectrum/utils';
-import {DOMRefValue, ItemProps, Key} from '@react-types/shared';
+import {DOMRefValue, ItemProps, Key} from '@react-types-nutrient/shared';
 import {FocusScope} from '@react-aria-nutrient/focus';
 import {getInteractionModality} from '@react-aria-nutrient/interactions';
 import helpStyles from '@adobe/spectrum-css-temp/components/contextualhelp/vars.css';

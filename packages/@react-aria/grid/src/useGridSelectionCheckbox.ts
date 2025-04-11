@@ -1,9 +1,9 @@
-import {AriaCheckboxProps} from '@react-types/checkbox';
-import {GridCollection} from '@react-types/grid';
+import {AriaCheckboxProps} from '@react-types-nutrient/checkbox';
+import {GridCollection} from '@react-types-nutrient/grid';
 import {GridState} from '@react-stately/grid';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {useId} from '@react-aria-nutrient/utils';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 

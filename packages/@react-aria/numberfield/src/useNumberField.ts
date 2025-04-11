@@ -10,10 +10,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
-import {AriaNumberFieldProps} from '@react-types/numberfield';
+import {AriaButtonProps} from '@react-types-nutrient/button';
+import {AriaNumberFieldProps} from '@react-types-nutrient/numberfield';
 import {chain, filterDOMProps, isAndroid, isIOS, isIPhone, mergeProps, useFormReset, useId} from '@react-aria-nutrient/utils';
-import {DOMAttributes, GroupDOMAttributes, TextInputDOMProps, ValidationResult} from '@react-types/shared';
+import {DOMAttributes, GroupDOMAttributes, TextInputDOMProps, ValidationResult} from '@react-types-nutrient/shared';
 import {
   InputHTMLAttributes,
   LabelHTMLAttributes,

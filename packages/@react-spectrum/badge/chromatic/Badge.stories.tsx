@@ -15,7 +15,7 @@ import CheckmarkCircle from '@spectrum-icons/workflow/src/CheckmarkCircle';
 import {ComponentMeta, ComponentStoryObj} from '@storybook/react';
 import {Flex} from '@react-spectrum/layout';
 import React from 'react';
-import {SpectrumBadgeProps} from '@react-types/badge';
+import {SpectrumBadgeProps} from '@react-types-nutrient/badge';
 import {Text} from '@react-spectrum/text';
 
 let variants: SpectrumBadgeProps['variant'][] =

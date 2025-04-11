@@ -11,7 +11,7 @@
  */
 
 import {disableTextSelection, restoreTextSelection}  from './textSelection';
-import {DOMAttributes, MoveEvents, PointerType} from '@react-types/shared';
+import {DOMAttributes, MoveEvents, PointerType} from '@react-types-nutrient/shared';
 import React, {useMemo, useRef} from 'react';
 import {useEffectEvent, useGlobalListeners} from '@react-aria-nutrient/utils';
 

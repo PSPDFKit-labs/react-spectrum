@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {ToggleStateOptions} from '@react-types/checkbox';
+import {ToggleStateOptions} from '@react-types-nutrient/checkbox';
 import {useControlledState} from '@react-stately/utils';
 
 export type {ToggleStateOptions};

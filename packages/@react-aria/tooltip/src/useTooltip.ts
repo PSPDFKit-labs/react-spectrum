@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaTooltipProps} from '@react-types/tooltip';
-import {DOMAttributes} from '@react-types/shared';
+import {AriaTooltipProps} from '@react-types-nutrient/tooltip';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {TooltipTriggerState} from '@react-stately/tooltip';
 import {useHover} from '@react-aria-nutrient/interactions';

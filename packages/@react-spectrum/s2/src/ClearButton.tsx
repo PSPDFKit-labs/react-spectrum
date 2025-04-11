@@ -16,7 +16,7 @@ import {
   ButtonRenderProps
 } from 'react-aria-components';
 import CrossIcon from '../ui-icons/Cross';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import {forwardRef} from 'react';
 import {style} from '../style' with {type: 'macro'};
 import {useFocusableRef} from '@react-spectrum/utils';

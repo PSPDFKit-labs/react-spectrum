@@ -25,7 +25,7 @@ import {composeStories} from '@storybook/react';
 import {enableTableNestedRows} from '@react-stately/flags';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
-import {Scale} from '@react-types/provider';
+import {Scale} from '@react-types-nutrient/provider';
 import {scrollIntoView} from '@react-aria-nutrient/utils';
 import * as stories from '../stories/TreeGridTable.stories';
 import {theme} from '@react-spectrum/theme-default';

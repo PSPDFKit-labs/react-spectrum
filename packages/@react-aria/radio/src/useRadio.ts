@@ -10,12 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaRadioProps} from '@react-types/radio';
+import {AriaRadioProps} from '@react-types-nutrient/radio';
 import {filterDOMProps, mergeProps, useFormReset} from '@react-aria-nutrient/utils';
 import {InputHTMLAttributes, LabelHTMLAttributes} from 'react';
 import {radioGroupData} from './utils';
 import {RadioGroupState} from '@react-stately/radio';
-import {RefObject} from '@react-types/shared';
+import {RefObject} from '@react-types-nutrient/shared';
 import {useFocusable, usePress} from '@react-aria-nutrient/interactions';
 import {useFormValidation} from '@react-aria-nutrient/form';
 

@@ -11,10 +11,10 @@
  */
 
 import {ClearSlots, useDOMRef, useSlotProps, useStyleProps, viewStyleProps} from '@react-spectrum/utils';
-import {ColorVersion, DOMRef} from '@react-types/shared';
+import {ColorVersion, DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import React, {forwardRef, ReactElement} from 'react';
-import {ViewProps} from '@react-types/view';
+import {ViewProps} from '@react-types-nutrient/view';
 
 /**
  * View is a general purpose container with no specific semantics that can be used for custom styling purposes.

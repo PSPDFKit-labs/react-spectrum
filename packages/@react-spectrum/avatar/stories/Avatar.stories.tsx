@@ -12,7 +12,7 @@
 
 import {Avatar} from '../';
 import {Meta} from '@storybook/react';
-import {SpectrumAvatarProps} from '@react-types/avatar';
+import {SpectrumAvatarProps} from '@react-types-nutrient/avatar';
 
 const SRC_URL_1 =
   'https://mir-s3-cdn-cf.behance.net/project_modules/disp/690bc6105945313.5f84bfc9de488.png';

@@ -12,12 +12,12 @@
 
 import Asterisk from '@spectrum-icons/ui/Asterisk';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import React from 'react';
-import {SpectrumLabelProps} from '@react-types/label';
+import {SpectrumLabelProps} from '@react-types-nutrient/label';
 import styles from '@adobe/spectrum-css-temp/components/fieldlabel/vars.css';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useProviderProps} from '@react-spectrum/provider';

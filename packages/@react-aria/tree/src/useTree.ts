@@ -15,7 +15,7 @@ import {
   DOMAttributes,
   KeyboardDelegate,
   RefObject
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {TreeState} from '@react-stately/tree';
 
 export interface TreeProps<T> extends GridListProps<T> {}

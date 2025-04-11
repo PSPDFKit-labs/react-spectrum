@@ -24,10 +24,10 @@ import {
   StyleProps,
   Validation,
   ValueBase
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {CalendarDate, CalendarDateTime, CalendarIdentifier, Calendar as ICalendar, Time, ZonedDateTime} from '@internationalized/date';
-import {OverlayTriggerProps} from '@react-types/overlays';
-import {PageBehavior} from '@react-types/calendar';
+import {OverlayTriggerProps} from '@react-types-nutrient/overlays';
+import {PageBehavior} from '@react-types-nutrient/calendar';
 
 export type DateValue = CalendarDate | CalendarDateTime | ZonedDateTime;
 type MappedDateValue<T> =

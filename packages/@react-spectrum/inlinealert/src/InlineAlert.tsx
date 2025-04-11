@@ -12,7 +12,7 @@
 
 import AlertMedium from '@spectrum-icons/ui/AlertMedium';
 import {classNames, SlotProvider, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMProps, DOMRef, StyleProps} from '@react-types/shared';
+import {DOMProps, DOMRef, StyleProps} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import {FocusRing} from '@react-aria-nutrient/focus';
 import {Grid} from '@react-spectrum/layout';

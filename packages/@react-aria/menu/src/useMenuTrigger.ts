@@ -10,14 +10,14 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import {AriaMenuOptions} from './useMenu';
-import {FocusableElement, RefObject} from '@react-types/shared';
+import {FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {focusWithoutScrolling, useId} from '@react-aria-nutrient/utils';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
 import {MenuTriggerState} from '@react-stately/menu';
-import {MenuTriggerType} from '@react-types/menu';
+import {MenuTriggerType} from '@react-types-nutrient/menu';
 import {PressProps, useLongPress} from '@react-aria-nutrient/interactions';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 import {useOverlayTrigger} from '@react-aria-nutrient/overlays';

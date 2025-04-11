@@ -3,7 +3,7 @@ import {action} from '@storybook/addon-actions';
 import {Cell, Column, Row, TableBody, TableHeader, TableView} from '../';
 import {chain} from '@react-aria-nutrient/utils';
 import {Flex} from '@react-spectrum/layout';
-import {ItemDropTarget, Key} from '@react-types/shared';
+import {ItemDropTarget, Key} from '@react-types-nutrient/shared';
 import React from 'react';
 import {Text} from '@react-spectrum/text';
 import {useDragAndDrop} from '@react-spectrum/dnd';

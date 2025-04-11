@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection as ICollection, Key, Node} from '@react-types/shared';
+import {Collection as ICollection, Key, Node} from '@react-types-nutrient/shared';
 import {ReactElement, ReactNode} from 'react';
 
 export type Mutable<T> = {

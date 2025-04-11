@@ -13,7 +13,7 @@
 import {Meta} from '@storybook/react';
 import {ProgressBar} from '../';
 import React, {CSSProperties} from 'react';
-import {SpectrumProgressBarProps} from '@react-types/progress';
+import {SpectrumProgressBarProps} from '@react-types-nutrient/progress';
 
 const meta: Meta<SpectrumProgressBarProps> = {
   title: 'ProgressBar',

@@ -11,10 +11,10 @@
  */
 
 import {classNames, SlotProvider, useFocusableRef, useStyleProps} from '@react-spectrum/utils';
-import {FocusableRef, RefObject} from '@react-types/shared';
+import {FocusableRef, RefObject} from '@react-types-nutrient/shared';
 import React, {CSSProperties, ReactNode, useRef} from 'react';
 import {SliderState, useSliderState} from '@react-stately/slider';
-import {SpectrumBarSliderBase} from '@react-types/slider';
+import {SpectrumBarSliderBase} from '@react-types-nutrient/slider';
 import styles from '@adobe/spectrum-css-temp/components/slider/vars.css';
 import {useNumberFormatter} from '@react-aria-nutrient/i18n';
 import {useProviderProps} from '@react-spectrum/provider';

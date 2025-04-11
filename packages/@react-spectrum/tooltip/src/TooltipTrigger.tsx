@@ -13,7 +13,7 @@
 import {FocusableProvider} from '@react-aria-nutrient/focus';
 import {Overlay} from '@react-spectrum/overlays';
 import React, {JSX, ReactElement, useRef, useState} from 'react';
-import {SpectrumTooltipTriggerProps} from '@react-types/tooltip';
+import {SpectrumTooltipTriggerProps} from '@react-types-nutrient/tooltip';
 import {TooltipContext} from './context';
 import {useLayoutEffect} from '@react-aria-nutrient/utils';
 import {useOverlayPosition} from '@react-aria-nutrient/overlays';

@@ -11,7 +11,7 @@
  */
 
 import {chain, filterDOMProps, isMac, isWebKit, mergeProps, useLinkProps, useSlotId} from '@react-aria-nutrient/utils';
-import {DOMAttributes, FocusableElement, Key, RefObject} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, Key, RefObject} from '@react-types-nutrient/shared';
 import {getItemCount} from '@react-stately/collections';
 import {getItemId, listData} from './utils';
 import {isFocusVisible, useHover} from '@react-aria-nutrient/interactions';

@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@react-stately/utils": "^3.10.5",
-    "@react-types/overlays": "^3.8.13",
+    "@react-types-nutrient/overlays": "^3.8.13",
     "@swc/helpers": "^0.5.0"
   },
   "peerDependencies": {

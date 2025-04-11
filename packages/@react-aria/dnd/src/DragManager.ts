@@ -12,7 +12,7 @@
 
 import {announce} from '@react-aria-nutrient/live-announcer';
 import {ariaHideOutside} from '@react-aria-nutrient/overlays';
-import {DragEndEvent, DragItem, DropActivateEvent, DropEnterEvent, DropEvent, DropExitEvent, DropItem, DropOperation, DropTarget as DroppableCollectionTarget, FocusableElement} from '@react-types/shared';
+import {DragEndEvent, DragItem, DropActivateEvent, DropEnterEvent, DropEvent, DropExitEvent, DropItem, DropOperation, DropTarget as DroppableCollectionTarget, FocusableElement} from '@react-types-nutrient/shared';
 import {getDragModality, getTypes} from './utils';
 import {isVirtualClick, isVirtualPointerEvent} from '@react-aria-nutrient/utils';
 import type {LocalizedStringFormatter} from '@internationalized/string';

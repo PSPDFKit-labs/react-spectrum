@@ -11,7 +11,7 @@
  */
 
 import {createContext, useContext, useEffect, useMemo, useRef, useState} from 'react';
-import {Validation, ValidationErrors, ValidationFunction, ValidationResult} from '@react-types/shared';
+import {Validation, ValidationErrors, ValidationFunction, ValidationResult} from '@react-types-nutrient/shared';
 
 export const VALID_VALIDITY_STATE: ValidityState = {
   badInput: false,

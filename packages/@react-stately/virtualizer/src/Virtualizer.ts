@@ -11,7 +11,7 @@
  */
 
 import {ChildView, ReusableView, RootView} from './ReusableView';
-import {Collection, Key} from '@react-types/shared';
+import {Collection, Key} from '@react-types-nutrient/shared';
 import {InvalidationContext, Mutable, VirtualizerDelegate, VirtualizerRenderOptions} from './types';
 import {isSetEqual} from './utils';
 import {Layout} from './Layout';

@@ -12,5 +12,5 @@
 
 export {useOverlayTriggerState} from './useOverlayTriggerState';
 
-export type {OverlayTriggerProps} from '@react-types/overlays';
+export type {OverlayTriggerProps} from '@react-types-nutrient/overlays';
 export type {OverlayTriggerState} from './useOverlayTriggerState';

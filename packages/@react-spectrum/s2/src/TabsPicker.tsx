@@ -40,7 +40,7 @@ import {fieldInput, StyleProps} from './style-utils' with {type: 'macro'};
 import {
   FieldLabel
 } from './Field';
-import {FocusableRef, FocusableRefValue, SpectrumLabelableProps} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {forwardRefType} from './types';
 import {HeaderContext, HeadingContext, Text, TextContext} from './Content';
 import {IconContext} from './Icon';

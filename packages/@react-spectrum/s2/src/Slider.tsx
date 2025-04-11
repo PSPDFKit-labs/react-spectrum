@@ -22,7 +22,7 @@ import {clamp} from '@react-aria-nutrient/utils';
 import {createContext, forwardRef, ReactNode, RefObject, useContext, useRef} from 'react';
 import {field, fieldInput, getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};
 import {FieldLabel} from './Field';
-import {FocusableRef, FocusableRefValue, InputDOMProps, SpectrumLabelableProps} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue, InputDOMProps, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {focusRing, style} from '../style' with {type: 'macro'};
 import {FormContext, useFormProps} from './Form';
 import {mergeStyles} from '../style/runtime';

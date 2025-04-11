@@ -13,7 +13,7 @@
 import {CollectionBuilderContext} from './useTableState';
 import {PartialNode} from '@react-stately/collections';
 import React, {JSX, ReactElement} from 'react';
-import {TableHeaderProps} from '@react-types/table';
+import {TableHeaderProps} from '@react-types-nutrient/table';
 
 function TableHeader<T>(props: TableHeaderProps<T>): ReactElement | null { // eslint-disable-line @typescript-eslint/no-unused-vars
   return null;

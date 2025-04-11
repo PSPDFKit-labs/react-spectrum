@@ -11,7 +11,7 @@
  */
 
 import {getItemElement} from './utils';
-import {Key, LayoutDelegate, Rect, RefObject, Size} from '@react-types/shared';
+import {Key, LayoutDelegate, Rect, RefObject, Size} from '@react-types-nutrient/shared';
 
 export class DOMLayoutDelegate implements LayoutDelegate {
   private ref: RefObject<HTMLElement | null>;

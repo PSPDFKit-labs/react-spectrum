@@ -13,7 +13,7 @@
 import {ActionButton} from '@react-spectrum/button';
 import ArrowDownSmall from '@spectrum-icons/ui/ArrowDownSmall';
 import {classNames, useDOMRef, useIsMobileDevice, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {FocusScope} from '@react-aria-nutrient/focus';
 // @ts-ignore
 import intlMessages from '../intl/*.json';
@@ -23,7 +23,7 @@ import {MenuSection} from './MenuSection';
 import {mergeProps, useLayoutEffect, useSlotId, useSyncRef} from '@react-aria-nutrient/utils';
 import React, {KeyboardEventHandler, ReactElement, ReactNode, RefObject, useContext, useEffect, useRef, useState} from 'react';
 import {RootMenuTriggerState} from '@react-stately/menu';
-import {SpectrumMenuProps} from '@react-types/menu';
+import {SpectrumMenuProps} from '@react-types-nutrient/menu';
 import styles from '@adobe/spectrum-css-temp/components/menu/vars.css';
 import {TreeState, useTreeState} from '@react-stately/tree';
 import {useLocale, useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';

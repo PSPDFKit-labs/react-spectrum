@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Direction} from '@react-types/shared';
+import {Direction} from '@react-types-nutrient/shared';
 
 export type RTLOffsetType =
   | 'negative'

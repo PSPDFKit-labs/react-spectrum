@@ -12,7 +12,7 @@
 
 import {ContextValue, Separator as RACSeparator, SeparatorProps as RACSeparatorProps} from 'react-aria-components';
 import {createContext, forwardRef} from 'react';
-import {DOMRef, DOMRefValue} from '@react-types/shared';
+import {DOMRef, DOMRefValue} from '@react-types-nutrient/shared';
 import {getAllowedOverrides, staticColor, StyleProps} from './style-utils' with {type: 'macro'};
 import {style} from '../style' with {type: 'macro'};
 import {useDOMRef} from '@react-spectrum/utils';

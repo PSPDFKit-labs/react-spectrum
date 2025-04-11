@@ -13,7 +13,7 @@
 
 import {DefaultGrid as DefaultGridStory} from '../chromatic/CardView.stories';
 import {Meta} from '@storybook/react';
-import {SpectrumCardViewProps} from '@react-types/card';
+import {SpectrumCardViewProps} from '@react-types-nutrient/card';
 
 const meta: Meta<SpectrumCardViewProps<object>> = {
   title: 'CardView'

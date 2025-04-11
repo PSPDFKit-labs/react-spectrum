@@ -12,12 +12,12 @@
 
 import {Calendar, CalendarIdentifier, DateFormatter, getMinimumDayInMonth, getMinimumMonthInYear, GregorianCalendar, isEqualCalendar, toCalendar} from '@internationalized/date';
 import {convertValue, createPlaceholderDate, FieldOptions, FormatterOptions, getFormatOptions, getValidationResult, useDefaultProps} from './utils';
-import {DatePickerProps, DateValue, Granularity, MappedDateValue} from '@react-types/datepicker';
+import {DatePickerProps, DateValue, Granularity, MappedDateValue} from '@react-types-nutrient/datepicker';
 import {FormValidationState, useFormValidationState} from '@react-stately/form';
 import {getPlaceholder} from './placeholders';
 import {useControlledState} from '@react-stately/utils';
 import {useEffect, useMemo, useRef, useState} from 'react';
-import {ValidationState} from '@react-types/shared';
+import {ValidationState} from '@react-types-nutrient/shared';
 
 export type SegmentType = 'era' | 'year' | 'month' | 'day' |  'hour' | 'minute' | 'second' | 'dayPeriod' | 'literal' | 'timeZoneName';
 export interface DateSegment {

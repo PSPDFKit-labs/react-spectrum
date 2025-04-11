@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, Key} from '@react-types/shared';
+import {Collection, Key} from '@react-types-nutrient/shared';
 import {InvalidationContext} from './types';
 import {Layout} from './Layout';
 import {Rect} from './Rect';

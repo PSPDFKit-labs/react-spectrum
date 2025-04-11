@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, RefObject} from '@react-types/shared';
+import {AriaLabelingProps, RefObject} from '@react-types-nutrient/shared';
 import {ColorChannelFieldProps, ColorChannelFieldState} from '@react-stately/color';
 import {NumberFieldAria, useNumberField} from '@react-aria-nutrient/numberfield';
 import {useLocale} from '@react-aria-nutrient/i18n';

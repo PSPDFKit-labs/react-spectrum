@@ -4,7 +4,7 @@ import {
   MultipleSelection,
   Node,
   SelectionBehavior
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {ListState, useListState} from '@react-stately/list';
 import React, {useRef} from 'react';
 import {useSelectableItem, useSelectableList} from '@react-aria-nutrient/selection';

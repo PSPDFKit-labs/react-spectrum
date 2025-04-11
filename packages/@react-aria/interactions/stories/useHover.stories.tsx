@@ -9,7 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import {classNames} from '@react-spectrum/utils';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {useRef, useState} from 'react';

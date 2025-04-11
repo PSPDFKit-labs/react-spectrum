@@ -11,7 +11,7 @@
  */
 
 import {createListActions, ListData, ListState} from './useListData';
-import {Key, LoadingState, Selection, SortDescriptor} from '@react-types/shared';
+import {Key, LoadingState, Selection, SortDescriptor} from '@react-types-nutrient/shared';
 import {useEffect, useReducer, useRef} from 'react';
 
 export interface AsyncListOptions<T, C> {

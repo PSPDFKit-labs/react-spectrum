@@ -12,7 +12,7 @@
 
 import {ContextValue, LinkRenderProps, Link as RACLink, LinkProps as RACLinkProps} from 'react-aria-components';
 import {createContext, forwardRef, ReactNode, useContext} from 'react';
-import {FocusableRef, FocusableRefValue} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue} from '@react-types-nutrient/shared';
 import {focusRing, style} from '../style' with {type: 'macro'};
 import {getAllowedOverrides, staticColor, StyleProps} from './style-utils' with {type: 'macro'};
 import {SkeletonContext, useSkeletonText} from './Skeleton';

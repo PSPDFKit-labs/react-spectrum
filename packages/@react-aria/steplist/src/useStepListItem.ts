@@ -11,7 +11,7 @@
  */
 
 import {HTMLAttributes} from 'react';
-import {Key, RefObject} from '@react-types/shared';
+import {Key, RefObject} from '@react-types-nutrient/shared';
 import {StepListState} from '@react-stately/steplist';
 import {useSelectableItem} from '@react-aria-nutrient/selection';
 

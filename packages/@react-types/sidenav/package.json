@@ -1,5 +1,5 @@
 {
-  "name": "@react-types/sidenav",
+  "name": "@react-types-nutrient/sidenav",
   "version": "3.0.0-alpha.1",
   "description": "Spectrum UI components in React",
   "license": "Apache-2.0",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-stately/virtualizer": "^4.0.0",
-    "@react-types/shared": "^3.1.0"
+    "@react-types-nutrient/shared": "^3.1.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1",

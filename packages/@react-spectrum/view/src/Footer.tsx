@@ -11,9 +11,9 @@
  */
 
 import {ClearSlots, useDOMRef, useSlotProps, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
-import {FooterProps} from '@react-types/view';
+import {FooterProps} from '@react-types-nutrient/view';
 import React, {forwardRef} from 'react';
 
 /**

@@ -13,7 +13,7 @@
 import {DialogContext} from './context';
 import {Modal} from '@react-spectrum/overlays';
 import React, {ReactElement, ReactNode, useState} from 'react';
-import {SpectrumDialogContainerProps} from '@react-types/dialog';
+import {SpectrumDialogContainerProps} from '@react-types-nutrient/dialog';
 import {useOverlayTriggerState} from '@react-stately/overlays';
 
 /**

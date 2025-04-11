@@ -10,11 +10,11 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes, FocusableElement, Key, RefObject} from '@react-types/shared';
+import {DOMAttributes, FocusableElement, Key, RefObject} from '@react-types-nutrient/shared';
 import {focusSafely, isFocusVisible} from '@react-aria-nutrient/interactions';
 import {getFocusableTreeWalker} from '@react-aria-nutrient/focus';
 import {getScrollParent, mergeProps, scrollIntoViewport} from '@react-aria-nutrient/utils';
-import {GridCollection, GridNode} from '@react-types/grid';
+import {GridCollection, GridNode} from '@react-types-nutrient/grid';
 import {gridMap} from './utils';
 import {GridState} from '@react-stately/grid';
 import {KeyboardEvent as ReactKeyboardEvent, useRef} from 'react';

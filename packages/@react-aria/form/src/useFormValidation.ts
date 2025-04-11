@@ -11,7 +11,7 @@
  */
 
 import {FormValidationState} from '@react-stately/form';
-import {RefObject, Validation, ValidationResult} from '@react-types/shared';
+import {RefObject, Validation, ValidationResult} from '@react-types-nutrient/shared';
 import {setInteractionModality} from '@react-aria-nutrient/interactions';
 import {useEffect} from 'react';
 import {useEffectEvent, useLayoutEffect} from '@react-aria-nutrient/utils';

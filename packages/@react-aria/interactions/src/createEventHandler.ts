@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {BaseEvent} from '@react-types/shared';
+import {BaseEvent} from '@react-types-nutrient/shared';
 import {SyntheticEvent} from 'react';
 
 /**

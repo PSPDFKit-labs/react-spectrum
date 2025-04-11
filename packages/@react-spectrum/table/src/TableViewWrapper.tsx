@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import type {AriaLabelingProps, DisabledBehavior, DOMProps, DOMRef, Key, SpectrumSelectionProps, StyleProps} from '@react-types/shared';
-import type {ColumnSize, TableProps} from '@react-types/table';
+import type {AriaLabelingProps, DisabledBehavior, DOMProps, DOMRef, Key, SpectrumSelectionProps, StyleProps} from '@react-types-nutrient/shared';
+import type {ColumnSize, TableProps} from '@react-types-nutrient/table';
 import type {DragAndDropHooks} from '@react-spectrum/dnd';
 import React, {JSX, ReactElement} from 'react';
 import {tableNestedRows} from '@react-stately/flags';

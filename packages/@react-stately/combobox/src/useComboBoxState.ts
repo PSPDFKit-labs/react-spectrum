@@ -10,8 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, CollectionStateBase, FocusStrategy, Node} from '@react-types/shared';
-import {ComboBoxProps, MenuTriggerAction} from '@react-types/combobox';
+import {Collection, CollectionStateBase, FocusStrategy, Node} from '@react-types-nutrient/shared';
+import {ComboBoxProps, MenuTriggerAction} from '@react-types-nutrient/combobox';
 import {FormValidationState, useFormValidationState} from '@react-stately/form';
 import {getChildNodes} from '@react-stately/collections';
 import {ListCollection, useSingleSelectListState} from '@react-stately/list';

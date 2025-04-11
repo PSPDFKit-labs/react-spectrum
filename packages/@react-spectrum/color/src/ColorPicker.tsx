@@ -11,7 +11,7 @@
  */
 
 import {ColorPicker as AriaColorPicker, Button, Color} from 'react-aria-components';
-import {AriaLabelingProps, FocusableRef, ValueBase} from '@react-types/shared';
+import {AriaLabelingProps, FocusableRef, ValueBase} from '@react-types-nutrient/shared';
 import {ColorSwatch} from './ColorSwatch';
 import {Content} from '@react-spectrum/view';
 import {Dialog, DialogTrigger} from '@react-spectrum/dialog';

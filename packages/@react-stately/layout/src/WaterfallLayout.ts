@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DropTarget, DropTargetDelegate, Key, LayoutDelegate, Node} from '@react-types/shared';
+import {DropTarget, DropTargetDelegate, Key, LayoutDelegate, Node} from '@react-types-nutrient/shared';
 import {InvalidationContext, Layout, LayoutInfo, Point, Rect, Size} from '@react-stately/virtualizer';
 
 export interface WaterfallLayoutOptions {

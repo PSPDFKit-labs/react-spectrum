@@ -1,7 +1,7 @@
 import {Meta, StoryFn} from '@storybook/react';
 import React, {useRef} from 'react';
 import {useField} from '../';
-import {ValidationState} from '@react-types/shared';
+import {ValidationState} from '@react-types-nutrient/shared';
 
 interface TextFieldProps {
   label: string,

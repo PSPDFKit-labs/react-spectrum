@@ -44,8 +44,8 @@
     "@react-spectrum/utils": "^3.12.3",
     "@react-stately/checkbox": "^3.6.12",
     "@react-stately/toggle": "^3.8.2",
-    "@react-types/checkbox": "^3.9.2",
-    "@react-types/shared": "^3.28.0",
+    "@react-types-nutrient/checkbox": "^3.9.2",
+    "@react-types-nutrient/shared": "^3.28.0",
     "@spectrum-icons/ui": "^3.6.14",
     "@swc/helpers": "^0.5.0",
     "react-aria-components": "^1.7.1"

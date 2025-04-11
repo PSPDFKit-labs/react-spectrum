@@ -28,7 +28,7 @@ import {Heading} from '@react-spectrum/text';
 import {HidingColumns} from './HidingColumns';
 import {HidingColumnsAllowsResizing} from './HidingColumnsAllowsResizing';
 import {IllustratedMessage} from '@react-spectrum/illustratedmessage';
-import {Key, LoadingState} from '@react-types/shared';
+import {Key, LoadingState} from '@react-types-nutrient/shared';
 import {Link} from '@react-spectrum/link';
 import NoSearchResults from '@spectrum-icons/illustrations/NoSearchResults';
 import {Picker} from '@react-spectrum/picker';

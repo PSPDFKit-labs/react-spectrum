@@ -11,7 +11,7 @@
  */
 
 import {focusWithoutScrolling, isMac, isWebKit} from './index';
-import {Href, LinkDOMProps, RouterOptions} from '@react-types/shared';
+import {Href, LinkDOMProps, RouterOptions} from '@react-types-nutrient/shared';
 import {isFirefox, isIPad} from './platform';
 import React, {createContext, DOMAttributes, ReactNode, useContext, useMemo} from 'react';
 

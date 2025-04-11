@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, DisabledBehavior, FocusStrategy, Key, LongPressEvent, Node, PressEvent, Selection, SelectionBehavior, SelectionMode} from '@react-types/shared';
+import {Collection, DisabledBehavior, FocusStrategy, Key, LongPressEvent, Node, PressEvent, Selection, SelectionBehavior, SelectionMode} from '@react-types-nutrient/shared';
 
 
 export interface FocusState {

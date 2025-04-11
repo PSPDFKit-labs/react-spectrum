@@ -18,7 +18,7 @@ import {Flex} from '@react-spectrum/layout';
 import {Heading} from '@react-spectrum/text';
 import React from 'react';
 import {Slider} from '../';
-import {SpectrumSliderProps} from '@react-types/slider';
+import {SpectrumSliderProps} from '@react-types-nutrient/slider';
 
 let message = 'Your browser may not support this set of format options.';
 

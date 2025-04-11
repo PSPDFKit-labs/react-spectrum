@@ -11,10 +11,10 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaCardProps, SpectrumCardProps} from '@react-types/card';
+import {AriaCardProps, SpectrumCardProps} from '@react-types-nutrient/card';
 import {Checkbox} from '@react-spectrum/checkbox';
 import {classNames, SlotProvider, useDOMRef, useHasChild, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef, Node} from '@react-types/shared';
+import {DOMRef, Node} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps, useLayoutEffect, useResizeObserver, useSlotId} from '@react-aria-nutrient/utils';
 import {FocusRing, getFocusableTreeWalker} from '@react-aria-nutrient/focus';
 import React, {HTMLAttributes, useCallback, useMemo, useRef, useState} from 'react';

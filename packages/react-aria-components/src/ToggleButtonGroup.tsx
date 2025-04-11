@@ -11,7 +11,7 @@
  */
 import {AriaToggleButtonGroupProps, useToggleButtonGroup} from '@react-aria-nutrient/react-aria';
 import {ContextValue, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
-import {forwardRefType} from '@react-types/shared';
+import {forwardRefType} from '@react-types-nutrient/shared';
 import React, {createContext, ForwardedRef, forwardRef} from 'react';
 import {ToggleGroupState, useToggleGroupState} from 'react-stately';
 

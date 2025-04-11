@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaRangeCalendarProps, DateValue} from '@react-types/calendar';
+import {AriaRangeCalendarProps, DateValue} from '@react-types-nutrient/calendar';
 import {CalendarAria, useCalendarBase} from './useCalendarBase';
-import {FocusableElement, RefObject} from '@react-types/shared';
+import {FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {RangeCalendarState} from '@react-stately/calendar';
 import {useEvent} from '@react-aria-nutrient/utils';
 import {useRef} from 'react';

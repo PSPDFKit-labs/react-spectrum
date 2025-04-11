@@ -10,5 +10,5 @@
  * governing permissions and limitations under the License.
  */
 export {useNumberField} from './useNumberField';
-export type {AriaNumberFieldProps} from '@react-types/numberfield';
+export type {AriaNumberFieldProps} from '@react-types-nutrient/numberfield';
 export type {NumberFieldAria} from './useNumberField';

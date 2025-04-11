@@ -13,8 +13,8 @@
 import {alignCenter, constrainValue, isInvalid, previousAvailableDate} from './utils';
 import {Calendar, CalendarDate, CalendarIdentifier, DateDuration, GregorianCalendar, isEqualDay, maxDate, minDate, toCalendar, toCalendarDate} from '@internationalized/date';
 import {CalendarState, RangeCalendarState} from './types';
-import {DateValue, MappedDateValue, RangeCalendarProps} from '@react-types/calendar';
-import {RangeValue, ValidationState} from '@react-types/shared';
+import {DateValue, MappedDateValue, RangeCalendarProps} from '@react-types-nutrient/calendar';
+import {RangeValue, ValidationState} from '@react-types-nutrient/shared';
 import {useCalendarState} from './useCalendarState';
 import {useControlledState} from '@react-stately/utils';
 import {useMemo, useRef, useState} from 'react';

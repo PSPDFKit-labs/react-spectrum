@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Color, ColorSliderProps} from '@react-types/color';
+import {Color, ColorSliderProps} from '@react-types-nutrient/color';
 import {normalizeColor, parseColor} from './Color';
 import {SliderState, useSliderState} from '@react-stately/slider';
 import {useControlledState} from '@react-stately/utils';

@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, FocusableElement, forwardRefType, RefObject} from '@react-types/shared';
+import {AriaLabelingProps, FocusableElement, forwardRefType, RefObject} from '@react-types-nutrient/shared';
 import {AriaPositionProps, mergeProps, OverlayContainer, Placement, PlacementAxis, PositionProps, useOverlayPosition, useTooltip, useTooltipTrigger} from '@react-aria-nutrient/react-aria';
 import {ContextValue, Provider, RenderProps, useContextProps, useRenderProps} from './utils';
 import {FocusableProvider} from '@react-aria-nutrient/focus';

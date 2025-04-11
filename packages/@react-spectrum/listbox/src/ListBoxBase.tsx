@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, FocusStrategy, Node, RefObject, StyleProps} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, FocusStrategy, Node, RefObject, StyleProps} from '@react-types-nutrient/shared';
 import {AriaListBoxOptions, useListBox} from '@react-aria-nutrient/listbox';
 import {classNames, useStyleProps} from '@react-spectrum/utils';
 import {FocusScope} from '@react-aria-nutrient/focus';

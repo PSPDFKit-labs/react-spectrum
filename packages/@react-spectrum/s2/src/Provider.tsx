@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import type {ColorScheme, Router} from '@react-types/provider';
+import type {ColorScheme, Router} from '@react-types-nutrient/provider';
 import {colorScheme, UnsafeStyles} from './style-utils' with {type: 'macro'};
 import {createContext, JSX, ReactNode, useContext} from 'react';
 import {generateDefaultColorSchemeStyles} from './page.macro' with {type: 'macro'};

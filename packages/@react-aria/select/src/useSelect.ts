@@ -10,11 +10,11 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaButtonProps} from '@react-types/button';
+import {AriaButtonProps} from '@react-types-nutrient/button';
 import {AriaListBoxOptions} from '@react-aria-nutrient/listbox';
-import {AriaSelectProps} from '@react-types/select';
+import {AriaSelectProps} from '@react-types-nutrient/select';
 import {chain, filterDOMProps, mergeProps, useId} from '@react-aria-nutrient/utils';
-import {DOMAttributes, KeyboardDelegate, RefObject, ValidationResult} from '@react-types/shared';
+import {DOMAttributes, KeyboardDelegate, RefObject, ValidationResult} from '@react-types-nutrient/shared';
 import {FocusEvent, useMemo} from 'react';
 import {ListKeyboardDelegate, useTypeSelect} from '@react-aria-nutrient/selection';
 import {SelectState} from '@react-stately/select';

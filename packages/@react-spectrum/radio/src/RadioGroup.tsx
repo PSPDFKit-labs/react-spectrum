@@ -11,11 +11,11 @@
  */
 
 import {classNames, useDOMRef} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {Field} from '@react-spectrum/label';
 import {RadioContext} from './context';
 import React from 'react';
-import {SpectrumRadioGroupProps} from '@react-types/radio';
+import {SpectrumRadioGroupProps} from '@react-types-nutrient/radio';
 import styles from '@adobe/spectrum-css-temp/components/fieldgroup/vars.css';
 import {useFormProps} from '@react-spectrum/form';
 import {useProviderProps} from '@react-spectrum/provider';

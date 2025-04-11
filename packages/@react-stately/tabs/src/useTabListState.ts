@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, CollectionStateBase, Key, Node} from '@react-types/shared';
+import {Collection, CollectionStateBase, Key, Node} from '@react-types-nutrient/shared';
 import {SingleSelectListState, useSingleSelectListState} from '@react-stately/list';
-import {TabListProps} from '@react-types/tabs';
+import {TabListProps} from '@react-types-nutrient/tabs';
 import {useEffect, useRef} from 'react';
 
 export interface TabListStateOptions<T> extends Omit<TabListProps<T>, 'children'>, CollectionStateBase<T> {}

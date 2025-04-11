@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMAttributes, FocusableElement, RefObject} from '@react-types/shared';
+import {AriaLabelingProps, DOMAttributes, FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {focusWithoutScrolling, mergeProps, useEffectEvent, useLayoutEffect} from '@react-aria-nutrient/utils';
 import {getInteractionModality, useFocusWithin, useHover} from '@react-aria-nutrient/interactions';
 // @ts-ignore

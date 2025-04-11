@@ -12,9 +12,9 @@
 
 import {AriaModalOverlayProps, DismissButton, useModalOverlay} from '@react-aria-nutrient/overlays';
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef, RefObject, StyleProps} from '@react-types/shared';
+import {DOMRef, RefObject, StyleProps} from '@react-types-nutrient/shared';
 import {Overlay} from './Overlay';
-import {OverlayProps} from '@react-types/overlays';
+import {OverlayProps} from '@react-types-nutrient/overlays';
 import {OverlayTriggerState} from '@react-stately/overlays';
 import overrideStyles from './overlays.css';
 import React, {ForwardedRef, forwardRef, ReactNode, useRef} from 'react';

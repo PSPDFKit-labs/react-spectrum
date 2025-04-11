@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Collection, Node} from '@react-types/shared';
+import {Collection, Node} from '@react-types-nutrient/shared';
 import {getChildNodes} from './getChildNodes';
 
 const cache = new WeakMap<Iterable<unknown>, number>();

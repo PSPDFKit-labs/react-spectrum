@@ -20,7 +20,7 @@ import {
 } from 'react-aria-components';
 import {ColorHandle} from './ColorHandle';
 import {createContext, forwardRef, useRef} from 'react';
-import {DOMRef, DOMRefValue, SpectrumLabelableProps} from '@react-types/shared';
+import {DOMRef, DOMRefValue, SpectrumLabelableProps} from '@react-types-nutrient/shared';
 import {FieldLabel} from './Field';
 import {getAllowedOverrides, StyleProps} from './style-utils' with {type: 'macro'};
 import {style} from '../style' with {type: 'macro'};

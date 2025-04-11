@@ -16,7 +16,7 @@ import {Grid, repeat} from '@react-spectrum/layout';
 import {Item, SearchAutocomplete} from '../';
 import {Meta, StoryFn} from '@storybook/react';
 import React from 'react';
-import {SpectrumSearchAutocompleteProps} from '@react-types/autocomplete';
+import {SpectrumSearchAutocompleteProps} from '@react-types-nutrient/autocomplete';
 
 // Skipping focus styles because don't have a way of applying it via classnames
 // No controlled open state also means no menu

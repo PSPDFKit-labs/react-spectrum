@@ -22,7 +22,7 @@ import {
   ShadowTreeWalker,
   useLayoutEffect
 } from '@react-aria-nutrient/utils';
-import {FocusableElement, RefObject} from '@react-types/shared';
+import {FocusableElement, RefObject} from '@react-types-nutrient/shared';
 import {focusSafely, getInteractionModality} from '@react-aria-nutrient/interactions';
 import {isElementVisible} from './isElementVisible';
 import React, {ReactNode, useContext, useEffect, useMemo, useRef} from 'react';

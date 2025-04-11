@@ -10,9 +10,9 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaProgressBarProps} from '@react-types/progress';
+import {AriaProgressBarProps} from '@react-types-nutrient/progress';
 import {clamp, filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
-import {DOMAttributes} from '@react-types/shared';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {useLabel} from '@react-aria-nutrient/label';
 import {useNumberFormatter} from '@react-aria-nutrient/i18n';
 

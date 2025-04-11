@@ -12,7 +12,7 @@
 
 import {PartialNode} from '@react-stately/collections';
 import React, {JSX, ReactElement} from 'react';
-import {TableBodyProps} from '@react-types/table';
+import {TableBodyProps} from '@react-types-nutrient/table';
 
 function TableBody<T>(props: TableBodyProps<T>): ReactElement | null { // eslint-disable-line @typescript-eslint/no-unused-vars
   return null;

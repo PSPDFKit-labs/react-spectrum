@@ -33,7 +33,7 @@ import {CardView, WaterfallLayout} from '../';
 import {ComponentStoryObj} from '@storybook/react';
 import React, {useMemo} from 'react';
 import {Size} from '@react-stately/virtualizer';
-import {SpectrumCardViewProps} from '@react-types/card';
+import {SpectrumCardViewProps} from '@react-types-nutrient/card';
 import {useCollator} from '@react-aria-nutrient/i18n';
 import {WaterfallLayoutOptions} from '../src/WaterfallLayout';
 

@@ -39,8 +39,8 @@
     "@react-aria-nutrient/utils": "^3.28.1",
     "@react-spectrum/utils": "^3.12.3",
     "@react-stately/form": "^3.1.2",
-    "@react-types/form": "^3.7.10",
-    "@react-types/shared": "^3.28.0",
+    "@react-types-nutrient/form": "^3.7.10",
+    "@react-types-nutrient/shared": "^3.28.0",
     "@swc/helpers": "^0.5.0"
   },
   "devDependencies": {

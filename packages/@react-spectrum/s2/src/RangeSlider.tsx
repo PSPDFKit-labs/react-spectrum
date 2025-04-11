@@ -17,7 +17,7 @@ import {
 } from 'react-aria-components';
 import {createContext, forwardRef, useContext, useRef} from 'react';
 import {filledTrack, SliderBase, SliderBaseProps, thumb, thumbContainer, thumbHitArea, track, upperTrack} from './Slider';
-import {FocusableRef, FocusableRefValue, RangeValue} from '@react-types/shared';
+import {FocusableRef, FocusableRefValue, RangeValue} from '@react-types-nutrient/shared';
 import {FormContext, useFormProps} from './Form';
 // @ts-ignore
 import intlMessages from '../intl/*.json';

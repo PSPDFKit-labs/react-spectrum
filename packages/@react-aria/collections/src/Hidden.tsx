@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {forwardRefType} from '@react-types/shared';
+import {forwardRefType} from '@react-types-nutrient/shared';
 import React, {createContext, forwardRef, ReactElement, ReactNode, useContext} from 'react';
 
 // React doesn't understand the <template> element, which doesn't have children like a normal element.

@@ -45,16 +45,16 @@ const plugin = {
                   fixes.push(fixer.removeRange([node.range[0], node.range[1] + 2]));
                 }
               }
-              let sharedImport = node.parent.parent.body.find(node => node.type === 'ImportDeclaration' && node.source.value === '@react-types/shared');
+              let sharedImport = node.parent.parent.body.find(node => node.type === 'ImportDeclaration' && node.source.value === '@react-types-nutrient/shared');
               if (sharedImport) {
-                // handles existing import from '@react-types/shared'
+                // handles existing import from '@react-types-nutrient/shared'
                 let firstSpecifier = sharedImport.specifiers.find(node => node.type === 'ImportSpecifier');
                 fixes.push(fixer.insertTextAfter(firstSpecifier, ', Key'));
                 return fixes;
               }
-              // handles no existing import from '@react-types/shared'
+              // handles no existing import from '@react-types-nutrient/shared'
               let lastImport = node.parent.parent.body.findLast(node => node.type === 'ImportDeclaration');
-              fixes.push(fixer.insertTextAfter(lastImport, "\nimport {Key} from '@react-types/shared';"));
+              fixes.push(fixer.insertTextAfter(lastImport, "\nimport {Key} from '@react-types-nutrient/shared';"));
               return fixes;
             }
           });

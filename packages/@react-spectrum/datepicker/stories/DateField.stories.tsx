@@ -19,7 +19,7 @@ import {DateField} from '../';
 import {Flex} from '@react-spectrum/layout';
 import {Heading} from '@react-spectrum/text';
 import {Item, Picker, Section} from '@react-spectrum/picker';
-import {Key} from '@react-types/shared';
+import {Key} from '@react-types-nutrient/shared';
 import {Provider} from '@react-spectrum/provider';
 import React from 'react';
 import {useLocale} from '@react-aria-nutrient/i18n';

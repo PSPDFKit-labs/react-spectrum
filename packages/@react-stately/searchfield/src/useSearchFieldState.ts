@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {SearchFieldProps} from '@react-types/searchfield';
+import {SearchFieldProps} from '@react-types-nutrient/searchfield';
 import {useControlledState} from '@react-stately/utils';
 
 export interface SearchFieldState {

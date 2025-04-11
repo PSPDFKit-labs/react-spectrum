@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, forwardRefType} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, forwardRefType} from '@react-types-nutrient/shared';
 import {ContextValue, RenderProps, SlotProps, useContextProps, useRenderProps} from './utils';
 import {HoverProps, mergeProps, useFocusRing, useHover} from '@react-aria-nutrient/react-aria';
 import React, {createContext, ForwardedRef, forwardRef, HTMLAttributes} from 'react';

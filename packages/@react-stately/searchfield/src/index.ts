@@ -12,5 +12,5 @@
 
 export {useSearchFieldState} from './useSearchFieldState';
 
-export type {SearchFieldProps} from '@react-types/searchfield';
+export type {SearchFieldProps} from '@react-types-nutrient/searchfield';
 export type {SearchFieldState} from './useSearchFieldState';

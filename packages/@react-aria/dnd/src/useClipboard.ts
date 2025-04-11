@@ -11,7 +11,7 @@
  */
 
 import {chain, useEffectEvent} from '@react-aria-nutrient/utils';
-import {DOMAttributes, DragItem, DropItem} from '@react-types/shared';
+import {DOMAttributes, DragItem, DropItem} from '@react-types-nutrient/shared';
 import {readFromDataTransfer, writeToDataTransfer} from './utils';
 import {useEffect, useRef} from 'react';
 import {useFocus} from '@react-aria-nutrient/interactions';

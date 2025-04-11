@@ -11,7 +11,7 @@
  */
 
 import {mergeProps} from '@react-aria-nutrient/utils';
-import {Placement} from '@react-types/overlays';
+import {Placement} from '@react-types-nutrient/overlays';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {useOverlayPosition, useOverlayTrigger} from '../src';

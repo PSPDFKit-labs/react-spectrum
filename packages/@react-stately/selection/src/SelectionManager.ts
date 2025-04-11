@@ -21,7 +21,7 @@ import {
   PressEvent,
   SelectionBehavior,
   SelectionMode
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 import {compareNodeOrder, getChildNodes, getFirstItem} from '@react-stately/collections';
 import {MultipleSelectionManager, MultipleSelectionState} from './types';
 import {Selection} from './Selection';

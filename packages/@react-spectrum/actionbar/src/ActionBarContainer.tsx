@@ -11,10 +11,10 @@
  */
 
 import {classNames, useDOMRef, useStyleProps} from '@react-spectrum/utils';
-import {DOMRef} from '@react-types/shared';
+import {DOMRef} from '@react-types-nutrient/shared';
 import {filterDOMProps} from '@react-aria-nutrient/utils';
 import React from 'react';
-import {SpectrumActionBarContainerProps} from '@react-types/actionbar';
+import {SpectrumActionBarContainerProps} from '@react-types-nutrient/actionbar';
 import styles from './actionbar.css';
 import {useProviderProps} from '@react-spectrum/provider';
 

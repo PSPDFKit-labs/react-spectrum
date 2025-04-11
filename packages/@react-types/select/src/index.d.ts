@@ -28,7 +28,7 @@ import {
   StyleProps,
   TextInputBase,
   Validation
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';
 
 export interface SelectProps<T> extends CollectionBase<T>, Omit<InputBase, 'isReadOnly'>, Validation<Key>, HelpTextProps, LabelableProps, TextInputBase, Omit<SingleSelection, 'disallowEmptySelection'>, FocusableProps {
   /** Sets the open state of the menu. */

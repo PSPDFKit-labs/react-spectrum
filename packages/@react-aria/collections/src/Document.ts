@@ -12,7 +12,7 @@
 
 import {BaseCollection, CollectionNode, Mutable} from './BaseCollection';
 import {CSSProperties, ForwardedRef, ReactElement, ReactNode} from 'react';
-import {Node} from '@react-types/shared';
+import {Node} from '@react-types-nutrient/shared';
 
 // This Collection implementation is perhaps a little unusual. It works by rendering the React tree into a
 // Portal to a fake DOM implementation. This gives us efficient access to the tree of rendered objects, and

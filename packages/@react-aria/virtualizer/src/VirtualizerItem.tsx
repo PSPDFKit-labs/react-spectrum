@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {Direction} from '@react-types/shared';
+import {Direction} from '@react-types-nutrient/shared';
 import {LayoutInfo} from '@react-stately/virtualizer';
 import React, {CSSProperties, ReactNode, useRef} from 'react';
 import {useLocale} from '@react-aria-nutrient/i18n';

@@ -20,7 +20,7 @@ import {NumberField} from '@react-spectrum/numberfield';
 import {Radio, RadioGroup} from '@react-spectrum/radio';
 import React from 'react';
 import {SearchField} from '@react-spectrum/searchfield';
-import {SpectrumFormProps} from '@react-types/form';
+import {SpectrumFormProps} from '@react-types-nutrient/form';
 import {TextArea, TextField} from '@react-spectrum/textfield';
 
 const meta: Meta<SpectrumFormProps> = {

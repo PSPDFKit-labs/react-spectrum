@@ -39,4 +39,4 @@ export type {
   ItemDropTarget,
   RootDropTarget,
   TextDropItem
-} from '@react-types/shared';
+} from '@react-types-nutrient/shared';

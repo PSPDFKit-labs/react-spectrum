@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {DOMAttributes} from '@react-types/shared';
+import {DOMAttributes} from '@react-types-nutrient/shared';
 import {mergeProps} from '@react-aria-nutrient/utils';
 import React, {CSSProperties, JSXElementConstructor, ReactNode, useMemo, useState} from 'react';
 import {useFocusWithin} from '@react-aria-nutrient/interactions';

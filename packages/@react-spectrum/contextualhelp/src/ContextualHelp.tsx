@@ -13,7 +13,7 @@
 import {ActionButton} from '@react-spectrum/button';
 import {classNames, ClearSlots, SlotProvider} from '@react-spectrum/utils';
 import {Dialog, DialogTrigger} from '@react-spectrum/dialog';
-import {FocusableRef} from '@react-types/shared';
+import {FocusableRef} from '@react-types-nutrient/shared';
 import HelpOutline from '@spectrum-icons/workflow/HelpOutline';
 import helpStyles from '@adobe/spectrum-css-temp/components/contextualhelp/vars.css';
 import InfoOutline from '@spectrum-icons/workflow/InfoOutline';
@@ -21,7 +21,7 @@ import InfoOutline from '@spectrum-icons/workflow/InfoOutline';
 import intlMessages from '../intl/*.json';
 import {mergeProps, useLabels} from '@react-aria-nutrient/utils';
 import React from 'react';
-import {SpectrumContextualHelpProps} from '@react-types/contextualhelp';
+import {SpectrumContextualHelpProps} from '@react-types-nutrient/contextualhelp';
 import {useLocalizedStringFormatter} from '@react-aria-nutrient/i18n';
 
 /**

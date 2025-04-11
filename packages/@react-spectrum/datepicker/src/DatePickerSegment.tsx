@@ -12,7 +12,7 @@
 
 import {classNames} from '@react-spectrum/utils';
 import {DateFieldState, DateSegment} from '@react-stately/datepicker';
-import {DatePickerBase, DateValue} from '@react-types/datepicker';
+import {DatePickerBase, DateValue} from '@react-types-nutrient/datepicker';
 import React, {ReactNode, useRef} from 'react';
 import styles from './styles.css';
 import {useDateSegment} from '@react-aria-nutrient/datepicker';

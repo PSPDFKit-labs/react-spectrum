@@ -10,7 +10,7 @@
  * governing permissions and limitations under the License.
  */
 
-import {AriaLabelingProps, DOMProps, RefObject} from '@react-types/shared';
+import {AriaLabelingProps, DOMProps, RefObject} from '@react-types-nutrient/shared';
 import {filterDOMProps, mergeProps} from '@react-aria-nutrient/utils';
 import {HTMLAttributes} from 'react';
 // @ts-ignore
